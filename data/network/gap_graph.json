@@ -1,0 +1,148 @@
+{
+  "nodes": [
+    {
+      "id": "OECD_AI_Principles_2024",
+      "label": "OECD_AI_Principles_2024",
+      "group": "OECD_AI_Principles_2024",
+      "classification": "Intl: Soft Law",
+      "value": 15,
+      "title": "Agregasi Klaster: Intl: Soft Law"
+    },
+    {
+      "id": "EU_AI_Act_2024",
+      "label": "EU_AI_Act_2024",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 90,
+      "title": "Agregasi Klaster: Intl: Binding Law"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 195,
+      "title": "Agregasi Klaster: Intl: Binding Law"
+    },
+    {
+      "id": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 45,
+      "title": "Agregasi Klaster: Natl: Strategy & Soft Law"
+    },
+    {
+      "id": "PP_PSTE_No71_2019",
+      "label": "PP_PSTE_No71_2019",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 295,
+      "title": "Agregasi Klaster: Natl: Binding Law"
+    },
+    {
+      "id": "UU_ITE_No19_2016",
+      "label": "UU_ITE_No19_2016",
+      "group": "UU_ITE_No19_2016",
+      "classification": "Natl: Binding Law",
+      "value": 75,
+      "title": "Agregasi Klaster: Natl: Binding Law"
+    },
+    {
+      "id": "UU_PDP_No27_2022",
+      "label": "UU_PDP_No27_2022",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 360,
+      "title": "Agregasi Klaster: Natl: Binding Law"
+    },
+    {
+      "id": "UU_ITE_No1_2024",
+      "label": "UU_ITE_No1_2024",
+      "group": "UU_ITE_No1_2024",
+      "classification": "Natl: Binding Law",
+      "value": 100,
+      "title": "Agregasi Klaster: Natl: Binding Law"
+    },
+    {
+      "id": "Insiden Kasus",
+      "label": "Insiden Kasus",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 500,
+      "title": "Agregasi Klaster: Insiden Kasus"
+    }
+  ],
+  "edges": [
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "label": "korelasi hukum",
+      "value": 2,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi hukum",
+      "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "Stranas_AI_Indonesia_2020-2045_Full",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi hukum",
+      "value": 2,
+      "arrows": ""
+    },
+    {
+      "from": "Stranas_AI_Indonesia_2020-2045_Full",
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi hukum",
+      "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "PP_PSTE_No71_2019",
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi hukum",
+      "value": 54,
+      "arrows": ""
+    },
+    {
+      "from": "PP_PSTE_No71_2019",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi hukum",
+      "value": 205,
+      "arrows": ""
+    },
+    {
+      "from": "PP_PSTE_No71_2019",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi hukum",
+      "value": 79,
+      "arrows": ""
+    },
+    {
+      "from": "PP_PSTE_No71_2019",
+      "to": "Insiden Kasus",
+      "label": "korelasi hukum",
+      "value": 126,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No19_2016",
+      "to": "Insiden Kasus",
+      "label": "korelasi hukum",
+      "value": 23,
+      "arrows": ""
+    },
+    {
+      "from": "UU_PDP_No27_2022",
+      "to": "Insiden Kasus",
+      "label": "korelasi hukum",
+      "value": 131,
+      "arrows": ""
+    }
+  ]
+}

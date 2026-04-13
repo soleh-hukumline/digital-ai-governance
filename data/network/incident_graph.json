@@ -1,0 +1,2318 @@
+{
+  "nodes": [
+    {
+      "id": "CASE_incident-auto-3",
+      "label": "incident-auto-3",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_pdns-2024",
+      "label": "pdns-2024",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-53",
+      "label": "incident-auto-53",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 50,
+      "title": "Degree/Koneksi Semantik: 10"
+    },
+    {
+      "id": "CASE_incident-auto-62",
+      "label": "incident-auto-62",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_deepfake-pornografi-2024",
+      "label": "deepfake-pornografi-2024",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "CASE_incident-auto-4",
+      "label": "incident-auto-4",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "label": "PP_PSTE_No71_2019 - Pasal 11",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 102,
+      "title": "Degree/Koneksi Semantik: 23"
+    },
+    {
+      "id": "CASE_incident-auto-17",
+      "label": "incident-auto-17",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_20",
+      "label": "UU_PDP_No27_2022 - Pasal 20",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "CASE_incident-auto-42",
+      "label": "incident-auto-42",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 38,
+      "title": "Degree/Koneksi Semantik: 7"
+    },
+    {
+      "id": "CASE_incident-auto-6",
+      "label": "incident-auto-6",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "CASE_incident-auto-40",
+      "label": "incident-auto-40",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-52",
+      "label": "incident-auto-52",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-90",
+      "label": "incident-auto-90",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-8",
+      "label": "incident-auto-8",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-33",
+      "label": "incident-auto-33",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-86",
+      "label": "incident-auto-86",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-32",
+      "label": "incident-auto-32",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 18,
+      "title": "Degree/Koneksi Semantik: 2"
+    },
+    {
+      "id": "CASE_incident-auto-35",
+      "label": "incident-auto-35",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 38,
+      "title": "Degree/Koneksi Semantik: 7"
+    },
+    {
+      "id": "CASE_incident-auto-2",
+      "label": "incident-auto-2",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 46,
+      "title": "Degree/Koneksi Semantik: 9"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "label": "UU_PDP_No27_2022 - Pasal 54",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 102,
+      "title": "Degree/Koneksi Semantik: 23"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_28",
+      "label": "UU_PDP_No27_2022 - Pasal 28",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "CASE_incident-auto-61",
+      "label": "incident-auto-61",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "CASE_incident-auto-19",
+      "label": "incident-auto-19",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 70,
+      "title": "Degree/Koneksi Semantik: 15"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_51",
+      "label": "UU_PDP_No27_2022 - Pasal 51",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 30,
+      "title": "Degree/Koneksi Semantik: 5"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_18",
+      "label": "UU_PDP_No27_2022 - Pasal 18",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "CASE_incident-auto-10",
+      "label": "incident-auto-10",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 30,
+      "title": "Degree/Koneksi Semantik: 5"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_49",
+      "label": "UU_PDP_No27_2022 - Pasal 49",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "CASE_incident-auto-68",
+      "label": "incident-auto-68",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 38,
+      "title": "Degree/Koneksi Semantik: 7"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_40",
+      "label": "PP_PSTE_No71_2019 - Pasal 40",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "CASE_incident-auto-18",
+      "label": "incident-auto-18",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 42,
+      "title": "Degree/Koneksi Semantik: 8"
+    },
+    {
+      "id": "CASE_tokopedia-leak-2020",
+      "label": "tokopedia-leak-2020",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 34,
+      "title": "Degree/Koneksi Semantik: 6"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_20",
+      "label": "PP_PSTE_No71_2019 - Pasal 20",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 34,
+      "title": "Degree/Koneksi Semantik: 6"
+    },
+    {
+      "id": "CASE_incident-auto-58",
+      "label": "incident-auto-58",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 38,
+      "title": "Degree/Koneksi Semantik: 7"
+    },
+    {
+      "id": "CASE_incident-auto-65",
+      "label": "incident-auto-65",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "CASE_incident-auto-60",
+      "label": "incident-auto-60",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 46,
+      "title": "Degree/Koneksi Semantik: 9"
+    },
+    {
+      "id": "CASE_incident-auto-37",
+      "label": "incident-auto-37",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-84",
+      "label": "incident-auto-84",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 46,
+      "title": "Degree/Koneksi Semantik: 9"
+    },
+    {
+      "id": "CASE_incident-auto-22",
+      "label": "incident-auto-22",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "CASE_incident-auto-11",
+      "label": "incident-auto-11",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "label": "UU_PDP_No27_2022 - Pasal 58",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 98,
+      "title": "Degree/Koneksi Semantik: 22"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "label": "UU_PDP_No27_2022 - Pasal 16",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 98,
+      "title": "Degree/Koneksi Semantik: 22"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_32",
+      "label": "UU_PDP_No27_2022 - Pasal 32",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 42,
+      "title": "Degree/Koneksi Semantik: 8"
+    },
+    {
+      "id": "CASE_incident-auto-73",
+      "label": "incident-auto-73",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-57",
+      "label": "incident-auto-57",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 42,
+      "title": "Degree/Koneksi Semantik: 8"
+    },
+    {
+      "id": "CASE_incident-auto-67",
+      "label": "incident-auto-67",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 42,
+      "title": "Degree/Koneksi Semantik: 8"
+    },
+    {
+      "id": "CASE_incident-auto-13",
+      "label": "incident-auto-13",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 50,
+      "title": "Degree/Koneksi Semantik: 10"
+    },
+    {
+      "id": "CASE_incident-auto-56",
+      "label": "incident-auto-56",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 46,
+      "title": "Degree/Koneksi Semantik: 9"
+    },
+    {
+      "id": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "label": "UU_ITE_No19_2016 - Pasal 27",
+      "group": "UU_ITE_No19_2016",
+      "classification": "Natl: Binding Law",
+      "value": 102,
+      "title": "Degree/Koneksi Semantik: 23"
+    },
+    {
+      "id": "CASE_incident-auto-59",
+      "label": "incident-auto-59",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 18,
+      "title": "Degree/Koneksi Semantik: 2"
+    },
+    {
+      "id": "CASE_incident-auto-78",
+      "label": "incident-auto-78",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 46,
+      "title": "Degree/Koneksi Semantik: 9"
+    },
+    {
+      "id": "CASE_incident-auto-30",
+      "label": "incident-auto-30",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-31",
+      "label": "incident-auto-31",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 26,
+      "title": "Degree/Koneksi Semantik: 4"
+    },
+    {
+      "id": "CASE_incident-auto-94",
+      "label": "incident-auto-94",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-28",
+      "label": "incident-auto-28",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 26,
+      "title": "Degree/Koneksi Semantik: 4"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "label": "UU_PDP_No27_2022 - Pasal 35",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "label": "PP_PSTE_No71_2019 - Pasal 15",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 54,
+      "title": "Degree/Koneksi Semantik: 11"
+    },
+    {
+      "id": "CASE_incident-auto-85",
+      "label": "incident-auto-85",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 26,
+      "title": "Degree/Koneksi Semantik: 4"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "label": "UU_PDP_No27_2022 - Pasal 33",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 42,
+      "title": "Degree/Koneksi Semantik: 8"
+    },
+    {
+      "id": "CASE_incident-auto-14",
+      "label": "incident-auto-14",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 50,
+      "title": "Degree/Koneksi Semantik: 10"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_55",
+      "label": "UU_PDP_No27_2022 - Pasal 55",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "CASE_incident-auto-41",
+      "label": "incident-auto-41",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "label": "PP_PSTE_No71_2019 - Pasal 21",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 86,
+      "title": "Degree/Koneksi Semantik: 19"
+    },
+    {
+      "id": "CASE_incident-auto-20",
+      "label": "incident-auto-20",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 26,
+      "title": "Degree/Koneksi Semantik: 4"
+    },
+    {
+      "id": "CASE_incident-auto-44",
+      "label": "incident-auto-44",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "label": "PP_PSTE_No71_2019 - Pasal 24",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 182,
+      "title": "Degree/Koneksi Semantik: 43"
+    },
+    {
+      "id": "CASE_incident-auto-83",
+      "label": "incident-auto-83",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 46,
+      "title": "Degree/Koneksi Semantik: 9"
+    },
+    {
+      "id": "CASE_incident-auto-66",
+      "label": "incident-auto-66",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "label": "UU_PDP_No27_2022 - Pasal 4",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 34,
+      "title": "Degree/Koneksi Semantik: 6"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "label": "PP_PSTE_No71_2019 - Pasal 14",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 102,
+      "title": "Degree/Koneksi Semantik: 23"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_34",
+      "label": "UU_PDP_No27_2022 - Pasal 34",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 18,
+      "title": "Degree/Koneksi Semantik: 2"
+    },
+    {
+      "id": "CASE_incident-auto-46",
+      "label": "incident-auto-46",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-1",
+      "label": "incident-auto-1",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 46,
+      "title": "Degree/Koneksi Semantik: 9"
+    },
+    {
+      "id": "CASE_incident-auto-45",
+      "label": "incident-auto-45",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 42,
+      "title": "Degree/Koneksi Semantik: 8"
+    },
+    {
+      "id": "CASE_incident-auto-82",
+      "label": "incident-auto-82",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree/Koneksi Semantik: 3"
+    },
+    {
+      "id": "CASE_incident-auto-79",
+      "label": "incident-auto-79",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 38,
+      "title": "Degree/Koneksi Semantik: 7"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "label": "UU_PDP_No27_2022 - Pasal 53",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 102,
+      "title": "Degree/Koneksi Semantik: 23"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_30",
+      "label": "UU_PDP_No27_2022 - Pasal 30",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 34,
+      "title": "Degree/Koneksi Semantik: 6"
+    },
+    {
+      "id": "CASE_incident-auto-72",
+      "label": "incident-auto-72",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 50,
+      "title": "Degree/Koneksi Semantik: 10"
+    }
+  ],
+  "edges": [
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-3",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-8",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-10",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-11",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-20",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-28",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-30",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-31",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-33",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-37",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-40",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-41",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-44",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-46",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-52",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-59",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-62",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-66",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-73",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-82",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-86",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-90",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_11",
+      "to": "CASE_incident-auto-94",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_tokopedia-leak-2020",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-1",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-2",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-13",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-14",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-18",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-35",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-42",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-45",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-53",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-56",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-57",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-58",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-60",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-67",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-68",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-72",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-78",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-79",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-83",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-84",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "to": "CASE_incident-auto-85",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "to": "CASE_incident-auto-2",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "to": "CASE_incident-auto-4",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "to": "CASE_incident-auto-6",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "to": "CASE_incident-auto-10",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "to": "CASE_incident-auto-17",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "to": "CASE_incident-auto-22",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "to": "CASE_incident-auto-32",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "to": "CASE_incident-auto-61",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "to": "CASE_incident-auto-65",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "to": "CASE_incident-auto-67",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_15",
+      "to": "CASE_incident-auto-83",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_20",
+      "to": "CASE_incident-auto-2",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_20",
+      "to": "CASE_incident-auto-10",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_20",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_20",
+      "to": "CASE_incident-auto-32",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_20",
+      "to": "CASE_incident-auto-67",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_20",
+      "to": "CASE_incident-auto-83",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-1",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-2",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-13",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-14",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-35",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-42",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-45",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-53",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-56",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-57",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-58",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-60",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-68",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-72",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-78",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-79",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-83",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "to": "CASE_incident-auto-84",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-1",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-2",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-3",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-8",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-10",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-11",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-13",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-14",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-18",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-20",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-28",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-30",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-31",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-33",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-35",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-37",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-40",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-41",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-42",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-44",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-45",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-46",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-52",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-53",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-56",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-57",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-58",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-60",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-62",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-66",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-67",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-68",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-72",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-73",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-78",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-79",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-82",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-83",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-84",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-86",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-90",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_24",
+      "to": "CASE_incident-auto-94",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_40",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-3",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-8",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-10",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-11",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-20",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-28",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-30",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-31",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-33",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-37",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-40",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-41",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-44",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-46",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-52",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-59",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-62",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-66",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-73",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-82",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-86",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-90",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No19_2016_Pasal_27",
+      "to": "CASE_incident-auto-94",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_28",
+      "to": "CASE_tokopedia-leak-2020",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "to": "CASE_deepfake-pornografi-2024",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "to": "CASE_incident-auto-1",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "to": "CASE_incident-auto-18",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "to": "CASE_incident-auto-60",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "to": "CASE_incident-auto-78",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "to": "CASE_incident-auto-84",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_tokopedia-leak-2020",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-1",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-2",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-13",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-14",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-18",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-35",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-42",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-45",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-53",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-56",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-57",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-58",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-60",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-67",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-68",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-72",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-78",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-79",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-83",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_16",
+      "to": "CASE_incident-auto-84",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_18",
+      "to": "CASE_tokopedia-leak-2020",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_20",
+      "to": "CASE_tokopedia-leak-2020",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_30",
+      "to": "CASE_incident-auto-13",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_30",
+      "to": "CASE_incident-auto-14",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_30",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_30",
+      "to": "CASE_incident-auto-53",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_30",
+      "to": "CASE_incident-auto-56",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_30",
+      "to": "CASE_incident-auto-72",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_32",
+      "to": "CASE_incident-auto-13",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_32",
+      "to": "CASE_incident-auto-14",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_32",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_32",
+      "to": "CASE_incident-auto-45",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_32",
+      "to": "CASE_incident-auto-53",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_32",
+      "to": "CASE_incident-auto-56",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_32",
+      "to": "CASE_incident-auto-57",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_32",
+      "to": "CASE_incident-auto-72",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_incident-auto-1",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_incident-auto-18",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_incident-auto-20",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_incident-auto-28",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_incident-auto-31",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_incident-auto-60",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_incident-auto-78",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_incident-auto-84",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_34",
+      "to": "CASE_tokopedia-leak-2020",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_34",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_49",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_51",
+      "to": "CASE_incident-auto-13",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_51",
+      "to": "CASE_incident-auto-14",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_51",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_51",
+      "to": "CASE_incident-auto-53",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_51",
+      "to": "CASE_incident-auto-72",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_pdns-2024",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-1",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-2",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-13",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-14",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-18",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-35",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-42",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-45",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-53",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-56",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-57",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-58",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-60",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-67",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-68",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-72",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-78",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-79",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-83",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-84",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_53",
+      "to": "CASE_incident-auto-85",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_pdns-2024",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-1",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-2",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-13",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-14",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-18",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-35",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-42",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-45",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-53",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-56",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-57",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-58",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-60",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-67",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-68",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-72",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-78",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-79",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-83",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-84",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
+      "to": "CASE_incident-auto-85",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_55",
+      "to": "CASE_pdns-2024",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-1",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-2",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-13",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-14",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-18",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-19",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-35",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-42",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-45",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-53",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-56",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-57",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-58",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-60",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-67",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-68",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-72",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-78",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-79",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-83",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-84",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "to": "CASE_incident-auto-85",
+      "label": "governs",
+      "arrows": "to"
+    }
+  ]
+}

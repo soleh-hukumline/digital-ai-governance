@@ -1,0 +1,189 @@
+:root {
+  --bg-color: #04040e;
+  --surface-color: rgba(17, 17, 41, 0.4);
+  --border-color: rgba(99, 102, 241, 0.15);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --primary: #6366f1;
+  --primary-glow: #4f46e580;
+  --accent: #f43f5e;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+
+body { 
+    background: radial-gradient(circle at top left, #0e0e29 0%, #04040e 100%);
+    color: var(--text-primary); 
+    min-height: 100vh;
+    overflow: hidden; /* Lock body scrolling to force internal scrolling! */
+}
+
+/* Layout Grid */
+.app-container { display: flex; height: 100vh; }
+.sidebar { 
+    width: 280px; 
+    padding: 2rem; 
+    border-right: 1px solid var(--border-color); 
+    background: rgba(10, 10, 26, 0.8);
+    backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+}
+.brand { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
+.logo-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--primary), #a855f7); border-radius: 12px; color: white; box-shadow: 0 0 20px var(--primary-glow);}
+.brand h1 { font-family: 'Outfit'; font-size: 1.3rem; line-height: 1.2; font-weight: 800; letter-spacing: 0.5px;}
+.brand span { color: var(--primary); font-weight: 600;}
+
+.nav-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem;}
+.nav-item { 
+    display: flex; align-items: center; gap: 1rem; padding: 1rem;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease;
+    font-weight: 500;
+}
+.nav-item:hover { background: rgba(255,255,255,0.03); color: white;}
+.nav-item.active { 
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.15) 0%, transparent 100%);
+    color: #fff;
+    border-left: 3px solid var(--primary);
+}
+
+.main-content { flex: 1; padding: 2rem 3rem; overflow-y: auto; height: 100vh; position: relative;}
+.top-header { margin-bottom: 2rem; }
+.top-header h2 { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1.8rem; margin-bottom: 0.5rem; letter-spacing: -0.5px;}
+.top-header p { color: var(--text-secondary); font-size: 1.05rem;}
+
+/* Cards & Glass */
+.glass { 
+    background: var(--surface-color); 
+    border: 1px solid var(--border-color); 
+    border-radius: var(--radius-lg); 
+    backdrop-filter: blur(12px); 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.card-header { padding: 1.5rem; border-bottom: 1px dashed rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; }
+.card-header h3 { font-family: 'Outfit'; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;}
+.card-header.border-none { border-bottom: none; }
+.card-body { padding: 1.5rem; }
+
+.layout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.span-2 { grid-column: span 2; }
+
+/* FEED FIX (Bulletproof height) */
+.feed-wrapper { padding: 1rem; flex: 1; height: 480px; }
+.feed-list {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.feed-list::-webkit-scrollbar { width: 6px; }
+.feed-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); border-radius: 10px; }
+.feed-list::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.5); border-radius: 10px; }
+.feed-list::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+/* Mynetwork */
+#mynetwork canvas { outline: none; }
+
+/* Legal Incident Cards */
+.legal-incident-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: var(--radius-md); padding: 1.5rem; transition: transform 0.2s;}
+.legal-incident-card:hover { transform: translateY(-2px); border-color: rgba(99, 102, 241, 0.3); background: rgba(99,102,241, 0.05);}
+.legal-header { border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 1rem; margin-bottom: 1rem; }
+.legal-title { font-family: 'Outfit'; font-size: 1.15rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+.legal-kualifikasi { font-size: 0.8rem; background: rgba(244, 63, 94, 0.1); color: #fb7185; padding: 4px 10px; border-radius: 6px; display: inline-block; border: 1px solid rgba(244, 63, 94, 0.2);}
+
+.legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.legal-box { background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary); }
+.legal-box h4 { font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+.legal-box p { font-size: 0.85rem; line-height: 1.5; color: #cbd5e1; }
+.legal-box.akibat { border-left-color: var(--accent); grid-column: span 2; }
+.legal-box.kausalitas { border-left-color: var(--warning); grid-column: span 2; }
+
+/* Markdown Prose Styling */
+.report-card { min-height: 700px; display: flex; flex-direction: column;}
+.report-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap;}
+.report-tab { background: rgba(255,255,255,0.05); border: 1px solid transparent; color: var(--text-secondary); padding: 0.75rem 1.2rem; border-radius: 8px; cursor: pointer; font-size: 0.95rem; font-weight: 500; transition: all 0.2s;}
+.report-tab:hover { background: rgba(255,255,255,0.1); color: #fff;}
+.report-tab.active { background: var(--primary); color: #fff; box-shadow: 0 4px 12px var(--primary-glow); border-color: rgba(255,255,255,0.2);}
+
+.markdown-prose { padding: 1rem 2rem; color: #cbd5e1; font-size: 1.05rem; line-height: 1.8; }
+.markdown-prose h1 { color: #fff; font-family: 'Outfit'; font-size: 2.2rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.markdown-prose h2 { color: #818cf8; font-family: 'Outfit'; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+.markdown-prose h3 { color: #fff; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.8rem; }
+.markdown-prose p { margin-bottom: 1.2rem; }
+.markdown-prose ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+.markdown-prose li { margin-bottom: 0.5rem; }
+.markdown-prose strong { color: #fff; font-weight: 600;}
+.markdown-prose blockquote { border-left: 4px solid var(--accent); background: rgba(244, 63, 94, 0.05); padding: 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; color: #fecdd3; font-style: italic;}
+
+/* Badges */
+.badge { font-size: 0.75rem; padding: 4px 8px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); font-weight: 600;}
+.badge.danger { color: #fca5a5; border-color: rgba(239, 68, 68, 0.5); background: rgba(239, 68, 68, 0.1); }
+
+/* Markdown Table Styling */
+.markdown-prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.markdown-prose th {
+    background: rgba(99, 102, 241, 0.15);
+    color: #fff;
+    font-weight: 600;
+    text-align: left;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 2px solid var(--primary);
+    border-right: 1px solid rgba(255,255,255,0.15);
+    font-family: 'Outfit';
+    letter-spacing: 0.5px;
+}
+.markdown-prose th:last-child {
+    border-right: none;
+}
+.markdown-prose td {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px dashed rgba(255,255,255,0.05);
+    border-right: 1px dashed rgba(255,255,255,0.05);
+    background: rgba(0,0,0,0.2);
+    color: #cbd5e1;
+    vertical-align: top;
+    line-height: 1.6;
+}
+.markdown-prose td:last-child {
+    border-right: none;
+}
+.markdown-prose tr:last-child td {
+    border-bottom: none;
+}
+
+/* Color Coding for Gap Matrix Columns */
+.markdown-prose td:nth-child(1), .markdown-prose th:nth-child(1) {
+    background: rgba(0,0,0,0.3);
+}
+.markdown-prose td:nth-child(2), .markdown-prose th:nth-child(2) {
+    background: rgba(59, 130, 246, 0.1); /* Blueish - Intl */
+}
+.markdown-prose td:nth-child(3), .markdown-prose th:nth-child(3) {
+    background: rgba(16, 185, 129, 0.1); /* Greenish - Natl */
+}
+.markdown-prose td:nth-child(4), .markdown-prose th:nth-child(4) {
+    background: rgba(244, 63, 94, 0.1); /* Pinkish - Gap */
+}
+.markdown-prose th:nth-child(2) { border-top: 3px solid #3b82f6; }
+.markdown-prose th:nth-child(3) { border-top: 3px solid #10b981; }
+.markdown-prose th:nth-child(4) { border-top: 3px solid #f43f5e; }
+
+.markdown-prose tr:hover td {
+    background: rgba(99, 102, 241, 0.05);
+}

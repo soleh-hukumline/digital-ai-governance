@@ -1,0 +1,498 @@
+{
+  "nodes": [
+    {
+      "id": "OECD_AI_Principles_2024_Article_5",
+      "label": "OECD_AI_Principles_2024 - Article 5",
+      "group": "OECD_AI_Principles_2024",
+      "classification": "Intl: Soft Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "OECD_AI_Principles_2024_Section_1",
+      "label": "OECD_AI_Principles_2024 - Section 1",
+      "group": "OECD_AI_Principles_2024",
+      "classification": "Intl: Soft Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "OECD_AI_Principles_2024_Section_2",
+      "label": "OECD_AI_Principles_2024 - Section 2",
+      "group": "OECD_AI_Principles_2024",
+      "classification": "Intl: Soft Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_114",
+      "label": "EU_AI_Act_2024 - Article 114",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_16",
+      "label": "EU_AI_Act_2024 - Article 16",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_2",
+      "label": "EU_AI_Act_2024 - Article 2",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_6",
+      "label": "EU_AI_Act_2024 - Article 6",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_4",
+      "label": "EU_AI_Act_2024 - Article 4",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_3",
+      "label": "EU_AI_Act_2024 - Article 3",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_10",
+      "label": "EU_AI_Act_2024 - Article 10",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_8",
+      "label": "EU_AI_Act_2024 - Article 8",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_9",
+      "label": "EU_AI_Act_2024 - Article 9",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_5",
+      "label": "EU_AI_Act_2024 - Article 5",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_26",
+      "label": "EU_AI_Act_2024 - Article 26",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_24",
+      "label": "EU_AI_Act_2024 - Article 24",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_39",
+      "label": "EU_AI_Act_2024 - Article 39",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_13",
+      "label": "EU_AI_Act_2024 - Article 13",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_54",
+      "label": "EU_AI_Act_2024 - Article 54",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_22",
+      "label": "EU_AI_Act_2024 - Article 22",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_30",
+      "label": "EU_AI_Act_2024 - Article 30",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_33",
+      "label": "EU_AI_Act_2024 - Article 33",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_1",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 1",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_2",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 2",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_3",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 3",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Paragraph_2",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Paragraph 2",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_4",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 4",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_5",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 5",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_6",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 6",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_7",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 7",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_8",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 8",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_9",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 9",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_10",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 10",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_11",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 11",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_12",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 12",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_13",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 13",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_14",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 14",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Paragraph_1",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Paragraph 1",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_15",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 15",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_16",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 16",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_17",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 17",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_18",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 18",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_19",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 19",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_20",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 20",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_21",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 21",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_22",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 22",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_23",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 23",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_25",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 25",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_24",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 24",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_26",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 26",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_27",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 27",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 14,
+      "title": "Degree/Koneksi Semantik: 1"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_28",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 28",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Paragraph_4",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Paragraph 4",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_29",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 29",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_30",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 30",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_31",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 31",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_32",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 32",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_33",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 33",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_34",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 34",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_35",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 35",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_36",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 36",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 10,
+      "title": "Degree/Koneksi Semantik: 0"
+    }
+  ],
+  "edges": [
+    {
+      "from": "EU_AI_Act_2024_Article_114",
+      "to": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_27",
+      "label": "semantic similarity (TF-IDF 14%)",
+      "arrows": "to"
+    },
+    {
+      "from": "EU_AI_Act_2024_Article_30",
+      "to": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Paragraph_2",
+      "label": "semantic similarity (TF-IDF 17%)",
+      "arrows": "to"
+    }
+  ]
+}

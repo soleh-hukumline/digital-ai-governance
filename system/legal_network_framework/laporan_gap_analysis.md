@@ -1,0 +1,19 @@
+# Laporan: Analisis Disparitas (*Gap Analysis*) Transnasional vs Lex Generalis Nasional
+
+Laporan ini mengkonsolidasikan seluruh temuan dari *Master LNA*, *International LNA*, dan *Incident LNA*. Matriks di bawah secara empiris memetakan ketimpangan tata kelola kecerdasan buatan dan implikasinya terhadap kekosongan landasan hukum (*Vacuum of Law*) dalam tataran praksis penegakan hukum di Indonesia.
+
+## 1. Matriks Kesenjangan Regulasi (*Gap Matrix*)
+| Indikator Temuan | Instrumen Internasional (*Lex Specialis / Soft Law*) | Instrumen Nasional (*Lex Generalis*) | Status Kesenjangan Jaringan (*Gap*) |
+| --- | --- | --- | --- |
+| **Fokus Objek Hukum** | Regulasi tertuju pada sistem AI, klasifikasi risiko sistem (*Risk-Based*), dan pelarangan *biometric profiling*. | Terbatas pada yurisprudensi konten ilegal (pencemaran nama baik, asusila, disinformasi) dan kewenangan pemutusan akses. | **Signifikan:** Hukum pidana materiil nasional masih berorientasi pada hilir komputasi (akibat), bukan pada entitas hulu (sistem algoritmik). |
+| **Daya Ikat Normatif (*Binding Effect*)** | Tidak ada kasus yang terkait langsung (menunjukkan terjadinya isolasi yurisdiksional & nihil *Legal Transplantation*). | Mengekang dan menjadi dasar penindakan untuk hampir seluruh kasus (Ransomware, Ekstorsi, Fraud). | **Fatal:** Celah operasional yang sangat krusial; Negara memaksakan hukum siber konvensional akibat ketiadaan adopsi *Soft Law* AI. |
+| **Doktrin Pertanggungjawaban** | Pendekatan berbasis risiko (*Risk-Based Approach*) yang mewajibkan audit sistem, transparansi perancangan algoritmik, dan pelabelan konten (*watermarking*). | Tanggung jawab mutlak (*Strict Liability*) bagi Penyelenggara Sistem Elektronik sebatas pada standardisasi keamanan sistem dari intrusi. | **Tinggi:** Korban eksploitasi AI identitas sintetik (seperti *Deepfake/Voice Cloning*) rentan tidak memperoleh restitusi materiel akibat absennya standar mitigasi AI khusus. |
+
+## 2. Sintesis Diagram Reduksi Data
+Pemetaan *Gap Analysis* di atas mengimplementasikan agregasi relasi simpul untuk mereduksi kompleksitas pasal-pasal menjadi *Super-Node* pada dokumen regulasi yang mungkin dapat dijadikan dasar untuk penanganan kasus-kasus yang terjadi. Hasil analisis ini secara matematis membuktikan bahwa **Klaster Regulasi internasional terisolasi dari tatanan sistem hukum positif di Indonesia**, dan tidak memiliki hubungan kausalitas maupun daya ikat ke realitas yurisdiksi Indonesia. Sebaliknya, di Indonesia hanya regulasi yang bersifat *Lex Generalis* (UU ITE dan UU Perlindungan Data Pribadi) yang dalam simulasi ini dapat digunakan sebagai dasar hukum untuk penanganan kejahatan siber era *Generative AI*.
+
+## 3. Rekomendasi Yuridis
+Disertasi ini menawarkan tiga rekomendasi kebijakan utama bersumber pada perhitungan matematis *Network Analysis*:
+1. **Adopsi Kerangka Lex Specialis AI:** Mengekstraksi prinsip *OECD AI* dan *EU AI Act* (khususnya *Risk-Based Classification*) ke dalam Undang-Undang Pidana Siber atau RUU Artificial Intelligence khusus di Indonesia demi menciptakan harmonisasi transnasional.
+2. **Perluasan Definisi Data Biometrik:** Mendefinisikan ulang *Digital Personality Rights* (Hak atas Suara dan Pola Wajah Sintetis) di dalam UU PDP, agar pelaku replikasi *deepfake* tidak lagi melarikan diri menggunakan kedok rezim Hak Cipta Periklanan.
+3. **Harmonisasi Standar Internasional:** Melembagakan *ASEAN Guide on AI* menjadi regulasi teknis *Binding* yang mewajibkan seluruh pengembang model generatif (*Foundation Model*) untuk menyematkan *Machine-Readable Watermarks* sebelum produk diluncurkan ke masyarakat.
