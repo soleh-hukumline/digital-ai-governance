@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     let masterNodesData = null;
     let masterEdgesData = null;
     let nodesView = null;
@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchMarkdownReport(filename, containerId) {
         const container = document.getElementById(containerId);
         if (!container) return;
-        
+
         try {
             const res = await fetch(`./system/legal_network_framework/${filename}`);
-            if(!res.ok) throw new Error('File MD tidak ditemukan (404)');
+            if (!res.ok) throw new Error('File MD tidak ditemukan (404)');
             const mdText = await res.text();
             container.innerHTML = marked.parse(mdText);
-        } catch(e) {
+        } catch (e) {
             container.innerHTML = `
                 <div style="color:#ef4444; border:1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05); padding:2rem; border-radius:12px;">
                     <h3><span class="material-symbols-rounded" style="vertical-align:bottom;">error</span> Gagal Membaca ${filename}</h3>
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const model of analyzers) {
             // Trigger Markdown Rendering
             fetchMarkdownReport(model.report, `report-${model.id}`);
-            
+
             // Render Graph
             try {
                 const container = document.getElementById(`network-${model.id}`);
@@ -56,16 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const res = await fetch(`./data/network/${model.graph}`);
                 const data = await res.json();
-                
+
                 const nodes = new vis.DataSet(data.nodes.map(n => ({
                     id: n.id,
                     label: n.label,
                     group: n.group,
                     classification: n.classification,
                     value: n.value,
-                    title: `[${n.group}]\n${n.title}` 
+                    title: `[${n.group}]\n${n.title}`
                 })));
-                
+
                 const edges = new vis.DataSet(data.edges.map(e => ({
                     from: e.from,
                     to: e.to,
@@ -77,12 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Extract unique groups and assign palette
                 const uniqueGroups = [...new Set(data.nodes.map(n => n.group))];
                 const palette = [
-                    '#f43f5e', '#ec4899', '#a855f7', '#6366f1', '#3b82f6', 
-                    '#0ea5e9', '#06b6d4', '#14b8a6', '#10b981', '#22c55e', 
-                    '#84cc16', '#eab308', '#f59e0b', '#f97316', '#ef4444', 
+                    '#f43f5e', '#ec4899', '#a855f7', '#6366f1', '#3b82f6',
+                    '#0ea5e9', '#06b6d4', '#14b8a6', '#10b981', '#22c55e',
+                    '#84cc16', '#eab308', '#f59e0b', '#f97316', '#ef4444',
                     '#78716c', '#be123c', '#a21caf', '#6d28d9', '#1d4ed8'
                 ];
-                
+
                 let legendHtml = '';
                 let visGroupsObj = {};
                 uniqueGroups.forEach((groupName, idx) => {
@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                      <span style="color:#e2e8f0;">${groupName}</span>
                                    </div>`;
                 });
-                
+
                 const legendContainer = document.getElementById(`legend-${model.id}`);
-                if(legendContainer) legendContainer.innerHTML = legendHtml;
+                if (legendContainer) legendContainer.innerHTML = legendHtml;
 
                 const netData = { nodes: nodes, edges: edges };
                 const options = {
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         stabilization: { iterations: 100 }
                     }
                 };
-                
+
                 container.innerHTML = '';
                 new vis.Network(container, netData, options);
 
@@ -138,26 +138,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const json = await res.json();
             rawIncidentData = json.incidents;
             renderIncidentCards(rawIncidentData);
-        } catch(e) {
+        } catch (e) {
             document.getElementById('incident-registry-container').innerHTML = '<div style="color:#ef4444; padding:15px;">Gagal memuat raw data incident.</div>';
         }
     }
 
     function renderIncidentCards(incidents) {
         const container = document.getElementById('incident-registry-container');
-        if(!container) return;
+        if (!container) return;
         container.innerHTML = '';
-        
-        if(incidents.length === 0) {
+
+        if (incidents.length === 0) {
             container.innerHTML = '<div style="color:#94a3b8; padding:15px;">Tidak ada insiden yang cocok dengan pencarian.</div>';
             return;
         }
 
         incidents.forEach(inc => {
             let typeBadge = '';
-            if(inc.type === 'ransomware') typeBadge = '<span style="background:rgba(239, 68, 68, 0.2); color:#ef4444; padding:2px 8px; border-radius:4px; font-size:11px;">Ransomware</span>';
-            else if(inc.type === 'data_breach') typeBadge = '<span style="background:rgba(59, 130, 246, 0.2); color:#3b82f6; padding:2px 8px; border-radius:4px; font-size:11px;">Data Breach</span>';
-            else if(['ai_fraud', 'ai_misuse'].includes(inc.type)) typeBadge = '<span style="background:rgba(168, 85, 247, 0.2); color:#a855f7; padding:2px 8px; border-radius:4px; font-size:11px;">AI Ethics/Fraud</span>';
+            if (inc.type === 'ransomware') typeBadge = '<span style="background:rgba(239, 68, 68, 0.2); color:#ef4444; padding:2px 8px; border-radius:4px; font-size:11px;">Ransomware</span>';
+            else if (inc.type === 'data_breach') typeBadge = '<span style="background:rgba(59, 130, 246, 0.2); color:#3b82f6; padding:2px 8px; border-radius:4px; font-size:11px;">Data Breach</span>';
+            else if (['ai_fraud', 'ai_misuse'].includes(inc.type)) typeBadge = '<span style="background:rgba(168, 85, 247, 0.2); color:#a855f7; padding:2px 8px; border-radius:4px; font-size:11px;">AI Ethics/Fraud</span>';
             else typeBadge = '<span style="background:rgba(255, 255, 255, 0.1); color:#fff; padding:2px 8px; border-radius:4px; font-size:11px;">Other</span>';
 
             container.innerHTML += `
@@ -194,29 +194,343 @@ document.addEventListener('DOMContentLoaded', () => {
     // Filter Listeners
     const searchInput = document.getElementById('search-incident');
     const typeSelect = document.getElementById('filter-incident-type');
-    
+
     function applyIncidentFilters() {
-        if(!searchInput) return;
+        if (!searchInput) return;
         const q = searchInput.value.toLowerCase();
         const type = typeSelect.value;
-        
+
         const filtered = rawIncidentData.filter(inc => {
-            const matchSearch = inc.peristiwa_hukum_kronologi.toLowerCase().includes(q) || 
-                                inc.pemetaan_fakta_hukum.subjek_pse.toLowerCase().includes(q) ||
-                                inc.pemetaan_fakta_hukum.objek_hukum.toLowerCase().includes(q) ||
-                                inc.id.toLowerCase().includes(q);
+            const matchSearch = inc.peristiwa_hukum_kronologi.toLowerCase().includes(q) ||
+                inc.pemetaan_fakta_hukum.subjek_pse.toLowerCase().includes(q) ||
+                inc.pemetaan_fakta_hukum.objek_hukum.toLowerCase().includes(q) ||
+                inc.id.toLowerCase().includes(q);
             const matchType = type === 'all' ? true : inc.type === type || (type === 'ai_fraud' && inc.type === 'ai_misuse');
             return matchSearch && matchType;
         });
-        
+
         renderIncidentCards(filtered);
     }
 
-    if(searchInput) searchInput.addEventListener('input', applyIncidentFilters);
-    if(typeSelect) typeSelect.addEventListener('change', applyIncidentFilters);
+    if (searchInput) searchInput.addEventListener('input', applyIncidentFilters);
+    if (typeSelect) typeSelect.addEventListener('change', applyIncidentFilters);
+
+    // --- AI LEGAL SYLLOGISM LOGIC ---
+    let aiNetworkData = null; // Store nodes and edges to query
+    let aiIncidentNodes = [];
+
+    async function initAIFeature() {
+        // Load API Key from LocalStorage
+        const apiKeyInput = document.getElementById('ai-api-key');
+        const saveBtn = document.getElementById('save-api-key');
+        const providerSelect = document.getElementById('ai-provider-select');
+        const modelSelect = document.getElementById('ai-model-select');
+
+        function updateProviderUI() {
+            if(!providerSelect || !apiKeyInput || !modelSelect) return;
+            const prov = providerSelect.value;
+            modelSelect.innerHTML = '<option value="">⚙️ Tekan Simpan untuk Melacak API Model</option>';
+            if (prov === 'groq') {
+                apiKeyInput.placeholder = "Masukkan Groq API Key Anda (gsk_...)";
+                apiKeyInput.value = localStorage.getItem('groq_api_key') || '';
+            } else {
+                apiKeyInput.placeholder = "Masukkan Google Gemini API Key Anda...";
+                apiKeyInput.value = localStorage.getItem('gemini_api_key') || '';
+            }
+        }
+
+        if (providerSelect) {
+            providerSelect.addEventListener('change', updateProviderUI);
+            updateProviderUI(); // init
+        }
+
+        if (saveBtn) {
+            saveBtn.addEventListener('click', async () => {
+                if (apiKeyInput.value.trim() !== '') {
+                    const key = apiKeyInput.value.trim();
+                    const prov = providerSelect.value;
+                    
+                    if (prov === 'groq') {
+                        localStorage.setItem('groq_api_key', key);
+                        saveBtn.innerText = "Melacak Model...";
+                        saveBtn.style.background = "#f59e0b"; // yellow
+                        
+                        try {
+                            const res = await fetch(`https://api.groq.com/openai/v1/models`, {
+                                headers: { 'Authorization': `Bearer ${key}` }
+                            });
+                            const data = await res.json();
+                            if(data.data) {
+                                if(modelSelect) {
+                                    modelSelect.innerHTML = ''; 
+                                    const allowedModels = data.data.filter(m => !m.id.includes('whisper') && !m.id.includes('stub'));
+                                    
+                                    // sort alphabet or versatile first
+                                    allowedModels.sort();
+                                    
+                                    allowedModels.forEach(m => {
+                                        const opt = document.createElement('option');
+                                        opt.value = m.id;
+                                        opt.textContent = m.id;
+                                        if (m.id.includes('versatile') || m.id.includes('70b')) opt.selected = true;
+                                        modelSelect.appendChild(opt);
+                                    });
+                                }
+                                saveBtn.innerText = "Tersambung!";
+                                saveBtn.style.background = "#10b981"; // green
+                            } else {
+                                throw new Error("Invalid format");
+                            }
+                        } catch(e) {
+                             saveBtn.innerText = "API Key Invalid/Lokal";
+                             saveBtn.style.background = "#ef4444"; // red
+                        }
+                        
+                        setTimeout(() => {
+                            saveBtn.innerText = "Simpan Kunci API";
+                            saveBtn.style.background = "#a855f7";
+                        }, 2500);
+                        return;
+                    }
+                    
+                    // Gemini Logic
+                    localStorage.setItem('gemini_api_key', key);
+                    saveBtn.innerText = "Melacak Model...";
+                    saveBtn.style.background = "#f59e0b"; // yellow loading
+                    
+                    try {
+                        const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${key}`);
+                        const data = await res.json();
+                        
+                        if(data.models) {
+                            if(modelSelect) {
+                                modelSelect.innerHTML = ''; // clear hardcoded
+                                let hasPro = false;
+                                data.models.forEach(m => {
+                                    if(m.supportedGenerationMethods && m.supportedGenerationMethods.includes('generateContent')) {
+                                        const opt = document.createElement('option');
+                                        const modelId = m.name.replace('models/', '');
+                                        opt.value = modelId;
+                                        opt.textContent = `${m.displayName || modelId}`;
+                                        
+                                        // Auto-select preference
+                                        if (modelId === 'gemini-1.5-pro-latest') hasPro = true;
+                                        
+                                        modelSelect.appendChild(opt);
+                                    }
+                                });
+                            }
+                            saveBtn.innerText = "Tersambung!";
+                            saveBtn.style.background = "#10b981"; // green success
+                        } else {
+                            throw new Error("Invalid format");
+                        }
+                    } catch(e) {
+                         console.error("Gagal menarik daftar model:", e);
+                         saveBtn.innerText = "Tersimpan (Lokal)";
+                         saveBtn.style.background = "#10b981";
+                    }
+
+                    setTimeout(() => {
+                        saveBtn.innerText = "Simpan Kunci API";
+                        saveBtn.style.background = "#a855f7";
+                    }, 2500);
+                }
+            });
+        }
+
+        // Fetch Master Network Graph for AI RAG Search
+        try {
+            const res = await fetch('./data/network/legal_graph.json');
+            aiNetworkData = await res.json();
+
+            // Extract Incidents to populate Select Dropdown
+            aiIncidentNodes = aiNetworkData.nodes.filter(n => n.group === 'Insiden Kasus');
+            const selectEl = document.getElementById('ai-incident-select');
+
+            if (selectEl) {
+                // sort by year
+                aiIncidentNodes.sort((a, b) => (b.year || 2024) - (a.year || 2024));
+                aiIncidentNodes.forEach(inc => {
+                    const opt = document.createElement('option');
+                    opt.value = inc.id;
+                    opt.textContent = `[${inc.year || ''}] ${inc.label}`;
+                    selectEl.appendChild(opt);
+                });
+
+                selectEl.addEventListener('change', updateAIContextPanel);
+            }
+        } catch (e) {
+            console.error("Gagal memuat graph untuk AI", e);
+        }
+
+        // Analyze Button
+        const analyzeBtn = document.getElementById('btn-analyze-ai');
+        if (analyzeBtn) {
+            analyzeBtn.addEventListener('click', runAISyllogism);
+        }
+    }
+
+    function updateAIContextPanel() {
+        const modelSelect = document.getElementById('ai-model-select');
+        const selectedModel = modelSelect ? modelSelect.value : 'gemini-3.1-pro';
+        const selectEl = document.getElementById('ai-incident-select');
+        const incidentId = selectEl.value;
+        const contextBody = document.getElementById('ai-context-body');
+
+        if (!incidentId) {
+            contextBody.innerHTML = 'Silakan pilih insiden terlebih dahulu untuk melihat kronologi kasus dan interkoneksi pasal-pasalnya.';
+            return;
+        }
+
+        // Get Incident Node (Premis Minor)
+        const incidentNode = aiIncidentNodes.find(n => n.id === incidentId);
+
+        // Get Linked Regulation Nodes (Premis Mayor)
+        const linkedEdges = aiNetworkData.edges.filter(e => (e.from === incidentId || e.to === incidentId));
+        const linkedRegIds = linkedEdges.map(e => e.from === incidentId ? e.to : e.from);
+
+        const regNodes = aiNetworkData.nodes.filter(n => linkedRegIds.includes(n.id) && n.group !== 'Insiden Kasus');
+
+        let html = `<div style="margin-bottom: 20px;">
+            <h5 style="color:#fca5a5; font-family:Outfit; margin-bottom:5px; font-size:1rem;">Fakta Kasus (Premis Minor)</h5>
+            <div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:6px; border-left:3px solid #fca5a5; font-size:0.85rem;">
+                ${incidentNode.content || 'Data teks tidak tersedia.'}
+            </div>
+        </div>`;
+
+        html += `<div>
+            <h5 style="color:#6ee7b7; font-family:Outfit; margin-bottom:5px; font-size:1rem;">Kaitan Pasal (Premis Mayor) - Terdeteksi ${regNodes.length} Hubungan Semantik</h5>`;
+
+        if (regNodes.length === 0) {
+            html += `<p style="font-size:0.85rem; font-style:italic; color:#94a3b8;">Sistem LNA tidak mendeteksi irisan pasal yang di atas threshold TF-IDF untuk insiden ini (Kuat Dugaan: Kekosongan Hukum Absolut).</p>`;
+        } else {
+            regNodes.forEach(reg => {
+                html += `
+                <div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:6px; border-left:3px solid #6ee7b7; font-size:0.85rem; margin-bottom:8px;">
+                    <strong style="color:#94a3b8; display:block; margin-bottom:4px;">${reg.label}</strong>
+                    ${(reg.content || '').substring(0, 300)}... <em>(dipotong)</em>
+                </div>`;
+            });
+        }
+
+        html += `</div>`;
+        contextBody.innerHTML = html;
+
+        // Save to data attributes for AI retrieval
+        contextBody.dataset.incidentText = incidentNode.content;
+        contextBody.dataset.regText = regNodes.map(r => `[${r.label}]: ${r.content}`).join('\n\n');
+    }
+
+    async function runAISyllogism() {
+        const providerSelect = document.getElementById('ai-provider-select');
+        const prov = providerSelect ? providerSelect.value : 'gemini';
+        
+        const apiKey = document.getElementById('ai-api-key').value.trim() || localStorage.getItem(prov === 'groq' ? 'groq_api_key' : 'gemini_api_key');
+        if (!apiKey) {
+            alert(`API Key ${prov.toUpperCase()} belum diisi!`);
+            return;
+        }
+
+        const modelSelect = document.getElementById('ai-model-select');
+        const selectedModel = modelSelect ? modelSelect.value : (prov === 'groq' ? 'llama3-70b-8192' : 'gemini-3.1-pro');
+
+        const selectEl = document.getElementById('ai-incident-select');
+        if (!selectEl.value) {
+            alert("Pilih insiden terlebih dahulu.");
+            return;
+        }
+
+        const contextBody = document.getElementById('ai-context-body');
+        const incidentText = contextBody.dataset.incidentText || '';
+        const regText = contextBody.dataset.regText || '';
+
+        const responseBody = document.getElementById('ai-response-body');
+        responseBody.innerHTML = '<div class="loading">AI sedang menganalisis instrumen hukum dan merajut konklusi...</div>';
+
+        const prompt = `Anda adalah Ahli AI Governance dan Hukum Siber. Lakukan analisis forensik hukum menggunakan teknik SILOGISME HUKUM berdasarkan data LNA (Legal Network Analysis) berikut ini.
+
+Pisahkan jawaban Anda HANYA dalam 3 struktur kaku ini:
+### 1. PREMIS MAYOR (Kaidah Hukum)
+[Uraikan kekuatan pasal-pasal yang ditarik dari jaringan terkait kasus ini]
+
+### 2. PREMIS MINOR (Fakta Insiden)
+[Uraikan pemetaan kronologi insiden yang terjadi]
+
+### 3. KESIMPULAN HUKUM (Pertanggungjawaban & Uji Kekosongan Hukum)
+[Tarik kesimpulan secara kritis layaknya Ahli Hukum Tata Negara / Hakim:
+- Jika tidak ada pasal sama sekali, nyatakan secara eksplisit sebagai **Kekosongan Hukum Absolut**.
+- Jika LNA berhasil menarik peraturan/pasal, **LAKUKAN UJI MATERIIL**. Ujilah apakah pasal-pasal (Premis Mayor) tersebut SECARA EKSPLISIT dan SPESIFIK mampu menjawab/menjerat fakta dari kasus ini (Premis Minor)?
+- Apabila pasal tersebut ternyata terlalu umum, kabur, atau sekadar aturan administratif tanpa sanksi spesifik yang mengikat untuk kasus terkait, beranikan diri untuk mendeklarasikan **Kekosongan Norma (Relative/Normative Vacuum of Law)**.
+- Sebaliknya, apabila pasal tersebut (contoh UU PDP terhadap insiden kebocoran data) benar-benar memadai dan tajam, maka tegaskan instrumen **SUDAH MENCUKUPI** tanpa kekosongan hukum, lalu jelaskan putusannya.]
+
+--- DATA LNA (Graph Context) ---
+[DATA PREMIS MAYOR (Ditarik secara otomatis dari PDF Hukum via Edge TF-IDF)]:
+${regText || 'TIDAK ADA PASAL YANG MEMETAKAN KASUS INI. Terdapat kekosongan hukum secara absolut.'}
+
+[DATA PREMIS MINOR (Ditarik dari Data Insiden Riil)]:
+${incidentText}
+`;
+
+        try {
+            let aiText = "";
+            let res;
+            
+            if (prov === 'groq') {
+                res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: selectedModel,
+                        messages: [
+                            { role: 'system', content: 'Anda adalah Asisten Analis Hukum yang tegas dan lugas.' },
+                            { role: 'user', content: prompt }
+                        ],
+                        temperature: 0.2
+                    })
+                });
+                
+                if (!res.ok) {
+                    const errorData = await res.json();
+                    throw new Error(errorData.error?.message || 'Groq API Error');
+                }
+                const apiData = await res.json();
+                aiText = apiData.choices[0].message.content;
+
+            } else {
+                res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: prompt }] }],
+                        generationConfig: { temperature: 0.2 } // Strict analytical mode
+                    })
+                });
+                
+                if (!res.ok) {
+                    const errorData = await res.json();
+                    throw new Error(errorData.error?.message || 'Gemini API Error');
+                }
+                const apiData = await res.json();
+                aiText = apiData.candidates[0].content.parts[0].text;
+            }
+
+            responseBody.innerHTML = marked.parse(aiText);
+
+        } catch (error) {
+            responseBody.innerHTML = `<div style="color:#ef4444; border:1px solid rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05); padding:1rem; border-radius:8px;">
+                <strong>Gagal mengakses layanan AI:</strong> ${error.message}
+            </div>`;
+        }
+    }
+
 
 
     // INITIAL EXECUTION
     loadAllNetworkGraphs();
     loadIncidentRegistry();
+    initAIFeature();
 });

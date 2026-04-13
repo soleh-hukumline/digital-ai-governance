@@ -80,7 +80,7 @@ def build_deep_network():
         # Build Nodes for each extracted provision
         for provision_title, text in extracted_data.items():
             u_id = f"{doc_name}_{provision_title.replace(' ', '_')}"
-            G.add_node(u_id, label=f"{doc_name} - {provision_title}", group=doc_name, classification=group_name, year=year)
+            G.add_node(u_id, label=f"{doc_name} - {provision_title}", group=doc_name, classification=group_name, year=year, content=text)
             intl_semantic_corpus[u_id] = text
 
     # [EXECUTE KORELASI TF-IDF SEMANTIK UNTUK SELURUH INTERNASIONAL]
@@ -142,7 +142,7 @@ def build_deep_network():
         # Build Nodes
         for provision_title, text in extracted_data.items():
             u_id = f"IDN_{doc_name}_{provision_title.replace(' ', '_')}"
-            G.add_node(u_id, label=f"{doc_name} - {provision_title}", group=doc_name, classification=group_name, year=year)
+            G.add_node(u_id, label=f"{doc_name} - {provision_title}", group=doc_name, classification=group_name, year=year, content=text)
             natl_semantic_corpus[u_id] = text
 
     # [EXECUTE KORELASI TF-IDF SEMANTIK UNTUK SELURUH NASIONAL]
@@ -220,8 +220,10 @@ def build_deep_network():
                 kual = inc.get("kualifikasi_peristiwa", "")
                 
                 full_narrative = f"{krono} {fakta} {kual}"
+                short_krono = krono[:45] + "..." if len(krono) > 45 else krono
+                label_text = f"{inc['id'].upper()} - {short_krono}"
                 u_id = f"CASE_{inc['id']}"
-                G.add_node(u_id, label=inc['id'], group="Insiden Kasus", classification="Insiden Kasus", year=inc.get('year', 2024))
+                G.add_node(u_id, label=label_text, group="Insiden Kasus", classification="Insiden Kasus", year=inc.get('year', 2024), content=full_narrative)
                 incident_semantic_corpus[u_id] = full_narrative
 
     # [EXECUTE KORELASI INCIDENT <-> REGULATION]
@@ -275,7 +277,8 @@ def build_deep_network():
             "group": attrs.get("group", "Unknown"),
             "classification": attrs.get("classification", "Unknown"),
             "value": 10 + (deg * 4), 
-            "title": f"Degree/Koneksi Semantik: {deg}" 
+            "title": f"Degree/Koneksi Semantik: {deg}",
+            "content": attrs.get("content", "")
         })
         
     edges_export = []
