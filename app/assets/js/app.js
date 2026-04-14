@@ -367,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Analyze Button
         const analyzeBtn = document.getElementById('btn-analyze-ai');
         if (analyzeBtn) {
-            analyzeBtn.addEventListener('click', runAISyllogism);
+            analyzeBtn.addEventListener('click', runAIToulmin);
         }
     }
 
@@ -393,17 +393,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const regNodes = aiNetworkData.nodes.filter(n => linkedRegIds.includes(n.id) && n.group !== 'Insiden Kasus');
 
         let html = `<div style="margin-bottom: 20px;">
-            <h5 style="color:#fca5a5; font-family:Outfit; margin-bottom:5px; font-size:1rem;">Fakta Kasus (Premis Minor)</h5>
+            <h5 style="color:#fca5a5; font-family:Outfit; margin-bottom:5px; font-size:1rem;">⬤ <strong>Grounds</strong> — Data Empiris Insiden (Toulmin)</h5>
             <div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:6px; border-left:3px solid #fca5a5; font-size:0.85rem;">
                 ${incidentNode.content || 'Data teks tidak tersedia.'}
             </div>
         </div>`;
 
         html += `<div>
-            <h5 style="color:#6ee7b7; font-family:Outfit; margin-bottom:5px; font-size:1rem;">Kaitan Pasal (Premis Mayor) - Terdeteksi ${regNodes.length} Hubungan Semantik</h5>`;
+            <h5 style="color:#6ee7b7; font-family:Outfit; margin-bottom:5px; font-size:1rem;">⬤ <strong>Warrant</strong> — Kaidah Penghubung: ${regNodes.length} Regulasi Terdeteksi (TF-IDF LNA)</h5>`;
 
         if (regNodes.length === 0) {
-            html += `<p style="font-size:0.85rem; font-style:italic; color:#94a3b8;">Sistem LNA tidak mendeteksi irisan pasal yang di atas threshold TF-IDF untuk insiden ini (Kuat Dugaan: Kekosongan Hukum Absolut).</p>`;
+            html += `<p style="font-size:0.85rem; font-style:italic; color:#94a3b8;">⚠️ Sistem LNA tidak menemukan <em>warrant</em> normatif di atas threshold TF-IDF untuk insiden ini — indikasi kuat <strong>Kekosongan Hukum Absolut (Absolute Vacuum of Law)</strong>.</p>`;
         } else {
             regNodes.forEach(reg => {
                 html += `
@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contextBody.dataset.regText = regNodes.map(r => `[${r.label}]: ${r.content}`).join('\n\n');
     }
 
-    async function runAISyllogism() {
+    async function runAIToulmin() {
         const providerSelect = document.getElementById('ai-provider-select');
         const prov = providerSelect ? providerSelect.value : 'gemini';
         
@@ -433,7 +433,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const modelSelect = document.getElementById('ai-model-select');
-        const selectedModel = modelSelect ? modelSelect.value : (prov === 'groq' ? 'llama3-70b-8192' : 'gemini-3.1-pro');
+        const selectedModel = modelSelect ? modelSelect.value : (prov === 'groq' ? 'llama3-70b-8192' : 'gemini-1.5-flash');
 
         const selectEl = document.getElementById('ai-incident-select');
         if (!selectEl.value) {
@@ -444,32 +444,45 @@ document.addEventListener('DOMContentLoaded', () => {
         const contextBody = document.getElementById('ai-context-body');
         const incidentText = contextBody.dataset.incidentText || '';
         const regText = contextBody.dataset.regText || '';
+        const regCount = contextBody.dataset.regText ? (contextBody.dataset.regText.match(/\[/g) || []).length : 0;
 
         const responseBody = document.getElementById('ai-response-body');
-        responseBody.innerHTML = '<div class="loading">AI sedang menganalisis instrumen hukum dan merajut konklusi...</div>';
+        responseBody.innerHTML = '<div class="loading">AI sedang membangun argumentasi Toulmin dan merajut konklusi hukum...</div>';
 
-        const prompt = `Anda adalah Ahli AI Governance dan Hukum Siber. Lakukan analisis forensik hukum menggunakan teknik SILOGISME HUKUM berdasarkan data LNA (Legal Network Analysis) berikut ini.
+        const prompt = `Anda adalah Ahli AI Governance dan Hukum Siber Indonesia. Lakukan analisis forensik hukum menggunakan **Model Argumentasi Toulmin** berdasarkan data dari Legal Network Analysis (LNA) berikut ini.
 
-Pisahkan jawaban Anda HANYA dalam 3 struktur kaku ini:
-### 1. PREMIS MAYOR (Kaidah Hukum)
-[Uraikan kekuatan pasal-pasal yang ditarik dari jaringan terkait kasus ini]
+Struktur jawaban Anda HARUS mengikuti 6 unsur Toulmin secara ketat dan berurutan:
 
-### 2. PREMIS MINOR (Fakta Insiden)
-[Uraikan pemetaan kronologi insiden yang terjadi]
+---
 
-### 3. KESIMPULAN HUKUM (Pertanggungjawaban & Uji Kekosongan Hukum)
-[Tarik kesimpulan secara kritis layaknya Ahli Hukum Tata Negara / Hakim:
-- Jika tidak ada pasal sama sekali, nyatakan secara eksplisit sebagai **Kekosongan Hukum Absolut**.
-- Jika LNA berhasil menarik peraturan/pasal, **LAKUKAN UJI MATERIIL**. Ujilah apakah pasal-pasal (Premis Mayor) tersebut SECARA EKSPLISIT dan SPESIFIK mampu menjawab/menjerat fakta dari kasus ini (Premis Minor)?
-- Apabila pasal tersebut ternyata terlalu umum, kabur, atau sekadar aturan administratif tanpa sanksi spesifik yang mengikat untuk kasus terkait, beranikan diri untuk mendeklarasikan **Kekosongan Norma (Relative/Normative Vacuum of Law)**.
-- Sebaliknya, apabila pasal tersebut (contoh UU PDP terhadap insiden kebocoran data) benar-benar memadai dan tajam, maka tegaskan instrumen **SUDAH MENCUKUPI** tanpa kekosongan hukum, lalu jelaskan putusannya.]
+### 1. CLAIM (Klaim)
+Rumuskan klaim awal yang akan diuji: apakah terdapat kekosongan hukum (vacuum of law) terkait insiden ini?
 
---- DATA LNA (Graph Context) ---
-[DATA PREMIS MAYOR (Ditarik secara otomatis dari PDF Hukum via Edge TF-IDF)]:
-${regText || 'TIDAK ADA PASAL YANG MEMETAKAN KASUS INI. Terdapat kekosongan hukum secara absolut.'}
+### 2. GROUNDS (Data / Bukti Empiris)
+Uraikan fakta-fakta insiden yang menjadi bukti pendukung klaim. Angkat elemen material: siapa pelaku, siapa korban, apa yang terjadi, apa dampaknya.
 
-[DATA PREMIS MINOR (Ditarik dari Data Insiden Riil)]:
+### 3. WARRANT (Kaidah Penghubung)
+Jelaskan bagaimana pasal-pasal dari instrumen hukum yang terdeteksi oleh sistem LNA dapat (atau gagal) menjembatani fakta insiden dengan klaim kekosongan hukum. Apakah warrant ini cukup kuat, lemah, atau tidak ada?
+
+### 4. BACKING (Dukungan Tambahan)
+Perkuat warrant dengan konteks normatif yang lebih luas: doktrin hukum, standar internasional (OECD AI, EU AI Act), atau preseden yang relevan untuk mendukung / mematahkan klaim.
+
+### 5. QUALIFIER (Tingkat Kepastian)
+Nyatakan seberapa kuat klaim ini: apakah ini **pasti**, **kemungkinan besar**, atau **hanya dugaan**? Jelaskan faktor yang mempengaruhi tingkat kepastian (misalnya: jumlah pasal yang terdeteksi = ${regCount}, kekuatan semantik TF-IDF, cakupan regulasi).
+
+### 6. REBUTTAL & CLAIM FINAL (Bantahan & Kesimpulan)
+Identifikasi kemungkinan bantahan (rebuttal): adakah interpretasi lain, regulasi lain, atau argumen yang bisa mematahkan klaim? Setelah menimbang rebuttal:
+- Jika tidak ada warrant sama sekali → nyatakan **Kekosongan Hukum Absolut (Absolute Vacuum of Law)**.
+- Jika warrant ada tapi terlalu umum/kabur → nyatakan **Kekosongan Norma Relatif (Normative Vacuum)**.
+- Jika warrant kuat dan spesifik → nyatakan **Instrumen SUDAH MENCUKUPI**, lalu jelaskan rekomendasinya.
+
+---
+
+**DATA GROUNDS (Fakta Insiden — ditarik dari dataset empiris):**
 ${incidentText}
+
+**DATA WARRANT (Pasal/Regulasi — ditarik otomatis dari PDF hukum via TF-IDF LNA):**
+${regText || 'TIDAK ADA PASAL YANG MEMETAKAN KASUS INI — indikasi kuat bahwa tidak ada warrant normatif yang berlaku (Absolute Vacuum of Law).'}
 `;
 
         try {

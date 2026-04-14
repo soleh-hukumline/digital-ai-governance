@@ -76,33 +76,33 @@ def analyze_incidents():
     vacuum_rate = (len(vacuum_incidents) / len(incidents) * 100) if incidents else 0
 
     report = []
-    report.append("# Laporan: Pengujian Empiris *Vacuum of Law* (Kekosongan Hukum)\n")
-    report.append("Laporan ini mengukur kohesi struktural dan daya ikat (*binding capacity*) kerangka normatif (nasional maupun internasional) dalam mengakomodasi dan mengadili anatomi material dari insiden keamanan siber berbasis kecerdasan algoritmik di Indonesia.\n")
+    report.append("# Laporan: Pengujian Empiris *Vacuum of Law* — Pendekatan Model Argumentasi Toulmin\n")
+    report.append("Laporan ini mengukur kohesi struktural dan kekuatan *warrant* normatif (nasional maupun internasional) dalam mengakomodasi dan mengadili anatomi material insiden keamanan siber berbasis kecerdasan algoritmik di Indonesia. Analisis ini mengoperasionalisasikan 6 unsur Model Argumentasi Toulmin secara komputasional.\n")
     
-    report.append("## 1. Rasio Kekosongan Hukum (Vacuum Ratio)")
-    report.append(f"- **Total Insiden Dievaluasi:** {len(incidents)} Kasus Material")
-    report.append(f"- **Insiden dengan Kepastian Hukum:** {len(incidents) - len(vacuum_incidents)} Kasus (Sistem hukum berhasil mensubstitusi delik yurisdiksi)")
-    report.append(f"- **Insiden *Vacuum of Law* (Nol Rujukan Normatif):** {len(vacuum_incidents)} Kasus")
+    report.append("## 1. Rasio Kekosongan Hukum — Qualifier Toulmin (Tingkat Kepastian Klaim)")
+    report.append(f"- **Total Insiden Dievaluasi (Grounds):** {len(incidents)} Kasus Material")
+    report.append(f"- **Insiden dengan Warrant Normatif:** {len(incidents) - len(vacuum_incidents)} Kasus (Sistem hukum berhasil menyediakan kaidah penghubung / *warrant* yang memadai)")
+    report.append(f"- **Insiden Tanpa Warrant (Kekosongan Hukum Absolut):** {len(vacuum_incidents)} Kasus")
     if vacuum_incidents:
         vacuum_labels = [G.nodes[i].get('label', i) for i in vacuum_incidents[:10]]
-        report.append(f"  - *Sampel Material Insiden yang Menguntungkan Pelaku:* {', '.join(vacuum_labels)}")
+        report.append(f"  - *Sampel Kasus Tanpa Warrant Normatif:* {', '.join(vacuum_labels)}")
         
-    report.append(f"- **Persentase Kekosongan Hukum (Vacuum Rate):** **{vacuum_rate:.2f}%**\n")
+    report.append(f"- **Qualifier — Tingkat Kepastian Klaim Kekosongan Hukum:** **{vacuum_rate:.2f}%**\n")
     if vacuum_rate > 30:
-        report.append("> *Sintesis:* Persentase kekosongan hukum yang tinggi ini membuktikan bahwa arsitektur hukum Indonesia masih belum dapat menjamin kepastian hukum pada era disrupsi. Kondisi ini menjadikan kejahatan siber era baru (seperti *Algorithmic Social Engineering* maupun *Weaponized Deepfakes*) masih belum terdapat payung hukumnya.\n")
+        report.append("> *Sintesis Toulmin — Claim Final:* Qualifier menunjukkan tingkat kepastian klaim yang **tinggi**. Sistem hukum Indonesia tidak memiliki cukup *warrant* normatif untuk menjamin kepastian hukum pada era disrupsi AI. Kondisi ini menjadikan kejahatan siber era baru (seperti *Algorithmic Social Engineering* maupun *Weaponized Deepfakes*) masih dalam kondisi **Kekosongan Hukum Absolut** yang tidak tertutupi.\n")
     else:
-        report.append("> *Interpretasi:* Keterjangkauan yurisdiksi yang terlihat pada rasio ini sesungguhnya merupakan sebentuk adaptasi normatif semu. Eksperimen pemetaan algoritmik ini menunjukkan bahwa insiden-insiden siber modern hanya dapat dikategorikan memiliki landasan hukum bilamana kita memaksakan perluasan tafsir teoretis atas undang-undang pidana umum eksisting (*lex generalis*). Hal ini membuktikan bahwa regulasi nasional masih membutuhkan bentuk legislasi AI spesifik (*lex specialis*) untuk mengisi kekosongan hukum yang ada.\n")
+        report.append("> *Rebuttal Toulmin:* Meski rasio menunjukkan adanya *warrant* yang ditemukan, ini bukan indikasi bahwa hukum Indonesia sudah memadai. *Warrant* yang terdeteksi umumnya bersifat *lex generalis* (UU ITE, UU PDP) — terlalu umum dan kabur untuk menjangkau kompleksitas kasus AI spesifik. Ini adalah bentuk **Kekosongan Norma Relatif (Normative Vacuum)**: ada aturan, namun tidak tajam secara materiil.\n")
 
     # Siapa perundang-undangan paling rajin mengatur/nangkap?
     sorted_regs = sorted(reg_captures.items(), key=lambda x: x[1], reverse=True)
-    report.append("## 2. Instrumen Hukum yang Paling Banyak Mengatur Kasus")
-    report.append("Identifikasi instrumen hukum positif yang secara empiris mengatur penetapan yurisdiksi pada resolusi kasus-kasus teknologi (*endpoint*):")
+    report.append("## 2. Warrant Mapping — Instrumen Hukum Terkuat (Backing Toulmin)")
+    report.append("Identifikasi *warrant* hukum yang paling kuat secara semantik — instrumen yang paling banyak berhasil menjembatani fakta insiden dengan norma yang berlaku:")
     for idx, (reg_id, count) in enumerate(sorted_regs[:10]):
         label = G.nodes[reg_id].get('label', reg_id)
         grp = G.nodes[reg_id].get('classification', 'Unknown')
-        report.append(f"  {idx+1}. **{label}** [{grp}] (Berhasil mengikat {count} insiden secara kausalitas)")
+        report.append(f"  {idx+1}. **{label}** [{grp}] — Berfungsi sebagai *warrant* untuk {count} insiden")
     
-    report.append("\n## 3. Disorientasi dengan regulasi Transnasional: Analisis Ketergantungan Ekstrateritorial")
+    report.append("\n## 3. Rebuttal Toulmin — Ketergantungan Ekstrateritorial (Analisis Bantahan)")
     # Cek apakah ada insiden yang HANYA bisa ditangkap oleh standar internasional tapi TIDAK oleh UU Nasional
     foreign_dependency_cases = []
     international_saviors = set()
@@ -115,12 +115,12 @@ def analyze_incidents():
                 for r in regs:
                     international_saviors.add(G.nodes[r].get('label', r))
                     
-    report.append(f"Temuan ini menegaskan keberadaan **{len(foreign_dependency_cases)} Kasus** yang tidak ada dasar hukumnya di Indonesia, dan penyelesaiannya mengacu pada doktrin regulasi internasional (*Extraterritorial Dependency*).")
+    report.append(f"*Rebuttal* terhadap klaim kekosongan hukum absolut: terdapat **{len(foreign_dependency_cases)} Kasus** di mana *warrant* yang tersedia hanya berasal dari regulasi internasional, bukan dari hukum nasional Indonesia. Ini membuktikan adanya ketergantungan ekstrateritorial (*Extraterritorial Dependency*) yang justru memperkuat klaim, bukan mematahkannya.")
     if foreign_dependency_cases:
-        report.append(f"- **Klaster Kasus Kegagalan Domestik:** {', '.join(foreign_dependency_cases[:10])}")
-        report.append(f"- **Literatur Asing Penyelamat (Savior Frameworks):** {', '.join(list(international_saviors)[:10])}")
+        report.append(f"- **Kasus Tanpa Warrant Nasional:** {', '.join(foreign_dependency_cases[:10])}")
+        report.append(f"- **Warrant Internasional sebagai Backing:** {', '.join(list(international_saviors)[:10])}")  
         
-    report.append("\n> *Hipotesa:* Hasil analisis ini memvalidasi postulat bahwa Republik Indonesia menghadapi fase 'kekosongan normatif' (vacuum of law), dan tidak memiliki  paradigma hukum AI yang memadai (*Legal AI Lag*). Oleh karena itu, adanya legislasi AI yang mutakhir (*Lex Specialis*) merupakan paradigma yang harus dibangun untuk menjaga kedaulatan rezim siber nasional yang saat ini masih dalam bayang-bayang dominasi kerangka hukum transnasional.")
+    report.append("\n> *Claim Final (Toulmin):* Hasil rebuttal justru memvalidasi postulat bahwa Republik Indonesia menghadapi 'kekosongan normatif' (*vacuum of law*) yang nyata. Tidak hanya tidak memiliki paradigma hukum AI yang memadai (*Legal AI Lag*), tapi regulasi yang ada pun terbukti tidak dapat menjadi *warrant* yang efektif tanpa dukungan legislasi AI *sui generis* sebagai *lex specialis* nasional.")
 
     with open('laporan_khusus_insiden.md', 'w') as f:
         f.write("\n".join(report))
