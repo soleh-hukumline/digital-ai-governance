@@ -1,68 +1,84 @@
 {
   "nodes": [
     {
-      "id": "OECD_AI_Principles_2024",
-      "label": "OECD_AI_Principles_2024",
-      "group": "OECD_AI_Principles_2024",
-      "classification": "Intl: Soft Law",
-      "value": 15,
-      "title": "Agregasi Klaster: Intl: Soft Law"
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "classification": "Intl: Binding Law",
+      "value": 195,
+      "title": "Klaster: Intl: Binding Law"
     },
     {
       "id": "EU_AI_Act_2024",
       "label": "EU_AI_Act_2024",
       "group": "EU_AI_Act_2024",
       "classification": "Intl: Binding Law",
-      "value": 90,
-      "title": "Agregasi Klaster: Intl: Binding Law"
+      "value": 660,
+      "title": "Klaster: Intl: Binding Law"
     },
     {
-      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "classification": "Intl: Binding Law",
-      "value": 195,
-      "title": "Agregasi Klaster: Intl: Binding Law"
+      "id": "OECD_AI_Principles_2024",
+      "label": "OECD_AI_Principles_2024",
+      "group": "OECD_AI_Principles_2024",
+      "classification": "Intl: Soft Law",
+      "value": 20,
+      "title": "Klaster: Intl: Soft Law"
     },
     {
-      "id": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "Stranas_AI_Indonesia_2020-2045_Full",
-      "group": "Stranas_AI_Indonesia_2020-2045_Full",
-      "classification": "Natl: Strategy & Soft Law",
-      "value": 45,
-      "title": "Agregasi Klaster: Natl: Strategy & Soft Law"
+      "id": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "label": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "group": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "classification": "Intl: Soft Law",
+      "value": 10,
+      "title": "Klaster: Intl: Soft Law"
+    },
+    {
+      "id": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "label": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "group": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "classification": "Intl: Sectoral Guidance",
+      "value": 70,
+      "title": "Klaster: Intl: Sectoral Guidance"
     },
     {
       "id": "PP_PSTE_No71_2019",
       "label": "PP_PSTE_No71_2019",
       "group": "PP_PSTE_No71_2019",
       "classification": "Natl: Binding Law",
-      "value": 295,
-      "title": "Agregasi Klaster: Natl: Binding Law"
+      "value": 510,
+      "title": "Klaster: Natl: Binding Law"
     },
     {
       "id": "UU_ITE_No19_2016",
       "label": "UU_ITE_No19_2016",
       "group": "UU_ITE_No19_2016",
       "classification": "Natl: Binding Law",
-      "value": 75,
-      "title": "Agregasi Klaster: Natl: Binding Law"
-    },
-    {
-      "id": "UU_PDP_No27_2022",
-      "label": "UU_PDP_No27_2022",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 360,
-      "title": "Agregasi Klaster: Natl: Binding Law"
+      "value": 95,
+      "title": "Klaster: Natl: Binding Law"
     },
     {
       "id": "UU_ITE_No1_2024",
       "label": "UU_ITE_No1_2024",
       "group": "UU_ITE_No1_2024",
       "classification": "Natl: Binding Law",
-      "value": 100,
-      "title": "Agregasi Klaster: Natl: Binding Law"
+      "value": 150,
+      "title": "Klaster: Natl: Binding Law"
+    },
+    {
+      "id": "UU_PDP_No27_2022",
+      "label": "UU_PDP_No27_2022",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 385,
+      "title": "Klaster: Natl: Binding Law"
+    },
+    {
+      "id": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 65,
+      "title": "Klaster: Natl: Strategy & Soft Law"
     },
     {
       "id": "Insiden Kasus",
@@ -70,78 +86,288 @@
       "group": "Insiden Kasus",
       "classification": "Insiden Kasus",
       "value": 500,
-      "title": "Agregasi Klaster: Insiden Kasus"
+      "title": "Klaster: Insiden Kasus"
     }
   ],
   "edges": [
     {
-      "from": "EU_AI_Act_2024",
-      "to": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "label": "korelasi hukum",
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (49 edge)",
+      "value": 49,
+      "arrows": ""
+    },
+    {
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi (6 edge)",
+      "value": 6,
+      "arrows": ""
+    },
+    {
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi (14 edge)",
+      "value": 14,
+      "arrows": ""
+    },
+    {
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (28 edge)",
+      "value": 28,
+      "arrows": ""
+    },
+    {
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (6 edge)",
+      "value": 6,
+      "arrows": ""
+    },
+    {
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "Insiden Kasus",
+      "label": "korelasi (64 edge)",
+      "value": 64,
+      "arrows": ""
+    },
+    {
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "EU_AI_Act_2024",
+      "label": "korelasi (2 edge)",
       "value": 2,
       "arrows": ""
     },
     {
       "from": "EU_AI_Act_2024",
-      "to": "UU_ITE_No19_2016",
-      "label": "korelasi hukum",
-      "value": 1,
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (234 edge)",
+      "value": 234,
       "arrows": ""
     },
     {
-      "from": "Stranas_AI_Indonesia_2020-2045_Full",
+      "from": "EU_AI_Act_2024",
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi (7 edge)",
+      "value": 7,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
       "to": "UU_ITE_No1_2024",
-      "label": "korelasi hukum",
+      "label": "korelasi (26 edge)",
+      "value": 26,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (89 edge)",
+      "value": 89,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "Insiden Kasus",
+      "label": "korelasi (82 edge)",
+      "value": 82,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (19 edge)",
+      "value": 19,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (2 edge)",
       "value": 2,
       "arrows": ""
     },
     {
-      "from": "Stranas_AI_Indonesia_2020-2045_Full",
+      "from": "OECD_AI_Principles_2024",
       "to": "UU_ITE_No19_2016",
-      "label": "korelasi hukum",
+      "label": "korelasi (3 edge)",
+      "value": 3,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi (3 edge)",
+      "value": 3,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (4 edge)",
+      "value": 4,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (3 edge)",
+      "value": 3,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "Insiden Kasus",
+      "label": "korelasi (1 edge)",
       "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (1 edge)",
+      "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "Insiden Kasus",
+      "label": "korelasi (39 edge)",
+      "value": 39,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (35 edge)",
+      "value": 35,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (20 edge)",
+      "value": 20,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi (4 edge)",
+      "value": 4,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi (6 edge)",
+      "value": 6,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (3 edge)",
+      "value": 3,
       "arrows": ""
     },
     {
       "from": "PP_PSTE_No71_2019",
       "to": "UU_ITE_No19_2016",
-      "label": "korelasi hukum",
-      "value": 54,
+      "label": "korelasi (19 edge)",
+      "value": 19,
       "arrows": ""
     },
     {
       "from": "PP_PSTE_No71_2019",
       "to": "UU_ITE_No1_2024",
-      "label": "korelasi hukum",
-      "value": 205,
+      "label": "korelasi (70 edge)",
+      "value": 70,
       "arrows": ""
     },
     {
       "from": "PP_PSTE_No71_2019",
       "to": "UU_PDP_No27_2022",
-      "label": "korelasi hukum",
-      "value": 79,
+      "label": "korelasi (24 edge)",
+      "value": 24,
       "arrows": ""
     },
     {
       "from": "PP_PSTE_No71_2019",
       "to": "Insiden Kasus",
-      "label": "korelasi hukum",
-      "value": 126,
+      "label": "korelasi (525 edge)",
+      "value": 525,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No19_2016",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi (24 edge)",
+      "value": 24,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No19_2016",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (17 edge)",
+      "value": 17,
       "arrows": ""
     },
     {
       "from": "UU_ITE_No19_2016",
       "to": "Insiden Kasus",
-      "label": "korelasi hukum",
-      "value": 23,
+      "label": "korelasi (253 edge)",
+      "value": 253,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No19_2016",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (1 edge)",
+      "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No1_2024",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (36 edge)",
+      "value": 36,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No1_2024",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (1 edge)",
+      "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No1_2024",
+      "to": "Insiden Kasus",
+      "label": "korelasi (77 edge)",
+      "value": 77,
       "arrows": ""
     },
     {
       "from": "UU_PDP_No27_2022",
       "to": "Insiden Kasus",
-      "label": "korelasi hukum",
-      "value": 131,
+      "label": "korelasi (1002 edge)",
+      "value": 1002,
+      "arrows": ""
+    },
+    {
+      "from": "UU_PDP_No27_2022",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (1 edge)",
+      "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "Stranas_AI_Indonesia_2020-2045_Full",
+      "to": "Insiden Kasus",
+      "label": "korelasi (82 edge)",
+      "value": 82,
       "arrows": ""
     }
   ]

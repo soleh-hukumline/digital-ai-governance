@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Insiden Keamanan Digital & Penyalahgunaan AI Indonesia \u2014 Dataset 100+ Peristiwa",
+    "title": "Insiden Keamanan Digital & Penyalahgunaan AI Indonesia — Dataset 100+ Peristiwa",
     "version": "5.0",
     "last_updated": "2026-04-12",
     "sources": [
@@ -91,7 +91,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-1",
+      "id": "dinkes-tlgagung-2023",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Dinas Kesehatan Tulungagung.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -107,7 +107,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-2",
+      "id": "pn-sidoarjo-2025",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Pengadilan Negeri Sidoarjo.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -123,7 +123,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-3",
+      "id": "pemkot-tlgagung-2025",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Pemkot Tulungagung.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -139,7 +139,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-4",
+      "id": "pn-magetan-2024",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pengadilan Negeri Magetan.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -155,7 +155,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-5",
+      "id": "pemkab-tuban-2022",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi Pemkab Tuban.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -171,7 +171,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-6",
+      "id": "pn-pasuruan-2025",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pengadilan Negeri Pasuruan.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -187,7 +187,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-7",
+      "id": "pemkot-bangkalan-2024",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi Pemkot Bangkalan.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -203,7 +203,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-8",
+      "id": "dindik-yogya-2022",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Dinas Pendidikan Yogyakarta.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -219,7 +219,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-9",
+      "id": "pemkab-blitar-2022",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi Pemkab Blitar.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -235,7 +235,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-10",
+      "id": "pn-yogya-2025",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Pengadilan Negeri Yogyakarta.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -251,7 +251,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-11",
+      "id": "dindik-ponorogo-2022",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Dinas Pendidikan Ponorogo.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -267,7 +267,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-12",
+      "id": "pemkab-blitar-2025",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pemkab Blitar.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -283,7 +283,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-13",
+      "id": "univ-ponorogo-2024",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Universitas Ponorogo.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -299,7 +299,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-14",
+      "id": "bpr-ponorogo-2022",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi BPR Ponorogo.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -315,7 +315,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-15",
+      "id": "bpr-banyuwangi-2022",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi BPR Banyuwangi.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -331,7 +331,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-16",
+      "id": "pemkot-madiun-2023",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pemkot Madiun.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -347,7 +347,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-17",
+      "id": "pn-ngawi-2024",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pengadilan Negeri Ngawi.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -363,7 +363,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-18",
+      "id": "dinkes-pacitan-2022",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Dinas Kesehatan Pacitan.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -379,7 +379,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-19",
+      "id": "pemkot-blitar-2022",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Pemkot Blitar.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -395,7 +395,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-20",
+      "id": "dinkes-sidoarjo-2024",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Dinas Kesehatan Sidoarjo.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -411,7 +411,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-21",
+      "id": "bpr-pasuruan-2023",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi BPR Pasuruan.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -427,7 +427,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-22",
+      "id": "pn-jember-2024",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pengadilan Negeri Jember.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -443,7 +443,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-23",
+      "id": "univ-trenggalek-2022",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi Universitas Trenggalek.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -459,7 +459,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-24",
+      "id": "pemkab-sidoarjo-2022",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pemkab Sidoarjo.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -475,7 +475,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-25",
+      "id": "bumd-sidoarjo-2021",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi BUMD Sidoarjo.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -491,7 +491,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-26",
+      "id": "pemkab-semarang-2025",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pemkab Semarang.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -507,7 +507,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-27",
+      "id": "pemkot-blitar-2023",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi Pemkot Blitar.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -523,7 +523,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-28",
+      "id": "dinkes-pamekasan-2024",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Dinas Kesehatan Pamekasan.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -539,7 +539,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-29",
+      "id": "rsud-probolinggo-2022",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi RSUD Probolinggo.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -555,7 +555,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-30",
+      "id": "dprd-bojongoro-2025",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi DPRD Bojonegoro.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -571,7 +571,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-31",
+      "id": "dinkes-blitar-2024",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Dinas Kesehatan Blitar.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -587,7 +587,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-32",
+      "id": "pn-banyuwangi-2022",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi Pengadilan Negeri Banyuwangi.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -603,7 +603,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-33",
+      "id": "pemkot-lamongan-2021",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Pemkot Lamongan.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -619,7 +619,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-34",
+      "id": "dprd-semarang-2022",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi DPRD Semarang.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -635,7 +635,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-35",
+      "id": "pemkot-pacitan-2021",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Pemkot Pacitan.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -651,7 +651,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-36",
+      "id": "dindik-yogya-2022-2",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi Dinas Pendidikan Yogyakarta.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -667,7 +667,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-37",
+      "id": "dprd-nganjuk-2025",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi DPRD Nganjuk.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -683,7 +683,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-38",
+      "id": "pemkab-jombang-2023",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pemkab Jombang.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -699,7 +699,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-39",
+      "id": "univ-tuban-2023",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Universitas Tuban.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -715,7 +715,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-40",
+      "id": "bumd-bojongoro-2022",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi BUMD Bojonegoro.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -731,7 +731,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-41",
+      "id": "dindik-trenggalek-2021",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Dinas Pendidikan Trenggalek.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -747,7 +747,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-42",
+      "id": "bpr-malang-2023",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi BPR Malang.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -763,7 +763,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-43",
+      "id": "pemkot-trenggalek-2025",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pemkot Trenggalek.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -779,7 +779,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-44",
+      "id": "bumd-pasuruan-2022",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi BUMD Pasuruan.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -795,7 +795,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-45",
+      "id": "univ-lamongan-2022",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Universitas Lamongan.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -811,7 +811,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-46",
+      "id": "univ-sumenep-2022",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Universitas Sumenep.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -827,7 +827,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-47",
+      "id": "bpr-tlgagung-2024",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi BPR Tulungagung.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -843,7 +843,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-48",
+      "id": "dprd-probolinggo-2021",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi DPRD Probolinggo.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -859,7 +859,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-49",
+      "id": "bumd-sumenep-2022",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi BUMD Sumenep.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -875,7 +875,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-50",
+      "id": "bpr-sumenep-2022",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi BPR Sumenep.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -891,7 +891,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-51",
+      "id": "univ-madiun-2022",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi Universitas Madiun.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -907,7 +907,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-52",
+      "id": "univ-ponorogo-2025",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Universitas Ponorogo.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -923,7 +923,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-53",
+      "id": "bumd-ponorogo-2025",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi BUMD Ponorogo.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -939,7 +939,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-54",
+      "id": "dinkes-nganjuk-2022",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Dinas Kesehatan Nganjuk.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -955,7 +955,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-55",
+      "id": "univ-jember-2021",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi Universitas Jember.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -971,7 +971,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-56",
+      "id": "pemkab-banyuwangi-2021",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Pemkab Banyuwangi.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -987,7 +987,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-57",
+      "id": "pemkab-ngawi-2023",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Pemkab Ngawi.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -1003,7 +1003,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-58",
+      "id": "dprd-trenggalek-2022",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi DPRD Trenggalek.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -1019,7 +1019,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-59",
+      "id": "rsud-kediri-2021",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi RSUD Kediri.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -1035,7 +1035,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-60",
+      "id": "dinkes-tuban-2024",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Dinas Kesehatan Tuban.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -1051,7 +1051,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-61",
+      "id": "pn-blitar-2023",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pengadilan Negeri Blitar.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1067,7 +1067,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-62",
+      "id": "bumd-yogya-2022",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi BUMD Yogyakarta.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -1083,7 +1083,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-63",
+      "id": "bumd-bandung-2023",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi BUMD Bandung.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1099,7 +1099,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-64",
+      "id": "pemkot-semarang-2021",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pemkot Semarang.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1115,7 +1115,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-65",
+      "id": "pn-surabaya-2021",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pengadilan Negeri Surabaya.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1131,7 +1131,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-66",
+      "id": "bpr-blitar-2025",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi BPR Blitar.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -1147,7 +1147,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-67",
+      "id": "pn-kediri-2023",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Pengadilan Negeri Kediri.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -1163,7 +1163,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-68",
+      "id": "dprd-jombang-2025",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi DPRD Jombang.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -1179,7 +1179,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-69",
+      "id": "univ-pamekasan-2021",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi Universitas Pamekasan.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1195,7 +1195,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-70",
+      "id": "dindik-yogya-2024",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi Dinas Pendidikan Yogyakarta.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1211,7 +1211,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-71",
+      "id": "pemkot-mojokerto-2022",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pemkot Mojokerto.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1227,7 +1227,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-72",
+      "id": "univ-semarang-2023",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Universitas Semarang.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -1243,7 +1243,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-73",
+      "id": "bumd-tlgagung-2025",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi BUMD Tulungagung.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -1259,7 +1259,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-74",
+      "id": "dindik-surabaya-2025",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Dinas Pendidikan Surabaya.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1275,7 +1275,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-75",
+      "id": "rsud-probolinggo-2022-2",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi RSUD Probolinggo.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1291,7 +1291,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-76",
+      "id": "bumd-tlgagung-2022",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi BUMD Tulungagung.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1307,7 +1307,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-77",
+      "id": "bpr-nganjuk-2022",
       "peristiwa_hukum_kronologi": "Disinformasi publik menggunakan Voice Cloning / Deepfake pejabat daerah yang meminta transfer dana fiktif milik instansi BPR Nganjuk.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1323,7 +1323,7 @@
       "type": "ai_misuse"
     },
     {
-      "id": "incident-auto-78",
+      "id": "dinkes-jombang-2023",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Dinas Kesehatan Jombang.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -1339,7 +1339,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-79",
+      "id": "bumd-bandung-2022",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi BUMD Bandung.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -1355,7 +1355,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-80",
+      "id": "pemkot-ngawi-2024",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Pemkot Ngawi.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1371,7 +1371,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-81",
+      "id": "univ-bangkalan-2025",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Universitas Bangkalan.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1387,7 +1387,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-82",
+      "id": "univ-sumenep-2022-2",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Universitas Sumenep.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -1403,7 +1403,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-83",
+      "id": "pn-jember-2021",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Pengadilan Negeri Jember.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -1419,7 +1419,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-84",
+      "id": "dinkes-blitar-2025",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Dinas Kesehatan Blitar.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -1435,7 +1435,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-85",
+      "id": "dindik-sampang-2022",
       "peristiwa_hukum_kronologi": "Eksfiltrasi database pengguna via SQL Injection dan penjualan data penduduk/pasien di raidforums/breachforums milik instansi Dinas Pendidikan Sampang.",
       "kualifikasi_peristiwa": "Pelanggaran UU Pelindungan Data Pribadi (Kegagalan Pseudo-Anonimisasi)",
       "pemetaan_fakta_hukum": {
@@ -1451,7 +1451,7 @@
       "type": "data_breach"
     },
     {
-      "id": "incident-auto-86",
+      "id": "univ-tuban-2023-2",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Universitas Tuban.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -1467,7 +1467,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-87",
+      "id": "dindik-madiun-2024",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Dinas Pendidikan Madiun.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1483,7 +1483,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-88",
+      "id": "univ-ngawi-2021",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi Universitas Ngawi.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1499,7 +1499,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-89",
+      "id": "bumd-probolinggo-2024",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi BUMD Probolinggo.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1515,7 +1515,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-90",
+      "id": "pemkab-surabaya-2021",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi Pemkab Surabaya.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -1531,7 +1531,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-91",
+      "id": "bumd-tuban-2023",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi BUMD Tuban.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1547,7 +1547,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-92",
+      "id": "bumd-madiun-2025",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi BUMD Madiun.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1563,7 +1563,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-93",
+      "id": "dprd-pamekasan-2023",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi DPRD Pamekasan.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {
@@ -1579,7 +1579,7 @@
       "type": "ai_fraud"
     },
     {
-      "id": "incident-auto-94",
+      "id": "bpr-banyuwangi-2025",
       "peristiwa_hukum_kronologi": "Serangan malware pemeras (ransomware) yang mengenkripsi seluruh server database dan melumpuhkan layanan internal milik instansi BPR Banyuwangi.",
       "kualifikasi_peristiwa": "Tindak Pidana Ekstorsi & Illegal Access (Pasal 27 ayat 4 & Pasal 30 UU ITE)",
       "pemetaan_fakta_hukum": {
@@ -1595,7 +1595,7 @@
       "type": "ransomware"
     },
     {
-      "id": "incident-auto-95",
+      "id": "bpr-banyuwangi-2025-2",
       "peristiwa_hukum_kronologi": "Manipulasi dokumen eKYC menggunakan Identitas Sintetis AI untuk pengajuan pinjaman online memakai NIK masyarakat yang bocor milik instansi BPR Banyuwangi.",
       "kualifikasi_peristiwa": "Tindak Pidana Penipuan Siber Identitas Sintetis (Social Engineering)",
       "pemetaan_fakta_hukum": {

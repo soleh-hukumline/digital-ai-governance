@@ -1,5 +1,96 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ===================================================================
+    // ERROR LOGGER (Debug Tool)
+    // ===================================================================
+    function logErrorToUI(msg, source, lineno, colno, error) {
+        const logger = document.getElementById('debug-logger');
+        const content = document.getElementById('debug-log-content');
+        const toggleBtn = document.getElementById('debug-toggle-btn');
+        
+        if (!logger || !content || !toggleBtn) return;
+        
+        toggleBtn.style.display = 'flex';
+        // Auto show logger on first error
+        if (content.children.length === 0) logger.style.display = 'flex';
+        
+        const errDiv = document.createElement('div');
+        errDiv.style.padding = '8px';
+        errDiv.style.background = 'rgba(244,63,94,0.1)';
+        errDiv.style.borderLeft = '3px solid var(--rose)';
+        errDiv.style.borderRadius = '4px';
+        errDiv.style.wordBreak = 'break-word';
+        
+        const time = new Date().toLocaleTimeString();
+        let stack = error && error.stack ? error.stack : '';
+        // Escape HTML
+        stack = stack.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        const safeMsg = msg ? msg.toString().replace(/</g, '&lt;').replace(/>/g, '&gt;') : 'Unknown Error';
+        
+        errDiv.innerHTML = `
+            <div style="color:var(--text-1); font-weight:600; margin-bottom:4px;">[${time}] ${safeMsg}</div>
+            ${source ? `<div style="color:var(--text-3); font-size:10px;">${source}:${lineno}:${colno}</div>` : ''}
+            ${stack ? `<div style="color:var(--text-4); font-size:10px; margin-top:4px; white-space:pre-wrap;">${stack}</div>` : ''}
+        `;
+        
+        content.prepend(errDiv);
+
+        // Send to backend custom server for AI to read
+        fetch('/api/log', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                message: msg,
+                source: source,
+                lineno: lineno,
+                colno: colno,
+                stack: error?.stack || ''
+            })
+        }).catch(e => console.error("Logger failed to reach backend"));
+    }
+
+    window.addEventListener('error', function(e) {
+        logErrorToUI(e.message, e.filename, e.lineno, e.colno, e.error);
+    });
+
+    window.addEventListener('unhandledrejection', function(e) {
+        logErrorToUI('Unhandled Promise Rejection: ' + (e.reason?.message || e.reason), null, null, null, e.reason);
+    });
+
+    // ===================================================================
+    // TOAST NOTIFICATION (UI Integrated Alert)
+    // ===================================================================
+    window.showToast = function(msg, type='warning') {
+        const container = document.getElementById('toast-container');
+        if (!container) return;
+        const toast = document.createElement('div');
+        const colors = {
+            warning: 'background:rgba(245,158,11,0.9); border:1px solid #f59e0b; color:#fff;',
+            error: 'background:rgba(239,68,68,0.9); border:1px solid #ef4444; color:#fff;',
+            success: 'background:rgba(16,185,129,0.9); border:1px solid #10b981; color:#fff;'
+        };
+        const icons = { warning: 'warning', error: 'error', success: 'check_circle' };
+        
+        toast.style.cssText = `${colors[type]} padding:12px 24px; border-radius:30px; font-size:14px; font-weight:500; display:flex; align-items:center; gap:8px; box-shadow:0 10px 30px rgba(0,0,0,0.3); backdrop-filter:blur(10px); transform:translateY(-20px); opacity:0; transition:all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events:auto;`;
+        toast.innerHTML = `<span class="material-symbols-rounded" style="font-size:20px;">${icons[type] || 'info'}</span> <span>${msg}</span>`;
+        
+        container.appendChild(toast);
+        
+        // Animate In
+        setTimeout(() => {
+            toast.style.transform = 'translateY(0)';
+            toast.style.opacity = '1';
+        }, 10);
+        
+        // Animate Out
+        setTimeout(() => {
+            toast.style.transform = 'translateY(-20px)';
+            toast.style.opacity = '0';
+            setTimeout(() => toast.remove(), 300);
+        }, 3000);
+    };
+
+
     // ========== IMMEDIATE: Hide all section panels before anything renders ==========
     document.querySelectorAll('.section-panel').forEach(p => {
         p.style.display = 'none';
@@ -23,10 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'section-all': { icon: 'hub', title: 'Master Legal Network Analysis', sub: 'Semua jaringan regulasi · International + Nasional + Insiden' },
         'section-intl': { icon: 'public', title: 'Regulasi Internasional', sub: 'EU AI Act · OECD AI Principles · CETS225 · Thematic Cluster' },
         'section-natl': { icon: 'account_balance', title: 'Regulasi Nasional Indonesia', sub: 'UU PDP · UU ITE · PP PSTE · POJK · UU Perdagangan' },
-        'section-cross': { icon: 'sync_alt', title: 'Intl vs Nasional · Asimetri Transplantasi Hukum', sub: 'Pemetaan TF-IDF lintas yurisdiksi · Full/Partial/Pseudo-Adoption' },
+        'section-cross': { icon: 'sync_alt', title: 'Intl vs Nasional · Cross-Jurisdiction', sub: 'Pemetaan Semantic Similarity lintas yurisdiksi · Full/Partial/Low' },
         'section-incident': { icon: 'gavel', title: 'Analisis Kasus Forensik', sub: 'Pemetaan 100+ insiden siber ke regulasi · Structural Holes' },
-        'section-sector': { icon: 'category', title: 'Analisis Kesenjangan Regulasi Per Sektor', sub: '5 Sektor Prioritas · Coverage Score · Rekomendasi Sektoral' },
-        'section-gap': { icon: 'insights', title: 'Konklusi & Rekomendasi: Gap Analysis', sub: 'Warrant Mapping Matrix · Claim Final · Rekomendasi Legislatif' },
+        'section-sector': { icon: 'category', title: 'Analisis Kesenjangan Regulasi Per Sektor', sub: 'Sektor Prioritas · Coverage Score · Pemetaan Regulasi' },
+        'section-gap': { icon: 'insights', title: 'Konklusi: Gap Analysis', sub: 'Konsolidasi Temuan LNA · Coverage per Klaster · Connected Components' },
         'section-database': { icon: 'database_search', title: 'Katalog Data Forensik Insiden Siber', sub: 'Registry 100+ kasus · Searchable · Filter per kategori' },
         'section-ai': { icon: 'smart_toy', title: 'AI Legal Assistant', sub: 'Argumentasi Toulmin + Panduan Praktisi · Gemini · Groq' },
     };
@@ -187,14 +278,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // NETWORK GRAPH RENDERING (All 6 graphs)
     // ===================================================================
     function getEdgeColorFromLabel(label = '', graphId = '') {
-        // Cross-jurisdiction edge color coding by TF-IDF tier
+        // Edge color by similarity tier
         if (graphId === 'cross') {
-            const match = label.match(/TF-IDF\s*([\d.]+)%/i);
+            const match = label.match(/(Identik|Sangat Kuat|Lemah)\s*([\d.]+)%/i) || label.match(/Sim\s*([\d.]+)%/i);
             if (match) {
-                const score = parseFloat(match[1]);
-                if (score >= 30) return { color: '#10b981', highlight: '#10b981', opacity: 0.9 };
-                if (score >= 10) return { color: '#f59e0b', highlight: '#f59e0b', opacity: 0.7 };
-                return { color: '#f43f5e', highlight: '#f43f5e', opacity: 0.5 };
+                // If new tier format: match[1] = tier, match[2] = score
+                // If old Sim format: match[1] = score
+                const tier = match[2] ? match[1] : null;
+                const score = parseFloat(match[2] || match[1]);
+                if (score >= 95) return { color: '#10b981', highlight: '#10b981', opacity: 0.95 };
+                if (score >= 80) return { color: '#f59e0b', highlight: '#f59e0b', opacity: 0.8 };
+                return { color: '#f43f5e', highlight: '#f43f5e', opacity: 0.6 };
             }
         }
         // Thematic intl-intl edge
@@ -353,16 +447,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     nodes: {
                         shape: 'dot',
-                        font: { color: '#ffffff', face: 'Inter', size: 11 },
-                        // FIX: drawThreshold=1 means labels render even when zoomed far out
-                        // Default is 5 — labels vanish on full-graph view because rendered size < 5px
+                        font: { color: '#ffffff', face: 'Inter', size: 12 },
                         scaling: {
                             label: {
                                 enabled: true,
                                 min: 8,
-                                max: 20,
-                                maxVisible: 30,
-                                drawThreshold: 1
+                                max: 48,
+                                maxVisible: 150,  // Allows text to get very large when zooming in closely
+                                drawThreshold: 1  // Renders even when zoomed out
                             }
                         },
                         shadow: { enabled: true, color: 'rgba(0,0,0,0.5)', size: 10, x: 2, y: 2 }
@@ -372,12 +464,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     physics: {
                         forceAtlas2Based: {
-                            gravitationalConstant: -120,
-                            centralGravity: 0.004,
-                            springLength: 160,
-                            springConstant: 0.04,
-                            damping: 0.5,
-                            avoidOverlap: 0.5
+                            gravitationalConstant: -75,  // Tarikan berdekatan agar sangat padat
+                            centralGravity: 0.008,       // Tarik semua klaster ke tengah
+                            springLength: 90,            // Jarak antar node pendek
+                            springConstant: 0.05,
+                            damping: 0.6,
+                            avoidOverlap: 0.2
                         },
                         maxVelocity: 80,
                         minVelocity: 0.5,
@@ -388,14 +480,14 @@ document.addEventListener('DOMContentLoaded', () => {
                             iterations: 400,
                             updateInterval: 20,
                             onlyDynamicEdges: false,
-                            fit: true
+                            fit: false  // Dilarang melakukan auto-fit terlambat karena mengganggu zoom user
                         }
                     },
                     interaction: {
                         hover: true,
                         tooltipDelay: 100,
                         zoomView: true,
-                        zoomSpeed: 0.5,
+                        zoomSpeed: 0.8,
                         dragView: true,
                         navigationButtons: true,   // tombol +/- dan panah untuk zoom & pan
                         keyboard: { enabled: true, speed: { x: 10, y: 10, zoom: 0.02 } }
@@ -405,26 +497,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 container.innerHTML = '';
                 const network = new vis.Network(container, netData, options);
 
-                // Fix zoom: intercept wheel scroll pada container agar vis-network zoom bisa bekerja
-                // (scroll event default ke parent scrollable container bukan ke vis-network)
-                container.addEventListener('wheel', (e) => {
-                    e.stopPropagation();  // jangan bubble ke section-panel scroll
-                }, { passive: false });
+                // (Wheel interceptor removed to allow native vis-network zoom)
 
-                // Store network & graph data for export
-                networkInstances[model.id] = { network, graphData };
+                // Store network & graph data for export and filtering
+                networkInstances[model.id] = { network, graphData, netData };
 
-                // After physics stabilizes, do final fit + populate metrics table
+                // After physics stabilizes, turn off physics to improve performance
                 network.once('stabilizationIterationsDone', () => {
                     network.setOptions({ physics: false });
-                    network.fit({ animation: { duration: 800, easingFunction: 'easeInOutQuad' } });
                     populateMetricsTable(model.id, graphData);
                 });
 
-                // Timeout fallback fit + metrics table
+                // Timeout fallback for metrics table
                 setTimeout(() => {
                     if (networkInstances[model.id]) {
-                        network.fit({ animation: { duration: 600, easingFunction: 'easeInOutQuad' } });
                         populateMetricsTable(model.id, graphData);
                     }
                 }, 5000);
@@ -782,7 +868,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const sector = document.getElementById('cn-sector').value;
         const aiType = document.getElementById('cn-ai-type').value;
         if (!sector) {
-            alert('Silakan pilih sektor industri terlebih dahulu.');
+            showToast('Silakan pilih sektor industri terlebih dahulu.', 'warning');
             return;
         }
 
@@ -806,7 +892,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('cn-panel-2').style.display = 'block';
         document.getElementById('cn-step-1').classList.replace('active', 'done');
         document.getElementById('cn-step-2').classList.add('active');
-        document.querySelectorAll('.step-connector')[0].classList.add('active');
+        document.querySelectorAll('.cn-connector')[0]?.classList.add('active');
 
         // Store for AI use
         resultContainer.dataset.sector = sector;
@@ -831,12 +917,12 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.getItem(prov === 'groq' ? 'groq_api_key' : 'gemini_api_key');
 
         if (!apiKey) {
-            alert('Silakan simpan API Key terlebih dahulu di tab Argumentasi Toulmin.');
+            showToast('Silakan simpan API Key terlebih dahulu di tab Argumentasi Toulmin.', 'warning');
             return;
         }
 
         const modelSelect = document.getElementById('ai-model-select');
-        const selectedModel = modelSelect ? modelSelect.value : (prov === 'groq' ? 'llama3-70b-8192' : 'gemini-1.5-flash');
+        const selectedModel = modelSelect ? modelSelect.value : (prov === 'groq' ? 'llama-3.3-70b-versatile' : 'gemini-1.5-flash');
         const cnAIBtn = document.getElementById('btn-cn-ai');
         const cnAIResponse = document.getElementById('cn-ai-recommendation');
 
@@ -864,7 +950,8 @@ document.addEventListener('DOMContentLoaded', () => {
             automation: 'Otomasi Proses'
         };
 
-        const prompt = `Anda adalah konsultan hukum AI senior yang membantu praktisi di Indonesia mematuhi regulasi yang berlaku.
+        const prompt = `Anda adalah konsultan hukum AI senior yang membantu praktisi di Indonesia mematuhi regulasi yang berlaku. 
+Yang dimaksud "praktisi" dalam konteks ini mencakup kolaborasi DUA PIHAK sekaligus: Praktisi Hukum (Legal/Compliance) dan Praktisi Teknologi (Developer/Engineer) yang selalu berpusat pada keamanan dan hak pengguna.
 
 Klien memiliki profil berikut:
 - **Sektor:** ${sectorNames[sector] || sector}
@@ -877,21 +964,24 @@ ${JSON.parse(rules).map(r => `- [${r.status.toUpperCase()}] ${r.title}: ${r.desc
 Berikan **Panduan Kepatuhan Konkret** dalam format berikut:
 
 ## 🎯 Ringkasan Posisi Kepatuhan
-Jelaskan secara singkat posisi legal klien saat ini: apakah aman, perlu perhatian, atau berisiko tinggi?
+Jelaskan secara singkat posisi legal sistem AI yang sedang dibangun: apakah aman, perlu perhatian, atau berisiko tinggi bagi developer maupun perusahaan?
 
 ## ✅ Tindakan Wajib (Immediate Action Items)
-Daftar konkret 3-5 hal yang HARUS dilakukan segera untuk mematuhi regulasi yang berlaku.
+Daftar 3-5 tindakan konkret dari sisi manajerial/hukum dan arsitektur teknis. 
+**PENTING: Anda WAJIB menyebutkan nama regulasi beserta nomor pasalnya secara eksplisit (sesuai Peta Regulasi LNA di atas) pada setiap poin sebagai landasan argumen Anda.**
 
 ## ⚠️ Area Kelabu (Gap Hukum yang Perlu Diantisipasi)
-Identifikasi 2-3 area di mana regulasi belum ada, dan bagaimana klien harus mempersiapkan diri.
+Identifikasi 2-3 area di mana regulasi spesifik belum ada (kekosongan hukum), dan bagaimana tim legal & developer harus merancang mitigasi.
 
 ## 🛡️ Praktik Terbaik Internasional yang Direkomendasikan
-Berdasarkan OECD AI Principles, EU AI Act, dan CETS225, rekomendasikan 3 praktik yang sebaiknya diadopsi meski belum diwajibkan hukum Indonesia.
+Berdasarkan OECD AI Principles, EU AI Act, dan CETS225, rekomendasikan 3 praktik teknis dan tata kelola yang sebaiknya diadopsi walaupun belum diwajibkan oleh hukum positif Indonesia.
 
 ## 📋 Dokumentasi yang Harus Disiapkan
-Daftar dokumen yang perlu disiapkan untuk tata kelola AI yang baik dan persiapan regulasi yang akan datang.
+Daftar dokumen hukum (mis. klausul consent, DPIA) dan artefak teknis (mis. audit log, bias testing report) yang perlu didokumentasikan.
 
-Gunakan bahasa Indonesia yang jelas dan mudah dipahami praktisi non-hukum.`;
+**INSTRUKSI KRITIS:** 
+- Gunakan bahasa yang dapat dipahami dan ditindaklanjuti secara teknis oleh *developer/engineer* sekaligus sah secara rujukan hukum oleh *tim legal*.
+- Jangan pernah memberikan anjuran "Tindakan Wajib" tanpa menyebutkan secara eksplisit rujukan Aturan/Pasal yang mendasarinya (jika tersedia).`;
 
         try {
             let aiText = '';
@@ -930,9 +1020,19 @@ Gunakan bahasa Indonesia yang jelas dan mudah dipahami praktisi non-hukum.`;
             // Update step 3
             document.getElementById('cn-step-2').classList.replace('active', 'done');
             document.getElementById('cn-step-3').classList.add('active');
-            document.querySelectorAll('.step-connector')[1].classList.add('active');
+            document.querySelectorAll('.cn-connector')[1]?.classList.add('active');
 
         } catch (error) {
+            // Force log caught error to backend so AI can read it
+            fetch('/api/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    message: "CAUGHT runCN_AI: " + error.message,
+                    stack: error.stack || ''
+                })
+            });
+            
             cnAIResponse.innerHTML = `<div style="color:#ef4444; border:1px solid rgba(239,68,68,0.3); background:rgba(239,68,68,0.05); padding:1rem; border-radius:8px;">
                 <strong>Gagal menghubungi AI:</strong> ${error.message}
             </div>`;
@@ -951,7 +1051,7 @@ Gunakan bahasa Indonesia yang jelas dan mudah dipahami praktisi non-hukum.`;
         document.getElementById('cn-step-1').className = 'compliance-step active';
         document.getElementById('cn-step-2').className = 'compliance-step';
         document.getElementById('cn-step-3').className = 'compliance-step';
-        document.querySelectorAll('.step-connector').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.cn-connector').forEach(c => c.classList.remove('active'));
     };
 
     // ===================================================================
@@ -1075,7 +1175,7 @@ Gunakan bahasa Indonesia yang jelas dan mudah dipahami praktisi non-hukum.`;
             <h5 style="color:#6ee7b7; font-family:Outfit; margin-bottom:6px; font-size:0.95rem;">⬤ <strong>Warrant</strong> — Kaidah Penghubung: ${regNodes.length} Regulasi Terdeteksi</h5>`;
 
         if (regNodes.length === 0) {
-            html += `<p style="font-size:0.82rem; font-style:italic; color:#94a3b8;">⚠️ LNA tidak menemukan warrant normatif di atas threshold TF-IDF — indikasi kuat <strong>Kekosongan Hukum Absolut</strong>.</p>`;
+            html += `<p style="font-size:0.82rem; font-style:italic; color:#94a3b8;">⚠️ LNA tidak menemukan warrant normatif di atas threshold similarity — tidak ada regulasi yang secara semantik terkait dengan insiden ini.</p>`;
         } else {
             regNodes.forEach(reg => {
                 html += `<div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:6px; border-left:3px solid #6ee7b7; font-size:0.82rem; margin-bottom:8px; line-height:1.5;">
@@ -1097,12 +1197,12 @@ Gunakan bahasa Indonesia yang jelas dan mudah dipahami praktisi non-hukum.`;
         const apiKey = document.getElementById('ai-api-key').value.trim() ||
             localStorage.getItem(prov === 'groq' ? 'groq_api_key' : 'gemini_api_key');
 
-        if (!apiKey) { alert(`API Key ${prov.toUpperCase()} belum diisi!`); return; }
+        if (!apiKey) { showToast(`API Key ${prov.toUpperCase()} belum diisi!`, 'error'); return; }
 
         const modelSelect = document.getElementById('ai-model-select');
-        const selectedModel = modelSelect?.value || (prov === 'groq' ? 'llama3-70b-8192' : 'gemini-1.5-flash');
+        const selectedModel = modelSelect?.value || (prov === 'groq' ? 'llama-3.3-70b-versatile' : 'gemini-1.5-flash');
         const selectEl = document.getElementById('ai-incident-select');
-        if (!selectEl.value) { alert('Pilih insiden terlebih dahulu.'); return; }
+        if (!selectEl.value) { showToast('Pilih insiden terlebih dahulu.', 'warning'); return; }
 
         const contextBody = document.getElementById('ai-context-body');
         const incidentText = contextBody.dataset.incidentText || '';
@@ -1152,8 +1252,8 @@ Berdasarkan temuan di atas, berikan **3-5 rekomendasi spesifik** yang berbeda da
 **DATA GROUNDS (Fakta Insiden):**
 ${incidentText}
 
-**DATA WARRANT (Pasal terdeteksi LNA — TF-IDF):**
-${regText || 'TIDAK ADA PASAL — Indikasi Kekosongan Hukum Absolut.'}
+**DATA WARRANT (Pasal terdeteksi LNA — Semantic Similarity):**
+${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
 `;
 
         try {
@@ -1189,6 +1289,15 @@ ${regText || 'TIDAK ADA PASAL — Indikasi Kekosongan Hukum Absolut.'}
             }
             responseBody.innerHTML = marked.parse(aiText);
         } catch (error) {
+            // Force log caught error to backend so AI can read it
+            fetch('/api/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    message: "CAUGHT runAIToulmin: " + error.message,
+                    stack: error.stack || ''
+                })
+            });
             responseBody.innerHTML = `<div style="color:#ef4444; border:1px solid rgba(239,68,68,0.3); background:rgba(239,68,68,0.05); padding:1rem; border-radius:8px;">
                 <strong>Gagal mengakses AI:</strong> ${error.message}
             </div>`;
@@ -1196,84 +1305,128 @@ ${regText || 'TIDAK ADA PASAL — Indikasi Kekosongan Hukum Absolut.'}
     }
 
     // ===================================================================
-    // EXPORT: PNG — Snapshot jaringan vis-network
+    // EXPORT & FILTERING (PNG, CSV, Filter Isolated)
     // ===================================================================
+    window.toggleIsolatedNodes = function(graphId) {
+        const inst = networkInstances[graphId];
+        if (!inst) { showToast('Graph belum dirender.', 'warning'); return; }
+        
+        inst.isolatedHidden = !inst.isolatedHidden;
+        const { netData, graphData, network } = inst;
+        
+        let visibleNodeIds = [];
+        
+        if (inst.isolatedHidden) {
+            const connectedSet = new Set();
+            graphData.edges.forEach(e => { connectedSet.add(e.from); connectedSet.add(e.to); });
+            
+            const updates = graphData.nodes.map(n => {
+                const isHidden = !connectedSet.has(n.id);
+                if (!isHidden) visibleNodeIds.push(n.id);
+                return { id: n.id, hidden: isHidden };
+            });
+            netData.nodes.update(updates);
+            showToast('Pasal independen berhasil disembunyikan. Hanya node terhubung yang tampil.', 'success');
+        } else {
+            const updates = graphData.nodes.map(n => {
+                visibleNodeIds.push(n.id);
+                return { id: n.id, hidden: false };
+            });
+            netData.nodes.update(updates);
+            showToast('Semua pasal ditampilkan kembali.', 'success');
+        }
+        
+        // Stabilize and refit the view strictly around the VISIBLE nodes
+        setTimeout(() => {
+            if (visibleNodeIds.length > 0) {
+                network.fit({ nodes: visibleNodeIds, animation: { duration: 800, easingFunction: 'easeInOutQuad' } });
+            } else {
+                network.fit({ animation: { duration: 800, easingFunction: 'easeInOutQuad' } });
+            }
+        }, 100);
+    };
+
     window.exportGraphPNG = function(graphId, filename) {
         const inst = networkInstances[graphId];
-        if (!inst) { alert('Graph belum selesai dirender.'); return; }
+        if (!inst || !inst.network) { showToast('Graph belum selesai dirender.', 'error'); return; }
 
-        const network    = inst.network;
+        showToast('Memproses High-Resolution Export (4K), mohon tunggu...', 'info');
+
+        const network = inst.network;
         const savedScale = network.getScale();
-        const savedPos   = network.getViewPosition();
+        const savedPos = network.getViewPosition();
+        const container = window.document.getElementById(`network-${graphId}`);
 
-        // FIX: Zoom in sebelum capture agar label cukup besar untuk terlihat.
-        // Fit dulu untuk posisi, lalu paksa scale minimum 0.35 agar label tidak hilang.
-        network.fit({ animation: false });
-        const fitScale = network.getScale();
-        // Jika hasil fit terlalu kecil (< 0.3), zoom in sedikit agar label terbaca
-        const exportScale = Math.max(fitScale, 0.25);
-        if (exportScale !== fitScale) {
-            network.moveTo({ scale: exportScale, animation: false });
-        }
+        // Target Pixel Ratio untuk High-Res (contoh: 4x Retina)
+        const targetRatio = 4;
+        const originalRatio = window.devicePixelRatio || 1;
 
-        // FIX: Ganti warna font menjadi gelap sebelum capture (background PNG = putih)
-        // Font putih di atas background putih → invisible. Solusi: dark font saat export.
+        // Trik: Mock global devicePixelRatio agar vis-network me-render buffer kanvas lebih besar
+        Object.defineProperty(window, 'devicePixelRatio', { get: () => targetRatio, configurable: true });
+        
+        // Pancing vis-network untuk meresize canvas internal sesuai DPR 4x
+        network.setSize(container.clientWidth + 'px', container.clientHeight + 'px');
+
+        // Font putih tak akan terlihat di PNG putih, set ke gelap
         network.setOptions({ nodes: { font: { color: '#1e293b' } } });
 
-        // Tunggu 2 frame agar vis-network re-render dengan font baru
-        requestAnimationFrame(() => requestAnimationFrame(() => {
+        // Tentukan apa yang difit secara otomatis
+        let visibleNodeIds = [];
+        if (inst.isolatedHidden) {
+            const connectedSet = new Set();
+            inst.graphData.edges.forEach(e => { connectedSet.add(e.from); connectedSet.add(e.to); });
+            inst.graphData.nodes.forEach(n => { if (connectedSet.has(n.id)) visibleNodeIds.push(n.id); });
+        } else {
+            visibleNodeIds = inst.graphData.nodes.map(n => n.id);
+        }
+
+        // KEMBALIKAN AUTO FIT: karena sekarang topologi padat, auto-fit tidak akan membuat debu
+        if (visibleNodeIds.length > 0) {
+            network.fit({ nodes: visibleNodeIds, animation: false });
+        } else {
+            network.fit({ animation: false });
+        }
+        
+        // Paksa redraw agar buffer layar baru terisi sebelum timer berjalan
+        network.redraw();
+        // Tunggu 3 frame agar resize dan custom font selesai di-render
+        requestAnimationFrame(() => requestAnimationFrame(() => requestAnimationFrame(() => {
             try {
-                const src = network.canvas.frame.canvas;
-                const dpr = network.pixelRatio || window.devicePixelRatio || 1;
-                const sc  = network.body.view.scale;
-                const tx  = network.body.view.translation.x;
-                const ty  = network.body.view.translation.y;
-
-                // Bounding box node dalam pixel canvas
-                const pos = Object.values(network.getPositions());
-                let mnX =  1e9, mnY =  1e9, mxX = -1e9, mxY = -1e9;
-                pos.forEach(p => {
-                    const cx = (p.x * sc + tx) * dpr;
-                    const cy = (p.y * sc + ty) * dpr;
-                    if (cx < mnX) mnX = cx;  if (cy < mnY) mnY = cy;
-                    if (cx > mxX) mxX = cx;  if (cy > mxY) mxY = cy;
-                });
-
-                const pad = 60 * dpr;
-                const sx  = Math.max(0, Math.floor(mnX - pad));
-                const sy  = Math.max(0, Math.floor(mnY - pad));
-                const sw  = Math.min(src.width,  Math.ceil(mxX + pad)) - sx;
-                const sh  = Math.min(src.height, Math.ceil(mxY + pad)) - sy;
-
+                const canvas = network.canvas.frame.canvas;
+                
+                // Gunakan canvas baru sebagai alas (background putih 4K)
                 const out = document.createElement('canvas');
-                out.width  = sw;
-                out.height = sh;
-                const ctx  = out.getContext('2d');
+                out.width = canvas.width;
+                out.height = canvas.height;
+                const ctx = out.getContext('2d');
 
-                // Background PUTIH (seperti VOSViewer)
                 ctx.fillStyle = '#ffffff';
-                ctx.fillRect(0, 0, sw, sh);
+                ctx.fillRect(0, 0, out.width, out.height);
+                ctx.drawImage(canvas, 0, 0);
 
-                // Gambar node+edge dari vis-network canvas
-                ctx.drawImage(src, sx, sy, sw, sh, 0, 0, sw, sh);
-
-                const link    = document.createElement('a');
-                link.download = filename || `LNA_${graphId}_graph.png`;
-                link.href     = out.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.download = filename || `LNA_${graphId}_HighRes.png`;
+                link.href = out.toDataURL('image/png', 1.0);
                 link.click();
+                showToast('Gambar berhasil diunduh.', 'success');
 
-            } catch(e) { alert('Export PNG gagal: ' + e.message); }
+            } catch (e) {
+                showToast('Export PNG gagal: ' + e.message, 'error');
+            }
 
-            // Restore: kembalikan font putih & posisi semula setelah capture
-            setTimeout(() => {
-                network.setOptions({ nodes: { font: { color: '#ffffff' } } });
-                network.moveTo({
-                    scale: savedScale,
-                    position: savedPos,
-                    animation: { duration: 600, easingFunction: 'easeInOutQuad' }
-                });
-            }, 300);
-        }));
+            // --- RESTORE SEPERTI SEMULA ---
+            // Kembalikan rasio layar ke original dan trigger resize lagi
+            Object.defineProperty(window, 'devicePixelRatio', { get: () => originalRatio, configurable: true });
+            network.setSize(container.clientWidth + 'px', container.clientHeight + 'px');
+            
+            // Kembalikan font dan posisi / skala kamera
+            network.setOptions({ nodes: { font: { color: '#ffffff' } } });
+            network.moveTo({
+                scale: savedScale,
+                position: savedPos,
+                animation: { duration: 600, easingFunction: 'easeInOutQuad' }
+            });
+        })));
     };
 
 
@@ -1333,28 +1486,28 @@ ${regText || 'TIDAK ADA PASAL — Indikasi Kekosongan Hukum Absolut.'}
         // Coverage score
         const coverage = ((n - isolated) / Math.max(n, 1) * 100).toFixed(1);
 
-        const fragLabel = Q >= 0.4 ? '🔴 Tinggi — Silo regulasi, legal uncertainty tinggi'
-            : Q >= 0.2 ? '🟡 Sedang — Fragmentasi parsial, gap interpretasi'
+        const fragLabel = Q >= 0.4 ? '🔴 Tinggi — Klaster regulasi beroperasi secara terpisah'
+            : Q >= 0.2 ? '🟡 Sedang — Fragmentasi parsial antar klaster'
                 : '🟢 Rendah — Integrasi klaster relatif baik';
 
-        const densityLabel = density < 0.01 ? '🔴 Sangat Jarang — Bukti structural poverty of law'
-            : density < 0.05 ? '🟡 Jarang — Risiko gap normatif lintas klaster'
+        const densityLabel = density < 0.01 ? '🔴 Sangat Jarang'
+            : density < 0.05 ? '🟡 Jarang'
                 : '🟢 Moderat';
 
-        const isolatedLabel = isolated === 0 ? '✅ Tidak ada kekosongan absolut'
-            : isolated < 5 ? `⚠️ ${isolated} norma terisolasi — perlu integrasi`
-                : `🔴 ${isolated} structural holes — Policy Design Failure terindikasi`;
+        const isolatedLabel = isolated === 0 ? '✅ Tidak ada node terisolasi'
+            : isolated < 5 ? `⚠️ ${isolated} node terisolasi`
+                : `🔴 ${isolated} node terisolasi`;
 
         const rows = [
-            ['Total Node (Regulasi/Insiden)', n, 'Jumlah norma/instrumen yang dipetakan dalam jaringan'],
-            ['Total Relasi (Edges)', m, 'Jumlah koneksi normatif antar pasal/regulasi yang terdeteksi'],
+            ['Total Node (Regulasi/Insiden)', n, 'Jumlah pasal/regulasi/insiden dalam jaringan'],
+            ['Total Relasi (Edges)', m, 'Jumlah koneksi semantik antar node'],
             ['Densitas Jaringan', density.toFixed(5), densityLabel],
-            ['Rata-rata Degree', avgDeg.toFixed(2), avgDeg < 2 ? '⚠️ Rendah — norma kurang terhubung satu sama lain' : '✅ Norma memiliki cukup koneksi'],
-            ['Degree Maksimum', maxDeg, `Node hub terkuat: "${topHub ? (topHub.label || topHub.id) : '-'}" — waspadai lex generalis dominance`],
+            ['Rata-rata Degree', avgDeg.toFixed(2), avgDeg < 2 ? '⚠️ Node rata-rata memiliki sedikit koneksi' : '✅ Node memiliki koneksi yang memadai'],
+            ['Degree Maksimum', maxDeg, `Hub terkuat: "${topHub ? (topHub.label || topHub.id) : '-'}"`],
             ['Node Terisolasi (Degree=0)', isolated, isolatedLabel],
-            ['Coverage Score', coverage + '%', isolated > 0 ? `${isolated} norma tidak terkoneksi — ${coverage}% covered` : '✅ Semua norma terhubung dalam jaringan'],
+            ['Coverage Score', coverage + '%', `${n - isolated}/${n} node terhubung`],
             ['Modularity Score (Q)', Q.toFixed(4), fragLabel],
-            ['Jumlah Klaster Regulasi', Object.keys(comms).length, 'Semakin banyak klaster terisolasi → semakin tinggi risiko legal uncertainty'],
+            ['Jumlah Klaster Regulasi', Object.keys(comms).length, 'Partisi berdasarkan klasifikasi node'],
         ];
 
         const colorClass = (val, metric) => {
@@ -1381,7 +1534,7 @@ ${regText || 'TIDAK ADA PASAL — Indikasi Kekosongan Hukum Absolut.'}
     // ===================================================================
     window.exportGraphCSV = function (graphId, filename) {
         const inst = networkInstances[graphId];
-        if (!inst) { alert('Graph belum dirender. Tunggu sebentar, lalu coba lagi.'); return; }
+        if (!inst) { showToast('Graph belum dirender. Tunggu sebentar, lalu coba lagi.', 'warning'); return; }
         const { graphData } = inst;
         const nodes = graphData.nodes;
         const edges = graphData.edges;

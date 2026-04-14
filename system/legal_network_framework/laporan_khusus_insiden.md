@@ -1,30 +1,53 @@
-# Laporan: Pengujian Empiris *Vacuum of Law* (Kekosongan Hukum)
+# Analisis Insiden — Pemetaan Warrant per Kasus
 
-Laporan ini mengukur kohesi struktural dan daya ikat (*binding capacity*) kerangka normatif (nasional maupun internasional) dalam mengakomodasi dan mengadili anatomi material dari insiden keamanan siber berbasis kecerdasan algoritmik di Indonesia.
+Laporan ini memetakan distribusi warrant normatif (dasar hukum) untuk setiap insiden siber berbasis AI di Indonesia. Seluruh metrik dihitung dari koneksi 'governs' pada graf LNA.
 
-## 1. Rasio Kekosongan Hukum (Vacuum Ratio)
-- **Total Insiden Dievaluasi:** 100 Kasus Material
-- **Insiden dengan Kepastian Hukum:** 55 Kasus (Sistem hukum berhasil mensubstitusi delik yurisdiksi)
-- **Insiden *Vacuum of Law* (Nol Rujukan Normatif):** 45 Kasus
-  - *Sampel Material Insiden yang Menguntungkan Pelaku:* bsi-ransomware-2023, bkn-pdl-2024, incident-auto-5, incident-auto-7, incident-auto-9, incident-auto-12, incident-auto-15, incident-auto-16, incident-auto-21, incident-auto-23
-- **Persentase Kekosongan Hukum (Vacuum Rate):** **45.00%**
+## 1. Distribusi Warrant per Insiden
+| Kategori | Jumlah | Persentase |
+| --- | --- | --- |
+| Tanpa warrant (degree=0) | 0 | 0.0% |
+| Warrant nasional saja | 34 | 34.0% |
+| Warrant internasional saja | 1 | 1.0% |
+| Warrant ganda (Natl + Intl) | 65 | 65.0% |
+| **Total Insiden** | **100** | **100%** |
 
-> *Sintesis:* Persentase kekosongan hukum yang tinggi ini membuktikan bahwa arsitektur hukum Indonesia masih belum dapat menjamin kepastian hukum pada era disrupsi. Kondisi ini menjadikan kejahatan siber era baru (seperti *Algorithmic Social Engineering* maupun *Weaponized Deepfakes*) masih belum terdapat payung hukumnya.
+## 2. Regulasi yang Paling Sering Menjadi Warrant
+| Peringkat | Regulasi | Klasifikasi | Jumlah Insiden |
+| --- | --- | --- | --- |
+| 1 | UU_PDP_No27_2022 - Pasal 46 | Natl: Binding Law | 93 |
+| 2 | PP_PSTE_No71_2019 - Pasal 94 | Natl: Binding Law | 92 |
+| 3 | UU_ITE_No19_2016 - Pasal 45 | Natl: Binding Law | 85 |
+| 4 | UU_PDP_No27_2022 - Pasal 38 | Natl: Binding Law | 81 |
+| 5 | UU_PDP_No27_2022 - Pasal 36 | Natl: Binding Law | 74 |
+| 6 | UU_PDP_No27_2022 - Pasal 14 | Natl: Binding Law | 70 |
+| 7 | PP_PSTE_No71_2019 - Pasal 97 | Natl: Binding Law | 67 |
+| 8 | UU_PDP_No27_2022 - Pasal 39 | Natl: Binding Law | 63 |
+| 9 | Stranas_AI_Indonesia_2020-2045_Full - Pasal 56 | Natl: Strategy & Soft Law | 62 |
+| 10 | PP_PSTE_No71_2019 - Pasal 17 | Natl: Binding Law | 59 |
+| 11 | UU_PDP_No27_2022 - Pasal 53 | Natl: Binding Law | 59 |
+| 12 | UU_ITE_No19_2016 - Pasal 458 | Natl: Binding Law | 58 |
+| 13 | PP_PSTE_No71_2019 - Pasal 14 | Natl: Binding Law | 55 |
+| 14 | UU_PDP_No27_2022 - Pasal 35 | Natl: Binding Law | 54 |
+| 15 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 11 | Intl: Binding Law | 53 |
 
-## 2. Instrumen Hukum yang Paling Banyak Mengatur Kasus
-Identifikasi instrumen hukum positif yang secara empiris mengatur penetapan yurisdiksi pada resolusi kasus-kasus teknologi (*endpoint*):
-  1. **PP_PSTE_No71_2019 - Pasal 24** [Natl: Binding Law] (Berhasil mengikat 43 insiden secara kausalitas)
-  2. **PP_PSTE_No71_2019 - Pasal 11** [Natl: Binding Law] (Berhasil mengikat 23 insiden secara kausalitas)
-  3. **PP_PSTE_No71_2019 - Pasal 14** [Natl: Binding Law] (Berhasil mengikat 23 insiden secara kausalitas)
-  4. **UU_ITE_No19_2016 - Pasal 27** [Natl: Binding Law] (Berhasil mengikat 23 insiden secara kausalitas)
-  5. **UU_PDP_No27_2022 - Pasal 53** [Natl: Binding Law] (Berhasil mengikat 23 insiden secara kausalitas)
-  6. **UU_PDP_No27_2022 - Pasal 54** [Natl: Binding Law] (Berhasil mengikat 23 insiden secara kausalitas)
-  7. **UU_PDP_No27_2022 - Pasal 16** [Natl: Binding Law] (Berhasil mengikat 22 insiden secara kausalitas)
-  8. **UU_PDP_No27_2022 - Pasal 58** [Natl: Binding Law] (Berhasil mengikat 22 insiden secara kausalitas)
-  9. **PP_PSTE_No71_2019 - Pasal 21** [Natl: Binding Law] (Berhasil mengikat 19 insiden secara kausalitas)
-  10. **PP_PSTE_No71_2019 - Pasal 15** [Natl: Binding Law] (Berhasil mengikat 11 insiden secara kausalitas)
+## 3. Insiden Tanpa Warrant (Structural Holes)
+Total: **0** insiden tanpa koneksi ke regulasi apapun.
 
-## 3. Disorientasi dengan regulasi Transnasional: Analisis Ketergantungan Ekstrateritorial
-Temuan ini menegaskan keberadaan **0 Kasus** yang tidak ada dasar hukumnya di Indonesia, dan penyelesaiannya mengacu pada doktrin regulasi internasional (*Extraterritorial Dependency*).
+*Semua insiden memiliki setidaknya satu warrant semantik.*
 
-> *Hipotesa:* Hasil analisis ini memvalidasi postulat bahwa Republik Indonesia menghadapi fase 'kekosongan normatif' (vacuum of law), dan tidak memiliki  paradigma hukum AI yang memadai (*Legal AI Lag*). Oleh karena itu, adanya legislasi AI yang mutakhir (*Lex Specialis*) merupakan paradigma yang harus dibangun untuk menjaga kedaulatan rezim siber nasional yang saat ini masih dalam bayang-bayang dominasi kerangka hukum transnasional.
+## 4. Insiden dengan Warrant Terbanyak
+| Peringkat | Insiden | Jumlah Warrant | Klasifikasi Warrant |
+| --- | --- | --- | --- |
+| 1 | BKN-PDL-2024 - Insiden kebocoran struktur hierarki negara di... | 56 | Natl, Intl |
+| 2 | DPRD-TRENGGALEK-2022 - Eksfiltrasi database pengguna via SQL Injecti... | 47 | Natl, Intl |
+| 3 | DINDIK-SAMPANG-2022 - Eksfiltrasi database pengguna via SQL Injecti... | 47 | Natl, Intl |
+| 4 | PN-SIDOARJO-2025 - Eksfiltrasi database pengguna via SQL Injecti... | 42 | Natl, Intl |
+| 5 | PN-KEDIRI-2023 - Eksfiltrasi database pengguna via SQL Injecti... | 42 | Natl, Intl |
+| 6 | PN-JEMBER-2021 - Eksfiltrasi database pengguna via SQL Injecti... | 38 | Natl, Intl |
+| 7 | DPRD-PAMEKASAN-2023 - Manipulasi dokumen eKYC menggunakan Identitas... | 38 | Natl, Intl |
+| 8 | DPRD-JOMBANG-2025 - Eksfiltrasi database pengguna via SQL Injecti... | 36 | Natl, Intl |
+| 9 | DINKES-JOMBANG-2023 - Eksfiltrasi database pengguna via SQL Injecti... | 34 | Natl, Intl |
+| 10 | DINKES-TLGAGUNG-2023 - Eksfiltrasi database pengguna via SQL Injecti... | 33 | Natl, Intl |
+
+---
+*Laporan dihasilkan dari analisis 'governs' edges pada graf LNA. Metrik dihitung dari data graf aktual tanpa interpretasi manual.*

@@ -1,1 +1,5 @@
-networkx==3.1
+PyPDF2
+networkx
+scikit-learn
+sentence-transformers
+numpy

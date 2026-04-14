@@ -3,72 +3,137 @@ import networkx as nx
 
 def analyze_network():
     G = nx.Graph()
-    
     try:
         with open('../../data/network/legal_graph.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
-            
-        # Reconstruct graph from JSON
         for node in data['nodes']:
-            G.add_node(node['id'], group=node['group'], label=node['label'])
+            G.add_node(node['id'], group=node['group'], label=node['label'],
+                       classification=node.get('classification', ''))
         for edge in data['edges']:
             G.add_edge(edge['from'], edge['to'], type=edge.get('label', 'link'))
-            
     except Exception as e:
         print(f"Error reading graph JSON: {e}")
         return
 
     report = []
-    report.append("# Laporan Hasil Analisis Jaringan Hukum (Legal Network Analysis)\n")
-    report.append("Berdasarkan metodologi dari *Maastricht Law Tech*, berikut adalah hasil ekstraksi topologi spasial-hukum tata kelola digital di Indonesia:\n")
-    
+    report.append("# Laporan Master Legal Network Analysis (LNA)\n")
+    report.append(
+        "Laporan ini dihasilkan secara otomatis menggunakan **Legal Network Analysis (LNA)** "
+        "berbasis multilingual sentence embeddings (paraphrase-multilingual-MiniLM-L12-v2) "
+        "dan NetworkX. Seluruh metrik dihitung langsung dari topologi graf.\n"
+    )
+
     # 1. Macro Metrics
     density = nx.density(G)
     num_nodes = G.number_of_nodes()
     num_edges = G.number_of_edges()
-    
+
+    # Classify nodes
+    intl_nodes = [n for n, d in G.nodes(data=True) if str(d.get('classification','')).startswith('Intl')]
+    natl_nodes = [n for n, d in G.nodes(data=True) if str(d.get('classification','')).startswith('Natl')]
+    incident_nodes = [n for n, d in G.nodes(data=True) if d.get('group') == 'Insiden Kasus']
+
+    connected_incidents = len([n for n in incident_nodes if G.degree(n) > 0])
+    incident_coverage = connected_incidents / max(len(incident_nodes), 1) * 100
+
     report.append("## 1. Topologi Jaringan Makro")
-    report.append(f"- **Total Simpul (Nodes):** {num_nodes} (Regulasi Global, Regulasi Nasional, Insiden Siber)")
-    report.append(f"- **Total Relasi (Edges):** {num_edges}")
-    report.append(f"- **Densitas (Network Density):** {density:.4f}")
-    report.append("  > *Interpretasi:* Nilai densitas (kepadatan jaringan) yang amat rendah menandakan tingginya beban atau sentralisasi pada segelintir landasan hukum eksisting yang bersifat umum (*lex generalis*). Dalam praktiknya, penanganan insiden saat ini sangat bergantung pada **Pasal 40 UU ITE No. 1/2024** (tentang kewenangan pemerintah melakukan pemutusan akses konten) serta **Pasal 14 dan Pasal 24 PP PSTE No. 71/2019** (tentang kewajiban mutlak Penyelenggara Sistem Elektronik untuk memutus dan mencegah penyebaran informasi terlarang). Mekanisme ini bertumpu pada pendekatan reaktif pasca-terjadinya insiden, yakni semata-mata pada kontrol peredaran konten.\\n>\\n> Keadaan tersebut memperlihatkan adanya kesenjangan bila dibandingkan dengan kerangka regulasi global saat ini, seperti **Pasal 5 pada EU AI Act**. Regulasi Eropa tersebut telah menggunakan pendekatan preventif (pencegahan) dengan langkah melarang secara tegas praktik pengembangan sistem AI yang dapat memanipulasi kesadaran kognitif manusia (*subliminal manipulation*). Kekosongan norma yang memiliki paradigma pencegahan sejak tahap desain (risk-based approach) seperti ini dalam arsitektur hukum Indonesia menjadi alasan mengapa rujukan norma lintas sektor untuk tata kelola AI belum terbangun secara ideal dan sistematis.\n")
+    report.append(f"| Metrik | Nilai |")
+    report.append(f"| --- | --- |")
+    report.append(f"| **Total Node** | {num_nodes} |")
+    report.append(f"| **Node Internasional** | {len(intl_nodes)} |")
+    report.append(f"| **Node Nasional** | {len(natl_nodes)} |")
+    report.append(f"| **Node Insiden** | {len(incident_nodes)} |")
+    report.append(f"| **Total Edge** | {num_edges} |")
+    report.append(f"| **Densitas Jaringan** | {density:.5f} |")
+    report.append(f"| **Insiden Terhubung ke ≥1 Regulasi** | {connected_incidents}/{len(incident_nodes)} ({incident_coverage:.1f}%) |\n")
 
-    # 2. Sentralitas Derajat (Degree Centrality)
-    degree_dict = nx.degree_centrality(G)       
-    sorted_degree = sorted(degree_dict.items(), key=lambda item: item[1], reverse=True)
-    
-    report.append("## 2. Hub Regulasi (Degree Centrality)")
-    report.append("Simpul dengan sentralitas tertinggi bertindak sebagai penyalur utama yurisdiksi atas perkara (sebagai *lex generalis* dominan).")
-    for idx, (node_id, score) in enumerate(sorted_degree[:5]):
+    # 2. Hub Regulasi
+    degree_dict = nx.degree_centrality(G)
+    sorted_degree = sorted(degree_dict.items(), key=lambda x: x[1], reverse=True)
+
+    report.append("## 2. Degree Centrality — Top 10")
+    report.append("| Peringkat | Node | Klasifikasi | Skor |")
+    report.append("| --- | --- | --- | --- |")
+    for idx, (node_id, score) in enumerate(sorted_degree[:10]):
         label = G.nodes[node_id].get('label', node_id)
-        report.append(f"  {idx+1}. **{label}** (Skor: {score:.4f})")
-    report.append("\n  > *Interpretasi:* Kedudukan sentral pada regulasi ini mengindikasikan fungsinya sebagai instrumen hukum yang paling sering dirujuk dalam penanganan kasus. Insiden siber terkait AI umumnya diproses dalam yurisdiksi perundang-undangan ini akibat tidak adanya instrumen lex specialis AI yang spesifik.\n")
+        cls = G.nodes[node_id].get('classification', '')
+        report.append(f"| {idx+1} | {label} | {cls} | {score:.4f} |")
+    report.append("")
 
-    # 3. Keterantaraan (Betweenness Centrality)
+    # 3. Betweenness
     betweenness_dict = nx.betweenness_centrality(G)
-    sorted_between = sorted(betweenness_dict.items(), key=lambda item: item[1], reverse=True)
-    
-    report.append("## 3. Penjembatan Hukum (Betweenness Centrality)")
-    report.append("Titik dengan keterantaraan tertinggi merupakan mediator integratif antara pembingkaian regulasi makro dan penegakan kasus di tingkat mikro.")
-    for idx, (node_id, score) in enumerate(sorted_between[:3]):
+    sorted_between = sorted(betweenness_dict.items(), key=lambda x: x[1], reverse=True)
+
+    report.append("## 3. Betweenness Centrality — Top 10")
+    report.append("| Peringkat | Node | Klasifikasi | Skor |")
+    report.append("| --- | --- | --- | --- |")
+    for idx, (node_id, score) in enumerate(sorted_between[:10]):
         label = G.nodes[node_id].get('label', node_id)
-        report.append(f"  {idx+1}. **{label}** (Skor: {score:.4f})")
-    report.append("\n  > *Interpretasi:* Instrumen regulasi ini merupakan regulasi yang paling sering menjadi perantara dalam penanganan kasus. Amandemen terhadap substansi regulasi ini berpotensi mengubah lanskap kepastian hukum pada sebagian besar resolusi insiden nasional.\n")
+        cls = G.nodes[node_id].get('classification', '')
+        report.append(f"| {idx+1} | {label} | {cls} | {score:.5f} |")
+    report.append("")
 
-    # 4. Deteksi Kekosongan Struktural (Structural Holes)
-    report.append("## 4. Analisis Kekosongan Struktural (Structural Holes)")
-    report.append("Melalui analisis korelasi kausalitas pada 100 sampel insiden yang terjadi di Indonesia, diidentifikasi kesenjangan hukum berikut:")
-    report.append("- Kasus **Voice Cloning (Deepfake)** dan **Adultery Generative AI** tidak memiliki fondasi yurisdiksi yang relevan dalam melindungi eksploitasi kepribadian digital manusia (*Digital Personality Rights*). Secara arsitektural, Hukum Positif Indonesia menempatkan 'Hak Atas Potret' sebagai sub-kategori di dalam kerangka **UU Hak Cipta No. 28 Tahun 2014 (Pasal 12)**, yang secara restriktif mensyaratkan adanya motif 'komersialisasi reklame/periklanan' untuk dijerat. Mengingat insiden pencurian biometrik AI di lapangan lebih didorong oleh motif politik, manipulasi hoaks, atau murni kejahatan balas dendam disinformasional (non-komersial), rezim Hak Cipta ini otomatis lumpuh menjerat pelaku eksploitasi. Oleh karenanya, instrumen negara secara reaktif terpaksa menggeser locus delicti kasus-kasus ini ke delik penyebaran konten asusila/hoaks menggunakan **UU ITE No. 1 Tahun 2024 Pasal 27 & 28**, yang jelas merupakan pendekatan 'tambal sulam' (Band-Aid approach) yang sama sekali tidak mengatur kejahatan pencurian biometrik algoritmik dari akar pembuatannya.")
-    report.append("- Terdapat tingkat isolasi yang radikal pada instrumen **Global Soft Law (seperti UNESCO/OECD AI)**. Indikator ini membuktikan rendahnya daya adopsi (*Legal Transplantation*) instrumen soft law ke dalam instrumen hukum nasional di ranah praksis.\n")
+    # 4. Isolasi Klaster Internasional
+    intl_degrees = {n: G.degree(n) for n in intl_nodes}
+    isolated_intl = [n for n, d in intl_degrees.items() if d == 0]
 
-    report.append("\n---\n*Laporan ini di-*generate* otomatis menggunakan `networkx` engine berdasarkan dataset AI Governance Watch.*")
+    report.append("## 4. Isolasi Node Internasional")
+    report.append(f"| Metrik | Nilai |")
+    report.append(f"| --- | --- |")
+    report.append(f"| **Total Node Internasional** | {len(intl_nodes)} |")
+    report.append(f"| **Node Terisolasi (degree=0)** | {len(isolated_intl)} ({len(isolated_intl)/max(len(intl_nodes),1)*100:.1f}%) |")
+    report.append(f"| **Node Terhubung** | {len(intl_nodes) - len(isolated_intl)} |\n")
+
+    if isolated_intl:
+        report.append("### Daftar Node Internasional Terisolasi")
+        report.append("| Node | Group |")
+        report.append("| --- | --- |")
+        for nid in isolated_intl[:20]:
+            label = G.nodes[nid].get('label', nid)
+            grp = G.nodes[nid].get('group', '')
+            report.append(f"| {label} | {grp} |")
+        if len(isolated_intl) > 20:
+            report.append(f"| *(+{len(isolated_intl)-20} lainnya)* | |")
+        report.append("")
+
+    # 5. Coverage per Group (data-driven)
+    report.append("## 5. Coverage per Klaster Regulasi")
+    report.append("| Klaster | Total Node | Node Terhubung | Coverage |")
+    report.append("| --- | --- | --- | --- |")
+
+    group_stats = {}
+    for n, attr in G.nodes(data=True):
+        grp = attr.get('group', 'Unknown')
+        if grp not in group_stats:
+            group_stats[grp] = {'total': 0, 'connected': 0}
+        group_stats[grp]['total'] += 1
+        if G.degree(n) > 0:
+            group_stats[grp]['connected'] += 1
+
+    for grp in sorted(group_stats.keys()):
+        s = group_stats[grp]
+        cov = s['connected'] / max(s['total'], 1) * 100
+        report.append(f"| {grp} | {s['total']} | {s['connected']} | {cov:.1f}% |")
+
+    # 6. Connected Components
+    components = list(nx.connected_components(G))
+    report.append(f"\n## 6. Connected Components")
+    report.append(f"| Metrik | Nilai |")
+    report.append(f"| --- | --- |")
+    report.append(f"| **Jumlah Komponen** | {len(components)} |")
+    if components:
+        largest = max(components, key=len)
+        report.append(f"| **Komponen Terbesar** | {len(largest)} node |")
+        report.append(f"| **Node Terisolasi Total** | {len([c for c in components if len(c) == 1])} |")
+
+    report.append("\n---\n*Laporan ini di-generate otomatis menggunakan NetworkX + multilingual sentence embeddings. "
+                  "Seluruh angka dihitung langsung dari topologi graf tanpa interpretasi manual.*")
 
     output_content = "\n".join(report)
-    
     with open('laporan_hasil_lna.md', 'w', encoding='utf-8') as f:
         f.write(output_content)
-        
     print(output_content)
+
 
 if __name__ == "__main__":
     analyze_network()

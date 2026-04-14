@@ -1,25 +1,71 @@
-# Laporan: Pemetaan Semantik Regulasi Tata Kelola AI Internasional (TF-IDF)
+# Analisis Jaringan Regulasi Internasional
 
-Berdasarkan perhitungan kemiripan leksikal teks (TfidfVectorizer Cosine), kerangka hukum internasional ini menghasilkan pola kohesi internal sebagai berikut:
+Sub-analisis ini memetakan **struktur internal** jaringan regulasi AI internasional berdasarkan semantic similarity (multilingual embeddings). Seluruh metrik dihitung langsung dari topologi sub-graf internasional.
 
-## 1. Kohesi Kesepakatan Global (Global Cohesion)
-- Objek Analisis: **60 Pasal/Article Internasional** (dari *EU AI Act* dan *Council of Europe* dll).
-- Tautan Semantik Ditemukan: **2 Korelasi Organik** (>20% kemiripan kosa kata).
-- Network Density Global: **0.0011**
-> *Interpretasi:* Instrumen global tampaknya menggunakan istilah dan prinsip-prinsip yang mirip secara semantik dalam tata kelola AI. Harmonisasi ini terlihat pada irisan konsep 'Transparansi dan Manajemen Risiko' yang tertera secara identik di berbagai doktrin, seperti **OECD AI Principles (Prinsip 1.3 & 1.4)**, **UNESCO Recommendation on the Ethics of AI (Value 2 & 4)**, serta **EU AI Act Article 10 (Tata Kelola Data)**. Tingkat densitas yang tinggi pada algoritma ini membuktikan bahwa komunitas internasional telah mencapai konsensus leksikal yang seragam; menjadi prinsip AI global yang sayangnya gagal direplikasi dengan utuh oleh rezim domestik kita.
+## 1. Metrik Kohesi Internal
+| Metrik | Nilai |
+| --- | --- |
+| **Total Node Internasional** | 191 |
+| **Koneksi Semantik Internal** | 2 edge |
+| **Densitas Internal** | 0.0001 |
+| **Node Terisolasi** | 188 node |
 
-## 2. Klausul dengan Sentralitas Pengaruh Tertinggi (Global Semantic Hubs)
-Pasal mana yang memiliki kedekatan sentral ekivalensi pembingkaian tertinggi dengan kerangka standar internasional lainnya?
-  1. **EU_AI_Act_2024 - Article 114** (Pengaruh Sentralitas: 0.017)
-  2. **EU_AI_Act_2024 - Article 30** (Pengaruh Sentralitas: 0.017)
-  3. **Council_of_Europe_Framework_Convention_on_AI_CETS225 - Paragraph 2** (Pengaruh Sentralitas: 0.017)
+## 2. Distribusi per Instrumen
+| Instrumen | Node | Terhubung | Edge (total degree) | Coverage |
+| --- | --- | --- | --- | --- |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 | 39 | 1 | 2 | 2.6% |
+| EU_AI_Act_2024 | 132 | 2 | 2 | 1.5% |
+| OECD_AI_Principles_2024 | 4 | 0 | 0 | 0.0% |
+| UNESCO_Recommendation_on_AI_Ethics_2021 | 2 | 0 | 0 | 0.0% |
+| WHO_Ethics_and_Governance_of_AI_for_Health | 14 | 0 | 0 | 0.0% |
 
-> *Catatan:* Pasal 4 yang tertuang dalam EU AI Act merupakan landasan fundamental bagi regulasi internasional lainnya. Hal ini tercermin dalam term-term yang digunakan pada    pasal tersebut (contoh: *human dignity, non-discrimination, proportionality*) yang ditulis secara seragam (kesamaan *cosine* yang sangat kuat) antar regulasi internasional.
+## 3. Degree Centrality — Top 10
+| Peringkat | Node | Instrumen | Skor |
+| --- | --- | --- | --- |
+| 1 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Paragraph 2 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0105 |
+| 2 | EU_AI_Act_2024 - Article 50 | EU_AI_Act_2024 | 0.0053 |
+| 3 | EU_AI_Act_2024 - Article 102 | EU_AI_Act_2024 | 0.0053 |
+| 4 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 1 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 5 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 2 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 6 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 3 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 7 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 4 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 8 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 5 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 9 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 6 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 10 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 7 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
 
-## 3. Konektor Lintas Regulasi (Global Betweenness Centrality)
-  1. **OECD_AI_Principles_2024 - Article 5** (Skor Jembatan: 0.000)
-  2. **OECD_AI_Principles_2024 - Section 1** (Skor Jembatan: 0.000)
-  3. **OECD_AI_Principles_2024 - Section 2** (Skor Jembatan: 0.000)
+## 4. Betweenness Centrality — Top 10
+| Peringkat | Node | Instrumen | Skor |
+| --- | --- | --- | --- |
+| 1 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Paragraph 2 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0001 |
+| 2 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 1 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 3 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 2 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 4 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 3 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 5 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 4 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 6 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 5 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 7 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 6 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 8 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 7 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 9 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 8 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
+| 10 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 9 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 0.0000 |
 
-## Kesimpulan Kohesi Internasional
-Hasil analisis ini memverifikasi bahwa kerangka hukum internasional untuk tata kelola AI telah harmonis.
+## 5. Node Terisolasi
+| Node | Instrumen | Klasifikasi |
+| --- | --- | --- |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 1 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 2 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 3 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 4 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 5 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 6 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 7 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 8 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 9 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 10 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 11 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 12 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 13 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 14 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| Council_of_Europe_Framework_Convention_on_AI_CETS225 - Paragraph 1 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | Intl: Binding Law |
+| *(+173 lainnya)* | | |
+
+---
+*Sub-laporan dihasilkan dari analisis NetworkX pada sub-graf regulasi internasional. Metrik dihitung dari data graf aktual tanpa interpretasi manual.*

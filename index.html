@@ -1,325 +1,622 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Governance Watch · Analisis Peristiwa Hukum</title>
+    <title>Digital Governance Watch · Pemetaan Asimetri Regulasi AI Indonesia</title>
+    <meta name="description" content="Legal Network Analysis berbasis multilingual sentence embeddings untuk memetakan regulasi AI Indonesia, konektivitas antar-pasal, dan analisis empiris.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"/>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
-    <link rel="stylesheet" href="./app/assets/css/style.css">
+    <link rel="stylesheet" href="./app/assets/css/style.css?v=20260413o">
+    <!-- CRITICAL: inline fallback agar section tersembunyi sebelum JS jalan -->    <style>
+        /* SPA: section panel default hidden, active one scrolls */
+        .section-panel { display: none !important; }
+        .section-panel.active {
+            display: flex !important;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0 !important;  /* KUNCI MUTLAK: flex scroll tidak bekerja tanpa ini */
+            overflow-y: auto !important;
+            overflow-x: hidden;
+            gap: 1.25rem;
+            padding: 1.25rem 1.5rem 2rem;
+        }
+        /* SPA layout shell */
+        body { margin: 0; }
+        .app-container { display: flex; height: 100vh; overflow: hidden; }
+        .main-content  { flex: 1; min-width: 0; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+        /* Export buttons */
+        .btn-secondary {
+            display:inline-flex; align-items:center; gap:4px;
+            background:rgba(129,140,248,0.12); border:1px solid rgba(129,140,248,0.28);
+            color:#a5b4fc; border-radius:8px; padding:5px 10px;
+            font-size:0.78rem; font-weight:600; cursor:pointer;
+            transition:all 0.18s; font-family:'Inter',sans-serif;
+        }
+        .btn-secondary:hover { background:rgba(129,140,248,0.22); border-color:rgba(129,140,248,0.55); color:#fff; }
+        .btn-sm { padding:4px 9px; font-size:0.75rem; }
+    </style>
 </head>
+<body>
+<div class="app-container">
 
-<body class="dark-theme">
+    <!-- ========== SIDEBAR ========== -->
+    <nav class="sidebar">
+        <div class="brand">
+            <div class="logo-icon"><span class="material-symbols-rounded" style="font-size:22px;">policy</span></div>
+            <h1>Governance<br><span>Watch LNA</span></h1>
+        </div>
 
-    <div class="app-container">
-        <!-- Sidebar -->
-        <nav class="sidebar">
-            <div class="brand">
-                <div class="logo-icon"><span class="material-symbols-rounded" style="font-size:32px;">policy</span>
-                </div>
-                <h1>Governance<br><span>Watch LNA</span></h1>
-            </div>
+        <nav>
+            <ul class="nav-links" id="nav-menu">
+                <li class="nav-section-label">Jaringan Regulasi</li>
 
-            <ul class="nav-links" id="mode-selector">
-                <li class="nav-item">
-                    <a href="#section-all" style="color:inherit; text-decoration:none;"><span
-                            class="material-symbols-rounded">hub</span> Master LNA (Semua Jaringan)</a>
+                <li class="nav-item active" data-target="section-all">
+                    <a><span class="material-symbols-rounded">hub</span> Master LNA</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#section-intl" style="color:inherit; text-decoration:none;"><span
-                            class="material-symbols-rounded">public</span> Regulasi Internasional</a>
+                <li class="nav-item" data-target="section-intl">
+                    <a><span class="material-symbols-rounded">public</span> Regulasi Internasional</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#section-natl" style="color:inherit; text-decoration:none;"><span
-                            class="material-symbols-rounded">account_balance</span> Regulasi Nasional</a>
+                <li class="nav-item" data-target="section-natl">
+                    <a><span class="material-symbols-rounded">account_balance</span> Regulasi Nasional</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#section-cross" style="color:inherit; text-decoration:none;"><span
-                            class="material-symbols-rounded">sync_alt</span> Regulasi Intern vs Nasional</a>
+                <li class="nav-item" data-target="section-cross">
+                    <a><span class="material-symbols-rounded">sync_alt</span> Intl vs Nasional</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#section-incident" style="color:inherit; text-decoration:none;"><span
-                            class="material-symbols-rounded">gavel</span> Analisis Kasus</a>
+
+                <li class="nav-section-label">Analisis Empiris</li>
+
+                <li class="nav-item" data-target="section-incident">
+                    <a><span class="material-symbols-rounded">gavel</span> Analisis Kasus</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#section-gap" style="color:inherit; text-decoration:none;"><span
-                            class="material-symbols-rounded">insights</span> Konklusi: Gap Analysis</a>
+                <li class="nav-item" data-target="section-sector">
+                    <a><span class="material-symbols-rounded">category</span> Kesenjangan Sektoral</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#section-database" style="color:inherit; text-decoration:none;"><span
-                            class="material-symbols-rounded">database_search</span> Katalog Insiden (Data Mentah)</a>
+                <li class="nav-item" data-target="section-gap">
+                    <a><span class="material-symbols-rounded">insights</span> Konklusi Gap Analysis</a>
                 </li>
-                <li class="nav-item"
-                    style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
-                    <a href="#section-ai" style="color:inherit; text-decoration:none;"><span
-                            class="material-symbols-rounded" style="color:#a855f7;">smart_toy</span> AI Legal
-                        Toulmin Argumentation</a>
+                <li class="nav-item" data-target="section-database">
+                    <a><span class="material-symbols-rounded">database_search</span> Katalog Insiden</a>
+                </li>
+
+                <li class="nav-section-label">Asisten Hukum AI</li>
+
+                <li class="nav-item" data-target="section-ai" style="border-top:1px solid rgba(255,255,255,0.06); padding-top:0.5rem; margin-top:0.25rem;">
+                    <a>
+                        <span class="material-symbols-rounded" style="color:var(--violet);">smart_toy</span>
+                        <span>AI Legal Assistant<br>
+                        <small style="font-weight:400; color:var(--text-4); font-size:0.72rem;">Toulmin · Panduan Praktisi</small></span>
+                    </a>
                 </li>
             </ul>
         </nav>
+    </nav>
 
-        <!-- Main Content -->
-        <main class="main-content">
+    <!-- ========== MAIN CONTENT ========== -->
+    <div class="main-content">
 
-            <header class="top-header">
-                <div>
-                    <h2>Dataset Analisis Forensik & Celah Regulasi AI Indonesia</h2>
-                    <p>Pendekatan Model Argumentasi Toulmin &amp; Interpretasi Sistematis pada Insiden Siber (2024-2026)</p>
+        <!-- Top header (dynamic) -->
+        <header class="top-header">
+            <span class="material-symbols-rounded" id="header-icon" style="color:var(--primary); font-size:22px;">hub</span>
+            <div>
+                <h2 id="header-title">Master Legal Network Analysis</h2>
+                <p id="header-sub">Pemetaan Regulasi AI Indonesia · Multilingual Embeddings · Maastricht LNA</p>
+            </div>
+        </header>
+
+        <!-- ===== SECTION: Master LNA ===== -->
+        <section id="section-all" class="section-panel active">
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--primary);">hub</span> Master LNA — Semua Jaringan Regulasi</h3>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="badge badge-indigo">Maastricht LNA · Full Graph</span>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphPNG('all','LNA_Master_Network.png')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">photo_camera</span> PNG
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="toggleIsolatedNodes('all')" title="Sembunyikan/Tampilkan pasal yang tidak terhubung">
+                            <span class="material-symbols-rounded" style="font-size:14px;">filter_alt</span> Toggle Isolasi
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphCSV('all','LNA_Master_Data.csv')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">table_chart</span> CSV
+                        </button>
+                    </div>
                 </div>
-            </header>
-
-            <div id="dashboard-view" class="view-section active-view">
-                <div class="layout-grid">
-                    <!-- 0. Master LNA -->
-                    <section id="section-all" class="card glass span-2">
-                        <div class="card-header">
-                            <h3><span class="material-symbols-rounded" style="color:#6366f1;">hub</span> Master LNA
-                                (Semua Jaringan)</h3>
-                            <span class="badge"
-                                style="border-color:var(--primary); background: rgba(99, 102, 241, 0.2);">Maastricht
-                                LNA</span>
-                        </div>
-                        <div class="card-body" style="padding:0;">
-                            <div id="network-all" style="width: 100%; height: 500px; border-radius: 0;"></div>
-                            <div id="legend-all" class="graph-legend-container"
-                                style="padding: 10px 15px; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; flex-wrap: wrap; gap: 8px;">
-                            </div>
-                        </div>
-                        <div class="card-body report-body" style="background: rgba(0,0,0,0.1);">
-                            <div id="report-all" class="markdown-prose">
-                                <div class="loading">Memuat...</div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- 1. Intl LNA -->
-                    <section id="section-intl" class="card glass span-2">
-                        <div class="card-header">
-                            <h3><span class="material-symbols-rounded" style="color:#eab308;">public</span> Regulasi
-                                Internasional</h3>
-                            <span class="badge" style="border-color:#eab308; color:#eab308;">Sub-Graph</span>
-                        </div>
-                        <div class="card-body" style="padding:0;">
-                            <div id="network-intl" style="width: 100%; height: 500px; border-radius: 0;"></div>
-                            <div id="legend-intl" class="graph-legend-container"
-                                style="padding: 10px 15px; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; flex-wrap: wrap; gap: 8px;">
-                            </div>
-                        </div>
-                        <div class="card-body report-body" style="background: rgba(0,0,0,0.1);">
-                            <div id="report-intl" class="markdown-prose">
-                                <div class="loading">Memuat...</div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- 2. Natl LNA -->
-                    <section id="section-natl" class="card glass span-2">
-                        <div class="card-header">
-                            <h3><span class="material-symbols-rounded" style="color:#10b981;">account_balance</span>
-                                Regulasi Nasional</h3>
-                            <span class="badge" style="border-color:#10b981; color:#10b981;">Sub-Graph</span>
-                        </div>
-                        <div class="card-body" style="padding:0;">
-                            <div id="network-natl" style="width: 100%; height: 500px; border-radius: 0;"></div>
-                            <div id="legend-natl" class="graph-legend-container"
-                                style="padding: 10px 15px; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; flex-wrap: wrap; gap: 8px;">
-                            </div>
-                        </div>
-                        <div class="card-body report-body" style="background: rgba(0,0,0,0.1);">
-                            <div id="report-natl" class="markdown-prose">
-                                <div class="loading">Memuat...</div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- 3. Cross LNA -->
-                    <section id="section-cross" class="card glass span-2">
-                        <div class="card-header">
-                            <h3><span class="material-symbols-rounded" style="color:#ec4899;">sync_alt</span> Regulasi
-                                Intern vs Nasional</h3>
-                            <span class="badge" style="border-color:#ec4899; color:#ec4899;">Cross-Jurisdiction</span>
-                        </div>
-                        <div class="card-body" style="padding:0;">
-                            <div id="network-cross" style="width: 100%; height: 500px; border-radius: 0;"></div>
-                            <div id="legend-cross" class="graph-legend-container"
-                                style="padding: 10px 15px; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; flex-wrap: wrap; gap: 8px;">
-                            </div>
-                        </div>
-                        <div class="card-body report-body" style="background: rgba(0,0,0,0.1);">
-                            <div id="report-cross" class="markdown-prose">
-                                <div class="loading">Memuat...</div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- 4. Incident LNA -->
-                    <section id="section-incident" class="card glass span-2">
-                        <div class="card-header">
-                            <h3><span class="material-symbols-rounded" style="color:#f43f5e;">gavel</span> Analisis
-                                Kasus</h3>
-                            <span class="badge" style="border-color:#f43f5e; color:#f43f5e;">Forensik Kasus</span>
-                        </div>
-                        <div class="card-body" style="padding:0;">
-                            <div id="network-incident" style="width: 100%; height: 500px; border-radius: 0;"></div>
-                            <div id="legend-incident" class="graph-legend-container"
-                                style="padding: 10px 15px; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; flex-wrap: wrap; gap: 8px;">
-                            </div>
-                        </div>
-                        <div class="card-body report-body" style="background: rgba(0,0,0,0.1);">
-                            <div id="report-incident" class="markdown-prose">
-                                <div class="loading">Memuat...</div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- 5. Konklusi Gap Analysis -->
-                    <section id="section-gap" class="card glass span-2">
-                        <div class="card-header">
-                            <h3><span class="material-symbols-rounded" style="color:#f97316;">insights</span> Konklusi &
-                                Rekomendasi: Gap Analysis</h3>
-                            <span class="badge" style="border-color:#f97316; color:#f97316;">Final Output</span>
-                        </div>
-                        <div class="card-body" style="padding:0;">
-                            <div id="network-gap" style="width: 100%; height: 500px; border-radius: 0;"></div>
-                            <div id="legend-gap" class="graph-legend-container"
-                                style="padding: 10px 15px; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; flex-wrap: wrap; gap: 8px;">
-                            </div>
-                        </div>
-                        <div class="card-body report-body" style="background: rgba(0,0,0,0.1);">
-                            <div id="report-gap" class="markdown-prose">
-                                <div class="loading">Memuat...</div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- 6. Database Data Mentah Insiden -->
-                    <section id="section-database" class="card glass span-2">
-                        <div class="card-header">
-                            <h3><span class="material-symbols-rounded" style="color:#0ea5e9;">database_search</span>
-                                Katalog Data Forensik Insiden Siber</h3>
-                            <span class="badge" style="border-color:#0ea5e9; color:#0ea5e9;">Registry Kasus
-                                (100+)</span>
-                        </div>
-                        <div class="card-body">
-                            <div
-                                style="margin-bottom: 20px; display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
-                                <input type="text" id="search-incident"
-                                    placeholder="Cari kronologi, aktor subjek, atau objek hukum..."
-                                    style="flex: 1; min-width:250px; padding: 12px 18px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3); color: white; font-family: 'Inter';">
-                                <select id="filter-incident-type"
-                                    style="padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3); color: white; font-family: 'Inter';">
-                                    <option value="all">Semua Kategori (Lex Generalis & Lex Specialis)</option>
-                                    <option value="ransomware">Ransomware (Pemerasan Siber)</option>
-                                    <option value="data_breach">Data Breach (Kebocoran Basis Data)</option>
-                                    <option value="ai_fraud">AI Synthetic Fraud (Penipuan Identitas AI)</option>
-                                    <option value="ai_misuse">AI Deepfake Misuse (Asusila & Disinformasi)</option>
-                                </select>
-                            </div>
-                            <div id="incident-registry-container"
-                                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 15px; max-height: 800px; overflow-y: auto; padding-right: 5px;">
-                                <div class="loading">Memuat Registry Data Mentah (indonesia_incidents.json)...</div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- 7. AI Legal Syllogism -->
-                    <section id="section-ai" class="card glass span-2">
-                        <div class="card-header">
-                            <h3><span class="material-symbols-rounded" style="color:#a855f7;">smart_toy</span> AI Legal
-                                Toulmin Argumentation</h3>
-                            <span class="badge" style="border-color:#a855f7; color:#a855f7;">Toulmin · RAG Inference</span>
-                        </div>
-                        <div class="card-body">
-                            <div class="ai-setup-container"
-                                style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(168, 85, 247, 0.2);">
-                                <h4 style="margin-bottom: 15px; color: #e2e8f0; font-family: 'Outfit';">1. Konfigurasi
-                                    AI</h4>
-                                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                    <select id="ai-provider-select" style="padding: 12px 18px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.5); color: white; font-family: 'Inter'; font-weight: bold;">
-                                        <option value="gemini">Google Gemini</option>
-                                        <option value="groq">Groq (Llama-3/Mixtral)</option>
-                                    </select>
-                                    <input type="password" id="ai-api-key" placeholder="Masukkan Google Gemini API Key Anda..." style="flex: 1; min-width: 250px; padding: 12px 18px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.5); color: white; font-family: 'Inter';">
-                                </div>
-                                <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
-                                    <select id="ai-model-select" style="padding: 12px 18px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.5); color: white; font-family: 'Inter'; flex: 1;">
-                                        <option value="gemini-1.5-flash">Menunggu API Key...</option>
-                                    </select>
-                                    <button id="save-api-key" class="btn" style="background: #a855f7; color: white; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; min-width: 150px;">Simpan Kunci API</button>
-                                </div>
-                                <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 10px;">*API Key hanya disimpan
-                                    sementara di browser Anda dan hanya dikirimkan ke server Google. Tidak disimpan di
-                                    server pihak ketiga manapun.</p>
-                            </div>
-
-                            <div class="ai-analysis-container"
-                                style="display: flex; flex-direction: column; gap: 20px;">
-                                <div class="ai-input-group"
-                                    style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                                    <h4 style="margin-bottom: 15px; color: #e2e8f0; font-family: 'Outfit';">2. Pilih Peristiwa Hukum <span style="color:#a855f7;font-size:0.85em;">(Grounds — Data Empiris Toulmin)</span></h4>
-                                    <div style="display: flex; gap: 15px;">
-                                        <select id="ai-incident-select"
-                                            style="flex: 1; padding: 12px 18px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.5); color: white; font-family: 'Inter'; font-size: 1rem;">
-                                            <option value="">Pilih Insiden Kasus untuk dianalisis...</option>
-                                        </select>
-                                        <button id="btn-analyze-ai" class="btn"
-                                            style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-                                            <span class="material-symbols-rounded"
-                                                style="font-size: 20px;">model_training</span> Analisis Toulmin
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="ai-output-grid"
-                                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                    <div class="ai-context-panel"
-                                        style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 12px; border: 1px solid rgba(168, 85, 247, 0.1); max-height: 600px; overflow-y: auto;">
-                                        <h4
-                                            style="color: #cbd5e1; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-                                            <span class="material-symbols-rounded"
-                                                style="color: #10b981;">account_balance</span> Warrant &amp; Grounds (Regulasi &amp; Fakta)
-                                        </h4>
-                                        <div id="ai-context-body"
-                                            style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6;">
-                                            Silakan pilih insiden terlebih dahulu untuk melihat kronologi kasus dan
-                                            interkoneksi pasal-pasalnya.
-                                        </div>
-                                    </div>
-                                    <div class="ai-response-panel"
-                                        style="background: rgba(168, 85, 247, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(168, 85, 247, 0.3); max-height: 600px; overflow-y: auto;">
-                                        <h4
-                                            style="color: #cbd5e1; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-                                            <span class="material-symbols-rounded"
-                                                style="color: #a855f7;">psychology</span> Analisis Argumentasi Toulmin (Claim &amp; Rebuttal)</h4>
-                                        <div id="ai-response-body" class="markdown-prose"
-                                            style="font-size: 0.95rem; line-height: 1.7; color: #f1f5f9;">
-                                            Analisis AI akan muncul di sini...
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Dashboard Main Sections End -->
+                <div id="network-all" style="width:100%; height:80vh; min-height:650px; background:rgba(0,0,0,0.2);"></div>
+                <div id="inspector-all" class="node-inspector-panel">
+                    <span class="ni-close" onclick="this.parentElement.classList.remove('visible')">✕</span>
+                    <div class="ni-title" id="inspector-all-title"></div>
+                    <div class="ni-body" id="inspector-all-body"></div>
+                </div>
+                <div class="graph-legend" id="legend-all" style="padding:0.75rem 1rem; border-top:1px solid rgba(255,255,255,0.06); display:flex; flex-wrap:wrap; gap:6px;"></div>
+            </div>
+            <!-- Tabel Metrik Jaringan -->
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--primary);">analytics</span> Metrik Topologi Jaringan</h3>
+                    <span class="badge badge-indigo">Kuantitatif LNA</span>
+                </div>
+                <div class="card-body">
+                    <div id="metrics-table-all">
+                        <table class="metrics-table" style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                            <thead><tr>
+                                <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Metrik</th>
+                                <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Nilai</th>
+                                <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Implikasi Legal</th>
+                            </tr></thead>
+                            <tbody id="tbody-metrics-all">
+                                <tr><td colspan="3" style="padding:12px; color:var(--text-4); text-align:center;">⏳ Menunggu graph selesai dirender…</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+        </section>
 
-        </main>
+        <!-- ===== SECTION: Internasional ===== -->
+        <section id="section-intl" class="section-panel">
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--amber);">public</span> Regulasi Internasional · Thematic Cluster</h3>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="badge badge-amber">EU AI Act · OECD · CETS225</span>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphPNG('intl','LNA_Internasional_Network.png')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">photo_camera</span> PNG
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="toggleIsolatedNodes('intl')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">filter_alt</span> Toggle Isolasi
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphCSV('intl','LNA_Internasional_Data.csv')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">table_chart</span> CSV
+                        </button>
+                    </div>
+                </div>
+                <div id="network-intl" style="width:100%; height:80vh; min-height:650px; background:rgba(0,0,0,0.2);"></div>
+                <div id="inspector-intl" class="node-inspector-panel">
+                    <span class="ni-close" onclick="this.parentElement.classList.remove('visible')">✕</span>
+                    <div class="ni-title" id="inspector-intl-title"></div>
+                    <div class="ni-body" id="inspector-intl-body"></div>
+                </div>
+                <div class="graph-legend" id="legend-intl" style="padding:0.75rem 1rem; border-top:1px solid rgba(255,255,255,0.06); display:flex; flex-wrap:wrap; gap:6px;"></div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--amber);">analytics</span> Metrik Topologi — Regulasi Internasional</h3>
+                    <span class="badge badge-amber">Degree · Betweenness · Density</span>
+                </div>
+                <div class="card-body">
+                    <table class="metrics-table" style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                        <thead><tr>
+                            <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Metrik</th>
+                            <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Nilai</th>
+                            <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Implikasi Legal</th>
+                        </tr></thead>
+                        <tbody id="tbody-metrics-intl">
+                            <tr><td colspan="3" style="padding:12px; color:var(--text-4); text-align:center;">⏳ Menunggu graph selesai dirender…</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: Nasional ===== -->
+        <section id="section-natl" class="section-panel">
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--emerald);">account_balance</span> Regulasi Nasional Indonesia</h3>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="badge badge-emerald">UU PDP · UU ITE · PP PSTE · OJK</span>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphPNG('natl','LNA_Nasional_Network.png')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">photo_camera</span> PNG
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="toggleIsolatedNodes('natl')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">filter_alt</span> Toggle Isolasi
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphCSV('natl','LNA_Nasional_Data.csv')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">table_chart</span> CSV
+                        </button>
+                    </div>
+                </div>
+                <div id="network-natl" style="width:100%; height:80vh; min-height:650px; background:rgba(0,0,0,0.2);"></div>
+                <div id="inspector-natl" class="node-inspector-panel">
+                    <span class="ni-close" onclick="this.parentElement.classList.remove('visible')">✕</span>
+                    <div class="ni-title" id="inspector-natl-title"></div>
+                    <div class="ni-body" id="inspector-natl-body"></div>
+                </div>
+                <div class="graph-legend" id="legend-natl" style="padding:0.75rem 1rem; border-top:1px solid rgba(255,255,255,0.06); display:flex; flex-wrap:wrap; gap:6px;"></div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--emerald);">analytics</span> Metrik Topologi — Regulasi Nasional</h3>
+                    <span class="badge badge-emerald">Fragmentasi · Hub Nodes · Structural Holes</span>
+                </div>
+                <div class="card-body">
+                    <table class="metrics-table" style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                        <thead><tr>
+                            <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Metrik</th>
+                            <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Nilai</th>
+                            <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Implikasi Legal</th>
+                        </tr></thead>
+                        <tbody id="tbody-metrics-natl">
+                            <tr><td colspan="3" style="padding:12px; color:var(--text-4); text-align:center;">⏳ Menunggu graph selesai dirender…</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: Cross LNA ===== -->
+        <section id="section-cross" class="section-panel">
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--pink);">sync_alt</span> Intl vs Nasional · Asimetri Transplantasi Hukum</h3>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="badge badge-pink">Cross-Jurisdiction · Semantic Similarity</span>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphPNG('cross','LNA_Cross_Network.png')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">photo_camera</span> PNG
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="toggleIsolatedNodes('cross')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">filter_alt</span> Toggle Isolasi
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphCSV('cross','LNA_Cross_Data.csv')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">table_chart</span> CSV
+                        </button>
+                    </div>
+                </div>
+                <div id="network-cross" style="width:100%; height:80vh; min-height:650px; background:rgba(0,0,0,0.2);"></div>
+                <div id="inspector-cross" class="node-inspector-panel">
+                    <span class="ni-close" onclick="this.parentElement.classList.remove('visible')">✕</span>
+                    <div class="ni-title" id="inspector-cross-title"></div>
+                    <div class="ni-body" id="inspector-cross-body"></div>
+                </div>
+                <!-- Similarity Tier Legend -->
+                <div style="padding:0.6rem 1rem; border-top:1px solid rgba(255,255,255,0.06); display:flex; gap:1.5rem; flex-wrap:wrap;">
+                    <span style="font-size:0.75rem; color:var(--text-4); font-weight:600; text-transform:uppercase; letter-spacing:0.5px; align-self:center;">Tier Similarity:</span>
+                    <span style="font-size:0.8rem; color:var(--emerald);">● Identik ≥95%</span>
+                    <span style="font-size:0.8rem; color:var(--amber);">● Sangat Kuat 80–94%</span>
+                    <span style="font-size:0.8rem; color:var(--rose);">● Lemah 70–79%</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--pink);">analytics</span> Metrik Asimetri Transplantasi Hukum</h3>
+                    <span class="badge badge-pink">Semantic Similarity · Cross-Jurisdiction</span>
+                </div>
+                <div class="card-body">
+                    <table class="metrics-table" style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                        <thead><tr>
+                            <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Metrik</th>
+                            <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Nilai</th>
+                            <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Implikasi Legal</th>
+                        </tr></thead>
+                        <tbody id="tbody-metrics-cross">
+                            <tr><td colspan="3" style="padding:12px; color:var(--text-4); text-align:center;">⏳ Menunggu graph selesai dirender…</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: Analisis Kasus ===== -->
+        <section id="section-incident" class="section-panel">
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--rose);">gavel</span> Analisis Kasus · Insiden Siber</h3>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="badge badge-rose">100+ Insiden · Warrant Mapping</span>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphPNG('incident','LNA_Insiden_Network.png')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">photo_camera</span> PNG
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="toggleIsolatedNodes('incident')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">filter_alt</span> Toggle Isolasi
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphCSV('incident','LNA_Insiden_Data.csv')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">table_chart</span> CSV
+                        </button>
+                    </div>
+                </div>
+                <div id="network-incident" style="width:100%; height:80vh; min-height:650px; background:rgba(0,0,0,0.2);"></div>
+                <div id="inspector-incident" class="node-inspector-panel">
+                    <span class="ni-close" onclick="this.parentElement.classList.remove('visible')">✕</span>
+                    <div class="ni-title" id="inspector-incident-title"></div>
+                    <div class="ni-body" id="inspector-incident-body"></div>
+                </div>
+                <div class="graph-legend" id="legend-incident" style="padding:0.75rem 1rem; border-top:1px solid rgba(255,255,255,0.06); display:flex; flex-wrap:wrap; gap:6px;"></div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--rose);">analytics</span> Metrik Forensik Kasus — Structural Holes</h3>
+                    <span class="badge badge-rose">Legal Uncertainty · Rechtsvinding</span>
+                </div>
+                <div class="card-body">
+                    <table class="metrics-table" style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                        <thead><tr>
+                            <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Metrik</th>
+                            <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Nilai</th>
+                            <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Implikasi Legal</th>
+                        </tr></thead>
+                        <tbody id="tbody-metrics-incident">
+                            <tr><td colspan="3" style="padding:12px; color:var(--text-4); text-align:center;">⏳ Menunggu graph selesai dirender…</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: Kesenjangan Sektoral ===== -->
+        <section id="section-sector" class="section-panel">
+            <div class="sector-grid" id="sector-grid-container">
+                <div class="loading">Merender analisis sektoral...</div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: Gap Analysis ===== -->
+        <section id="section-gap" class="section-panel">
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--amber);">insights</span> Gap Analysis — Warrant Mapping Matrix</h3>
+                    <div style="display:flex; gap:6px; align-items:center;">
+                        <span class="badge badge-amber">Final Output · Toulmin</span>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphPNG('gap','LNA_Gap_Network.png')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">photo_camera</span> PNG
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="toggleIsolatedNodes('gap')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">filter_alt</span> Toggle Isolasi
+                        </button>
+                        <button class="btn-secondary btn-sm" onclick="exportGraphCSV('gap','LNA_Gap_Data.csv')">
+                            <span class="material-symbols-rounded" style="font-size:14px;">table_chart</span> CSV
+                        </button>
+                    </div>
+                </div>
+                <div id="network-gap" style="width:100%; height:80vh; min-height:650px; background:rgba(0,0,0,0.2);"></div>
+                <div class="graph-legend" id="legend-gap" style="padding:0.75rem 1rem; border-top:1px solid rgba(255,255,255,0.06); display:flex; flex-wrap:wrap; gap:6px;"></div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--amber);">analytics</span> Metrik Gap Analysis — Modularity &amp; Fragmentasi</h3>
+                    <span class="badge badge-amber">Policy Design Failure</span>
+                </div>
+                <div class="card-body">
+                    <table class="metrics-table" style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                        <thead><tr>
+                            <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Metrik</th>
+                            <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Nilai</th>
+                            <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid rgba(255,255,255,0.08);">Implikasi Legal</th>
+                        </tr></thead>
+                        <tbody id="tbody-metrics-gap">
+                            <tr><td colspan="3" style="padding:12px; color:var(--text-4); text-align:center;">⏳ Menunggu graph selesai dirender…</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: Katalog Insiden ===== -->
+        <section id="section-database" class="section-panel">
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--sky);">database_search</span> Katalog Data Forensik Insiden Siber</h3>
+                    <span class="badge badge-sky">Registry 100+ Kasus</span>
+                </div>
+                <div class="card-body">
+                    <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:1.25rem;">
+                        <input type="text" id="search-incident" class="form-input" placeholder="Cari kronologi, pelaku, objek hukum..." style="flex:1; min-width:240px;">
+                        <select id="filter-incident-type" class="cn-select" style="min-width:200px;">
+                            <option value="all">Semua Kategori</option>
+                            <option value="ransomware">Ransomware</option>
+                            <option value="data_breach">Data Breach</option>
+                            <option value="ai_fraud">AI Synthetic Fraud</option>
+                            <option value="ai_misuse">AI Deepfake Misuse</option>
+                        </select>
+                    </div>
+                    <div id="incident-registry-container" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(380px,1fr)); gap:1rem; max-height:620px; overflow-y:auto; padding-right:4px;">
+                        <div class="loading">Memuat registry...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION: AI Legal Assistant ===== -->
+        <section id="section-ai" class="section-panel">
+            <div class="card">
+                <div class="card-header">
+                    <h3><span class="material-symbols-rounded" style="color:var(--violet);">smart_toy</span> AI Legal Assistant</h3>
+                    <span class="badge badge-violet">Toulmin · Panduan Praktisi · RAG</span>
+                </div>
+                <div class="card-body">
+
+                    <!-- Tab Switcher -->
+                    <div class="ai-tabs">
+                        <button class="ai-tab-btn active" id="tab-btn-toulmin" onclick="switchAITab('toulmin')">
+                            <span class="material-symbols-rounded">psychology</span> Argumentasi Toulmin
+                        </button>
+                        <button class="ai-tab-btn" id="tab-btn-praktisi" onclick="switchAITab('praktisi')">
+                            <span class="material-symbols-rounded">assignment_turned_in</span> Panduan Praktisi · Compliance Navigator
+                        </button>
+                    </div>
+
+                    <!-- TAB: Toulmin -->
+                    <div class="ai-tab-panel active" id="tab-toulmin">
+                        <!-- Konfigurasi API -->
+                        <div class="ai-setup">
+                            <h4><span class="material-symbols-rounded" style="color:var(--violet); font-size:19px;">settings</span> Konfigurasi AI</h4>
+                            <div class="ai-row">
+                                <select id="ai-provider-select" class="cn-select" style="min-width:180px;">
+                                    <option value="gemini">Google Gemini</option>
+                                    <option value="groq">Groq (Llama-3)</option>
+                                </select>
+                                <input type="password" id="ai-api-key" class="form-input" placeholder="Masukkan API Key..." style="flex:1; min-width:220px;">
+                            </div>
+                            <div class="ai-row">
+                                <select id="ai-model-select" class="cn-select" style="flex:1;">
+                                    <option value="gemini-1.5-flash">Menunggu API Key...</option>
+                                </select>
+                                <button id="save-api-key" class="btn-primary">
+                                    <span class="material-symbols-rounded" style="font-size:17px;">key</span> Simpan & Deteksi Model
+                                </button>
+                            </div>
+                            <p style="font-size:0.78rem; color:var(--text-4); margin-top:0.6rem;">*API Key hanya tersimpan di browser Anda, tidak dikirim ke server pihak ketiga.</p>
+                        </div>
+
+                        <!-- Pilih Insiden -->
+                        <div class="ai-setup">
+                            <h4><span class="material-symbols-rounded" style="color:var(--rose); font-size:19px;">gavel</span> Pilih Peristiwa Hukum <span style="color:var(--violet); font-size:0.82em; font-weight:400;">(Grounds — Data Empiris Toulmin)</span></h4>
+                            <div class="ai-row" style="margin-bottom:0;">
+                                <select id="ai-incident-select" class="cn-select" style="flex:1;">
+                                    <option value="">Pilih Insiden Kasus...</option>
+                                </select>
+                                <button id="btn-analyze-ai" class="btn-primary" style="background:linear-gradient(135deg,#7c3aed,#ec4899);">
+                                    <span class="material-symbols-rounded" style="font-size:17px;">model_training</span> Analisis Toulmin
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Output -->
+                        <div class="two-col">
+                            <div class="ai-context-box">
+                                <div class="ai-box-title">
+                                    <span class="material-symbols-rounded" style="color:var(--emerald); font-size:18px;">account_balance</span> Warrant &amp; Grounds
+                                </div>
+                                <div id="ai-context-body" style="font-size:0.82rem; color:var(--text-3); line-height:1.6;">
+                                    Pilih insiden untuk melihat interkoneksi pasal regulasi.
+                                </div>
+                            </div>
+                            <div class="ai-response-box" style="border-color:rgba(167,139,250,0.2);">
+                                <div class="ai-box-title">
+                                    <span class="material-symbols-rounded" style="color:var(--violet); font-size:18px;">psychology</span> Argumentasi Toulmin + Rekomendasi Konkret
+                                </div>
+                                <div id="ai-response-body" class="markdown-prose" style="font-size:0.88rem; line-height:1.75; color:var(--text-1); padding:0;">
+                                    Analisis akan muncul setelah memilih insiden dan menekan Analisis Toulmin.
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /tab-toulmin -->
+
+                    <!-- TAB: Panduan Praktisi -->
+                    <div class="ai-tab-panel" id="tab-praktisi">
+                        <!-- Step indicator -->
+                        <div class="cn-steps">
+                            <div class="cn-step active" id="cn-step-1">
+                                <div class="cn-num">1</div>
+                                <div class="cn-label">Profil Aktivitas</div>
+                            </div>
+                            <div class="cn-connector active"></div>
+                            <div class="cn-step" id="cn-step-2">
+                                <div class="cn-num">2</div>
+                                <div class="cn-label">Regulasi Berlaku</div>
+                            </div>
+                            <div class="cn-connector"></div>
+                            <div class="cn-step" id="cn-step-3">
+                                <div class="cn-num">3</div>
+                                <div class="cn-label">Rekomendasi AI</div>
+                            </div>
+                        </div>
+
+                        <!-- Step 1 -->
+                        <div class="cn-panel" id="cn-panel-1">
+                            <h4><span class="material-symbols-rounded" style="color:var(--primary); font-size:19px;">business_center</span> Langkah 1: Profil Aktivitas AI Anda</h4>
+                            <div class="cn-grid">
+                                <div>
+                                    <span class="cn-label-txt">Sektor Industri</span>
+                                    <select class="cn-select" id="cn-sector">
+                                        <option value="">— Pilih Sektor —</option>
+                                        <option value="fintech">🏦 Keuangan & Fintech</option>
+                                        <option value="facial">👁️ Facial Recognition / Biometrik</option>
+                                        <option value="ecommerce">🛒 E-Commerce & Marketplace</option>
+                                        <option value="content">🎭 AI-Generated Content / Media</option>
+                                        <option value="judicial">⚖️ Peradilan & Hukum</option>
+                                        <option value="health">🏥 Kesehatan</option>
+                                        <option value="government">🏛️ Pemerintahan / SPBE</option>
+                                        <option value="other">📋 Lainnya</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <span class="cn-label-txt">Jenis Sistem AI</span>
+                                    <select class="cn-select" id="cn-ai-type">
+                                        <option value="">— Pilih Jenis AI —</option>
+                                        <option value="recommendation">Sistem Rekomendasi / Ranking</option>
+                                        <option value="biometric">Pengenalan Wajah / Biometrik</option>
+                                        <option value="generative">AI Generatif (Teks/Gambar/Suara)</option>
+                                        <option value="predictive">AI Prediktif (Kredit/Risiko/Scoring)</option>
+                                        <option value="nlp">NLP / Chatbot / Asisten Virtual</option>
+                                        <option value="decision">Sistem Pendukung Keputusan</option>
+                                        <option value="automation">Otomasi Proses (RPA/Workflow)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div style="margin-top:0.9rem;">
+                                <span class="cn-label-txt">Deskripsi Singkat Aktivitas (Opsional)</span>
+                                <textarea id="cn-description" class="form-input" placeholder="Contoh: Kami menggunakan AI untuk credit scoring nasabah pinjaman mikro..." style="resize:vertical; min-height:72px; line-height:1.6;"></textarea>
+                            </div>
+                            <div style="margin-top:1rem; display:flex; gap:0.75rem;">
+                                <button class="btn-primary" onclick="runComplianceNavigator()">
+                                    <span class="material-symbols-rounded" style="font-size:17px;">search</span> Analisis Regulasi Berlaku
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 & 3 (hidden until filled) -->
+                        <div id="cn-panel-2" style="display:none;">
+                            <div class="cn-panel">
+                                <h4><span class="material-symbols-rounded" style="color:var(--emerald); font-size:19px;">fact_check</span> Langkah 2: Peta Kewajiban Regulasi</h4>
+                                <div id="cn-regulation-results"></div>
+                            </div>
+                            <div class="cn-panel" style="border-color:rgba(167,139,250,0.2);">
+                                <h4><span class="material-symbols-rounded" style="color:var(--violet); font-size:19px;">auto_fix_high</span> Langkah 3: Rekomendasi Konkret AI <span style="font-size:0.78em; font-weight:400; color:var(--text-4);">(butuh API Key)</span></h4>
+                                <div id="cn-ai-recommendation" class="markdown-prose" style="padding:0; min-height:60px; color:var(--text-3); font-size:0.85rem; font-style:italic;">
+                                    Klik tombol di bawah untuk panduan kepatuhan konkret dari AI.
+                                </div>
+                                <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+                                    <button class="btn-primary" id="btn-cn-ai" onclick="runComplianceAI()">
+                                        <span class="material-symbols-rounded" style="font-size:17px;">smart_toy</span> Dapatkan Panduan AI
+                                    </button>
+                                    <button class="btn-secondary" onclick="resetComplianceNavigator()">
+                                        <span class="material-symbols-rounded" style="font-size:17px;">refresh</span> Mulai Ulang
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /tab-praktisi -->
+
+                </div><!-- /card-body -->
+            </div><!-- /card -->
+        </section><!-- /section-ai -->
+
+    </div><!-- /main-content -->
+</div><!-- /app-container -->
+
+<!-- Toast UI Container -->
+<div id="toast-container" style="position:fixed; top:30px; left:50%; transform:translateX(-50%); z-index:10000; display:flex; flex-direction:column; gap:10px; align-items:center; pointer-events:none;"></div>
+
+<!-- Debug Logger -->
+<div id="debug-logger" style="position:fixed; bottom:80px; right:20px; width:450px; max-height:500px; background:rgba(15,23,42,0.95); border:1px solid var(--border-color); border-radius:12px; z-index:9999; display:none; flex-direction:column; box-shadow:0 10px 40px rgba(0,0,0,0.5); backdrop-filter:blur(10px);">
+    <div style="padding:10px 15px; border-bottom:1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:12px; font-weight:600; color:var(--rose); display:flex; align-items:center; gap:5px;">
+            <span class="material-symbols-rounded" style="font-size:16px;">bug_report</span> 
+            System Error Log
+        </span>
+        <button onclick="document.getElementById('debug-logger').style.display='none'" style="background:none; border:none; color:var(--text-4); cursor:pointer;">
+            <span class="material-symbols-rounded" style="font-size:16px;">close</span>
+        </button>
     </div>
+    <div id="debug-log-content" style="padding:10px; overflow-y:auto; font-family:monospace; font-size:11px; color:var(--text-2); display:flex; flex-direction:column; gap:8px;">
+    </div>
+    <div style="padding:8px; border-top:1px solid var(--border-color); text-align:center;">
+        <button onclick="document.getElementById('debug-log-content').innerHTML=''; document.getElementById('debug-toggle-btn').style.display='none'; document.getElementById('debug-logger').style.display='none';" style="background:var(--surface-3); border:1px solid var(--border-color); color:var(--text); padding:4px 10px; border-radius:4px; font-size:11px; cursor:pointer;">Clear Log</button>
+    </div>
+</div>
+<button id="debug-toggle-btn" onclick="document.getElementById('debug-logger').style.display = document.getElementById('debug-logger').style.display === 'none' ? 'flex' : 'none'" style="position:fixed; bottom:20px; right:20px; width:45px; height:45px; border-radius:50%; background:var(--rose); color:#fff; border:none; z-index:9998; cursor:pointer; display:none; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(244,63,94,0.4);">
+    <span class="material-symbols-rounded" style="font-size:22px;">bug_report</span>
+</button>
 
-    <script src="./app/assets/js/app.js"></script>
+<script src="./app/assets/js/app.js?v=20260414p"></script>
 </body>
-
 </html>

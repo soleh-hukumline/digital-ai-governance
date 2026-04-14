@@ -6,96 +6,134 @@ def analyze_intl_only():
     try:
         with open('../../data/network/legal_graph.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
-            
-        # Filter HANYA node Internasional baserd on hierarchical groups
-        intl_nodes = [n for n in data['nodes'] if n.get('classification', n.get('group', '')).startswith('Intl:')]
+
+        intl_nodes = [n for n in data['nodes']
+                      if n.get('classification', n.get('group', '')).startswith('Intl:')]
         intl_ids = {n['id'] for n in intl_nodes}
-        
+
         for n in intl_nodes:
-            G.add_node(n['id'], label=n['label'])
-            
-        # Tambahkan edges HANYA jika menghubungkan sesama Internasional via Semantik TF-IDF
+            G.add_node(n['id'], label=n['label'], group=n.get('group', ''),
+                       classification=n.get('classification', ''))
+
         for e in data['edges']:
             if e['from'] in intl_ids and e['to'] in intl_ids:
-                # ambil persentase kesamaan jika ada di label
                 weight = 1.0
-                if "NLP" in e['label']:
+                label_txt = e.get('label', '')
+                if 'Sim' in label_txt:
                     try:
-                        weight_str = e['label'].split('NLP')[1].split('%')[0].strip()
-                        weight = float(weight_str) / 100.0
+                        weight = float(label_txt.split('Sim')[1].split('%')[0].strip()) / 100.0
                     except:
                         pass
-                G.add_edge(e['from'], e['to'], type=e['label'], weight=weight)
-                
-        # Export as separate graph
-        degree_dict = dict(G.degree(G.nodes()))
+                G.add_edge(e['from'], e['to'], type=label_txt, weight=weight)
+
+        # Export sub-graph
+        degree_dict = dict(G.degree())
         orig_nodes = {n['id']: n for n in data['nodes']}
         nodes_export = []
         for node in G.nodes():
             n_data = orig_nodes.get(node, {})
             deg = degree_dict.get(node, 1)
             nodes_export.append({
-                "id": node,
-                "label": n_data.get("label", node),
+                "id": node, "label": n_data.get("label", node),
                 "group": n_data.get("group", "Unknown"),
                 "classification": n_data.get("classification", "Unknown"),
                 "value": 10 + (deg * 4),
-                "title": f"Degree/Koneksi Semantik: {deg}"
+                "title": f"Degree Semantik: {deg}"
             })
-            
         edges_export = []
         for u, v, attrs in G.edges(data=True):
-            edges_export.append({
-                "from": u, "to": v,
-                "label": attrs.get("type", "link"),
-                "arrows": "to"
-            })
-            
+            edges_export.append({"from": u, "to": v,
+                                  "label": attrs.get("type", "link"), "arrows": "to"})
         with open('../../data/network/intl_graph.json', 'w', encoding='utf-8') as f:
             json.dump({"nodes": nodes_export, "edges": edges_export}, f, indent=2)
-                
+
     except Exception as e:
         print(f"Error: {e}")
         return
 
-    report = []
-    report.append("# Laporan: Pemetaan Semantik Regulasi Tata Kelola AI Internasional (TF-IDF)\n")
-    report.append("Berdasarkan perhitungan kemiripan leksikal teks (TfidfVectorizer Cosine), kerangka hukum internasional ini menghasilkan pola kohesi internal sebagai berikut:\n")
-    
-    # Kerapatan Global
+    # === GENERATE REPORT ===
     density = nx.density(G)
-    report.append("## 1. Kohesi Kesepakatan Global (Global Cohesion)")
-    report.append(f"- Objek Analisis: **{G.number_of_nodes()} Pasal/Article Internasional** (dari *EU AI Act* dan *Council of Europe* dll).")
-    report.append(f"- Tautan Semantik Ditemukan: **{G.number_of_edges()} Korelasi Organik** (>20% kemiripan kosa kata).")
-    report.append(f"- Network Density Global: **{density:.4f}**")
-    report.append("> *Interpretasi:* Instrumen global tampaknya menggunakan istilah dan prinsip-prinsip yang mirip secara semantik dalam tata kelola AI. Harmonisasi ini terlihat pada irisan konsep 'Transparansi dan Manajemen Risiko' yang tertera secara identik di berbagai doktrin, seperti **OECD AI Principles (Prinsip 1.3 & 1.4)**, **UNESCO Recommendation on the Ethics of AI (Value 2 & 4)**, serta **EU AI Act Article 10 (Tata Kelola Data)**. Tingkat densitas yang tinggi pada algoritma ini membuktikan bahwa komunitas internasional telah mencapai konsensus leksikal yang seragam; menjadi prinsip AI global yang sayangnya gagal direplikasi dengan utuh oleh rezim domestik kita.\n")
-
-    # Siapa pemegang mandat tertinggi (Degree Centrality berbobot)
-    degree_dict = nx.degree_centrality(G)
-    sorted_degree = sorted(degree_dict.items(), key=lambda x: x[1], reverse=True)
-    
-    report.append("## 2. Klausul dengan Sentralitas Pengaruh Tertinggi (Global Semantic Hubs)")
-    report.append("Pasal mana yang memiliki kedekatan sentral ekivalensi pembingkaian tertinggi dengan kerangka standar internasional lainnya?")
-    for idx, (node_id, score) in enumerate(sorted_degree[:3]):
-        label = G.nodes[node_id].get('label', node_id)
-        report.append(f"  {idx+1}. **{label}** (Pengaruh Sentralitas: {score:.3f})")
-    
-    report.append("\n> *Catatan:* Pasal 4 yang tertuang dalam EU AI Act merupakan landasan fundamental bagi regulasi internasional lainnya. Hal ini tercermin dalam term-term yang digunakan pada    pasal tersebut (contoh: *human dignity, non-discrimination, proportionality*) yang ditulis secara seragam (kesamaan *cosine* yang sangat kuat) antar regulasi internasional.\n")
-
-    # Penjembatan Diskursus Internasional
+    degree_dict2 = nx.degree_centrality(G)
+    sorted_degree = sorted(degree_dict2.items(), key=lambda x: x[1], reverse=True)
     betweenness_dict = nx.betweenness_centrality(G)
     sorted_between = sorted(betweenness_dict.items(), key=lambda x: x[1], reverse=True)
-    
-    report.append("## 3. Konektor Lintas Regulasi (Global Betweenness Centrality)")
-    for idx, (node_id, score) in enumerate(sorted_between[:3]):
+
+    # Isolated nodes = no internal semantic connections
+    isolated = [n for n in G.nodes() if G.degree(n) == 0]
+
+    report = []
+    report.append("# Analisis Jaringan Regulasi Internasional\n")
+    report.append(
+        "Sub-analisis ini memetakan **struktur internal** jaringan regulasi AI internasional "
+        "berdasarkan semantic similarity (multilingual embeddings). Seluruh metrik dihitung "
+        "langsung dari topologi sub-graf internasional.\n"
+    )
+
+    report.append("## 1. Metrik Kohesi Internal")
+    report.append(f"| Metrik | Nilai |")
+    report.append(f"| --- | --- |")
+    report.append(f"| **Total Node Internasional** | {G.number_of_nodes()} |")
+    report.append(f"| **Koneksi Semantik Internal** | {G.number_of_edges()} edge |")
+    report.append(f"| **Densitas Internal** | {density:.4f} |")
+    report.append(f"| **Node Terisolasi** | {len(isolated)} node |\n")
+
+    # Themes from data: group nodes by 'group' attribute
+    report.append("## 2. Distribusi per Instrumen")
+    group_counts = {}
+    for n in G.nodes():
+        grp = G.nodes[n].get('group', 'Unknown')
+        if grp not in group_counts:
+            group_counts[grp] = {'total': 0, 'connected': 0, 'edges': 0}
+        group_counts[grp]['total'] += 1
+        if G.degree(n) > 0:
+            group_counts[grp]['connected'] += 1
+        group_counts[grp]['edges'] += G.degree(n)
+
+    report.append("| Instrumen | Node | Terhubung | Edge (total degree) | Coverage |")
+    report.append("| --- | --- | --- | --- | --- |")
+    for grp in sorted(group_counts.keys()):
+        s = group_counts[grp]
+        cov = s['connected'] / max(s['total'], 1) * 100
+        report.append(f"| {grp} | {s['total']} | {s['connected']} | {s['edges']} | {cov:.1f}% |")
+    report.append("")
+
+    report.append("## 3. Degree Centrality — Top 10")
+    report.append("| Peringkat | Node | Instrumen | Skor |")
+    report.append("| --- | --- | --- | --- |")
+    for idx, (node_id, score) in enumerate(sorted_degree[:10]):
         label = G.nodes[node_id].get('label', node_id)
-        report.append(f"  {idx+1}. **{label}** (Skor Jembatan: {score:.3f})")
+        group = G.nodes[node_id].get('group', 'Unknown')
+        report.append(f"| {idx+1} | {label} | {group} | {score:.4f} |")
 
-    report.append("\n## Kesimpulan Kohesi Internasional")
-    report.append("Hasil analisis ini memverifikasi bahwa kerangka hukum internasional untuk tata kelola AI telah harmonis.")
+    report.append("\n## 4. Betweenness Centrality — Top 10")
+    report.append("| Peringkat | Node | Instrumen | Skor |")
+    report.append("| --- | --- | --- | --- |")
+    for idx, (node_id, score) in enumerate(sorted_between[:10]):
+        label = G.nodes[node_id].get('label', node_id)
+        group = G.nodes[node_id].get('group', 'Unknown')
+        report.append(f"| {idx+1} | {label} | {group} | {score:.4f} |")
 
-    with open('laporan_khusus_internasional.md', 'w') as f:
+    report.append("\n## 5. Node Terisolasi")
+    if isolated:
+        report.append("| Node | Instrumen | Klasifikasi |")
+        report.append("| --- | --- | --- |")
+        for nid in isolated[:15]:
+            label = G.nodes[nid].get('label', nid)
+            grp = G.nodes[nid].get('group', '')
+            cls = G.nodes[nid].get('classification', '')
+            report.append(f"| {label} | {grp} | {cls} |")
+        if len(isolated) > 15:
+            report.append(f"| *(+{len(isolated)-15} lainnya)* | | |")
+    else:
+        report.append("*Semua node internasional memiliki koneksi internal.*")
+
+    report.append("\n---\n*Sub-laporan dihasilkan dari analisis NetworkX pada sub-graf regulasi internasional. "
+                  "Metrik dihitung dari data graf aktual tanpa interpretasi manual.*")
+
+    with open('laporan_khusus_internasional.md', 'w', encoding='utf-8') as f:
         f.write("\n".join(report))
+    print("Intl report done.")
+
 
 if __name__ == "__main__":
     analyze_intl_only()
