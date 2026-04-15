@@ -157,6 +157,12 @@ window.toggleLanguage = function() {
     if (typeof reRenderAllMetrics === 'function') {
         reRenderAllMetrics();
     }
+    if (typeof window.reRenderSectorData === 'function') {
+        window.reRenderSectorData();
+    }
+    if (typeof window.reloadIncidentRegistry === 'function') {
+        window.reloadIncidentRegistry();
+    }
 };
 
 // Listen to DOM tree updates to catch newly spawned text (e.g. innerHTML swaps in SPA)

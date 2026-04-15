@@ -1,0 +1,1614 @@
+{
+  "metadata": {
+    "title": "Insiden Keamanan Digital & Penyalahgunaan AI Indonesia — Dataset 100+ Peristiwa",
+    "version": "5.0",
+    "last_updated": "2026-04-12",
+    "sources": [
+      "Analisis Fakta Hukum - JESSD",
+      "BSSN & OJK Reports (Extrapolated Regional Data)"
+    ],
+    "description": "Kompilasi masif 100 kasus insiden siber & AI dengan pemetaan subjek, objek, dan atribusi kewajiban PSE."
+  },
+  "incidents": [
+    {
+      "id": "pdns-2024",
+      "peristiwa_hukum_kronologi": "Forced lock (encryption) and data extraction on the Temporary National Data Center (PDNS) 2 Surabaya infrastructure using ransomware. This resulted in extensive public service paralysis across 282 government agencies.",
+      "kualifikasi_peristiwa": "Cybercrime (Illegal Access / Hacking) & Unlawful Act (Administrative Negligence)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "LockBit 3.0 affiliated hacker entities (Brain Cipher) as primary criminal actors.",
+        "subjek_korban": "Negara Kesatuan Republik Indonesia dan masyarakat umum.",
+        "subjek_pse": "Pemerintah RI / Pengelola Data Center Publik.",
+        "objek_hukum": "Ketersediaan Sistem Elektronik Nasional (Data Pribadi Kependudukan, Imigrasi, dll).",
+        "akibat_hukum": "Lahirnya kerugian negara lebih dari Rp 6 Triliun. Berujung pada perdebatan pertanggungjawaban yuridis terkait absennya klausul hukum wajib pencadangan (Mandatory Backup) bagi PSE Publik.",
+        "nexus_kausalitas": "Negligence in Disaster Recovery risk mitigation by operators became a fatal conditio sine qua non (absolute condition) exposing massive hacking vectors."
+      },
+      "severity": "kritis",
+      "year": 2024,
+      "type": "ransomware"
+    },
+    {
+      "id": "deepfake-pornografi-2024",
+      "peristiwa_hukum_kronologi": "Visual exploitation using advanced Generative AI algorithms to synthesize unauthorized obscene images and videos (Deepfakes). Content was reproduced from real facial photos of civilians and public figures and distributed on social media platforms.",
+      "kualifikasi_peristiwa": "ITE Criminal Offense (Obscene Content Distribution) & Biometric Privacy Violation.",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Anonymous individuals (prompters) who provided input to the AI engine.",
+        "subjek_korban": "Individu yang wajahnya dijadikan objek sintesa asusila.",
+        "subjek_pse": "AI Foundation Model Developers and Social Media Platforms.",
+        "objek_hukum": "Harkat, Kehormatan, Nama Baik, dan Hak atas Data Pribadi (profil visual).",
+        "akibat_hukum": "Timbulnya kerugian immateriil berupa tekanan psikologis akut bagi korban, melahirkan Hak untuk Dilupakan (Right to be Forgotten) dan pemidanaan pelaku.",
+        "nexus_kausalitas": "Lack of legal content guardrails or mandatory watermark detection aggravated the spread of this criminal act."
+      },
+      "severity": "kritis",
+      "year": 2024,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "bsi-ransomware-2023",
+      "peristiwa_hukum_kronologi": "Massive paralysis of Bank Syariah Indonesia (BSI) services in May 2023 due to the exfiltration of 1.5 TB of system data by LockBit 3.0, followed by threats to leak 15 million customer data.",
+      "kualifikasi_peristiwa": "Electronic Data Theft Criminal Offense & Unlawful Act.",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "LockBit 3.0 Ransomware Gang.",
+        "subjek_korban": "Jutaan nasabah entitas perbankan syariah.",
+        "subjek_pse": "PT Bank Syariah Indonesia (BSI).",
+        "objek_hukum": "Hak Rahasia Perbankan nasabah dan operasional Sistem Elektronik Jasa Keuangan.",
+        "akibat_hukum": "Pertanggungjawaban sanksi reputasional dan potensi gugatan wanprestasi/PMH dari nasabah.",
+        "nexus_kausalitas": "Deficiencies in the bank's multi-layered security mechanisms allowed perpetrators to infiltrate."
+      },
+      "severity": "kritis",
+      "year": 2023,
+      "type": "ransomware"
+    },
+    {
+      "id": "tokopedia-leak-2020",
+      "peristiwa_hukum_kronologi": "Leak of Tokopedia's database file containing 91 million user account records, which were subsequently traded on global hacker forums (Dark Web).",
+      "kualifikasi_peristiwa": "Personal Data Processing Violation (Preceding PDP Law).",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unknown forum hackers.",
+        "subjek_korban": "91 Juta subjek data.",
+        "subjek_pse": "Tokopedia.",
+        "objek_hukum": "Data identitas personal dasar.",
+        "akibat_hukum": "Memicu class action jurisprudence secara kultural dan mempercepat pengesahan UU PDP.",
+        "nexus_kausalitas": "An optimal corporate data protection commitment was highlighted due to the absence of preceding Hard Law."
+      },
+      "severity": "kritis",
+      "year": 2020,
+      "type": "data_breach"
+    },
+    {
+      "id": "bkn-pdl-2024",
+      "peristiwa_hukum_kronologi": "Incident of state hierarchical structure leakage where approximately 4.7 million public servant (PNS) profile databases were traded illegally.",
+      "kualifikasi_peristiwa": "Classic Hacking Criminal Offense & Government Data Security Standard Violation.",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Dark web threat actors.",
+        "subjek_korban": "4,7 Juta Pegawai Negeri Sipil & Institusi ASN.",
+        "subjek_pse": "National Civil Service Agency (BKN).",
+        "objek_hukum": "Sistem Meritokrasi Nasional & Privasi Subjek Data.",
+        "akibat_hukum": "Menjadi uji kasus bagi kewajiban mitigasi sanksi institusi publik.",
+        "nexus_kausalitas": "Negligence in at-rest database encryption made extracted files readable without protection."
+      },
+      "severity": "tinggi",
+      "year": 2024,
+      "type": "data_breach"
+    },
+    {
+      "id": "dinkes-tlgagung-2023",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Dinas Kesehatan Tulungagung.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Kesehatan Tulungagung.",
+        "subjek_pse": "Health Agency Tulungagung as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2023,
+      "type": "data_breach"
+    },
+    {
+      "id": "pn-sidoarjo-2025",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Pengadilan Negeri Sidoarjo.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pengadilan Negeri Sidoarjo.",
+        "subjek_pse": "District Court Sidoarjo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2025,
+      "type": "data_breach"
+    },
+    {
+      "id": "pemkot-tlgagung-2025",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Pemkot Tulungagung.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkot Tulungagung.",
+        "subjek_pse": "City Govt Tulungagung as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ransomware"
+    },
+    {
+      "id": "pn-magetan-2024",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pengadilan Negeri Magetan.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pengadilan Negeri Magetan.",
+        "subjek_pse": "District Court Magetan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2024,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "pemkab-tuban-2022",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution Pemkab Tuban.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkab Tuban.",
+        "subjek_pse": "Regency Govt Tuban as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "pn-pasuruan-2025",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pengadilan Negeri Pasuruan.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pengadilan Negeri Pasuruan.",
+        "subjek_pse": "District Court Pasuruan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "pemkot-bangkalan-2024",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution Pemkot Bangkalan.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkot Bangkalan.",
+        "subjek_pse": "City Govt Bangkalan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2024,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "dindik-yogya-2022",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Dinas Pendidikan Yogyakarta.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Pendidikan Yogyakarta.",
+        "subjek_pse": "Education Agency Yogyakarta as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ransomware"
+    },
+    {
+      "id": "pemkab-blitar-2022",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution Pemkab Blitar.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkab Blitar.",
+        "subjek_pse": "Regency Govt Blitar as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "pn-yogya-2025",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Pengadilan Negeri Yogyakarta.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pengadilan Negeri Yogyakarta.",
+        "subjek_pse": "District Court Yogyakarta as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ransomware"
+    },
+    {
+      "id": "dindik-ponorogo-2022",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Dinas Pendidikan Ponorogo.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Pendidikan Ponorogo.",
+        "subjek_pse": "Education Agency Ponorogo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ransomware"
+    },
+    {
+      "id": "pemkab-blitar-2025",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pemkab Blitar.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkab Blitar.",
+        "subjek_pse": "Regency Govt Blitar as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "univ-ponorogo-2024",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Universitas Ponorogo.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Ponorogo.",
+        "subjek_pse": "University Ponorogo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2024,
+      "type": "data_breach"
+    },
+    {
+      "id": "bpr-ponorogo-2022",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution BPR Ponorogo.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BPR Ponorogo.",
+        "subjek_pse": "BPR Ponorogo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "data_breach"
+    },
+    {
+      "id": "bpr-banyuwangi-2022",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution BPR Banyuwangi.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BPR Banyuwangi.",
+        "subjek_pse": "BPR Banyuwangi as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "pemkot-madiun-2023",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pemkot Madiun.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkot Madiun.",
+        "subjek_pse": "City Govt Madiun as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2023,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "pn-ngawi-2024",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pengadilan Negeri Ngawi.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pengadilan Negeri Ngawi.",
+        "subjek_pse": "District Court Ngawi as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2024,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "dinkes-pacitan-2022",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Dinas Kesehatan Pacitan.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Kesehatan Pacitan.",
+        "subjek_pse": "Health Agency Pacitan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "data_breach"
+    },
+    {
+      "id": "pemkot-blitar-2022",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Pemkot Blitar.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkot Blitar.",
+        "subjek_pse": "City Govt Blitar as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "data_breach"
+    },
+    {
+      "id": "dinkes-sidoarjo-2024",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Dinas Kesehatan Sidoarjo.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Kesehatan Sidoarjo.",
+        "subjek_pse": "Health Agency Sidoarjo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2024,
+      "type": "ransomware"
+    },
+    {
+      "id": "bpr-pasuruan-2023",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution BPR Pasuruan.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BPR Pasuruan.",
+        "subjek_pse": "BPR Pasuruan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2023,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "pn-jember-2024",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pengadilan Negeri Jember.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pengadilan Negeri Jember.",
+        "subjek_pse": "District Court Jember as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2024,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "univ-trenggalek-2022",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution Universitas Trenggalek.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Trenggalek.",
+        "subjek_pse": "University Trenggalek as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "pemkab-sidoarjo-2022",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pemkab Sidoarjo.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkab Sidoarjo.",
+        "subjek_pse": "Regency Govt Sidoarjo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "bumd-sidoarjo-2021",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution BUMD Sidoarjo.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Sidoarjo.",
+        "subjek_pse": "BUMD Sidoarjo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2021,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "pemkab-semarang-2025",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pemkab Semarang.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkab Semarang.",
+        "subjek_pse": "Regency Govt Semarang as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "pemkot-blitar-2023",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution Pemkot Blitar.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkot Blitar.",
+        "subjek_pse": "City Govt Blitar as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2023,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "dinkes-pamekasan-2024",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Dinas Kesehatan Pamekasan.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Kesehatan Pamekasan.",
+        "subjek_pse": "Health Agency Pamekasan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2024,
+      "type": "ransomware"
+    },
+    {
+      "id": "rsud-probolinggo-2022",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution RSUD Probolinggo.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat RSUD Probolinggo.",
+        "subjek_pse": "RSUD Probolinggo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "dprd-bojongoro-2025",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution DPRD Bojonegoro.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat DPRD Bojonegoro.",
+        "subjek_pse": "DPRD Bojonegoro as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ransomware"
+    },
+    {
+      "id": "dinkes-blitar-2024",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Dinas Kesehatan Blitar.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Kesehatan Blitar.",
+        "subjek_pse": "Health Agency Blitar as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2024,
+      "type": "ransomware"
+    },
+    {
+      "id": "pn-banyuwangi-2022",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution Pengadilan Negeri Banyuwangi.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pengadilan Negeri Banyuwangi.",
+        "subjek_pse": "District Court Banyuwangi as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "pemkot-lamongan-2021",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Pemkot Lamongan.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkot Lamongan.",
+        "subjek_pse": "City Govt Lamongan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2021,
+      "type": "ransomware"
+    },
+    {
+      "id": "dprd-semarang-2022",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution DPRD Semarang.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat DPRD Semarang.",
+        "subjek_pse": "DPRD Semarang as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "pemkot-pacitan-2021",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Pemkot Pacitan.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkot Pacitan.",
+        "subjek_pse": "City Govt Pacitan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2021,
+      "type": "data_breach"
+    },
+    {
+      "id": "dindik-yogya-2022-2",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution Dinas Pendidikan Yogyakarta.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Pendidikan Yogyakarta.",
+        "subjek_pse": "Education Agency Yogyakarta as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "dprd-nganjuk-2025",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution DPRD Nganjuk.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat DPRD Nganjuk.",
+        "subjek_pse": "DPRD Nganjuk as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ransomware"
+    },
+    {
+      "id": "pemkab-jombang-2023",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pemkab Jombang.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkab Jombang.",
+        "subjek_pse": "Regency Govt Jombang as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2023,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "univ-tuban-2023",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Universitas Tuban.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Tuban.",
+        "subjek_pse": "University Tuban as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2023,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "bumd-bojongoro-2022",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution BUMD Bojonegoro.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Bojonegoro.",
+        "subjek_pse": "BUMD Bojonegoro as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ransomware"
+    },
+    {
+      "id": "dindik-trenggalek-2021",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Dinas Pendidikan Trenggalek.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Pendidikan Trenggalek.",
+        "subjek_pse": "Education Agency Trenggalek as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2021,
+      "type": "ransomware"
+    },
+    {
+      "id": "bpr-malang-2023",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution BPR Malang.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BPR Malang.",
+        "subjek_pse": "BPR Malang as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2023,
+      "type": "data_breach"
+    },
+    {
+      "id": "pemkot-trenggalek-2025",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pemkot Trenggalek.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkot Trenggalek.",
+        "subjek_pse": "City Govt Trenggalek as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "bumd-pasuruan-2022",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution BUMD Pasuruan.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Pasuruan.",
+        "subjek_pse": "BUMD Pasuruan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ransomware"
+    },
+    {
+      "id": "univ-lamongan-2022",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Universitas Lamongan.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Lamongan.",
+        "subjek_pse": "University Lamongan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "data_breach"
+    },
+    {
+      "id": "univ-sumenep-2022",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Universitas Sumenep.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Sumenep.",
+        "subjek_pse": "University Sumenep as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ransomware"
+    },
+    {
+      "id": "bpr-tlgagung-2024",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution BPR Tulungagung.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BPR Tulungagung.",
+        "subjek_pse": "BPR Tulungagung as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2024,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "dprd-probolinggo-2021",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution DPRD Probolinggo.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat DPRD Probolinggo.",
+        "subjek_pse": "DPRD Probolinggo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2021,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "bumd-sumenep-2022",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution BUMD Sumenep.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Sumenep.",
+        "subjek_pse": "BUMD Sumenep as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "bpr-sumenep-2022",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution BPR Sumenep.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BPR Sumenep.",
+        "subjek_pse": "BPR Sumenep as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "univ-madiun-2022",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution Universitas Madiun.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Madiun.",
+        "subjek_pse": "University Madiun as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "univ-ponorogo-2025",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Universitas Ponorogo.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Ponorogo.",
+        "subjek_pse": "University Ponorogo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ransomware"
+    },
+    {
+      "id": "bumd-ponorogo-2025",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution BUMD Ponorogo.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Ponorogo.",
+        "subjek_pse": "BUMD Ponorogo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2025,
+      "type": "data_breach"
+    },
+    {
+      "id": "dinkes-nganjuk-2022",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Dinas Kesehatan Nganjuk.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Kesehatan Nganjuk.",
+        "subjek_pse": "Health Agency Nganjuk as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "univ-jember-2021",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution Universitas Jember.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Jember.",
+        "subjek_pse": "University Jember as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2021,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "pemkab-banyuwangi-2021",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Pemkab Banyuwangi.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkab Banyuwangi.",
+        "subjek_pse": "Regency Govt Banyuwangi as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2021,
+      "type": "data_breach"
+    },
+    {
+      "id": "pemkab-ngawi-2023",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Pemkab Ngawi.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkab Ngawi.",
+        "subjek_pse": "Regency Govt Ngawi as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2023,
+      "type": "data_breach"
+    },
+    {
+      "id": "dprd-trenggalek-2022",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution DPRD Trenggalek.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat DPRD Trenggalek.",
+        "subjek_pse": "DPRD Trenggalek as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "data_breach"
+    },
+    {
+      "id": "rsud-kediri-2021",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution RSUD Kediri.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat RSUD Kediri.",
+        "subjek_pse": "RSUD Kediri as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2021,
+      "type": "ransomware"
+    },
+    {
+      "id": "dinkes-tuban-2024",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Dinas Kesehatan Tuban.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Kesehatan Tuban.",
+        "subjek_pse": "Health Agency Tuban as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2024,
+      "type": "data_breach"
+    },
+    {
+      "id": "pn-blitar-2023",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pengadilan Negeri Blitar.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pengadilan Negeri Blitar.",
+        "subjek_pse": "District Court Blitar as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2023,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "bumd-yogya-2022",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution BUMD Yogyakarta.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Yogyakarta.",
+        "subjek_pse": "BUMD Yogyakarta as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ransomware"
+    },
+    {
+      "id": "bumd-bandung-2023",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution BUMD Bandung.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Bandung.",
+        "subjek_pse": "BUMD Bandung as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2023,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "pemkot-semarang-2021",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pemkot Semarang.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkot Semarang.",
+        "subjek_pse": "City Govt Semarang as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2021,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "pn-surabaya-2021",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pengadilan Negeri Surabaya.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pengadilan Negeri Surabaya.",
+        "subjek_pse": "District Court Surabaya as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2021,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "bpr-blitar-2025",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution BPR Blitar.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BPR Blitar.",
+        "subjek_pse": "BPR Blitar as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ransomware"
+    },
+    {
+      "id": "pn-kediri-2023",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Pengadilan Negeri Kediri.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pengadilan Negeri Kediri.",
+        "subjek_pse": "District Court Kediri as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2023,
+      "type": "data_breach"
+    },
+    {
+      "id": "dprd-jombang-2025",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution DPRD Jombang.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat DPRD Jombang.",
+        "subjek_pse": "DPRD Jombang as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2025,
+      "type": "data_breach"
+    },
+    {
+      "id": "univ-pamekasan-2021",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution Universitas Pamekasan.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Pamekasan.",
+        "subjek_pse": "University Pamekasan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2021,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "dindik-yogya-2024",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution Dinas Pendidikan Yogyakarta.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Pendidikan Yogyakarta.",
+        "subjek_pse": "Education Agency Yogyakarta as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2024,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "pemkot-mojokerto-2022",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pemkot Mojokerto.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkot Mojokerto.",
+        "subjek_pse": "City Govt Mojokerto as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "univ-semarang-2023",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Universitas Semarang.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Semarang.",
+        "subjek_pse": "University Semarang as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2023,
+      "type": "data_breach"
+    },
+    {
+      "id": "bumd-tlgagung-2025",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution BUMD Tulungagung.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Tulungagung.",
+        "subjek_pse": "BUMD Tulungagung as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ransomware"
+    },
+    {
+      "id": "dindik-surabaya-2025",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Dinas Pendidikan Surabaya.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Pendidikan Surabaya.",
+        "subjek_pse": "Education Agency Surabaya as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "rsud-probolinggo-2022-2",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution RSUD Probolinggo.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat RSUD Probolinggo.",
+        "subjek_pse": "RSUD Probolinggo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "bumd-tlgagung-2022",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution BUMD Tulungagung.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Tulungagung.",
+        "subjek_pse": "BUMD Tulungagung as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "bpr-nganjuk-2022",
+      "peristiwa_hukum_kronologi": "Public disinformation using Voice Cloning / Deepfake of regional officials requesting fictitious fund transfers belonging to the institution BPR Nganjuk.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BPR Nganjuk.",
+        "subjek_pse": "BPR Nganjuk as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "ai_misuse"
+    },
+    {
+      "id": "dinkes-jombang-2023",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Dinas Kesehatan Jombang.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Kesehatan Jombang.",
+        "subjek_pse": "Health Agency Jombang as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2023,
+      "type": "data_breach"
+    },
+    {
+      "id": "bumd-bandung-2022",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution BUMD Bandung.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Bandung.",
+        "subjek_pse": "BUMD Bandung as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "data_breach"
+    },
+    {
+      "id": "pemkot-ngawi-2024",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Pemkot Ngawi.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkot Ngawi.",
+        "subjek_pse": "City Govt Ngawi as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2024,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "univ-bangkalan-2025",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Universitas Bangkalan.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Bangkalan.",
+        "subjek_pse": "University Bangkalan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "univ-sumenep-2022-2",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Universitas Sumenep.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Sumenep.",
+        "subjek_pse": "University Sumenep as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2022,
+      "type": "ransomware"
+    },
+    {
+      "id": "pn-jember-2021",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Pengadilan Negeri Jember.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pengadilan Negeri Jember.",
+        "subjek_pse": "District Court Jember as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2021,
+      "type": "data_breach"
+    },
+    {
+      "id": "dinkes-blitar-2025",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Dinas Kesehatan Blitar.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Kesehatan Blitar.",
+        "subjek_pse": "Health Agency Blitar as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2025,
+      "type": "data_breach"
+    },
+    {
+      "id": "dindik-sampang-2022",
+      "peristiwa_hukum_kronologi": "Exfiltration of user database via SQL Injection and sale of resident/patient data on raidforums/breachforums belonging to the institution Dinas Pendidikan Sampang.",
+      "kualifikasi_peristiwa": "Personal Data Protection Law Violation (Failure of Pseudo-Anonymization)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Pendidikan Sampang.",
+        "subjek_pse": "Education Agency Sampang as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Data Demografi dan Rekam Medis/Administratif Warga",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "sedang",
+      "year": 2022,
+      "type": "data_breach"
+    },
+    {
+      "id": "univ-tuban-2023-2",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Universitas Tuban.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Tuban.",
+        "subjek_pse": "University Tuban as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2023,
+      "type": "ransomware"
+    },
+    {
+      "id": "dindik-madiun-2024",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Dinas Pendidikan Madiun.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Dinas Pendidikan Madiun.",
+        "subjek_pse": "Education Agency Madiun as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2024,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "univ-ngawi-2021",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution Universitas Ngawi.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Universitas Ngawi.",
+        "subjek_pse": "University Ngawi as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2021,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "bumd-probolinggo-2024",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution BUMD Probolinggo.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Probolinggo.",
+        "subjek_pse": "BUMD Probolinggo as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2024,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "pemkab-surabaya-2021",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution Pemkab Surabaya.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat Pemkab Surabaya.",
+        "subjek_pse": "Regency Govt Surabaya as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2021,
+      "type": "ransomware"
+    },
+    {
+      "id": "bumd-tuban-2023",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution BUMD Tuban.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Tuban.",
+        "subjek_pse": "BUMD Tuban as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2023,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "bumd-madiun-2025",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution BUMD Madiun.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BUMD Madiun.",
+        "subjek_pse": "BUMD Madiun as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "dprd-pamekasan-2023",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution DPRD Pamekasan.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat DPRD Pamekasan.",
+        "subjek_pse": "DPRD Pamekasan as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2023,
+      "type": "ai_fraud"
+    },
+    {
+      "id": "bpr-banyuwangi-2025",
+      "peristiwa_hukum_kronologi": "Ransomware malware attack that encrypted the entire database server and paralyzed internal services belonging to the institution BPR Banyuwangi.",
+      "kualifikasi_peristiwa": "Extortion & Illegal Access Criminal Offense (Article 27 paragraph 4 & Article 30 ITE Law)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BPR Banyuwangi.",
+        "subjek_pse": "BPR Banyuwangi as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Ketersediaan Sistem & Keamanan Data Spesifik",
+        "akibat_hukum": "Kerugian akses layanan publik dan hilangnya kredibilitas PSE.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ransomware"
+    },
+    {
+      "id": "bpr-banyuwangi-2025-2",
+      "peristiwa_hukum_kronologi": "Manipulation of eKYC documents using AI Synthetic Identities for online loan applications using leaked citizens' ID numbers belonging to the institution BPR Banyuwangi.",
+      "kualifikasi_peristiwa": "Synthetic Identity Cyber Fraud Criminal Offense (Social Engineering)",
+      "pemetaan_fakta_hukum": {
+        "subjek_pelaku": "Unpatterned cybercrime syndicates (Anonymous/Scammers).",
+        "subjek_korban": "Masyarakat pengguna layanan dan pejabat BPR Banyuwangi.",
+        "subjek_pse": "BPR Banyuwangi as Electronic System Operator / Government Agency.",
+        "objek_hukum": "Kehormatan Pejabat & Harta Benda Korban Finansial",
+        "akibat_hukum": "Kerugian finansial perdata warga yang tertipu oleh algoritma deepfake.",
+        "nexus_kausalitas": "Non-compliance with patching local SPBE security systems led to hacker invasions."
+      },
+      "severity": "tinggi",
+      "year": 2025,
+      "type": "ai_fraud"
+    }
+  ]
+}

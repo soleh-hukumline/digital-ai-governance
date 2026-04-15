@@ -561,10 +561,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===================================================================
     async function loadIncidentRegistry() {
         try {
-            const res = await fetch('./data/incidents/indonesia_incidents.json');
+            const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
+            const suffix = isEn ? '_en' : '';
+            const res = await fetch(`./data/incidents/indonesia_incidents${suffix}.json`);
             const json = await res.json();
             rawIncidentData = json.incidents;
             renderIncidentCards(rawIncidentData);
+            if (typeof applyTranslations === 'function') setTimeout(applyTranslations, 100);
         } catch (e) {
             document.getElementById('incident-registry-container').innerHTML = '<div style="color:#ef4444; padding:15px;">Gagal memuat data insiden.</div>';
         }
@@ -638,7 +641,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===================================================================
     // SECTOR ANALYSIS (5 Sektor Prioritas)
     // ===================================================================
-    const SECTOR_DATA = [
+    const SECTOR_DATA_ID = [
         {
             key: 'fintech',
             icon: '🏦',
@@ -733,6 +736,101 @@ document.addEventListener('DOMContentLoaded', () => {
             studyRef: 'CETS225 Art. 17 (Judicial Review of AI) · EU AI Act Art. 6(2) High-Risk AI List'
         }
     ];
+    const SECTOR_DATA_EN = [
+        {
+            key: 'fintech',
+            icon: '🏦',
+            iconBg: 'linear-gradient(135deg, #1d4ed8, #2563eb)',
+            title: 'Finance & Fintech AI',
+            subtitle: 'Credit Scoring · Fraud Detection · Robo-Advisor',
+            coverageScore: 38,
+            coverageColor: '#f59e0b',
+            pasals: [
+                { status: 'partial', name: 'UU PDP Ps. 16-20', desc: 'Data processing principles, legal basis — has not regulated automated AI decisions.' },
+                { status: 'partial', name: 'POJK 11/2022 Mnj. Risiko TI', desc: 'Banking IT risk management — does not specifically regulate predictive AI algorithms.' },
+                { status: 'gap', name: 'Financial AI Sandbox', desc: 'NOT YET EXISTS: Sandbox regulation for AI trials in the financial sector.' },
+                { status: 'gap', name: 'Bias Audit Obligation', desc: 'NOT YET EXISTS: Obligation for algorithmic bias audit for credit scoring.' },
+                { status: 'covered', name: 'POJK 77/2016 Fintech', desc: 'Organizing technology-based lending and borrowing services.' },
+                { status: 'gap', name: 'Human Oversight AI', desc: 'NOT YET EXISTS: Obligation for human oversight in automated credit decisions.' },
+            ],
+            recom: 'Studies recommend: sandbox-based regulation, obligation to audit algorithms for credit scoring bias, and mandatory human-in-the-loop oversight mechanisms for high-risk financial decisions.',
+            studyRef: 'OECD AI Principle 1.4 · EU AI Act Art. 9 (High-Risk AI Systems)'
+        },
+        {
+            key: 'facial',
+            icon: '👁️',
+            iconBg: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+            title: 'Facial Recognition & Biometrics',
+            subtitle: 'eKYC · Public Surveillance · System Access',
+            coverageScore: 22,
+            coverageColor: '#f43f5e',
+            pasals: [
+                { status: 'partial', name: 'UU PDP Ps. 26 (Data Biometrik)', desc: 'Regulates biometric data as sensitive data — no technical provisions for FR.' },
+                { status: 'partial', name: 'PP PSTE Ps. 28', desc: 'Security of electronic systems — does not explicitly mention facial recognition.' },
+                { status: 'gap', name: 'Special Permit for FR Use', desc: 'NOT YET EXISTS: Regulation requiring written permission before using FR in public spaces.' },
+                { status: 'gap', name: 'FR Accuracy & Bias Standards', desc: 'NOT YET EXISTS: Technical standards for facial recognition accuracy and prohibition of demographic bias.' },
+                { status: 'gap', name: 'Right to Refuse FR', desc: 'NOT YET EXISTS: Explicit right of citizens to refuse facial recognition.' },
+            ],
+            recom: 'Studies recommend: specific regulation for facial recognition, independent oversight mechanisms, and prohibition of FR use for mass profiling by the private sector without explicit permission.',
+            studyRef: 'EU AI Act Art. 5(1)(d) (Prohibited FR in Public) · UNESCO Rec. Value 10 (Privacy)'
+        },
+        {
+            key: 'ecommerce',
+            icon: '🛒',
+            iconBg: 'linear-gradient(135deg, #0369a1, #0ea5e9)',
+            title: 'E-Commerce & Digital Trade',
+            subtitle: 'Recommendation Algorithms · Ranking · Price Personalization',
+            coverageScore: 29,
+            coverageColor: '#f59e0b',
+            pasals: [
+                { status: 'covered', name: 'UU Perdagangan Ps. 65', desc: 'Product information in electronic trading.' },
+                { status: 'partial', name: 'UU PK Ps. 7 (Hak Konsumen)', desc: 'Right to correct information — does not explicitly regulate algorithm transparency.' },
+                { status: 'partial', name: 'PP PSTE Ps. 25', desc: 'Electronic system content — does not regulate product ranking algorithms.' },
+                { status: 'gap', name: 'Prohibition of Self-Preferencing', desc: 'NOT YET EXISTS: Platform prohibition from prioritizing its own products in algorithms.' },
+                { status: 'gap', name: 'Ranking Algorithm Transparency', desc: 'NOT YET EXISTS: Obligation to disclose factors determining product ranking to businesses.' },
+                { status: 'gap', name: 'AI Price Personalization', desc: 'NOT YET EXISTS: Prohibition of price discrimination based on AI profiling.' },
+            ],
+            recom: 'Studies recommend: transparency obligation for ranking factors, prohibition of self-preferencing, and merchant objection mechanisms against algorithmic decisions.',
+            studyRef: 'EU Digital Markets Act Art. 6 · OECD AI Rec. 1.3 (Fairness & Non-Discrimination)'
+        },
+        {
+            key: 'content',
+            icon: '🎭',
+            iconBg: 'linear-gradient(135deg, #be185d, #ec4899)',
+            title: 'AI-Generated Content & Media',
+            subtitle: 'Deepfake · Voice Cloning · Synthetic Media',
+            coverageScore: 35,
+            coverageColor: '#f59e0b',
+            pasals: [
+                { status: 'partial', name: 'UU ITE Ps. 27A (Konten Kesusilaan)', desc: 'Prohibits obscene content — no specific provisions for AI synthetic content.' },
+                { status: 'partial', name: 'UU ITE Ps. 28 (Informasi Bohong)', desc: 'Prohibits hoaxes — difficult to prove for deepfakes without a mandatory watermark.' },
+                { status: 'partial', name: 'UU Hak Cipta Ps. 40', desc: 'Copyright — has not regulated ownership of AI-generated content.' },
+                { status: 'gap', name: 'Mandatory AI Content Label', desc: 'NOT YET EXISTS: Obligation for visible watermark/label on any AI-generated content.' },
+                { status: 'gap', name: 'Platform Accountability', desc: 'NOT YET EXISTS: AI platform responsibility for generated harmful content.' },
+                { status: 'gap', name: 'Deepfake Victim Grievance Mechanism', desc: 'NOT YET EXISTS: Fast reporting and mandatory take-down procedures for non-consensual deepfake content.' },
+            ],
+            recom: 'Studies recommend: AI content watermarking obligation, model provider accountability, and fast grievance/take-down mechanisms for deepfake victims.',
+            studyRef: 'EU AI Act Art. 50 (Transparency for GPAI) · UNESCO Rec. Value 9 (Freedom of Expression)'
+        },
+        {
+            key: 'judicial',
+            icon: '⚖️',
+            iconBg: 'linear-gradient(135deg, #065f46, #10b981)',
+            title: 'AI in Justice & Law',
+            subtitle: 'Verdict Prediction Systems · Suspect Risk Assessment · Legal Research AI',
+            coverageScore: 18,
+            coverageColor: '#f43f5e',
+            pasals: [
+                { status: 'covered', name: 'UU Kekuasaan Kehakiman Ps. 1', desc: 'Judges as holders of judicial power — prohibits judge substitution.' },
+                { status: 'partial', name: 'KUHAP Ps. 183 (Pembuktian)', desc: 'Proof standards — AI evidence validity has not been explicitly regulated.' },
+                { status: 'gap', name: 'Limits of AI's Role in Courts', desc: 'NOT YET EXISTS: Regulation designating AI solely as an "assistant" to judges.' },
+                { status: 'gap', name: 'Assessment Algorithm Transparency', desc: 'NOT YET EXISTS: Defendant's right to know how AI assesses their risk.' },
+                { status: 'gap', name: 'Judicial AI Model Validation Standard', desc: 'NOT YET EXISTS: Authority responsible for validating AI used in the judicial system.' },
+            ],
+            recom: 'Studies recommend: AI in the judiciary must be limited as a tool (non-determinative), judges must retain independent reasoning, and judicial AI must be audited periodically.',
+            studyRef: 'CETS225 Art. 17 (Judicial Review of AI) · EU AI Act Art. 6(2) High-Risk AI List'
+        }
+    ];
 
     function initSectorAnalysis() {
         const container = document.getElementById('sector-grid-container');
@@ -740,7 +838,8 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = '';
         container.dataset.rendered = 'true';
 
-        SECTOR_DATA.forEach(sector => {
+        const activeSectorData = (typeof window !== 'undefined' && window.currentLang === 'en') ? SECTOR_DATA_EN : SECTOR_DATA_ID;
+        activeSectorData.forEach(sector => {
             const covered = sector.pasals.filter(p => p.status === 'covered').length;
             const partial = sector.pasals.filter(p => p.status === 'partial').length;
             const gap = sector.pasals.filter(p => p.status === 'gap').length;
@@ -1925,6 +2024,12 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
     // ===================================================================
     navigateTo('section-all');       // ← buka section SEBELUM render graph
     loadAllNetworkGraphs();          // ← sekarang canvas sudah berukuran
+    window.reloadIncidentRegistry = loadIncidentRegistry;
+    window.reRenderSectorData = function() {
+        const c = document.getElementById('sector-grid-container');
+        if(c) c.dataset.rendered = 'false';
+        if (typeof initSectorAnalysis === 'function') initSectorAnalysis();
+    };
     loadIncidentRegistry();
     initAIFeature();
     // initSectorAnalysis dipanggil lazy di navigateTo saat section-sector dibuka
