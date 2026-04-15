@@ -72,7 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const icons = { warning: 'warning', error: 'error', success: 'check_circle' };
         
         toast.style.cssText = `${colors[type]} padding:12px 24px; border-radius:30px; font-size:14px; font-weight:500; display:flex; align-items:center; gap:8px; box-shadow:0 10px 30px rgba(0,0,0,0.3); backdrop-filter:blur(10px); transform:translateY(-20px); opacity:0; transition:all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events:auto;`;
-        toast.innerHTML = `<span class="material-symbols-rounded" style="font-size:20px;">${icons[type] || 'info'}</span> <span>${msg}</span>`;
+        const translatedMsg = typeof window.t === 'function' ? window.t(msg) : msg;
+        toast.innerHTML = `<span class="material-symbols-rounded" style="font-size:20px;">${icons[type] || 'info'}</span> <span>${translatedMsg}</span>`;
         
         container.appendChild(toast);
         
@@ -164,6 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (headerIcon) headerIcon.textContent = meta.icon || 'hub';
         if (headerTitle) headerTitle.textContent = meta.title || '';
         if (headerSub) headerSub.textContent = meta.sub || '';
+
+        if (typeof applyTranslations === 'function') applyTranslations();
 
         // Lazy-load sector analysis only when section displayed
         if (targetId === 'section-sector') initSectorAnalysis();
@@ -605,6 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>`;
         });
+        if (typeof applyTranslations === 'function') applyTranslations();
     }
 
     const searchInput = document.getElementById('search-incident');
@@ -782,6 +786,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         });
+        if (typeof applyTranslations === 'function') applyTranslations();
     }
 
 
@@ -1525,6 +1530,8 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
                 <td style="padding:9px 12px; color:var(--text-3); font-size:0.82rem; line-height:1.4;">${implikasi}</td>
             </tr>
         `).join('');
+
+        if (typeof applyTranslations === 'function') applyTranslations();
     }
 
     // ===================================================================

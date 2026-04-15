@@ -104,12 +104,13 @@
     <div class="main-content">
 
         <!-- Top header (dynamic) -->
-        <header class="top-header">
+        <header class="top-header" style="justify-content: flex-start;">
             <span class="material-symbols-rounded" id="header-icon" style="color:var(--primary); font-size:22px;">hub</span>
-            <div>
+            <div style="flex:1;">
                 <h2 id="header-title">Master Legal Network Analysis</h2>
                 <p id="header-sub">Pemetaan Regulasi AI Indonesia · Multilingual Embeddings · Maastricht LNA</p>
             </div>
+            <button id="lang-toggle-btn" class="btn-secondary" onclick="toggleLanguage()" style="width: 40px; height: 40px; border-radius: 8px; justify-content: center; margin-left: 1rem; font-weight: 700; font-size: 14px;" title="Ganti Bahasa / Change Language">EN</button>
         </header>
 
         <!-- ===== SECTION: Master LNA ===== -->
@@ -617,6 +618,7 @@
     <span class="material-symbols-rounded" style="font-size:22px;">bug_report</span>
 </button>
 
-<script src="./app/assets/js/app.js?v=20260414p"></script>
+<script src="./app/assets/js/i18n.js?v=20260416"></script>
+<script src="./app/assets/js/app.js?v=20260416"></script>
 </body>
 </html>
