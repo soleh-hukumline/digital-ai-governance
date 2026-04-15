@@ -78,7 +78,15 @@ const i18nDict = {
     'Metrik': 'Metric',
     'Nilai': 'Value',
     'Implikasi Legal': 'Legal Implication',
-    '⏳ Menunggu graph selesai dirender…': '⏳ Waiting for graph to render...'
+    '⏳ Menunggu graph selesai dirender…': '⏳ Waiting for graph to render...',
+
+    // Incident Cards & Node Inspector
+    'Pelaku:': 'Perpetrator:',
+    'PSE:': 'Platform/PSE:',
+    'Kualifikasi:': 'Qualification:',
+    'Nexus Kausalitas:': 'Causality Nexus:',
+    'Degree Koneksi:': 'Connection Degree:',
+    'Terhubung ke:': 'Connected to:'
 };
 
 // Build reverse dictionary for switching back to ID

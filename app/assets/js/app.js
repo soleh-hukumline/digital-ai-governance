@@ -316,13 +316,18 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (degree <= 2) coverageBadge = `<span class="badge partial">Low Connectivity</span>`;
         else coverageBadge = `<span class="badge covered">High Connectivity · Hub Node</span>`;
 
+        const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
+        const degreeLbl = isEn ? 'Connection Degree:' : 'Degree Koneksi:';
+        const connectedLbl = isEn ? 'Connected to:' : 'Terhubung ke:';
+        const othersLbl = isEn ? `...and ${degree - 5} others` : `...dan ${degree - 5} lainnya`;
+
         return `
             <div style="font-size:0.78rem; margin-bottom:0.5rem; color:#6366f1; font-weight:700; letter-spacing:0.5px; text-transform:uppercase;">${nodeData.group || 'Unknown'}</div>
             <div style="font-size:0.85rem; color:#e2e8f0; margin-bottom:0.75rem; line-height:1.4;">${nodeData.id}</div>
             ${coverageBadge}
             <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px solid rgba(255,255,255,0.08);">
-                <div style="font-size:0.75rem; color:#94a3b8; margin-bottom:4px;">Degree Koneksi: <strong style="color:#fff;">${degree}</strong></div>
-                ${connectedNodes.length > 0 ? `<div style="font-size:0.72rem; color:#94a3b8;">Terhubung ke:<br>${connectedNodes.map(n => `<span style="color:#818cf8;">• ${n}</span>`).join('<br>')}${degree > 5 ? `<br><span style="color:#64748b;">...dan ${degree - 5} lainnya</span>` : ''}</div>` : ''}
+                <div style="font-size:0.75rem; color:#94a3b8; margin-bottom:4px;">${degreeLbl} <strong style="color:#fff;">${degree}</strong></div>
+                ${connectedNodes.length > 0 ? `<div style="font-size:0.72rem; color:#94a3b8;">${connectedLbl}<br>${connectedNodes.map(n => `<span style="color:#818cf8;">• ${n}</span>`).join('<br>')}${degree > 5 ? `<br><span style="color:#64748b;">${othersLbl}</span>` : ''}</div>` : ''}
             </div>
         `;
     }
@@ -1491,28 +1496,35 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
         // Coverage score
         const coverage = ((n - isolated) / Math.max(n, 1) * 100).toFixed(1);
 
-        const fragLabel = Q >= 0.4 ? '🔴 Tinggi — Klaster regulasi beroperasi secara terpisah'
-            : Q >= 0.2 ? '🟡 Sedang — Fragmentasi parsial antar klaster'
-                : '🟢 Rendah — Integrasi klaster relatif baik';
+        const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
 
-        const densityLabel = density < 0.01 ? '🔴 Sangat Jarang'
-            : density < 0.05 ? '🟡 Jarang'
-                : '🟢 Moderat';
+        const fragLabel = Q >= 0.4 ? (isEn ? '🔴 High — Regulatory clusters operate separately' : '🔴 Tinggi — Klaster regulasi beroperasi secara terpisah')
+            : Q >= 0.2 ? (isEn ? '🟡 Medium — Partial fragmentation between clusters' : '🟡 Sedang — Fragmentasi parsial antar klaster')
+                : (isEn ? '🟢 Low — Good relative cluster integration' : '🟢 Rendah — Integrasi klaster relatif baik');
 
-        const isolatedLabel = isolated === 0 ? '✅ Tidak ada node terisolasi'
-            : isolated < 5 ? `⚠️ ${isolated} node terisolasi`
-                : `🔴 ${isolated} node terisolasi`;
+        const densityLabel = density < 0.01 ? (isEn ? '🔴 Very Sparse' : '🔴 Sangat Jarang')
+            : density < 0.05 ? (isEn ? '🟡 Sparse' : '🟡 Jarang')
+                : (isEn ? '🟢 Moderate' : '🟢 Moderat');
+
+        const isolatedLabel = isolated === 0 ? (isEn ? '✅ No isolated nodes' : '✅ Tidak ada node terisolasi')
+            : isolated < 5 ? (isEn ? `⚠️ ${isolated} isolated nodes` : `⚠️ ${isolated} node terisolasi`)
+                : (isEn ? `🔴 ${isolated} isolated nodes` : `🔴 ${isolated} node terisolasi`);
+        
+        const avgDegLabel = avgDeg < 2 ? (isEn ? '⚠️ Nodes on average have few connections' : '⚠️ Node rata-rata memiliki sedikit koneksi') : (isEn ? '✅ Nodes have adequate connections' : '✅ Node memiliki koneksi yang memadai');
+        
+        const topHubLabel = isEn ? `Strongest hub: "${topHub ? (topHub.label || topHub.id) : '-'}"` : `Hub terkuat: "${topHub ? (topHub.label || topHub.id) : '-'}"`;
+        const coverageLabel = isEn ? `${n - isolated}/${n} connected nodes` : `${n - isolated}/${n} node terhubung`;
 
         const rows = [
-            ['Total Node (Regulasi/Insiden)', n, 'Jumlah pasal/regulasi/insiden dalam jaringan'],
-            ['Total Relasi (Edges)', m, 'Jumlah koneksi semantik antar node'],
-            ['Densitas Jaringan', density.toFixed(5), densityLabel],
-            ['Rata-rata Degree', avgDeg.toFixed(2), avgDeg < 2 ? '⚠️ Node rata-rata memiliki sedikit koneksi' : '✅ Node memiliki koneksi yang memadai'],
-            ['Degree Maksimum', maxDeg, `Hub terkuat: "${topHub ? (topHub.label || topHub.id) : '-'}"`],
-            ['Node Terisolasi (Degree=0)', isolated, isolatedLabel],
-            ['Coverage Score', coverage + '%', `${n - isolated}/${n} node terhubung`],
-            ['Modularity Score (Q)', Q.toFixed(4), fragLabel],
-            ['Jumlah Klaster Regulasi', Object.keys(comms).length, 'Partisi berdasarkan klasifikasi node'],
+            [isEn ? 'Total Nodes (Regulations/Incidents)' : 'Total Node (Regulasi/Insiden)', n, isEn ? 'Number of articles/regulations/incidents in the network' : 'Jumlah pasal/regulasi/insiden dalam jaringan'],
+            [isEn ? 'Total Relations (Edges)' : 'Total Relasi (Edges)', m, isEn ? 'Number of semantic connections between nodes' : 'Jumlah koneksi semantik antar node'],
+            [isEn ? 'Network Density' : 'Densitas Jaringan', density.toFixed(5), densityLabel],
+            [isEn ? 'Average Degree' : 'Rata-rata Degree', avgDeg.toFixed(2), avgDegLabel],
+            [isEn ? 'Maximum Degree' : 'Degree Maksimum', maxDeg, topHubLabel],
+            [isEn ? 'Isolated Nodes (Degree=0)' : 'Node Terisolasi (Degree=0)', isolated, isolatedLabel],
+            [isEn ? 'Coverage Score' : 'Coverage Score', coverage + '%', coverageLabel],
+            [isEn ? 'Modularity Score (Q)' : 'Modularity Score (Q)', Q.toFixed(4), fragLabel],
+            [isEn ? 'Number of Regulatory Clusters' : 'Jumlah Klaster Regulasi', Object.keys(comms).length, isEn ? 'Partition based on node classification' : 'Partisi berdasarkan klasifikasi node'],
         ];
 
         const colorClass = (val, metric) => {
