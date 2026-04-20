@@ -339,7 +339,10 @@ document.addEventListener('DOMContentLoaded', () => {
         await loadAllNetworkGraphs();
     }
 
+    let isLoadingNetworkGraphs = false;
     async function loadAllNetworkGraphs() {
+        if (isLoadingNetworkGraphs) return;
+        isLoadingNetworkGraphs = true;
         const analyzers = [
             { id: 'all', graph: 'legal_graph.json', report: 'laporan_hasil_lna.md' },
             { id: 'intl', graph: 'intl_graph.json', report: 'laporan_khusus_internasional.md' },
@@ -554,6 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>`;
             }
         }
+        isLoadingNetworkGraphs = false;
     }
 
     // ===================================================================
