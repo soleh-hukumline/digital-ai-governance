@@ -487,11 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         solver: 'forceAtlas2Based',
                         timestep: 0.4,
                         stabilization: {
-                            enabled: true,
-                            iterations: 400,
-                            updateInterval: 20,
-                            onlyDynamicEdges: false,
-                            fit: false  // Dilarang melakukan auto-fit terlambat karena mengganggu zoom user
+                            enabled: false  // Fix tab freeze: do not block UI thread; calculate asynchronously
                         }
                     },
                     interaction: {
@@ -508,23 +504,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 container.innerHTML = '';
                 const network = new vis.Network(container, netData, options);
 
-                // (Wheel interceptor removed to allow native vis-network zoom)
-
                 // Store network & graph data for export and filtering
                 networkInstances[model.id] = { network, graphData, netData };
 
-                // After physics stabilizes, turn off physics to improve performance
-                network.once('stabilizationIterationsDone', () => {
-                    network.setOptions({ physics: false });
-                    populateMetricsTable(model.id, graphData);
-                });
+                // Populate metrics directly since sync stabilization is disabled
+                populateMetricsTable(model.id, graphData);
 
-                // Timeout fallback for metrics table
+                // Let physics run for exactly 3 seconds to spread nodes out elegantly, 
+                // then freeze them to stop CPU burn and prevent jitter
                 setTimeout(() => {
-                    if (networkInstances[model.id]) {
-                        populateMetricsTable(model.id, graphData);
-                    }
-                }, 5000);
+                    network.setOptions({ physics: false });
+                }, 3000);
 
                 // Click-to-inspect panel
                 const inspectorPanel = document.getElementById(`inspector-${model.id}`);
