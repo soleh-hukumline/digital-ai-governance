@@ -14,6 +14,23 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js"></script>
+    
+    <script>
+    // GLOBAL ERROR CATCHER FOR SYNTAX ERRORS BEFORE DOMCONTENTLOADED
+    window.addEventListener('error', function(e) {
+        fetch('/api/log', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                message: e.message || 'Syntax/Load Error',
+                source: e.filename || '',
+                lineno: e.lineno || 0,
+                colno: e.colno || 0,
+                stack: e.error ? e.error.stack : ''
+            })
+        }).catch(err => console.error("Logger failed", err));
+    });
+    </script>
 
     <link rel="stylesheet" href="./app/assets/css/style.css?v=20260413o">
     <!-- CRITICAL: inline fallback agar section tersembunyi sebelum JS jalan -->    <style>
@@ -618,7 +635,7 @@
     <span class="material-symbols-rounded" style="font-size:22px;">bug_report</span>
 </button>
 
-<script src="./app/assets/js/i18n.js?v=20260420_4"></script>
-<script src="./app/assets/js/app.core.js?v=20260420_4"></script>
+<script src="./app/assets/js/i18n.js?v=20260420_5"></script>
+<script src="./app/assets/js/app.core.js?v=20260420_5"></script>
 </body>
 </html>
