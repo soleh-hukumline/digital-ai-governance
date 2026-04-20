@@ -823,8 +823,8 @@ document.addEventListener('DOMContentLoaded', () => {
             pasals: [
                 { status: 'covered', name: 'UU Kekuasaan Kehakiman Ps. 1', desc: 'Judges as holders of judicial power — prohibits judge substitution.' },
                 { status: 'partial', name: 'KUHAP Ps. 183 (Pembuktian)', desc: 'Proof standards — AI evidence validity has not been explicitly regulated.' },
-                { status: 'gap', name: 'Limits of AI's Role in Courts', desc: 'NOT YET EXISTS: Regulation designating AI solely as an "assistant" to judges.' },
-                { status: 'gap', name: 'Assessment Algorithm Transparency', desc: 'NOT YET EXISTS: Defendant's right to know how AI assesses their risk.' },
+                { status: 'gap', name: 'Limits of AI\\'s Role in Courts', desc: 'NOT YET EXISTS: Regulation designating AI solely as an "assistant" to judges.' },
+                { status: 'gap', name: 'Assessment Algorithm Transparency', desc: 'NOT YET EXISTS: Defendant\\'s right to know how AI assesses their risk.' },
                 { status: 'gap', name: 'Judicial AI Model Validation Standard', desc: 'NOT YET EXISTS: Authority responsible for validating AI used in the judicial system.' },
             ],
             recom: 'Studies recommend: AI in the judiciary must be limited as a tool (non-determinative), judges must retain independent reasoning, and judicial AI must be audited periodically.',
