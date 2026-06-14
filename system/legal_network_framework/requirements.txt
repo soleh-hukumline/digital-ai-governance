@@ -1,5 +1,8 @@
 PyPDF2
+pdfminer.six
+pikepdf
 networkx
 scikit-learn
 sentence-transformers
 numpy
+matplotlib

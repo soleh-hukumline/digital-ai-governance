@@ -25,65 +25,168 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # ─── CONFIGURATION ────────────────────────────────────────────────
+# Embedding model: Sentence-BERT multilingual, 384 dimensions, 50+ languages
+# incl. Indonesian & English (Reimers & Gurevych, 2019).
 EMBEDDING_MODEL = 'paraphrase-multilingual-MiniLM-L12-v2'
+EMBEDDING_DIM   = 384
 
-# Absolute cosine similarity thresholds — tiered by register & language
-# Tier Classification:
-#   Identik       : 0.95 - 1.00 (teks sama persis atau copy-paste)
-#   Sangat Kuat   : 0.80 - 0.94 (topik dan isi sama, beda pilihan kata/bahasa)
-#   Koneksi Lemah : threshold - 0.79 (subjek sama, konteks berbeda)
-#   < threshold   : Tidak terhubung (abaikan)
-THRESHOLD_INTL_INTRA   = 0.70   # Intl↔Intl — same register, same language
-THRESHOLD_NATL_INTRA   = 0.70   # Natl↔Natl — same register, same language
+# ─── COSINE-SIMILARITY THRESHOLDS (SINGLE SOURCE OF TRUTH) ────────────────────
+# IMPORTANT (data-integrity / reproducibility):
+#   These TIERED, REGISTER-AWARE absolute cosine cut-offs are the AUTHORITATIVE
+#   values used to build every edge in legal_graph.json. Any threshold quoted in
+#   the manuscript MUST match the numbers below. (An earlier manuscript draft
+#   cited a single ">0.75 / <0.50" rule, which never matched the code — that text
+#   must be replaced with this tiered scheme. See REVIEWER_RESPONSE.md.)
+#
+# Rationale — why a single global cut-off is wrong here:
+#   Cosine similarity between MiniLM embeddings is systematically LOWER when the
+#   two texts differ in (a) language and (b) register/genre, even when they are
+#   topically equivalent. Our corpus mixes three pairings, so one cut-off would
+#   over-connect like-with-like and under-connect cross-lingual / cross-register
+#   pairs. We therefore set the cut-off per pairing:
+#
+#     Pairing                         Language     Register        Threshold
+#     ------------------------------  -----------  --------------  ---------
+#     Intl ↔ Intl                     same (EN)    same (statute)    0.70
+#     Natl ↔ Natl                     same (ID)    same (statute)    0.70
+#     Intl ↔ Natl (cross-juris)       EN ↔ ID      same (statute)    0.55
+#     Incident ↔ Regulation           ID ↔ EN/ID   narrative↔statute 0.50
+#
+#   The relative ordering (intra > cross-lingual > cross-register) is theory-
+#   driven; the exact values are a DESIGN CHOICE that must be validated, not
+#   asserted. validation.py measures precision/recall/F1 and inter-annotator
+#   agreement against a manually-coded sample and sweeps the cut-off so the
+#   chosen value can be justified empirically rather than by fiat.
+THRESHOLD_INTL_INTRA   = 0.70   # Intl↔Intl — same register, same language (EN)
+THRESHOLD_NATL_INTRA   = 0.70   # Natl↔Natl — same register, same language (ID)
 THRESHOLD_CROSS_JURIS  = 0.55   # Intl↔Natl — cross-lingual (EN↔ID), same register
 THRESHOLD_INC_REG      = 0.50   # Incident↔Regulation — cross-register + cross-lingual
+
+# Edge-weight tier labels (descriptive, applied at export):
+#   Identik     : 0.95 - 1.00 (near-duplicate text)
+#   Sangat Kuat : 0.80 - 0.94 (same topic, different wording/language)
+#   Lemah       : threshold - 0.79 (related subject, different context)
 
 REG_BASE = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'regulations')
 INC_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'incidents', 'indonesia_incidents.json')
 OUT_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'network', 'legal_graph.json')
 
 
-# ─── PDF EXTRACTION ───────────────────────────────────────────────
+# ─── PDF EXTRACTION (robust, multi-backend) ───────────────────────
+# Goal: EVERY readable regulation contributes nodes — not only statutes that use
+# "Pasal N"/"Article N". UN resolutions, codes of conduct, ministerial circulars
+# (Surat Edaran), strategies and guides use numbered outlines or named sections,
+# so a structured-only parser silently dropped them. We therefore (1) read with a
+# tolerant backend chain, (2) try structured splitting, then (3) fall back to
+# paragraph chunking when a document has no Article/Pasal structure.
+MIN_STRUCTURED      = 5      # below this many structured provisions → chunk
+FALLBACK_CHUNK_CHARS = 1100  # target characters per fallback segment
+FALLBACK_MAX_CHUNKS  = 80    # cap segments per document (graph-size guard)
+
+
+def _read_pdf_text(pdf_path):
+    """Return the full text of a PDF using the most tolerant backend available.
+    Chain: header check → PyPDF2(strict=False) → pdfminer.six. Loudly flags files
+    that are not valid PDFs (e.g. an HTML 404 page saved as .pdf) so they get
+    replaced instead of silently contributing nothing."""
+    name = os.path.basename(pdf_path)
+    try:
+        with open(pdf_path, 'rb') as fh:
+            head = fh.read(1024)
+    except Exception as e:
+        print(f'  ⚠️  {name}: cannot open ({e})')
+        return ''
+    if not head.lstrip()[:5].startswith(b'%PDF'):
+        print(f'  ❌ {name}: NOT a valid PDF (starts with {head.lstrip()[:16]!r}). '
+              f'Likely a wrong/broken download — REPLACE this file.')
+        return ''
+
+    text = ''
+    try:                                              # 1) PyPDF2, tolerant
+        with open(pdf_path, 'rb') as f:
+            reader = PyPDF2.PdfReader(f, strict=False)
+            parts = []
+            for page in reader.pages:
+                try:
+                    parts.append(page.extract_text() or '')
+                except Exception:
+                    continue
+            text = '\n'.join(parts)
+    except Exception as e:
+        print(f'  ⚠️  {name}: PyPDF2 failed ({e}); trying pdfminer…')
+
+    if len(text.strip()) < 200:                       # 2) pdfminer fallback
+        try:
+            from pdfminer.high_level import extract_text as _pm_extract
+            pm = _pm_extract(pdf_path) or ''
+            if len(pm.strip()) > len(text.strip()):
+                text = pm
+        except Exception as e:
+            print(f'  ⚠️  {name}: pdfminer fallback failed ({e})')
+    return text
+
+
+def _chunk_text(full_text, max_chunks=FALLBACK_MAX_CHUNKS, target=FALLBACK_CHUNK_CHARS):
+    """Paragraph-aware chunking for documents without Article/Pasal headings."""
+    paras = re.split(r'\n\s*\n', full_text)
+    chunks, buf = [], ''
+    for p in paras:
+        p = ' '.join(p.split())
+        if not p:
+            continue
+        if len(buf) + len(p) + 1 <= target:
+            buf = (buf + ' ' + p).strip()
+        else:
+            if len(buf) > 60:
+                chunks.append(buf)
+            buf = p
+            while len(buf) > target and len(chunks) < max_chunks:   # very long para
+                chunks.append(buf[:target])
+                buf = buf[target:]
+        if len(chunks) >= max_chunks:
+            break
+    if buf and len(buf) > 60 and len(chunks) < max_chunks:
+        chunks.append(buf)
+    return chunks
+
+
 def extract_provisions(pdf_path):
-    """
-    Extract article/pasal/section provisions from a PDF.
-    Uses expanded regex to catch diverse formats across jurisdictions.
-    No page limit — processes entire document.
+    """Extract provisions from a regulation PDF.
+    1) Structured split on Article/Pasal/Section/… headings (best for statutes).
+    2) If that yields < MIN_STRUCTURED provisions, fall back to paragraph chunking
+       so non-article documents (UN resolutions, codes, circulars, guides,
+       strategies) are still represented in the network.
     """
     provisions = {}
     if not os.path.exists(pdf_path):
         return provisions
 
-    try:
-        with open(pdf_path, 'rb') as f:
-            reader = PyPDF2.PdfReader(f)
-            full_text = ''
-            for page in reader.pages:
-                pg_text = page.extract_text()
-                if pg_text:
-                    full_text += pg_text + '\n'
+    full_text = _read_pdf_text(pdf_path)
+    if len(full_text.strip()) < 60:
+        return provisions  # nothing readable (already warned)
 
-        # Expanded regex: covers
-        #   Article 1, Art. 1, Section 1, Principle 1, Pasal 1,
-        #   Bab 1, Bagian 1, Ayat 1, Paragraph 1, Recommendation 1,
-        #   Rec. 1, Annex 1, Chapter 1, Value 1
-        pattern = r'((?:Article|Art\.|Section|Principle|Paragraph|Pasal|Bab|Bagian|Ayat|Recommendation|Rec\.|Annex|Chapter|Value|Guideline)\s+\d+[a-z]?)'
-        chunks = re.split(pattern, full_text, flags=re.IGNORECASE)
+    # 1) Structured split
+    pattern = (r'((?:Article|Art\.|Section|Principle|Paragraph|Pasal|Bab|Bagian|'
+               r'Ayat|Diktum|Recommendation|Rec\.|Annex|Chapter|Value|Guideline)'
+               r'\s+\d+[a-z]?)')
+    parts = re.split(pattern, full_text, flags=re.IGNORECASE)
+    if len(parts) > 1:
+        for i in range(1, len(parts) - 1, 2):
+            title = ' '.join(parts[i].split()).strip()
+            title = re.sub(r'^Art\.\s*', 'Article ', title, flags=re.IGNORECASE)
+            title = re.sub(r'^Rec\.\s*', 'Recommendation ', title, flags=re.IGNORECASE)
+            title = title.capitalize()
+            content = parts[i + 1][:2000]
+            if len(content.strip()) > 30:
+                provisions[title] = content.strip()
 
-        if len(chunks) > 1:
-            for i in range(1, len(chunks) - 1, 2):
-                title = ' '.join(chunks[i].split()).strip()
-                # Normalize: "Art. 5" → "Article 5", "Rec. 3" → "Recommendation 3"
-                title = re.sub(r'^Art\.\s*', 'Article ', title, flags=re.IGNORECASE)
-                title = re.sub(r'^Rec\.\s*', 'Recommendation ', title, flags=re.IGNORECASE)
-                title = title.capitalize()
-
-                content = chunks[i + 1][:2000]  # Slightly more context than before
-                if len(content.strip()) > 30:
-                    provisions[title] = content.strip()
-
-    except Exception as e:
-        print(f'  ⚠️ Error extracting {os.path.basename(pdf_path)}: {e}')
+    # 2) Fallback chunking for documents without Article/Pasal structure
+    if len(provisions) < MIN_STRUCTURED:
+        seg = _chunk_text(full_text)
+        if len(seg) > len(provisions):
+            provisions = {f'Bagian {k + 1}': s for k, s in enumerate(seg)}
+            print(f'     ↳ fallback chunking → {len(provisions)} segmen '
+                  f'(dokumen tanpa struktur Pasal/Article)')
 
     return provisions
 
@@ -266,7 +369,7 @@ def build_deep_network():
                 pairs.append((i, j, score))
 
         if not scores:
-            return 0
+            return 0, []
 
         threshold = get_threshold(scores, threshold_str)
         count = 0
@@ -277,7 +380,9 @@ def build_deep_network():
                            weight=round(score, 4))
                 count += 1
         print(f'   {edge_type}: threshold={threshold:.4f} ({threshold_str}), {count} edges dari {len(pairs)} pasangan')
-        return count
+        # Return ALL candidate pairs (above AND below threshold) so downstream
+        # validation can compute recall, not just precision.
+        return count, pairs
 
     # 5a. Intra-International edges
     add_edges_for_pairs(intl_idx, intl_idx, THRESHOLD_INTL_INTRA, 'semantic_similarity')
@@ -290,7 +395,34 @@ def build_deep_network():
 
     # 5d. Regulation ↔ Incident edges
     reg_idx = intl_idx + natl_idx
-    add_edges_for_pairs(reg_idx, inc_idx, THRESHOLD_INC_REG, 'governs', cross_doc_only=False)
+    gov_count, gov_pairs = add_edges_for_pairs(
+        reg_idx, inc_idx, THRESHOLD_INC_REG, 'governs', cross_doc_only=False)
+
+    # ── STEP 5e: EXPORT INCIDENT↔REGULATION SCORES (for validation) ─
+    # Persist EVERY candidate incident↔regulation pair with its cosine score,
+    # whether or not it crossed THRESHOLD_INC_REG. validation.py / the manual
+    # ground-truth coding draw on this so precision AND recall can be measured
+    # and the cut-off can be swept. This is what turns the threshold from
+    # "asserted" into "empirically testable".
+    scores_path = os.path.join(os.path.dirname(OUT_PATH), 'incident_reg_scores.csv')
+    n_pairs = 0
+    with open(scores_path, 'w', encoding='utf-8') as sf:
+        sf.write('incident_id,incident_label,regulation_id,regulation_label,'
+                 'classification,cosine,linked_by_threshold\n')
+        for i, j, score in gov_pairs:
+            id_i, id_j = all_ids[i], all_ids[j]
+            # Orient so first column is the incident
+            if all_types[i] == 'inc':
+                inc_id, reg_id = id_i, id_j
+            else:
+                inc_id, reg_id = id_j, id_i
+            inc_lbl = str(G.nodes[inc_id].get('label', inc_id)).replace(',', ';')
+            reg_lbl = str(G.nodes[reg_id].get('label', reg_id)).replace(',', ';')
+            cls = str(G.nodes[reg_id].get('classification', '')).replace(',', ';')
+            linked = 1 if score >= THRESHOLD_INC_REG else 0
+            sf.write(f'{inc_id},{inc_lbl},{reg_id},{reg_lbl},{cls},{score:.4f},{linked}\n')
+            n_pairs += 1
+    print(f'   📝 Exported {n_pairs} incident↔regulation candidate scores → {os.path.basename(scores_path)}')
 
     # ── STEP 6: EXPORT ────────────────────────────────────────────
     print(f'\n📊 Graph Final: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges')
@@ -350,6 +482,56 @@ def build_deep_network():
     print(f'   ✅ Exported: {OUT_PATH} ({file_size:.0f} KB)')
     print(f'   📈 Nodes: {len(nodes_export)} (Intl: {len(intl_corpus)}, Natl: {len(natl_corpus)}, Inc: {len(inc_corpus)})')
     print(f'   📈 Edges: {len(edges_export)}')
+
+    # ── STEP 7: METHODS PROVENANCE (machine-readable, citable) ─────
+    # Single, authoritative record of HOW the graph was built. The manuscript's
+    # Methods section should cite these exact values rather than restating them
+    # by hand (which is how the ">0.75/<0.50" mismatch crept in).
+    edge_type_counts = {}
+    for _u, _v, _a in G.edges(data=True):
+        et = _a.get('type', 'link')
+        edge_type_counts[et] = edge_type_counts.get(et, 0) + 1
+    methods_config = {
+        'embedding_model': EMBEDDING_MODEL,
+        'embedding_dim': EMBEDDING_DIM,
+        'embedding_reference': 'Reimers & Gurevych (2019), Sentence-BERT',
+        'normalize_embeddings': True,
+        'similarity_metric': 'cosine',
+        'thresholds': {
+            'intl_intra': THRESHOLD_INTL_INTRA,
+            'natl_intra': THRESHOLD_NATL_INTRA,
+            'cross_jurisdiction': THRESHOLD_CROSS_JURIS,
+            'incident_regulation': THRESHOLD_INC_REG,
+        },
+        'threshold_rationale': (
+            'Tiered, register-aware absolute cosine cut-offs. Cross-lingual '
+            '(EN↔ID) and cross-register (narrative↔statute) pairs receive lower '
+            'cut-offs because MiniLM cosine similarity is systematically lower '
+            'for them at equal topical relevance. Values are validated in '
+            'validation.py (precision/recall/F1 + inter-annotator agreement).'
+        ),
+        'corpus': {
+            'intl_provisions': len(intl_corpus),
+            'natl_provisions': len(natl_corpus),
+            'incidents': len(inc_corpus),
+            'total_nodes': len(nodes_export),
+            'total_edges': len(edges_export),
+            'edges_by_type': edge_type_counts,
+        },
+        'coverage_rate_definition': (
+            'connected_incidents / total_incidents * 100, where an incident is '
+            '"connected" iff it has >=1 governs edge to a regulation.'
+        ),
+        'provenance_note': (
+            'Auto-generated by builder.py. Incidents are REAL & sourced '
+            '(see data/incidents/indonesia_incidents.json); regulation nodes are '
+            'extracted from PDF statutes/standards in data/regulations/.'
+        ),
+    }
+    cfg_path = os.path.join(os.path.dirname(OUT_PATH), 'methods_config.json')
+    with open(cfg_path, 'w', encoding='utf-8') as cf:
+        json.dump(methods_config, cf, indent=2, ensure_ascii=False)
+    print(f'   🧾 Methods provenance → {os.path.basename(cfg_path)}')
     print('═' * 60)
 
 

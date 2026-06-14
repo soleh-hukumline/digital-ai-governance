@@ -116,10 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'section-intl': { icon: 'public', title: 'Regulasi Internasional', sub: 'EU AI Act · OECD AI Principles · CETS225 · Thematic Cluster' },
         'section-natl': { icon: 'account_balance', title: 'Regulasi Nasional Indonesia', sub: 'UU PDP · UU ITE · PP PSTE · POJK · UU Perdagangan' },
         'section-cross': { icon: 'sync_alt', title: 'Intl vs Nasional · Cross-Jurisdiction', sub: 'Pemetaan Semantic Similarity lintas yurisdiksi · Full/Partial/Low' },
-        'section-incident': { icon: 'gavel', title: 'Analisis Kasus Forensik', sub: 'Pemetaan 100+ insiden siber ke regulasi · Structural Holes' },
+        'section-incident': { icon: 'gavel', title: 'Analisis Kasus Forensik', sub: 'Pemetaan 45 insiden siber riil ke regulasi · Structural Holes' },
         'section-sector': { icon: 'category', title: 'Analisis Kesenjangan Regulasi Per Sektor', sub: 'Sektor Prioritas · Coverage Score · Pemetaan Regulasi' },
         'section-gap': { icon: 'insights', title: 'Konklusi: Gap Analysis', sub: 'Konsolidasi Temuan LNA · Coverage per Klaster · Connected Components' },
-        'section-database': { icon: 'database_search', title: 'Katalog Data Forensik Insiden Siber', sub: 'Registry 100+ kasus · Searchable · Filter per kategori' },
+        'section-database': { icon: 'database_search', title: 'Katalog Data Forensik Insiden Siber', sub: 'Registry 45 kasus riil bersumber · Searchable · Filter per kategori' },
         'section-ai': { icon: 'smart_toy', title: 'AI Legal Assistant', sub: 'Argumentasi Toulmin + Panduan Praktisi · Gemini · Groq' },
     };
 

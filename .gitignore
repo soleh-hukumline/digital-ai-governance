@@ -42,3 +42,13 @@ Icon
 .idea/
 *.swp
 *.swo
+
+# Logs
+*.log
+frontend_error.log
+
+# Audit backups from the data-integrity overhaul (kept locally only, not published)
+*.bak
+*.SYNTHETIC.bak.*
+*.PRESSRELEASE.bak
+*.BROKEN_HTML.bak
