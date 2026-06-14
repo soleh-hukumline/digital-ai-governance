@@ -191,6 +191,34 @@ Computed with NetworkX from the real graph (`analyzer.py`, `incident_analyzer.py
 > the automatic matching, which is exactly what the manual validation in §3
 > quantifies.)
 
+### 2.5 Per-subject coverage (role-aware — fixes the conflation bias)
+A single incident binds several legal subjects with different applicable regimes;
+collapsing them into one "coverage" number is biased (relevant *to whom?*). Using
+the role-aware LLM judge (`llm_judge.py`, Gemini), each warrant is tagged by the
+subject it binds, and coverage is reported per subject:
+
+| Legal subject | Incidents with a warrant | Coverage | Structural hole |
+|---|---|---|---|
+| **Operator / PSE** (security & compliance duties) | 40/45 | **88.9%** | 11.1% |
+| Regulator / state (supervision) | 32/45 | 71.1% | 28.9% |
+| Perpetrator (criminal liability) | 29/45 | 64.4% | 35.6% |
+| Consumer / victim (protection & redress) | 29/45 | 64.4% | 35.6% |
+| **Any subject** | 44/45 | **97.8%** | 2.2% |
+
+**Copy-paste — Results finding (role-aware):**
+> The regulatory "vacuum" is **not uniform across legal subjects**. Operators
+> (PSE/data controllers) are heavily covered — 88.9% of incidents have an
+> applicable security/compliance duty (UU PDP, PP PSTE, sectoral POJK/PBI). The
+> real gaps are elsewhere: **35.6% of incidents lack a clear criminal basis for
+> the perpetrator and 35.6% lack a consumer-protection/redress warrant**. Almost
+> every incident (97.8%) has *some* applicable law for *some* subject, so the
+> earlier blanket "55.6% vacuum" was an artifact of (a) embedding under-recall and
+> (b) conflating subjects. The defensible claim is narrower and stronger:
+> Indonesia regulates the *operator's* duties far better than it provides
+> *AI-specific criminal* bases or *consumer redress*. (Per-subject figures from
+> `role_coverage.py` / `role_coverage.json`; LLM judgments to be human-validated
+> per §3 using the role-aware 3-way template.)
+
 ---
 
 ## 3. Validation (reviewer: zero validation metrics)

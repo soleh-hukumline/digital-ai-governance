@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260614_9';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260614_10';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -624,13 +624,16 @@ document.addEventListener('DOMContentLoaded', () => {
             .sort((a, b) => b.p - a.p);
         if (!w.length) return '';
         const rel = w.filter(x => x.relevant).length;
+        const roleCol = { pelaku: 'var(--rose)', pse: 'var(--sky)', konsumen: 'var(--emerald)', regulator: 'var(--violet)' };
+        const chip = r => `<span style="font-size:0.58rem; font-weight:700; text-transform:uppercase; color:${roleCol[r] || 'var(--text-4)'}; border:1px solid ${roleCol[r] || 'var(--text-4)'}; border-radius:4px; padding:0 4px; margin-left:3px; white-space:nowrap;">${r}</span>`;
         const items = w.slice(0, 6).map(x => {
             const c = x.p;
             const col = c >= 70 ? 'var(--emerald)' : c >= 40 ? 'var(--amber)' : 'var(--text-4)';
             const lab = String(x.regulation_label).replace(/_/g, ' ').replace(/ - /g, ' · ');
-            return `<div style="display:flex; gap:7px; align-items:baseline; font-size:0.72rem; line-height:1.35;">
+            const roleTags = (x.roles || []).map(chip).join('');
+            return `<div style="display:flex; gap:7px; align-items:baseline; font-size:0.72rem; line-height:1.45;">
                         <span style="font-family:monospace; font-weight:700; color:${col}; min-width:36px; text-align:right;">${c}%</span>
-                        <span style="color:var(--text-3);">${lab.slice(0, 60)}${x.relevant ? ' <span style="color:var(--emerald);">✓</span>' : ''}</span>
+                        <span style="color:var(--text-3);">${lab.slice(0, 54)}${roleTags}</span>
                     </div>`;
         }).join('');
         return `<div class="ic-row" style="border-top:1px solid var(--border); padding-top:8px; flex-direction:column; align-items:stretch; gap:4px;">

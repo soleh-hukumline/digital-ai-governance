@@ -1,0 +1,26 @@
+{
+  "n_incidents": 45,
+  "per_role": {
+    "pelaku": {
+      "incidents_covered": 29,
+      "coverage_pct": 64.4,
+      "relevant_pairs": 45
+    },
+    "pse": {
+      "incidents_covered": 40,
+      "coverage_pct": 88.9,
+      "relevant_pairs": 133
+    },
+    "konsumen": {
+      "incidents_covered": 29,
+      "coverage_pct": 64.4,
+      "relevant_pairs": 63
+    },
+    "regulator": {
+      "incidents_covered": 32,
+      "coverage_pct": 71.1,
+      "relevant_pairs": 56
+    }
+  },
+  "any_role_coverage": 97.8
+}

@@ -59,8 +59,8 @@ def main():
 
     cols = ['pair_id', 'stratum', 'incident_id', 'incident_summary', 'regulation_id',
             'regulation_label', 'regulation_text', 'cosine', 'cosine_relevant',
-            'llm_relevant', 'llm_p_relevant',
-            'annotator1_relevant', 'annotator2_relevant', 'notes']
+            'llm_relevant', 'llm_p_relevant', 'llm_roles',
+            'annotator1_relevant', 'annotator2_relevant', 'annotator_role', 'notes']
 
     def row_for(i, k, iid, r):
         inc = incidents.get(iid, {})
@@ -75,6 +75,7 @@ def main():
             'regulation_text': text, 'cosine': r['cosine'],
             'cosine_relevant': 1 if r['cosine'] >= CUT else 0,
             'llm_relevant': 1 if r['relevant'] else 0, 'llm_p_relevant': p,
+            'llm_roles': '|'.join(r.get('roles') or []),
         }
 
     tmpl = os.path.join(NET, 'validation_3way_template.csv')

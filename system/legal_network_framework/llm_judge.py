@@ -102,27 +102,35 @@ def main():
             f'{j}. [{c["regulation_label"]}] {label_text.get(c["regulation_label"], "(text n/a)")[:280]}'
             for j, c in enumerate(cands))
         prompt = (
-            'You are an Indonesian legal expert. For the cyber/AI incident below, decide for EACH '
-            'candidate regulation provision whether it is a RELEVANT legal basis (warrant) that '
-            'would plausibly be applied to the incident.\n\n'
-            f'INCIDENT ({inc.get("year")}, {inc.get("type")}): {inc.get("peristiwa_hukum_kronologi","")}\n'
-            f'Legal qualification by authors: {inc.get("kualifikasi_peristiwa","")}\n\n'
+            'You are an Indonesian legal expert analysing a cyber/AI incident. A single incident '
+            'involves MULTIPLE legal subjects, each governed by different provisions:\n'
+            '- pelaku = the perpetrator (criminal liability)\n'
+            '- pse = the operator/platform/data controller (administrative/security/civil duties)\n'
+            '- konsumen = the consumer/victim/data subject (protection & redress)\n'
+            '- regulator = the state/regulator (supervision & enforcement)\n\n'
+            'For EACH candidate provision decide if it is a relevant legal basis (warrant) and, '
+            'IF SO, which subject(s) it binds.\n\n'
+            f'INCIDENT ({inc.get("year")}, {inc.get("type")}): {inc.get("peristiwa_hukum_kronologi","")}\n\n'
             f'CANDIDATE PROVISIONS:\n{clist}\n\n'
             'Return ONLY a JSON array, one object per candidate index: '
-            '[{"i":0,"relevant":true,"confidence":0-100,"reason":"<=12 words"}]. '
-            'confidence = how sure this provision legally applies to THIS incident.')
+            '[{"i":0,"relevant":true,"roles":["pse"],"confidence":0-100,"reason":"<=12 words"}]. '
+            'roles is a subset of ["pelaku","pse","konsumen","regulator"] (empty if not relevant). '
+            'confidence = how sure this provision applies to THIS incident.')
         resp = gemini(prompt, key)
         arr = parse_json(resp)
         rows = []
+        VALID_ROLES = {'pelaku', 'pse', 'konsumen', 'regulator'}
         if arr:
             byi = {int(o.get('i', -1)): o for o in arr if isinstance(o, dict)}
             for j, c in enumerate(cands):
                 o = byi.get(j, {})
+                roles = [str(x).lower() for x in (o.get('roles') or []) if str(x).lower() in VALID_ROLES]
                 rows.append({
                     'regulation_id': c['regulation_id'],
                     'regulation_label': c['regulation_label'],
                     'cosine': round(float(c['cosine']), 4),
                     'relevant': bool(o.get('relevant', False)),
+                    'roles': roles,
                     'confidence': int(o.get('confidence', 0)),
                     'reason': str(o.get('reason', ''))[:120],
                 })
