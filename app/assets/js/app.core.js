@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let aiNetworkData = null;
     let aiIncidentNodes = [];
     let rawIncidentData = [];
+    let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
     const DATA_V = '20260614_8';   // cache-buster for data/report fetches (bump on data updates)
@@ -603,11 +604,43 @@ document.addEventListener('DOMContentLoaded', () => {
             const res = await fetch(`./data/incidents/indonesia_incidents${suffix}.json?v=${DATA_V}`);
             const json = await res.json();
             rawIncidentData = json.incidents;
+            // LLM-judged relationship confidence (optional; degrade gracefully)
+            try {
+                const lc = await fetch(`./data/network/llm_edge_confidence.json?v=${DATA_V}`);
+                if (lc.ok) llmConf = (await lc.json()).incidents || {};
+            } catch (e) { llmConf = {}; }
             renderIncidentCards(rawIncidentData);
             if (typeof applyTranslations === 'function') setTimeout(applyTranslations, 100);
         } catch (e) {
             document.getElementById('incident-registry-container').innerHTML = '<div style="color:#ef4444; padding:15px;">Gagal memuat data insiden.</div>';
         }
+    }
+
+    function renderWarrantConfidence(incId, isEn) {
+        // Convert the LLM's (relevant, judgment-confidence) into a single
+        // P(relevant) so the % consistently means "confidence this IS a warrant".
+        const w = (llmConf[incId] || [])
+            .map(x => ({ ...x, p: x.relevant ? x.confidence : (100 - x.confidence) }))
+            .sort((a, b) => b.p - a.p);
+        if (!w.length) return '';
+        const rel = w.filter(x => x.relevant).length;
+        const items = w.slice(0, 6).map(x => {
+            const c = x.p;
+            const col = c >= 70 ? 'var(--emerald)' : c >= 40 ? 'var(--amber)' : 'var(--text-4)';
+            const lab = String(x.regulation_label).replace(/_/g, ' ').replace(/ - /g, ' · ');
+            return `<div style="display:flex; gap:7px; align-items:baseline; font-size:0.72rem; line-height:1.35;">
+                        <span style="font-family:monospace; font-weight:700; color:${col}; min-width:36px; text-align:right;">${c}%</span>
+                        <span style="color:var(--text-3);">${lab.slice(0, 60)}${x.relevant ? ' <span style="color:var(--emerald);">✓</span>' : ''}</span>
+                    </div>`;
+        }).join('');
+        return `<div class="ic-row" style="border-top:1px solid var(--border); padding-top:8px; flex-direction:column; align-items:stretch; gap:4px;">
+                    <span style="font-size:0.72rem;">
+                        <span class="material-symbols-rounded" style="font-size:13px; color:var(--violet); vertical-align:middle;">smart_toy</span>
+                        <strong style="color:var(--violet);">${isEn ? 'AI-assessed warrants' : 'Warrant dinilai AI'}</strong>
+                        <span style="color:var(--text-4);"> (Gemini · ${rel}/${w.length} ${isEn ? 'relevant' : 'relevan'}; ${isEn ? 'confidence' : 'keyakinan'})</span>
+                    </span>
+                    ${items}
+                </div>`;
     }
 
     function renderIncidentCards(incidents) {
@@ -668,6 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="material-symbols-rounded" style="color:${confColor};">verified</span>
                             <span style="color:var(--text-4); font-size:0.72rem;">${confLabel}${inc.verification_note ? ' · ' + inc.verification_note : ''}</span>
                         </div>
+                        ${renderWarrantConfidence(inc.id, isEn)}
                     </div>
                 </div>`;
         });

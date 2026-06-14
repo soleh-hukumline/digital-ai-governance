@@ -55,3 +55,8 @@ frontend_error.log
 
 # Local dev tooling
 .claude/
+
+# Secrets (never commit)
+.gemini_key
+*.key
+.env

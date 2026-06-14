@@ -1,0 +1,4416 @@
+{
+  "model": "gemini-2.5-flash",
+  "top_k": 12,
+  "incidents": {
+    "pdns2-surabaya-ransomware-2024": [
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+        "cosine": 0.513,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "General guidance on privacy-enhancing technologies, not a direct legal basis."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_9",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 9",
+        "cosine": 0.4966,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "General human rights principle, not a specific legal basis for this incident."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_35",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+        "cosine": 0.4808,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mandates data controllers to protect and secure personal data, directly relevant to the breach."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_80",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 80",
+        "cosine": 0.4795,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Discusses the need for a cyber security law, not a current legal basis."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.4772,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Outlines agency responsibilities for transition/enforcement, not a direct legal basis."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_33",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 33",
+        "cosine": 0.4766,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "General principle for AI systems, not a direct legal basis for ransomware attack."
+      },
+      {
+        "regulation_id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_11",
+        "regulation_label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 11",
+        "cosine": 0.4746,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "General principle for AI systems, not a direct legal basis for ransomware attack."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_36",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 36",
+        "cosine": 0.4746,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mandates data controllers to maintain confidentiality of personal data."
+      },
+      {
+        "regulation_id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_10",
+        "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 10",
+        "cosine": 0.4728,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "References human rights resolutions, not a specific legal basis for this incident."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_39",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 39",
+        "cosine": 0.4721,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mandates data controllers to prevent unauthorized access to personal data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.472,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Pertains to distributing/transmitting immoral electronic information, not ransomware."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4654,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Pertains to distributing false/misleading information causing consumer loss, not ransomware."
+      }
+    ],
+    "bkn-asn-leak-topiax-2024": [
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.5006,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Transisi tanggung jawab Kemenkominfo ke BSSN, bukan dasar hukum insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.4995,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Tidak ada indikasi pembuatan/pemalsuan data pribadi, hanya pencurian."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.493,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Tidak ada informasi bohong/menyesatkan yang merugikan konsumen transaksi elektronik."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.4876,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Pencurian data pribadi BKN untuk keuntungan pribadi adalah pelanggaran ini."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.4681,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Tidak ada muatan melanggar kesusilaan dalam insiden ini."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_12",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 12",
+        "cosine": 0.4378,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Subjek data berhak menggugat ganti rugi atas pelanggaran pemrosesan data."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_17",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 17",
+        "cosine": 0.4364,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur penolakan akses perubahan data, bukan insiden kebocoran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.4345,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Pemutusan akses terhadap informasi elektronik yang melanggar hukum."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_96",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 96",
+        "cosine": 0.4313,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Panduan tata kelola AI, bukan dasar hukum langsung untuk insiden kebocoran data."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_29",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 29",
+        "cosine": 0.4218,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Data pribadi diperoleh tanpa persetujuan, relevan untuk penghapusan."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_16",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 16",
+        "cosine": 0.4163,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Pasal ini melarang pembuatan/pemalsuan data, bukan pencurian data yang sudah ada."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_66",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 66",
+        "cosine": 0.414,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "bkn-teacher-intrusion-2024": [
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.4271,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Pasal ini tentang ancaman kekerasan/menakut-nakuti, tidak relevan dengan insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.3645,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Pasal ini tentang muatan melanggar kesusilaan, tidak relevan dengan insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.3605,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Pelaku memperoleh, mengumpulkan, dan menjual data pribadi untuk keuntungan."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.355,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Pasal ini tentang informasi bohong/menyesatkan yang merugikan konsumen, tidak relevan."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_43",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 43",
+        "cosine": 0.3504,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Pasal ini mengatur kewenangan penyidik, bukan substansi tindak pidana."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.35,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Pelaku tidak membuat atau memalsukan data pribadi, hanya memperoleh dan menjual."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.3229,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Bagian ini tentang transisi tugas Kemenkominfo ke BSSN, bukan dasar hukum pidana."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_43",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 43",
+        "cosine": 0.3204,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Bagian ini berisi daftar nama individu, tidak relevan sebagai dasar hukum."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_6",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 6",
+        "cosine": 0.3204,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Bagian ini berisi daftar nama individu, tidak relevan sebagai dasar hukum."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_8",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 8",
+        "cosine": 0.3163,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Bagian ini adalah surat edaran etika AI, bukan dasar hukum pidana untuk insiden."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_1",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 1",
+        "cosine": 0.3075,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Bagian ini tentang pendidikan talenta AI, bukan dasar hukum pidana untuk insiden."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_46",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 46",
+        "cosine": 0.3063,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "kpu-dpt-jimbo-2023": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.5139,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Defines specific personal data, relevant as DPT data is specific."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_9",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 9",
+        "cosine": 0.4351,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Relates to data subject rights, not directly to the data breach itself."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4127,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Pertains to AI development and data quality, not a legal basis for breach."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+        "cosine": 0.4107,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Relates to data subject rights to information, not directly to the breach."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_5",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 5",
+        "cosine": 0.4103,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Concerns proof of consent, not directly applicable to the data breach."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_24",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 24",
+        "cosine": 0.403,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Concerns refusal of access/change, not directly applicable to the data breach."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.4025,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mandates notification for data protection failure, directly applicable to incident."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.397,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Criminalizes unlawful acquisition of personal data for profit, directly applicable."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.395,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Discusses AI and PDP RUU, not a legal basis for the incident."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+        "cosine": 0.3907,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Relates to data subject rights to update data, not directly to the breach."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6",
+        "cosine": 0.3904,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Concerns information disclosure for consent, not directly applicable to the breach."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_21",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 21",
+        "cosine": 0.3862,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "bjorka-sim-registration-1-3b-2022": [
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_9",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 9",
+        "cosine": 0.4819,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Peraturan ini mengatur standar kegiatan usaha, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_8",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 8",
+        "cosine": 0.4686,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "PP PSTE No. 71/2019 adalah dasar hukum umum untuk penyelenggaraan sistem elektronik."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.457,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Panduan ini berfokus pada AI governance, bukan langsung pada insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+        "cosine": 0.4422,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Stranas AI berfokus pada pengembangan AI, bukan regulasi insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_7",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 7",
+        "cosine": 0.4327,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "UU ITE adalah dasar hukum utama untuk akses ilegal terhadap sistem elektronik."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_42",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 42",
+        "cosine": 0.4237,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Pasal ini mengatur pengakhiran pemrosesan data, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.4187,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Pasal ini mendefinisikan Data Pribadi, relevan karena data SIM adalah data pribadi."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_15",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 15",
+        "cosine": 0.4179,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur sertifikasi elektronik, tidak langsung terkait kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_57",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 57",
+        "cosine": 0.4173,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur sertifikasi elektronik, tidak langsung terkait kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_13",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 13",
+        "cosine": 0.4172,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Pasal ini mengatur transfer data, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_55",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 55",
+        "cosine": 0.4115,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Pasal ini mewajibkan PSE memiliki rencana keberlangsungan dan pengelolaan data."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_20",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 20",
+        "cosine": 0.4038,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "immigration-passport-leak-2023": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.5278,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Definisi data pribadi spesifik (paspor, TTL) yang bocor, relevan untuk kualifikasi."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_55",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 55",
+        "cosine": 0.4772,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Insiden adalah kebocoran, bukan transfer data yang sah antar pengendali."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_56",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 56",
+        "cosine": 0.4327,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Insiden adalah kebocoran, bukan transfer data yang sah antar pengendali."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4217,
+        "relevant": false,
+        "confidence": 50,
+        "reason": "Fokus pada informasi bohong/menyesatkan dalam transaksi elektronik, bukan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_42",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 42",
+        "cosine": 0.4196,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Mengatur pengakhiran pemrosesan data, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.4088,
+        "relevant": false,
+        "confidence": 40,
+        "reason": "Pedoman AI, bukan dasar hukum langsung untuk insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_7",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 7",
+        "cosine": 0.4084,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mengatur perolehan data pribadi secara melawan hukum untuk keuntungan, sangat relevan."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.401,
+        "relevant": false,
+        "confidence": 40,
+        "reason": "Strategi AI, bukan dasar hukum langsung untuk insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_61",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 61",
+        "cosine": 0.4008,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Mengatur penolakan akses data, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.3986,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Mengatur hak subjek data untuk informasi, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_5",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 5",
+        "cosine": 0.3966,
+        "relevant": false,
+        "confidence": 40,
+        "reason": "Strategi AI, bukan dasar hukum langsung untuk insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+        "cosine": 0.3897,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "npwp-tax-bjorka-2024": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.5763,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Definisi data pribadi, termasuk spesifik (NIK, NPWP), relevan untuk insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.5293,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Pasal ini mengatur penolakan akses perubahan data oleh Subjek Data, bukan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_61",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 61",
+        "cosine": 0.5135,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Stranas AI adalah dokumen kebijakan, bukan dasar hukum langsung untuk insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_42",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 42",
+        "cosine": 0.5017,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Pasal ini mengatur pengakhiran pemrosesan data, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_20",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 20",
+        "cosine": 0.4967,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Pengendali Data Pribadi wajib memiliki dasar pemrosesan, relevan jika data diproses tanpa dasar sah."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_55",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 55",
+        "cosine": 0.494,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Pasal ini mengatur transfer data antar Pengendali, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+        "cosine": 0.4881,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Lembaga berwenang mengawasi kepatuhan Pengendali Data Pribadi, relevan untuk penyelidikan DJP."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_54",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 54",
+        "cosine": 0.4874,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Pasal ini adalah penjelasan dari Pasal 60, bukan dasar hukum langsung untuk insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.4834,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Distribusi informasi elektronik menyesatkan yang merugikan, relevan jika Bjorka menyebarkan data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4729,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Stranas AI adalah dokumen kebijakan, bukan dasar hukum langsung untuk insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+        "cosine": 0.4712,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Stranas AI adalah dokumen kebijakan, bukan dasar hukum langsung untuk insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_75",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 75",
+        "cosine": 0.4641,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "bais-tni-intelligence-leak-2024": [
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.5742,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Fokus pada transisi dan penegakan peraturan, bukan insiden spesifik."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.4601,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Mengatur perumusan kebijakan, bukan penanganan insiden data breach."
+      },
+      {
+        "regulation_id": "EU_AI_Act_2024_Article_79",
+        "regulation_label": "EU_AI_Act_2024 - Article 79",
+        "cosine": 0.4492,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Regulasi AI Uni Eropa tidak berlaku di Indonesia."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.4476,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Kewajiban Pengendali Data Pribadi (BAIS) untuk memberitahukan kegagalan perlindungan data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+        "cosine": 0.4399,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Lembaga berwenang mengawasi kepatuhan Pengendali Data Pribadi (BAIS)."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.4396,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Panduan AI ASEAN bersifat non-binding, bukan dasar hukum langsung."
+      },
+      {
+        "regulation_id": "G7_Hiroshima_Code_of_Conduct_for_AI_Bagian_5",
+        "regulation_label": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 5",
+        "cosine": 0.4321,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Kode Etik G7 bersifat non-binding, bukan dasar hukum langsung."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_33",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 33",
+        "cosine": 0.4321,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Resolusi UNGA bersifat non-binding, bukan dasar hukum langsung."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_50",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 50",
+        "cosine": 0.4301,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini hanya merujuk pada kewajiban Pengendali Data Pribadi secara umum."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_97",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 97",
+        "cosine": 0.427,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Mengatur pemutusan akses informasi, bukan penanganan insiden data breach."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_56",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 56",
+        "cosine": 0.4267,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Fokus pada mitigasi risiko AI, bukan insiden data breach spesifik."
+      },
+      {
+        "regulation_id": "EU_AI_Act_2024_Article_11",
+        "regulation_label": "EU_AI_Act_2024 - Article 11",
+        "cosine": 0.4207,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Regulasi AI Uni Eropa tidak berlaku di Indonesia."
+      }
+    ],
+    "inafis-polri-fingerprint-leak-2024": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.5236,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur perumusan kebijakan, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.5163,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Pasal ini mengatur transisi tanggung jawab, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.4988,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mendefinisikan data pribadi spesifik (sidik jari), relevan dengan data INAFIS."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.4754,
+        "relevant": true,
+        "confidence": 100,
+        "reason": "Kewajiban pemberitahuan kegagalan perlindungan data, sesuai insiden kebocoran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_48",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 48",
+        "cosine": 0.4678,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Pasal ini mengatur pengalihan data karena restrukturisasi badan hukum."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_29",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 29",
+        "cosine": 0.4624,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Kewajiban memastikan akurasi, kelengkapan, konsistensi data, relevan dengan integritas data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_14",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 14",
+        "cosine": 0.4555,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Pasal ini mengatur prosedur pengajuan hak Subjek Data Pribadi."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_21",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 21",
+        "cosine": 0.4532,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur kewajiban pejabat/petugas perlindungan data, bukan insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_54",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 54",
+        "cosine": 0.4496,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Pasal ini mengatur pengakhiran pemrosesan data, bukan insiden kebocoran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_42",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 42",
+        "cosine": 0.4454,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Pasal ini mengatur dasar pemrosesan data, bukan insiden kebocoran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_20",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 20",
+        "cosine": 0.4379,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Pasal ini mengatur penolakan akses perubahan data, bukan insiden kebocoran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.4377,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "pedulilindungi-jokowi-cert-2021": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_35",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+        "cosine": 0.5254,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mengatur kewajiban Pengendali Data Pribadi untuk melindungi dan memastikan keamanan data."
+      },
+      {
+        "regulation_id": "EU_AI_Act_2024_Article_9",
+        "regulation_label": "EU_AI_Act_2024 - Article 9",
+        "cosine": 0.5086,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Regulasi UE, tidak berlaku di Indonesia; fokus pada AI dan biometrik."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_75",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 75",
+        "cosine": 0.4999,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Bagian dari Stranas AI, bukan regulasi langsung; merujuk Permenkominfo 2016."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+        "cosine": 0.4921,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Mengatur kewenangan lembaga PDP, bukan langsung kewajiban keamanan data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.4874,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Penjelasan huruf a Pasal 60, bukan substansi kewajiban keamanan data."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_56",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 56",
+        "cosine": 0.4828,
+        "relevant": false,
+        "confidence": 40,
+        "reason": "Mengatur pengawasan sertifikasi elektronik, bukan langsung keamanan data pribadi."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_76",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 76",
+        "cosine": 0.4797,
+        "relevant": false,
+        "confidence": 40,
+        "reason": "Mengatur kategori sertifikat keandalan, bukan langsung kewajiban keamanan data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.4749,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Mengatur penolakan akses perubahan data, bukan kelalaian pengamanan akses."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_23",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 23",
+        "cosine": 0.4731,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Resolusi PBB, bukan hukum nasional Indonesia; fokus pada AI."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_54",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 54",
+        "cosine": 0.4726,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Mengatur tugas pejabat PDP, bukan langsung kewajiban keamanan data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_63",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 63",
+        "cosine": 0.4726,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Mengatur peran masyarakat dalam PDP, bukan kewajiban keamanan data."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_77",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 77",
+        "cosine": 0.4644,
+        "relevant": false,
+        "confidence": 40,
+        "reason": "Mengatur pengawasan Lembaga Sertifikasi Keandalan, bukan langsung keamanan data."
+      }
+    ],
+    "kemenkes-patient-records-2022": [
+      {
+        "regulation_id": "ISO_IEC_42001_AI_Management_System_Bagian_17",
+        "regulation_label": "ISO_IEC_42001_AI_Management_System - Bagian 17",
+        "cosine": 0.4755,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "General AI management, not a specific legal basis for data breach."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4707,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Focuses on false/misleading information causing consumer loss, not data breach."
+      },
+      {
+        "regulation_id": "WHO_Ethics_and_Governance_of_AI_for_Health_Bagian_21",
+        "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 21",
+        "cosine": 0.4682,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Lists external reviewers, not a legal provision."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.4543,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mandates notification for data protection failure, directly applicable."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.4493,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Defines specific personal data, relevant as medical records are specific data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_14",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 14",
+        "cosine": 0.4362,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Describes how data subjects exercise rights, not a basis for breach."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_29",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 29",
+        "cosine": 0.4338,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Guidelines for security testing, not a legal basis for breach."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_56",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 56",
+        "cosine": 0.4256,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Discusses AI risks and mitigation, not a specific legal basis for data breach."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.4242,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pertains to creating/falsifying data, not the act of unauthorized access/leak."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.4237,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Criminalizes unlawful acquisition/collection of personal data for gain."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.4168,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Focuses on threats/intimidation, not the data breach itself."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+        "cosine": 0.4145,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Discusses RUU PDP's importance for AI, not a legal basis for breach."
+      }
+    ],
+    "bpjs-kesehatan-279m-2021": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.4365,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Definisi data pribadi, bukan ketentuan pidana atau kewajiban."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4273,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Fokus pada berita bohong/menyesatkan yang merugikan konsumen, bukan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.4119,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mengatur perolehan data pribadi secara melawan hukum untuk keuntungan."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.4057,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Mengatur penolakan akses perubahan data, bukan kebocoran atau penjualan data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.3991,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Fokus pada muatan melanggar kesusilaan, bukan kebocoran data pribadi."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.3899,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Mengatur pemalsuan data pribadi, bukan perolehan atau penjualan data asli."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.3824,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Mengatur transisi tugas antar lembaga, bukan dasar hukum insiden."
+      },
+      {
+        "regulation_id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_73",
+        "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 73",
+        "cosine": 0.3731,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Rekomendasi internasional, bukan hukum positif Indonesia yang mengikat."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45A",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45A",
+        "cosine": 0.3712,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Fokus pada berita bohong/menyesatkan yang merugikan konsumen, bukan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.3684,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Mengatur perumusan kebijakan, bukan ketentuan pidana atau kewajiban langsung."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.3678,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Fokus pada ancaman kekerasan/menakut-nakuti, bukan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_9",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 9",
+        "cosine": 0.3614,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Mengatur hak penarikan persetujuan, bukan pelanggaran kebocoran data."
+      }
+    ],
+    "ehac-covid-app-leak-2021": [
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_35",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 35",
+        "cosine": 0.4511,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Menyebutkan sistem keamanan yang mudah diretas, relevan dengan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_71",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 71",
+        "cosine": 0.4506,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Mengatur autentikasi situs web dan identifikasi penanggung jawab, relevan dengan eHAC."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.4493,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Fokus pada perumusan kebijakan, bukan langsung pada insiden kebocoran data."
+      },
+      {
+        "regulation_id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_10",
+        "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 10",
+        "cosine": 0.442,
+        "relevant": false,
+        "confidence": 50,
+        "reason": "Rekomendasi UNESCO, bukan hukum positif Indonesia yang mengikat."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+        "cosine": 0.4417,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Fokus pada pengembangan AI dan kualitas data, bukan langsung pada insiden keamanan."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_33",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 33",
+        "cosine": 0.4384,
+        "relevant": false,
+        "confidence": 50,
+        "reason": "Resolusi UNGA, bukan hukum positif Indonesia yang mengikat."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_23",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 23",
+        "cosine": 0.4369,
+        "relevant": true,
+        "confidence": 75,
+        "reason": "Meskipun fokus persetujuan, kegagalan perlindungan data bisa membatalkan perjanjian."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+        "cosine": 0.4368,
+        "relevant": false,
+        "confidence": 50,
+        "reason": "Panduan ASEAN, bukan hukum positif Indonesia yang mengikat."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+        "cosine": 0.4362,
+        "relevant": false,
+        "confidence": 50,
+        "reason": "Panduan ASEAN, bukan hukum positif Indonesia yang mengikat."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.4357,
+        "relevant": false,
+        "confidence": 50,
+        "reason": "Panduan WHO, bukan hukum positif Indonesia yang mengikat."
+      },
+      {
+        "regulation_id": "WHO_Ethics_and_Governance_of_AI_for_Health_Bagian_18",
+        "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 18",
+        "cosine": 0.4353,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mengatur kewajiban pemberitahuan kegagalan perlindungan data, sangat relevan dengan insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.4346,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "wannacry-hospitals-2017": [
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_80",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 80",
+        "cosine": 0.4912,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Ini adalah rekomendasi pembentukan UU, bukan landasan hukum yang berlaku."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_52",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 52",
+        "cosine": 0.4857,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Ini adalah visi umum negara, bukan dasar hukum spesifik."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_39",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 39",
+        "cosine": 0.4793,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Ini adalah informasi kontak dan kata sambutan, bukan ketentuan hukum."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_2",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 2",
+        "cosine": 0.4518,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Ini membahas dominasi pasar digital, tidak relevan dengan insiden ransomware."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_55",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 55",
+        "cosine": 0.4339,
+        "relevant": false,
+        "confidence": 40,
+        "reason": "Pasal ini mengatur transfer data pribadi, bukan insiden keamanan atau kelalaian."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_20",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 20",
+        "cosine": 0.4301,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "RS adalah PSE Lingkup Publik, wajib punya rencana keberlangsungan untuk menanggulangi gangguan."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_35",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+        "cosine": 0.4273,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Pengendali Data Pribadi (RS) wajib melindungi dan memastikan keamanan data yang diproses."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_75",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 75",
+        "cosine": 0.4235,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Ini merujuk pada PERMENKOMINFO, bukan ketentuan hukum langsung yang berlaku."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+        "cosine": 0.4232,
+        "relevant": false,
+        "confidence": 40,
+        "reason": "Pasal ini mengatur kewenangan lembaga PDP, bukan kewajiban pengendali data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_61",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 61",
+        "cosine": 0.4138,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Ini membahas kepentingan negara dalam data, bukan insiden keamanan siber."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_4",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 4",
+        "cosine": 0.4134,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Ini adalah panduan etika AI, bukan dasar hukum untuk insiden ransomware."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_21",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 21",
+        "cosine": 0.4133,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "pedulilindungi-id-gambling-hijack-2025": [
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_5",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 5",
+        "cosine": 0.4385,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "General introduction to Stranas AI, not a legal basis for cybercrime."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_9",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 9",
+        "cosine": 0.4129,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Refers to ASEAN Digital Masterplan, not a specific Indonesian legal basis."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_39",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 39",
+        "cosine": 0.4081,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Discusses market dominance and public trust, not a legal basis for cybercrime."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_15",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 15",
+        "cosine": 0.4063,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Administrative section of SE Komdigi, not a substantive legal provision."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_2",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 2",
+        "cosine": 0.3966,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Contact information and general greetings, not a legal basis for cybercrime."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_8",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 8",
+        "cosine": 0.3936,
+        "relevant": true,
+        "confidence": 80,
+        "reason": "Refers to PP 71/2019 (PSTE), which is relevant for electronic system incidents."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_64",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 64",
+        "cosine": 0.3935,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Discusses economic indicators and AI ecosystem, not a legal basis for cybercrime."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_9",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 9",
+        "cosine": 0.391,
+        "relevant": true,
+        "confidence": 75,
+        "reason": "Refers to Permenkominfo 3/2021, relevant for electronic system standards."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_3",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 3",
+        "cosine": 0.3821,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "UNGA resolution, not a specific Indonesian legal basis for this incident."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_71",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 71",
+        "cosine": 0.3784,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "PSTE Pasal 71 concerns website authentication and responsibility, relevant for defacement."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_40",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 40",
+        "cosine": 0.3755,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Discusses innovation ecosystem and Satu Data Indonesia, not a legal basis for cybercrime."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_82",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 82",
+        "cosine": 0.3743,
+        "relevant": true,
+        "confidence": 70,
+        "reason": "PSTE Pasal 82 concerns domain name management, relevant for website defacement."
+      }
+    ],
+    "satusehat-kotim-breach-2025": [
+      {
+        "regulation_id": "EU_AI_Act_2024_Article_67",
+        "regulation_label": "EU_AI_Act_2024 - Article 67",
+        "cosine": 0.4423,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "EU AI Act is not Indonesian law and irrelevant to a data breach."
+      },
+      {
+        "regulation_id": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_7",
+        "regulation_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 7",
+        "cosine": 0.4101,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "POJK 3/2024 concerns financial technology sandbox, not data breaches."
+      },
+      {
+        "regulation_id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_75",
+        "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 75",
+        "cosine": 0.4005,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "UNESCO recommendation is non-binding and general, not a legal basis."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+        "cosine": 0.3974,
+        "relevant": true,
+        "confidence": 75,
+        "reason": "Mentions RUU PDP (now UU PDP) and data, relevant to data breach context."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.3947,
+        "relevant": true,
+        "confidence": 70,
+        "reason": "Mentions BSSN and Kemenkominfo's role in data regulation enforcement."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_35",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 35",
+        "cosine": 0.3944,
+        "relevant": true,
+        "confidence": 80,
+        "reason": "Highlights weak network security and data systems, directly relevant to breach."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_34",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 34",
+        "cosine": 0.3943,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Discusses strengths/weaknesses of digitalization, not a legal basis for breach."
+      },
+      {
+        "regulation_id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_10",
+        "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 10",
+        "cosine": 0.3938,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "UNESCO recommendation is non-binding and general, not a legal basis."
+      },
+      {
+        "regulation_id": "WHO_Ethics_and_Governance_of_AI_for_Health_Bagian_57",
+        "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 57",
+        "cosine": 0.3902,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "WHO guidance is for AI in health, not a legal basis for data breach."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_47",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 47",
+        "cosine": 0.3856,
+        "relevant": true,
+        "confidence": 70,
+        "reason": "Mentions data privacy and malicious activities, relevant to data breach."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_6",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 6",
+        "cosine": 0.3813,
+        "relevant": true,
+        "confidence": 75,
+        "reason": "Mentions secure analysis of patient data and data privacy in healthcare."
+      },
+      {
+        "regulation_id": "ISO_IEC_42001_AI_Management_System_Bagian_17",
+        "regulation_label": "ISO_IEC_42001_AI_Management_System - Bagian 17",
+        "cosine": 0.3788,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "kemendikbud-leak-claim-2025": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.5717,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Kewajiban pemberitahuan kegagalan perlindungan data pribadi oleh Pengendali Data Pribadi."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_23",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 23",
+        "cosine": 0.557,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Tidak relevan dengan insiden kebocoran data, lebih ke perjanjian pemrosesan."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.5313,
+        "relevant": true,
+        "confidence": 80,
+        "reason": "Mendefinisikan jenis data pribadi yang bocor (nama, NIK, TTL, dll)."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_48",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 48",
+        "cosine": 0.5209,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Tidak relevan, mengatur pengalihan data akibat penggabungan/pembubaran badan hukum."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+        "cosine": 0.5195,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Bagian dari Stranas AI, bukan pasal hukum yang bisa diterapkan langsung."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6",
+        "cosine": 0.5187,
+        "relevant": true,
+        "confidence": 75,
+        "reason": "Hak subjek data untuk memperbaiki data, relevan jika data yang bocor tidak akurat."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.5172,
+        "relevant": false,
+        "confidence": 25,
+        "reason": "Mengatur penolakan akses perubahan data, bukan kewajiban perlindungan data."
+      },
+      {
+        "regulation_id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_73",
+        "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 73",
+        "cosine": 0.5169,
+        "relevant": false,
+        "confidence": 15,
+        "reason": "Rekomendasi UNESCO, bukan hukum nasional yang mengikat langsung."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_35",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 35",
+        "cosine": 0.51,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Bagian dari Stranas AI, bukan pasal hukum yang bisa diterapkan langsung."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.5096,
+        "relevant": false,
+        "confidence": 40,
+        "reason": "Lebih ke penyebaran informasi bohong yang merugikan konsumen, bukan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_30",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 30",
+        "cosine": 0.5077,
+        "relevant": true,
+        "confidence": 70,
+        "reason": "Kewajiban Pengendali Data Pribadi untuk memperbarui/memperbaiki data."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.507,
+        "relevant": false,
+        "confidence": 15,
+        "reason": "Panduan ASEAN, bukan hukum nasional yang mengikat langsung."
+      }
+    ],
+    "kejaksaan-agung-defacement-2025": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+        "cosine": 0.5351,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Pasal ini mengatur kewenangan lembaga PDP, bukan dasar hukum pidana insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_26",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 26",
+        "cosine": 0.5148,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Insiden melibatkan akses data pribadi tanpa persetujuan, melanggar hak subjek data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.5099,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Pasal ini tentang informasi bohong merugikan konsumen, tidak relevan dengan defacement."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.4919,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Pasal ini tentang muatan melanggar kesusilaan, tidak relevan dengan defacement."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_75",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 75",
+        "cosine": 0.4886,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Ini adalah bagian dari Stranas AI, bukan pasal hukum yang bisa diterapkan."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_7",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 7",
+        "cosine": 0.4847,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Ini adalah bagian dari SE Komdigi, bukan pasal hukum yang bisa diterapkan."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_9",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 9",
+        "cosine": 0.4814,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Ini adalah bagian dari SE Komdigi, bukan pasal hukum yang bisa diterapkan."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_43",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 43",
+        "cosine": 0.4812,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Pasal ini mengatur kewenangan penyidik, bukan dasar hukum pidana insiden."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_80",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 80",
+        "cosine": 0.4748,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Ini adalah bagian dari Stranas AI, bukan pasal hukum yang bisa diterapkan."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_15",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 15",
+        "cosine": 0.4742,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Ini adalah bagian dari SE Komdigi, bukan pasal hukum yang bisa diterapkan."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_8",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 8",
+        "cosine": 0.4704,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Ini adalah bagian dari SE Komdigi, bukan pasal hukum yang bisa diterapkan."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_12",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 12",
+        "cosine": 0.4635,
+        "relevant": true,
+        "confidence": 80,
+        "reason": "Subjek data pribadi berhak menggugat ganti rugi atas pelanggaran pemrosesan data."
+      }
+    ],
+    "ugm-ft-website-defacement-2022": [
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4092,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is defacement, not false information causing consumer loss in electronic transactions."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+        "cosine": 0.3877,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "This is a reference to an OECD document, not an Indonesian legal provision."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45A",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45A",
+        "cosine": 0.3849,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is defacement, not false information causing consumer loss in electronic transactions."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.3827,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Incident is defacement, not related to creating or falsifying personal data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_66",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 66",
+        "cosine": 0.3734,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Incident is defacement, not related to creating or falsifying personal data."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_1",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 1",
+        "cosine": 0.3732,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "This is an introductory part of a Ministerial Circular, not a substantive legal basis."
+      },
+      {
+        "regulation_id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_10",
+        "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 10",
+        "cosine": 0.37,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "This is a reference to UN resolutions, not an Indonesian legal provision."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI_Bagian_3",
+        "regulation_label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 3",
+        "cosine": 0.3676,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is defacement, not false information causing consumer loss in electronic transactions."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_28",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 28",
+        "cosine": 0.3674,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "This is a strategic document discussing future laws, not a current legal basis."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_80",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 80",
+        "cosine": 0.3568,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "This is a strategic document discussing institutional roles, not a current legal basis."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.3565,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "This is a reference to UN resolutions, not an Indonesian legal provision."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_3",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 3",
+        "cosine": 0.3544,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "bsi-lockbit-ransomware-2023": [
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.4944,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Pasal ini mengatur konten melanggar kesusilaan, tidak relevan dengan pencurian data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4903,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Pasal ini mengatur informasi bohong/menyesatkan yang merugikan konsumen, bukan pencurian data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.4693,
+        "relevant": true,
+        "confidence": 100,
+        "reason": "LockBit memperoleh data pribadi secara melawan hukum untuk keuntungan, merugikan subjek data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.4482,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Pasal ini mengatur pemalsuan data pribadi, bukan pencurian data yang sudah ada."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.4365,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Ancaman LockBit untuk mempublikasikan data jika tebusan tidak dibayar."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.4033,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Bagian ini membahas transisi tanggung jawab antar lembaga, bukan pelanggaran spesifik."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.374,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Pasal ini mengatur hak akses subjek data, bukan kewajiban bank terkait insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_32",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 32",
+        "cosine": 0.3494,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Ini adalah referensi dokumen OECD, bukan ketentuan hukum yang berlaku di Indonesia."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+        "cosine": 0.3479,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Ini adalah regulasi UE, tidak berlaku langsung untuk insiden di Indonesia."
+      },
+      {
+        "regulation_id": "EU_AI_Act_2024_Article_73",
+        "regulation_label": "EU_AI_Act_2024 - Article 73",
+        "cosine": 0.3331,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Pasal ini mendefinisikan LJK, bukan mengatur pelanggaran atau kewajiban terkait insiden."
+      },
+      {
+        "regulation_id": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_1",
+        "regulation_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 1",
+        "cosine": 0.3264,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Bagian ini adalah referensi peraturan pemerintah, bukan ketentuan hukum yang dapat diterapkan."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_8",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 8",
+        "cosine": 0.3251,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "bank-indonesia-conti-ransomware-2022": [
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_29",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 29",
+        "cosine": 0.5087,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Ransomware highlights need for security testing, business continuity, disaster recovery."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_80",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 80",
+        "cosine": 0.5046,
+        "relevant": false,
+        "confidence": 40,
+        "reason": "General statement about future law, not a current legal basis."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_35",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+        "cosine": 0.4915,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Bank Indonesia must protect and secure processed personal data from disruptions."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4838,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Focuses on false information causing consumer loss, not direct ransomware attack."
+      },
+      {
+        "regulation_id": "G7_Hiroshima_Code_of_Conduct_for_AI_Bagian_13",
+        "regulation_label": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 13",
+        "cosine": 0.4781,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Ransomware often involves threats/intimidation to extort, fitting this article."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.473,
+        "relevant": false,
+        "confidence": 50,
+        "reason": "Focuses on data accuracy/integrity and consent, not direct security breach."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.4662,
+        "relevant": false,
+        "confidence": 65,
+        "reason": "Pertains to creating/falsifying data, not the act of ransomware itself."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.4604,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Bank Indonesia must prevent unauthorized access to personal data via secure systems."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_39",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 39",
+        "cosine": 0.4581,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "BI, as public PSE, needs business continuity plan for disruptions like ransomware."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_20",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 20",
+        "cosine": 0.4564,
+        "relevant": false,
+        "confidence": 45,
+        "reason": "General statement on risk awareness and mitigation, not a specific legal basis."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_56",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 56",
+        "cosine": 0.4551,
+        "relevant": false,
+        "confidence": 55,
+        "reason": "Describes institutional authority, not a direct obligation or prohibition for the incident."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+        "cosine": 0.447,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "indodax-crypto-hack-2024": [
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.3966,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Tidak ada ancaman kekerasan/menakut-nakuti langsung kepada korban."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.3906,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Penyerang mendistribusikan informasi bohong/menyesatkan yang merugikan konsumen Indodax."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.3705,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Insiden tidak terkait dengan muatan yang melanggar kesusilaan."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.3645,
+        "relevant": true,
+        "confidence": 70,
+        "reason": "Mungkin ada perolehan data pribadi secara melawan hukum untuk keuntungan."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.3613,
+        "relevant": true,
+        "confidence": 60,
+        "reason": "Mungkin ada pemalsuan data pribadi untuk keuntungan, meskipun tidak eksplisit."
+      },
+      {
+        "regulation_id": "EU_AI_Act_2024_Article_26",
+        "regulation_label": "EU_AI_Act_2024 - Article 26",
+        "cosine": 0.3417,
+        "relevant": false,
+        "confidence": 99,
+        "reason": "EU AI Act tidak berlaku di Indonesia dan insiden bukan tentang AI."
+      },
+      {
+        "regulation_id": "WHO_Ethics_and_Governance_of_AI_for_Health_Bagian_21",
+        "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 21",
+        "cosine": 0.321,
+        "relevant": false,
+        "confidence": 99,
+        "reason": "WHO Ethics and Governance of AI for Health adalah pedoman, bukan dasar hukum."
+      },
+      {
+        "regulation_id": "EU_AI_Act_2024_Article_73",
+        "regulation_label": "EU_AI_Act_2024 - Article 73",
+        "cosine": 0.2916,
+        "relevant": false,
+        "confidence": 99,
+        "reason": "EU AI Act tidak berlaku di Indonesia dan insiden bukan tentang AI."
+      },
+      {
+        "regulation_id": "EU_AI_Act_2024_Article_101",
+        "regulation_label": "EU_AI_Act_2024 - Article 101",
+        "cosine": 0.2903,
+        "relevant": false,
+        "confidence": 99,
+        "reason": "UNGA Resolution adalah resolusi umum, bukan dasar hukum pidana spesifik."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_4",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 4",
+        "cosine": 0.2874,
+        "relevant": false,
+        "confidence": 99,
+        "reason": "EU AI Act tidak berlaku di Indonesia dan insiden bukan tentang AI."
+      },
+      {
+        "regulation_id": "EU_AI_Act_2024_Article_24",
+        "regulation_label": "EU_AI_Act_2024 - Article 24",
+        "cosine": 0.2859,
+        "relevant": false,
+        "confidence": 99,
+        "reason": "ASEAN Guide adalah pedoman, bukan dasar hukum pidana spesifik."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+        "cosine": 0.2855,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "kreditplus-data-leak-2020": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.424,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur perumusan kebijakan, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.4021,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Bagian ini membahas transisi tanggung jawab Kemenkominfo ke BSSN, bukan insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.3782,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mengatur kewajiban pemberitahuan kegagalan perlindungan data, relevan dengan insiden."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.3751,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Panduan AI ASEAN, fokus pada akurasi data dan persetujuan, bukan insiden kebocoran."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+        "cosine": 0.3729,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Membahas pengesahan RUU PDP dan AI, bukan insiden kebocoran data spesifik."
+      },
+      {
+        "regulation_id": "WHO_Ethics_and_Governance_of_AI_for_Health_Bagian_21",
+        "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 21",
+        "cosine": 0.3721,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Daftar peninjau eksternal, tidak relevan dengan insiden hukum."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.3664,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Mendefinisikan jenis data pribadi yang bocor, relevan untuk kualifikasi insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.352,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Mengatur distribusi informasi bohong, bukan kebocoran data pribadi."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_29",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 29",
+        "cosine": 0.3443,
+        "relevant": false,
+        "confidence": 65,
+        "reason": "Panduan AI ASEAN, fokus pada pengujian keamanan dan BCP, bukan insiden kebocoran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_16",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 16",
+        "cosine": 0.3428,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Mengatur tahapan pemrosesan data pribadi, relevan dengan kegagalan perlindungan."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_17",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 17",
+        "cosine": 0.3374,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Mengatur hak untuk dihapus dari mesin pencari, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI_Bagian_3",
+        "regulation_label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 3",
+        "cosine": 0.3373,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Resolusi UNGA tentang AI dan pembangunan berkelanjutan, tidak relevan dengan insiden."
+      }
+    ],
+    "cermati-data-breach-2020": [
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.5155,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Incident is data breach, not false information causing consumer loss."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.4445,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is data breach, not content violating decency."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_28",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 28",
+        "cosine": 0.4434,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Incident is data breach, not false information causing consumer loss."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.434,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is data breach, not direct threats/intimidation."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45A",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45A",
+        "cosine": 0.4219,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Incident is data breach, not false news causing consumer loss."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.4184,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is data breach, not creation/falsification of personal data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.4164,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "This provision concerns refusal of access/change, not data breach."
+      },
+      {
+        "regulation_id": "WHO_Ethics_and_Governance_of_AI_for_Health_Bagian_21",
+        "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 21",
+        "cosine": 0.4094,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "This provision is about external reviewers, not a legal basis."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_278",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 278",
+        "cosine": 0.4063,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "This provision is about future cybersecurity law, not a current legal basis."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_80",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 80",
+        "cosine": 0.4021,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Cermati sent notification, aligning with this data breach notification obligation."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.4014,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Cermati's failure to protect data aligns with this obligation."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_35",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+        "cosine": 0.4011,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "bri-life-data-leak-2021": [
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.5261,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Tidak ada indikasi informasi bohong atau menyesatkan yang merugikan konsumen."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.5245,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Pelaku memperoleh data pribadi bukan miliknya untuk keuntungan, merugikan subjek data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.515,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Tidak ada indikasi muatan yang melanggar kesusilaan."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.4959,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Tidak ada indikasi pengiriman ancaman kekerasan atau menakut-nakuti langsung ke korban."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.4652,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Tidak ada indikasi pembuatan atau pemalsuan data pribadi."
+      },
+      {
+        "regulation_id": "G7_Hiroshima_Code_of_Conduct_for_AI_Bagian_13",
+        "regulation_label": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 13",
+        "cosine": 0.4247,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Ini adalah pedoman AI, bukan dasar hukum pidana atau perdata langsung."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.4116,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "BRI Life wajib memberitahukan kegagalan perlindungan data pribadi."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.4017,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Ini adalah pedoman AI, bukan dasar hukum pidana atau perdata langsung."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.3915,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Ini adalah pedoman AI, bukan dasar hukum pidana atau perdata langsung."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_21",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 21",
+        "cosine": 0.387,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mendefinisikan jenis data pribadi, bukan mengatur insiden pelanggaran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.3849,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur perumusan kebijakan, bukan insiden pelanggaran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.3847,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "adakami-pinjol-conduct-2023": [
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_2",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 2",
+        "cosine": 0.5076,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Kontak Stranas AI bukan dasar hukum yang relevan untuk insiden ini."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_15",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 15",
+        "cosine": 0.5,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Tembusan SE Komdigi bukan dasar hukum yang relevan untuk insiden ini."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_9",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 9",
+        "cosine": 0.4988,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Referensi Permenkominfo bukan dasar hukum langsung untuk insiden penagihan."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.4896,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "EU AI Act tidak berlaku di Indonesia untuk insiden ini."
+      },
+      {
+        "regulation_id": "EU_AI_Act_2024_Article_73",
+        "regulation_label": "EU_AI_Act_2024 - Article 73",
+        "cosine": 0.4837,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Pasal ini mengatur kewenangan lembaga PDP, bukan pelanggaran spesifik insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+        "cosine": 0.4789,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Dugaan order fiktif dan bunga berlebih bisa masuk informasi menyesatkan merugikan konsumen."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.472,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Intimidasi penagih melalui informasi elektronik berisi ancaman/menakut-nakuti."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_29",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 29",
+        "cosine": 0.4719,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Bagian ini membahas etika AI secara umum, bukan dasar hukum spesifik insiden."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_65",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 65",
+        "cosine": 0.4701,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Pasal ini mengatur ruang lingkup UU PDP, bukan pelanggaran spesifik insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_2",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 2",
+        "cosine": 0.4669,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Bagian ini membahas konsep hukum dan Permenkominfo, bukan dasar hukum spesifik insiden."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_75",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 75",
+        "cosine": 0.4649,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Referensi UU ITE bukan dasar hukum langsung, melainkan rujukan peraturan."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_7",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 7",
+        "cosine": 0.4625,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "bank-jatim-bifast-fraud-2024": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.487,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Pelaku memperoleh data rekening orang lain untuk menampung dana hasil kejahatan."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4811,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Transaksi anomali menyesatkan bank dan mengakibatkan kerugian material."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.4545,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Pelaku menggunakan rekening atas nama orang lain, mengindikasikan pemalsuan data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.453,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Tidak ada indikasi muatan melanggar kesusilaan dalam insiden ini."
+      },
+      {
+        "regulation_id": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_1",
+        "regulation_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 1",
+        "cosine": 0.4435,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Ini adalah definisi LJK, bukan dasar hukum pidana untuk insiden."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.4196,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Ini adalah bagian dari Stranas AI, bukan dasar hukum pidana."
+      },
+      {
+        "regulation_id": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_17",
+        "regulation_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 17",
+        "cosine": 0.4076,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Ini terkait proses perizinan, bukan dasar hukum pidana untuk insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.4052,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Ini hak subjek data untuk menggugat, bukan pasal pidana untuk pelaku."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_12",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 12",
+        "cosine": 0.3902,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Ini prosedur pembayaran denda, bukan pasal pidana yang relevan dengan insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_71",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 71",
+        "cosine": 0.3869,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Ini kewajiban pengendali data, bukan pasal pidana untuk pelaku kejahatan."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.3753,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Ini kewajiban pengendali data, bukan pasal pidana untuk pelaku kejahatan."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_40",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 40",
+        "cosine": 0.3721,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "bank-dki-bifast-breach-2025": [
+      {
+        "regulation_id": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_1",
+        "regulation_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 1",
+        "cosine": 0.4769,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Bank DKI adalah Lembaga Jasa Keuangan (LJK) yang relevan dengan POJK ini."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+        "cosine": 0.4361,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Bagian ini membahas transisi tanggung jawab, bukan dasar hukum insiden."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_8",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 8",
+        "cosine": 0.3776,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Bagian ini hanya daftar peraturan, bukan substansi hukum yang berlaku."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.3737,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Penipuan melalui sistem elektronik yang merugikan konsumen sangat relevan."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.3554,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Pasal ini tentang muatan melanggar kesusilaan, tidak relevan dengan fraud."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+        "cosine": 0.3535,
+        "relevant": false,
+        "confidence": 40,
+        "reason": "Pasal ini mengatur kewenangan lembaga PDP, bukan langsung insiden fraud."
+      },
+      {
+        "regulation_id": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_17",
+        "regulation_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 17",
+        "cosine": 0.3527,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Pasal ini tentang surat tidak lulus peserta, tidak relevan dengan insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.3516,
+        "relevant": false,
+        "confidence": 50,
+        "reason": "Insiden ini bukan kegagalan perlindungan data pribadi, melainkan fraud."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_42",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 42",
+        "cosine": 0.3483,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Pasal ini tentang pengakhiran pemrosesan data, tidak relevan dengan fraud."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_9",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 9",
+        "cosine": 0.348,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Bagian ini hanya daftar peraturan, bukan substansi hukum yang berlaku."
+      },
+      {
+        "regulation_id": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_2",
+        "regulation_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 2",
+        "cosine": 0.3464,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Insiden melibatkan penyelesaian transaksi dan pengelolaan dana, relevan dengan ITSK."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_40",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 40",
+        "cosine": 0.346,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Pasal ini tentang penghentian pemrosesan data, tidak relevan dengan fraud."
+      }
+    ],
+    "tokopedia-91m-2020": [
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4932,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is about data breach, not distributing false information causing consumer loss."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.4768,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is about data breach, not distributing content violating decency."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.4516,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is about data theft, not creating or falsifying personal data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_28",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 28",
+        "cosine": 0.4358,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is about data breach, not distributing false information causing consumer loss."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.4344,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Obtaining personal data unlawfully for self-gain, causing harm to data subjects."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.4115,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is about data breach, not sending electronic threats/intimidation."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45A",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45A",
+        "cosine": 0.4057,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is about data breach, not spreading false news causing consumer loss."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_32",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 32",
+        "cosine": 0.3935,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "This provision applies to data controllers, not directly to the breach perpetrators."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_45",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 45",
+        "cosine": 0.389,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "This provision applies to data controllers, not directly to the breach perpetrators."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_66",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 66",
+        "cosine": 0.3889,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Incident is about data theft, not creating or falsifying personal data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.3886,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "This provision applies to data controllers, not directly to the breach perpetrators."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_9",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 9",
+        "cosine": 0.3869,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "This provision applies to data controllers, not directly to the breach perpetrators."
+      }
+    ],
+    "bukalapak-13m-2019": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.3291,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Pasal ini mengatur perumusan kebijakan, bukan pelanggaran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.3277,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Mendefinisikan jenis data pribadi yang dilindungi, relevan dengan data yang bocor."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_10",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 10",
+        "cosine": 0.3092,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Bagian ini hanya daftar nama kontributor, tidak ada norma hukum."
+      },
+      {
+        "regulation_id": "WHO_Ethics_and_Governance_of_AI_for_Health_Bagian_21",
+        "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 21",
+        "cosine": 0.3009,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Bagian ini hanya daftar nama peninjau eksternal, tidak ada norma hukum."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_6",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 6",
+        "cosine": 0.2909,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Bagian ini hanya daftar nama kontributor, tidak ada norma hukum."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_47",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 47",
+        "cosine": 0.289,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Mengatur pemanfaatan komputasi awan dan dataset, bukan pelanggaran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_40",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 40",
+        "cosine": 0.2849,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Mengatur ekosistem inovasi dan Satu Data Indonesia, bukan pelanggaran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_9",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 9",
+        "cosine": 0.282,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Mengatur hak penarikan persetujuan, bukan kewajiban perlindungan data oleh pengendali."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_43",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 43",
+        "cosine": 0.282,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Mengatur strategi ekonomi dan etika AI, bukan pelanggaran data pribadi."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_53",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 53",
+        "cosine": 0.2776,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Mengatur misi dan tujuan strategi AI, bukan norma hukum terkait insiden."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.2763,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Mengatur akurasi dan integritas data dalam konteks AI, bukan pelanggaran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_2",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 2",
+        "cosine": 0.2761,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Bagian ini hanya informasi kontak dan kata sambutan, tidak ada norma hukum."
+      }
+    ],
+    "bhinneka-1-2m-2020": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.4129,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Mendefinisikan jenis data pribadi yang dibobol (spesifik dan umum)."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_5",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 5",
+        "cosine": 0.4128,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Hak subjek data untuk informasi tentang penggunaan data, yang dilanggar."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_34",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 34",
+        "cosine": 0.3945,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Fokus pada kekuatan dataset AI, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_28",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 28",
+        "cosine": 0.382,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Fokus pada informasi bohong/menyesatkan, bukan akses ilegal atau kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_9",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 9",
+        "cosine": 0.3774,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Fokus pada pengembangan AI dan Satu Data Indonesia, bukan insiden keamanan."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+        "cosine": 0.37,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Resolusi UNGA bersifat umum, bukan dasar hukum langsung untuk insiden ini."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_3",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 3",
+        "cosine": 0.3687,
+        "relevant": true,
+        "confidence": 70,
+        "reason": "Menekankan pentingnya informasi pengumpulan/pemrosesan data, relevan dengan pelanggaran."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.3671,
+        "relevant": true,
+        "confidence": 80,
+        "reason": "Hak subjek data untuk melengkapi/memperbaiki data, yang terancam oleh kebocoran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6",
+        "cosine": 0.3628,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Fokus pada informasi bohong/menyesatkan, bukan akses ilegal atau kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.3626,
+        "relevant": false,
+        "confidence": 15,
+        "reason": "Bagian ini adalah daftar isi/struktur dokumen, bukan ketentuan hukum."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_5",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 5",
+        "cosine": 0.3598,
+        "relevant": true,
+        "confidence": 75,
+        "reason": "Menekankan perlunya kebijakan data untuk keamanan data pribadi, relevan dengan insiden."
+      },
+      {
+        "regulation_id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_73",
+        "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 73",
+        "cosine": 0.3577,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "lazada-redmart-1-1m-2020": [
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4809,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Tidak ada indikasi Lazada mendistribusikan informasi bohong yang merugikan konsumen."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.4362,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Insiden adalah akses ilegal dan penjualan data, bukan pemalsuan data oleh Lazada."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.4301,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Data breach tidak terkait dengan muatan yang melanggar kesusilaan."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45A",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45A",
+        "cosine": 0.4059,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Tidak ada indikasi Lazada menyebarkan berita bohong yang merugikan konsumen."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_32",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 32",
+        "cosine": 0.4023,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Pasal ini mengatur hak akses subjek data, bukan kewajiban perlindungan data dari insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_40",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 40",
+        "cosine": 0.4013,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Pasal ini mengatur penghentian pemrosesan data, bukan kewajiban perlindungan data dari insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_66",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 66",
+        "cosine": 0.4001,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Insiden adalah akses ilegal dan penjualan data, bukan pemalsuan data oleh Lazada."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.3991,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Tidak ada indikasi Lazada mendistribusikan informasi bohong yang merugikan konsumen."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_28",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 28",
+        "cosine": 0.3814,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Lazada sebagai Pengendali Data Pribadi wajib melindungi data dari pemrosesan tidak sah."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_38",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 38",
+        "cosine": 0.3779,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Pasal ini mengatur pemberitahuan penghapusan, bukan kewajiban perlindungan data dari insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_45",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 45",
+        "cosine": 0.3727,
+        "relevant": false,
+        "confidence": 99,
+        "reason": "Ini adalah bagian dari dokumen strategi AI, bukan ketentuan hukum yang mengikat."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_39",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 39",
+        "cosine": 0.3711,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "indihome-browsing-26m-2022": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.5042,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Definisi data pribadi, termasuk spesifik (NIK), relevan untuk mengidentifikasi data yang bocor."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.4709,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Kewajiban pemberitahuan kegagalan perlindungan data pribadi oleh pengendali data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.4602,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Pasal ini mengatur penolakan akses perubahan, bukan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.459,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Pasal ini tentang berita bohong yang merugikan konsumen, bukan kebocoran data pribadi."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.4483,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Ini adalah panduan ASEAN tentang AI, bukan hukum positif Indonesia yang berlaku."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6",
+        "cosine": 0.4405,
+        "relevant": true,
+        "confidence": 75,
+        "reason": "Hak subjek data untuk memperbaiki data, relevan jika data yang bocor tidak akurat."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_3",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 3",
+        "cosine": 0.431,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Ini adalah resolusi UNGA, bukan hukum positif Indonesia yang berlaku."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45A",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45A",
+        "cosine": 0.4297,
+        "relevant": false,
+        "confidence": 30,
+        "reason": "Pasal ini tentang berita bohong yang merugikan konsumen, bukan kebocoran data pribadi."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_32",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 32",
+        "cosine": 0.4267,
+        "relevant": true,
+        "confidence": 70,
+        "reason": "Kewajiban pengendali data memberikan akses data pribadi, relevan untuk audit setelah insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_42",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 42",
+        "cosine": 0.4239,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Pasal ini mengatur pengakhiran pemrosesan data, bukan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_30",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 30",
+        "cosine": 0.4226,
+        "relevant": true,
+        "confidence": 75,
+        "reason": "Kewajiban pengendali data untuk memperbarui/memperbaiki data, relevan jika data bocor tidak akurat."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+        "cosine": 0.4194,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Ini adalah dokumen strategi AI, bukan hukum positif Indonesia yang berlaku."
+      }
+    ],
+    "myindihome-35m-2023": [
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+        "cosine": 0.4779,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "General AI governance guideline, not a specific legal basis for data breaches."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.4754,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Defines types of personal data, relevant as MyIndiHome data includes specific data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_32",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 32",
+        "cosine": 0.4674,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Concerns data access by data subjects, not directly about data breach notification/liability."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.4595,
+        "relevant": true,
+        "confidence": 100,
+        "reason": "Mandates notification for data protection failures, directly applicable to the incident."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4421,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pertains to false/misleading information causing consumer loss, not data breach itself."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.433,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Concerns content violating decency, not the act of unauthorized data distribution."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_21",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 21",
+        "cosine": 0.4309,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Concerns information disclosure during data processing consent, not data breach."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_5",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 5",
+        "cosine": 0.4238,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Concerns data subject rights to information, not directly about data breach notification/liability."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_30",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 30",
+        "cosine": 0.4177,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Concerns data update/correction by controller, not directly about data breach."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+        "cosine": 0.4164,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Strategic document on AI and data, not a specific legal basis for data breaches."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_35",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+        "cosine": 0.4144,
+        "relevant": true,
+        "confidence": 100,
+        "reason": "Mandates data controllers to protect and ensure data security, directly relevant to the breach."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.4131,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Concerns refusal of data access/change under specific conditions, not data breach."
+      }
+    ],
+    "pln-customer-data-leak-2022": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.5451,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Pasal ini mengatur perumusan kebijakan, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_9",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 9",
+        "cosine": 0.5345,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Hak penarikan persetujuan tidak langsung relevan dengan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+        "cosine": 0.5342,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Ini adalah bagian dari Stranas AI, bukan pasal hukum yang mengikat untuk insiden ini."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_19",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 19",
+        "cosine": 0.5248,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Pasal ini mendefinisikan Pengendali Data Pribadi, bukan kewajiban terkait insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.5232,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "PLN wajib memberitahukan kegagalan perlindungan data kepada subjek dan lembaga."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.5186,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Pasal ini mengatur penolakan akses perubahan, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.5098,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Pasal ini mendefinisikan jenis data pribadi, bukan kewajiban terkait insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_28",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 28",
+        "cosine": 0.5093,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "PLN wajib memproses data sesuai tujuan, kebocoran menunjukkan potensi pelanggaran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_36",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 36",
+        "cosine": 0.508,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "PLN wajib menjaga kerahasiaan data pribadi, yang dilanggar dalam insiden ini."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_24",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 24",
+        "cosine": 0.5061,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur bukti persetujuan, bukan langsung terkait insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_35",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 35",
+        "cosine": 0.5052,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Ini adalah bagian dari Stranas AI, bukan pasal hukum yang mengikat untuk insiden ini."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_14",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 14",
+        "cosine": 0.5045,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "PLN sebagai PSE wajib melindungi data pribadi, insiden ini menunjukkan kegagalan."
+      }
+    ],
+    "mypertamina-44m-2022": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.5278,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Definisi data pribadi, bukan dasar hukum pelanggaran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_9",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 9",
+        "cosine": 0.5213,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Hak penarikan persetujuan, tidak relevan dengan insiden kebocoran."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.5059,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Tentang informasi bohong/menyesatkan, bukan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6",
+        "cosine": 0.505,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Hak subjek data untuk melengkapi/memperbaiki, bukan kewajiban pengendali."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.499,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Tentang pemalsuan data, bukan kebocoran data asli."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.495,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Memperoleh data bukan miliknya secara melawan hukum (pelaku)."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_30",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 30",
+        "cosine": 0.4869,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Kewajiban memperbarui/memperbaiki data, bukan penyebab kebocoran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_28",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 28",
+        "cosine": 0.4831,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Kewajiban pemrosesan data sesuai tujuan (pengendali data)."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.4807,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Tentang muatan melanggar kesusilaan, tidak relevan dengan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.4731,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Kewajiban pemberitahuan kegagalan perlindungan data (pengendali data)."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_32",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 32",
+        "cosine": 0.4683,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Kewajiban memberikan akses data, bukan penyebab kebocoran."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.4651,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Kewajiban menolak akses data, tidak relevan dengan insiden."
+      }
+    ],
+    "jasamarga-jmto-breach-2022": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_42",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 42",
+        "cosine": 0.4222,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur pengakhiran pemrosesan data, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_30",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 30",
+        "cosine": 0.4195,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Ini adalah definisi SPBE, bukan dasar hukum untuk insiden keamanan data."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_9",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 9",
+        "cosine": 0.4144,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Ini adalah referensi peraturan lain, bukan ketentuan substantif yang relevan."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_20",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 20",
+        "cosine": 0.4076,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "JMTO sebagai PSE Lingkup Publik wajib punya rencana keberlangsungan untuk menanggulangi gangguan."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_8",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 8",
+        "cosine": 0.3931,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Ini adalah referensi peraturan lain, bukan ketentuan substantif yang relevan."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_45",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 45",
+        "cosine": 0.3868,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur pemberitahuan penghapusan/pemusnahan, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.3808,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Pasal ini mengatur perumusan kebijakan dan tugas pejabat PDP, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_54",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 54",
+        "cosine": 0.38,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur penghentian pemrosesan atas permintaan subjek, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_40",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 40",
+        "cosine": 0.374,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Ini adalah bagian penutup SE, bukan ketentuan substantif yang relevan."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_15",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 15",
+        "cosine": 0.3734,
+        "relevant": true,
+        "confidence": 100,
+        "reason": "Kegagalan perlindungan data pribadi wajib diberitahukan dalam 3x24 jam."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+        "cosine": 0.3732,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Pasal ini mengatur lokasi pengelolaan data PSE Privat, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_21",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 21",
+        "cosine": 0.3673,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "kai-stormous-ransomware-2024": [
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.5306,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Focuses on misleading information causing material loss to consumers in electronic transactions."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_35",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+        "cosine": 0.5187,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "KAI, as Data Controller, has an obligation to protect and ensure data security."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.5144,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Focuses on distributing/transmitting electronic information with immoral content."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+        "cosine": 0.5057,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Outlines the authority of the PDP institution, not a direct basis for the incident."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_80",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 80",
+        "cosine": 0.5026,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Discusses the need for a cybersecurity law, not a direct legal basis for the incident."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+        "cosine": 0.5007,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Focuses on refusing access/changes to personal data, not the incident itself."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.4919,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Stormous's ransom demand with publication threat constitutes an electronic threat."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_12",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 12",
+        "cosine": 0.4906,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Subjek Data Pribadi have the right to sue for data processing violations."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_26",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 26",
+        "cosine": 0.4829,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Focuses on the requirement for consent for personal data use, not the breach itself."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_96",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 96",
+        "cosine": 0.4781,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "Pertains to access termination for electronic information, not the initial breach/extortion."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_39",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 39",
+        "cosine": 0.4677,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Discusses market dominance and trust issues, not a direct legal basis for the incident."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_33",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 33",
+        "cosine": 0.4626,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "General principle for AI systems, not a specific legal basis for this ransomware incident."
+      }
+    ],
+    "malindo-lionair-30m-2019": [
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_47",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 47",
+        "cosine": 0.429,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Fokus pada komputasi awan dan dataset publik untuk AI, bukan insiden kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_55",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 55",
+        "cosine": 0.3932,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Mengatur transfer data antar pengendali, bukan kebocoran data akibat konfigurasi salah."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_8",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 8",
+        "cosine": 0.3817,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Hanya daftar peraturan, bukan substansi hukum yang relevan dengan insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+        "cosine": 0.3608,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mendefinisikan jenis data pribadi yang bocor (paspor, alamat, telepon)."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_82",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 82",
+        "cosine": 0.36,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Mengatur registrar nama domain, tidak terkait langsung dengan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_80",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 80",
+        "cosine": 0.3582,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Mengatur pengelola nama domain, tidak terkait langsung dengan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_81",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 81",
+        "cosine": 0.357,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Mengatur registri nama domain, tidak terkait langsung dengan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+        "cosine": 0.3555,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Resolusi UNGA, bukan hukum domestik Indonesia yang berlaku."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI_Bagian_1",
+        "regulation_label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 1",
+        "cosine": 0.353,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Kewajiban pengendali data untuk memiliki dasar pemrosesan data pribadi."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_20",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 20",
+        "cosine": 0.3507,
+        "relevant": false,
+        "confidence": 95,
+        "reason": "Resolusi UNGA, bukan hukum domestik Indonesia yang berlaku."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_1",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 1",
+        "cosine": 0.3401,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Mengatur pengelolaan nama domain, tidak terkait langsung dengan kebocoran data."
+      },
+      {
+        "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_79",
+        "regulation_label": "PP_PSTE_No71_2019 - Pasal 79",
+        "cosine": 0.3383,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "prabowo-deepfake-aid-scam-2024": [
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_6",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 6",
+        "cosine": 0.4566,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Resolusi UNGA bersifat rekomendatif, bukan dasar hukum pidana langsung."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI_Bagian_17",
+        "regulation_label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 17",
+        "cosine": 0.4446,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Resolusi UNGA bersifat rekomendatif, bukan dasar hukum pidana langsung."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.4442,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Pasal ini secara langsung mengatur penyebaran informasi bohong yang merugikan konsumen dalam transaksi elektronik."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.4333,
+        "relevant": true,
+        "confidence": 80,
+        "reason": "Deepfake bisa dianggap pemalsuan data pribadi (citra/biometrik) untuk keuntungan dan kerugian orang lain."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.425,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Pasal ini mengatur perumusan kebijakan, bukan sanksi pidana untuk insiden."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+        "cosine": 0.4236,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Panduan ASEAN bersifat rekomendatif, bukan dasar hukum pidana langsung."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_33",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 33",
+        "cosine": 0.4128,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Resolusi UNGA bersifat rekomendatif, bukan dasar hukum pidana langsung."
+      },
+      {
+        "regulation_id": "EU_AI_Act_2024_Article_73",
+        "regulation_label": "EU_AI_Act_2024 - Article 73",
+        "cosine": 0.4069,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Regulasi EU tidak berlaku langsung di Indonesia."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+        "cosine": 0.4067,
+        "relevant": false,
+        "confidence": 20,
+        "reason": "Pasal ini mengatur kewenangan lembaga, bukan sanksi pidana untuk insiden."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.4052,
+        "relevant": true,
+        "confidence": 75,
+        "reason": "Meskipun tidak langsung, deepfake bisa melibatkan perolehan data pribadi (citra) secara melawan hukum."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI_Bagian_3",
+        "regulation_label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 3",
+        "cosine": 0.404,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Resolusi UNGA bersifat rekomendatif, bukan dasar hukum pidana langsung."
+      },
+      {
+        "regulation_id": "OECD_AI_Principles_2024_Bagian_35",
+        "regulation_label": "OECD_AI_Principles_2024 - Bagian 35",
+        "cosine": 0.396,
+        "relevant": false,
+        "confidence": 10,
+        "reason": "Prinsip OECD bersifat rekomendatif, bukan dasar hukum pidana langsung."
+      }
+    ],
+    "undip-deepfake-ncii-2025": [
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+        "cosine": 0.4523,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Membuat/memalsukan data pribadi (foto/video deepfake) untuk merugikan orang lain."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+        "cosine": 0.4467,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Tidak ada indikasi pengiriman langsung kepada korban berisi ancaman kekerasan."
+      },
+      {
+        "regulation_id": "WHO_Ethics_and_Governance_of_AI_for_Health_Bagian_22",
+        "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 22",
+        "cosine": 0.4174,
+        "relevant": false,
+        "confidence": 100,
+        "reason": "Ini adalah daftar nama, bukan ketentuan hukum yang relevan."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_29",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 29",
+        "cosine": 0.4136,
+        "relevant": false,
+        "confidence": 60,
+        "reason": "Tidak ada indikasi pengiriman langsung kepada korban berisi ancaman kekerasan."
+      },
+      {
+        "regulation_id": "WHO_Ethics_and_Governance_of_AI_for_Health_Bagian_20",
+        "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 20",
+        "cosine": 0.4126,
+        "relevant": false,
+        "confidence": 100,
+        "reason": "Ini adalah daftar nama, bukan ketentuan hukum yang relevan."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+        "cosine": 0.3977,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "Tidak ada indikasi kerugian material bagi konsumen dalam transaksi elektronik."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_66",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 66",
+        "cosine": 0.3971,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Membuat data pribadi palsu (deepfake) yang merugikan orang lain."
+      },
+      {
+        "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_45",
+        "regulation_label": "UU_ITE_No19_2016 - Pasal 45",
+        "cosine": 0.3941,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Mendistribusikan/membuat dapat diaksesnya informasi elektronik bermuatan melanggar kesusilaan (deepfake pornografi)."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+        "cosine": 0.3847,
+        "relevant": false,
+        "confidence": 100,
+        "reason": "Ini adalah referensi dokumen, bukan ketentuan hukum yang relevan."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+        "cosine": 0.3808,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Memperoleh/mengumpulkan data pribadi (foto biometrik) secara melawan hukum untuk keuntungan diri sendiri."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_12",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 12",
+        "cosine": 0.3544,
+        "relevant": false,
+        "confidence": 100,
+        "reason": "Ini adalah daftar isi/struktur dokumen, bukan ketentuan hukum yang relevan."
+      },
+      {
+        "regulation_id": "WHO_Ethics_and_Governance_of_AI_for_Health_Bagian_21",
+        "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 21",
+        "cosine": 0.3505,
+        "relevant": false,
+        "confidence": 100,
+        "reason": "Ini adalah daftar nama, bukan ketentuan hukum yang relevan."
+      }
+    ],
+    "suharto-deepfake-golkar-2024": [
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_15",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 15",
+        "cosine": 0.4742,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "This is a closing/signature part, not a substantive legal provision."
+      },
+      {
+        "regulation_id": "OECD_AI_Principles_2024_Bagian_35",
+        "regulation_label": "OECD_AI_Principles_2024 - Bagian 35",
+        "cosine": 0.4355,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "This is an instruction to a committee, not a substantive legal provision."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_2",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 2",
+        "cosine": 0.4223,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "This is contact information and a general introduction, not a legal basis."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_52",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 52",
+        "cosine": 0.4082,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "This discusses national vision/ideals, not a specific legal prohibition or basis."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_6",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 6",
+        "cosine": 0.398,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "This refers to a UN resolution, which is not directly applicable Indonesian law."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_1",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 1",
+        "cosine": 0.3972,
+        "relevant": true,
+        "confidence": 80,
+        "reason": "This SE defines scope/addressees, implying subsequent provisions apply to AI actors."
+      },
+      {
+        "regulation_id": "OECD_AI_Principles_2024_Bagian_19",
+        "regulation_label": "OECD_AI_Principles_2024 - Bagian 19",
+        "cosine": 0.3914,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "This refers to an informal group of experts, not a legal basis."
+      },
+      {
+        "regulation_id": "ISO_IEC_42001_AI_Management_System_Bagian_1",
+        "regulation_label": "ISO_IEC_42001_AI_Management_System - Bagian 1",
+        "cosine": 0.388,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "This refers to an ISO standard, which is not a binding Indonesian law."
+      },
+      {
+        "regulation_id": "OECD_AI_Principles_2024_Bagian_3",
+        "regulation_label": "OECD_AI_Principles_2024 - Bagian 3",
+        "cosine": 0.3867,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "This describes the OECD Recommendation's adoption, not a substantive legal rule."
+      },
+      {
+        "regulation_id": "OECD_AI_Principles_2024_Bagian_1",
+        "regulation_label": "OECD_AI_Principles_2024 - Bagian 1",
+        "cosine": 0.3858,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "This is a general statement about the OECD Legal Instrument, not a specific rule."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_3",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 3",
+        "cosine": 0.3849,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "This is an acknowledgment/disclaimer, not a substantive legal provision."
+      },
+      {
+        "regulation_id": "OECD_AI_Principles_2024_Bagian_18",
+        "regulation_label": "OECD_AI_Principles_2024 - Bagian 18",
+        "cosine": 0.3824,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "This describes the purpose of OECD initiatives, not a legal basis for the incident."
+      }
+    ],
+    "election-candidate-deepfakes-2024": [
+      {
+        "regulation_id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_17",
+        "regulation_label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 17",
+        "cosine": 0.4114,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "General non-discrimination principle, not directly addressing AI disinformation."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_31",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 31",
+        "cosine": 0.3921,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "Focuses on fair competition and investment, not disinformation content."
+      },
+      {
+        "regulation_id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_3",
+        "regulation_label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 3",
+        "cosine": 0.3853,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Deepfake AI interferes with human rights (e.g., right to information), democracy, rule of law."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_6",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 6",
+        "cosine": 0.373,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Focuses on equality and non-discrimination, not the act of disinformation itself."
+      },
+      {
+        "regulation_id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_10",
+        "regulation_label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 10",
+        "cosine": 0.3725,
+        "relevant": false,
+        "confidence": 70,
+        "reason": "General transparency for democratic societies, not specific to disinformation."
+      },
+      {
+        "regulation_id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_45",
+        "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 45",
+        "cosine": 0.3722,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "References OECD privacy tech, not directly applicable to AI disinformation."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+        "cosine": 0.3709,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Concerns data protection policy formulation, not AI disinformation content."
+      },
+      {
+        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "cosine": 0.3573,
+        "relevant": false,
+        "confidence": 75,
+        "reason": "General human rights and digital cooperation, not specific to AI disinformation."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_6",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 6",
+        "cosine": 0.3572,
+        "relevant": false,
+        "confidence": 85,
+        "reason": "References an AI management standard, not a legal basis for incident."
+      },
+      {
+        "regulation_id": "ISO_IEC_42001_AI_Management_System_Bagian_1",
+        "regulation_label": "ISO_IEC_42001_AI_Management_System - Bagian 1",
+        "cosine": 0.3556,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Transparency of AI systems is crucial for democratic governance against deepfakes."
+      },
+      {
+        "regulation_id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_44",
+        "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 44",
+        "cosine": 0.3554,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Deepfake significantly impacts human rights (e.g., right to vote), requiring safeguards."
+      },
+      {
+        "regulation_id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_15",
+        "regulation_label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 15",
+        "cosine": 0.3541,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "sri-mulyani-deepfake-2025": [
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_15",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 15",
+        "cosine": 0.5202,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Bagian ini hanya penutup dan tembusan, bukan substansi hukum."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_2",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 2",
+        "cosine": 0.4877,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Bagian ini hanya informasi kontak dan kata sambutan, bukan substansi hukum."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_3",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 3",
+        "cosine": 0.4798,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Bagian ini hanya ucapan terima kasih, bukan substansi hukum."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_1",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 1",
+        "cosine": 0.4778,
+        "relevant": true,
+        "confidence": 85,
+        "reason": "Menentukan subjek hukum (pelaku usaha, PSE) yang diatur SE ini."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_6",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 6",
+        "cosine": 0.4708,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Resolusi UNGA bersifat rekomendasi, bukan hukum positif Indonesia."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+        "cosine": 0.4637,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Bagian ini membahas visi dan data, bukan regulasi langsung insiden."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_52",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 52",
+        "cosine": 0.4583,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Resolusi UNGA bersifat rekomendasi, bukan hukum positif Indonesia."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_33",
+        "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 33",
+        "cosine": 0.4563,
+        "relevant": true,
+        "confidence": 75,
+        "reason": "Merujuk pada peraturan menteri terkait standar kegiatan usaha PSE."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_9",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 9",
+        "cosine": 0.4553,
+        "relevant": false,
+        "confidence": 90,
+        "reason": "Resolusi UNGA bersifat rekomendasi, bukan hukum positif Indonesia."
+      },
+      {
+        "regulation_id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI_Bagian_17",
+        "regulation_label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 17",
+        "cosine": 0.4541,
+        "relevant": true,
+        "confidence": 70,
+        "reason": "Menyebutkan risiko dan mitigasi AI, relevan untuk insiden deepfake."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_56",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 56",
+        "cosine": 0.4499,
+        "relevant": true,
+        "confidence": 65,
+        "reason": "Membahas kepentingan negara dan kedaulatan data, relevan dengan dampak deepfake."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_61",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 61",
+        "cosine": 0.4456,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ],
+    "ojk-ai-voice-deepfake-fraud-2025": [
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_49",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 49",
+        "cosine": 0.6246,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Fokus pada pengembangan dan diseminasi produk AI, bukan regulasi insiden penipuan."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_39",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 39",
+        "cosine": 0.6115,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Membahas dominasi pasar dan kepercayaan, bukan regulasi langsung terhadap penipuan AI."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+        "cosine": 0.5985,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Fokus pada pentingnya data berkualitas untuk pengembangan AI, bukan penanganan insiden."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_4",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 4",
+        "cosine": 0.5917,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Menyatakan perlunya panduan etika untuk mitigasi dampak dan kerugian AI."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_41",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 41",
+        "cosine": 0.5831,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Membahas kebutuhan tenaga ahli dan ekosistem, bukan regulasi insiden penipuan."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_35",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 35",
+        "cosine": 0.5712,
+        "relevant": true,
+        "confidence": 90,
+        "reason": "Menyebutkan sistem keamanan jaringan dan informasi data yang mudah diretas."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_40",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 40",
+        "cosine": 0.5693,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Fokus pada ekosistem inovasi dan Satu Data Indonesia, bukan regulasi insiden."
+      },
+      {
+        "regulation_id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_1",
+        "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 1",
+        "cosine": 0.5652,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Menyebutkan perlunya penghormatan privasi data dan kepatuhan hukum perlindungan data."
+      },
+      {
+        "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_33",
+        "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 33",
+        "cosine": 0.561,
+        "relevant": true,
+        "confidence": 95,
+        "reason": "Menyatakan perlunya mitigasi dan pengawasan risiko AI yang merugikan masyarakat."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_56",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 56",
+        "cosine": 0.5554,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Fokus pada strategi nasional AI untuk kompetisi, bukan regulasi insiden."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_17",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 17",
+        "cosine": 0.5507,
+        "relevant": false,
+        "confidence": 80,
+        "reason": "Membahas pengembangan talenta AI, bukan regulasi langsung terhadap penipuan."
+      },
+      {
+        "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_45",
+        "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 45",
+        "cosine": 0.5457,
+        "relevant": false,
+        "confidence": 0,
+        "reason": ""
+      }
+    ]
+  }
+}
