@@ -98,6 +98,159 @@ def src(outlet, title, url, date):
     return {"outlet": outlet, "title": title, "url": url, "date": date}
 
 
+# ─── PER-SUBJECT LEGAL MAPPING (subjek hukum) ─────────────────────────────────
+# A single incident binds MULTIPLE legal subjects, each with a DIFFERENT legal
+# position and applicable regime. Mapping the incident-as-a-whole to one set of
+# regulations conflates these (the perpetrator's crime vs the operator's duty vs
+# the consumer's protection), which biases the analysis. We therefore enumerate
+# the legal subjects per incident. Templates are by offence category; the actual
+# party names are filled per incident. Fields are bilingual (id/en).
+#   role tuple = (role_id, role_en, posisi_id, posisi_en, objek_id, objek_en, dasar[])
+_ROLE_TEMPLATES = {
+    "data": [  # data_breach, ransomware, defacement
+        ("pelaku", "Perpetrator",
+         "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
+         "Criminal liability for illegal access, data theft/alteration and/or extortion",
+         "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
+         "Security & confidentiality of the electronic system and personal data",
+         ["UU ITE Ps. 30, 32, 46–48", "UU ITE Ps. 27B (pemerasan)", "UU PDP Ps. 67–68", "KUHP"]),
+        ("pse", "Operator (PSE)",
+         "Kewajiban pengamanan data & pemberitahuan kebocoran; tanggung jawab administratif/perdata",
+         "Duty to secure data & notify breaches; administrative/civil liability",
+         "Pemenuhan kewajiban pelindungan data pribadi & keamanan sistem",
+         "Fulfilment of data-protection & system-security obligations",
+         ["UU PDP Ps. 35, 36, 39, 46", "PP PSTE No.71/2019", "(sektoral) POJK/PBI atau pedoman Kemenkes"]),
+        ("konsumen", "Consumer / data subject",
+         "Hak subjek data dan hak atas ganti rugi",
+         "Data-subject rights and the right to compensation",
+         "Hak atas data pribadi & kompensasi kerugian",
+         "Personal-data rights & compensation for loss",
+         ["UU PDP Ps. 5–12", "UU 8/1999 Perlindungan Konsumen"]),
+        ("regulator", "Regulator / state",
+         "Pengawasan kepatuhan & penegakan sanksi",
+         "Compliance supervision & sanction enforcement",
+         "Penegakan tata kelola pelindungan data",
+         "Enforcement of data-protection governance",
+         ["Otoritas PDP", "BSSN", "Kominfo/Komdigi", "(sektoral) OJK / Kemenkes"]),
+    ],
+    "fraud": [  # fraud, ai_fraud, ai_voice_fraud
+        ("pelaku", "Perpetrator",
+         "Pertanggungjawaban pidana penipuan/pencurian & pencucian uang",
+         "Criminal liability for fraud/theft & money laundering",
+         "Harta korban & integritas sistem pembayaran",
+         "Victims' assets & payment-system integrity",
+         ["UU ITE Ps. 28(1), 30, 35", "KUHP Ps. 362/378", "UU 8/2010 TPPU", "UU PDP Ps. 67–68 (identitas)"]),
+        ("pse", "Operator / bank (PSE)",
+         "Kewajiban manajemen risiko & keamanan sistem pembayaran/transaksi",
+         "Risk-management & payment/transaction-system security obligations",
+         "Keandalan & keamanan sistem pembayaran",
+         "Reliability & security of the payment system",
+         ["PBI/PADG BI (sistem pembayaran, BI-Fast)", "POJK manajemen risiko TI & keamanan siber", "UU PDP (bila data nasabah)"]),
+        ("konsumen", "Consumer",
+         "Perlindungan konsumen keuangan & hak ganti rugi",
+         "Financial-consumer protection & the right to redress",
+         "Dana/harta nasabah & perlindungan konsumen",
+         "Customer funds & consumer protection",
+         ["UU 4/2023 (P2SK)", "POJK perlindungan konsumen"]),
+        ("regulator", "Regulator / state",
+         "Pengawasan prudensial & penindakan pencucian uang",
+         "Prudential supervision & AML enforcement",
+         "Stabilitas & integritas sektor keuangan",
+         "Stability & integrity of the financial sector",
+         ["OJK", "Bank Indonesia", "PPATK"]),
+    ],
+    "ai": [  # ai_deepfake, ai_ncii, ai_disinformation
+        ("pelaku", "Perpetrator",
+         "Pertanggungjawaban pidana konten manipulatif/asusila/penipuan berbasis AI",
+         "Criminal liability for AI-based manipulative/illicit/fraudulent content",
+         "Kehormatan/martabat korban, ketertiban informasi, dan harta",
+         "Victims' dignity, information order, and assets",
+         ["UU ITE Ps. 27(1), 27A, 28, 35, 45", "UU 44/2008 Pornografi", "UU 12/2022 TPKS", "KUHP"]),
+        ("pse", "Platform / PSE",
+         "Kewajiban moderasi konten & pelindungan data biometrik",
+         "Content-moderation duty & biometric-data protection",
+         "Tata kelola konten & data biometrik pada platform",
+         "Content & biometric-data governance on the platform",
+         ["PP PSTE No.71/2019", "UU PDP (data biometrik)", "SE Komdigi 9/2023 Etika AI"]),
+        ("korban", "Victim",
+         "Pelindungan martabat/integritas & hak penghapusan konten",
+         "Protection of dignity/integrity & the right to erasure",
+         "Martabat, integritas, dan citra/data pribadi korban",
+         "The victim's dignity, integrity & personal image/data",
+         ["UU PDP Ps. 26 (hak penghapusan)", "UU 12/2022 TPKS", "UU ITE Ps. 26"]),
+        ("regulator", "Regulator / state",
+         "Pengawasan platform & penindakan pidana",
+         "Platform supervision & criminal enforcement",
+         "Penegakan etika AI & konten elektronik",
+         "Enforcement of AI ethics & electronic content",
+         ["Komdigi", "Kepolisian", "SE Komdigi 9/2023 (pedoman)"]),
+    ],
+    "other": [  # conduct / exposure cases (qualification is per-incident)
+        ("pelaku", "Primary actor",
+         "Pertanggungjawaban atas perbuatan melawan hukum (lihat kualifikasi per-insiden)",
+         "Liability for the unlawful act (see per-incident qualification)",
+         "Kepentingan hukum yang dilanggar (spesifik per-insiden)",
+         "The legal interest infringed (incident-specific)",
+         ["lihat kualifikasi_peristiwa"]),
+        ("pse", "Operator / institution",
+         "Kewajiban tata kelola, kepatuhan, & perlindungan pihak terdampak",
+         "Governance, compliance & protection duties toward affected parties",
+         "Pemenuhan kewajiban hukum penyelenggara",
+         "Fulfilment of the operator's legal duties",
+         ["UU PDP", "PP PSTE No.71/2019", "(sektoral) POJK/UU 4/2023"]),
+        ("konsumen", "Affected party / consumer",
+         "Hak atas perlindungan & ganti rugi",
+         "Right to protection & redress",
+         "Hak & keselamatan pihak terdampak",
+         "Rights & safety of the affected party",
+         ["UU 8/1999 / UU 4/2023 Perlindungan Konsumen", "UU PDP Ps. 5–12"]),
+        ("regulator", "Regulator / state",
+         "Pengawasan & penegakan sesuai sektor",
+         "Sector-specific supervision & enforcement",
+         "Penegakan kepatuhan",
+         "Compliance enforcement",
+         ["(sektoral) OJK / Komdigi / BSSN"]),
+    ],
+}
+_TYPE2CAT = {
+    "data_breach": "data", "ransomware": "data", "defacement": "data",
+    "fraud": "fraud", "ai_fraud": "fraud", "ai_voice_fraud": "fraud",
+    "ai_deepfake": "ai", "ai_ncii": "ai", "ai_disinformation": "ai",
+    "other": "other",
+}
+
+
+def build_subjek_hukum(itype, parties, lang="id"):
+    """parties = {'pelaku':..., 'korban':..., 'pse':...}. Returns a list of
+    {peran, pihak, posisi, objek, dasar} dicts for every legal subject."""
+    cat = _TYPE2CAT.get(itype, "other")
+    en = (lang == "en")
+    out = []
+    for rid, ren, pid, pen, oid, oen, dasar in _ROLE_TEMPLATES[cat]:
+        if rid == "pelaku":
+            pihak = parties.get("pelaku", "")
+        elif rid == "pse":
+            pihak = parties.get("pse", "")
+        elif rid in ("konsumen", "korban"):
+            # For data/AI cases the victim IS the consumer/data subject; for fraud
+            # the listed victim is usually the robbed institution, so the consumer
+            # (the bank's customers) is a distinct, generic party.
+            if cat == "fraud":
+                pihak = "Nasabah/konsumen terdampak" if not en else "Affected customers/consumers"
+            else:
+                pihak = parties.get("korban", "")
+        else:
+            pihak = "Regulator/otoritas terkait" if not en else "Relevant regulator/authority"
+        out.append({
+            "peran": ren if en else rid,
+            "pihak": pihak,
+            "posisi_hukum": pen if en else pid,
+            "objek_hukum": oen if en else oid,
+            "dasar_hukum": dasar,
+        })
+    return out
+
+
 # ─── CURATED REAL INCIDENTS ───────────────────────────────────────────────────
 # Each dict: id, title_en, year, sector, type, severity, scale, perpetrator,
 #            victim, pse, kronologi, akibat, nexus, confidence, verification_note,
@@ -900,6 +1053,8 @@ def build():
                 "akibat_hukum": r["akibat"],
                 "nexus_kausalitas": r["nexus"],
             },
+            "subjek_hukum": build_subjek_hukum(
+                r["type"], {"pelaku": r["perpetrator"], "korban": r["victim"], "pse": r["pse"]}, "id"),
             "severity": r["severity"],
             "year": r["year"],
             "type": r["type"],
@@ -982,6 +1137,10 @@ def build():
                 "akibat_hukum": o.get("akibat_en", inc["pemetaan_fakta_hukum"]["akibat_hukum"]),
                 "nexus_kausalitas": o.get("nexus_en", inc["pemetaan_fakta_hukum"]["nexus_kausalitas"]),
             },
+            "subjek_hukum": build_subjek_hukum(inc["type"], {
+                "pelaku": o.get("pelaku_en", inc["pemetaan_fakta_hukum"]["subjek_pelaku"]),
+                "korban": o.get("korban_en", inc["pemetaan_fakta_hukum"]["subjek_korban"]),
+                "pse": o.get("pse_en", inc["pemetaan_fakta_hukum"]["subjek_pse"])}, "en"),
             "severity": inc["severity"],
             "year": inc["year"],
             "type": inc["type"],

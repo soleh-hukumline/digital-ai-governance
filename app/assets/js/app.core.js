@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260614_8';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260614_9';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -643,6 +643,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>`;
     }
 
+    function renderSubjekHukum(inc, isEn) {
+        const arr = inc.subjek_hukum || [];
+        if (!arr.length) return '';
+        const colors = { pelaku: 'var(--rose)', perpetrator: 'var(--rose)', 'primary actor': 'var(--rose)',
+            pse: 'var(--sky)', 'operator (pse)': 'var(--sky)', 'operator / bank (pse)': 'var(--sky)',
+            'platform / pse': 'var(--sky)', 'operator / institution': 'var(--sky)',
+            konsumen: 'var(--emerald)', consumer: 'var(--emerald)', 'consumer / data subject': 'var(--emerald)',
+            korban: 'var(--emerald)', victim: 'var(--emerald)', 'affected party / consumer': 'var(--emerald)',
+            regulator: 'var(--violet)', 'regulator / state': 'var(--violet)' };
+        const rows = arr.map(s => {
+            const col = colors[String(s.peran).toLowerCase()] || 'var(--text-3)';
+            const dasar = (s.dasar_hukum || []).join('; ');
+            return `<div style="font-size:0.72rem; line-height:1.4; margin-bottom:4px;">
+                        <span style="font-weight:700; color:${col}; text-transform:uppercase; font-size:0.66rem; letter-spacing:0.3px;">${s.peran}</span>
+                        <span style="color:var(--text-2);"> · ${s.pihak}</span><br>
+                        <span style="color:var(--text-4);">${s.posisi_hukum} — </span><span style="color:var(--text-3);">${dasar}</span>
+                    </div>`;
+        }).join('');
+        return `<div class="ic-row" style="border-top:1px solid var(--border); padding-top:8px; flex-direction:column; align-items:stretch; gap:2px;">
+                    <span style="font-size:0.72rem; margin-bottom:2px;">
+                        <span class="material-symbols-rounded" style="font-size:13px; color:var(--text-2); vertical-align:middle;">groups</span>
+                        <strong style="color:var(--text-1);">${isEn ? 'Legal subjects' : 'Subjek Hukum'}</strong>
+                        <span style="color:var(--text-4);"> (${isEn ? 'who is bound, and by what' : 'siapa terikat, oleh apa'})</span>
+                    </span>
+                    ${rows}
+                </div>`;
+    }
+
     function renderIncidentCards(incidents) {
         const container = document.getElementById('incident-registry-container');
         if (!container) return;
@@ -678,14 +706,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="ic-body">${inc.peristiwa_hukum_kronologi}</div>
                     <div class="ic-meta">
                         <div class="ic-row">
-                            <span class="material-symbols-rounded" style="color:var(--rose);">warning</span>
-                            <span><strong style="color:var(--text-3);">${L.pelaku}</strong> <span style="color:var(--text-2);">${inc.pemetaan_fakta_hukum.subjek_pelaku}</span></span>
-                        </div>
-                        <div class="ic-row">
-                            <span class="material-symbols-rounded" style="color:var(--sky);">account_balance</span>
-                            <span><strong style="color:var(--text-3);">${L.pse}</strong> <span style="color:var(--text-2);">${inc.pemetaan_fakta_hukum.subjek_pse}</span></span>
-                        </div>
-                        <div class="ic-row">
                             <span class="material-symbols-rounded" style="color:var(--amber);">gavel</span>
                             <span><strong style="color:var(--text-3);">${L.kualifikasi}</strong> <span style="color:var(--text-2);">${inc.kualifikasi_peristiwa}</span></span>
                         </div>
@@ -693,6 +713,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <strong>${L.nexus}</strong>
                             <span>${inc.pemetaan_fakta_hukum.nexus_kausalitas}</span>
                         </div>
+                        ${renderSubjekHukum(inc, isEn)}
                         <div class="ic-row" style="border-top:1px solid var(--border); padding-top:8px;">
                             <span class="material-symbols-rounded" style="color:var(--primary);">link</span>
                             <span><strong style="color:var(--text-3);">${L.sumber}</strong> ${sourcesHtml}</span>

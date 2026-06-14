@@ -27,6 +27,53 @@
         "akibat_hukum": "Massive nationwide disruption of public services, the exposure of the absence of backups (backup/DRC), and a national data governance crisis.",
         "nexus_kausalitas": "The absence of data backups and Disaster Recovery mitigation — not the attack alone — was the fatal precondition that allowed a single encryption event to paralyze hundreds of agencies."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The Brain Cipher group (a derivative variant of LockBit 3.0).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The Temporary National Data Center (PDNS) 2 in Surabaya, under Kominfo, operated by Telkomsigma, with BSSN oversight.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "The state and members of the public who use public services (airport immigration, education registration, licensing).",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "kritis",
       "year": 2024,
       "type": "ransomware",
@@ -63,6 +110,53 @@
         "akibat_hukum": "Exposure of sensitive employment data of millions of state employees and added pressure to establish a data protection authority.",
         "nexus_kausalitas": "Weak access controls/encryption on the personnel database enabled exfiltration; the volume figure comes from the seller's claim, which was partially verified."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The BreachForums user 'TopiAx'.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The National Civil Service Agency (BKN).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "~4.7 million State Civil Apparatus (ASN) and ASN institutions.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2024,
       "type": "data_breach",
@@ -99,6 +193,53 @@
         "akibat_hukum": "Theft and sale of personnel data; the arrest and prosecution of the perpetrator.",
         "nexus_kausalitas": "The abuse of legitimate credentials (credential abuse) — rather than exploitation of a technical vulnerability — was the primary vector, indicating weak access management."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "An honorary elementary school teacher (initials BAG, 25) in Banyuwangi using BKN employee credentials from BreachForums.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The National Civil Service Agency (BKN).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "The civil servants (ASN) whose data was downloaded and traded.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2024,
       "type": "data_breach",
@@ -129,6 +270,53 @@
         "akibat_hukum": "Exposure of the PII of nearly all voters ahead of the February 2024 election and concerns over the integrity of the electoral database.",
         "nexus_kausalitas": "An info-stealer-infected operator endpoint served as the entry point; KPU did not officially confirm the origin of the data."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The BreachForums user 'Jimbo'.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The General Elections Commission (KPU).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "Nearly all registered voters (the 2024 voter roll / DPT).",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "kritis",
       "year": 2023,
       "type": "data_breach",
@@ -165,6 +353,53 @@
         "akibat_hukum": "Exposure of the NIK-to-phone-number linkage for most of the population; accelerated the passage of the UU PDP (Personal Data Protection Law).",
         "nexus_kausalitas": "The data controller was never confirmed; the government and operators denied responsibility against each other — marking an accountability vacuum."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The hacker 'Bjorka' (BreachForums).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "Disputed — the SIM registration data is associated with operators/Kominfo; Kominfo denied being the source.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "The majority of Indonesian mobile users (NIK-to-phone-number data).",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "kritis",
       "year": 2022,
       "type": "data_breach",
@@ -201,6 +436,53 @@
         "akibat_hukum": "Exposure of the passport PII of tens of millions of citizens; prompted calls to strengthen data protection oversight.",
         "nexus_kausalitas": "The root cause was not officially announced; Kominfo did not confirm a breach. The figure comes from the seller's claim, with the sample assessed as valid by researchers."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The hacker 'Bjorka'.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The Directorate General of Immigration (then under the Ministry of Law and Human Rights / Kemenkumham).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "~34.9 million Indonesian passport holders.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2023,
       "type": "data_breach",
@@ -237,6 +519,53 @@
         "akibat_hukum": "Exposure of taxpayer PII including top officials; reignited debate over government cybersecurity.",
         "nexus_kausalitas": "DJP denied a system breach; the actual source was not confirmed. The figure comes from the seller's claim."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The hacker 'Bjorka'.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The Directorate General of Taxes (DJP), Ministry of Finance.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "~6 million taxpayers, including senior state officials.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2024,
       "type": "data_breach",
@@ -273,6 +602,53 @@
         "akibat_hukum": "Alleged exposure of military intelligence-related data; the server was taken offline for investigation.",
         "nexus_kausalitas": "Not fully confirmed by the TNI; the scale was not disclosed and the material was described as 'old data'."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The BreachForums user 'MoonzHaxor'.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The Strategic Intelligence Agency (BAIS) of the TNI.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "The TNI Strategic Intelligence Agency.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2024,
       "type": "data_breach",
@@ -309,6 +685,53 @@
         "akibat_hukum": "Alleged exposure of biometric data (fingerprints) related to the police identification system.",
         "nexus_kausalitas": "Not fully confirmed (described as 'old data'); the same perpetrator as the BAIS case, but with a different data controller."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The BreachForums user 'MoonzHaxor'.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "Polri / INAFIS.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "The police fingerprint identification system (INAFIS).",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2024,
       "type": "data_breach",
@@ -345,6 +768,47 @@
         "akibat_hukum": "Demonstrated that an app feature's vulnerability could expose sensitive data even of the head of state; access to officials' data was restricted.",
         "nexus_kausalitas": "Weak access control on a public feature (over-exposure by design), not mass exfiltration."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Primary actor",
+          "pihak": "Individuals who exploited the public app's certificate-check feature.",
+          "posisi_hukum": "Liability for the unlawful act (see per-incident qualification)",
+          "objek_hukum": "The legal interest infringed (incident-specific)",
+          "dasar_hukum": [
+            "lihat kualifikasi_peristiwa"
+          ]
+        },
+        {
+          "peran": "Operator / institution",
+          "pihak": "The Ministry of Health (the PeduliLindungi operator at the time).",
+          "posisi_hukum": "Governance, compliance & protection duties toward affected parties",
+          "objek_hukum": "Fulfilment of the operator's legal duties",
+          "dasar_hukum": [
+            "UU PDP",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/UU 4/2023"
+          ]
+        },
+        {
+          "peran": "Affected party / consumer",
+          "pihak": "President Joko Widodo; broader concern for PeduliLindungi users.",
+          "posisi_hukum": "Right to protection & redress",
+          "objek_hukum": "Rights & safety of the affected party",
+          "dasar_hukum": [
+            "UU 8/1999 / UU 4/2023 Perlindungan Konsumen",
+            "UU PDP Ps. 5–12"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Sector-specific supervision & enforcement",
+          "objek_hukum": "Compliance enforcement",
+          "dasar_hukum": [
+            "(sektoral) OJK / Komdigi / BSSN"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2021,
       "type": "other",
@@ -381,6 +845,53 @@
         "akibat_hukum": "Exposure of detailed clinical records (images and test results) from various hospitals; eroded public trust.",
         "nexus_kausalitas": "Centralization of data without adequate security; the volume comes from the seller's claim and was not independently confirmed."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "An unidentified hacker (RaidForums).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The Ministry of Health (centralized server).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "Patients from a number of hospitals.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "kritis",
       "year": 2022,
       "type": "data_breach",
@@ -417,6 +928,53 @@
         "akibat_hukum": "Exposure of the identity and health insurance data of most of the population; sharpened the data protection debate.",
         "nexus_kausalitas": "The source could not be forensically determined; the 279 million figure comes from the seller's/BPJS's claim, not an independent audit, and exceeds the actual number of participants (indicating duplication)."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The RaidForums user 'Kotz'.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "BPJS Kesehatan.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "BPJS Kesehatan (national health insurance / JKN) participants.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "kritis",
       "year": 2021,
       "type": "data_breach",
@@ -453,6 +1011,53 @@
         "akibat_hukum": "Exposure of the sensitive health and travel data of more than a million people during the pandemic.",
         "nexus_kausalitas": "A database misconfiguration, not confirmed exfiltration; an old app that was not managed securely."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "No confirmed malicious actor (an open Elasticsearch database, discovered by vpnMentor researchers).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The Ministry of Health (the old version of the eHAC app).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "~1.3 million users and travelers; data from 226 hospitals/clinics.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2021,
       "type": "data_breach",
@@ -489,6 +1094,53 @@
         "akibat_hukum": "Temporary disruption of IT systems and access to medical records; recovery via backups with no confirmed data leak.",
         "nexus_kausalitas": "Systems were unpatched against the SMB vulnerability (EternalBlue); the existence of backups was the differentiator for recovery."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The WannaCry ransomware (a global campaign; SMB exploitation).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "Dharmais Hospital and Harapan Kita Hospital (affiliated with the Ministry of Health).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "Dharmais Cancer Hospital and Harapan Kita Heart Hospital, Jakarta.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2017,
       "type": "ransomware",
@@ -525,6 +1177,53 @@
         "akibat_hukum": "A reputational/security incident on a government health app domain; the site was blocked; no patient data was leaked.",
         "nexus_kausalitas": "An abandoned app domain (abandoned asset) that was not securely maintained became a hijacking target."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Unknown (domain hijacking/gambling SEO spam).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "Telkom Indonesia (the domain manager after services migrated to SatuSehat).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "Visitors to the legacy PeduliLindungi.id domain.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2025,
       "type": "defacement",
@@ -555,6 +1254,53 @@
         "akibat_hukum": "Alleged exposure of patient identities and health administrative data for a regency-level population.",
         "nexus_kausalitas": "A regional instance risks becoming the weak point of a national platform; the claim has not been confirmed by mainstream media or the Ministry of Health."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "An anonymous actor (dark web forum).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The SatuSehat platform (Ministry of Health); the seller linked it to BPJS Kesehatan.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "Patients in East Kotawaringin Regency.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2025,
       "type": "data_breach",
@@ -585,6 +1331,53 @@
         "akibat_hukum": "Alleged exposure of personal data in the education sector; assessment of the claim's authenticity ongoing.",
         "nexus_kausalitas": "Not confirmed by the ministry; based on a single threat-intelligence-sourced report; the scale comes from the perpetrator's claim."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "An unidentified BreachForums member.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The Ministry of Education, Culture, Research and Technology.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "Participants/individuals in the Kemendikbudristek data.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2025,
       "type": "data_breach",
@@ -615,6 +1408,53 @@
         "akibat_hukum": "Defacement of a national judicial-sector website and claims of internal data access; reputational impact.",
         "nexus_kausalitas": "The defacement is confirmed; the claim of database control is the perpetrator's assertion, not officially confirmed."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "An individual with the handles @unrooter.id, @raja_jawa19xx, @fablo_kecil.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "The Attorney General's Office of the Republic of Indonesia.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "The Attorney General's Office of the Republic of Indonesia (Kejaksaan Agung RI).",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2025,
       "type": "defacement",
@@ -651,6 +1491,53 @@
         "akibat_hukum": "Defacement of a university web application; no data theft was reported.",
         "nexus_kausalitas": "A recurring vulnerability in the faculty's web application; defacement only, without any data leak."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "A hacker using the alias 'Bangsin'.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "Gadjah Mada University (UGM).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "The Faculty of Engineering, Gadjah Mada University.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2022,
       "type": "defacement",
@@ -681,6 +1568,53 @@
         "akibat_hukum": "Multi-day service disruption and the leak of customer/employee data (contacts, financial documents, card data, passwords) on the dark web.",
         "nexus_kausalitas": "Layered defenses were penetrated; the ransom was not paid, so the exfiltrated data was published."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The LockBit ransomware group.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Bank Syariah Indonesia Tbk.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "~15 million BSI customers and employees.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "kritis",
       "year": 2023,
       "type": "ransomware",
@@ -717,6 +1651,53 @@
         "akibat_hukum": "Compromise of internal employee documents and a partial leak; with no confirmed impact on public services according to BI.",
         "nexus_kausalitas": "Initial access to the internal network; mitigation limited the impact to non-critical systems."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The Conti ransomware gang.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "Bank Indonesia.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "Bank Indonesia (the central bank).",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2022,
       "type": "ransomware",
@@ -753,6 +1734,52 @@
         "akibat_hukum": "Theft of >USD 22 million in crypto assets; temporary suspension of all services.",
         "nexus_kausalitas": "Compromise of keys/the hot wallet; the Lazarus attribution is a researchers' hypothesis."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Unknown (tactics assessed by researchers as resembling the Lazarus Group).",
+          "posisi_hukum": "Criminal liability for fraud/theft & money laundering",
+          "objek_hukum": "Victims' assets & payment-system integrity",
+          "dasar_hukum": [
+            "UU ITE Ps. 28(1), 30, 35",
+            "KUHP Ps. 362/378",
+            "UU 8/2010 TPPU",
+            "UU PDP Ps. 67–68 (identitas)"
+          ]
+        },
+        {
+          "peran": "Operator / bank (PSE)",
+          "pihak": "PT Indodax Nasional Indonesia.",
+          "posisi_hukum": "Risk-management & payment/transaction-system security obligations",
+          "objek_hukum": "Reliability & security of the payment system",
+          "dasar_hukum": [
+            "PBI/PADG BI (sistem pembayaran, BI-Fast)",
+            "POJK manajemen risiko TI & keamanan siber",
+            "UU PDP (bila data nasabah)"
+          ]
+        },
+        {
+          "peran": "Consumer",
+          "pihak": "Affected customers/consumers",
+          "posisi_hukum": "Financial-consumer protection & the right to redress",
+          "objek_hukum": "Customer funds & consumer protection",
+          "dasar_hukum": [
+            "UU 4/2023 (P2SK)",
+            "POJK perlindungan konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Prudential supervision & AML enforcement",
+          "objek_hukum": "Stability & integrity of the financial sector",
+          "dasar_hukum": [
+            "OJK",
+            "Bank Indonesia",
+            "PPATK"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2024,
       "type": "fraud",
@@ -789,6 +1816,53 @@
         "akibat_hukum": "Exposure and sale of the identity-financial data of nearly 900 thousand customers; regulatory inquiry.",
         "nexus_kausalitas": "Illegal access to the customer database; the figure is ~896 thousand (not 'millions' as is sometimes stated)."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The RaidForums users 'Megadimarus' and 'ShinyHunters'.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Finansia Multi Finance (KreditPlus).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "~896 thousand KreditPlus customers.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2020,
       "type": "data_breach",
@@ -825,6 +1899,53 @@
         "akibat_hukum": "Exposure of highly sensitive identity and financial data of 2.9 million users; calls to reset passwords/enable 2FA.",
         "nexus_kausalitas": "Unauthorized access to the financial aggregator's database."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Unknown (a seller on a hacker forum).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Dwi Cermat Indonesia (Cermati.com).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "2.9 million Cermati users.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2020,
       "type": "data_breach",
@@ -861,6 +1982,53 @@
         "akibat_hukum": "Alleged exposure/sale of policyholders' identity and financial documents; investigation with an independent team.",
         "nexus_kausalitas": "Employee endpoint compromise as a possible vector; the figure comes from the perpetrator's listing."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Unknown (a seller on RaidForums).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Asuransi BRI Life.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": ">2 million BRI Life policyholders.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2021,
       "type": "data_breach",
@@ -897,6 +2065,47 @@
         "akibat_hukum": "OJK administrative sanction; mandatory investigation; tighter oversight of online lending (pinjol) debt-collection practices.",
         "nexus_kausalitas": "Weak consumer protection governance and debt-collection practices; not a data leak."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Primary actor",
+          "pihak": "AdaKami's allegedly unlawful debt-collection practices (debt collectors).",
+          "posisi_hukum": "Liability for the unlawful act (see per-incident qualification)",
+          "objek_hukum": "The legal interest infringed (incident-specific)",
+          "dasar_hukum": [
+            "lihat kualifikasi_peristiwa"
+          ]
+        },
+        {
+          "peran": "Operator / institution",
+          "pihak": "PT Pembiayaan Digital Indonesia (AdaKami).",
+          "posisi_hukum": "Governance, compliance & protection duties toward affected parties",
+          "objek_hukum": "Fulfilment of the operator's legal duties",
+          "dasar_hukum": [
+            "UU PDP",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/UU 4/2023"
+          ]
+        },
+        {
+          "peran": "Affected party / consumer",
+          "pihak": "AdaKami consumers/borrowers.",
+          "posisi_hukum": "Right to protection & redress",
+          "objek_hukum": "Rights & safety of the affected party",
+          "dasar_hukum": [
+            "UU 8/1999 / UU 4/2023 Perlindungan Konsumen",
+            "UU PDP Ps. 5–12"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Sector-specific supervision & enforcement",
+          "objek_hukum": "Compliance enforcement",
+          "dasar_hukum": [
+            "(sektoral) OJK / Komdigi / BSSN"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2023,
       "type": "other",
@@ -933,6 +2142,52 @@
         "akibat_hukum": "Losses of ~Rp119.9 billion through exploitation of the BI-Fast fraud layer; criminal prosecution; part of a wave of BI-Fast attacks on regional banks.",
         "nexus_kausalitas": "A weakness in the participant's (bank's) fraud-detection layer, not the core BI-Fast system (per BI's statement)."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "A money laundering syndicate (4 defendants convicted; the mastermind 'Deni' at large).",
+          "posisi_hukum": "Criminal liability for fraud/theft & money laundering",
+          "objek_hukum": "Victims' assets & payment-system integrity",
+          "dasar_hukum": [
+            "UU ITE Ps. 28(1), 30, 35",
+            "KUHP Ps. 362/378",
+            "UU 8/2010 TPPU",
+            "UU PDP Ps. 67–68 (identitas)"
+          ]
+        },
+        {
+          "peran": "Operator / bank (PSE)",
+          "pihak": "PT Bank Pembangunan Daerah Jawa Timur Tbk (Bank Jatim).",
+          "posisi_hukum": "Risk-management & payment/transaction-system security obligations",
+          "objek_hukum": "Reliability & security of the payment system",
+          "dasar_hukum": [
+            "PBI/PADG BI (sistem pembayaran, BI-Fast)",
+            "POJK manajemen risiko TI & keamanan siber",
+            "UU PDP (bila data nasabah)"
+          ]
+        },
+        {
+          "peran": "Consumer",
+          "pihak": "Affected customers/consumers",
+          "posisi_hukum": "Financial-consumer protection & the right to redress",
+          "objek_hukum": "Customer funds & consumer protection",
+          "dasar_hukum": [
+            "UU 4/2023 (P2SK)",
+            "POJK perlindungan konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Prudential supervision & AML enforcement",
+          "objek_hukum": "Stability & integrity of the financial sector",
+          "dasar_hukum": [
+            "OJK",
+            "Bank Indonesia",
+            "PPATK"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2024,
       "type": "fraud",
@@ -969,6 +2224,52 @@
         "akibat_hukum": "~Rp227 billion in illegal fund flows via BI-Fast; account freezing by PPATK; triggered an OJK national inspection of regional banks' (BPD) cyber resilience.",
         "nexus_kausalitas": "Exploitation at the participant layer; part of the series of BI-Fast attacks on regional banks."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "A hacker syndicate (linked to the wave of BI-Fast attacks; investigation ongoing).",
+          "posisi_hukum": "Criminal liability for fraud/theft & money laundering",
+          "objek_hukum": "Victims' assets & payment-system integrity",
+          "dasar_hukum": [
+            "UU ITE Ps. 28(1), 30, 35",
+            "KUHP Ps. 362/378",
+            "UU 8/2010 TPPU",
+            "UU PDP Ps. 67–68 (identitas)"
+          ]
+        },
+        {
+          "peran": "Operator / bank (PSE)",
+          "pihak": "PT Bank Pembangunan Daerah DKI Jakarta (Bank DKI / Bank Jakarta).",
+          "posisi_hukum": "Risk-management & payment/transaction-system security obligations",
+          "objek_hukum": "Reliability & security of the payment system",
+          "dasar_hukum": [
+            "PBI/PADG BI (sistem pembayaran, BI-Fast)",
+            "POJK manajemen risiko TI & keamanan siber",
+            "UU PDP (bila data nasabah)"
+          ]
+        },
+        {
+          "peran": "Consumer",
+          "pihak": "Affected customers/consumers",
+          "posisi_hukum": "Financial-consumer protection & the right to redress",
+          "objek_hukum": "Customer funds & consumer protection",
+          "dasar_hukum": [
+            "UU 4/2023 (P2SK)",
+            "POJK perlindungan konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Prudential supervision & AML enforcement",
+          "objek_hukum": "Stability & integrity of the financial sector",
+          "dasar_hukum": [
+            "OJK",
+            "Bank Indonesia",
+            "PPATK"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2025,
       "type": "fraud",
@@ -1005,6 +2306,53 @@
         "akibat_hukum": "Mass exposure of 91 million users' data; cracked credentials circulated (risk of credential stuffing/phishing). Tokopedia urged password resets.",
         "nexus_kausalitas": "Illegal access to the database; accelerated momentum for the passage of the UU PDP (Personal Data Protection Law)."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Sold by ShinyHunters on a forum/dark web; the initial actor was not named.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Tokopedia.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "91 million Tokopedia users.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "kritis",
       "year": 2020,
       "type": "data_breach",
@@ -1041,6 +2389,53 @@
         "akibat_hukum": "Exposure of ~13 million credentials/personal details; the data was indexed by Have I Been Pwned (18 April 2019).",
         "nexus_kausalitas": "A 2017 data breach that was only sold in 2019; password hashing limited (but did not eliminate) the risk."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The hacker Gnosticplayers.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Bukalapak.com.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "~13 million Bukalapak users.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2019,
       "type": "data_breach",
@@ -1077,6 +2472,53 @@
         "akibat_hukum": "~1.26 million customer records made publicly available (risk of phishing/identity fraud); added to Have I Been Pwned.",
         "nexus_kausalitas": "Illegal access to the database; public exposure without monetization."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The hacker ShinyHunters.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Bhinneka Mentari Dimensi.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "~1.26 million Bhinneka.com customers.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2020,
       "type": "data_breach",
@@ -1113,6 +2555,53 @@
         "akibat_hukum": "1.1 million customer records exposed; a forced password reset and a report to Singapore's PDPC.",
         "nexus_kausalitas": "A legacy database that was not securely retired; the incident was centered in Singapore (RedMart), with the group operating across ASEAN including Indonesia."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Unknown (a data broker on a hacker forum).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "Lazada Group (Alibaba).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "1.1 million RedMart customers.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2020,
       "type": "data_breach",
@@ -1149,6 +2638,53 @@
         "akibat_hukum": "Exposure of browsing histories alongside identity data (profiling, surveillance, targeted fraud); government investigation.",
         "nexus_kausalitas": "Unprotected storage of browsing histories linked to identities; Telkom denied it."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The hacker 'Bjorka'.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Telkom Indonesia (Persero) Tbk.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "IndiHome customers.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "kritis",
       "year": 2022,
       "type": "data_breach",
@@ -1185,6 +2721,53 @@
         "akibat_hukum": "Alleged exposure of ~35 million customer identity records; Telkom was summoned by Kominfo and BSSN coordination.",
         "nexus_kausalitas": "Telkom denied it; the figure comes from the 'Bjorka' listing and CISSReC analysis."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The hacker 'Bjorka'.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Telkom Indonesia (Persero) Tbk.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "MyIndiHome app customers.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2023,
       "type": "data_breach",
@@ -1221,6 +2804,53 @@
         "akibat_hukum": "Exposure of the names, addresses, and consumption data of 17 million+ households; added pressure for the PDP Bill (RUU PDP).",
         "nexus_kausalitas": "PLN denied a breach of its core system; the actor attribution is uncertain."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Unknown (the user 'loliyta'; linked to Bjorka, unconfirmed).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Perusahaan Listrik Negara (PLN).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": ">17 million PLN electricity customers.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2022,
       "type": "data_breach",
@@ -1257,6 +2887,53 @@
         "akibat_hukum": "Exposure of the personal and transactional data of millions of fuel-payment users.",
         "nexus_kausalitas": "Illegal access/exfiltration; the 'Bjorka' attribution comes from a claim and was not independently confirmed."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Unknown (claims circulated under the name 'Bjorka').",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Pertamina (Persero).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "Users of the MyPertamina fuel-payment service.",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2022,
       "type": "data_breach",
@@ -1293,6 +2970,53 @@
         "akibat_hukum": "Compromise of the corporate and employee data of the largest toll-road operator; affected servers were shut down.",
         "nexus_kausalitas": "Illegal access to corporate servers; the perpetrator confirmed that customer data was not affected."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The DESORDEN group.",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Jasa Marga (Persero) Tbk.",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "PT Jasamarga Tollroad Operator (JMTO).",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2022,
       "type": "data_breach",
@@ -1329,6 +3053,53 @@
         "akibat_hukum": "An extortion demand and threats to publish internal/customer data; KAI is investigating.",
         "nexus_kausalitas": "Claimed access via VPN credentials; the scope of the theft has not been verified (KAI denied it)."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The Stormous ransomware group (claimed access via VPN with employee credentials).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "PT Kereta Api Indonesia (Persero).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "PT Kereta Api Indonesia (KAI).",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2024,
       "type": "ransomware",
@@ -1365,6 +3136,53 @@
         "akibat_hukum": "Mass exposure of international passengers' PII including passport details; regulator notification and forensic investigation.",
         "nexus_kausalitas": "A misconfigured cloud server as the cause; cross-border (the group is headquartered in Indonesia, with a Malaysian subsidiary)."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Unknown (a misconfigured cloud server).",
+          "posisi_hukum": "Criminal liability for illegal access, data theft/alteration and/or extortion",
+          "objek_hukum": "Security & confidentiality of the electronic system and personal data",
+          "dasar_hukum": [
+            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 27B (pemerasan)",
+            "UU PDP Ps. 67–68",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Operator (PSE)",
+          "pihak": "Lion Air Group / Malindo Air (hosted via AWS and the GoQuo platform).",
+          "posisi_hukum": "Duty to secure data & notify breaches; administrative/civil liability",
+          "objek_hukum": "Fulfilment of data-protection & system-security obligations",
+          "dasar_hukum": [
+            "UU PDP Ps. 35, 36, 39, 46",
+            "PP PSTE No.71/2019",
+            "(sektoral) POJK/PBI atau pedoman Kemenkes"
+          ]
+        },
+        {
+          "peran": "Consumer / data subject",
+          "pihak": "Passengers of Malindo Air / Thai Lion Air (Lion Air Group).",
+          "posisi_hukum": "Data-subject rights and the right to compensation",
+          "objek_hukum": "Personal-data rights & compensation for loss",
+          "dasar_hukum": [
+            "UU PDP Ps. 5–12",
+            "UU 8/1999 Perlindungan Konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Compliance supervision & sanction enforcement",
+          "objek_hukum": "Enforcement of data-protection governance",
+          "dasar_hukum": [
+            "Otoritas PDP",
+            "BSSN",
+            "Kominfo/Komdigi",
+            "(sektoral) OJK / Kemenkes"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2019,
       "type": "data_breach",
@@ -1395,6 +3213,53 @@
         "akibat_hukum": "~100 victims across 20 provinces were defrauded of up to tens of millions of rupiah; two suspects were charged and put on trial.",
         "nexus_kausalitas": "The absence of any obligation to label/detect synthetic content and of guardrails worsened the spread of the deepfake fraud."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Suspects 'JS' (25, Lampung) and 'AMA' (arrested, on trial); said to be part of a wider syndicate.",
+          "posisi_hukum": "Criminal liability for AI-based manipulative/illicit/fraudulent content",
+          "objek_hukum": "Victims' dignity, information order, and assets",
+          "dasar_hukum": [
+            "UU ITE Ps. 27(1), 27A, 28, 35, 45",
+            "UU 44/2008 Pornografi",
+            "UU 12/2022 TPKS",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Platform / PSE",
+          "pihak": "Social media platforms (Instagram, TikTok, Facebook, WhatsApp).",
+          "posisi_hukum": "Content-moderation duty & biometric-data protection",
+          "objek_hukum": "Content & biometric-data governance on the platform",
+          "dasar_hukum": [
+            "PP PSTE No.71/2019",
+            "UU PDP (data biometrik)",
+            "SE Komdigi 9/2023 Etika AI"
+          ]
+        },
+        {
+          "peran": "Victim",
+          "pihak": "The general public; the impersonated figures: President Prabowo, Vice President Gibran, Finance Minister Sri Mulyani.",
+          "posisi_hukum": "Protection of dignity/integrity & the right to erasure",
+          "objek_hukum": "The victim's dignity, integrity & personal image/data",
+          "dasar_hukum": [
+            "UU PDP Ps. 26 (hak penghapusan)",
+            "UU 12/2022 TPKS",
+            "UU ITE Ps. 26"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Platform supervision & criminal enforcement",
+          "objek_hukum": "Enforcement of AI ethics & electronic content",
+          "dasar_hukum": [
+            "Komdigi",
+            "Kepolisian",
+            "SE Komdigi 9/2023 (pedoman)"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2024,
       "type": "ai_deepfake",
@@ -1431,6 +3296,53 @@
         "akibat_hukum": "~30 victims identified (some minors); the suspect was detained and charged under the Pornography Law, the UU ITE, and the Criminal Code (KUHP), facing 9-12 years.",
         "nexus_kausalitas": "The accessibility of generative AI tools without safeguards enabled the mass production of non-consensual intimate images."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Chiko Radityatama Agung Putra, a law student at Diponegoro University (Undip), Semarang.",
+          "posisi_hukum": "Criminal liability for AI-based manipulative/illicit/fraudulent content",
+          "objek_hukum": "Victims' dignity, information order, and assets",
+          "dasar_hukum": [
+            "UU ITE Ps. 27(1), 27A, 28, 35, 45",
+            "UU 44/2008 Pornografi",
+            "UU 12/2022 TPKS",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Platform / PSE",
+          "pihak": "The X platform (Twitter).",
+          "posisi_hukum": "Content-moderation duty & biometric-data protection",
+          "objek_hukum": "Content & biometric-data governance on the platform",
+          "dasar_hukum": [
+            "PP PSTE No.71/2019",
+            "UU PDP (data biometrik)",
+            "SE Komdigi 9/2023 Etika AI"
+          ]
+        },
+        {
+          "peran": "Victim",
+          "pihak": "Female students, alumnae, and teachers of SMA Negeri 11 Semarang.",
+          "posisi_hukum": "Protection of dignity/integrity & the right to erasure",
+          "objek_hukum": "The victim's dignity, integrity & personal image/data",
+          "dasar_hukum": [
+            "UU PDP Ps. 26 (hak penghapusan)",
+            "UU 12/2022 TPKS",
+            "UU ITE Ps. 26"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Platform supervision & criminal enforcement",
+          "objek_hukum": "Enforcement of AI ethics & electronic content",
+          "dasar_hukum": [
+            "Komdigi",
+            "Kepolisian",
+            "SE Komdigi 9/2023 (pedoman)"
+          ]
+        }
+      ],
       "severity": "kritis",
       "year": 2025,
       "type": "ai_ncii",
@@ -1467,6 +3379,53 @@
         "akibat_hukum": "Widely criticized as a manipulative electoral deepfake of a deceased authoritarian figure; became an international reference point; no legal action taken.",
         "nexus_kausalitas": "The absence of rules on political deepfakes/labeling allowed synthetic content of a deceased figure to circulate in a campaign."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "The Golkar Party; uploaded by deputy chairman Erwin Aksa.",
+          "posisi_hukum": "Criminal liability for AI-based manipulative/illicit/fraudulent content",
+          "objek_hukum": "Victims' dignity, information order, and assets",
+          "dasar_hukum": [
+            "UU ITE Ps. 27(1), 27A, 28, 35, 45",
+            "UU 44/2008 Pornografi",
+            "UU 12/2022 TPKS",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Platform / PSE",
+          "pihak": "The X platform (Twitter).",
+          "posisi_hukum": "Content-moderation duty & biometric-data protection",
+          "objek_hukum": "Content & biometric-data governance on the platform",
+          "dasar_hukum": [
+            "PP PSTE No.71/2019",
+            "UU PDP (data biometrik)",
+            "SE Komdigi 9/2023 Etika AI"
+          ]
+        },
+        {
+          "peran": "Victim",
+          "pihak": "Indonesian voters (a synthetic likeness of the late former President Suharto).",
+          "posisi_hukum": "Protection of dignity/integrity & the right to erasure",
+          "objek_hukum": "The victim's dignity, integrity & personal image/data",
+          "dasar_hukum": [
+            "UU PDP Ps. 26 (hak penghapusan)",
+            "UU 12/2022 TPKS",
+            "UU ITE Ps. 26"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Platform supervision & criminal enforcement",
+          "objek_hukum": "Enforcement of AI ethics & electronic content",
+          "dasar_hukum": [
+            "Komdigi",
+            "Kepolisian",
+            "SE Komdigi 9/2023 (pedoman)"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2024,
       "type": "ai_disinformation",
@@ -1503,6 +3462,53 @@
         "akibat_hukum": "Disinformation targeting voters during a national election; flagged by researchers and fact-checkers; some content was removed by the platform.",
         "nexus_kausalitas": "A pattern (not a single incident) marking the electoral information space's vulnerability to synthetic content."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Unknown (uploaded without an AI label).",
+          "posisi_hukum": "Criminal liability for AI-based manipulative/illicit/fraudulent content",
+          "objek_hukum": "Victims' dignity, information order, and assets",
+          "dasar_hukum": [
+            "UU ITE Ps. 27(1), 27A, 28, 35, 45",
+            "UU 44/2008 Pornografi",
+            "UU 12/2022 TPKS",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Platform / PSE",
+          "pihak": "The TikTok platform.",
+          "posisi_hukum": "Content-moderation duty & biometric-data protection",
+          "objek_hukum": "Content & biometric-data governance on the platform",
+          "dasar_hukum": [
+            "PP PSTE No.71/2019",
+            "UU PDP (data biometrik)",
+            "SE Komdigi 9/2023 Etika AI"
+          ]
+        },
+        {
+          "peran": "Victim",
+          "pihak": "Presidential candidates Prabowo Subianto and Anies Baswedan (and the other ticket).",
+          "posisi_hukum": "Protection of dignity/integrity & the right to erasure",
+          "objek_hukum": "The victim's dignity, integrity & personal image/data",
+          "dasar_hukum": [
+            "UU PDP Ps. 26 (hak penghapusan)",
+            "UU 12/2022 TPKS",
+            "UU ITE Ps. 26"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Platform supervision & criminal enforcement",
+          "objek_hukum": "Enforcement of AI ethics & electronic content",
+          "dasar_hukum": [
+            "Komdigi",
+            "Kepolisian",
+            "SE Komdigi 9/2023 (pedoman)"
+          ]
+        }
+      ],
       "severity": "sedang",
       "year": 2024,
       "type": "ai_disinformation",
@@ -1533,6 +3539,53 @@
         "akibat_hukum": "A reputational attack on a senior minister during a politically tense period; warned to have the potential to cause unrest; potential prosecution under the UU ITE/criminal law.",
         "nexus_kausalitas": "The ease of manipulating a public recording into a deepfake; the absence of detection/labeling worsened its spread."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Unknown.",
+          "posisi_hukum": "Criminal liability for AI-based manipulative/illicit/fraudulent content",
+          "objek_hukum": "Victims' dignity, information order, and assets",
+          "dasar_hukum": [
+            "UU ITE Ps. 27(1), 27A, 28, 35, 45",
+            "UU 44/2008 Pornografi",
+            "UU 12/2022 TPKS",
+            "KUHP"
+          ]
+        },
+        {
+          "peran": "Platform / PSE",
+          "pihak": "Social media (the specific platform was not named).",
+          "posisi_hukum": "Content-moderation duty & biometric-data protection",
+          "objek_hukum": "Content & biometric-data governance on the platform",
+          "dasar_hukum": [
+            "PP PSTE No.71/2019",
+            "UU PDP (data biometrik)",
+            "SE Komdigi 9/2023 Etika AI"
+          ]
+        },
+        {
+          "peran": "Victim",
+          "pihak": "Finance Minister Sri Mulyani Indrawati / the Ministry of Finance.",
+          "posisi_hukum": "Protection of dignity/integrity & the right to erasure",
+          "objek_hukum": "The victim's dignity, integrity & personal image/data",
+          "dasar_hukum": [
+            "UU PDP Ps. 26 (hak penghapusan)",
+            "UU 12/2022 TPKS",
+            "UU ITE Ps. 26"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Platform supervision & criminal enforcement",
+          "objek_hukum": "Enforcement of AI ethics & electronic content",
+          "dasar_hukum": [
+            "Komdigi",
+            "Kepolisian",
+            "SE Komdigi 9/2023 (pedoman)"
+          ]
+        }
+      ],
       "severity": "tinggi",
       "year": 2025,
       "type": "ai_disinformation",
@@ -1563,6 +3616,52 @@
         "akibat_hukum": "Hundreds of millions of US dollars in consumer losses; OJK and Komdigi issued AI governance guidance and strengthened biometric protocols.",
         "nexus_kausalitas": "A pattern/aggregate marking the maturation of voice cloning and synthetic eKYC abuse, together with regulatory gaps."
       },
+      "subjek_hukum": [
+        {
+          "peran": "Perpetrator",
+          "pihak": "Various organized fraud actors (unnamed).",
+          "posisi_hukum": "Criminal liability for fraud/theft & money laundering",
+          "objek_hukum": "Victims' assets & payment-system integrity",
+          "dasar_hukum": [
+            "UU ITE Ps. 28(1), 30, 35",
+            "KUHP Ps. 362/378",
+            "UU 8/2010 TPPU",
+            "UU PDP Ps. 67–68 (identitas)"
+          ]
+        },
+        {
+          "peran": "Operator / bank (PSE)",
+          "pihak": "Banks and fintech platforms (eKYC providers); OJK (the regulator).",
+          "posisi_hukum": "Risk-management & payment/transaction-system security obligations",
+          "objek_hukum": "Reliability & security of the payment system",
+          "dasar_hukum": [
+            "PBI/PADG BI (sistem pembayaran, BI-Fast)",
+            "POJK manajemen risiko TI & keamanan siber",
+            "UU PDP (bila data nasabah)"
+          ]
+        },
+        {
+          "peran": "Consumer",
+          "pihak": "Affected customers/consumers",
+          "posisi_hukum": "Financial-consumer protection & the right to redress",
+          "objek_hukum": "Customer funds & consumer protection",
+          "dasar_hukum": [
+            "UU 4/2023 (P2SK)",
+            "POJK perlindungan konsumen"
+          ]
+        },
+        {
+          "peran": "Regulator / state",
+          "pihak": "Relevant regulator/authority",
+          "posisi_hukum": "Prudential supervision & AML enforcement",
+          "objek_hukum": "Stability & integrity of the financial sector",
+          "dasar_hukum": [
+            "OJK",
+            "Bank Indonesia",
+            "PPATK"
+          ]
+        }
+      ],
       "severity": "kritis",
       "year": 2025,
       "type": "ai_voice_fraud",
