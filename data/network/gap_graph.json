@@ -5,7 +5,7 @@
       "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
       "group": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
       "classification": "Intl: Binding Law",
-      "value": 195,
+      "value": 180,
       "title": "Klaster: Intl: Binding Law"
     },
     {
@@ -13,7 +13,7 @@
       "label": "EU_AI_Act_2024",
       "group": "EU_AI_Act_2024",
       "classification": "Intl: Binding Law",
-      "value": 660,
+      "value": 555,
       "title": "Klaster: Intl: Binding Law"
     },
     {
@@ -21,7 +21,7 @@
       "label": "G7_Hiroshima_Code_of_Conduct_for_AI",
       "group": "G7_Hiroshima_Code_of_Conduct_for_AI",
       "classification": "Intl: Soft Law",
-      "value": 100,
+      "value": 85,
       "title": "Klaster: Intl: Soft Law"
     },
     {
@@ -29,7 +29,7 @@
       "label": "OECD_AI_Principles_2024",
       "group": "OECD_AI_Principles_2024",
       "classification": "Intl: Soft Law",
-      "value": 175,
+      "value": 195,
       "title": "Klaster: Intl: Soft Law"
     },
     {
@@ -45,7 +45,7 @@
       "label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "group": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "classification": "Intl: Soft Law",
-      "value": 140,
+      "value": 165,
       "title": "Klaster: Intl: Soft Law"
     },
     {
@@ -53,7 +53,7 @@
       "label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
       "group": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
       "classification": "Intl: Soft Law",
-      "value": 80,
+      "value": 85,
       "title": "Klaster: Intl: Soft Law"
     },
     {
@@ -69,7 +69,7 @@
       "label": "WHO_Ethics_and_Governance_of_AI_for_Health",
       "group": "WHO_Ethics_and_Governance_of_AI_for_Health",
       "classification": "Intl: Sectoral Guidance",
-      "value": 70,
+      "value": 400,
       "title": "Klaster: Intl: Sectoral Guidance"
     },
     {
@@ -77,7 +77,7 @@
       "label": "ISO_IEC_42001_AI_Management_System",
       "group": "ISO_IEC_42001_AI_Management_System",
       "classification": "Intl: Technical Standard",
-      "value": 220,
+      "value": 240,
       "title": "Klaster: Intl: Technical Standard"
     },
     {
@@ -85,7 +85,7 @@
       "label": "PP_PSTE_No71_2019",
       "group": "PP_PSTE_No71_2019",
       "classification": "Natl: Binding Law",
-      "value": 510,
+      "value": 500,
       "title": "Klaster: Natl: Binding Law"
     },
     {
@@ -93,7 +93,7 @@
       "label": "UU_ITE_No19_2016",
       "group": "UU_ITE_No19_2016",
       "classification": "Natl: Binding Law",
-      "value": 95,
+      "value": 30,
       "title": "Klaster: Natl: Binding Law"
     },
     {
@@ -101,7 +101,7 @@
       "label": "UU_ITE_No1_2024",
       "group": "UU_ITE_No1_2024",
       "classification": "Natl: Binding Law",
-      "value": 150,
+      "value": 85,
       "title": "Klaster: Natl: Binding Law"
     },
     {
@@ -109,7 +109,7 @@
       "label": "UU_PDP_No27_2022",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
-      "value": 385,
+      "value": 340,
       "title": "Klaster: Natl: Binding Law"
     },
     {
@@ -117,7 +117,7 @@
       "label": "Stranas_AI_Indonesia_2020-2045_Full",
       "group": "Stranas_AI_Indonesia_2020-2045_Full",
       "classification": "Natl: Strategy & Soft Law",
-      "value": 65,
+      "value": 400,
       "title": "Klaster: Natl: Strategy & Soft Law"
     },
     {
@@ -133,7 +133,7 @@
       "label": "SE_Komdigi_No9_2023_Etika_AI",
       "group": "SE_Komdigi_No9_2023_Etika_AI",
       "classification": "Natl: Sectoral/Agency Guidance",
-      "value": 65,
+      "value": 75,
       "title": "Klaster: Natl: Sectoral/Agency Guidance"
     },
     {
@@ -148,93 +148,121 @@
   "edges": [
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "to": "PP_PSTE_No71_2019",
-      "label": "korelasi (49 edge)",
-      "value": 49,
+      "to": "EU_AI_Act_2024",
+      "label": "korelasi (7 edge)",
+      "value": 7,
       "arrows": ""
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "to": "UU_ITE_No19_2016",
-      "label": "korelasi (6 edge)",
-      "value": 6,
-      "arrows": ""
-    },
-    {
-      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "to": "UU_ITE_No1_2024",
+      "to": "UNESCO_Recommendation_on_AI_Ethics_2021",
       "label": "korelasi (14 edge)",
       "value": 14,
       "arrows": ""
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "label": "korelasi (15 edge)",
+      "value": 15,
+      "arrows": ""
+    },
+    {
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "label": "korelasi (5 edge)",
+      "value": 5,
+      "arrows": ""
+    },
+    {
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (60 edge)",
+      "value": 60,
+      "arrows": ""
+    },
+    {
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
       "to": "UU_PDP_No27_2022",
-      "label": "korelasi (28 edge)",
-      "value": 28,
+      "label": "korelasi (40 edge)",
+      "value": 40,
       "arrows": ""
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
       "to": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "korelasi (6 edge)",
-      "value": 6,
-      "arrows": ""
-    },
-    {
-      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (19 edge)",
-      "value": 19,
+      "label": "korelasi (111 edge)",
+      "value": 111,
       "arrows": ""
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
       "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (54 edge)",
-      "value": 54,
+      "label": "korelasi (71 edge)",
+      "value": 71,
       "arrows": ""
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "to": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "label": "korelasi (6 edge)",
-      "value": 6,
+      "to": "OECD_AI_Principles_2024",
+      "label": "korelasi (1 edge)",
+      "value": 1,
       "arrows": ""
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "to": "EU_AI_Act_2024",
+      "to": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "label": "korelasi (4 edge)",
+      "value": 4,
+      "arrows": ""
+    },
+    {
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "WHO_Ethics_and_Governance_of_AI_for_Health",
       "label": "korelasi (2 edge)",
       "value": 2,
       "arrows": ""
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "to": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "label": "korelasi (8 edge)",
-      "value": 8,
+      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "label": "korelasi (31 edge)",
+      "value": 31,
       "arrows": ""
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "to": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "label": "korelasi (1 edge)",
-      "value": 1,
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi (2 edge)",
+      "value": 2,
+      "arrows": ""
+    },
+    {
+      "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi (12 edge)",
+      "value": 12,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (95 edge)",
+      "value": 95,
       "arrows": ""
     },
     {
       "from": "EU_AI_Act_2024",
       "to": "PP_PSTE_No71_2019",
-      "label": "korelasi (234 edge)",
-      "value": 234,
+      "label": "korelasi (358 edge)",
+      "value": 358,
       "arrows": ""
     },
     {
       "from": "EU_AI_Act_2024",
       "to": "UU_ITE_No19_2016",
-      "label": "korelasi (7 edge)",
-      "value": 7,
+      "label": "korelasi (9 edge)",
+      "value": 9,
       "arrows": ""
     },
     {
@@ -247,48 +275,132 @@
     {
       "from": "EU_AI_Act_2024",
       "to": "UU_PDP_No27_2022",
+      "label": "korelasi (112 edge)",
+      "value": 112,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "label": "korelasi (330 edge)",
+      "value": 330,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "Insiden Kasus",
+      "label": "korelasi (1 edge)",
+      "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "SE_Komdigi_No9_2023_Etika_AI",
+      "label": "korelasi (62 edge)",
+      "value": 62,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "OECD_AI_Principles_2024",
+      "label": "korelasi (47 edge)",
+      "value": 47,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "label": "korelasi (103 edge)",
+      "value": 103,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "label": "korelasi (125 edge)",
+      "value": 125,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "label": "korelasi (1 edge)",
+      "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "label": "korelasi (55 edge)",
+      "value": 55,
+      "arrows": ""
+    },
+    {
+      "from": "EU_AI_Act_2024",
+      "to": "ISO_IEC_42001_AI_Management_System",
       "label": "korelasi (89 edge)",
       "value": 89,
       "arrows": ""
     },
     {
       "from": "EU_AI_Act_2024",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (149 edge)",
-      "value": 149,
+      "to": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "label": "korelasi (2 edge)",
+      "value": 2,
       "arrows": ""
     },
     {
       "from": "EU_AI_Act_2024",
-      "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (26 edge)",
-      "value": 26,
-      "arrows": ""
-    },
-    {
-      "from": "EU_AI_Act_2024",
-      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "to": "WHO_Ethics_and_Governance_of_AI_for_Health",
       "label": "korelasi (19 edge)",
       "value": 19,
       "arrows": ""
     },
     {
       "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "to": "PP_PSTE_No71_2019",
-      "label": "korelasi (52 edge)",
-      "value": 52,
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (83 edge)",
+      "value": 83,
+      "arrows": ""
+    },
+    {
+      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "to": "OECD_AI_Principles_2024",
+      "label": "korelasi (31 edge)",
+      "value": 31,
       "arrows": ""
     },
     {
       "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
       "to": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "label": "korelasi (75 edge)",
-      "value": 75,
+      "label": "korelasi (92 edge)",
+      "value": 92,
+      "arrows": ""
+    },
+    {
+      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "to": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "label": "korelasi (87 edge)",
+      "value": 87,
       "arrows": ""
     },
     {
       "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
       "to": "ISO_IEC_42001_AI_Management_System",
+      "label": "korelasi (58 edge)",
+      "value": 58,
+      "arrows": ""
+    },
+    {
+      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (40 edge)",
+      "value": 40,
+      "arrows": ""
+    },
+    {
+      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
       "label": "korelasi (25 edge)",
       "value": 25,
       "arrows": ""
@@ -296,764 +408,666 @@
     {
       "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
       "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (58 edge)",
-      "value": 58,
-      "arrows": ""
-    },
-    {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "to": "OECD_AI_Principles_2024",
-      "label": "korelasi (29 edge)",
-      "value": 29,
-      "arrows": ""
-    },
-    {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "to": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "label": "korelasi (6 edge)",
-      "value": 6,
-      "arrows": ""
-    },
-    {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "to": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "label": "korelasi (10 edge)",
-      "value": 10,
-      "arrows": ""
-    },
-    {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "to": "UU_ITE_No1_2024",
-      "label": "korelasi (8 edge)",
-      "value": 8,
-      "arrows": ""
-    },
-    {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "to": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "korelasi (6 edge)",
-      "value": 6,
-      "arrows": ""
-    },
-    {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "to": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "label": "korelasi (2 edge)",
-      "value": 2,
+      "label": "korelasi (52 edge)",
+      "value": 52,
       "arrows": ""
     },
     {
       "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
       "to": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "label": "korelasi (1 edge)",
-      "value": 1,
-      "arrows": ""
-    },
-    {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (13 edge)",
-      "value": 13,
-      "arrows": ""
-    },
-    {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "to": "UU_ITE_No19_2016",
-      "label": "korelasi (1 edge)",
-      "value": 1,
+      "label": "korelasi (18 edge)",
+      "value": 18,
       "arrows": ""
     },
     {
       "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
       "to": "UU_PDP_No27_2022",
-      "label": "korelasi (21 edge)",
-      "value": 21,
-      "arrows": ""
-    },
-    {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "to": "Insiden Kasus",
-      "label": "korelasi (3 edge)",
-      "value": 3,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "PP_PSTE_No71_2019",
-      "label": "korelasi (27 edge)",
-      "value": 27,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (51 edge)",
-      "value": 51,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "UU_PDP_No27_2022",
-      "label": "korelasi (8 edge)",
-      "value": 8,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "label": "korelasi (111 edge)",
-      "value": 111,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "ISO_IEC_42001_AI_Management_System",
-      "label": "korelasi (16 edge)",
-      "value": 16,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (16 edge)",
-      "value": 16,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "label": "korelasi (10 edge)",
-      "value": 10,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "label": "korelasi (6 edge)",
-      "value": 6,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "ASEAN_Guide_AI_Governance_Ethics_2024",
       "label": "korelasi (9 edge)",
       "value": 9,
       "arrows": ""
     },
     {
-      "from": "OECD_AI_Principles_2024",
-      "to": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "korelasi (13 edge)",
-      "value": 13,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "UU_ITE_No19_2016",
-      "label": "korelasi (6 edge)",
-      "value": 6,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "UU_ITE_No1_2024",
-      "label": "korelasi (10 edge)",
-      "value": 10,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "Insiden Kasus",
-      "label": "korelasi (1 edge)",
-      "value": 1,
-      "arrows": ""
-    },
-    {
-      "from": "OECD_AI_Principles_2024",
-      "to": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "label": "korelasi (2 edge)",
-      "value": 2,
-      "arrows": ""
-    },
-    {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "to": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "korelasi (24 edge)",
-      "value": 24,
-      "arrows": ""
-    },
-    {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (203 edge)",
-      "value": 203,
-      "arrows": ""
-    },
-    {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "to": "UU_ITE_No1_2024",
-      "label": "korelasi (22 edge)",
-      "value": 22,
-      "arrows": ""
-    },
-    {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "to": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "label": "korelasi (32 edge)",
-      "value": 32,
-      "arrows": ""
-    },
-    {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
       "to": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "label": "korelasi (20 edge)",
-      "value": 20,
+      "label": "korelasi (4 edge)",
+      "value": 4,
       "arrows": ""
     },
     {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "to": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "label": "korelasi (11 edge)",
-      "value": 11,
-      "arrows": ""
-    },
-    {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "to": "ISO_IEC_42001_AI_Management_System",
-      "label": "korelasi (53 edge)",
-      "value": 53,
-      "arrows": ""
-    },
-    {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "to": "UU_ITE_No19_2016",
+      "from": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "to": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "label": "korelasi (5 edge)",
       "value": 5,
       "arrows": ""
     },
     {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "to": "PP_PSTE_No71_2019",
-      "label": "korelasi (39 edge)",
-      "value": 39,
+      "from": "OECD_AI_Principles_2024",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (175 edge)",
+      "value": 175,
       "arrows": ""
     },
     {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "to": "Insiden Kasus",
+      "from": "OECD_AI_Principles_2024",
+      "to": "SE_Komdigi_No9_2023_Etika_AI",
+      "label": "korelasi (64 edge)",
+      "value": 64,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "label": "korelasi (307 edge)",
+      "value": 307,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "label": "korelasi (31 edge)",
+      "value": 31,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "label": "korelasi (11 edge)",
+      "value": 11,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "label": "korelasi (97 edge)",
+      "value": 97,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "label": "korelasi (99 edge)",
+      "value": 99,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "ISO_IEC_42001_AI_Management_System",
+      "label": "korelasi (62 edge)",
+      "value": 62,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (22 edge)",
+      "value": 22,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "label": "korelasi (21 edge)",
+      "value": 21,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (10 edge)",
+      "value": 10,
+      "arrows": ""
+    },
+    {
+      "from": "OECD_AI_Principles_2024",
+      "to": "UU_ITE_No19_2016",
       "label": "korelasi (2 edge)",
       "value": 2,
       "arrows": ""
     },
     {
       "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "to": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "label": "korelasi (68 edge)",
+      "value": 68,
+      "arrows": ""
+    },
+    {
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (347 edge)",
+      "value": 347,
+      "arrows": ""
+    },
+    {
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "to": "SE_Komdigi_No9_2023_Etika_AI",
+      "label": "korelasi (180 edge)",
+      "value": 180,
+      "arrows": ""
+    },
+    {
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
       "to": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "label": "korelasi (24 edge)",
-      "value": 24,
+      "label": "korelasi (239 edge)",
+      "value": 239,
+      "arrows": ""
+    },
+    {
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (107 edge)",
+      "value": 107,
+      "arrows": ""
+    },
+    {
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "to": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "label": "korelasi (43 edge)",
+      "value": 43,
+      "arrows": ""
+    },
+    {
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "to": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "label": "korelasi (265 edge)",
+      "value": 265,
+      "arrows": ""
+    },
+    {
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "to": "ISO_IEC_42001_AI_Management_System",
+      "label": "korelasi (171 edge)",
+      "value": 171,
+      "arrows": ""
+    },
+    {
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi (10 edge)",
+      "value": 10,
+      "arrows": ""
+    },
+    {
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (37 edge)",
+      "value": 37,
       "arrows": ""
     },
     {
       "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
       "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "label": "korelasi (29 edge)",
+      "value": 29,
+      "arrows": ""
+    },
+    {
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "to": "UU_ITE_No1_2024",
       "label": "korelasi (8 edge)",
       "value": 8,
       "arrows": ""
     },
     {
       "from": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "to": "UU_PDP_No27_2022",
-      "label": "korelasi (41 edge)",
-      "value": 41,
+      "to": "Insiden Kasus",
+      "label": "korelasi (1 edge)",
+      "value": 1,
       "arrows": ""
     },
     {
       "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "to": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "label": "korelasi (39 edge)",
-      "value": 39,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "to": "UU_ITE_No19_2016",
-      "label": "korelasi (20 edge)",
-      "value": 20,
+      "label": "korelasi (98 edge)",
+      "value": 98,
       "arrows": ""
     },
     {
       "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "to": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "korelasi (36 edge)",
-      "value": 36,
+      "label": "korelasi (414 edge)",
+      "value": 414,
       "arrows": ""
     },
     {
       "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "to": "PP_PSTE_No71_2019",
-      "label": "korelasi (67 edge)",
-      "value": 67,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "to": "UU_ITE_No1_2024",
-      "label": "korelasi (26 edge)",
-      "value": 26,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (17 edge)",
-      "value": 17,
+      "label": "korelasi (66 edge)",
+      "value": 66,
       "arrows": ""
     },
     {
       "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (144 edge)",
-      "value": 144,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "to": "Insiden Kasus",
-      "label": "korelasi (2 edge)",
-      "value": 2,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "to": "UU_PDP_No27_2022",
-      "label": "korelasi (30 edge)",
-      "value": 30,
+      "label": "korelasi (147 edge)",
+      "value": 147,
       "arrows": ""
     },
     {
       "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "to": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "label": "korelasi (3 edge)",
-      "value": 3,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "to": "UU_ITE_No19_2016",
       "label": "korelasi (7 edge)",
       "value": 7,
       "arrows": ""
     },
     {
-      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "to": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "korelasi (27 edge)",
-      "value": 27,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "to": "UU_ITE_No1_2024",
-      "label": "korelasi (6 edge)",
-      "value": 6,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (11 edge)",
-      "value": 11,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (56 edge)",
-      "value": 56,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "to": "ISO_IEC_42001_AI_Management_System",
-      "label": "korelasi (2 edge)",
-      "value": 2,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "to": "PP_PSTE_No71_2019",
-      "label": "korelasi (3 edge)",
-      "value": 3,
-      "arrows": ""
-    },
-    {
-      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "to": "UU_PDP_No27_2022",
-      "label": "korelasi (6 edge)",
-      "value": 6,
-      "arrows": ""
-    },
-    {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "to": "PP_PSTE_No71_2019",
-      "label": "korelasi (71 edge)",
-      "value": 71,
-      "arrows": ""
-    },
-    {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (48 edge)",
-      "value": 48,
-      "arrows": ""
-    },
-    {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (108 edge)",
-      "value": 108,
-      "arrows": ""
-    },
-    {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "to": "UU_PDP_No27_2022",
-      "label": "korelasi (31 edge)",
-      "value": 31,
-      "arrows": ""
-    },
-    {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "to": "Insiden Kasus",
-      "label": "korelasi (4 edge)",
-      "value": 4,
-      "arrows": ""
-    },
-    {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "to": "ISO_IEC_42001_AI_Management_System",
-      "label": "korelasi (9 edge)",
-      "value": 9,
-      "arrows": ""
-    },
-    {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "to": "UU_ITE_No1_2024",
-      "label": "korelasi (21 edge)",
-      "value": 21,
-      "arrows": ""
-    },
-    {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "to": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "korelasi (13 edge)",
-      "value": 13,
-      "arrows": ""
-    },
-    {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "to": "UU_ITE_No19_2016",
-      "label": "korelasi (3 edge)",
-      "value": 3,
-      "arrows": ""
-    },
-    {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "to": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "label": "korelasi (2 edge)",
-      "value": 2,
-      "arrows": ""
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (20 edge)",
-      "value": 20,
-      "arrows": ""
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "to": "ISO_IEC_42001_AI_Management_System",
-      "label": "korelasi (3 edge)",
-      "value": 3,
-      "arrows": ""
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "to": "UU_PDP_No27_2022",
-      "label": "korelasi (35 edge)",
-      "value": 35,
-      "arrows": ""
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "to": "Insiden Kasus",
-      "label": "korelasi (3 edge)",
-      "value": 3,
-      "arrows": ""
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "to": "PP_PSTE_No71_2019",
-      "label": "korelasi (20 edge)",
-      "value": 20,
-      "arrows": ""
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "to": "UU_ITE_No19_2016",
-      "label": "korelasi (4 edge)",
-      "value": 4,
-      "arrows": ""
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "to": "UU_ITE_No1_2024",
-      "label": "korelasi (6 edge)",
-      "value": 6,
-      "arrows": ""
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "to": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "korelasi (3 edge)",
-      "value": 3,
-      "arrows": ""
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (2 edge)",
-      "value": 2,
-      "arrows": ""
-    },
-    {
-      "from": "ISO_IEC_42001_AI_Management_System",
-      "to": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "korelasi (9 edge)",
-      "value": 9,
-      "arrows": ""
-    },
-    {
-      "from": "ISO_IEC_42001_AI_Management_System",
-      "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (84 edge)",
-      "value": 84,
-      "arrows": ""
-    },
-    {
-      "from": "ISO_IEC_42001_AI_Management_System",
-      "to": "PP_PSTE_No71_2019",
-      "label": "korelasi (88 edge)",
-      "value": 88,
-      "arrows": ""
-    },
-    {
-      "from": "ISO_IEC_42001_AI_Management_System",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (10 edge)",
-      "value": 10,
-      "arrows": ""
-    },
-    {
-      "from": "ISO_IEC_42001_AI_Management_System",
-      "to": "UU_PDP_No27_2022",
-      "label": "korelasi (2 edge)",
-      "value": 2,
-      "arrows": ""
-    },
-    {
-      "from": "ISO_IEC_42001_AI_Management_System",
-      "to": "UU_ITE_No1_2024",
-      "label": "korelasi (6 edge)",
-      "value": 6,
-      "arrows": ""
-    },
-    {
-      "from": "ISO_IEC_42001_AI_Management_System",
-      "to": "UU_ITE_No19_2016",
-      "label": "korelasi (1 edge)",
-      "value": 1,
-      "arrows": ""
-    },
-    {
-      "from": "ISO_IEC_42001_AI_Management_System",
-      "to": "Insiden Kasus",
-      "label": "korelasi (1 edge)",
-      "value": 1,
-      "arrows": ""
-    },
-    {
-      "from": "PP_PSTE_No71_2019",
-      "to": "UU_ITE_No19_2016",
-      "label": "korelasi (19 edge)",
-      "value": 19,
-      "arrows": ""
-    },
-    {
-      "from": "PP_PSTE_No71_2019",
-      "to": "UU_ITE_No1_2024",
-      "label": "korelasi (70 edge)",
-      "value": 70,
-      "arrows": ""
-    },
-    {
-      "from": "PP_PSTE_No71_2019",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (38 edge)",
-      "value": 38,
-      "arrows": ""
-    },
-    {
-      "from": "PP_PSTE_No71_2019",
-      "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (17 edge)",
-      "value": 17,
-      "arrows": ""
-    },
-    {
-      "from": "PP_PSTE_No71_2019",
-      "to": "UU_PDP_No27_2022",
-      "label": "korelasi (24 edge)",
-      "value": 24,
-      "arrows": ""
-    },
-    {
-      "from": "PP_PSTE_No71_2019",
-      "to": "Insiden Kasus",
-      "label": "korelasi (6 edge)",
-      "value": 6,
-      "arrows": ""
-    },
-    {
-      "from": "UU_ITE_No19_2016",
-      "to": "UU_ITE_No1_2024",
-      "label": "korelasi (24 edge)",
-      "value": 24,
-      "arrows": ""
-    },
-    {
-      "from": "UU_ITE_No19_2016",
-      "to": "UU_PDP_No27_2022",
-      "label": "korelasi (17 edge)",
-      "value": 17,
-      "arrows": ""
-    },
-    {
-      "from": "UU_ITE_No19_2016",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (4 edge)",
-      "value": 4,
-      "arrows": ""
-    },
-    {
-      "from": "UU_ITE_No19_2016",
-      "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (3 edge)",
-      "value": 3,
-      "arrows": ""
-    },
-    {
-      "from": "UU_ITE_No19_2016",
-      "to": "Insiden Kasus",
-      "label": "korelasi (11 edge)",
-      "value": 11,
-      "arrows": ""
-    },
-    {
-      "from": "UU_ITE_No19_2016",
-      "to": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "korelasi (1 edge)",
-      "value": 1,
-      "arrows": ""
-    },
-    {
-      "from": "UU_ITE_No1_2024",
-      "to": "UU_PDP_No27_2022",
-      "label": "korelasi (36 edge)",
-      "value": 36,
-      "arrows": ""
-    },
-    {
-      "from": "UU_ITE_No1_2024",
-      "to": "Stranas_AI_Indonesia_2020-2045_Full",
-      "label": "korelasi (1 edge)",
-      "value": 1,
-      "arrows": ""
-    },
-    {
-      "from": "UU_ITE_No1_2024",
-      "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (7 edge)",
-      "value": 7,
-      "arrows": ""
-    },
-    {
-      "from": "UU_ITE_No1_2024",
-      "to": "Insiden Kasus",
-      "label": "korelasi (3 edge)",
-      "value": 3,
-      "arrows": ""
-    },
-    {
-      "from": "UU_ITE_No1_2024",
-      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (15 edge)",
-      "value": 15,
-      "arrows": ""
-    },
-    {
-      "from": "UU_PDP_No27_2022",
-      "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (11 edge)",
-      "value": 11,
-      "arrows": ""
-    },
-    {
-      "from": "UU_PDP_No27_2022",
-      "to": "Insiden Kasus",
       "label": "korelasi (49 edge)",
       "value": 49,
       "arrows": ""
     },
     {
-      "from": "UU_PDP_No27_2022",
+      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi (7 edge)",
+      "value": 7,
+      "arrows": ""
+    },
+    {
+      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "label": "korelasi (17 edge)",
+      "value": 17,
+      "arrows": ""
+    },
+    {
+      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "to": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "label": "korelasi (9 edge)",
+      "value": 9,
+      "arrows": ""
+    },
+    {
+      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi (8 edge)",
+      "value": 8,
+      "arrows": ""
+    },
+    {
+      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "to": "ISO_IEC_42001_AI_Management_System",
+      "label": "korelasi (3 edge)",
+      "value": 3,
+      "arrows": ""
+    },
+    {
+      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (8 edge)",
+      "value": 8,
+      "arrows": ""
+    },
+    {
+      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
       "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (172 edge)",
+      "value": 172,
+      "arrows": ""
+    },
+    {
+      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "to": "SE_Komdigi_No9_2023_Etika_AI",
+      "label": "korelasi (38 edge)",
+      "value": 38,
+      "arrows": ""
+    },
+    {
+      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "to": "ASEAN_Guide_AI_Governance_Ethics_2024",
       "label": "korelasi (1 edge)",
       "value": 1,
       "arrows": ""
     },
     {
-      "from": "UU_PDP_No27_2022",
+      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "to": "ISO_IEC_42001_AI_Management_System",
+      "label": "korelasi (3 edge)",
+      "value": 3,
+      "arrows": ""
+    },
+    {
+      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (4 edge)",
+      "value": 4,
+      "arrows": ""
+    },
+    {
+      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "to": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "label": "korelasi (4 edge)",
+      "value": 4,
+      "arrows": ""
+    },
+    {
+      "from": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
       "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "label": "korelasi (13 edge)",
-      "value": 13,
+      "label": "korelasi (1 edge)",
+      "value": 1,
       "arrows": ""
     },
     {
-      "from": "Stranas_AI_Indonesia_2020-2045_Full",
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (320 edge)",
+      "value": 320,
+      "arrows": ""
+    },
+    {
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "to": "SE_Komdigi_No9_2023_Etika_AI",
+      "label": "korelasi (120 edge)",
+      "value": 120,
+      "arrows": ""
+    },
+    {
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "to": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "label": "korelasi (119 edge)",
+      "value": 119,
+      "arrows": ""
+    },
+    {
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (115 edge)",
+      "value": 115,
+      "arrows": ""
+    },
+    {
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "to": "ISO_IEC_42001_AI_Management_System",
+      "label": "korelasi (128 edge)",
+      "value": 128,
+      "arrows": ""
+    },
+    {
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi (4 edge)",
+      "value": 4,
+      "arrows": ""
+    },
+    {
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
       "to": "Insiden Kasus",
-      "label": "korelasi (15 edge)",
-      "value": 15,
+      "label": "korelasi (6 edge)",
+      "value": 6,
       "arrows": ""
     },
     {
-      "from": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "label": "korelasi (52 edge)",
+      "value": 52,
+      "arrows": ""
+    },
+    {
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (50 edge)",
+      "value": 50,
+      "arrows": ""
+    },
+    {
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi (2 edge)",
+      "value": 2,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (172 edge)",
+      "value": 172,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "SE_Komdigi_No9_2023_Etika_AI",
+      "label": "korelasi (96 edge)",
+      "value": 96,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (6 edge)",
+      "value": 6,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (7 edge)",
+      "value": 7,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi (1 edge)",
+      "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi (1 edge)",
+      "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "ISO_IEC_42001_AI_Management_System",
+      "label": "korelasi (65 edge)",
+      "value": 65,
+      "arrows": ""
+    },
+    {
+      "from": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "label": "korelasi (4 edge)",
+      "value": 4,
+      "arrows": ""
+    },
+    {
+      "from": "ISO_IEC_42001_AI_Management_System",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (120 edge)",
+      "value": 120,
+      "arrows": ""
+    },
+    {
+      "from": "ISO_IEC_42001_AI_Management_System",
+      "to": "SE_Komdigi_No9_2023_Etika_AI",
+      "label": "korelasi (94 edge)",
+      "value": 94,
+      "arrows": ""
+    },
+    {
+      "from": "ISO_IEC_42001_AI_Management_System",
+      "to": "Insiden Kasus",
+      "label": "korelasi (1 edge)",
+      "value": 1,
+      "arrows": ""
+    },
+    {
+      "from": "ISO_IEC_42001_AI_Management_System",
+      "to": "PP_PSTE_No71_2019",
+      "label": "korelasi (123 edge)",
+      "value": 123,
+      "arrows": ""
+    },
+    {
+      "from": "ISO_IEC_42001_AI_Management_System",
+      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "label": "korelasi (25 edge)",
+      "value": 25,
+      "arrows": ""
+    },
+    {
+      "from": "ISO_IEC_42001_AI_Management_System",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (4 edge)",
+      "value": 4,
+      "arrows": ""
+    },
+    {
+      "from": "PP_PSTE_No71_2019",
+      "to": "UU_ITE_No19_2016",
+      "label": "korelasi (31 edge)",
+      "value": 31,
+      "arrows": ""
+    },
+    {
+      "from": "PP_PSTE_No71_2019",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi (156 edge)",
+      "value": 156,
+      "arrows": ""
+    },
+    {
+      "from": "PP_PSTE_No71_2019",
+      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "label": "korelasi (58 edge)",
+      "value": 58,
+      "arrows": ""
+    },
+    {
+      "from": "PP_PSTE_No71_2019",
+      "to": "SE_Komdigi_No9_2023_Etika_AI",
+      "label": "korelasi (48 edge)",
+      "value": 48,
+      "arrows": ""
+    },
+    {
+      "from": "PP_PSTE_No71_2019",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (54 edge)",
+      "value": 54,
+      "arrows": ""
+    },
+    {
+      "from": "PP_PSTE_No71_2019",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (4 edge)",
+      "value": 4,
+      "arrows": ""
+    },
+    {
+      "from": "PP_PSTE_No71_2019",
+      "to": "Insiden Kasus",
+      "label": "korelasi (6 edge)",
+      "value": 6,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No19_2016",
+      "to": "UU_ITE_No1_2024",
+      "label": "korelasi (24 edge)",
+      "value": 24,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No19_2016",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (17 edge)",
+      "value": 17,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No19_2016",
       "to": "Insiden Kasus",
       "label": "korelasi (3 edge)",
       "value": 3,
       "arrows": ""
     },
     {
+      "from": "UU_ITE_No1_2024",
+      "to": "SE_Komdigi_No9_2023_Etika_AI",
+      "label": "korelasi (3 edge)",
+      "value": 3,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No1_2024",
+      "to": "UU_PDP_No27_2022",
+      "label": "korelasi (18 edge)",
+      "value": 18,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No1_2024",
+      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "label": "korelasi (9 edge)",
+      "value": 9,
+      "arrows": ""
+    },
+    {
+      "from": "UU_ITE_No1_2024",
+      "to": "Insiden Kasus",
+      "label": "korelasi (6 edge)",
+      "value": 6,
+      "arrows": ""
+    },
+    {
+      "from": "UU_PDP_No27_2022",
+      "to": "SE_Komdigi_No9_2023_Etika_AI",
+      "label": "korelasi (10 edge)",
+      "value": 10,
+      "arrows": ""
+    },
+    {
+      "from": "UU_PDP_No27_2022",
+      "to": "Insiden Kasus",
+      "label": "korelasi (33 edge)",
+      "value": 33,
+      "arrows": ""
+    },
+    {
+      "from": "UU_PDP_No27_2022",
+      "to": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "label": "korelasi (17 edge)",
+      "value": 17,
+      "arrows": ""
+    },
+    {
+      "from": "UU_PDP_No27_2022",
+      "to": "Stranas_AI_Indonesia_2020-2045_Full",
+      "label": "korelasi (5 edge)",
+      "value": 5,
+      "arrows": ""
+    },
+    {
+      "from": "Stranas_AI_Indonesia_2020-2045_Full",
+      "to": "SE_Komdigi_No9_2023_Etika_AI",
+      "label": "korelasi (55 edge)",
+      "value": 55,
+      "arrows": ""
+    },
+    {
+      "from": "Stranas_AI_Indonesia_2020-2045_Full",
+      "to": "Insiden Kasus",
+      "label": "korelasi (27 edge)",
+      "value": 27,
+      "arrows": ""
+    },
+    {
       "from": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
       "to": "SE_Komdigi_No9_2023_Etika_AI",
-      "label": "korelasi (1 edge)",
-      "value": 1,
+      "label": "korelasi (3 edge)",
+      "value": 3,
       "arrows": ""
     },
     {
       "from": "SE_Komdigi_No9_2023_Etika_AI",
       "to": "Insiden Kasus",
-      "label": "korelasi (9 edge)",
-      "value": 9,
+      "label": "korelasi (8 edge)",
+      "value": 8,
       "arrows": ""
     }
   ]

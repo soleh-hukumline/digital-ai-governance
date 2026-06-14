@@ -17,11 +17,12 @@ Real, reproducible numbers are quoted throughout.
 | B | Embedding model "not specified" | Only in code | Documented + in `methods_config.json` + Methods text below |
 | C | Threshold mismatch (">0.75/<0.50") | Paper ≠ code | Single source of truth: tiered **0.70 / 0.55 / 0.50**, reconciled + justified |
 | D | "No quantitative network metrics" | Computed but not surfaced | Static tables + figures from real graph (below) |
-| E | Coverage rate undefined | Implicit | Explicit formula + value **55.6%** |
-| F | **Zero validation** (no ground truth / IAA / P-R) | True | `validation.py` + 103-pair coding template + κ / precision / recall / F1 + threshold sweep |
+| E | Coverage rate undefined | Implicit | Explicit formula + value **44.4% covered / 55.6% vacuum** |
+| F | **Zero validation** (no ground truth / IAA / P-R) | True | `validation.py` + 100-pair coding template + κ / precision / recall / F1 + threshold sweep |
 | G | **"No hallucination" claim unsupported** | Asserted | Removed; replacement text provided |
 | H | Figures don't display / reflect data | Static PNGs of synthetic data, no generator | `make_figures.py` regenerates from real graph; embedding verified |
-| I | Regulations unreadable | 1 PDF was an HTML 404; 1 was a press release; non-article docs silently dropped | Robust extractor + replaced files → **all 17 regulations** represented (831 nodes) |
+| I | Regulations unreadable | 1 PDF was an HTML 404; 1 was a press release; non-article docs silently dropped | Robust extractor + replaced files → **all 17 regulations** represented (916 nodes) |
+| J | **Garbled provision text** (audit found only **48% of nodes valid** — regex split on in-text "Pasal N" references) | Silent | Heading-anchored extractor + noise filter → **88% valid**; statutes 100%; graph rebuilt; coverage corrected 55.6%→44.4% |
 
 > The single most important change is **A**. The earlier dataset was not
 > empirical, which was the true (and previously under-stated) root of the
@@ -130,8 +131,12 @@ is:
 **Copy-paste — Methods:**
 > *Coverage rate* = (number of incidents with ≥1 `governs` edge to a
 > regulation) ÷ (total incidents) × 100. For the present corpus,
-> coverage = **25/45 = 55.6%**; the complementary **44.4% (20/45)** of incidents
-> have no regulatory warrant and constitute *structural holes*.
+> coverage = **20/45 = 44.4%**; the complementary **55.6% (25/45)** of incidents
+> have no valid regulatory warrant and constitute *structural holes*.
+
+> All figures below are from the **corrected corpus** after the extraction fix in
+> §I (a defect that had previously inflated coverage to 55.6% by linking incidents
+> to garbled provision nodes; the clean value is 44.4%).
 
 ### 2.4 Network metrics — real, surfaced (reviewer: "no quantitative metrics")
 Computed with NetworkX from the real graph (`analyzer.py`, `incident_analyzer.py`).
@@ -139,48 +144,52 @@ Computed with NetworkX from the real graph (`analyzer.py`, `incident_analyzer.py
 **Table — Macro topology**
 | Metric | Value |
 |---|---|
-| Nodes (Intl prov. / Natl prov. / incidents) | 831 (488 / 298 / 45) |
-| Edges (cross-juris / semantic / governs) | 3,330 (2,399 / 819 / 112) |
-| Network density | 0.00966 |
-| Incident coverage (≥1 warrant) | 25/45 (55.6%) |
-| Isolated international provisions | 140/488 (28.7%) |
-| Connected components / largest | 226 / 603 nodes |
+| Nodes (Intl prov. / Natl prov. / incidents) | 916 (541 / 330 / 45) |
+| Edges (cross-juris / semantic / governs) | 8,005 (4,787 / 3,126 / 92) |
+| Network density | 0.01910 |
+| Incident coverage (≥1 warrant) | 20/45 (44.4%) |
+| Isolated international provisions | 70/541 (12.9%) |
+| Connected components / largest | 141 / 771 nodes |
 
 **Table — Warrant distribution across incidents (n=45)**
 | Category | Count | % |
 |---|---|---|
-| No warrant (structural hole) | 20 | 44.4% |
-| National warrant only | 18 | 40.0% |
+| No warrant (structural hole) | 25 | 55.6% |
+| National warrant only | 15 | 33.3% |
 | International warrant only | 1 | 2.2% |
-| Dual (National + International) | 6 | 13.3% |
+| Dual (National + International) | 4 | 8.9% |
 
 **Table — Top regulation hubs (degree centrality)**
 | Rank | Node | Class | Score |
 |---|---|---|---|
-| 1 | SE Komdigi No.9/2023 (AI Ethics) — §3 | Natl: Soft Law (circular) | 0.1964 |
-| 2 | SE Komdigi No.9/2023 (AI Ethics) — §4 | Natl: Soft Law (circular) | 0.1795 |
-| 3 | SE Komdigi No.9/2023 (AI Ethics) — §12 | Natl: Soft Law (circular) | 0.1241 |
+| 1 | Stranas AI 2020–2045 — §70 | Natl: Strategy/Soft Law | 0.2197 |
+| 2 | Stranas AI 2020–2045 — §56 | Natl: Strategy/Soft Law | 0.1858 |
+| 3 | SE Komdigi No.9/2023 (AI Ethics) — §5 | Natl: Soft Law (circular) | 0.1770 |
 
 **Table — Most-applied warrants across incidents**
 | Rank | Regulation | Incidents |
 |---|---|---|
-| 1 | Stranas AI Indonesia 2020–2045 — Bab 5 | 14 |
-| 2 | UU PDP No.27/2022 — Pasal 39 | 9 |
-| 3 | UU ITE No.19/2016 — Pasal 29 | 5 |
-| 4 | UU PDP No.27/2022 — Pasal 6 | 5 |
+| 1 | UU PDP No.27/2022 — Pasal 4 | 7 |
+| 2 | UU ITE No.1/2024 — Pasal 45A | 6 |
+| 3 | UU PDP No.27/2022 — Pasal 33 | 4 |
+| 4 | Stranas AI 2020–2045 — §35 | 3 |
 
 **Copy-paste — Results finding:**
 > Indonesia's AI/cyber governance leans heavily on **soft law**: the most central
-> instruments by degree centrality are the **Komdigi AI-ethics circular (SE
-> 9/2023)** and the **national AI strategy (Stranas AI)** — neither of which is
-> binding — and Stranas is also the single most frequently applied warrant.
-> International frameworks remain comparatively peripheral: **28.7% of
-> international provisions are isolated** (degree 0), and only **7 of 45 incidents
-> (15.6%)** invoke any international warrant (6 dual, 1 international-only). This
-> empirically substantiates the paper's "vacuum of law" thesis: nearly half of
-> real incidents (**44.4%**) map to no regulatory provision at all, and those
-> that are covered rely overwhelmingly on national soft-law instruments rather
-> than binding statutes or international standards.
+> instruments by degree centrality are the **national AI strategy (Stranas AI)**
+> and the **Komdigi AI-ethics circular (SE 9/2023)** — neither of which is binding.
+> International frameworks remain peripheral: **12.9% of international provisions are
+> isolated** (degree 0), and only **5 of 45 incidents (11.1%)** invoke any
+> international warrant (4 dual, 1 international-only). Most importantly — after
+> correcting a PDF-extraction defect that had spuriously connected incidents to
+> garbled nodes (§I) — **the majority of real incidents, 55.6% (25/45), map to no
+> valid regulatory provision at all** (structural holes). This strengthens the
+> paper's "vacuum of law" thesis: even the covered incidents rely on national
+> data-protection/ITE articles plus a non-binding strategy, not on international
+> standards. (The frequent appearance of definitional articles among top warrants
+> — e.g. UU PDP Pasal 4 on data types — also signals residual precision limits in
+> the automatic matching, which is exactly what the manual validation in §3
+> quantifies.)
 
 ---
 
@@ -189,7 +198,7 @@ Computed with NetworkX from the real graph (`analyzer.py`, `incident_analyzer.py
 This was a genuine gap. We added an end-to-end validation harness.
 
 **Pipeline:**
-1. `builder.py` exports **all 35,370** incident↔regulation candidate pairs with
+1. `builder.py` exports **all 39,195** incident↔regulation candidate pairs with
    cosine scores → `data/network/incident_reg_scores.csv` (above *and* below the
    cut-off, so recall is measurable).
 2. `make_validation_sample.py` draws a **stratified 103-pair sample**
@@ -248,7 +257,7 @@ artifacts, support a "no hallucination" guarantee.
 
 - Added **`make_figures.py`** — regenerates both report figures **from the real
   graph**, so they can no longer drift from the data:
-  - `master_metrics.png` — node composition, coverage 55.6% vs vacuum 44.4%,
+  - `master_metrics.png` — node composition, coverage 44.4% vs vacuum 55.6%,
     top regulation hubs.
   - `master_lna.png` — the network (spring layout), coloured by class,
     incident nodes labelled.
@@ -286,26 +295,34 @@ python make_validation_sample.py            # -> validation_pairs_template.csv
 python validation.py                        # -> precision/recall/F1 + Cohen's kappa
 ```
 
-**Regulation extraction — now robust (all 17 PDFs read).** An earlier version of
-`builder.py` silently dropped any document that did not use `Pasal N` / `Article N`
-headings, and one file even crashed the parser. This is fixed:
+**Regulation extraction — now robust AND clean (all 17 PDFs).** Two defects were
+found and fixed:
 
-- **`ASEAN_Guide_AI_Governance_Ethics_2024.pdf` was not a PDF at all** — it was an
-  HTML "Page not found" error page (a broken download). It was **replaced** with
-  the official 87-page PDF from asean.org (kept the old file as `*.BROKEN_HTML.bak`).
-- `extract_provisions()` now: (a) reads via a tolerant chain (header check →
-  PyPDF2 `strict=False` → pdfminer.six), loudly flagging any file that is not a
-  valid PDF; (b) falls back to **paragraph chunking** when a document has fewer
-  than 5 article-style provisions, so UN resolutions, codes of conduct,
-  ministerial circulars, strategies and guides are represented instead of dropped.
-- `POJK_No3_2024_…pdf` was a **1-page OJK press release (SP 32/OJK)**, not the
-  regulation. It has been **replaced with the real 36-page POJK 3/2024** (now 44
-  article/Pasal nodes); the press release is kept as `*.PRESSRELEASE.bak`.
-- Result: all 17 instruments now contribute nodes (e.g. ASEAN Guide → 80 segments,
-  SE Komdigi → 13, POJK 3/2024 → 44 Pasal, G7 / UNGA resolutions / UNESCO →
-  chunked). The corpus grew from 477 to **831 nodes**, and the most central
-  instruments turn out to be Indonesia's **soft-law** AI texts (SE Komdigi,
-  Stranas AI) — which strengthens the argument.
+*(i) Files unreadable/wrong:*
+- **`ASEAN_Guide…pdf` was not a PDF** — an HTML "Page not found" page (broken
+  download). Replaced with the official 87-page asean.org PDF (`*.BROKEN_HTML.bak`).
+- **`POJK_No3_2024…pdf` was a 1-page OJK press release**, not the regulation.
+  Replaced with the real 36-page POJK 3/2024 (`*.PRESSRELEASE.bak`).
+- `extract_provisions()` now reads via pdfminer→PyPDF2, flags non-PDF files, and
+  falls back to paragraph chunking for non-article documents (UN resolutions,
+  codes, circulars, guides, strategies) instead of dropping them.
+
+*(ii) Garbled provision text (the serious one).* An audit found that the original
+regex split on **every** in-text "Pasal N" reference (e.g. "…dimaksud dalam Pasal 5
+ayat (1)…"), and last-write-wins stored the reference *fragment* as the article —
+so **only 48% of provision nodes carried valid text** (e.g. "Pasal 52" = a closing
+clause, "Pasal 28j" = a quote of UUD-1945 Art. 28J). Fixed with a **heading-anchored
+extractor** (heading = line-start *or* body-follows-and-not-a-reference) plus a
+boilerplate/preamble/short-fragment filter that drops noise nodes entirely.
+
+- **Validity rose 48.3% → 88.2%**; the named-article statutes (UU PDP, UU ITE, PP
+  PSTE, POJK, EU AI Act, Council of Europe) are now **100% clean**.
+- The corpus was rebuilt from clean text: **916 nodes / 8,005 edges**. Removing the
+  garbled nodes **corrected the coverage rate from 55.6% to 44.4%** (the old value
+  was inflated by incidents matching noise nodes) — i.e. **55.6% of incidents are
+  now structural holes**, strengthening the "vacuum of law" finding. The most
+  central instruments remain Indonesia's **soft-law** AI texts (Stranas AI, SE
+  Komdigi). All metric tables/figures above reflect this clean rebuild.
 
 ---
 

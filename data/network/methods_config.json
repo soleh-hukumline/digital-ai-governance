@@ -12,15 +12,15 @@
   },
   "threshold_rationale": "Tiered, register-aware absolute cosine cut-offs. Cross-lingual (EN↔ID) and cross-register (narrative↔statute) pairs receive lower cut-offs because MiniLM cosine similarity is systematically lower for them at equal topical relevance. Values are validated in validation.py (precision/recall/F1 + inter-annotator agreement).",
   "corpus": {
-    "intl_provisions": 488,
-    "natl_provisions": 298,
+    "intl_provisions": 541,
+    "natl_provisions": 330,
     "incidents": 45,
-    "total_nodes": 831,
-    "total_edges": 3330,
+    "total_nodes": 916,
+    "total_edges": 8005,
     "edges_by_type": {
-      "cross_jurisdiction": 2399,
-      "semantic_similarity": 819,
-      "governs": 112
+      "semantic_similarity": 3126,
+      "cross_jurisdiction": 4787,
+      "governs": 92
     }
   },
   "coverage_rate_definition": "connected_incidents / total_incidents * 100, where an incident is \"connected\" iff it has >=1 governs edge to a regulation.",

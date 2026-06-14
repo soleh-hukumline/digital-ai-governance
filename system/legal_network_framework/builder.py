@@ -83,12 +83,36 @@ MIN_STRUCTURED      = 5      # below this many structured provisions → chunk
 FALLBACK_CHUNK_CHARS = 1100  # target characters per fallback segment
 FALLBACK_MAX_CHUNKS  = 80    # cap segments per document (graph-size guard)
 
+# Article-heading detection (data-quality critical). The earlier parser split on
+# EVERY "Pasal N" — including in-text cross-references ("…dimaksud dalam Pasal 5
+# ayat (1)…") — and last-write-wins stored the reference FRAGMENT as the article,
+# so ~half of all nodes carried garbled text. We now anchor on true HEADINGS only.
+HEADING_KINDS = ('Pasal', 'Article', 'Section', 'Principle')
+_REF_WORDS = ('dalam ', 'dimaksud', 'pada ', 'huruf ', 'ayat ', 'pasal ', 'sebagaimana',
+              'pursuant', 'accordance', 'referred', 'point ', 'paragraph', 'under ', 'of this')
+_BOILER = re.compile(r'mulai berlaku|Ditetapkan di|Disahkan di|Diundangkan|Lembaran Negara|'
+                     r'TAMBAHAN LEMBARAN|cukup jelas|Agar setiap orang|SALINAN|MEMUTUSKAN|'
+                     r'^ttd\b', re.I)
+_UUD = re.compile(r'Undang-Undang Dasar Negara Republik Indonesia Tahun 1945', re.I)
+
+
+def _is_valid_provision(txt):
+    """Reject boilerplate (promulgation/elucidation), constitutional-preamble
+    quotes, too-short fragments, and reference fragments starting mid-sentence."""
+    t = ' '.join(str(txt).split())
+    if len(t) < 60:
+        return False
+    if _UUD.search(t[:130]) or _BOILER.search(t[:130]):
+        return False
+    if re.match(r'^[a-z)\]]|^ayat\b|^dimaksud\b|^sebagaimana\b', t):
+        return False
+    return True
+
 
 def _read_pdf_text(pdf_path):
-    """Return the full text of a PDF using the most tolerant backend available.
-    Chain: header check → PyPDF2(strict=False) → pdfminer.six. Loudly flags files
-    that are not valid PDFs (e.g. an HTML 404 page saved as .pdf) so they get
-    replaced instead of silently contributing nothing."""
+    """Return the full text of a PDF, preferring pdfminer (better layout → cleaner
+    heading detection), falling back to PyPDF2. Loudly flags files that are not
+    valid PDFs (e.g. an HTML 404 page saved as .pdf)."""
     name = os.path.basename(pdf_path)
     try:
         with open(pdf_path, 'rb') as fh:
@@ -102,28 +126,60 @@ def _read_pdf_text(pdf_path):
         return ''
 
     text = ''
-    try:                                              # 1) PyPDF2, tolerant
-        with open(pdf_path, 'rb') as f:
-            reader = PyPDF2.PdfReader(f, strict=False)
-            parts = []
-            for page in reader.pages:
-                try:
-                    parts.append(page.extract_text() or '')
-                except Exception:
-                    continue
-            text = '\n'.join(parts)
+    try:                                              # 1) pdfminer (layout-aware)
+        from pdfminer.high_level import extract_text as _pm_extract
+        text = _pm_extract(pdf_path) or ''
     except Exception as e:
-        print(f'  ⚠️  {name}: PyPDF2 failed ({e}); trying pdfminer…')
+        print(f'  ⚠️  {name}: pdfminer failed ({e}); trying PyPDF2…')
 
-    if len(text.strip()) < 200:                       # 2) pdfminer fallback
+    if len(text.strip()) < 200:                       # 2) PyPDF2 fallback
         try:
-            from pdfminer.high_level import extract_text as _pm_extract
-            pm = _pm_extract(pdf_path) or ''
-            if len(pm.strip()) > len(text.strip()):
-                text = pm
+            with open(pdf_path, 'rb') as f:
+                reader = PyPDF2.PdfReader(f, strict=False)
+                parts = []
+                for page in reader.pages:
+                    try:
+                        parts.append(page.extract_text() or '')
+                    except Exception:
+                        continue
+                if len('\n'.join(parts).strip()) > len(text.strip()):
+                    text = '\n'.join(parts)
         except Exception as e:
-            print(f'  ⚠️  {name}: pdfminer fallback failed ({e})')
+            print(f'  ⚠️  {name}: PyPDF2 fallback failed ({e})')
     return text
+
+
+def _structured_provisions(text):
+    """Extract real articles by anchoring on HEADINGS (not in-text references).
+    A heading is "<Kind> N" that is either at a line start OR is immediately
+    followed by article body (a "(" / capital word / title dash) and NOT preceded
+    by reference words. Captures heading→next-heading; first occurrence wins;
+    invalid/boilerplate spans are dropped. The Penjelasan (elucidation) tail is
+    excluded so a norm isn't overwritten by its 'cukup jelas' explanation."""
+    cut = re.search(r'\n\s*PENJELASAN\s*\n', text)
+    body = text[:cut.start()] if cut else text
+    pos = {}
+    for kind in HEADING_KINDS:
+        for m in re.finditer(rf'(?m)^[ \t]*{kind}\s+(\d+[A-Za-z]?)\b', body):
+            pos.setdefault(m.start(), (m.end(), kind, m.group(1)))
+        for m in re.finditer(rf'\b{kind}\s+(\d+[A-Za-z]?)\b', body):
+            if m.start() in pos:
+                continue
+            before = body[max(0, m.start() - 18):m.start()].lower()
+            after = body[m.end():m.end() + 10].lstrip()
+            is_ref = any(w in before for w in _REF_WORDS) or before.rstrip().endswith(',')
+            looks_body = (after[:1] in '(–—-') or (after[:1].isalpha() and after[:1] == after[:1].upper())
+            if not is_ref and looks_body:
+                pos[m.start()] = (m.end(), kind, m.group(1))
+    heads = sorted((s, e, k, n) for s, (e, k, n) in pos.items())
+    prov = {}
+    for i, (s, e, k, n) in enumerate(heads):
+        end = heads[i + 1][0] if i + 1 < len(heads) else len(body)
+        txt = ' '.join(body[e:end].split())[:1600]
+        title = f'{k} {n}'
+        if title not in prov and _is_valid_provision(txt):
+            prov[title] = txt
+    return prov
 
 
 def _chunk_text(full_text, max_chunks=FALLBACK_MAX_CHUNKS, target=FALLBACK_CHUNK_CHARS):
@@ -165,20 +221,8 @@ def extract_provisions(pdf_path):
     if len(full_text.strip()) < 60:
         return provisions  # nothing readable (already warned)
 
-    # 1) Structured split
-    pattern = (r'((?:Article|Art\.|Section|Principle|Paragraph|Pasal|Bab|Bagian|'
-               r'Ayat|Diktum|Recommendation|Rec\.|Annex|Chapter|Value|Guideline)'
-               r'\s+\d+[a-z]?)')
-    parts = re.split(pattern, full_text, flags=re.IGNORECASE)
-    if len(parts) > 1:
-        for i in range(1, len(parts) - 1, 2):
-            title = ' '.join(parts[i].split()).strip()
-            title = re.sub(r'^Art\.\s*', 'Article ', title, flags=re.IGNORECASE)
-            title = re.sub(r'^Rec\.\s*', 'Recommendation ', title, flags=re.IGNORECASE)
-            title = title.capitalize()
-            content = parts[i + 1][:2000]
-            if len(content.strip()) > 30:
-                provisions[title] = content.strip()
+    # 1) Heading-anchored structured extraction (real articles only, noise dropped)
+    provisions = _structured_provisions(full_text)
 
     # 2) Fallback chunking for documents without Article/Pasal structure
     if len(provisions) < MIN_STRUCTURED:

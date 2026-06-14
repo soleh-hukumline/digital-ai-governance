@@ -25,7 +25,7 @@ for the full change log and copy-paste manuscript text.
 - **Tiered thresholds:** 0.70 (intra, same language) · 0.55 (cross-jurisdiction
   EN↔ID) · 0.50 (incident↔regulation). Rationale in `builder.py`.
 - **Coverage rate** = incidents with ≥1 regulatory warrant ÷ total × 100
-  (currently 25/45 = 55.6%; 44.4% are structural holes).
+  (currently 20/45 = 44.4%; 55.6% are structural holes).
 - **Network metrics** (density, degree & betweenness centrality, components) via
   NetworkX.
 

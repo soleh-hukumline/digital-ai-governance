@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let rawIncidentData = [];
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260614_7';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260614_8';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing

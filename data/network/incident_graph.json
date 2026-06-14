@@ -1,138 +1,58 @@
 {
   "nodes": [
     {
-      "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_1",
-      "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 1",
-      "group": "SE_Komdigi_No9_2023_Etika_AI",
-      "classification": "Natl: Sectoral/Agency Guidance",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_3",
-      "label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 3",
-      "group": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "classification": "Intl: Soft Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_21",
-      "label": "UU_PDP_No27_2022 - Pasal 21",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 26,
-      "title": "Degree: 4"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_30",
-      "label": "UU_PDP_No27_2022 - Pasal 30",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "CASE_pdns2-surabaya-ransomware-2024",
-      "label": "PDNS2-SURABAYA-RANSOMWARE-2024 - Pada 20 Juni 2024 PDNS 2 Surabaya dienkripsi ...",
+      "id": "CASE_pln-customer-data-leak-2022",
+      "label": "PLN-CUSTOMER-DATA-LEAK-2022 - Agustus 2022 data >17 juta pelanggan PLN dita...",
       "group": "Insiden Kasus",
       "classification": "Insiden Kasus",
-      "value": 26,
-      "title": "Degree: 4"
+      "value": 58,
+      "title": "Degree: 12"
     },
     {
-      "id": "WHO_Ethics_and_Governance_of_AI_for_Health_Section_6",
-      "label": "WHO_Ethics_and_Governance_of_AI_for_Health - Section 6",
-      "group": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "classification": "Intl: Sectoral Guidance",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "G7_Hiroshima_Code_of_Conduct_for_AI_Bagian_16",
-      "label": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 16",
-      "group": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "classification": "Intl: Soft Law",
-      "value": 22,
-      "title": "Degree: 3"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_19",
-      "label": "UU_PDP_No27_2022 - Pasal 19",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bab 5",
-      "group": "Stranas_AI_Indonesia_2020-2045_Full",
-      "classification": "Natl: Strategy & Soft Law",
-      "value": 66,
-      "title": "Degree: 14"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_36",
-      "label": "UU_PDP_No27_2022 - Pasal 36",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "CASE_ehac-covid-app-leak-2021",
-      "label": "EHAC-COVID-APP-LEAK-2021 - Pada 15 Juli 2021 tim vpnMentor menemukan bas...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 18,
-      "title": "Degree: 2"
-    },
-    {
-      "id": "CASE_bank-indonesia-conti-ransomware-2022",
-      "label": "BANK-INDONESIA-CONTI-RANSOMWARE-2022 - Bank Indonesia mengonfirmasi serangan ransomw...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 26,
-      "title": "Degree: 4"
-    },
-    {
-      "id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_28",
-      "label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 28",
+      "id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_29",
+      "label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 29",
       "group": "ASEAN_Guide_AI_Governance_Ethics_2024",
       "classification": "Intl: Sectoral Guidance",
-      "value": 18,
-      "title": "Degree: 2"
+      "value": 14,
+      "title": "Degree: 1"
     },
     {
       "id": "CASE_kejaksaan-agung-defacement-2025",
       "label": "KEJAKSAAN-AGUNG-DEFACEMENT-2025 - Pada Februari 2025 situs resmi Kejaksaan Agun...",
       "group": "Insiden Kasus",
       "classification": "Insiden Kasus",
-      "value": 34,
-      "title": "Degree: 6"
+      "value": 22,
+      "title": "Degree: 3"
     },
     {
-      "id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_70",
-      "label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 70",
-      "group": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "classification": "Intl: Soft Law",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "label": "UU_PDP_No27_2022 - Pasal 6O",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 18,
+      "title": "Degree: 2"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_80",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 80",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 18,
+      "title": "Degree: 2"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_17",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 17",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "CASE_bsi-lockbit-ransomware-2023",
-      "label": "BSI-LOCKBIT-RANSOMWARE-2023 - Pada 8 Mei 2023 layanan ATM dan cabang BSI lu...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "CASE_bais-tni-intelligence-leak-2024",
-      "label": "BAIS-TNI-INTELLIGENCE-LEAK-2024 - Sekitar 24-27 Juni 2024 'MoonzHaxor' mengklai...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_6",
+      "label": "UU_PDP_No27_2022 - Pasal 6",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
       "value": 18,
       "title": "Degree: 2"
     },
@@ -141,176 +61,48 @@
       "label": "INAFIS-POLRI-FINGERPRINT-LEAK-2024 - Pada 22 Juni 2024 'MoonzHaxor' mengunggah dat...",
       "group": "Insiden Kasus",
       "classification": "Insiden Kasus",
-      "value": 26,
-      "title": "Degree: 4"
+      "value": 18,
+      "title": "Degree: 2"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_11",
-      "label": "UU_PDP_No27_2022 - Pasal 11",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_2",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 2",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "CASE_mypertamina-44m-2022",
-      "label": "MYPERTAMINA-44M-2022 - November 2022 dataset yang diatribusikan ke M...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 22,
-      "title": "Degree: 3"
-    },
-    {
-      "id": "CASE_tokopedia-91m-2020",
-      "label": "TOKOPEDIA-91M-2020 - Maret 2020 basis data pengguna Tokopedia dicu...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "OECD_AI_Principles_2024_Bagian_14",
-      "label": "OECD_AI_Principles_2024 - Bagian 14",
-      "group": "OECD_AI_Principles_2024",
+      "id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_73",
+      "label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 73",
+      "group": "UNESCO_Recommendation_on_AI_Ethics_2021",
       "classification": "Intl: Soft Law",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_UU_ITE_No1_2024_Pasal_18a",
-      "label": "UU_ITE_No1_2024 - Pasal 18a",
-      "group": "UU_ITE_No1_2024",
-      "classification": "Natl: Binding Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_28j",
-      "label": "UU_PDP_No27_2022 - Pasal 28j",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 26,
-      "title": "Degree: 4"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_66",
-      "label": "UU_PDP_No27_2022 - Pasal 66",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_UU_ITE_No1_2024_Pasal_36",
-      "label": "UU_ITE_No1_2024 - Pasal 36",
-      "group": "UU_ITE_No1_2024",
-      "classification": "Natl: Binding Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_8",
-      "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 8",
-      "group": "SE_Komdigi_No9_2023_Etika_AI",
-      "classification": "Natl: Sectoral/Agency Guidance",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_7",
-      "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 7",
-      "group": "SE_Komdigi_No9_2023_Etika_AI",
-      "classification": "Natl: Sectoral/Agency Guidance",
-      "value": 22,
-      "title": "Degree: 3"
-    },
-    {
-      "id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_3",
-      "label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 3",
+      "id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_9",
+      "label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 9",
       "group": "ASEAN_Guide_AI_Governance_Ethics_2024",
       "classification": "Intl: Sectoral Guidance",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_28",
-      "label": "UU_PDP_No27_2022 - Pasal 28",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_39",
-      "label": "UU_PDP_No27_2022 - Pasal 39",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 46,
-      "title": "Degree: 9"
-    },
-    {
-      "id": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_6",
-      "label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 6",
-      "group": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "classification": "Natl: Sectoral/Agency Guidance",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_14",
-      "label": "UU_PDP_No27_2022 - Pasal 14",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
+      "id": "CASE_adakami-pinjol-conduct-2023",
+      "label": "ADAKAMI-PINJOL-CONDUCT-2023 - Pada September 2023, laporan viral menuding s...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
       "value": 18,
       "title": "Degree: 2"
     },
     {
-      "id": "CASE_bank-jatim-bifast-fraud-2024",
-      "label": "BANK-JATIM-BIFAST-FRAUD-2024 - Pada 22 Juni 2024, antara ~12.22-15.38 WIB, 4...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_52",
-      "label": "UU_PDP_No27_2022 - Pasal 52",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "CASE_npwp-tax-bjorka-2024",
-      "label": "NPWP-TAX-BJORKA-2024 - Pada 18 September 2024 'Bjorka' menawarkan ~6...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 30,
-      "title": "Degree: 5"
-    },
-    {
-      "id": "CASE_pedulilindungi-jokowi-cert-2021",
-      "label": "PEDULILINDUNGI-JOKOWI-CERT-2021 - Awal September 2021 sertifikat vaksin Preside...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_35",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 35",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
       "value": 22,
       "title": "Degree: 3"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_3",
-      "label": "UU_PDP_No27_2022 - Pasal 3",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 18,
-      "title": "Degree: 2"
-    },
-    {
-      "id": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_52",
-      "label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 52",
-      "group": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
-      "classification": "Natl: Sectoral/Agency Guidance",
-      "value": 18,
-      "title": "Degree: 2"
     },
     {
       "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_13",
@@ -321,178 +113,66 @@
       "title": "Degree: 1"
     },
     {
-      "id": "CASE_ojk-ai-voice-deepfake-fraud-2025",
-      "label": "OJK-AI-VOICE-DEEPFAKE-FRAUD-2025 - OJK melaporkan dua metode penipuan AI paling ...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 90,
-      "title": "Degree: 20"
-    },
-    {
-      "id": "ISO_IEC_42001_AI_Management_System_Bagian_44",
-      "label": "ISO_IEC_42001_AI_Management_System - Bagian 44",
-      "group": "ISO_IEC_42001_AI_Management_System",
-      "classification": "Intl: Technical Standard",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "CASE_pln-customer-data-leak-2022",
-      "label": "PLN-CUSTOMER-DATA-LEAK-2022 - Agustus 2022 data >17 juta pelanggan PLN dita...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 70,
-      "title": "Degree: 15"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_58",
-      "label": "UU_PDP_No27_2022 - Pasal 58",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_42",
+      "label": "UU_PDP_No27_2022 - Pasal 42",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_PP_PSTE_No71_2019_Pasal_21",
-      "label": "PP_PSTE_No71_2019 - Pasal 21",
-      "group": "PP_PSTE_No71_2019",
-      "classification": "Natl: Binding Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_26",
-      "label": "UU_PDP_No27_2022 - Pasal 26",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 22,
-      "title": "Degree: 3"
-    },
-    {
-      "id": "IDN_UU_ITE_No19_2016_Pasal_33",
-      "label": "UU_ITE_No19_2016 - Pasal 33",
+      "id": "IDN_UU_ITE_No19_2016_Pasal_45",
+      "label": "UU_ITE_No19_2016 - Pasal 45",
       "group": "UU_ITE_No19_2016",
       "classification": "Natl: Binding Law",
       "value": 18,
       "title": "Degree: 2"
     },
     {
-      "id": "CASE_kemendikbud-leak-claim-2025",
-      "label": "KEMENDIKBUD-LEAK-CLAIM-2025 - Awal Februari 2025 anggota BreachForums (teri...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 54,
-      "title": "Degree: 11"
-    },
-    {
-      "id": "IDN_PP_PSTE_No71_2019_Pasal_58",
-      "label": "PP_PSTE_No71_2019 - Pasal 58",
-      "group": "PP_PSTE_No71_2019",
-      "classification": "Natl: Binding Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_24",
-      "label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 24",
-      "group": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "classification": "Intl: Sectoral Guidance",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_UU_ITE_No19_2016_Pasal_29",
-      "label": "UU_ITE_No19_2016 - Pasal 29",
-      "group": "UU_ITE_No19_2016",
-      "classification": "Natl: Binding Law",
-      "value": 30,
-      "title": "Degree: 5"
-    },
-    {
-      "id": "CASE_wannacry-hospitals-2017",
-      "label": "WANNACRY-HOSPITALS-2017 - Pada pertengahan Mei 2017, saat wabah WannaCr...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
       "id": "IDN_UU_PDP_No27_2022_Pasal_46",
       "label": "UU_PDP_No27_2022 - Pasal 46",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
-      "value": 26,
-      "title": "Degree: 4"
+      "value": 18,
+      "title": "Degree: 2"
     },
     {
-      "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_12",
-      "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 12",
-      "group": "SE_Komdigi_No9_2023_Etika_AI",
-      "classification": "Natl: Sectoral/Agency Guidance",
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_56",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 56",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_UU_ITE_No1_2024_Pasal_28j",
-      "label": "UU_ITE_No1_2024 - Pasal 28j",
-      "group": "UU_ITE_No1_2024",
-      "classification": "Natl: Binding Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_8",
-      "label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 8",
-      "group": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "classification": "Intl: Soft Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "CASE_adakami-pinjol-conduct-2023",
-      "label": "ADAKAMI-PINJOL-CONDUCT-2023 - Pada September 2023, laporan viral menuding s...",
+      "id": "CASE_kai-stormous-ransomware-2024",
+      "label": "KAI-STORMOUS-RANSOMWARE-2024 - Januari 2024 Stormous mengklaim membobol PT K...",
       "group": "Insiden Kasus",
       "classification": "Insiden Kasus",
-      "value": 42,
-      "title": "Degree: 8"
+      "value": 34,
+      "title": "Degree: 6"
     },
     {
-      "id": "CASE_bjorka-sim-registration-1-3b-2022",
-      "label": "BJORKA-SIM-REGISTRATION-1-3B-2022 - Pada 31 Agustus-1 September 2022 'Bjorka' men...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
+      "id": "ISO_IEC_42001_AI_Management_System_Bagian_1",
+      "label": "ISO_IEC_42001_AI_Management_System - Bagian 1",
+      "group": "ISO_IEC_42001_AI_Management_System",
+      "classification": "Intl: Technical Standard",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "CASE_indihome-browsing-26m-2022",
-      "label": "INDIHOME-BROWSING-26M-2022 - Agustus 2022 'Bjorka' memuat dataset 26.730.7...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 26,
-      "title": "Degree: 4"
-    },
-    {
-      "id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_5",
-      "label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 5",
-      "group": "UNESCO_Recommendation_on_AI_Ethics_2021",
-      "classification": "Intl: Soft Law",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "CASE_cermati-data-breach-2020",
-      "label": "CERMATI-DATA-BREACH-2020 - Data 2,9 juta pengguna Cermati dijual ~USD 2....",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 14,
-      "title": "Degree: 1"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_6o",
-      "label": "UU_PDP_No27_2022 - Pasal 6o",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_19",
+      "label": "UU_PDP_No27_2022 - Pasal 19",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_15",
+      "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 15",
+      "group": "SE_Komdigi_No9_2023_Etika_AI",
+      "classification": "Natl: Sectoral/Agency Guidance",
       "value": 18,
       "title": "Degree: 2"
     },
@@ -501,8 +181,72 @@
       "label": "SRI-MULYANI-DEEPFAKE-2025 - Pertengahan Agustus 2025 sebuah deepfake mema...",
       "group": "Insiden Kasus",
       "classification": "Insiden Kasus",
-      "value": 22,
-      "title": "Degree: 3"
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_33",
+      "label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 33",
+      "group": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "classification": "Intl: Sectoral Guidance",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "label": "PP_PSTE_No71_2019 - Pasal 14",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_23",
+      "label": "UU_PDP_No27_2022 - Pasal 23",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+      "label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+      "group": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "classification": "Intl: Sectoral Guidance",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "label": "UU_PDP_No27_2022 - Pasal 67",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_45",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 45",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "label": "UU_ITE_No19_2016 - Pasal 26",
+      "group": "UU_ITE_No19_2016",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "CASE_bais-tni-intelligence-leak-2024",
+      "label": "BAIS-TNI-INTELLIGENCE-LEAK-2024 - Sekitar 24-27 Juni 2024 'MoonzHaxor' mengklai...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree: 1"
     },
     {
       "id": "IDN_PP_PSTE_No71_2019_Pasal_57",
@@ -513,16 +257,24 @@
       "title": "Degree: 1"
     },
     {
-      "id": "WHO_Ethics_and_Governance_of_AI_for_Health_Article_5",
-      "label": "WHO_Ethics_and_Governance_of_AI_for_Health - Article 5",
-      "group": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "classification": "Intl: Sectoral Guidance",
-      "value": 18,
-      "title": "Degree: 2"
+      "id": "CASE_immigration-passport-leak-2023",
+      "label": "IMMIGRATION-PASSPORT-LEAK-2023 - Pada 5 Juli 2023 peneliti Teguh Aprianto mela...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree: 1"
     },
     {
-      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Pasal_56",
-      "label": "Stranas_AI_Indonesia_2020-2045_Full - Pasal 56",
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_16",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 16",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_61",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 61",
       "group": "Stranas_AI_Indonesia_2020-2045_Full",
       "classification": "Natl: Strategy & Soft Law",
       "value": 14,
@@ -537,60 +289,284 @@
       "title": "Degree: 2"
     },
     {
-      "id": "CASE_immigration-passport-leak-2023",
-      "label": "IMMIGRATION-PASSPORT-LEAK-2023 - Pada 5 Juli 2023 peneliti Teguh Aprianto mela...",
+      "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_3",
+      "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 3",
+      "group": "SE_Komdigi_No9_2023_Etika_AI",
+      "classification": "Natl: Sectoral/Agency Guidance",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "CASE_pdns2-surabaya-ransomware-2024",
+      "label": "PDNS2-SURABAYA-RANSOMWARE-2024 - Pada 20 Juni 2024 PDNS 2 Surabaya dienkripsi ...",
       "group": "Insiden Kasus",
       "classification": "Insiden Kasus",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_PP_PSTE_No71_2019_Pasal_14",
-      "label": "PP_PSTE_No71_2019 - Pasal 14",
-      "group": "PP_PSTE_No71_2019",
-      "classification": "Natl: Binding Law",
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_33",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 33",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_PP_PSTE_No71_2019_Pasal_59",
-      "label": "PP_PSTE_No71_2019 - Pasal 59",
-      "group": "PP_PSTE_No71_2019",
-      "classification": "Natl: Binding Law",
+      "id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_72",
+      "label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 72",
+      "group": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "classification": "Intl: Sectoral Guidance",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_6",
-      "label": "UU_PDP_No27_2022 - Pasal 6",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
-      "value": 30,
-      "title": "Degree: 5"
-    },
-    {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_54",
-      "label": "UU_PDP_No27_2022 - Pasal 54",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_48",
+      "label": "UU_PDP_No27_2022 - Pasal 48",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_50",
-      "label": "UU_PDP_No27_2022 - Pasal 50",
-      "group": "UU_PDP_No27_2022",
-      "classification": "Natl: Binding Law",
+      "id": "CASE_kpu-dpt-jimbo-2023",
+      "label": "KPU-DPT-JIMBO-2023 - Sekitar 27-28 November 2023 'Jimbo' menawarka...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_6",
-      "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 6",
-      "group": "SE_Komdigi_No9_2023_Etika_AI",
-      "classification": "Natl: Sectoral/Agency Guidance",
+      "id": "CASE_bank-indonesia-conti-ransomware-2022",
+      "label": "BANK-INDONESIA-CONTI-RANSOMWARE-2022 - Bank Indonesia mengonfirmasi serangan ransomw...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
       "value": 18,
       "title": "Degree: 2"
+    },
+    {
+      "id": "EU_AI_Act_2024_Article_9",
+      "label": "EU_AI_Act_2024 - Article 9",
+      "group": "EU_AI_Act_2024",
+      "classification": "Intl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "CASE_npwp-tax-bjorka-2024",
+      "label": "NPWP-TAX-BJORKA-2024 - Pada 18 September 2024 'Bjorka' menawarkan ~6...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 26,
+      "title": "Degree: 4"
+    },
+    {
+      "id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "label": "UU_ITE_No1_2024 - Pasal 45A",
+      "group": "UU_ITE_No1_2024",
+      "classification": "Natl: Binding Law",
+      "value": 34,
+      "title": "Degree: 6"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_41",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 41",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_9",
+      "label": "UU_PDP_No27_2022 - Pasal 9",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 18,
+      "title": "Degree: 2"
+    },
+    {
+      "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_1",
+      "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 1",
+      "group": "SE_Komdigi_No9_2023_Etika_AI",
+      "classification": "Natl: Sectoral/Agency Guidance",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_60",
+      "label": "UU_PDP_No27_2022 - Pasal 60",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 18,
+      "title": "Degree: 2"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "label": "UU_PDP_No27_2022 - Pasal 36",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_49",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 49",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 18,
+      "title": "Degree: 2"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_38",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 38",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_58",
+      "label": "PP_PSTE_No71_2019 - Pasal 58",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "CASE_bri-life-data-leak-2021",
+      "label": "BRI-LIFE-DATA-LEAK-2021 - Akhir Juli 2021 pengguna RaidForums menawarka...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 22,
+      "title": "Degree: 3"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_20",
+      "label": "PP_PSTE_No71_2019 - Pasal 20",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "CASE_kemendikbud-leak-claim-2025",
+      "label": "KEMENDIKBUD-LEAK-CLAIM-2025 - Awal Februari 2025 anggota BreachForums (teri...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 62,
+      "title": "Degree: 13"
+    },
+    {
+      "id": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "OJK-AI-VOICE-DEEPFAKE-FRAUD-2025 - OJK melaporkan dua metode penipuan AI paling ...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 134,
+      "title": "Degree: 31"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_21",
+      "label": "PP_PSTE_No71_2019 - Pasal 21",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_48",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 48",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_4",
+      "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 4",
+      "group": "SE_Komdigi_No9_2023_Etika_AI",
+      "classification": "Natl: Sectoral/Agency Guidance",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_40",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 40",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
+      "label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+      "group": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "classification": "Intl: Sectoral Guidance",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_8",
+      "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 8",
+      "group": "SE_Komdigi_No9_2023_Etika_AI",
+      "classification": "Natl: Sectoral/Agency Guidance",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_55",
+      "label": "PP_PSTE_No71_2019 - Pasal 55",
+      "group": "PP_PSTE_No71_2019",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "label": "UU_PDP_No27_2022 - Pasal 4",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 38,
+      "title": "Degree: 7"
+    },
+    {
+      "id": "CASE_indihome-browsing-26m-2022",
+      "label": "INDIHOME-BROWSING-26M-2022 - Agustus 2022 'Bjorka' memuat dataset 26.730.7...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "CASE_pedulilindungi-jokowi-cert-2021",
+      "label": "PEDULILINDUNGI-JOKOWI-CERT-2021 - Awal September 2021 sertifikat vaksin Preside...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 18,
+      "title": "Degree: 2"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_52",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 52",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_12",
@@ -601,147 +577,153 @@
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_23",
-      "label": "UU_PDP_No27_2022 - Pasal 23",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_30",
+      "label": "UU_PDP_No27_2022 - Pasal 30",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "CASE_myindihome-35m-2023",
-      "label": "MYINDIHOME-35M-2023 - Awal Juli 2023 'Bjorka' menawarkan ~35,9 juta...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 18,
-      "title": "Degree: 2"
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_39",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 39",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
     },
     {
-      "id": "CASE_kemenkes-patient-records-2022",
-      "label": "KEMENKES-PATIENT-RECORDS-2022 - Pada 6 Januari 2022 Kemenkes mengakui menyeli...",
-      "group": "Insiden Kasus",
-      "classification": "Insiden Kasus",
-      "value": 18,
-      "title": "Degree: 2"
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_4",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 4",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
     },
     {
-      "id": "IDN_UU_ITE_No19_2016_Pasal_45e",
-      "label": "UU_ITE_No19_2016 - Pasal 45e",
-      "group": "UU_ITE_No19_2016",
+      "id": "CASE_cermati-data-breach-2020",
+      "label": "CERMATI-DATA-BREACH-2020 - Data 2,9 juta pengguna Cermati dijual ~USD 2....",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_9",
+      "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 9",
+      "group": "SE_Komdigi_No9_2023_Etika_AI",
+      "classification": "Natl: Sectoral/Agency Guidance",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "label": "UU_PDP_No27_2022 - Pasal 33",
+      "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 26,
       "title": "Degree: 4"
     },
     {
-      "id": "IDN_PP_PSTE_No71_2019_Pasal_54",
-      "label": "PP_PSTE_No71_2019 - Pasal 54",
-      "group": "PP_PSTE_No71_2019",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_24",
+      "label": "UU_PDP_No27_2022 - Pasal 24",
+      "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 14,
       "title": "Degree: 1"
     },
     {
-      "id": "CASE_kai-stormous-ransomware-2024",
-      "label": "KAI-STORMOUS-RANSOMWARE-2024 - Januari 2024 Stormous mengklaim membobol PT K...",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_28",
+      "label": "UU_PDP_No27_2022 - Pasal 28",
+      "group": "UU_PDP_No27_2022",
+      "classification": "Natl: Binding Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_64",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 64",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 14,
+      "title": "Degree: 1"
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+      "group": "Stranas_AI_Indonesia_2020-2045_Full",
+      "classification": "Natl: Strategy & Soft Law",
+      "value": 22,
+      "title": "Degree: 3"
+    },
+    {
+      "id": "CASE_mypertamina-44m-2022",
+      "label": "MYPERTAMINA-44M-2022 - November 2022 dataset yang diatribusikan ke M...",
       "group": "Insiden Kasus",
       "classification": "Insiden Kasus",
-      "value": 38,
-      "title": "Degree: 7"
+      "value": 26,
+      "title": "Degree: 4"
+    },
+    {
+      "id": "CASE_bkn-asn-leak-topiax-2024",
+      "label": "BKN-ASN-LEAK-TOPIAX-2024 - Pada 10 Agustus 2024 pengguna BreachForums 'T...",
+      "group": "Insiden Kasus",
+      "classification": "Insiden Kasus",
+      "value": 14,
+      "title": "Degree: 1"
     }
   ],
   "edges": [
     {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI_Bagian_16",
-      "to": "CASE_pdns2-surabaya-ransomware-2024",
+      "from": "EU_AI_Act_2024_Article_9",
+      "to": "CASE_pedulilindungi-jokowi-cert-2021",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI_Bagian_16",
+      "from": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_73",
+      "to": "CASE_kemendikbud-leak-claim-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_9",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_29",
       "to": "CASE_bank-indonesia-conti-ransomware-2022",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "G7_Hiroshima_Code_of_Conduct_for_AI_Bagian_16",
-      "to": "CASE_kai-stormous-ransomware-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "OECD_AI_Principles_2024_Bagian_14",
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_33",
       "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_5",
-      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_70",
-      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_3",
-      "to": "CASE_pln-customer-data-leak-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_8",
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
       "to": "CASE_pdns2-surabaya-ransomware-2024",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_3",
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_72",
       "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_24",
-      "to": "CASE_bank-indonesia-conti-ransomware-2022",
+      "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+      "to": "CASE_kemendikbud-leak-claim-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_28",
-      "to": "CASE_pdns2-surabaya-ransomware-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_28",
-      "to": "CASE_kai-stormous-ransomware-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health_Section_6",
-      "to": "CASE_kemenkes-patient-records-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health_Article_5",
-      "to": "CASE_kemenkes-patient-records-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "WHO_Ethics_and_Governance_of_AI_for_Health_Article_5",
-      "to": "CASE_ehac-covid-app-leak-2021",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "ISO_IEC_42001_AI_Management_System_Bagian_44",
+      "from": "ISO_IEC_42001_AI_Management_System_Bagian_1",
       "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
@@ -753,13 +735,19 @@
       "arrows": "to"
     },
     {
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_20",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
       "from": "IDN_PP_PSTE_No71_2019_Pasal_21",
       "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_PP_PSTE_No71_2019_Pasal_54",
+      "from": "IDN_PP_PSTE_No71_2019_Pasal_55",
       "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
@@ -777,152 +765,104 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_PP_PSTE_No71_2019_Pasal_59",
-      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_ITE_No19_2016_Pasal_33",
-      "to": "CASE_adakami-pinjol-conduct-2023",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_ITE_No19_2016_Pasal_33",
-      "to": "CASE_sri-mulyani-deepfake-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_ITE_No19_2016_Pasal_29",
-      "to": "CASE_npwp-tax-bjorka-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_ITE_No19_2016_Pasal_29",
-      "to": "CASE_wannacry-hospitals-2017",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_ITE_No19_2016_Pasal_29",
-      "to": "CASE_bsi-lockbit-ransomware-2023",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_ITE_No19_2016_Pasal_29",
-      "to": "CASE_adakami-pinjol-conduct-2023",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_ITE_No19_2016_Pasal_29",
-      "to": "CASE_bank-jatim-bifast-fraud-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_ITE_No19_2016_Pasal_45e",
+      "from": "IDN_UU_ITE_No19_2016_Pasal_26",
       "to": "CASE_kejaksaan-agung-defacement-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No19_2016_Pasal_45e",
-      "to": "CASE_bank-indonesia-conti-ransomware-2022",
+      "from": "IDN_UU_ITE_No19_2016_Pasal_45",
+      "to": "CASE_bri-life-data-leak-2021",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No19_2016_Pasal_45e",
-      "to": "CASE_adakami-pinjol-conduct-2023",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_ITE_No19_2016_Pasal_45e",
+      "from": "IDN_UU_ITE_No19_2016_Pasal_45",
       "to": "CASE_kai-stormous-ransomware-2024",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_28j",
-      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "to": "CASE_kemendikbud-leak-claim-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_18a",
-      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "to": "CASE_kejaksaan-agung-defacement-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_36",
-      "to": "CASE_adakami-pinjol-conduct-2023",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "to": "CASE_cermati-data-breach-2020",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_28j",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "to": "CASE_bri-life-data-leak-2021",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "to": "CASE_mypertamina-44m-2022",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "to": "CASE_kai-stormous-ransomware-2024",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "to": "CASE_kpu-dpt-jimbo-2023",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "to": "CASE_immigration-passport-leak-2023",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
       "to": "CASE_npwp-tax-bjorka-2024",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_28j",
-      "to": "CASE_adakami-pinjol-conduct-2023",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "to": "CASE_kemendikbud-leak-claim-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_28j",
-      "to": "CASE_sri-mulyani-deepfake-2025",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "to": "CASE_indihome-browsing-26m-2022",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_28j",
-      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_3",
-      "to": "CASE_pedulilindungi-jokowi-cert-2021",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_3",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
       "to": "CASE_pln-customer-data-leak-2022",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6",
-      "to": "CASE_inafis-polri-fingerprint-leak-2024",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_4",
+      "to": "CASE_mypertamina-44m-2022",
       "label": "governs",
       "arrows": "to"
     },
     {
       "from": "IDN_UU_PDP_No27_2022_Pasal_6",
       "to": "CASE_kemendikbud-leak-claim-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6",
-      "to": "CASE_indihome-browsing-26m-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6",
-      "to": "CASE_pln-customer-data-leak-2022",
       "label": "governs",
       "arrows": "to"
     },
@@ -933,8 +873,14 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_11",
-      "to": "CASE_kemendikbud-leak-claim-2025",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_9",
+      "to": "CASE_pln-customer-data-leak-2022",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_9",
+      "to": "CASE_mypertamina-44m-2022",
       "label": "governs",
       "arrows": "to"
     },
@@ -945,43 +891,7 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_14",
-      "to": "CASE_kemendikbud-leak-claim-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_14",
-      "to": "CASE_pln-customer-data-leak-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
       "from": "IDN_UU_PDP_No27_2022_Pasal_19",
-      "to": "CASE_pln-customer-data-leak-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_21",
-      "to": "CASE_npwp-tax-bjorka-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_21",
-      "to": "CASE_inafis-polri-fingerprint-leak-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_21",
-      "to": "CASE_indihome-browsing-26m-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_21",
       "to": "CASE_pln-customer-data-leak-2022",
       "label": "governs",
       "arrows": "to"
@@ -993,20 +903,8 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_26",
-      "to": "CASE_kemendikbud-leak-claim-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_26",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_24",
       "to": "CASE_pln-customer-data-leak-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_26",
-      "to": "CASE_mypertamina-44m-2022",
       "label": "governs",
       "arrows": "to"
     },
@@ -1019,6 +917,30 @@
     {
       "from": "IDN_UU_PDP_No27_2022_Pasal_30",
       "to": "CASE_kemendikbud-leak-claim-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_npwp-tax-bjorka-2024",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_kemendikbud-leak-claim-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_pln-customer-data-leak-2022",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_33",
+      "to": "CASE_kai-stormous-ransomware-2024",
       "label": "governs",
       "arrows": "to"
     },
@@ -1041,66 +963,12 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_39",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_42",
       "to": "CASE_npwp-tax-bjorka-2024",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_39",
-      "to": "CASE_bais-tni-intelligence-leak-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_39",
-      "to": "CASE_inafis-polri-fingerprint-leak-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_39",
-      "to": "CASE_pedulilindungi-jokowi-cert-2021",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_39",
-      "to": "CASE_kemendikbud-leak-claim-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_39",
-      "to": "CASE_indihome-browsing-26m-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_39",
-      "to": "CASE_myindihome-35m-2023",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_39",
-      "to": "CASE_pln-customer-data-leak-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_39",
-      "to": "CASE_kai-stormous-ransomware-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_46",
-      "to": "CASE_pdns2-surabaya-ransomware-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
       "from": "IDN_UU_PDP_No27_2022_Pasal_46",
       "to": "CASE_kemendikbud-leak-claim-2025",
       "label": "governs",
@@ -1113,158 +981,200 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_46",
-      "to": "CASE_kai-stormous-ransomware-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_50",
-      "to": "CASE_pln-customer-data-leak-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_52",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_48",
       "to": "CASE_kemendikbud-leak-claim-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_54",
-      "to": "CASE_kemendikbud-leak-claim-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_58",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_60",
       "to": "CASE_kejaksaan-agung-defacement-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_60",
+      "to": "CASE_kai-stormous-ransomware-2024",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "to": "CASE_bri-life-data-leak-2021",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "to": "CASE_inafis-polri-fingerprint-leak-2024",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "to": "CASE_pln-customer-data-leak-2022",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_2",
       "to": "CASE_adakami-pinjol-conduct-2023",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6o",
-      "to": "CASE_inafis-polri-fingerprint-leak-2024",
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_4",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6o",
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_16",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_17",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_33",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_35",
+      "to": "CASE_kemendikbud-leak-claim-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_35",
       "to": "CASE_pln-customer-data-leak-2022",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "to": "CASE_bjorka-sim-registration-1-3b-2022",
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_35",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "to": "CASE_immigration-passport-leak-2023",
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_38",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_39",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_40",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_41",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_45",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_48",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_49",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_52",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_56",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_61",
       "to": "CASE_npwp-tax-bjorka-2024",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "to": "CASE_ehac-covid-app-leak-2021",
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_64",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "to": "CASE_kejaksaan-agung-defacement-2025",
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+      "to": "CASE_bkn-asn-leak-topiax-2024",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+      "to": "CASE_bais-tni-intelligence-leak-2024",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+      "to": "CASE_inafis-polri-fingerprint-leak-2024",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+      "to": "CASE_kemendikbud-leak-claim-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+      "to": "CASE_pln-customer-data-leak-2022",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_80",
       "to": "CASE_bank-indonesia-conti-ransomware-2022",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "to": "CASE_cermati-data-breach-2020",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "to": "CASE_tokopedia-91m-2020",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "to": "CASE_indihome-browsing-26m-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "to": "CASE_myindihome-35m-2023",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "to": "CASE_pln-customer-data-leak-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "to": "CASE_mypertamina-44m-2022",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
+      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_80",
       "to": "CASE_kai-stormous-ransomware-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bab_5",
-      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Pasal_56",
-      "to": "CASE_bais-tni-intelligence-leak-2024",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_6",
-      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_52",
-      "to": "CASE_adakami-pinjol-conduct-2023",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_52",
-      "to": "CASE_sri-mulyani-deepfake-2025",
       "label": "governs",
       "arrows": "to"
     },
@@ -1275,31 +1185,13 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_6",
-      "to": "CASE_kejaksaan-agung-defacement-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_6",
+      "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_3",
       "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_7",
-      "to": "CASE_kejaksaan-agung-defacement-2025",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_7",
-      "to": "CASE_adakami-pinjol-conduct-2023",
-      "label": "governs",
-      "arrows": "to"
-    },
-    {
-      "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_7",
+      "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_4",
       "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
@@ -1311,14 +1203,26 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_12",
+      "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_9",
       "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
       "label": "governs",
       "arrows": "to"
     },
     {
       "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_13",
-      "to": "CASE_kejaksaan-agung-defacement-2025",
+      "to": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_15",
+      "to": "CASE_adakami-pinjol-conduct-2023",
+      "label": "governs",
+      "arrows": "to"
+    },
+    {
+      "from": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_15",
+      "to": "CASE_sri-mulyani-deepfake-2025",
       "label": "governs",
       "arrows": "to"
     }
