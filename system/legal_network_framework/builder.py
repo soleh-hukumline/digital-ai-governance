@@ -146,6 +146,13 @@ def _read_pdf_text(pdf_path):
                     text = '\n'.join(parts)
         except Exception as e:
             print(f'  ⚠️  {name}: PyPDF2 fallback failed ({e})')
+
+    # Strip recurring page furniture (EU OJ headers/footers, ELI links, page nums)
+    # that pdfminer interleaves into the flowed text and contaminates provisions.
+    text = re.sub(r'ELI:\s*\S+', ' ', text)
+    text = re.sub(r'https?://data\.europa\.eu\S*', ' ', text)
+    text = re.sub(r'\bOJ\s+L[, ]+\d{1,2}\.\d{1,2}\.\d{4}\b', ' ', text)
+    text = re.sub(r'\b\d{1,3}/144\b', ' ', text)          # EU AI Act is 144 pp
     return text
 
 
