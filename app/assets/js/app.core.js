@@ -2206,6 +2206,90 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
         setTimeout(() => URL.revokeObjectURL(link.href), 8000);
     };
 
+    // ===================================================================
+    // GENERIC EXPORT HELPERS + SECTOR / INCIDENT EXPORTS
+    // ===================================================================
+    function _downloadBlob(content, filename, type) {
+        const prefix = type.indexOf('csv') >= 0 ? '﻿' : '';
+        const blob = new Blob([prefix + content], { type });
+        const a = document.createElement('a');
+        a.download = filename;
+        a.href = URL.createObjectURL(blob);
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 8000);
+    }
+    function _csvCell(v) {
+        v = (v === null || v === undefined) ? '' : String(v);
+        return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+    }
+    function _toCSV(rows) { return rows.map(r => r.map(_csvCell).join(',')).join('\n'); }
+    function _toast(msg, type) { if (typeof showToast === 'function') showToast(msg, type || 'success'); }
+    function _getSectorData() {
+        const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
+        return (isEn && typeof SECTOR_DATA_EN !== 'undefined') ? SECTOR_DATA_EN : SECTOR_DATA_ID;
+    }
+
+    // ── Sektoral: CSV / JSON / PNG ────────────────────────────────────
+    window.exportSectorCSV = function () {
+        const isEn = window.currentLang === 'en';
+        const data = _getSectorData();
+        const rows = [[isEn ? 'Sector' : 'Sektor', isEn ? 'Focus' : 'Fokus', 'Coverage Score (%)',
+            isEn ? 'Provision Status' : 'Status Pasal', isEn ? 'Provision / Regulation' : 'Pasal / Regulasi',
+            isEn ? 'Description' : 'Deskripsi', isEn ? 'Recommendation' : 'Rekomendasi', isEn ? 'Study Reference' : 'Referensi Studi']];
+        data.forEach(s => {
+            const pasals = s.pasals && s.pasals.length ? s.pasals : [{ status: '', name: '', desc: '' }];
+            pasals.forEach(p => rows.push([s.title, s.subtitle, s.coverageScore, p.status, p.name, p.desc, s.recom, s.studyRef]));
+        });
+        _downloadBlob(_toCSV(rows), `Analisis_Kesenjangan_Sektoral_${isEn ? 'EN' : 'ID'}.csv`, 'text/csv;charset=utf-8;');
+        _toast(isEn ? 'CSV downloaded.' : 'CSV berhasil diunduh.');
+    };
+    window.exportSectorJSON = function () {
+        const isEn = window.currentLang === 'en';
+        _downloadBlob(JSON.stringify(_getSectorData(), null, 2), `Analisis_Kesenjangan_Sektoral_${isEn ? 'EN' : 'ID'}.json`, 'application/json');
+        _toast(isEn ? 'JSON downloaded.' : 'JSON berhasil diunduh.');
+    };
+    window.exportSectorPNG = function () {
+        const el = document.getElementById('sector-grid-container');
+        if (!el) return;
+        if (typeof html2canvas !== 'function') { _toast(window.currentLang === 'en' ? 'PNG library not loaded.' : 'Pustaka PNG belum termuat.', 'error'); return; }
+        const bg = (getComputedStyle(document.documentElement).getPropertyValue('--bg-deep') || '#ffffff').trim();
+        html2canvas(el, { backgroundColor: bg, scale: 2, useCORS: true }).then(canvas => {
+            const a = document.createElement('a');
+            a.download = 'Analisis_Kesenjangan_Sektoral.png';
+            a.href = canvas.toDataURL('image/png');
+            a.click();
+            _toast(window.currentLang === 'en' ? 'Image downloaded.' : 'Gambar berhasil diunduh.');
+        }).catch(e => _toast('Export PNG gagal: ' + e.message, 'error'));
+    };
+
+    // ── Katalog Insiden: CSV / JSON ───────────────────────────────────
+    window.exportIncidentsCSV = function () {
+        const isEn = window.currentLang === 'en';
+        const inc = (typeof rawIncidentData !== 'undefined' && rawIncidentData) ? rawIncidentData : [];
+        if (!inc.length) { _toast(isEn ? 'Incident data not loaded yet.' : 'Data insiden belum termuat.', 'warning'); return; }
+        const head = ['id', 'year', 'type', 'severity', 'sector', 'record_type', 'confidence',
+            isEn ? 'chronology' : 'kronologi', 'pelaku', 'korban', 'pse', 'objek_hukum',
+            'kualifikasi', 'akibat', 'nexus_kausalitas', 'scale', 'verification_note', 'sources'];
+        const rows = [head];
+        inc.forEach(i => {
+            const f = i.pemetaan_fakta_hukum || {};
+            const src = (i.sources || []).map(s => `${s.outlet || ''}: ${s.url || ''}`).join(' | ');
+            rows.push([i.id, i.year, i.type, i.severity, i.sector || '', i.record_type || '', i.confidence || '',
+                i.peristiwa_hukum_kronologi || '', f.subjek_pelaku || '', f.subjek_korban || '', f.subjek_pse || '',
+                f.objek_hukum || '', i.kualifikasi_peristiwa || '', f.akibat_hukum || '', f.nexus_kausalitas || '',
+                i.scale || '', i.verification_note || '', src]);
+        });
+        _downloadBlob(_toCSV(rows), `Katalog_Insiden_Siber_${isEn ? 'EN' : 'ID'}.csv`, 'text/csv;charset=utf-8;');
+        _toast(isEn ? 'CSV downloaded.' : 'CSV berhasil diunduh.');
+    };
+    window.exportIncidentsJSON = function () {
+        const isEn = window.currentLang === 'en';
+        const inc = (typeof rawIncidentData !== 'undefined' && rawIncidentData) ? rawIncidentData : [];
+        if (!inc.length) { _toast(isEn ? 'Incident data not loaded yet.' : 'Data insiden belum termuat.', 'warning'); return; }
+        _downloadBlob(JSON.stringify(inc, null, 2), `Katalog_Insiden_Siber_${isEn ? 'EN' : 'ID'}.json`, 'application/json');
+        _toast(isEn ? 'JSON downloaded.' : 'JSON berhasil diunduh.');
+    };
+
 
     // ===================================================================
     // INITIAL EXECUTION — urutan penting:

@@ -23,6 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
     <script>
     // GLOBAL ERROR CATCHER FOR SYNTAX ERRORS BEFORE DOMCONTENTLOADED
@@ -383,6 +384,11 @@
 
         <!-- ===== SECTION: Kesenjangan Sektoral ===== -->
         <section id="section-sector" class="section-panel">
+            <div style="display:flex; justify-content:flex-end; gap:6px; flex-wrap:wrap;">
+                <button class="btn-secondary btn-sm" onclick="exportSectorPNG()"><span class="material-symbols-rounded" style="font-size:14px;">photo_camera</span> PNG</button>
+                <button class="btn-secondary btn-sm" onclick="exportSectorCSV()"><span class="material-symbols-rounded" style="font-size:14px;">table_chart</span> CSV</button>
+                <button class="btn-secondary btn-sm" onclick="exportSectorJSON()"><span class="material-symbols-rounded" style="font-size:14px;">data_object</span> JSON</button>
+            </div>
             <div class="sector-grid" id="sector-grid-container">
                 <div class="loading">Merender analisis sektoral...</div>
             </div>
@@ -434,7 +440,11 @@
             <div class="card">
                 <div class="card-header">
                     <h3><span class="material-symbols-rounded" style="color:var(--sky);">database_search</span> Katalog Data Forensik Insiden Siber</h3>
-                    <span class="badge badge-sky">Registry 45 Kasus Riil</span>
+                    <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
+                        <span class="badge badge-sky">Registry 45 Kasus Riil</span>
+                        <button class="btn-secondary btn-sm" onclick="exportIncidentsCSV()"><span class="material-symbols-rounded" style="font-size:14px;">table_chart</span> CSV</button>
+                        <button class="btn-secondary btn-sm" onclick="exportIncidentsJSON()"><span class="material-symbols-rounded" style="font-size:14px;">data_object</span> JSON</button>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:1.25rem;">
@@ -648,6 +658,6 @@
 </button>
 
 <script src="./app/assets/js/i18n.js?v=20260614_7"></script>
-<script src="./app/assets/js/app.core.js?v=20260614_8"></script>
+<script src="./app/assets/js/app.core.js?v=20260614_9"></script>
 </body>
 </html>
