@@ -530,6 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Populate metrics directly since sync stabilization is disabled
                 populateMetricsTable(model.id, graphData);
+                populateRankingTable(model.id, graphData);
 
                 // Let physics run for exactly 3 seconds to spread nodes out elegantly, 
                 // then freeze them to stop CPU burn and prevent jitter
@@ -624,6 +625,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 ai_misuse: '<span style="background:rgba(168,85,247,0.2);color:#a855f7;padding:2px 8px;border-radius:4px;font-size:11px;">AI Misuse</span>',
             };
             const typeBadge = typeBadges[inc.type] || '<span style="background:var(--overlay-hover);color:var(--text-2);padding:2px 8px;border-radius:4px;font-size:11px;">Other</span>';
+            const srcArr = Array.isArray(inc.sources) ? inc.sources : [];
+            const sourcesHtml = srcArr.length
+                ? srcArr.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" style="color:var(--primary); text-decoration:underline;" title="${String(s.title || '').replace(/"/g, '&quot;')}${s.date ? ' (' + s.date + ')' : ''}">${s.outlet || 'sumber'}</a>`).join(' · ')
+                : '<span style="color:var(--text-4);">—</span>';
+            const confColor = inc.confidence === 'high' ? 'var(--emerald)' : 'var(--amber)';
+            const confLabel = inc.confidence === 'high' ? 'Keyakinan tinggi' : 'Keyakinan sedang';
             container.innerHTML += `
                 <div class="incident-card">
                     <div class="ic-top">
@@ -647,6 +654,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="ic-causal">
                             <strong>Nexus Kausalitas:</strong>
                             <span>${inc.pemetaan_fakta_hukum.nexus_kausalitas}</span>
+                        </div>
+                        <div class="ic-row" style="border-top:1px solid var(--border); padding-top:8px;">
+                            <span class="material-symbols-rounded" style="color:var(--primary);">link</span>
+                            <span><strong style="color:var(--text-3);">Sumber:</strong> ${sourcesHtml}</span>
+                        </div>
+                        <div class="ic-row">
+                            <span class="material-symbols-rounded" style="color:${confColor};">verified</span>
+                            <span style="color:var(--text-4); font-size:0.72rem;">${confLabel}${inc.verification_note ? ' · ' + inc.verification_note : ''}</span>
                         </div>
                     </div>
                 </div>`;
@@ -1691,13 +1706,115 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
         };
 
         tbody.innerHTML = rows.map(([metrik, nilai, implikasi]) => `
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.04);">
+            <tr style="border-bottom:1px solid var(--border);">
                 <td style="padding:9px 12px; color:var(--text-2); font-weight:500;">${metrik}</td>
                 <td style="padding:9px 12px; text-align:right; font-family:monospace; font-weight:700; color:${colorClass(nilai, metrik)};">${nilai}</td>
                 <td style="padding:9px 12px; color:var(--text-3); font-size:0.82rem; line-height:1.4;">${implikasi}</td>
             </tr>
         `).join('');
 
+        if (typeof applyTranslations === 'function') applyTranslations();
+    }
+
+    // ===================================================================
+    // NODE RANKING TABLE — per-node degree / centrality (+ betweenness)
+    // ===================================================================
+    function computeBetweenness(ids, adj) {
+        // Brandes' algorithm (unweighted, undirected); normalized 0..1.
+        const CB = {}; ids.forEach(v => CB[v] = 0);
+        for (const s of ids) {
+            const S = [], P = {}, sigma = {}, d = {};
+            ids.forEach(t => { P[t] = []; sigma[t] = 0; d[t] = -1; });
+            sigma[s] = 1; d[s] = 0;
+            const Q = [s];
+            while (Q.length) {
+                const v = Q.shift(); S.push(v);
+                for (const w of (adj[v] || [])) {
+                    if (d[w] < 0) { d[w] = d[v] + 1; Q.push(w); }
+                    if (d[w] === d[v] + 1) { sigma[w] += sigma[v]; P[w].push(v); }
+                }
+            }
+            const delta = {}; ids.forEach(t => delta[t] = 0);
+            while (S.length) {
+                const w = S.pop();
+                for (const v of P[w]) delta[v] += (sigma[v] / sigma[w]) * (1 + delta[w]);
+                if (w !== s) CB[w] += delta[w];
+            }
+        }
+        const n = ids.length;
+        const norm = n > 2 ? (n - 1) * (n - 2) : 1;   // undirected normalization
+        ids.forEach(v => { CB[v] = CB[v] / norm; });
+        return CB;
+    }
+
+    function populateRankingTable(graphId, graphData) {
+        const tb = document.getElementById(`tbody-metrics-${graphId}`);
+        if (!tb) return;
+        const anchor = tb.closest('table');
+        if (!anchor) return;
+
+        const nodes = graphData.nodes, edges = graphData.edges, n = nodes.length;
+        const deg = {}, adj = {};
+        nodes.forEach(nd => { deg[nd.id] = 0; adj[nd.id] = []; });
+        edges.forEach(e => {
+            if (deg[e.from] !== undefined) deg[e.from]++;
+            if (deg[e.to] !== undefined) deg[e.to]++;
+            if (adj[e.from] && adj[e.to]) { adj[e.from].push(e.to); adj[e.to].push(e.from); }
+        });
+        const ids = nodes.map(nd => nd.id);
+        const BET_CAP = 500;                       // betweenness is O(n·m): cap for responsiveness
+        let bet = null;
+        if (n > 2 && n <= BET_CAP) { try { bet = computeBetweenness(ids, adj); } catch (e) { bet = null; } }
+
+        const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
+        const denom = Math.max(n - 1, 1);
+        const top = [...nodes].sort((a, b) => (deg[b.id] - deg[a.id]) || ((bet ? bet[b.id] : 0) - (bet ? bet[a.id] : 0))).slice(0, 15);
+
+        const betHead = bet ? `<th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">Betweenness</th>` : '';
+        const betNote = bet ? '' : `<div style="font-size:0.75rem; color:var(--text-4); margin-top:6px;">${isEn ? `Betweenness omitted for large graphs (n=${n} > ${BET_CAP}); see the LNA report (analyzer.py) for exact values.` : `Betweenness tidak dihitung untuk graf besar (n=${n} > ${BET_CAP}); lihat laporan LNA (analyzer.py) untuk nilai pastinya.`}</div>`;
+
+        const rowsHtml = top.map((nd, i) => {
+            const dc = (deg[nd.id] / denom);
+            const cls = nd.classification || nd.group || '';
+            const lbl = String(nd.label || nd.id);
+            const betCell = bet ? `<td style="padding:8px 12px; text-align:right; font-family:monospace; color:var(--sky);">${bet[nd.id].toFixed(4)}</td>` : '';
+            return `<tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:8px 12px; color:var(--text-4); text-align:right;">${i + 1}</td>
+                <td style="padding:8px 12px; color:var(--text-1); font-weight:600;">${lbl}</td>
+                <td style="padding:8px 12px; color:var(--text-3); font-size:0.8rem;">${cls}</td>
+                <td style="padding:8px 12px; text-align:right; font-family:monospace; font-weight:700; color:var(--primary);">${deg[nd.id]}</td>
+                <td style="padding:8px 12px; text-align:right; font-family:monospace; color:var(--emerald);">${dc.toFixed(4)}</td>
+                ${betCell}
+            </tr>`;
+        }).join('');
+
+        const html = `
+            <div style="margin-top:1.5rem; overflow-x:auto;">
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.6rem;">
+                <span class="material-symbols-rounded" style="color:var(--primary); font-size:18px;">leaderboard</span>
+                <strong style="font-family:'Outfit'; color:var(--text-1); font-size:0.95rem;">${isEn ? 'Top Nodes by Degree Centrality' : 'Node Teratas berdasarkan Degree Centrality'}</strong>
+              </div>
+              <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                <thead><tr>
+                  <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">#</th>
+                  <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Node (Article/Regulation/Incident)' : 'Node (Pasal/Regulasi/Insiden)'}</th>
+                  <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Classification' : 'Klasifikasi'}</th>
+                  <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">Degree</th>
+                  <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Degree Centrality' : 'Degree Centrality'}</th>
+                  ${betHead}
+                </tr></thead>
+                <tbody>${rowsHtml}</tbody>
+              </table>
+              ${betNote}
+            </div>`;
+
+        let cont = document.getElementById(`ranking-${graphId}`);
+        if (!cont) {
+            cont = document.createElement('div');
+            cont.id = `ranking-${graphId}`;
+            anchor.insertAdjacentElement('afterend', cont);
+        }
+        cont.innerHTML = html;
         if (typeof applyTranslations === 'function') applyTranslations();
     }
 
