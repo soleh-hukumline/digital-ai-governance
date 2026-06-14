@@ -64,8 +64,10 @@ def main():
 
     def row_for(i, k, iid, r):
         inc = incidents.get(iid, {})
-        summ = ' '.join(str(inc.get('peristiwa_hukum_kronologi', '')).split())[:160]
-        text = ' '.join(str(label_text.get(r['regulation_label'], '')).split())[:260]
+        # FULL text so the coder can judge properly (no truncation)
+        kron = ' '.join(str(inc.get('peristiwa_hukum_kronologi', '')).split())
+        summ = f"[{inc.get('year','')} {inc.get('type','')}] {kron}"
+        text = ' '.join(str(label_text.get(r['regulation_label'], '')).split())[:1200]
         p = r['confidence'] if r['relevant'] else 100 - r['confidence']
         return {
             'pair_id': i, 'stratum': k, 'incident_id': iid, 'incident_summary': summ,
