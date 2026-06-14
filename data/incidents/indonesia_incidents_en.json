@@ -34,7 +34,7 @@
       "scale": "282 agencies / 210+ public services affected",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Jumlah layanan bervariasi antar sumber (210 layanan vs 282 instansi); keduanya dilaporkan.",
+      "verification_note": "The number of services varies across sources (210 services vs. 282 agencies); both are reported.",
       "sources": [
         {
           "outlet": "The Record (Recorded Future News)",
@@ -70,7 +70,7 @@
       "scale": "~4,759,218 ASN/civil-servant records",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "BKN tidak mengonfirmasi penuh; figur dari klaim penjual, sebagian diverifikasi CISSReC.",
+      "verification_note": "BKN did not fully confirm; the figure comes from the seller's claim, partially verified by CISSReC.",
       "sources": [
         {
           "outlet": "The Jakarta Post",
@@ -106,7 +106,7 @@
       "scale": "6.3 GB of ASN sample data",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Insiden terpisah dari klaim 'TopiAx' Agustus 2024; ini intrusi yang dituntut secara pidana.",
+      "verification_note": "A separate incident from the 'TopiAx' claim of August 2024; this is an intrusion that was criminally prosecuted.",
       "sources": [
         {
           "outlet": "The Jakarta Post",
@@ -136,7 +136,7 @@
       "scale": "204,807,203 unique voter records (252 million raw entries)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "KPU tidak mengonfirmasi asal data; figur dari klaim penjual, divalidasi peneliti (Resecurity/VOI).",
+      "verification_note": "KPU did not confirm the origin of the data; the figure comes from the seller's claim, validated by researchers (Resecurity/VOI).",
       "sources": [
         {
           "outlet": "Resecurity",
@@ -172,7 +172,7 @@
       "scale": "1,304,401,300 SIM registration records (~87 GB)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Sumber/pengendali data disengketakan; skala dari klaim penjual.",
+      "verification_note": "The source/data controller is disputed; the scale comes from the seller's claim.",
       "sources": [
         {
           "outlet": "The Jakarta Post",
@@ -208,7 +208,7 @@
       "scale": "~34.9 million passport records (2009-2020)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Atribusi/asal tidak dikonfirmasi resmi; angka 34-34,9 juta bervariasi antar sumber.",
+      "verification_note": "Attribution/origin not officially confirmed; the figure of 34-34.9 million varies across sources.",
       "sources": [
         {
           "outlet": "The Jakarta Post",
@@ -244,7 +244,7 @@
       "scale": "~6 million (reported up to 6.6 million) NPWP records",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "DJP membantah; skala 6-6,6 juta dari klaim penjual, belum dikonfirmasi resmi.",
+      "verification_note": "DJP denied it; the scale of 6-6.6 million comes from the seller's claim and has not been officially confirmed.",
       "sources": [
         {
           "outlet": "Tempo (English)",
@@ -280,7 +280,7 @@
       "scale": "Not disclosed (sample files only)",
       "record_type": "single_incident",
       "confidence": "medium",
-      "verification_note": "Berbasis klaim pelaku; TNI hanya menyatakan investigasi.",
+      "verification_note": "Based on the perpetrator's claim; the TNI only stated that an investigation was underway.",
       "sources": [
         {
           "outlet": "Jakarta Globe",
@@ -316,7 +316,7 @@
       "scale": "Not disclosed (fingerprint images, emails, configurations)",
       "record_type": "single_incident",
       "confidence": "medium",
-      "verification_note": "Berbasis klaim pelaku; BSSN/Polri menyebut data lama.",
+      "verification_note": "Based on the perpetrator's claim; BSSN/Polri described it as old data.",
       "sources": [
         {
           "outlet": "VOI",
@@ -352,7 +352,7 @@
       "scale": "Individual exposure of a public figure (the President's vaccine certificate)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Diklasifikasikan 'other' (eksposur via fitur/akses lemah); asal data diperdebatkan pejabat.",
+      "verification_note": "Classified as 'other' (exposure via a feature/weak access); the origin of the data was disputed by officials.",
       "sources": [
         {
           "outlet": "The Jakarta Post",
@@ -388,7 +388,7 @@
       "scale": "~6 million patient medical records / ~720 GB",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Skala 6 juta/720 GB dari klaim penjual; diselidiki Kemenkes.",
+      "verification_note": "The scale of 6 million/720 GB comes from the seller's claim; investigated by the Health Ministry.",
       "sources": [
         {
           "outlet": "Tempo (English)",
@@ -424,7 +424,7 @@
       "scale": "~279 million records (claimed; largely duplicative relative to the population)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Investigasi tidak konklusif; figur klaim, melebihi jumlah peserta riil (indikasi duplikasi).",
+      "verification_note": "The investigation was inconclusive; the figure is a claim and exceeds the actual number of members (an indication of duplication).",
       "sources": [
         {
           "outlet": "Tempo (English)",
@@ -460,7 +460,7 @@
       "scale": "~1.3 million users (1.4 million+ records)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Eksposur (misconfig) ditemukan peneliti; bukan eksfiltrasi jahat; skala estimasi vpnMentor.",
+      "verification_note": "An exposure (misconfiguration) found by researchers; not a malicious exfiltration; the scale is a vpnMentor estimate.",
       "sources": [
         {
           "outlet": "vpnMentor",
@@ -496,7 +496,7 @@
       "scale": "Two major Jakarta hospitals; nearly all Dharmais computers affected",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Rumah sakit disebut spesifik; insiden disruptif (bukan eksfiltrasi).",
+      "verification_note": "The hospitals are specifically named; a disruptive incident (not an exfiltration).",
       "sources": [
         {
           "outlet": "The Jakarta Post",
@@ -532,7 +532,7 @@
       "scale": "Compromise of a legacy app domain (no patient data leak)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Pembajakan/defacement domain legacy, bukan kebocoran data pasien.",
+      "verification_note": "Hijacking/defacement of a legacy domain, not a leak of patient data.",
       "sources": [
         {
           "outlet": "Tempo (English)",
@@ -562,7 +562,7 @@
       "scale": "A single regency-instance database (count not stated); data spanning 2020-2025",
       "record_type": "single_incident",
       "confidence": "medium",
-      "verification_note": "Sumber tunggal intel dark web; 'alleged', tidak dikonfirmasi independen.",
+      "verification_note": "A single dark-web intelligence source; alleged, not independently confirmed.",
       "sources": [
         {
           "outlet": "Daily Dark Web",
@@ -592,7 +592,7 @@
       "scale": "~25 GB (claimed)",
       "record_type": "single_incident",
       "confidence": "medium",
-      "verification_note": "Tidak dikonfirmasi; sumber tunggal; skala klaim pelaku.",
+      "verification_note": "Not confirmed; single source; the scale is the perpetrator's claim.",
       "sources": [
         {
           "outlet": "Cyber Press",
@@ -622,7 +622,7 @@
       "scale": "Unknown (defacement; perpetrator claims database access)",
       "record_type": "single_incident",
       "confidence": "medium",
-      "verification_note": "Defacement dilaporkan; klaim akses DB belum dikonfirmasi Kejagung.",
+      "verification_note": "The defacement was reported; the claim of database access has not been confirmed by the Attorney General's Office (Kejagung).",
       "sources": [
         {
           "outlet": "VOI",
@@ -658,7 +658,7 @@
       "scale": "A single faculty web application (FIND IT! / findit.ft.ugm.ac.id)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Defacement (bukan kebocoran data); universitas disebut spesifik dengan sumber media nasional.",
+      "verification_note": "Defacement (not a data leak); the university is specifically named, with national media sources.",
       "sources": [
         {
           "outlet": "Detik",
@@ -724,7 +724,7 @@
       "scale": "~13.88 GB of documents; non-critical employee data on more than a dozen systems",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Serangan Desember 2021, diungkap Januari 2022.",
+      "verification_note": "Attack in December 2021, disclosed in January 2022.",
       "sources": [
         {
           "outlet": "BleepingComputer",
@@ -760,7 +760,7 @@
       "scale": "More than USD 22 million in crypto assets",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Atribusi Lazarus belum dikonfirmasi.",
+      "verification_note": "The Lazarus attribution has not been confirmed.",
       "sources": [
         {
           "outlet": "CoinDesk",
@@ -796,7 +796,7 @@
       "scale": "~896,169 customer records",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Skala ~896 ribu, bukan jutaan.",
+      "verification_note": "The scale is ~896,000, not millions.",
       "sources": [
         {
           "outlet": "CNN Indonesia",
@@ -868,7 +868,7 @@
       "scale": ">2 million customers; ~460,000 documents",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Angka 2 juta dari listing pelaku; perusahaan mengonfirmasi investigasi.",
+      "verification_note": "The figure of 2 million comes from the perpetrator's listing; the company confirmed an investigation.",
       "sources": [
         {
           "outlet": "The Jakarta Post (Reuters)",
@@ -904,7 +904,7 @@
       "scale": "Unknown (individual borrower complaints; a viral alleged suicide)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Kasus perilaku/perlindungan konsumen, bukan kebocoran data; dugaan bunuh diri tidak terverifikasi, sanksi OJK terkonfirmasi.",
+      "verification_note": "A conduct/consumer-protection case, not a data leak; the alleged suicide is unverified, while the OJK sanction is confirmed.",
       "sources": [
         {
           "outlet": "OJK (siaran pers resmi)",
@@ -940,7 +940,7 @@
       "scale": "Rp119.96 billion; 483 anomalous transactions",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "BI menyatakan sistem inti BI-Fast tidak dibobol; kelemahan di sisi peserta.",
+      "verification_note": "BI stated that the core BI-Fast system was not breached; the weakness was on the participant's side.",
       "sources": [
         {
           "outlet": "Tirto.id",
@@ -976,7 +976,7 @@
       "scale": "~Rp227.1 billion; 807 anomalous transactions",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Angka disebut 'diduga'; investigasi pidana berjalan; bagian dari estimasi ~Rp800 miliar lintas 8 bank.",
+      "verification_note": "The figures are described as 'alleged'; a criminal investigation is underway; part of an estimated ~Rp800 billion across 8 banks.",
       "sources": [
         {
           "outlet": "Tempo",
@@ -1048,7 +1048,7 @@
       "scale": "~13 million accounts (12.9-13.4 million)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Pelanggaran berasal 2017; dijual/diumumkan Maret 2019.",
+      "verification_note": "The breach originated in 2017; sold/announced in March 2019.",
       "sources": [
         {
           "outlet": "KrASIA (mengutip ZDNet)",
@@ -1084,7 +1084,7 @@
       "scale": "~1,262,300 accounts",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Pembobolan Jan 2020; penyebaran Juli 2020.",
+      "verification_note": "Breach in January 2020; dissemination in July 2020.",
       "sources": [
         {
           "outlet": "HackRead",
@@ -1120,7 +1120,7 @@
       "scale": "1.1 million accounts",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Insiden regional: RedMart berbasis Singapura; ditandai sebagai rujukan regional, BUKAN insiden domestik Indonesia.",
+      "verification_note": "A regional incident: RedMart is based in Singapore; flagged as a regional reference, NOT a domestic Indonesian incident.",
       "sources": [
         {
           "outlet": "BleepingComputer",
@@ -1156,7 +1156,7 @@
       "scale": "26,730,798 browsing-history records",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Telkom membantah; jumlah/field konsisten lintas Tempo, Kompas, CNBC Indonesia, DataBreaches.net.",
+      "verification_note": "Telkom denied it; the figures/fields are consistent across Tempo, Kompas, CNBC Indonesia, and DataBreaches.net.",
       "sources": [
         {
           "outlet": "Tempo (English)",
@@ -1192,7 +1192,7 @@
       "scale": "~35,900,002 records (claimed)",
       "record_type": "single_incident",
       "confidence": "medium",
-      "verification_note": "Telkom membantah; skala dari klaim pelaku; berbeda dari insiden riwayat browsing 2022.",
+      "verification_note": "Telkom denied it; the scale comes from the perpetrator's claim; distinct from the 2022 browsing-history incident.",
       "sources": [
         {
           "outlet": "Kompas.id (English)",
@@ -1228,7 +1228,7 @@
       "scale": ">17 million customers",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "PLN menyebut salinan dashboard publik; atribusi pelaku tak pasti.",
+      "verification_note": "PLN described it as a copy of a public dashboard; the attribution of the perpetrator is uncertain.",
       "sources": [
         {
           "outlet": "Coconuts Jakarta",
@@ -1264,7 +1264,7 @@
       "scale": "44 million records / ~6 million unique emails",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Terindeks HIBP (tanggal Nov 2022); atribusi 'Bjorka' tak terkonfirmasi.",
+      "verification_note": "Indexed by HIBP (dated November 2022); the 'Bjorka' attribution is not confirmed.",
       "sources": [
         {
           "outlet": "Have I Been Pwned",
@@ -1300,7 +1300,7 @@
       "scale": "252 GB from 5 servers (corporate & employee data)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Jasa Marga menyatakan tak ada data pelanggan; dikuatkan pernyataan DESORDEN.",
+      "verification_note": "Jasa Marga stated that no customer data was involved; corroborated by DESORDEN's statement.",
       "sources": [
         {
           "outlet": "CloudSEK",
@@ -1336,7 +1336,7 @@
       "scale": "Unverified (claimed employee, customer, tax, and corporate data)",
       "record_type": "single_incident",
       "confidence": "medium",
-      "verification_note": "KAI membantah; skala dari klaim pelaku.",
+      "verification_note": "KAI denied it; the scale comes from the perpetrator's claim.",
       "sources": [
         {
           "outlet": "ICSSTRIVE",
@@ -1372,7 +1372,7 @@
       "scale": ">30 million passenger records",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Lintas-batas; CEO menyebut jumlah pasti tak diketahui, peneliti menyebut 30 juta+.",
+      "verification_note": "Cross-border; the CEO said the exact number is unknown, while researchers cited 30 million+.",
       "sources": [
         {
           "outlet": "South China Morning Post",
@@ -1402,7 +1402,7 @@
       "scale": "~100 victims across 20 of 38 provinces; ~Rp65 million (one cell)",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Figur bervariasi antar sumber (satu sel ~Rp65 juta dari ~100 korban; sel lain ~Rp30 juta dari ~11 korban).",
+      "verification_note": "Figures vary across sources (one cell ~Rp65 million from ~100 victims; another cell ~Rp30 million from ~11 victims).",
       "sources": [
         {
           "outlet": "Anadolu Agency",
@@ -1438,7 +1438,7 @@
       "scale": "~30 victims (including minors aged 16-19); thousands of files found",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Kasus AI-NCII bernama dan dituntut terkuat; ancaman pidana berbeda antar artikel (9-12 tahun); sebagian korban minor.",
+      "verification_note": "The most strongly named and prosecuted AI-NCII case; the criminal penalty differs across articles (9-12 years); some victims are minors.",
       "sources": [
         {
           "outlet": "Tempo",
@@ -1474,7 +1474,7 @@
       "scale": "Viral on X ahead of the 14 Feb 2024 election",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Angka tayangan (~4,7 juta) beredar tetapi tidak dikonfirmasi sumber yang ter-fetch, sehingga tidak dicantumkan.",
+      "verification_note": "A viewership figure (~4.7 million) circulated but was not confirmed by the fetched sources, so it is not included.",
       "sources": [
         {
           "outlet": "CNN",
@@ -1510,7 +1510,7 @@
       "scale": "Circulated on TikTok ahead of the 14 Feb 2024 election; affecting several candidates",
       "record_type": "pattern_aggregate",
       "confidence": "medium",
-      "verification_note": "Pola multi-kandidat, bukan satu kasus yang dituntut; klaim '1,7 juta tayangan/3 hari' tidak terkonfirmasi, sehingga dikecualikan.",
+      "verification_note": "A multi-candidate pattern, not a single prosecuted case; the claim of '1.7 million views in 3 days' is not confirmed, so it is excluded.",
       "sources": [
         {
           "outlet": "Context / Thomson Reuters Foundation",
@@ -1540,7 +1540,7 @@
       "scale": "Circulated widely on social media for several days, mid-August 2025",
       "record_type": "single_incident",
       "confidence": "high",
-      "verification_note": "Sebagian komentar mengaitkan ke kerusuhan Agt/Sep 2025, namun kausalitas langsung tidak ditegakkan sumber, sehingga tidak dimasukkan.",
+      "verification_note": "Some commentary linked it to the August/September 2025 unrest, but a direct causal link was not established by the sources, so it is not included.",
       "sources": [
         {
           "outlet": "Metro TV News",
@@ -1570,7 +1570,7 @@
       "scale": "Rp7.8 trillion (~USD 474 million) in losses Nov 2024-Nov 2025; 70,000+ reports as of Aug 2025",
       "record_type": "pattern_aggregate",
       "confidence": "high",
-      "verification_note": "Statistik resmi OJK; total Rp7,8 triliun mencakup seluruh penipuan ber-AI (voice + deepfake), bukan voice cloning saja. Agregat, bukan insiden tunggal.",
+      "verification_note": "Official OJK statistics; the Rp7.8 trillion total covers all AI-enabled fraud (voice + deepfake), not voice cloning alone. An aggregate, not a single incident.",
       "sources": [
         {
           "outlet": "Fintech News Indonesia",

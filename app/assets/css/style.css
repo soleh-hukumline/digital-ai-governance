@@ -722,3 +722,38 @@ input[type="text"], input[type="password"], textarea, select {
 
 /* Loading state */
 .loading { color:var(--text-4); font-style:italic; padding:1.5rem; text-align:center; font-size:0.875rem; }
+
+/* =====================================================
+   RESPONSIVENESS / OVERFLOW GUARDS
+   ===================================================== */
+html, body { max-width: 100%; overflow-x: hidden; }
+.section-panel, .section-panel.active { overflow-x: hidden; }
+.card, .card-body { max-width: 100%; }
+
+/* Long unbroken tokens (e.g. Council_of_Europe_..._Article_1) must wrap */
+.ni-title, .ni-body, .ic-body, .ic-row, .ic-causal,
+.markdown-prose, .markdown-prose td, .markdown-prose th,
+.metrics-table td, .metrics-table th {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Wide tables scroll instead of pushing the page */
+.markdown-prose table { display: block; width: 100%; overflow-x: auto; }
+#metrics-table-all, [id^="ranking-"] { overflow-x: auto; }
+
+/* Node inspector: keep inside the canvas, scroll long connection lists */
+.node-inspector-panel {
+  width: 290px;
+  max-width: calc(100% - 24px);
+  max-height: calc(100% - 24px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.node-inspector-panel * { overflow-wrap: anywhere; word-break: break-word; }
+
+/* Sector cards: collapse to one column on small screens */
+@media (max-width: 720px) {
+  .two-col, .cn-grid { grid-template-columns: 1fr; }
+  .sector-grid { grid-template-columns: 1fr; }
+}

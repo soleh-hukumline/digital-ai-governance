@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let rawIncidentData = [];
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
+    const DATA_V = '20260614_7';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -265,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById(containerId);
         if (!container) return;
         try {
-            const res = await fetch(`./system/legal_network_framework/${filename}`);
+            const res = await fetch(`./system/legal_network_framework/${filename}?v=${DATA_V}`);
             if (!res.ok) throw new Error('404');
             const mdText = await res.text();
             container.innerHTML = marked.parse(mdText);
@@ -311,23 +312,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 return other ? other.label : otherId;
             }).slice(0, 5);
 
-        let coverageBadge = '';
-        if (degree === 0) coverageBadge = `<span class="badge gap">Isolated — Gap Detected</span>`;
-        else if (degree <= 2) coverageBadge = `<span class="badge partial">Low Connectivity</span>`;
-        else coverageBadge = `<span class="badge covered">High Connectivity · Hub Node</span>`;
-
         const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
+        let coverageBadge = '';
+        if (degree === 0) coverageBadge = `<span class="badge gap">${isEn ? 'Isolated — Gap Detected' : 'Terisolasi — Celah Terdeteksi'}</span>`;
+        else if (degree <= 2) coverageBadge = `<span class="badge partial">${isEn ? 'Low Connectivity' : 'Konektivitas Rendah'}</span>`;
+        else coverageBadge = `<span class="badge covered">${isEn ? 'High Connectivity · Hub Node' : 'Konektivitas Tinggi · Node Hub'}</span>`;
+
         const degreeLbl = isEn ? 'Connection Degree:' : 'Degree Koneksi:';
         const connectedLbl = isEn ? 'Connected to:' : 'Terhubung ke:';
         const othersLbl = isEn ? `...and ${degree - 5} others` : `...dan ${degree - 5} lainnya`;
 
         return `
-            <div style="font-size:0.78rem; margin-bottom:0.5rem; color:#6366f1; font-weight:700; letter-spacing:0.5px; text-transform:uppercase;">${nodeData.group || 'Unknown'}</div>
+            <div style="font-size:0.78rem; margin-bottom:0.5rem; color:var(--primary); font-weight:700; letter-spacing:0.5px; text-transform:uppercase;">${nodeData.group || 'Unknown'}</div>
             <div style="font-size:0.85rem; color:var(--text-2); margin-bottom:0.75rem; line-height:1.4;">${nodeData.id}</div>
             ${coverageBadge}
-            <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px solid rgba(255,255,255,0.08);">
-                <div style="font-size:0.75rem; color:var(--text-3); margin-bottom:4px;">${degreeLbl} <strong style="color:#fff;">${degree}</strong></div>
-                ${connectedNodes.length > 0 ? `<div style="font-size:0.72rem; color:var(--text-3);">${connectedLbl}<br>${connectedNodes.map(n => `<span style="color:#818cf8;">• ${n}</span>`).join('<br>')}${degree > 5 ? `<br><span style="color:#64748b;">${othersLbl}</span>` : ''}</div>` : ''}
+            <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px solid var(--border);">
+                <div style="font-size:0.75rem; color:var(--text-3); margin-bottom:4px;">${degreeLbl} <strong style="color:var(--text-1);">${degree}</strong></div>
+                ${connectedNodes.length > 0 ? `<div style="font-size:0.72rem; color:var(--text-3);">${connectedLbl}<br>${connectedNodes.map(n => `<span style="color:var(--primary);">• ${n}</span>`).join('<br>')}${degree > 5 ? `<br><span style="color:var(--text-4);">${othersLbl}</span>` : ''}</div>` : ''}
             </div>
         `;
     }
@@ -359,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Jangan override height HTML — sudah 600px, biarkan apa adanya
                 container.innerHTML = '<div style="color:#6366f1; text-align:center; padding-top:60px; font-family:Outfit; font-size:1.1rem; opacity:0.8;">⚡ Kalkulasi Gravitasi Jaringan...</div>';
 
-                const res = await fetch(`./data/network/${model.graph}`);
+                const res = await fetch(`./data/network/${model.graph}?v=${DATA_V}`);
                 const rawData = await res.json();
 
                 // Inject thematic edges for intl graph
@@ -599,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
             const suffix = isEn ? '_en' : '';
-            const res = await fetch(`./data/incidents/indonesia_incidents${suffix}.json`);
+            const res = await fetch(`./data/incidents/indonesia_incidents${suffix}.json?v=${DATA_V}`);
             const json = await res.json();
             rawIncidentData = json.incidents;
             renderIncidentCards(rawIncidentData);
@@ -629,8 +630,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const sourcesHtml = srcArr.length
                 ? srcArr.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" style="color:var(--primary); text-decoration:underline;" title="${String(s.title || '').replace(/"/g, '&quot;')}${s.date ? ' (' + s.date + ')' : ''}">${s.outlet || 'sumber'}</a>`).join(' · ')
                 : '<span style="color:var(--text-4);">—</span>';
+            const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
+            const L = isEn
+                ? { pelaku: 'Perpetrator:', pse: 'Operator (PSE):', kualifikasi: 'Qualification:', nexus: 'Causal Nexus:', sumber: 'Source:' }
+                : { pelaku: 'Pelaku:', pse: 'PSE:', kualifikasi: 'Kualifikasi:', nexus: 'Nexus Kausalitas:', sumber: 'Sumber:' };
             const confColor = inc.confidence === 'high' ? 'var(--emerald)' : 'var(--amber)';
-            const confLabel = inc.confidence === 'high' ? 'Keyakinan tinggi' : 'Keyakinan sedang';
+            const confLabel = inc.confidence === 'high' ? (isEn ? 'High confidence' : 'Keyakinan tinggi') : (isEn ? 'Medium confidence' : 'Keyakinan sedang');
             container.innerHTML += `
                 <div class="incident-card">
                     <div class="ic-top">
@@ -641,23 +646,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="ic-meta">
                         <div class="ic-row">
                             <span class="material-symbols-rounded" style="color:var(--rose);">warning</span>
-                            <span><strong style="color:var(--text-3);">Pelaku:</strong> <span style="color:var(--text-2);">${inc.pemetaan_fakta_hukum.subjek_pelaku}</span></span>
+                            <span><strong style="color:var(--text-3);">${L.pelaku}</strong> <span style="color:var(--text-2);">${inc.pemetaan_fakta_hukum.subjek_pelaku}</span></span>
                         </div>
                         <div class="ic-row">
                             <span class="material-symbols-rounded" style="color:var(--sky);">account_balance</span>
-                            <span><strong style="color:var(--text-3);">PSE:</strong> <span style="color:var(--text-2);">${inc.pemetaan_fakta_hukum.subjek_pse}</span></span>
+                            <span><strong style="color:var(--text-3);">${L.pse}</strong> <span style="color:var(--text-2);">${inc.pemetaan_fakta_hukum.subjek_pse}</span></span>
                         </div>
                         <div class="ic-row">
                             <span class="material-symbols-rounded" style="color:var(--amber);">gavel</span>
-                            <span><strong style="color:var(--text-3);">Kualifikasi:</strong> <span style="color:var(--text-2);">${inc.kualifikasi_peristiwa}</span></span>
+                            <span><strong style="color:var(--text-3);">${L.kualifikasi}</strong> <span style="color:var(--text-2);">${inc.kualifikasi_peristiwa}</span></span>
                         </div>
                         <div class="ic-causal">
-                            <strong>Nexus Kausalitas:</strong>
+                            <strong>${L.nexus}</strong>
                             <span>${inc.pemetaan_fakta_hukum.nexus_kausalitas}</span>
                         </div>
                         <div class="ic-row" style="border-top:1px solid var(--border); padding-top:8px;">
                             <span class="material-symbols-rounded" style="color:var(--primary);">link</span>
-                            <span><strong style="color:var(--text-3);">Sumber:</strong> ${sourcesHtml}</span>
+                            <span><strong style="color:var(--text-3);">${L.sumber}</strong> ${sourcesHtml}</span>
                         </div>
                         <div class="ic-row">
                             <span class="material-symbols-rounded" style="color:${confColor};">verified</span>
@@ -1290,7 +1295,7 @@ Daftar dokumen hukum (mis. klausul consent, DPIA) dan artefak teknis (mis. audit
 
         // Load Incidents for Dropdown
         try {
-            const res = await fetch('./data/network/legal_graph.json');
+            const res = await fetch(`./data/network/legal_graph.json?v=${DATA_V}`);
             aiNetworkData = await res.json();
             aiIncidentNodes = aiNetworkData.nodes.filter(n => n.group === 'Insiden Kasus');
             const selectEl = document.getElementById('ai-incident-select');
@@ -1817,6 +1822,18 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
         cont.innerHTML = html;
         if (typeof applyTranslations === 'function') applyTranslations();
     }
+
+    // Re-render metric + ranking tables in the active language (called by toggleLanguage)
+    window.reRenderAllMetrics = function () {
+        Object.entries(networkInstances || {}).forEach(([id, inst]) => {
+            if (inst && inst.graphData) {
+                try {
+                    populateMetricsTable(id, inst.graphData);
+                    populateRankingTable(id, inst.graphData);
+                } catch (e) { /* ignore */ }
+            }
+        });
+    };
 
     // ===================================================================
     // EXPORT: CSV — Full Academic-Grade LNA Metrics

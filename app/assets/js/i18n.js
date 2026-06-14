@@ -86,7 +86,22 @@ const i18nDict = {
     'Kualifikasi:': 'Qualification:',
     'Nexus Kausalitas:': 'Causality Nexus:',
     'Degree Koneksi:': 'Connection Degree:',
-    'Terhubung ke:': 'Connected to:'
+    'Terhubung ke:': 'Connected to:',
+
+    // Section header subtitles & badges
+    'Semua jaringan regulasi · International + Nasional + Insiden': 'All regulatory networks · International + National + Incidents',
+    'Pemetaan Semantic Similarity lintas yurisdiksi · Full/Partial/Low': 'Cross-jurisdiction Semantic Similarity mapping · Full/Partial/Low',
+    'Pemetaan 45 insiden siber riil ke regulasi · Structural Holes': 'Mapping 45 real cyber incidents to regulations · Structural Holes',
+    'Sektor Prioritas · Coverage Score · Pemetaan Regulasi': 'Priority Sectors · Coverage Score · Regulation Mapping',
+    'Konsolidasi Temuan LNA · Coverage per Klaster · Connected Components': 'Consolidated LNA Findings · Coverage per Cluster · Connected Components',
+    'Registry 45 kasus riil bersumber · Searchable · Filter per kategori': 'Registry of 45 sourced real cases · Searchable · Filter by category',
+    'Argumentasi Toulmin + Panduan Praktisi · Gemini · Groq': 'Toulmin Argumentation + Practitioner Guide · Gemini · Groq',
+    'Regulasi Internasional': 'International Regulations',
+    'Regulasi Nasional Indonesia': 'Indonesian National Regulations',
+    'Analisis Kasus Forensik': 'Forensic Case Analysis',
+    'Analisis Kesenjangan Regulasi Per Sektor': 'Per-Sector Regulatory Gap Analysis',
+    '45 Insiden Riil Bersumber · Warrant Mapping': '45 Sourced Real Incidents · Warrant Mapping',
+    'Registry 45 Kasus Riil': 'Registry of 45 Real Cases'
 };
 
 // Build reverse dictionary for switching back to ID

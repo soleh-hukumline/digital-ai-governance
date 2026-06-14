@@ -989,7 +989,7 @@ def build():
             "scale": o.get("scale_en", inc["scale"]),
             "record_type": inc["record_type"],
             "confidence": inc["confidence"],
-            "verification_note": inc["verification_note"],
+            "verification_note": o.get("verification_note_en", inc["verification_note"]),
             "sources": inc["sources"],
         })
     en_meta = dict(data["metadata"])
