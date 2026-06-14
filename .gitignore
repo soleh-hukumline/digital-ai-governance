@@ -60,3 +60,7 @@ frontend_error.log
 .gemini_key
 *.key
 .env
+
+# Office temp/lock files
+~$*
+*.tmp
