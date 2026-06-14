@@ -22,6 +22,20 @@ DEFAULT = os.path.join(NET, 'validation_3way_coded.csv')
 DEMO = os.path.join(NET, 'validation_3way_DEMO.csv')
 
 
+def load_rows(path):
+    """Read coded rows from .csv OR .xlsx (first sheet; first row = header)."""
+    if path.lower().endswith('.xlsx'):
+        import openpyxl
+        wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+        ws = wb.active
+        data = list(ws.iter_rows(values_only=True))
+        if not data:
+            return []
+        head = [str(h).strip() if h is not None else '' for h in data[0]]
+        return [{head[i]: r[i] if i < len(r) else None for i in range(len(head))} for r in data[1:]]
+    return list(csv.DictReader(open(path, encoding='utf-8')))
+
+
 def to01(v):
     v = str(v).strip().lower()
     if v in ('1', 'yes', 'y', 'true', 'relevant'): return 1
@@ -60,8 +74,9 @@ def klabel(k):
 def main():
     path = sys.argv[1] if len(sys.argv) > 1 else (DEFAULT if os.path.exists(DEFAULT) else DEMO if os.path.exists(DEMO) else None)
     if not path:
-        raise SystemExit('No coded file. Run make_3way_sample.py, code it, save as validation_3way_coded.csv.')
-    rows = list(csv.DictReader(open(path, encoding='utf-8')))
+        raise SystemExit('No coded file. Code the template, save as validation_3way_coded.csv '
+                         '(or pass an .xlsx path: python validate_3way.py path/to/file.xlsx).')
+    rows = load_rows(path)
     demo = path.endswith('DEMO.csv')
 
     print('=' * 64)
