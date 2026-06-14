@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (e) {
             container.innerHTML = `<div style="color:#ef4444; border:1px solid rgba(239,68,68,0.3); background:rgba(239,68,68,0.05); padding:1.5rem; border-radius:12px; margin:1rem;">
                 <h3>⚠️ Gagal Membaca ${filename}</h3>
-                <p style="color:#94a3b8; font-size:0.85rem; margin-top:0.5rem;">File laporan belum di-generate. Jalankan Python analyzer untuk membuat file ini.</p>
+                <p style="color:var(--text-3); font-size:0.85rem; margin-top:0.5rem;">File laporan belum di-generate. Jalankan Python analyzer untuk membuat file ini.</p>
             </div>`;
         }
     }
@@ -323,11 +323,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return `
             <div style="font-size:0.78rem; margin-bottom:0.5rem; color:#6366f1; font-weight:700; letter-spacing:0.5px; text-transform:uppercase;">${nodeData.group || 'Unknown'}</div>
-            <div style="font-size:0.85rem; color:#e2e8f0; margin-bottom:0.75rem; line-height:1.4;">${nodeData.id}</div>
+            <div style="font-size:0.85rem; color:var(--text-2); margin-bottom:0.75rem; line-height:1.4;">${nodeData.id}</div>
             ${coverageBadge}
             <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px solid rgba(255,255,255,0.08);">
-                <div style="font-size:0.75rem; color:#94a3b8; margin-bottom:4px;">${degreeLbl} <strong style="color:#fff;">${degree}</strong></div>
-                ${connectedNodes.length > 0 ? `<div style="font-size:0.72rem; color:#94a3b8;">${connectedLbl}<br>${connectedNodes.map(n => `<span style="color:#818cf8;">• ${n}</span>`).join('<br>')}${degree > 5 ? `<br><span style="color:#64748b;">${othersLbl}</span>` : ''}</div>` : ''}
+                <div style="font-size:0.75rem; color:var(--text-3); margin-bottom:4px;">${degreeLbl} <strong style="color:#fff;">${degree}</strong></div>
+                ${connectedNodes.length > 0 ? `<div style="font-size:0.72rem; color:var(--text-3);">${connectedLbl}<br>${connectedNodes.map(n => `<span style="color:#818cf8;">• ${n}</span>`).join('<br>')}${degree > 5 ? `<br><span style="color:#64748b;">${othersLbl}</span>` : ''}</div>` : ''}
             </div>
         `;
     }
@@ -391,9 +391,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 uniqueGroups.forEach((groupName, idx) => {
                     const color = palette[idx % palette.length];
                     visGroupsObj[groupName] = { color: { background: color, border: 'rgba(0,0,0,0.5)' } };
-                    legendHtml += `<div style="display:inline-flex; align-items:center; background:rgba(0,0,0,0.4); padding:3px 10px; border-radius:20px; font-size:11px;">
+                    legendHtml += `<div style="display:inline-flex; align-items:center; background:var(--legend-chip); padding:3px 10px; border-radius:20px; font-size:11px;">
                                      <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:${color}; margin-right:6px;"></span>
-                                     <span style="color:#e2e8f0;">${groupName}</span>
+                                     <span style="color:var(--text-2);">${groupName}</span>
                                    </div>`;
                 });
 
@@ -401,9 +401,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (model.id === 'intl') {
                     legendHtml += '<div style="width:100%; padding-top:8px; padding-bottom:2px; font-size:10px; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Tema Koneksi:</div>';
                     for (const [theme, color] of Object.entries(THEME_COLORS)) {
-                        legendHtml += `<div style="display:inline-flex; align-items:center; background:rgba(0,0,0,0.4); padding:3px 10px; border-radius:20px; font-size:10px;">
+                        legendHtml += `<div style="display:inline-flex; align-items:center; background:var(--legend-chip); padding:3px 10px; border-radius:20px; font-size:10px;">
                             <span style="display:inline-block; width:18px; height:2px; background:${color}; margin-right:6px; border-radius:2px;"></span>
-                            <span style="color:#e2e8f0;">${theme}</span>
+                            <span style="color:var(--text-2);">${theme}</span>
                         </div>`;
                     }
                 }
@@ -418,29 +418,45 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: `[${n.group}] ${n.label}`
                 })));
 
-                const edges = new vis.DataSet(graphData.edges.map(e => {
-                    const eColor = getEdgeColorFromLabel(e.label || '', model.id);
+                const edges = new vis.DataSet(graphData.edges.map((e, i) => {
+                    // getEdgeColorFromLabel returns a vis color OBJECT ({color, highlight[, opacity]})
+                    const eColor = getEdgeColorFromLabel(e.label || '', model.id) || {};
+                    const colorObj = Object.assign({}, eColor, {
+                        opacity: eColor.opacity != null ? eColor.opacity : (model.id === 'cross' ? 0.55 : 0.3)
+                    });
                     return {
+                        id: 'e' + i,
                         from: e.from, to: e.to,
                         title: e.label || '',
                         label: '',
                         arrows: e.arrows || 'to',
-                        color: eColor,
-                        width: model.id === 'cross' ? 2 : 1,
-                        smooth: { type: 'curvedCW', roundness: 0.15 }
+                        // straight + translucent: thousands of opaque curves were unreadable
+                        color: colorObj,
+                        width: model.id === 'cross' ? 1.6 : 0.7,
+                        smooth: false
                     };
                 }));
+
+                // Label reduction: labelling all ~800 nodes is the main readability
+                // killer, so only label incident nodes + high-degree hubs. The rest
+                // keep their tooltip (title) and reveal their label on zoom-in.
+                const degMap = {};
+                graphData.edges.forEach(e => { degMap[e.from] = (degMap[e.from] || 0) + 1; degMap[e.to] = (degMap[e.to] || 0) + 1; });
+                const degSorted = Object.values(degMap).sort((a, b) => b - a);
+                const hubCut = degSorted.length ? degSorted[Math.min(degSorted.length - 1, Math.floor(degSorted.length * 0.12))] : 1;
+                const graphFont = (getComputedStyle(document.documentElement).getPropertyValue('--graph-font') || '#ffffff').trim();
+                const isIncidentNode = n => n.group === 'Insiden Kasus' || String(n.classification || '').includes('Insiden');
+                const labelFor = n => (isIncidentNode(n) || (degMap[n.id] || 0) >= Math.max(hubCut, 4)) ? n.label : undefined;
 
                 // Pre-assign circular positions so nodes are spread out
                 // (prevents 0x0 canvas stacking bug when section is display:none)
                 const N = graphData.nodes.length;
-                const radius = Math.max(300, N * 4);
+                const radius = Math.max(220, N * 1.4);
                 const positionedNodeData = graphData.nodes.map((n, i) => {
                     const angle = (2 * Math.PI * i) / N;
-                    // Add slight random jitter to avoid exact overlap for similar-group nodes
                     const r = radius + (Math.random() - 0.5) * radius * 0.5;
                     return {
-                        id: n.id, label: n.label, group: n.group,
+                        id: n.id, label: labelFor(n), group: n.group,
                         classification: n.classification,
                         value: n.value || 10,
                         title: `[${n.group}] ${n.label}`,
@@ -458,29 +474,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     nodes: {
                         shape: 'dot',
-                        font: { color: '#ffffff', face: 'Inter', size: 12 },
+                        font: { color: graphFont, face: 'Inter', size: 13, strokeWidth: 0 },
+                        borderWidth: 1.5,
                         scaling: {
                             label: {
                                 enabled: true,
-                                min: 8,
-                                max: 48,
-                                maxVisible: 150,  // Allows text to get very large when zooming in closely
-                                drawThreshold: 1  // Renders even when zoomed out
+                                min: 10,
+                                max: 40,
+                                maxVisible: 200,
+                                drawThreshold: 7   // hidden labels reappear as you zoom in
                             }
                         },
-                        shadow: { enabled: true, color: 'rgba(0,0,0,0.5)', size: 10, x: 2, y: 2 }
+                        shadow: { enabled: false }
                     },
                     edges: {
-                        smooth: { type: 'curvedCW', roundness: 0.15 }
+                        smooth: false,            // straight lines read far better at this density
+                        hoverWidth: 1.4,
+                        selectionWidth: 2
                     },
                     physics: {
                         forceAtlas2Based: {
-                            gravitationalConstant: -75,  // Tarikan berdekatan agar sangat padat
-                            centralGravity: 0.008,       // Tarik semua klaster ke tengah
-                            springLength: 90,            // Jarak antar node pendek
-                            springConstant: 0.05,
+                            gravitationalConstant: -55,   // compact cluster so nodes stay legible at fit
+                            centralGravity: 0.02,         // pull clusters toward centre (avoid microscopic fit)
+                            springLength: 75,
+                            springConstant: 0.06,
                             damping: 0.6,
-                            avoidOverlap: 0.2
+                            avoidOverlap: 0.35
                         },
                         maxVelocity: 80,
                         minVelocity: 0.5,
@@ -496,6 +515,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         zoomView: true,
                         zoomSpeed: 0.8,
                         dragView: true,
+                        hideEdgesOnDrag: true,     // smoother panning on dense graphs
+                        hideEdgesOnZoom: true,
                         navigationButtons: true,   // tombol +/- dan panah untuk zoom & pan
                         keyboard: { enabled: true, speed: { x: 10, y: 10, zoom: 0.02 } }
                     }
@@ -515,6 +536,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     network.setOptions({ physics: false });
                 }, 3000);
+
+                // ── FOCUS MODE ────────────────────────────────────────────
+                // Click a node → dim everything except its direct neighbourhood;
+                // click the background → restore. This is what makes a dense
+                // hairball legible: you read one node's relations at a time.
+                const _allIds = positionedNodeData.map(n => n.id);
+                network.__focusOn = function (id) {
+                    const keep = new Set([id]);
+                    graphData.edges.forEach(e => { if (e.from === id) keep.add(e.to); if (e.to === id) keep.add(e.from); });
+                    netData.nodes.update(_allIds.map(nid => ({ id: nid, opacity: keep.has(nid) ? 1 : 0.07 })));
+                    netData.edges.update(graphData.edges.map((e, i) => ({ id: 'e' + i, hidden: !(e.from === id || e.to === id) })));
+                };
+                network.__focusClear = function () {
+                    netData.nodes.update(_allIds.map(nid => ({ id: nid, opacity: 1 })));
+                    netData.edges.update(graphData.edges.map((e, i) => ({ id: 'e' + i, hidden: false })));
+                };
+                network.on('click', function (p) {
+                    if (p.nodes && p.nodes.length > 0) network.__focusOn(p.nodes[0]);
+                    else network.__focusClear();
+                });
 
                 // Click-to-inspect panel
                 const inspectorPanel = document.getElementById(`inspector-${model.id}`);
@@ -572,7 +613,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container) return;
         container.innerHTML = '';
         if (incidents.length === 0) {
-            container.innerHTML = '<div style="color:#94a3b8; padding:15px;">Tidak ada insiden yang cocok dengan pencarian.</div>';
+            container.innerHTML = '<div style="color:var(--text-3); padding:15px;">Tidak ada insiden yang cocok dengan pencarian.</div>';
             return;
         }
         incidents.forEach(inc => {
@@ -582,30 +623,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 ai_fraud: '<span style="background:rgba(168,85,247,0.2);color:#a855f7;padding:2px 8px;border-radius:4px;font-size:11px;">AI Fraud</span>',
                 ai_misuse: '<span style="background:rgba(168,85,247,0.2);color:#a855f7;padding:2px 8px;border-radius:4px;font-size:11px;">AI Misuse</span>',
             };
-            const typeBadge = typeBadges[inc.type] || '<span style="background:rgba(255,255,255,0.1);color:#fff;padding:2px 8px;border-radius:4px;font-size:11px;">Other</span>';
+            const typeBadge = typeBadges[inc.type] || '<span style="background:var(--overlay-hover);color:var(--text-2);padding:2px 8px;border-radius:4px;font-size:11px;">Other</span>';
             container.innerHTML += `
-                <div class="incident-card" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px;">
-                    <div style="display:flex;justify-content:space-between;align-items:start;border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:8px;margin-bottom:4px;">
-                        <span style="color:#e2e8f0;font-weight:700;font-family:'Outfit';font-size:15px;">[${inc.year}] ${inc.id.toUpperCase()}</span>
+                <div class="incident-card">
+                    <div class="ic-top">
+                        <span class="ic-id">[${inc.year}] ${inc.id.toUpperCase()}</span>
                         <div>${typeBadge}</div>
                     </div>
-                    <div style="font-size:13px;color:#cbd5e1;line-height:1.5;">${inc.peristiwa_hukum_kronologi}</div>
-                    <div style="margin-top:auto;padding-top:10px;display:grid;gap:8px;">
-                        <div style="font-size:12px;display:flex;gap:8px;">
-                            <span class="material-symbols-rounded" style="font-size:14px;color:#f87171;">warning</span>
-                            <span><strong style="color:#94a3b8;">Pelaku:</strong> <span style="color:#fca5a5;">${inc.pemetaan_fakta_hukum.subjek_pelaku}</span></span>
+                    <div class="ic-body">${inc.peristiwa_hukum_kronologi}</div>
+                    <div class="ic-meta">
+                        <div class="ic-row">
+                            <span class="material-symbols-rounded" style="color:var(--rose);">warning</span>
+                            <span><strong style="color:var(--text-3);">Pelaku:</strong> <span style="color:var(--text-2);">${inc.pemetaan_fakta_hukum.subjek_pelaku}</span></span>
                         </div>
-                        <div style="font-size:12px;display:flex;gap:8px;">
-                            <span class="material-symbols-rounded" style="font-size:14px;color:#60a5fa;">account_balance</span>
-                            <span><strong style="color:#94a3b8;">PSE:</strong> <span style="color:#93c5fd;">${inc.pemetaan_fakta_hukum.subjek_pse}</span></span>
+                        <div class="ic-row">
+                            <span class="material-symbols-rounded" style="color:var(--sky);">account_balance</span>
+                            <span><strong style="color:var(--text-3);">PSE:</strong> <span style="color:var(--text-2);">${inc.pemetaan_fakta_hukum.subjek_pse}</span></span>
                         </div>
-                        <div style="font-size:12px;display:flex;gap:8px;">
-                            <span class="material-symbols-rounded" style="font-size:14px;color:#eab308;">gavel</span>
-                            <span><strong style="color:#94a3b8;">Kualifikasi:</strong> <span style="color:#fde047;">${inc.kualifikasi_peristiwa}</span></span>
+                        <div class="ic-row">
+                            <span class="material-symbols-rounded" style="color:var(--amber);">gavel</span>
+                            <span><strong style="color:var(--text-3);">Kualifikasi:</strong> <span style="color:var(--text-2);">${inc.kualifikasi_peristiwa}</span></span>
                         </div>
-                        <div style="font-size:12px;background:rgba(0,0,0,0.3);padding:10px;border-radius:6px;margin-top:4px;border-left:2px solid #10b981;">
-                            <strong style="color:#10b981;display:block;margin-bottom:4px;">Nexus Kausalitas:</strong>
-                            <span style="color:#94a3b8;">${inc.pemetaan_fakta_hukum.nexus_kausalitas}</span>
+                        <div class="ic-causal">
+                            <strong>Nexus Kausalitas:</strong>
+                            <span>${inc.pemetaan_fakta_hukum.nexus_kausalitas}</span>
                         </div>
                     </div>
                 </div>`;
@@ -1150,7 +1191,7 @@ Daftar dokumen hukum (mis. klausul consent, DPIA) dan artefak teknis (mis. audit
         document.getElementById('cn-sector').value = '';
         document.getElementById('cn-ai-type').value = '';
         document.getElementById('cn-description').value = '';
-        document.getElementById('cn-ai-recommendation').innerHTML = '<span style="font-style:italic; color:#94a3b8;">Klik tombol di bawah untuk mendapatkan panduan kepatuhan konkret dari AI berdasarkan profil dan regulasi Anda.</span>';
+        document.getElementById('cn-ai-recommendation').innerHTML = '<span style="font-style:italic; color:var(--text-3);">Klik tombol di bawah untuk mendapatkan panduan kepatuhan konkret dari AI berdasarkan profil dan regulasi Anda.</span>';
         document.getElementById('cn-step-1').className = 'compliance-step active';
         document.getElementById('cn-step-2').className = 'compliance-step';
         document.getElementById('cn-step-3').className = 'compliance-step';
@@ -1268,7 +1309,7 @@ Daftar dokumen hukum (mis. klausul consent, DPIA) dan artefak teknis (mis. audit
         const regNodes = aiNetworkData.nodes.filter(n => linkedRegIds.includes(n.id) && n.group !== 'Insiden Kasus');
 
         let html = `<div style="margin-bottom:16px;">
-            <h5 style="color:#fca5a5; font-family:Outfit; margin-bottom:6px; font-size:0.95rem;">⬤ <strong>Grounds</strong> — Data Empiris Insiden</h5>
+            <h5 style="color:var(--rose); font-family:Outfit; margin-bottom:6px; font-size:0.95rem;">⬤ <strong>Grounds</strong> — Data Empiris Insiden</h5>
             <div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:6px; border-left:3px solid #fca5a5; font-size:0.82rem; line-height:1.5;">
                 ${incidentNode?.content || incidentNode?.label || 'Data teks tidak tersedia.'}
             </div>
@@ -1278,11 +1319,11 @@ Daftar dokumen hukum (mis. klausul consent, DPIA) dan artefak teknis (mis. audit
             <h5 style="color:#6ee7b7; font-family:Outfit; margin-bottom:6px; font-size:0.95rem;">⬤ <strong>Warrant</strong> — Kaidah Penghubung: ${regNodes.length} Regulasi Terdeteksi</h5>`;
 
         if (regNodes.length === 0) {
-            html += `<p style="font-size:0.82rem; font-style:italic; color:#94a3b8;">⚠️ LNA tidak menemukan warrant normatif di atas threshold similarity — tidak ada regulasi yang secara semantik terkait dengan insiden ini.</p>`;
+            html += `<p style="font-size:0.82rem; font-style:italic; color:var(--text-3);">⚠️ LNA tidak menemukan warrant normatif di atas threshold similarity — tidak ada regulasi yang secara semantik terkait dengan insiden ini.</p>`;
         } else {
             regNodes.forEach(reg => {
                 html += `<div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:6px; border-left:3px solid #6ee7b7; font-size:0.82rem; margin-bottom:8px; line-height:1.5;">
-                    <strong style="color:#94a3b8; display:block; margin-bottom:4px;">${reg.label}</strong>
+                    <strong style="color:var(--text-3); display:block; margin-bottom:4px;">${reg.label}</strong>
                     ${(reg.content || '').substring(0, 250)}${reg.content && reg.content.length > 250 ? '... <em>(dipotong)</em>' : ''}
                 </div>`;
             });
@@ -1449,6 +1490,27 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
         }, 100);
     };
 
+    // ── THEME TOGGLE (light default ⇄ dark) ───────────────────────────
+    window.toggleTheme = function () {
+        const html = document.documentElement;
+        const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        const icon = document.getElementById('theme-icon');
+        if (icon) icon.textContent = next === 'dark' ? 'light_mode' : 'dark_mode';
+        // Recolour graph labels (canvas can't inherit CSS variables)
+        const gf = (getComputedStyle(html).getPropertyValue('--graph-font') || '#ffffff').trim();
+        Object.values(networkInstances || {}).forEach(inst => {
+            try { inst.network.setOptions({ nodes: { font: { color: gf } } }); } catch (e) {}
+        });
+    };
+    // Sync the toggle icon with the active theme on load
+    (function () {
+        const t = document.documentElement.getAttribute('data-theme') || 'light';
+        const icon = document.getElementById('theme-icon');
+        if (icon) icon.textContent = t === 'dark' ? 'light_mode' : 'dark_mode';
+    })();
+
     window.exportGraphPNG = function(graphId, filename) {
         const inst = networkInstances[graphId];
         if (!inst || !inst.network) { showToast('Graph belum selesai dirender.', 'error'); return; }
@@ -1523,7 +1585,7 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
             network.setSize(container.clientWidth + 'px', container.clientHeight + 'px');
             
             // Kembalikan font dan posisi / skala kamera
-            network.setOptions({ nodes: { font: { color: '#ffffff' } } });
+            network.setOptions({ nodes: { font: { color: (getComputedStyle(document.documentElement).getPropertyValue('--graph-font') || '#ffffff').trim() } } });
             network.moveTo({
                 scale: savedScale,
                 position: savedPos,

@@ -52,3 +52,6 @@ frontend_error.log
 *.SYNTHETIC.bak.*
 *.PRESSRELEASE.bak
 *.BROKEN_HTML.bak
+
+# Local dev tooling
+.claude/
