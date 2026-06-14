@@ -14,8 +14,11 @@ Output: data/network/llm_edge_confidence.json
   { incident_id: [ {regulation_id, regulation_label, cosine, relevant, confidence, reason}... ] }
 
 Run (sandbox must be disabled for network egress):
-  python llm_judge.py            # all incidents, top-K candidates each
-  python llm_judge.py 3          # quick test on first 3 incidents
+  python llm_judge.py                 # zero-shot → llm_edge_confidence.json
+  python llm_judge.py 3               # quick test on first 3 incidents
+  python llm_judge.py --fewshot       # few-shot (held-out human exemplars)
+                                      #   → llm_edge_confidence_fewshot.json
+  python llm_judge.py --fewshot --out X.json --limit 3
 """
 import os, re, csv, json, sys, time, subprocess, glob
 import builder
@@ -24,8 +27,27 @@ KEY_PATH = os.path.join(os.path.dirname(__file__), '..', '..', '.gemini_key')
 SCORES   = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'network', 'incident_reg_scores.csv')
 INC_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'incidents', 'indonesia_incidents.json')
 OUT_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'network', 'llm_edge_confidence.json')
+FEWSHOT_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'network', 'fewshot_examples.json')
 MODEL    = 'gemini-2.5-flash'
 TOP_K    = 12          # candidate regulations per incident (by cosine)
+
+
+def build_fewshot_block():
+    """Return (text_block, holdout_keys) from fewshot_examples.json, or ('', set())."""
+    if not os.path.exists(FEWSHOT_PATH):
+        return '', set()
+    d = json.load(open(FEWSHOT_PATH, encoding='utf-8'))
+    holdout = {(k[0], k[1]) for k in d.get('holdout_keys', [])}
+    lines = ['HUMAN-ADJUDICATED EXAMPLES (use these to calibrate; note the NOT-relevant '
+             'patterns — definitional articles, data-subject procedural rights not triggered '
+             'by an external breach, wrong-delict ITE articles, and aspirational strategy '
+             'documents are NOT warrants even if topically similar):']
+    for i, e in enumerate(d['examples'], 1):
+        verdict = (f'relevant=true, roles={e["roles"]}' if e['relevant'] else 'relevant=false, roles=[]')
+        lines.append(f'EX{i}. INCIDENT: {e["incident_summary"][:300]}\n'
+                     f'   PROVISION: [{e["regulation_label"]}] {e["regulation_text"][:200]}\n'
+                     f'   CORRECT: {verdict} — {e["rationale"][:140]}')
+    return '\n'.join(lines) + '\n\n', holdout
 
 
 def gemini(prompt, key, retries=5):
@@ -65,7 +87,25 @@ def parse_json(text):
 
 
 def main():
-    limit = int(sys.argv[1]) if len(sys.argv) > 1 else None
+    argv = sys.argv[1:]
+    fewshot = '--fewshot' in argv
+    out_path = OUT_PATH
+    limit = None
+    if '--out' in argv:
+        out_path = argv[argv.index('--out') + 1]
+    if '--limit' in argv:
+        limit = int(argv[argv.index('--limit') + 1])
+    for a in argv:                         # bare positional int still means limit
+        if a.isdigit():
+            limit = int(a)
+    if fewshot and out_path == OUT_PATH:
+        out_path = OUT_PATH.replace('.json', '_fewshot.json')
+
+    fewshot_block, holdout = ('', set())
+    if fewshot:
+        fewshot_block, holdout = build_fewshot_block()
+        print(f'few-shot ON: {len(holdout)} held-out exemplar pairs; out → {os.path.basename(out_path)}')
+
     key = open(KEY_PATH).read().strip()
 
     # provision text map: "label" -> text
@@ -110,6 +150,7 @@ def main():
             '- regulator = the state/regulator (supervision & enforcement)\n\n'
             'For EACH candidate provision decide if it is a relevant legal basis (warrant) and, '
             'IF SO, which subject(s) it binds.\n\n'
+            + fewshot_block +
             f'INCIDENT ({inc.get("year")}, {inc.get("type")}): {inc.get("peristiwa_hukum_kronologi","")}\n\n'
             f'CANDIDATE PROVISIONS:\n{clist}\n\n'
             'Return ONLY a JSON array, one object per candidate index: '
@@ -141,11 +182,12 @@ def main():
         print(f'[{n}/{len(ids)}] {iid}: {len(rows)} scored, {nrel} relevant')
         time.sleep(0.5)
 
-    with open(OUT_PATH, 'w', encoding='utf-8') as f:
-        json.dump({'model': MODEL, 'top_k': TOP_K, 'incidents': out}, f, ensure_ascii=False, indent=2)
+    with open(out_path, 'w', encoding='utf-8') as f:
+        json.dump({'model': MODEL, 'top_k': TOP_K, 'fewshot': bool(fewshot), 'incidents': out},
+                  f, ensure_ascii=False, indent=2)
     total = sum(len(v) for v in out.values())
     rel = sum(1 for v in out.values() for r in v if r['relevant'])
-    print(f'\n✅ {OUT_PATH}\n   {len(out)} incidents, {total} pairs scored, {rel} judged relevant')
+    print(f'\n✅ {out_path}\n   {len(out)} incidents, {total} pairs scored, {rel} judged relevant')
 
 
 if __name__ == '__main__':

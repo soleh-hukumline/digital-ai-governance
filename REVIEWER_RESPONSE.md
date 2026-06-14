@@ -18,7 +18,7 @@ Real, reproducible numbers are quoted throughout.
 | C | Threshold mismatch (">0.75/<0.50") | Paper ≠ code | Single source of truth: tiered **0.70 / 0.55 / 0.50**, reconciled + justified |
 | D | "No quantitative network metrics" | Computed but not surfaced | Static tables + figures from real graph (below) |
 | E | Coverage rate undefined | Implicit | Explicit formula + value **44.4% covered / 55.6% vacuum** |
-| F | **Zero validation** (no ground truth / IAA / P-R) | True | **Done**: 2-annotator gold (Cohen's κ=0.77); cosine F1=0.28 vs LLM F1=0.67 (calibrated P≥95); per-subject coverage reported raw + calibrated |
+| F | **Zero validation** (no ground truth / IAA / P-R) | True | **Done**: 2-annotator gold (Cohen's κ=0.77); cosine F1=0.28 vs LLM zero-shot F1=0.59 → **few-shot F1=0.83** (held-out); per-subject coverage from the few-shot judge |
 | G | **"No hallucination" claim unsupported** | Asserted | Removed; replacement text provided |
 | H | Figures don't display / reflect data | Static PNGs of synthetic data, no generator | `make_figures.py` regenerates from real graph; embedding verified |
 | I | Regulations unreadable | 1 PDF was an HTML 404; 1 was a press release; non-article docs silently dropped | Robust extractor + replaced files → **all 17 regulations** represented (916 nodes) |
@@ -197,29 +197,31 @@ collapsing them into one "coverage" number is biased (relevant *to whom?*). Usin
 the role-aware LLM judge (`llm_judge.py`, Gemini), each warrant is tagged by the
 subject it binds, and coverage is reported per subject:
 
-Coverage is reported at two operating points: **raw** (the LLM's own relevant
-flag, P≥50) and **calibrated** (P≥95, the F1-optimal threshold chosen against the
-human gold in §3). The calibrated column is the defensible one.
+The production judge is **few-shot primed** (§3.2): on held-out human gold its raw
+flag scores **F1 = 0.83 (P 0.83 / R 0.83)** — better than the older zero-shot judge
+even after aggressive P≥95 calibration (F1 0.59). So coverage below is reported at
+the **few-shot raw operating point** (the validated one); the older zero-shot raw
+column is kept only to show how the precision fix tightened the estimate.
 
-| Legal subject | Coverage (raw P≥50) | **Coverage (calibrated P≥95)** | Structural hole (calibrated) |
+| Legal subject | Coverage — **few-shot (production)** | Structural hole | (old zero-shot raw, over-incl.) |
 |---|---|---|---|
-| **Operator / PSE** (security & compliance duties) | 88.9% (40/45) | **53.3% (24/45)** | 46.7% |
-| Regulator / state (supervision) | 71.1% (32/45) | **37.8% (17/45)** | 62.2% |
-| Perpetrator (criminal liability) | 64.4% (29/45) | **46.7% (21/45)** | 53.3% |
-| Consumer / victim (protection & redress) | 64.4% (29/45) | **35.6% (16/45)** | 64.4% |
-| **Any subject** | 97.8% (44/45) | **82.2% (37/45)** | 17.8% |
+| **Operator / PSE** (security & compliance duties) | **60.0% (27/45)** | 40.0% | 88.9% |
+| Regulator / state (supervision) | **60.0% (27/45)** | 40.0% | 71.1% |
+| Perpetrator (criminal liability) | **42.2% (19/45)** | 57.8% | 64.4% |
+| Consumer / victim (protection & redress) | **42.2% (19/45)** | 57.8% | 64.4% |
+| **Any subject** | **86.7% (39/45)** | 13.3% | 97.8% |
 
-**Copy-paste — Results finding (role-aware, calibrated):**
+**Copy-paste — Results finding (role-aware, few-shot-validated):**
 > The regulatory "vacuum" is **not uniform across legal subjects**. Operators
-> (PSE/data controllers) are the best-covered — yet even with high-confidence
-> warrants only **53.3%** of incidents have a clear applicable security/compliance
-> duty. The gaps are largest for **consumer protection/redress (64.4% of incidents
-> uncovered)** and the **perpetrator's criminal basis (53.3% uncovered)**. About
-> **17.8% of incidents have no high-confidence warrant for any subject.** The
-> earlier blanket "55.6% vacuum" was both an artifact of embedding under-recall and
-> a conflation of subjects; the calibrated, subject-disaggregated picture is the
-> defensible one. (Figures: `role_coverage.py` → `role_coverage.json`, raw +
-> calibrated; LLM judgments human-validated in §3, Cohen's κ = 0.77.)
+> (PSE/data controllers) and the supervising regulator are the best-covered, yet
+> still only **60%** of incidents have a clearly applicable provision for them. The
+> gaps are largest and symmetric for the **perpetrator's criminal basis** and
+> **consumer protection/redress — 57.8% of incidents uncovered for each**. About
+> **13.3% of incidents have no applicable warrant for any subject.** The earlier
+> blanket "55.6% vacuum" conflated subjects and reflected embedding under-recall;
+> the subject-disaggregated picture, produced by a few-shot LLM judge validated at
+> F1 = 0.83 against human gold (κ = 0.77), is the defensible one. (Figures:
+> `role_coverage.py` → `role_coverage.json`; validation in §3.)
 
 ---
 
@@ -248,16 +250,44 @@ adjudicated gold.
 **Findings.** Embedding cosine is a weak classifier (F1 0.28). The LLM judge has
 **perfect recall** but over-includes at P≥50 (precision 0.33); **calibrating its
 confidence threshold to ≥95% — selected on this gold — lifts F1 to 0.67**
-(precision 0.53, recall 0.89) with no model training. The defensible pipeline is
-therefore **LLM-screen (high recall) → confidence-calibrate → human-confirm**, and
-all coverage figures (§2.5) are reported at both the raw and calibrated operating
-points.
+(precision 0.53, recall 0.89) with no model training. This zero-shot result was
+then **superseded by few-shot priming (§3.2)**, which reaches F1 0.83 without any
+threshold hack and is what now drives the §2.5 coverage figures.
 
 **Why not fine-tune?** Considered and rejected *for now*: 52 labels (9 positives)
 is far below what supervised fine-tuning needs (≥hundreds, with a held-out test
 set) and would overfit; threshold calibration is the sound use of a sample this
 size. A reproducible open **cross-encoder** fine-tune becomes viable once the
 coded set reaches ~300+ pairs (a path the tooling already supports).
+
+**3.2 Few-shot priming — the lightweight enhancement (adopted in production).**
+Instead of fine-tuning, we prime the LLM judge with **7 human-adjudicated
+exemplars** (3 positive, 4 negative) drawn from the gold and **held out from
+evaluation** (`make_fewshot.py` → `fewshot_examples.json`; `--fewshot` in
+`llm_judge.py`). The negatives target the model's exact failure mode — over-
+inclusion of *definitional* articles, *data-subject procedural rights* not
+triggered by an external breach, *wrong-delict* ITE provisions, and *aspirational
+strategy* documents. Evaluated on the **41 held-out gold pairs** (`eval_fewshot.py`,
+no train/test leak):
+
+| Judge | raw flag (P / R / F1) | calibrated P≥95 (F1) |
+|---|---|---|
+| Zero-shot | 0.30 / 1.00 / 0.46 | 0.59 |
+| **Few-shot (production)** | **0.83 / 0.83 / 0.83** | 0.67 |
+
+Few-shot **nearly triples precision (0.30→0.83)** at the model's own operating
+point while holding recall, and — unlike zero-shot — needs **no aggressive post-hoc
+threshold** (P≥95 actually *hurts* it). It also cut blanket over-inclusion from 212
+to 88 relevant pairs across the corpus, which is why §2.5 coverage is both lower and
+more accurate. *Caveat:* the held-out set is small (41 pairs, 6 positives), so F1
+moves in coarse steps; both judges were scored on the **same** held-out pairs, so
+the comparison is paired and fair, but absolute values are indicative.
+
+**Copy-paste — Methods/Results (few-shot):**
+> The automatic judge was primed with seven human-adjudicated exemplars (held out
+> from evaluation). On the held-out gold this raised precision from 0.30 to 0.83
+> (recall 0.83, F1 0.83), outperforming the zero-shot judge even after confidence
+> calibration, and removed the need for a post-hoc confidence threshold.
 
 **Copy-paste — Methods/Results:**
 > Two annotators independently coded a 52-pair cosine/role-stratified sample of

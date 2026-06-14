@@ -1,0 +1,109 @@
+{
+  "description": "Human-adjudicated few-shot exemplars (held out from validation). Rationales are the annotators' own notes.",
+  "n": 7,
+  "positives": 3,
+  "negatives": 4,
+  "holdout_keys": [
+    [
+      "cermati-data-breach-2020",
+      "UU_PDP_No27_2022 - Pasal 35"
+    ],
+    [
+      "bsi-lockbit-ransomware-2023",
+      "UU_PDP_No27_2022 - Pasal 67"
+    ],
+    [
+      "inafis-polri-fingerprint-leak-2024",
+      "UU_PDP_No27_2022 - Pasal 46"
+    ],
+    [
+      "mypertamina-44m-2022",
+      "UU_PDP_No27_2022 - Pasal 28"
+    ],
+    [
+      "bpjs-kesehatan-279m-2021",
+      "UU_PDP_No27_2022 - Pasal 9"
+    ],
+    [
+      "kreditplus-data-leak-2020",
+      "UU_PDP_No27_2022 - Pasal 4"
+    ],
+    [
+      "bank-indonesia-conti-ransomware-2022",
+      "Stranas_AI_Indonesia_2020-2045_Full - Bagian 56"
+    ]
+  ],
+  "examples": [
+    {
+      "incident_id": "cermati-data-breach-2020",
+      "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+      "incident_summary": "[2020 data_breach] Data 2,9 juta pengguna Cermati dijual ~USD 2.200 di forum peretas, terungkap publik via Teguh Aprianto pada 4 November 2020, memuat nama, email, alamat, telepon, rekening bank, pekerjaan, NPWP, dan NIK. Cermati mengirim peringatan akses tidak sah ke pengguna pada 31 Oktober dan menggandeng BSSN serta pakar eksternal.",
+      "regulation_text": "Pengendali Data Pribadi wajib melindungi dan memastikan keamanan Data Pribadi yang diprosesnya, dengan melakukan: a. penyusunan dan penerapan langkah teknis operasional untuk melindungi Data Pribadi dari gangguan pemrosesan Data Pribadi yan",
+      "relevant": true,
+      "roles": [
+        "pse"
+      ],
+      "rationale": "Ps35 (kewajiban keamanan data) terpicu oleh kegagalan keamanan/kebocoran."
+    },
+    {
+      "incident_id": "bsi-lockbit-ransomware-2023",
+      "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+      "incident_summary": "[2023 ransomware] Pada 8 Mei 2023 layanan ATM dan cabang BSI lumpuh; LockBit mengklaim mencuri 1,5 TB data ~15 juta nasabah dan pegawai. Log negosiasi menunjukkan bank menawar ~USD 10 juta sementara LockBit menuntut USD 20 juta; setelah gagal, data dipublikasikan 15-16 Mei 2023.",
+      "regulation_text": "(1) Setiap Orang yang dengan sengaja dan melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan miliknya dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian Subjek Data Pribadi sebaga",
+      "relevant": true,
+      "roles": [
+        "pelaku"
+      ],
+      "rationale": "Ps67 (pengungkapan data melawan hukum) tepat untuk pelaku publikasi data."
+    },
+    {
+      "incident_id": "inafis-polri-fingerprint-leak-2024",
+      "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+      "incident_summary": "[2024 data_breach] Pada 22 Juni 2024 'MoonzHaxor' mengunggah data dugaan pembobolan INAFIS (citra sidik jari, email, berkas aplikasi SpringBoot) seharga ~USD 1.000. Kepala BSSN berkoordinasi dengan Polri dan menyatakan data lama serta layanan INAFIS berjalan normal.",
+      "regulation_text": "(1) Dalam hal terjadi kegagalan Pelindungan Data Pribadi, Pengendali Data Pribadi wajib menyampaikan pemberitahuan secara tertulis paling lambat 3 x 24 (tiga kali dua puluh empat) jam kepada: a. Subjek Data Pribadi; dan b. lembaga. (2) Pemb",
+      "relevant": true,
+      "roles": [
+        "pse",
+        "regulator",
+        "konsumen"
+      ],
+      "rationale": "Ps46 (notifikasi kegagalan pelindungan 3x24 jam) terpicu oleh kebocoran."
+    },
+    {
+      "incident_id": "mypertamina-44m-2022",
+      "regulation_label": "UU_PDP_No27_2022 - Pasal 28",
+      "incident_summary": "[2022 data_breach] November 2022 dataset yang diatribusikan ke MyPertamina bocor dalam format CSV, memuat ~44 juta data dan ~6 juta email unik, plus nama, TTL, gender, alamat, telepon, dan riwayat pembelian. Have I Been Pwned mengindeks pelanggaran ini (ditambahkan Januari 2024).",
+      "regulation_text": "Pengendali Data Pribadi wajib melakukan pemrosesan Data Pribadi sesuai dengan tujuan pemrosesan Data Pribadi.",
+      "relevant": false,
+      "roles": [],
+      "rationale": "Ps28 (pemrosesan sesuai tujuan) tidak terpicu oleh pencurian pihak ketiga."
+    },
+    {
+      "incident_id": "bpjs-kesehatan-279m-2021",
+      "regulation_label": "UU_PDP_No27_2022 - Pasal 9",
+      "incident_summary": "[2021 data_breach] Pada Mei 2021 akun RaidForums 'Kotz' menjual data yang diklaim milik ~279 juta peserta BPJS Kesehatan (NIK, KTP, telepon, email, nama, alamat, gaji), dengan ~20 juta disertai foto. Kasus diselidiki BSSN, Dittipidsiber, dan Kominfo; forensik digital tidak konklusif menetapkan sumber kebocoran.",
+      "regulation_text": "Subjek Data Pribadi berhak menarik kembali persetujuan pemrosesan Data Pribadi tentang dirinya yang telah diberikan kepada Pengendali Data Pribadi.",
+      "relevant": false,
+      "roles": [],
+      "rationale": "Ps9 (penarikan persetujuan) tidak terpicu oleh kebocoran."
+    },
+    {
+      "incident_id": "kreditplus-data-leak-2020",
+      "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+      "incident_summary": "[2020 data_breach] Data ~896.169 nasabah KreditPlus dijual di RaidForums, pertama oleh 'Megadimarus' (27 Juni 2020) lalu 'ShinyHunters' (16 Juli 2020), memuat nama, NIK, email, alamat, TTL, telepon, data pekerjaan dan penjamin. Kominfo dan OJK meminta klarifikasi perusahaan.",
+      "regulation_text": "(1) Data Pribadi terdiri atas: a. Data Pribadi yang bersifat spesifik; dan b. Data Pribadi yang bersifat umum. (2) Data Pribadi yang bersifat spesifik sebagaimana dimaksud pada ayat (1) huruf a meliputi: a. data dan informasi kesehatan; b. ",
+      "relevant": false,
+      "roles": [],
+      "rationale": "Ps4 (definisi) bersifat definitif, bukan operatif."
+    },
+    {
+      "incident_id": "bank-indonesia-conti-ransomware-2022",
+      "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 56",
+      "incident_summary": "[2022 ransomware] Bank Indonesia mengonfirmasi serangan ransomware yang terjadi Desember 2021 dan dilaporkan peneliti Januari 2022. Conti menanam ransomware pada belasan sistem dan mengklaim ~13,88 GB dokumen yang mulai dibocorkan. BI dan BSSN menyatakan penyerang hanya memperoleh data pegawai non-kritikal dan operasi publik tidak terganggu.",
+      "regulation_text": "…memiliki kejelasan adanya risiko (vulnerabilities) yang dapat memberikan kerugian dan ancaman bagi manusia, khususnya masyarakat Indonesia. Oleh karena itu diperlukan kejelasan upaya mitigasi serta pengawasannya. Dengan itu, diperlukan sin",
+      "relevant": false,
+      "roles": [],
+      "rationale": "Stranas AI = strategi; insiden non-AI (ransomware)."
+    }
+  ]
+}

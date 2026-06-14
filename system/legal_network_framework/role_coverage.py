@@ -14,9 +14,12 @@ from collections import defaultdict
 NET = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'network')
 LLM = os.path.join(NET, 'llm_edge_confidence.json')
 ROLES = ['pelaku', 'pse', 'konsumen', 'regulator']
-# Confidence cut-off calibrated against the human ground truth (κ=0.77):
-# P>=95% maximised F1 (0.67) vs the 52-pair coded sample. "raw" = the LLM's own
-# relevant flag (P>=50). We report both so the calibration effect is explicit.
+# The production judge is now FEW-SHOT primed (human-adjudicated exemplars,
+# eval_fewshot.py). Few-shot makes the model's RAW flag well-calibrated on
+# held-out gold (P 0.83 / R 0.83 / F1 0.83) — better than the old zero-shot judge
+# even after its aggressive P>=95 calibration (F1 0.59). So for few-shot the RAW
+# operating point is the validated one; we still print a P>=95 column for
+# transparency (it does not help few-shot and is shown only for comparison).
 CALIB_P = 95
 
 
