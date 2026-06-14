@@ -14,42 +14,52 @@ from collections import defaultdict
 NET = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'network')
 LLM = os.path.join(NET, 'llm_edge_confidence.json')
 ROLES = ['pelaku', 'pse', 'konsumen', 'regulator']
+# Confidence cut-off calibrated against the human ground truth (κ=0.77):
+# P>=95% maximised F1 (0.67) vs the 52-pair coded sample. "raw" = the LLM's own
+# relevant flag (P>=50). We report both so the calibration effect is explicit.
+CALIB_P = 95
 
 
-def main():
-    d = json.load(open(LLM, encoding='utf-8'))
-    inc = d['incidents']
+def _coverage(inc, calibrated):
     n = len(inc)
-    have = defaultdict(set)        # role -> set of incidents with >=1 relevant warrant
-    pairs = defaultdict(int)       # role -> count of relevant (incident,reg) bindings
+    have = defaultdict(set)
+    pairs = defaultdict(int)
     any_role = set()
     for iid, rows in inc.items():
         for r in rows:
             if not r.get('relevant'):
                 continue
-            rl = r.get('roles') or []
+            if calibrated and int(r.get('confidence', 0)) < CALIB_P:
+                continue
+            rl = [x for x in (r.get('roles') or []) if x in ROLES]
             if rl:
                 any_role.add(iid)
             for role in rl:
-                if role in ROLES:
-                    have[role].add(iid); pairs[role] += 1
+                have[role].add(iid); pairs[role] += 1
+    return n, have, pairs, any_role
 
-    out = {'n_incidents': n, 'per_role': {}, 'any_role_coverage': round(100 * len(any_role) / max(n, 1), 1)}
-    print(f"PER-SUBJECT COVERAGE (n={n} incidents)")
-    print(f"{'subject':10s} {'incidents w/ warrant':>20s} {'coverage':>9s} {'rel. pairs':>11s}")
-    for role in ROLES:
-        c = len(have[role]); cov = 100 * c / max(n, 1)
-        out['per_role'][role] = {'incidents_covered': c, 'coverage_pct': round(cov, 1), 'relevant_pairs': pairs[role]}
-        print(f"{role:10s} {c:>20d} {cov:>8.1f}% {pairs[role]:>11d}")
-    print(f"\nany-subject coverage: {len(any_role)}/{n} = {out['any_role_coverage']}%")
-    # vacuum per role
-    print("\nstructural holes (no warrant) per subject:")
-    for role in ROLES:
-        print(f"  {role:10s}: {n - len(have[role])}/{n} = {100*(n-len(have[role]))/n:.1f}%")
+
+def main():
+    d = json.load(open(LLM, encoding='utf-8'))
+    inc = d['incidents']
+    out = {'n_incidents': len(inc), 'calibration': {'cutoff_P': CALIB_P, 'basis': 'human gold n=48, κ=0.77, F1-optimal'}}
+
+    for mode, calibrated in (('raw (P>=50, LLM flag)', False), (f'calibrated (P>={CALIB_P})', True)):
+        n, have, pairs, any_role = _coverage(inc, calibrated)
+        key = 'calibrated' if calibrated else 'raw'
+        out[key] = {'per_role': {}, 'any_role_coverage': round(100 * len(any_role) / max(n, 1), 1)}
+        print(f"\n=== PER-SUBJECT COVERAGE — {mode} (n={n}) ===")
+        print(f"{'subject':10s} {'covered':>9s} {'coverage':>9s} {'hole':>8s} {'pairs':>7s}")
+        for role in ROLES:
+            c = len(have[role]); cov = 100 * c / max(n, 1)
+            out[key]['per_role'][role] = {'incidents_covered': c, 'coverage_pct': round(cov, 1),
+                                          'structural_hole_pct': round(100 - cov, 1), 'relevant_pairs': pairs[role]}
+            print(f"{role:10s} {c:>6d}/{n:<2d} {cov:>7.1f}% {100-cov:>7.1f}% {pairs[role]:>7d}")
+        print(f"any-subject: {len(any_role)}/{n} = {out[key]['any_role_coverage']}%")
 
     with open(os.path.join(NET, 'role_coverage.json'), 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"\n✅ wrote role_coverage.json")
+    print(f"\n✅ wrote role_coverage.json (raw + calibrated)")
 
 
 if __name__ == '__main__':

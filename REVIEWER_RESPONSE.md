@@ -18,7 +18,7 @@ Real, reproducible numbers are quoted throughout.
 | C | Threshold mismatch (">0.75/<0.50") | Paper ≠ code | Single source of truth: tiered **0.70 / 0.55 / 0.50**, reconciled + justified |
 | D | "No quantitative network metrics" | Computed but not surfaced | Static tables + figures from real graph (below) |
 | E | Coverage rate undefined | Implicit | Explicit formula + value **44.4% covered / 55.6% vacuum** |
-| F | **Zero validation** (no ground truth / IAA / P-R) | True | `validation.py` + 100-pair coding template + κ / precision / recall / F1 + threshold sweep |
+| F | **Zero validation** (no ground truth / IAA / P-R) | True | **Done**: 2-annotator gold (Cohen's κ=0.77); cosine F1=0.28 vs LLM F1=0.67 (calibrated P≥95); per-subject coverage reported raw + calibrated |
 | G | **"No hallucination" claim unsupported** | Asserted | Removed; replacement text provided |
 | H | Figures don't display / reflect data | Static PNGs of synthetic data, no generator | `make_figures.py` regenerates from real graph; embedding verified |
 | I | Regulations unreadable | 1 PDF was an HTML 404; 1 was a press release; non-article docs silently dropped | Robust extractor + replaced files → **all 17 regulations** represented (916 nodes) |
@@ -197,70 +197,81 @@ collapsing them into one "coverage" number is biased (relevant *to whom?*). Usin
 the role-aware LLM judge (`llm_judge.py`, Gemini), each warrant is tagged by the
 subject it binds, and coverage is reported per subject:
 
-| Legal subject | Incidents with a warrant | Coverage | Structural hole |
-|---|---|---|---|
-| **Operator / PSE** (security & compliance duties) | 40/45 | **88.9%** | 11.1% |
-| Regulator / state (supervision) | 32/45 | 71.1% | 28.9% |
-| Perpetrator (criminal liability) | 29/45 | 64.4% | 35.6% |
-| Consumer / victim (protection & redress) | 29/45 | 64.4% | 35.6% |
-| **Any subject** | 44/45 | **97.8%** | 2.2% |
+Coverage is reported at two operating points: **raw** (the LLM's own relevant
+flag, P≥50) and **calibrated** (P≥95, the F1-optimal threshold chosen against the
+human gold in §3). The calibrated column is the defensible one.
 
-**Copy-paste — Results finding (role-aware):**
+| Legal subject | Coverage (raw P≥50) | **Coverage (calibrated P≥95)** | Structural hole (calibrated) |
+|---|---|---|---|
+| **Operator / PSE** (security & compliance duties) | 88.9% (40/45) | **53.3% (24/45)** | 46.7% |
+| Regulator / state (supervision) | 71.1% (32/45) | **37.8% (17/45)** | 62.2% |
+| Perpetrator (criminal liability) | 64.4% (29/45) | **46.7% (21/45)** | 53.3% |
+| Consumer / victim (protection & redress) | 64.4% (29/45) | **35.6% (16/45)** | 64.4% |
+| **Any subject** | 97.8% (44/45) | **82.2% (37/45)** | 17.8% |
+
+**Copy-paste — Results finding (role-aware, calibrated):**
 > The regulatory "vacuum" is **not uniform across legal subjects**. Operators
-> (PSE/data controllers) are heavily covered — 88.9% of incidents have an
-> applicable security/compliance duty (UU PDP, PP PSTE, sectoral POJK/PBI). The
-> real gaps are elsewhere: **35.6% of incidents lack a clear criminal basis for
-> the perpetrator and 35.6% lack a consumer-protection/redress warrant**. Almost
-> every incident (97.8%) has *some* applicable law for *some* subject, so the
-> earlier blanket "55.6% vacuum" was an artifact of (a) embedding under-recall and
-> (b) conflating subjects. The defensible claim is narrower and stronger:
-> Indonesia regulates the *operator's* duties far better than it provides
-> *AI-specific criminal* bases or *consumer redress*. (Per-subject figures from
-> `role_coverage.py` / `role_coverage.json`; LLM judgments to be human-validated
-> per §3 using the role-aware 3-way template.)
+> (PSE/data controllers) are the best-covered — yet even with high-confidence
+> warrants only **53.3%** of incidents have a clear applicable security/compliance
+> duty. The gaps are largest for **consumer protection/redress (64.4% of incidents
+> uncovered)** and the **perpetrator's criminal basis (53.3% uncovered)**. About
+> **17.8% of incidents have no high-confidence warrant for any subject.** The
+> earlier blanket "55.6% vacuum" was both an artifact of embedding under-recall and
+> a conflation of subjects; the calibrated, subject-disaggregated picture is the
+> defensible one. (Figures: `role_coverage.py` → `role_coverage.json`, raw +
+> calibrated; LLM judgments human-validated in §3, Cohen's κ = 0.77.)
 
 ---
 
 ## 3. Validation (reviewer: zero validation metrics)
 
-This was a genuine gap. We added an end-to-end validation harness.
+This was a genuine gap. It is now closed with a **human-coded ground truth** and a
+three-way comparison (cosine vs LLM vs human).
 
-**Pipeline:**
-1. `builder.py` exports **all 39,195** incident↔regulation candidate pairs with
-   cosine scores → `data/network/incident_reg_scores.csv` (above *and* below the
-   cut-off, so recall is measurable).
-2. `make_validation_sample.py` draws a **stratified 103-pair sample**
-   (over-sampled around the 0.50 cut-off) → `validation_pairs_template.csv`
-   (blank annotator columns) for two coders to label independently.
-3. `validation.py` computes, from the coded file:
-   - **Inter-annotator agreement**: raw % + **Cohen's κ**;
-   - **Classifier performance** at the 0.50 cut-off: precision / recall / F1 /
-     accuracy + confusion matrix (gold = annotator agreement; disagreements
-     excluded and reported);
-   - **Threshold sweep** (0.30→0.70) so the cut-off is justified or revised
-     empirically.
+**Protocol.** From the 39,195 incident↔regulation candidate scores, a **52-pair
+sample** was drawn, stratified to over-sample pairs where the methods disagree and
+near the 0.50 cut-off (`make_3way_sample.py`; each row carries the incident
+chronology + the full article text + cosine + LLM confidence/roles). **Two
+annotators** coded each pair independently (`validation_3way_template.csv` →
+`validation_2_revisi.xlsx`); `validate_3way.py` scores both methods against the
+adjudicated gold.
 
-A `validation_pairs_DEMO.csv` with **synthetic, clearly-labelled demo labels**
-lets the pipeline run immediately; `validation.py` prints a prominent warning and
-its numbers must never be cited.
+**3.1 Results (completed).** Inter-annotator agreement: **raw 92%, Cohen's κ =
+0.770 (substantial).** Gold = the 48 pairs where annotators agreed (9 positives).
 
-**Copy-paste — Methods (validation protocol):**
-> To validate the incident↔regulation edges, we drew a cosine-stratified sample
-> of candidate pairs (oversampling the decision boundary) and had two annotators
-> independently judge whether each regulation is a plausible legal basis for the
-> incident. We report inter-annotator agreement (Cohen's κ) and the precision,
-> recall, and F1 of the 0.50 cosine cut-off against the adjudicated labels, and
-> we sweep the cut-off to confirm the operating point.
+| Method vs human gold | Precision | Recall | F1 | Accuracy |
+|---|---|---|---|---|
+| Cosine cut-off (≥0.50) | 0.20 | 0.44 | 0.28 | 0.56 |
+| LLM judge (Gemini, P≥50) | 0.33 | **1.00** | 0.50 | 0.62 |
+| **LLM judge, calibrated P≥95** | **0.53** | 0.89 | **0.67** | — |
 
-**Copy-paste — Limitations (until you code the sample):**
-> The cosine cut-offs are theory-motivated design choices; their empirical
-> validation against human-coded ground truth is reported in §X / is in progress
-> using the released coding template.
+**Findings.** Embedding cosine is a weak classifier (F1 0.28). The LLM judge has
+**perfect recall** but over-includes at P≥50 (precision 0.33); **calibrating its
+confidence threshold to ≥95% — selected on this gold — lifts F1 to 0.67**
+(precision 0.53, recall 0.89) with no model training. The defensible pipeline is
+therefore **LLM-screen (high recall) → confidence-calibrate → human-confirm**, and
+all coverage figures (§2.5) are reported at both the raw and calibrated operating
+points.
 
-> **Action required of the authors:** code `validation_pairs_template.csv` (two
-> annotators), save as `validation_pairs_coded.csv`, run `python validation.py`,
-> and paste the resulting κ / precision / recall / F1 into the manuscript. Until
-> then, do not report validation numbers.
+**Why not fine-tune?** Considered and rejected *for now*: 52 labels (9 positives)
+is far below what supervised fine-tuning needs (≥hundreds, with a held-out test
+set) and would overfit; threshold calibration is the sound use of a sample this
+size. A reproducible open **cross-encoder** fine-tune becomes viable once the
+coded set reaches ~300+ pairs (a path the tooling already supports).
+
+**Copy-paste — Methods/Results:**
+> Two annotators independently coded a 52-pair cosine/role-stratified sample of
+> incident–regulation pairs (Cohen's κ = 0.77, substantial agreement). Against the
+> adjudicated gold, the 0.50 cosine cut-off achieved F1 = 0.28 (precision 0.20,
+> recall 0.44); the LLM judge achieved recall = 1.00 with precision = 0.33,
+> improving to F1 = 0.67 (precision 0.53, recall 0.89) after its confidence
+> threshold was calibrated to ≥95% on the coded sample. We therefore treat the
+> automatic mapping as a high-recall screen confirmed by expert review.
+
+**Caveat (state in Limitations):** the validation sample is stratified to stress
+method disagreement, so these precision/recall values are **method-comparison
+metrics, not population warrant rates**; unbiased population estimates require
+per-stratum reweighting. Reproduce with `python validate_3way.py <coded .csv|.xlsx>`.
 
 ---
 
