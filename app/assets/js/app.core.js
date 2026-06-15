@@ -176,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (_sc) _sc.dataset.rendered = 'false';
             initSectorAnalysis();
         }
+        if (targetId === 'section-gap') renderGapMatrix();   // Warrant Mapping Matrix (live)
         // Radial (chord) Insiden↔Regulasi view replaces the force graph here
         if (targetId === 'section-incident') renderRadialIncident();
 
@@ -430,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 'natl', graph: 'natl_graph.json', report: 'laporan_khusus_nasional.md' },
             { id: 'cross', graph: 'cross_graph.json', report: 'laporan_khusus_transnasional.md' },
             // 'incident' now uses the radial (chord) view — renderRadialIncident()
-            { id: 'gap', graph: 'gap_graph.json', report: 'laporan_gap_analysis.md' }
+            // 'gap' now uses the Warrant Mapping Matrix — renderGapMatrix()
         ];
 
         for (const model of analyzers) {
@@ -1524,6 +1525,76 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ===================================================================
+    // GAP ANALYSIS — Warrant Mapping Matrix (incidents × legal subject)
+    // Built from the SAME validated judge + human overrides (live), not a graph.
+    // ===================================================================
+    async function renderGapMatrix() {
+        const box = document.getElementById('network-gap');
+        if (!box) return;
+        const isEn = window.currentLang === 'en';
+        if (!RADIAL.data) { try { const r = await fetch(`./data/network/radial_incident.json?v=${DATA_V}`); RADIAL.data = await r.json(); } catch (e) { box.innerHTML = '<div class="rp-empty">Gagal memuat data.</div>'; return; } }
+        if (!RADIAL.cands) { try { const r = await fetch(`./data/network/llm_edge_confidence.json?v=${DATA_V}`); RADIAL.cands = (await r.json()).incidents || {}; } catch (e) { RADIAL.cands = {}; } }
+        const incs = RADIAL.data.nodes.filter(n => n.type === 'incident');
+        const RLABEL = { pelaku: isEn ? 'Perpetrator' : 'Pelaku', pse: 'Operator/PSE', konsumen: isEn ? 'Consumer' : 'Konsumen', regulator: 'Regulator' };
+        const bySec = {}; incs.forEach(n => { const s = n.group || n.sector || '?'; (bySec[s] = bySec[s] || []).push(n); });
+        const tot = { pelaku: 0, pse: 0, konsumen: 0, regulator: 0 }; let N = 0;
+        let rows = '';
+        Object.keys(bySec).sort((a, b) => bySec[b].length - bySec[a].length).forEach(sec => {
+            rows += `<tr><td colspan="5" style="background:var(--sunken);font-weight:700;font-size:0.76rem;padding:6px 10px;color:var(--text-2);">${_rEsc(sec)} · ${bySec[sec].length}</td></tr>`;
+            bySec[sec].forEach(n => {
+                N++;
+                const iid = n.id.replace('CASE_', '');
+                const lblEsc = String(n.label || '').replace(/'/g, "\\'");
+                const rel = (RADIAL.cands[iid] || []).map(r => ({ r, e: _eff(iid, r) })).filter(x => x.e.relevant);
+                const cells = _ROLE_KEYS.map(role => {
+                    const hits = rel.filter(x => (x.e.roles || []).includes(role));
+                    if (hits.length) {
+                        tot[role]++;
+                        const titles = hits.map(h => nodeCode(h.r.regulation_label)).join(', ');
+                        const rev = hits.some(h => h.e.reviewed);
+                        return `<td title="${_rEsc(titles)}" style="text-align:center;background:${ROLE_META[role].c}22;color:${ROLE_META[role].c};font-weight:800;">✓${rev ? '<span style="color:#10b981;font-size:0.7em;">●</span>' : ''}</td>`;
+                    }
+                    return `<td style="text-align:center;color:var(--text-4);opacity:0.4;">–</td>`;
+                }).join('');
+                rows += `<tr style="border-bottom:1px solid var(--border);"><td style="padding:5px 10px;font-size:0.76rem;cursor:pointer;color:var(--primary);" title="${isEn ? 'review in Analisis Kasus' : 'tinjau di tab Analisis Kasus'}" onclick="navigateTo('section-incident')">${_rEsc(n.code || iid)}</td>${cells}</tr>`;
+            });
+        });
+        const denom = N || 1;
+        const th = role => `<th style="padding:7px 6px;font-size:0.74rem;color:${ROLE_META[role].c};border-bottom:2px solid var(--border);">${RLABEL[role]}<br><span style="font-weight:800;">${Math.round(100 * tot[role] / denom)}%</span></th>`;
+        box.style.overflow = 'auto'; box.style.background = 'var(--bg-card)';
+        box.innerHTML = `<div style="padding:10px 14px;font-size:0.78rem;color:var(--text-3);line-height:1.5;">${L_GAP(isEn, _revCount())}</div>
+          <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+            <thead><tr>
+              <th style="text-align:left;padding:7px 10px;font-size:0.74rem;color:var(--text-3);border-bottom:2px solid var(--border);">${isEn ? 'Incident' : 'Insiden'} (${N})</th>
+              ${_ROLE_KEYS.map(th).join('')}
+            </tr></thead><tbody>${rows}</tbody></table>`;
+        const leg = document.getElementById('legend-gap');
+        if (leg) leg.innerHTML = `<span style="font-size:11px;color:var(--text-2);">✓ = ${isEn ? 'a legal basis binds this subject' : 'ada dasar hukum yang mengikat subjek itu'} · <span style="color:#10b981;">●</span> = ${isEn ? 'human-reviewed' : 'ditinjau manusia'} · – = ${isEn ? 'gap' : 'tidak ada'} · ${isEn ? 'hover a ✓ for the article' : 'arahkan ke ✓ untuk lihat pasalnya'}</span>`;
+        const tb = document.getElementById('tbody-metrics-gap');
+        if (tb) tb.innerHTML = _ROLE_KEYS.map(role => `<tr><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-2);">${RLABEL[role]}</td><td style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);font-weight:700;color:${ROLE_META[role].c};">${Math.round(100 * tot[role] / denom)}%</td><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-3);font-size:0.8rem;">${tot[role]}/${N} ${isEn ? 'incidents with a basis for this subject' : 'insiden punya dasar hukum utk subjek ini'}</td></tr>`).join('');
+    }
+    function L_GAP(isEn, nrev) {
+        return isEn
+            ? `<b>Warrant Mapping Matrix</b> — each incident × legal subject. ✓ = a validated/​reviewed legal basis binds that subject; – = none (gap). Empty columns expose the asymmetry (consumers/regulators). Reflects your review live (${nrev} reviewed); validate roles in <b>Analisis Kasus</b>. Relevance human-validated (κ 0.77); role is LLM-proposed until reviewed.`
+            : `<b>Warrant Mapping Matrix</b> — tiap insiden × subjek hukum. ✓ = ada dasar hukum (tervalidasi/​ditinjau) yang mengikat subjek itu; – = tidak ada (gap). Kolom yang kosong menampakkan asimetri (konsumen/regulator). Ikut tinjauan Anda secara langsung (${nrev} ditinjau); validasi peran di tab <b>Analisis Kasus</b>. Relevansi tervalidasi manusia (κ 0.77); peran usulan LLM sampai ditinjau.`;
+    }
+    window.exportGapCSV = function () {
+        if (!RADIAL.data || !RADIAL.cands) { showToast(window.currentLang === 'en' ? 'Open the Gap tab first.' : 'Buka tab Gap dulu.', 'warning'); return; }
+        const isEn = window.currentLang === 'en';
+        const rows = [['incident', 'sector', 'subject', 'covered', 'regulations', 'reviewed']];
+        RADIAL.data.nodes.filter(n => n.type === 'incident').forEach(n => {
+            const iid = n.id.replace('CASE_', '');
+            const rel = (RADIAL.cands[iid] || []).map(r => ({ r, e: _eff(iid, r) })).filter(x => x.e.relevant);
+            _ROLE_KEYS.forEach(role => {
+                const hits = rel.filter(x => (x.e.roles || []).includes(role));
+                rows.push([n.code || iid, n.group || n.sector || '', role, hits.length ? 1 : 0, hits.map(h => h.r.regulation_label).join(' | '), hits.some(h => h.e.reviewed) ? 1 : 0]);
+            });
+        });
+        _downloadBlob(_toCSV(rows), `Warrant_Matrix_${isEn ? 'EN' : 'ID'}.csv`, 'text/csv;charset=utf-8;');
+        _toast(isEn ? 'CSV downloaded.' : 'CSV berhasil diunduh.');
+    };
+
+    // ===================================================================
     // AI TAB SWITCHER
     // ===================================================================
     window.switchAITab = function (tabId) {
@@ -1889,44 +1960,49 @@ Daftar dokumen hukum (mis. klausul consent, DPIA) dan artefak teknis (mis. audit
         if (analyzeBtn) analyzeBtn.addEventListener('click', runAIToulmin);
     }
 
-    function updateAIContextPanel() {
+    async function updateAIContextPanel() {
         const selectEl = document.getElementById('ai-incident-select');
         const incidentId = selectEl.value;
         const contextBody = document.getElementById('ai-context-body');
         if (!incidentId) {
-            contextBody.innerHTML = 'Pilih insiden untuk melihat interkoneksi pasal-pasalnya.';
+            contextBody.innerHTML = 'Pilih insiden untuk melihat warrant (dasar hukum) tervalidasi & tinjauan Anda.';
             return;
         }
+        const isEn = window.currentLang === 'en';
+        // Warrants come from the validated few-shot judge + YOUR human review (same
+        // source as the radial/sector) — NOT cosine similarity — so the Toulmin
+        // reasoning is grounded in the corrected analysis.
+        if (!RADIAL.cands) { try { const r = await fetch(`./data/network/llm_edge_confidence.json?v=${DATA_V}`); RADIAL.cands = (await r.json()).incidents || {}; } catch (e) { RADIAL.cands = {}; } }
+        await _ensureProvisionTexts();
+        const iid = incidentId.replace('CASE_', '');
         const incidentNode = aiIncidentNodes.find(n => n.id === incidentId);
-        const linkedEdges = aiNetworkData.edges.filter(e => e.from === incidentId || e.to === incidentId);
-        const linkedRegIds = linkedEdges.map(e => e.from === incidentId ? e.to : e.from);
-        const regNodes = aiNetworkData.nodes.filter(n => linkedRegIds.includes(n.id) && n.group !== 'Insiden Kasus');
+        const grounds = incidentNode?.content || incidentNode?.label || 'Data teks tidak tersedia.';
+        const warr = (RADIAL.cands[iid] || []).map(r => ({ r, e: _eff(iid, r) }))
+            .filter(x => x.e.relevant).sort((a, b) => b.r.confidence - a.r.confidence);
+        const roleNames = roles => (roles || []).map(x => ROLE_META[x] ? (isEn ? ROLE_META[x].en : ROLE_META[x].id) : x).join(', ') || '—';
 
         let html = `<div style="margin-bottom:16px;">
-            <h5 style="color:var(--rose); font-family:Outfit; margin-bottom:6px; font-size:0.95rem;">⬤ <strong>Grounds</strong> — Data Empiris Insiden</h5>
-            <div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:6px; border-left:3px solid #fca5a5; font-size:0.82rem; line-height:1.5;">
-                ${incidentNode?.content || incidentNode?.label || 'Data teks tidak tersedia.'}
-            </div>
-        </div>`;
-
-        html += `<div>
-            <h5 style="color:#6ee7b7; font-family:Outfit; margin-bottom:6px; font-size:0.95rem;">⬤ <strong>Warrant</strong> — Kaidah Penghubung: ${regNodes.length} Regulasi Terdeteksi</h5>`;
-
-        if (regNodes.length === 0) {
-            html += `<p style="font-size:0.82rem; font-style:italic; color:var(--text-3);">⚠️ LNA tidak menemukan warrant normatif di atas threshold similarity — tidak ada regulasi yang secara semantik terkait dengan insiden ini.</p>`;
+            <h5 style="color:var(--rose); font-family:Outfit; margin-bottom:6px; font-size:0.95rem;">⬤ <strong>Grounds</strong> — ${isEn ? 'Incident facts' : 'Data Empiris Insiden'}</h5>
+            <div style="background:var(--sunken); padding:10px; border-radius:6px; border-left:3px solid #fca5a5; font-size:0.82rem; line-height:1.5;">${_rEsc(grounds)}</div>
+        </div>
+        <div><h5 style="color:#10b981; font-family:Outfit; margin-bottom:6px; font-size:0.95rem;">⬤ <strong>Warrant</strong> — ${warr.length} ${isEn ? 'legal basis (validated judge + your review)' : 'dasar hukum (judge tervalidasi + tinjauan Anda)'}</h5>`;
+        if (!warr.length) {
+            html += `<p style="font-size:0.82rem; font-style:italic; color:var(--text-3);">⚠️ ${isEn ? 'No applicable legal basis — structural hole.' : 'Tidak ada dasar hukum yang berlaku — structural hole.'}</p>`;
         } else {
-            regNodes.forEach(reg => {
-                html += `<div style="background:rgba(255,255,255,0.05); padding:10px; border-radius:6px; border-left:3px solid #6ee7b7; font-size:0.82rem; margin-bottom:8px; line-height:1.5;">
-                    <strong style="color:var(--text-3); display:block; margin-bottom:4px;">${reg.label}</strong>
-                    ${(reg.content || '').substring(0, 250)}${reg.content && reg.content.length > 250 ? '... <em>(dipotong)</em>' : ''}
+            warr.forEach(({ r, e }) => {
+                const txt = (PROVISION_TEXTS[r.regulation_label] || '').slice(0, 240);
+                html += `<div style="background:var(--sunken); padding:10px; border-radius:6px; border-left:3px solid #10b981; font-size:0.82rem; margin-bottom:8px; line-height:1.5;">
+                    <strong style="color:var(--text-2); display:block;">${_rEsc(nodeFull(r.regulation_label))} ${e.reviewed ? '<span style="color:#10b981;" title="ditinjau manusia">✔</span>' : ''}</strong>
+                    <span style="font-size:0.74rem;color:var(--text-4);">${isEn ? 'binds' : 'mengikat'}: ${_rEsc(roleNames(e.roles))}</span>
+                    <div style="margin-top:3px;color:var(--text-3);">${_rEsc(txt)}${txt.length >= 240 ? '…' : ''}</div>
                 </div>`;
             });
         }
         html += '</div>';
         contextBody.innerHTML = html;
-        contextBody.dataset.incidentText = incidentNode?.content || incidentNode?.label || '';
-        contextBody.dataset.regText = regNodes.map(r => `[${r.label}]: ${r.content || r.label}`).join('\n\n');
-        contextBody.dataset.regCount = regNodes.length;
+        contextBody.dataset.incidentText = grounds;
+        contextBody.dataset.regText = warr.map(({ r, e }) => `[${r.regulation_label}] (subjek terikat: ${(e.roles || []).join('/') || '—'}${e.reviewed ? '; DIVALIDASI MANUSIA' : ''}): ${PROVISION_TEXTS[r.regulation_label] || r.regulation_label}`).join('\n\n');
+        contextBody.dataset.regCount = warr.length;
     }
 
     async function runAIToulmin() {
@@ -1990,8 +2066,8 @@ Berdasarkan temuan di atas, berikan **3-5 rekomendasi spesifik** yang berbeda da
 **DATA GROUNDS (Fakta Insiden):**
 ${incidentText}
 
-**DATA WARRANT (Pasal terdeteksi LNA — Semantic Similarity):**
-${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
+**DATA WARRANT (dasar hukum dari LLM-judge tervalidasi κ=0.77 + tinjauan manusia; "DIVALIDASI MANUSIA" = sudah ditinjau ahli. Gunakan HANYA pasal-pasal ini sebagai warrant; jangan mengarang pasal lain):**
+${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan ini Kekosongan Hukum.'}
 `;
 
         try {
