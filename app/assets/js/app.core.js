@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260615_9';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260615_10';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -882,6 +882,12 @@ document.addEventListener('DOMContentLoaded', () => {
         education: 'linear-gradient(135deg,#b45309,#f59e0b)',
         judicial: 'linear-gradient(135deg,#475569,#64748b)',
     };
+    // Material Symbols (already loaded) instead of emoji — cleaner & consistent
+    const _SECTOR_MICON = {
+        government: 'account_balance', finance: 'account_balance_wallet',
+        ecommerce_telco: 'shopping_cart', health: 'local_hospital',
+        ai_misuse: 'smart_toy', education: 'school', judicial: 'gavel',
+    };
 
     async function initSectorAnalysis() {
         const container = document.getElementById('sector-grid-container');
@@ -899,10 +905,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         const data = window.sectorCoverageData;
-        container.innerHTML = '';
+        container.innerHTML = `<div style="grid-column:1/-1;font-size:0.78rem;color:var(--text-3);background:var(--sunken);border:1px solid var(--border);border-radius:10px;padding:10px 14px;line-height:1.55;">${L(
+            '<b>Cara baca:</b> "Coverage" = porsi insiden sektor ini yang punya ≥1 dasar hukum <b>keyakinan tinggi (P≥95)</b> untuk subjek terkait. Coverage 100% berarti tiap insiden punya pasal yang berlaku untuk subjek itu — sering lewat pasal UU PDP yang berlaku luas (mis. Ps.35/46/67), sehingga sektor data-breach tampak tinggi & seragam. Ini <b>bukan</b> ukuran kualitas penegakan, dan penetapan peran oleh LLM bisa <b>longgar</b> untuk pasal berumusan umum. Gap tajam yang paling bermakna ada di sektor <b>Penyalahgunaan AI</b> (konsumen/operator/regulator rendah).',
+            '<b>How to read:</b> "Coverage" = share of this sector\'s incidents with ≥1 <b>high-confidence (P≥95)</b> legal basis for that subject. 100% means every incident has an applicable article for that subject — often via broadly-worded UU PDP articles (e.g. Art.35/46/67), so data-breach sectors look high & uniform. It is <b>not</b> an enforcement-quality measure, and the LLM\'s role assignment can be <b>generous</b> for broadly-worded provisions. The most meaningful gap is in <b>AI Misuse</b> (low consumer/operator/regulator).')
+            }</div>`;
         container.dataset.rendered = 'true';
         const RL = data.role_label || {};
-        const SLBL = 'font-size:11px;font-weight:700;color:var(--text-muted,#94a3b8);margin:12px 0 4px;text-transform:uppercase;letter-spacing:.04em;';
+        const SLBL = 'font-size:11px;font-weight:700;color:var(--text-muted,#94a3b8);margin:12px 0 4px;padding:0 1.25rem;text-transform:uppercase;letter-spacing:.04em;';
 
         data.sectors.forEach(s => {
             const title = isEn ? s.title_en : s.title_id;
@@ -935,7 +944,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.innerHTML += `
                 <div class="sector-card" style="border-color:${borderColor};">
                     <div class="sc-header">
-                        <div class="sc-icon" style="background:${_SECTOR_ICONBG[s.key] || 'linear-gradient(135deg,#475569,#64748b)'};">${s.icon}</div>
+                        <div class="sc-icon" style="background:${_SECTOR_ICONBG[s.key] || 'linear-gradient(135deg,#475569,#64748b)'};"><span class="material-symbols-rounded" style="font-size:22px;color:#fff;">${_SECTOR_MICON[s.key] || 'category'}</span></div>
                         <div>
                             <div class="sc-title">${title}</div>
                             <div class="sc-sub">${s.n_incidents} ${L('insiden riil · coverage empiris (few-shot)', 'real incidents · empirical coverage (few-shot)')}</div>

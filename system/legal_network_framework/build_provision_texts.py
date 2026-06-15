@@ -9,10 +9,25 @@ analysis instead of trusting a centrality number. Keyed by node label
 Output: data/network/provision_texts.json   { label: full_text }
 Run:    python build_provision_texts.py
 """
-import os, json, glob
+import os, json, glob, re
 import builder
 
 OUT = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'network', 'provision_texts.json')
+
+# Strip PDF page-furniture that bleeds into the extracted text (headers/footers,
+# legal-stamp codes, page markers). Character-level OCR garble in scanned source
+# PDFs (e.g. "dimaksqd") cannot be fixed here and is left as-is.
+def _clean(t):
+    t = ' '.join(str(t).split())
+    t = re.sub(r'SK\s*No\.?\s*[A-Za-z0-9]+', ' ', t)                 # "SK No l90l88A" stamps
+    t = re.sub(r'PRESIDEN\s+\S+\s+INDONESIA', ' ', t, flags=re.I)    # "PRESIDEN REPUBLIK INDONESIA" header (+OCR variants)
+    t = re.sub(r'(?<!\w)-\s*\d{1,3}\s*-(?!\w)', ' ', t)             # page markers "-16-"
+    t = re.sub(r'(?<=[a-z])[\]\[\|](?=[a-z])', '', t)               # stray ] [ | inside words ("pen]rusunan")
+    t = re.sub(r'(\s*\.){3,}', '.', t)                              # "..." / ". . ." runs
+    t = re.sub(r'\blanjut\b\s*\d*\.?', ' ', t, flags=re.I)         # "lanjut 4." continuation noise
+    t = re.sub(r'\bPenjelasan\s*\.?\s*$', '', t, flags=re.I)       # trailing "Penjelasan ..."
+    t = re.sub(r'\s{2,}', ' ', t).strip()
+    return t
 
 
 def main():
@@ -26,7 +41,7 @@ def main():
             print(f'  ! {doc}: {e}')
             continue
         for title, txt in provs.items():
-            clean = ' '.join(str(txt).split())
+            clean = _clean(txt)
             if clean:
                 texts[f'{doc} - {title}'] = clean[:4000]
     with open(OUT, 'w', encoding='utf-8') as f:

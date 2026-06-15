@@ -654,10 +654,12 @@ body {
 /* Overflow guards: let long labels wrap instead of spilling out of the card.
    Flex children default to min-width:auto, which prevents shrinking below the
    longest token — so explicitly allow them to shrink and wrap. */
-.sc-header > div { min-width:0; flex:1; }
+.sc-header > div:not(.sc-icon) { min-width:0; flex:1; }   /* don't stretch the icon */
+.sc-icon { flex:0 0 auto; }
 .sc-title, .sc-sub { overflow-wrap:anywhere; word-break:break-word; }
-.pasal-item > div { min-width:0; flex:1; }
+.pasal-item > div:not(.p-dot) { min-width:0; flex:1; }   /* don't stretch the dot */
 .p-name, .p-desc { overflow-wrap:anywhere; word-break:break-word; }
+.p-dot { flex:0 0 auto; }
 .gauge-bar { min-width:24px; }
 
 .sc-recom {
