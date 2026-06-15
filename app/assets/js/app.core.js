@@ -2723,7 +2723,7 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
             <div style="margin-top:1.5rem; overflow-x:auto;">
               <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.6rem;">
                 <span class="material-symbols-rounded" style="color:var(--primary); font-size:18px;">leaderboard</span>
-                <strong style="font-family:'Outfit'; color:var(--text-1); font-size:0.95rem;">${isEn ? 'Top Nodes by Degree Centrality' : 'Node Teratas berdasarkan Degree Centrality'}</strong>
+                <strong style="font-family:'Outfit'; color:var(--text-1); font-size:0.95rem;">${isEn ? 'Top Nodes by Semantic Overlap (SBERT · exploratory)' : 'Node dengan Tumpang-tindih Semantik Tertinggi (SBERT · eksploratif)'}</strong>
               </div>
               <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
                 <thead><tr>
@@ -2731,7 +2731,7 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
                   <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Node (Article/Regulation/Incident)' : 'Node (Pasal/Regulasi/Insiden)'}</th>
                   <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Classification' : 'Klasifikasi'}</th>
                   <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">Degree</th>
-                  <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Degree Centrality' : 'Degree Centrality'}</th>
+                  <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Semantic Centrality' : 'Sentralitas Semantik'}</th>
                   ${betHead}
                 </tr></thead>
                 <tbody>${rowsHtml}</tbody>
@@ -2740,8 +2740,8 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
               ${betNote}
               <div style="font-size:0.75rem; color:var(--text-4); margin-top:8px; line-height:1.55; border-top:1px dashed var(--border); padding-top:8px;">
                 ${isEn
-                    ? '⚠ <b>What this means:</b> “Degree” here = how many <i>other provisions are textually similar</i> (SBERT cosine ≥ threshold) to this one — a <b>semantic-overlap</b> measure, <b>not</b> legal authority or cross-citation. Instruments with more articles (e.g. PP PSTE, 100 articles) score higher by volume. Treat it as an exploratory map; click a node to read the actual text and judge for yourself.'
-                    : '⚠ <b>Arti angka ini:</b> “Degree” di sini = berapa <i>pasal lain yang mirip secara teks</i> (SBERT cosine ≥ ambang) dengan pasal ini — ukuran <b>tumpang-tindih semantik</b>, <b>bukan</b> otoritas hukum atau sitasi. Instrumen dengan lebih banyak pasal (mis. PP PSTE, 100 pasal) otomatis berskor lebih tinggi. Anggap sebagai peta eksploratif; klik node untuk baca teks asli dan nilai sendiri.'}
+                    ? '⚠ <b>What this means:</b> “Semantic centrality” here = how many <i>other provisions are textually similar</i> (SBERT cosine ≥ threshold) to this one — a <b>semantic-overlap</b> measure, <b>not</b> legal authority or cross-citation. Soft-law guidance ranks high because it has many long, generic sections (more chances to match), NOT because it is authoritative. <b>For authority, see the “Citation Cross-Reference Network” panel below</b> — there the central nodes are UU ITE 19/2016 (cited 39×) and the CoE Framework Convention (23×), not this soft-law. Treat this table as an exploratory map; click a node to read the actual text.'
+                    : '⚠ <b>Arti angka ini:</b> “Sentralitas semantik” di sini = berapa <i>pasal lain yang mirip secara teks</i> (SBERT cosine ≥ ambang) dengan pasal ini — ukuran <b>tumpang-tindih semantik</b>, <b>bukan</b> otoritas hukum atau sitasi. Soft-law muncul di puncak karena punya banyak bagian panjang & generik (lebih banyak peluang mirip), <b>bukan</b> karena otoritatif. <b>Untuk OTORITAS, lihat panel “Jaringan Rujukan Silang” di bawah</b> — di sana yang sentral adalah UU ITE 19/2016 (disitir 39×) & CoE Framework Convention (23×), bukan soft-law ini. Anggap tabel ini peta eksploratif; klik node untuk baca teks asli.'}
               </div>
             </div>`;
 
