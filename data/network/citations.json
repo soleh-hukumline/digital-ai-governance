@@ -1650,5 +1650,111 @@
       "name": "NIST AI Risk Management Framework",
       "count": 1
     }
-  ]
+  ],
+  "coverage": [
+    {
+      "doc": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "out": 59,
+      "in": 0,
+      "role": "source"
+    },
+    {
+      "doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "out": 44,
+      "in": 0,
+      "role": "source"
+    },
+    {
+      "doc": "UU_ITE_No19_2016",
+      "out": 3,
+      "in": 39,
+      "role": "both"
+    },
+    {
+      "doc": "UU_ITE_No1_2024",
+      "out": 31,
+      "in": 0,
+      "role": "source"
+    },
+    {
+      "doc": "EU_AI_Act_2024",
+      "out": 24,
+      "in": 4,
+      "role": "both"
+    },
+    {
+      "doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "out": 21,
+      "in": 7,
+      "role": "both"
+    },
+    {
+      "doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "out": 3,
+      "in": 23,
+      "role": "both"
+    },
+    {
+      "doc": "PP_PSTE_No71_2019",
+      "out": 9,
+      "in": 6,
+      "role": "both"
+    },
+    {
+      "doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "out": 11,
+      "in": 1,
+      "role": "both"
+    },
+    {
+      "doc": "OECD_AI_Principles_2024",
+      "out": 5,
+      "in": 5,
+      "role": "both"
+    },
+    {
+      "doc": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "out": 7,
+      "in": 3,
+      "role": "both"
+    },
+    {
+      "doc": "ISO_IEC_42001_AI_Management_System",
+      "out": 10,
+      "in": 0,
+      "role": "source"
+    },
+    {
+      "doc": "SE_Komdigi_No9_2023_Etika_AI",
+      "out": 8,
+      "in": 0,
+      "role": "source"
+    },
+    {
+      "doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "out": 5,
+      "in": 0,
+      "role": "source"
+    },
+    {
+      "doc": "UU_PDP_No27_2022",
+      "out": 3,
+      "in": 1,
+      "role": "both"
+    },
+    {
+      "doc": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "out": 4,
+      "in": 0,
+      "role": "source"
+    },
+    {
+      "doc": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "out": 3,
+      "in": 0,
+      "role": "source"
+    }
+  ],
+  "n_docs": 17,
+  "n_isolated": 0
 }

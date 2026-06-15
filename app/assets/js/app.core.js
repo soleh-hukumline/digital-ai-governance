@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260615_14';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260615_15';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -1701,7 +1701,25 @@ document.addEventListener('DOMContentLoaded', () => {
             + `<thead><tr><th style="${th}">${isEn ? 'Referenced regulation/instrument' : 'Regulasi/instrumen dirujuk'}</th><th style="${th}">${isEn ? 'Note' : 'Catatan'}</th><th style="${th};text-align:right;">${isEn ? 'Count' : 'Jumlah'}</th></tr></thead>`
             + `<tbody>${rowsB || `<tr><td colspan="3" style="${td}text-align:center;color:var(--text-4);">—</td></tr>`}</tbody></table></div>`;
 
-        box.innerHTML = note + tableA + tableB;
+        const cov = d.coverage || [];
+        const roleBadge = {
+            both: '<span style="font-size:0.65rem;background:rgba(16,185,129,0.15);color:var(--green,#10b981);padding:1px 6px;border-radius:10px;">↔ dua arah</span>',
+            source: '<span style="font-size:0.65rem;background:rgba(99,102,241,0.15);color:var(--primary);padding:1px 6px;border-radius:10px;">→ menyitir</span>',
+            sink: '<span style="font-size:0.65rem;background:rgba(245,158,11,0.15);color:var(--amber);padding:1px 6px;border-radius:10px;">← disitir</span>',
+            isolated: '<span style="font-size:0.65rem;background:rgba(239,68,68,0.15);color:#ef4444;padding:1px 6px;border-radius:10px;">● isolated</span>'
+        };
+        const rowsC = cov.map(c => `<tr><td style="${td}"><b style="color:var(--text-1);">${_rEsc(_citeDoc(c.doc))}</b></td>`
+            + `<td style="${td}text-align:center;color:var(--primary);font-weight:700;">${c.out}</td>`
+            + `<td style="${td}text-align:center;color:var(--amber);font-weight:700;">${c.in}</td>`
+            + `<td style="${td}text-align:center;">${roleBadge[c.role] || c.role}</td></tr>`).join('');
+        const nPart = d.n_docs - (d.n_isolated || 0);
+        const tableC = `<div style="font-size:0.74rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:0.4px;margin:16px 0 4px;">${isEn ? `C · Per-document participation — ${nPart}/${d.n_docs} docs` : `C · Partisipasi per dokumen — ${nPart}/${d.n_docs} dokumen`} ${d.n_isolated ? `(${d.n_isolated} isolated)` : (isEn ? '(none isolated)' : '(tak ada isolated)')}</div>`
+            + _exportBar('cite-coverage', 'Sitasi_Partisipasi_Dokumen')
+            + `<div id="cite-coverage"><table style="width:100%;border-collapse:collapse;">`
+            + `<thead><tr><th style="${th}">${isEn ? 'Document' : 'Dokumen'}</th><th style="${th};text-align:center;">${isEn ? 'Cites (out)' : 'Menyitir'}</th><th style="${th};text-align:center;">${isEn ? 'Cited (in)' : 'Disitir'}</th><th style="${th};text-align:center;">${isEn ? 'Role' : 'Peran'}</th></tr></thead>`
+            + `<tbody>${rowsC}</tbody></table></div>`;
+
+        box.innerHTML = note + tableA + tableB + tableC;
     }
     window.renderCitationNetwork = renderCitationNetwork;
 

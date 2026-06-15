@@ -206,9 +206,24 @@ def main():
             n, c = ext.get(e['target'], (e['name'], 0))
             ext[e['target']] = (n, c + e['count'])
     external = sorted(([nm, cid, n] for cid, (nm, n) in ext.items()), key=lambda x: -x[2])
+    # per-document participation across ALL corpus docs (out=cites, in=cited within corpus)
+    out_c, in_c = {}, {}
+    for e in edges:
+        out_c[e['source']] = out_c.get(e['source'], 0) + e['count']
+        if e.get('corpus_doc'):
+            in_c[e['corpus_doc']] = in_c.get(e['corpus_doc'], 0) + e['count']
+    coverage = []
+    for b in basenames:
+        o, i = out_c.get(b, 0), in_c.get(b, 0)
+        role = 'isolated' if (o == 0 and i == 0) else ('source' if i == 0 else ('sink' if o == 0 else 'both'))
+        coverage.append({'doc': b, 'out': o, 'in': i, 'role': role})
+    coverage.sort(key=lambda c: -(c['out'] + c['in']))
+
     payload = {'docs': docs, 'edges': edges,
                'in_corpus_targets': sorted(incorp),
-               'external_referenced': [{'id': c, 'name': nm, 'count': n} for nm, c, n in external]}
+               'external_referenced': [{'id': c, 'name': nm, 'count': n} for nm, c, n in external],
+               'coverage': coverage, 'n_docs': len(basenames),
+               'n_isolated': sum(1 for c in coverage if c['role'] == 'isolated')}
     json.dump(payload, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 
     named = sum(1 for e in edges if e['type'] == 'named')
@@ -220,6 +235,10 @@ def main():
     print("\n— DIRUJUK tapi TIDAK ADA di korpus (gap kelengkapan) —")
     for x in payload['external_referenced'][:16]:
         print(f"   {x['count']:>2d}x  {x['id']:16s} {x['name'] if x['name'] != x['id'] else ''}")
+    role_id = {'both': '↔ dua arah', 'source': '→ menyitir', 'sink': '← disitir', 'isolated': '● isolated'}
+    print(f"\n— Partisipasi: {payload['n_docs']} dokumen, {payload['n_docs'] - payload['n_isolated']} ikut, {payload['n_isolated']} isolated —")
+    for c in coverage:
+        print(f"   out={c['out']:>2d} in={c['in']:>2d}  {role_id[c['role']]:11s} {c['doc'][:46]}")
 
 
 if __name__ == '__main__':
