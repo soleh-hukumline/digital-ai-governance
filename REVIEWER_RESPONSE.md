@@ -2,10 +2,15 @@
 
 **Project:** Digital AI Governance Dashboard — Legal Network Analysis (LNA) of
 Indonesia's AI/cyber regulation
-**Date:** 2026-06-14
+**Date:** 2026-06-15 (complete, current revision)
 **Scope:** This document explains every change made to the code and data in
 response to the review, and provides copy-paste-ready text for the manuscript.
-Real, reproducible numbers are quoted throughout.
+Real, reproducible numbers are quoted throughout, consistent with the live
+dashboard and the Python pipeline. **Reading order:** §0 TL;DR → §1 data integrity
+→ §2 methodology (incl. §2.5 per-subject, §2.6 sector, §2.7 human-in-the-loop) →
+§3 validation → §4–7. The thesis was *corrected* mid-revision (see §2.3): the
+"vacuum" was a retrieval artifact; the validated finding is a **subject-asymmetric,
+AI-specific** gap.
 
 ---
 
@@ -18,7 +23,8 @@ Real, reproducible numbers are quoted throughout.
 | C | Threshold mismatch (">0.75/<0.50") | Paper ≠ code | Single source of truth: tiered **0.70 / 0.55 / 0.50**, reconciled + justified |
 | D | "No quantitative network metrics" | Computed but not surfaced | Static tables + figures from real graph (below) |
 | E | Coverage rate undefined | Implicit | Explicit formula; cosine baseline 44.4% **corrected** to validated **88.9%** — the "55.6% vacuum" was a retrieval artifact (§2.3); real gap = subject-asymmetry + AI-specificity |
-| F | **Zero validation** (no ground truth / IAA / P-R) | True | **Done**: 2-annotator gold (Cohen's κ=0.77); cosine F1=0.28 vs validated judge **F1=0.67** (few-shot + recall-complete candidates); coverage at calibrated P≥95 |
+| F | **Zero validation** (no ground truth / IAA / P-R) | True | **Done**: 2-annotator gold (Cohen's κ=0.77); cosine F1=0.28 vs validated judge **F1=0.67** (few-shot + recall-complete, strict roles). Relevance validated; per-subject coverage = pelaku 100 / PSE 89 / konsumen 27 / regulator 11% |
+| L | **Role assignment unvalidated; one notification article over-counted 3 subjects** | Found mid-revision | Strict-role judge (notification ≠ redress) + **human-in-the-loop** override (`warrant_overrides.json`) that wins over the LLM in every view & in the pipeline (§2.7) |
 | G | **"No hallucination" claim unsupported** | Asserted | Removed; replacement text provided |
 | H | Figures don't display / reflect data | Static PNGs of synthetic data, no generator | `make_figures.py` regenerates from real graph; embedding verified |
 | I | Regulations unreadable | 1 PDF was an HTML 404; 1 was a press release; non-article docs silently dropped | Robust extractor + replaced files → **all 17 regulations** represented (916 nodes) |
@@ -264,34 +270,64 @@ per-subject figures from LLM-only to expert-curated as review proceeds.
 The dashboard's "Analisis Kesenjangan Regulasi Per Sektor" tab previously showed a
 hand-set **Coverage Score** per sector that (a) did not even match the provisions
 listed in its own card and (b) was unconnected to any data. It is now **computed**
-from the validated few-shot judge over the 45 real incidents grouped by their
-`sector` field (`sector_coverage.py` → `sector_coverage.json`), at the **calibrated
-P≥95** operating point: coverage = share of a sector's incidents with ≥1
-high-confidence warrant, disaggregated by legal subject. Sectors with n<3 are
-flagged as indicative.
+from the validated **strict-role** few-shot judge (§2.5) over the 45 real incidents
+grouped by their `sector` field (`sector_coverage.py` → `sector_coverage.json`):
+coverage = share of a sector's incidents with ≥1 warrant binding that legal subject.
+Sectors with n<3 are flagged as indicative.
 
-| Sector (n) | Any warrant | Pelaku | PSE | Konsumen | Regulator |
+| Sector (n) | Any | Pelaku | Operator/PSE | Konsumen | Regulator |
 |---|---|---|---|---|---|
-| E-Commerce & Telco (11) | 100% | 100% | 100% | 100% | 100% |
-| Government & Public (10) | 100% | 100% | 100% | 100% | 100% |
-| Finance & Banking (9) | 67% | 67% | 56% | 56% | 56% |
-| Health (6) | 100% | 100% | 83% | 83% | 83% |
-| **AI Misuse / Deepfake (6)** | 83% | 83% | **0%** | **0%** | **0%** |
-| Education (2)* | 50% | 50% | 50% | 50% | 50% |
+| E-Commerce & Telco (11) | 100% | 100% | 100% | 27% | 9% |
+| Government & Public (10) | 100% | 100% | 100% | 20% | 10% |
+| Finance & Banking (9) | 100% | 100% | 100% | 55% | 22% |
+| Health (6) | 100% | 100% | 100% | **0%** | **0%** |
+| **AI Misuse / Deepfake (6)** | 100% | 100% | **16%** | **16%** | **0%** |
+| Education (2)* | 100% | 100% | 100% | 0% | 0% |
 | Justice/Law Enf. (1)* | 100% | 100% | 100% | 100% | 100% |
 
 *small sample (n<3), indicative only.*
 
-**Headline finding (copy-paste):** the data-heavy sectors (e-commerce/telco,
-government, health) are well covered by UU PDP at high confidence, but the gap is
-concentrated and stark in **AI-misuse/deepfake**: a perpetrator-criminal basis
-exists for **83%** of those incidents, yet **0%** have a high-confidence
-operator-duty, consumer-redress, *or* regulator-supervision basis. In other words,
-for AI-specific harms Indonesian law can name an offender but offers victims no
-clear remedy and regulators no clear supervisory hook — because there is **no
-AI-specific instrument**, only strained analogies to data-protection/ITE articles
-(which fall below high confidence). This is the precise, validated form of the
-"governance gap" the paper should argue.
+**Headline finding (copy-paste):** every sector has a perpetrator-criminal basis
+(100%) and, in data-heavy sectors, an operator-duty basis (100%) — but the
+**protective/supervisory side is thin to absent**: consumer-redress coverage is
+9–55% (0% in health/education) and regulator-supervision 0–22%. The deficit is
+sharpest in **AI-misuse/deepfake**, where even the operator duty collapses (16%) and
+consumers/regulators have almost nothing — because there is **no AI-specific
+instrument**, only strained analogies to data-protection/ITE articles. This is the
+precise, validated form of the "governance gap" the paper should argue: not an
+absence of *any* law, but a **subject-asymmetric and AI-specific** one.
+
+> *Note:* these figures reflect the LLM judge's **role assignment**, which is the
+> reviewer-validated *relevance* (§3) but **not yet human-validated at the role
+> level** — the dashboard recomputes them live as you confirm/correct each warrant
+> (§2.7), and the Python pipeline honors the same human decisions.
+
+---
+
+### 2.7 Human-in-the-loop — expert override of every warrant (LLM proposes, human disposes)
+
+The automatic mapping is a *proposal*, not the final word. A reviewer can open any
+incident in the dashboard ("Analisis Kasus"), **read the actual article and the
+incident context**, and set, per warrant: **relevant / not**, the **bound legal
+subject(s)**, and a note. These human decisions are authoritative:
+
+- **One source of truth.** They are stored as `warrant_overrides.json`
+  (`warrant_review.py`) and **override the LLM** in *every* downstream computation —
+  the radial map, the per-subject coverage (§2.5), the sector tab (§2.6), the Gap
+  Warrant-Matrix (§3 / dashboard), **and** the AI Toulmin assistant — so the figure
+  shown is identical to the figure in this report after re-running the pipeline.
+- **Live + reproducible.** Edits update the coverage figures in-browser instantly
+  and export to a version-controlled JSON; re-running
+  `role_coverage.py` / `sector_coverage.py` / `build_radial_incident.py` bakes them
+  in. Reviewed warrants are marked ✔ and counted, so the share of *human-validated*
+  warrants is transparent and grows as coding proceeds.
+
+**Copy-paste — Methods:** *The incident–regulation mapping was produced by an LLM
+judge and treated as a reviewable proposal: each warrant could be confirmed or
+corrected by a human coder (relevance and bound legal subject), with expert
+decisions stored as overrides that take precedence over the model in all reported
+statistics.* This is exactly the standard a reviewer asked for — automation for
+recall and consistency, human judgment for the final ground truth.
 
 ---
 
@@ -408,8 +444,10 @@ artifacts, support a "no hallucination" guarantee.
 
 - Added **`make_figures.py`** — regenerates both report figures **from the real
   graph**, so they can no longer drift from the data:
-  - `master_metrics.png` — node composition, coverage 44.4% vs vacuum 55.6%,
-    top regulation hubs.
+  - `master_metrics.png` — node composition + top regulation hubs. *(NB: this
+    static PNG shows the **cosine-baseline** 44.4% coverage; the validated,
+    reported figure is the per-subject coverage of §2.5–2.6 — regenerate the PNG
+    before final submission if you cite a coverage number on it.)*
   - `master_lna.png` — the network (spring layout), coloured by class,
     incident nodes labelled.
 - `Laporan_aplikasi_AI_GOV.html` embeds them with correct relative paths
@@ -426,24 +464,30 @@ artifacts, support a "no hallucination" guarantee.
 ```bash
 # 1. Dependencies
 python -m pip install -r system/legal_network_framework/requirements.txt
-#    (sentence-transformers, scikit-learn, networkx, numpy, PyPDF2; + matplotlib for figures)
+#    (sentence-transformers, scikit-learn, networkx, numpy, PyPDF2, pdfminer.six; + matplotlib)
 
-# 2. Build the REAL incident dataset (ID + EN)
+# 2. Real incident dataset (ID + EN), then the cosine network from the 17 PDFs
 python build_incident_dataset.py
-
-# 3. Build the legal network graph from PDFs + incidents
 cd system/legal_network_framework && python builder.py
-#    -> data/network/legal_graph.json, methods_config.json, incident_reg_scores.csv
+#    -> legal_graph.json, methods_config.json, incident_reg_scores.csv
 
-# 4. Generate metric reports + figures
-python analyzer.py            # -> laporan_hasil_lna.md
-python incident_analyzer.py   # -> laporan_khusus_insiden.md
-python make_figures.py        # -> app/assets/report_images/master_*.png
+# 3. Incident<->regulation warrants: validated few-shot LLM judge (strict roles)
+#    candidates = top-K cosine UNION a whitelist of core ID statutes (recall-complete)
+python llm_judge.py --fewshot      # -> llm_edge_confidence.json (needs .gemini_key)
 
-# 5. Validation (after manual coding)
-python make_validation_sample.py            # -> validation_pairs_template.csv
-#   ...code it by hand (2 annotators) -> validation_pairs_coded.csv...
-python validation.py                        # -> precision/recall/F1 + Cohen's kappa
+# 4. Validation against the 2-annotator human gold
+python validate_3way.py ../../data/network/validation_2_revisi.xlsx   # cosine vs LLM vs human
+python eval_fewshot.py             # held-out few-shot vs zero-shot (F1)
+
+# 5. Coverage + visualization data (ALL honor human overrides via warrant_review.py)
+python role_coverage.py            # per-subject coverage (raw + calibrated)
+python sector_coverage.py          # per-sector x per-subject
+python build_radial_incident.py    # radial chord data (+ centrality)
+python build_provision_texts.py    # full article text (merges manual overrides)
+python make_figures.py             # static PNGs for the paper
+
+# Human-in-the-loop: review warrants in the dashboard -> Export Tinjauan ->
+# data/network/warrant_overrides.json, then re-run step 5 to bake in expert decisions.
 ```
 
 **Regulation extraction — now robust AND clean (all 17 PDFs).** Two defects were
@@ -468,27 +512,35 @@ boilerplate/preamble/short-fragment filter that drops noise nodes entirely.
 
 - **Validity rose 48.3% → 88.2%**; the named-article statutes (UU PDP, UU ITE, PP
   PSTE, POJK, EU AI Act, Council of Europe) are now **100% clean**.
-- The corpus was rebuilt from clean text: **916 nodes / 8,005 edges**. Removing the
-  garbled nodes **corrected the coverage rate from 55.6% to 44.4%** (the old value
-  was inflated by incidents matching noise nodes) — i.e. **55.6% of incidents are
-  now structural holes**, strengthening the "vacuum of law" finding. The most
-  central instruments remain Indonesia's **soft-law** AI texts (Stranas AI, SE
-  Komdigi). All metric tables/figures above reflect this clean rebuild.
+- The cosine corpus was rebuilt from clean text: **916 nodes / 8,005 edges**.
+  Provision full text is also exposed in the UI (clickable) and hand-correctable
+  via `provision_texts_overrides.json` for residual scanned-PDF OCR noise.
+- *(Thesis note — see §2.3):* the clean-cosine coverage of **44.4%** was later
+  superseded; cosine is a weak **retriever** (it buried applicable statutes), so the
+  validated incident↔regulation mapping uses the LLM judge (§2.5–2.7), giving
+  **88.9% any-subject coverage** and reframing the finding from a blanket "vacuum"
+  to a **subject-asymmetric, AI-specific** gap.
 
 ---
 
 ## 7. File manifest
 
-**New**
+**New — incident dataset & extraction**
 - `build_incident_dataset.py` — source-driven real-incident dataset builder (ID+EN)
-- `system/legal_network_framework/validation.py` — P/R/F1 + Cohen's κ + sweep
-- `system/legal_network_framework/make_validation_sample.py` — coding template
-- `system/legal_network_framework/make_figures.py` — figures from real graph
-- `data/network/methods_config.json` — machine-readable methods provenance
-- `data/network/incident_reg_scores.csv` — 33,525 candidate scores
-- `data/network/validation_pairs_template.csv` — 103-pair coding sheet
 - `data/incidents/_en_overrides.json` — English translations (feeds the EN dataset)
-- `REVIEWER_RESPONSE.md` — this document
+- `data/network/methods_config.json`, `incident_reg_scores.csv` — methods provenance + candidate scores
+
+**New — validated LLM judge & validation**
+- `system/.../llm_judge.py` — few-shot, strict-role, recall-complete incident↔regulation judge → `llm_edge_confidence.json`
+- `system/.../make_fewshot.py`, `data/network/fewshot_examples.json` — held-out human exemplars
+- `system/.../validate_3way.py`, `eval_fewshot.py` — cosine vs LLM vs human gold (κ, P/R/F1); `make_3way_sample.py`
+- `data/network/validation_2_revisi.xlsx` — 2-annotator gold (Cohen's κ = 0.77)
+
+**New — coverage, visualization & human-in-the-loop**
+- `system/.../role_coverage.py`, `sector_coverage.py`, `build_radial_incident.py` — per-subject / per-sector / radial data (honor overrides)
+- `system/.../build_provision_texts.py` (+ `provision_texts_overrides.json`) — full article text, hand-correctable
+- `system/.../warrant_review.py` + `data/network/warrant_overrides.json` — expert overrides that win over the LLM everywhere
+- `REVIEWER_RESPONSE.md` — this complete reviewer report
 
 **Rewritten**
 - `data/incidents/indonesia_incidents.json` — 45 real, sourced incidents
