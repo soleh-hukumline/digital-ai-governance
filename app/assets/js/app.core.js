@@ -3510,6 +3510,7 @@ ${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — ny
     // 1. navigateTo dulu (section jadi visible)
     // 2. baru render graph (canvas punya ukuran nyata)
     // ===================================================================
+    window.navigateTo = navigateTo;  // expose for inline onclick (gap-matrix cell → Analisis Kasus)
     navigateTo('section-all');       // ← buka section SEBELUM render graph
     _ensureUiText().then(_applyStaticUiText);   // editable-narrative overrides (subtitles etc.)
     loadAllNetworkGraphs();          // ← sekarang canvas sudah berukuran
