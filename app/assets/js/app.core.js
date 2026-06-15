@@ -1173,6 +1173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             [isEn ? 'Structural holes' : 'Structural holes', d.structural_holes, isEn ? 'No high-confidence warrant' : 'Tanpa dasar hukum confidence tinggi'],
         ];
         tb.innerHTML = rows.map(r => `<tr><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-2);">${r[0]}</td><td style="padding:8px 12px;border-bottom:1px solid var(--border);text-align:right;font-weight:700;color:var(--text-1);">${r[1]}</td><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-3);">${r[2]}</td></tr>`).join('');
+        _attachMetricsExport('incident', 'Metrik_Insiden');
     }
 
     function _radialEdgesOf(id) {
@@ -1572,6 +1573,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (leg) leg.innerHTML = `<span style="font-size:11px;color:var(--text-2);">✓ = ${isEn ? 'a legal basis binds this subject' : 'ada dasar hukum yang mengikat subjek itu'} · <span style="color:#10b981;">●</span> = ${isEn ? 'human-reviewed' : 'ditinjau manusia'} · – = ${isEn ? 'gap' : 'tidak ada'} · ${isEn ? 'hover a ✓ for the article' : 'arahkan ke ✓ untuk lihat pasalnya'}</span>`;
         const tb = document.getElementById('tbody-metrics-gap');
         if (tb) tb.innerHTML = _ROLE_KEYS.map(role => `<tr><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-2);">${RLABEL[role]}</td><td style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);font-weight:700;color:${ROLE_META[role].c};">${Math.round(100 * tot[role] / denom)}%</td><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-3);font-size:0.8rem;">${tot[role]}/${N} ${isEn ? 'incidents with a basis for this subject' : 'insiden punya dasar hukum utk subjek ini'}</td></tr>`).join('');
+        _attachMetricsExport('gap', 'Metrik_Gap_Subjek');
     }
     function L_GAP(isEn, nrev) {
         return isEn
@@ -2372,6 +2374,7 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
                 <td style="padding:9px 12px; color:var(--text-3); font-size:0.82rem; line-height:1.4;">${implikasi}</td>
             </tr>
         `).join('');
+        _attachMetricsExport(graphId, `Metrik_${graphId}`);
 
         if (typeof applyTranslations === 'function') applyTranslations();
     }
@@ -2535,6 +2538,7 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
                 </tr></thead>
                 <tbody>${rowsHtml}</tbody>
               </table>
+              ${_exportBar('ranking-' + graphId, 'Ranking_DegreeCentrality_' + graphId)}
               ${betNote}
               <div style="font-size:0.75rem; color:var(--text-4); margin-top:8px; line-height:1.55; border-top:1px dashed var(--border); padding-top:8px;">
                 ${isEn
@@ -2547,7 +2551,10 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
         if (!cont) {
             cont = document.createElement('div');
             cont.id = `ranking-${graphId}`;
-            anchor.insertAdjacentElement('afterend', cont);
+            // place ranking AFTER the metrics export bar so order is:
+            // metrics table → its PNG/CSV bar → ranking table → its PNG/CSV bar
+            const after = document.getElementById(`metricsbar-${graphId}`) || anchor;
+            after.insertAdjacentElement('afterend', cont);
         }
         cont.innerHTML = html;
         if (typeof applyTranslations === 'function') applyTranslations();
@@ -2954,6 +2961,47 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
     }
     function _toCSV(rows) { return rows.map(r => r.map(_csvCell).join(',')).join('\n'); }
     function _toast(msg, type) { if (typeof showToast === 'function') showToast(msg, type || 'success'); }
+
+    // ── Generic PNG/CSV export for ANY result element (table or container) ──
+    // Placed next to each result (not all at the top).
+    window._elPNG = function (id, filename) {
+        const el = document.getElementById(id);
+        if (!el) { showToast('Elemen belum siap.', 'warning'); return; }
+        const svg = el.matches('svg') ? el : el.querySelector('svg');
+        if (svg) { _svgToPng(id, filename); return; }                 // SVG graphs
+        if (typeof html2canvas !== 'function') { showToast('Pustaka PNG belum termuat.', 'error'); return; }
+        const cs = getComputedStyle(document.documentElement);
+        const bg = (cs.getPropertyValue('--bg-card') || '#ffffff').trim();
+        html2canvas(el, { backgroundColor: bg, scale: 2, useCORS: true }).then(c => {
+            const a = document.createElement('a'); a.download = filename; a.href = c.toDataURL('image/png'); a.click();
+            _toast(window.currentLang === 'en' ? 'Image downloaded.' : 'Gambar berhasil diunduh.');
+        }).catch(e => showToast('Export PNG gagal: ' + e.message, 'error'));
+    };
+    window._elCSV = function (id, filename) {
+        const el = document.getElementById(id);
+        const table = !el ? null : (el.matches('table') ? el : (el.closest('table') || el.querySelector('table')));
+        if (!table) { showToast('Tabel tidak ditemukan.', 'warning'); return; }
+        const rows = [...table.querySelectorAll('tr')].map(tr => [...tr.querySelectorAll('th,td')].map(c => c.innerText.replace(/\s+/g, ' ').trim()));
+        _downloadBlob(_toCSV(rows), filename, 'text/csv;charset=utf-8;');
+        _toast(window.currentLang === 'en' ? 'CSV downloaded.' : 'CSV berhasil diunduh.');
+    };
+    // small right-aligned PNG·CSV bar to drop right beside a result
+    function _exportBar(id, base) {
+        return `<div style="display:flex;justify-content:flex-end;gap:6px;margin:6px 0 2px;">
+            <button class="btn-secondary btn-sm" onclick="_elPNG('${id}','${base}.png')"><span class="material-symbols-rounded" style="font-size:13px;">photo_camera</span> PNG</button>
+            <button class="btn-secondary btn-sm" onclick="_elCSV('${id}','${base}.csv')"><span class="material-symbols-rounded" style="font-size:13px;">table_chart</span> CSV</button>
+        </div>`;
+    }
+    // attach a PNG·CSV bar right under a metrics table (tbody-metrics-<graphId>)
+    function _attachMetricsExport(graphId, base) {
+        const tbody = document.getElementById(`tbody-metrics-${graphId}`);
+        const tbl = tbody && tbody.closest('table');
+        if (!tbl) return;
+        if (!tbl.id) tbl.id = `metricstbl-${graphId}`;
+        let bar = document.getElementById(`metricsbar-${graphId}`);
+        if (!bar) { bar = document.createElement('div'); bar.id = `metricsbar-${graphId}`; tbl.insertAdjacentElement('afterend', bar); }
+        bar.innerHTML = _exportBar(tbl.id, base);
+    }
     function _getSectorData() {
         return (typeof window !== 'undefined' && window.sectorCoverageData) ? window.sectorCoverageData : null;
     }
