@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260615_3';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260615_9';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -172,6 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Lazy-load sector analysis only when section displayed
         if (targetId === 'section-sector') initSectorAnalysis();
+        // Radial (chord) Insiden↔Regulasi view replaces the force graph here
+        if (targetId === 'section-incident') renderRadialIncident();
 
         // GRAPH FIX: jika graph sudah dirender sebelumnya (pindah tab), redraw + fit
         // Jika belum dirender (lazy), loadAllNetworkGraphs akan handle saat navigateTo
@@ -423,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: 'intl', graph: 'intl_graph.json', report: 'laporan_khusus_internasional.md' },
             { id: 'natl', graph: 'natl_graph.json', report: 'laporan_khusus_nasional.md' },
             { id: 'cross', graph: 'cross_graph.json', report: 'laporan_khusus_transnasional.md' },
-            { id: 'incident', graph: 'incident_graph.json', report: 'laporan_khusus_insiden.md' },
+            // 'incident' now uses the radial (chord) view — renderRadialIncident()
             { id: 'gap', graph: 'gap_graph.json', report: 'laporan_gap_analysis.md' }
         ];
 
@@ -940,6 +942,267 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof applyTranslations === 'function') applyTranslations();
     }
 
+
+    // ===================================================================
+    // RADIAL (CHORD) Insiden↔Regulasi  — replaces the force graph for §incident
+    // ===================================================================
+    const RADIAL = { data: null, sel: null, nav: 0, bindingOnly: false, pos: {}, byId: {}, rendered: false };
+    const RVB = 820, RCX = 410, RCY = 410, RR = 235, RBAR = 40, RLAB = RR + RBAR + 10;
+    const ROLE_META = {
+        pelaku:   { c: '#ef4444', id: 'Pelaku (pidana)',  en: 'Perpetrator' },
+        pse:      { c: '#6366f1', id: 'Operator/PSE',      en: 'Operator/PSE' },
+        konsumen: { c: '#f59e0b', id: 'Konsumen/korban',   en: 'Consumer' },
+        regulator:{ c: '#10b981', id: 'Regulator/negara',  en: 'Regulator' },
+    };
+    const RPAL = ['#ef4444','#ec4899','#a855f7','#6366f1','#3b82f6','#0ea5e9','#14b8a6','#10b981','#84cc16','#eab308','#f59e0b','#f97316','#78716c','#be123c','#6d28d9'];
+    let RGROUPC = {};
+    const _rGroupColor = g => RGROUPC[g] || '#94a3b8';
+    const _rRoleColor = roles => (roles && roles.length && ROLE_META[roles[0]]) ? ROLE_META[roles[0]].c : '#94a3b8';
+    const _rPt = order => {
+        const n = RADIAL.data.nodes.length;
+        const a = (-90 + 360 * order / n) * Math.PI / 180;
+        return { x: RCX + RR * Math.cos(a), y: RCY + RR * Math.sin(a), a: -90 + 360 * order / n };
+    };
+    const _rEsc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+    async function renderRadialIncident() {
+        const svgBox = document.getElementById('radial-incident-svg');
+        if (!svgBox || RADIAL.rendered) return;
+        if (!RADIAL.data) {
+            try {
+                const res = await fetch(`./data/network/radial_incident.json?v=${DATA_V}`);
+                RADIAL.data = await res.json();
+            } catch (e) { svgBox.innerHTML = '<div class="rp-empty">Gagal memuat data radial.</div>'; return; }
+        }
+        const d = RADIAL.data;
+        RADIAL.byId = {}; d.nodes.forEach(n => RADIAL.byId[n.id] = n);
+        const groups = [...new Set(d.nodes.map(n => n.group))].sort();
+        RGROUPC = {}; groups.forEach((g, i) => RGROUPC[g] = RPAL[i % RPAL.length]);
+        RADIAL.pos = {}; d.nodes.forEach(n => RADIAL.pos[n.id] = _rPt(n.order));
+        const maxDeg = Math.max(1, ...d.nodes.map(n => n.degree));
+
+        // chords
+        let chords = '';
+        d.edges.forEach((e, i) => {
+            const a = RADIAL.pos[e.source], b = RADIAL.pos[e.target];
+            if (!a || !b) return;
+            const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+            const ctlx = mx + (RCX - mx) * 0.7, ctly = my + (RCY - my) * 0.7;
+            chords += `<path class="rchord" data-s="${e.source}" data-t="${e.target}" data-i="${i}" `
+                + `d="M${a.x.toFixed(1)},${a.y.toFixed(1)} Q${ctlx.toFixed(1)},${ctly.toFixed(1)} ${b.x.toFixed(1)},${b.y.toFixed(1)}" `
+                + `fill="none" stroke="${_rRoleColor(e.roles)}" stroke-width="1" stroke-opacity="0.32"/>`;
+        });
+
+        // nodes (dot + outer bar + reg labels)
+        let marks = '';
+        d.nodes.forEach(n => {
+            const p = RADIAL.pos[n.id], col = _rGroupColor(n.group);
+            const isReg = n.type === 'regulation';
+            const rad = isReg ? Math.min(8, 3 + n.degree * 0.5) : 3.2;
+            const barLen = (n.degree / maxDeg) * RBAR;
+            const ux = Math.cos(p.a * Math.PI / 180), uy = Math.sin(p.a * Math.PI / 180);
+            const bx2 = RCX + (RR + 4 + barLen) * ux, by2 = RCY + (RR + 4 + barLen) * uy;
+            const bx1 = RCX + (RR + 4) * ux, by1 = RCY + (RR + 4) * uy;
+            let lbl = '';
+            if (isReg) {
+                const flip = (p.a > 90 && p.a < 270);
+                const lx = RCX + RLAB * ux, ly = RCY + RLAB * uy;
+                const rot = flip ? p.a + 180 : p.a;
+                lbl = `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" font-size="10" fill="var(--graph-font)" `
+                    + `text-anchor="${flip ? 'end' : 'start'}" dominant-baseline="middle" `
+                    + `transform="rotate(${rot.toFixed(1)} ${lx.toFixed(1)} ${ly.toFixed(1)})">${_rEsc(n.code)}</text>`;
+            }
+            const hole = (n.type === 'incident' && n.degree === 0);
+            marks += `<g class="rnode" data-id="${_rEsc(n.id)}" style="cursor:pointer">`
+                + `<line x1="${bx1.toFixed(1)}" y1="${by1.toFixed(1)}" x2="${bx2.toFixed(1)}" y2="${by2.toFixed(1)}" stroke="${col}" stroke-width="${isReg ? 3 : 2}" stroke-opacity="0.7"/>`
+                + `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${rad}" fill="${hole ? 'transparent' : col}" stroke="${hole ? '#ef4444' : 'rgba(0,0,0,0.25)'}" stroke-width="${hole ? 1.5 : 0.8}" ${hole ? 'stroke-dasharray="2 2"' : ''}/>`
+                + `<title>${_rEsc(n.code)} — ${_rEsc(n.label)}</title>`
+                + lbl + `</g>`;
+        });
+
+        svgBox.innerHTML = `<svg viewBox="0 0 ${RVB} ${RVB}" xmlns="http://www.w3.org/2000/svg">`
+            + `<g class="rchords">${chords}</g><g class="rmarks">${marks}</g></svg>`;
+
+        // interactions (event delegation)
+        svgBox.onclick = ev => {
+            const g = ev.target.closest('.rnode');
+            if (g) _radialSelect(g.getAttribute('data-id'));
+            else resetRadialSelection();
+        };
+
+        _radialLegend(groups);
+        _radialMetrics(d);
+        _radialApplyHighlight();
+        RADIAL.rendered = true;
+    }
+
+    function _radialLegend(groups) {
+        const el = document.getElementById('legend-incident');
+        if (!el) return;
+        const isEn = window.currentLang === 'en';
+        let h = `<div style="width:100%;font-size:10px;color:var(--text-4);font-weight:700;text-transform:uppercase;letter-spacing:.5px;">${isEn ? 'Edge = role' : 'Warna garis = peran'}:</div>`;
+        for (const k in ROLE_META) h += `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);"><span style="width:16px;height:2px;background:${ROLE_META[k].c};display:inline-block;margin-right:5px;"></span>${isEn ? ROLE_META[k].en : ROLE_META[k].id}</span>`;
+        h += `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);"><span style="width:9px;height:9px;border:1.5px dashed #ef4444;border-radius:50%;display:inline-block;margin-right:5px;"></span>${isEn ? 'Structural hole' : 'Structural hole (tanpa warrant)'}</span>`;
+        el.innerHTML = h;
+    }
+
+    function _radialMetrics(d) {
+        const tb = document.getElementById('tbody-metrics-incident');
+        if (!tb) return;
+        const isEn = window.currentLang === 'en';
+        const cov = d.n_incidents ? (100 * (d.n_incidents - d.structural_holes) / d.n_incidents) : 0;
+        const rows = [
+            [isEn ? 'Incidents' : 'Total Insiden', d.n_incidents, isEn ? 'Real sourced cases' : 'Kasus riil bersumber'],
+            [isEn ? 'Regulations cited' : 'Regulasi terpakai', d.n_regulations, isEn ? 'Provisions acting as warrants' : 'Pasal yang menjadi dasar hukum'],
+            [isEn ? 'Warrants (edges)' : 'Warrant (edges)', d.n_edges, isEn ? 'High-confidence (P≥95) incident–law links' : 'Tautan insiden–hukum confidence tinggi (P≥95)'],
+            [isEn ? 'Incident coverage' : 'Coverage insiden', cov.toFixed(1) + '%', `${d.n_incidents - d.structural_holes}/${d.n_incidents} ${isEn ? 'with a warrant' : 'punya dasar hukum'}`],
+            [isEn ? 'Structural holes' : 'Structural holes', d.structural_holes, isEn ? 'No high-confidence warrant' : 'Tanpa dasar hukum confidence tinggi'],
+        ];
+        tb.innerHTML = rows.map(r => `<tr><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-2);">${r[0]}</td><td style="padding:8px 12px;border-bottom:1px solid var(--border);text-align:right;font-weight:700;color:var(--text-1);">${r[1]}</td><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-3);">${r[2]}</td></tr>`).join('');
+    }
+
+    function _radialEdgesOf(id) {
+        return RADIAL.data.edges
+            .map((e, i) => ({ e, i }))
+            .filter(o => o.e.source === id || o.e.target === id);
+    }
+
+    function _radialApplyHighlight() {
+        const svgBox = document.getElementById('radial-incident-svg');
+        if (!svgBox) return;
+        const sel = RADIAL.sel, bind = RADIAL.bindingOnly;
+        const isBinding = rid => { const n = RADIAL.byId[rid]; return n && n.binding; };
+        const neigh = new Set();
+        if (sel) { _radialEdgesOf(sel).forEach(({ e }) => { neigh.add(e.source); neigh.add(e.target); }); }
+        svgBox.querySelectorAll('.rchord').forEach(p => {
+            const s = p.getAttribute('data-s'), t = p.getAttribute('data-t');
+            let show = true;
+            if (bind && !isBinding(s)) show = false;
+            const inSel = !sel || s === sel || t === sel;
+            p.style.display = show ? '' : 'none';
+            p.setAttribute('stroke-opacity', !show ? 0 : (sel ? (inSel ? 0.85 : 0.04) : 0.3));
+            p.setAttribute('stroke-width', inSel && sel ? 2 : 1);
+        });
+        svgBox.querySelectorAll('.rnode').forEach(g => {
+            const id = g.getAttribute('data-id');
+            const dim = sel && id !== sel && !neigh.has(id);
+            g.style.opacity = dim ? 0.18 : 1;
+        });
+    }
+
+    function _radialSelect(id) {
+        RADIAL.sel = id; RADIAL.nav = 0;
+        _radialApplyHighlight();
+        _radialPanel();
+    }
+    window.resetRadialSelection = function () {
+        RADIAL.sel = null; RADIAL.nav = 0;
+        _radialApplyHighlight();
+        const panel = document.getElementById('radial-incident-panel');
+        if (panel) panel.innerHTML = `<div class="rp-empty">${window.currentLang === 'en' ? 'Click a node (incident or article) to see connections, centrality, and the warrant reasoning.' : 'Klik sebuah node (insiden atau pasal) untuk melihat detail koneksi, sentralitas, dan alasan warrant.'}</div>`;
+    };
+    window.toggleRadialBinding = function () {
+        RADIAL.bindingOnly = !RADIAL.bindingOnly;
+        const btn = document.getElementById('radial-binding-btn');
+        if (btn) btn.classList.toggle('active', RADIAL.bindingOnly);
+        _radialApplyHighlight();
+    };
+    window.radialNav = function (delta) {
+        const conns = _radialEdgesOf(RADIAL.sel);
+        if (!conns.length) return;
+        RADIAL.nav = (RADIAL.nav + delta + conns.length) % conns.length;
+        _radialPanel();
+    };
+
+    function _radialPanel() {
+        const panel = document.getElementById('radial-incident-panel');
+        if (!panel || !RADIAL.sel) return;
+        const isEn = window.currentLang === 'en';
+        const n = RADIAL.byId[RADIAL.sel];
+        const conns = _radialEdgesOf(RADIAL.sel);
+        if (RADIAL.nav >= conns.length) RADIAL.nav = 0;
+        const c = n.cent || {};
+        const pct = v => (100 * (v || 0)).toFixed(1) + '%';
+        const centRows = [
+            ['Degree', pct(c.degree)], [isEn ? 'In-Degree' : 'In-Degree', pct(c.in)],
+            [isEn ? 'Out-Degree' : 'Out-Degree', pct(c.out)], ['Betweenness', pct(c.betweenness)],
+            ['Closeness', pct(c.closeness)],
+        ].map(r => `<div class="rp-cent"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('');
+
+        let header;
+        if (n.type === 'incident') {
+            header = `<div class="rp-eyebrow">${_rEsc(n.group)} · ${_rEsc(n.inc_type || '')}</div>`
+                + `<div class="rp-title">${_rEsc(n.code)}</div>`
+                + `<div class="rp-sub">${_rEsc(n.title || n.label)}</div>`
+                + (n.chronology ? `<div style="font-size:0.78rem;color:var(--text-3);line-height:1.5;">${_rEsc(n.chronology).slice(0, 280)}…</div>` : '');
+        } else {
+            header = `<div class="rp-eyebrow">${_rEsc(n.group)}${n.binding ? ' · ' + (isEn ? 'Binding' : 'Mengikat') : ' · Soft law'}</div>`
+                + `<div class="rp-title">${_rEsc(n.code)}</div>`
+                + `<div class="rp-sub" style="font-family:ui-monospace,Menlo,monospace;">${_rEsc(n.label)}</div>`;
+        }
+
+        let edgeCard = `<div class="rp-empty" style="padding:1rem 0;">${isEn ? 'No connections.' : 'Tidak ada koneksi.'}</div>`;
+        if (conns.length) {
+            const o = conns[RADIAL.nav];
+            const e = o.e;
+            const otherId = e.source === RADIAL.sel ? e.target : e.source;
+            const other = RADIAL.byId[otherId] || {};
+            const dirLbl = e.target === RADIAL.sel
+                ? (isEn ? 'Governed by ←' : 'Diatur oleh ←')
+                : (isEn ? 'Governs →' : 'Mengatur →');
+            const roleChips = (e.roles || []).map(r => `<span class="rp-chip" style="background:${(ROLE_META[r] || {}).c || '#94a3b8'}22;color:${(ROLE_META[r] || {}).c || '#94a3b8'};">${isEn ? (ROLE_META[r] || {}).en : (ROLE_META[r] || {}).id || r}</span>`).join('') || `<span class="rp-chip" style="background:var(--overlay-hover);color:var(--text-4);">${isEn ? 'role n/a' : 'peran n/a'}</span>`;
+            edgeCard = `<div class="rp-nav">
+                    <button onclick="radialNav(-1)">‹</button>
+                    <span class="rp-counter">${RADIAL.nav + 1} / ${conns.length}</span>
+                    <button onclick="radialNav(1)">›</button>
+                    <span class="rp-counter" style="margin-left:auto;color:var(--primary);font-weight:700;">${dirLbl}</span>
+                </div>
+                <div class="rp-edge" style="border-left-color:${_rRoleColor(e.roles)};">
+                    <div class="rp-edge-node">${_rEsc(other.code || otherId)}</div>
+                    <div class="rp-k" style="font-family:ui-monospace,Menlo,monospace;">${_rEsc(other.label || '')}</div>
+                    <div style="margin-top:6px;">${roleChips}</div>
+                    <div class="rp-k" style="margin-top:6px;">${isEn ? 'Confidence' : 'Keyakinan'}: <b style="color:var(--text-1);">${e.confidence}%</b></div>
+                    <div class="rp-conf-bar"><div class="rp-conf-fill" style="width:${e.confidence}%;background:${_rRoleColor(e.roles)};"></div></div>
+                    <div class="rp-reason">${_rEsc(e.reason || '')}</div>
+                </div>`;
+        }
+
+        panel.innerHTML = header
+            + `<div class="rp-section"><div class="rp-section-h">${isEn ? 'Centrality' : 'Sentralitas'}</div><div class="rp-cent-grid">${centRows}</div></div>`
+            + `<div class="rp-section"><div class="rp-section-h">${isEn ? 'Connected nodes' : 'Node terhubung'} (${conns.length})</div>${edgeCard}</div>`;
+    }
+
+    window.exportRadialCSV = function () {
+        if (!RADIAL.data) { showToast('Buka tab dulu.', 'warning'); return; }
+        const isEn = window.currentLang === 'en';
+        const rows = [['regulation_id', 'regulation', 'incident', 'roles', 'confidence', 'reason']];
+        RADIAL.data.edges.forEach(e => {
+            const reg = RADIAL.byId[e.source] || {}, inc = RADIAL.byId[e.target] || {};
+            rows.push([e.source, reg.label || '', (inc.label || e.target), (e.roles || []).join('|'), e.confidence, e.reason || '']);
+        });
+        _downloadBlob(_toCSV(rows), `Radial_Insiden_Warrant_${isEn ? 'EN' : 'ID'}.csv`, 'text/csv;charset=utf-8;');
+        _toast(isEn ? 'CSV downloaded.' : 'CSV berhasil diunduh.');
+    };
+    window.exportRadialPNG = function () {
+        const svg = document.querySelector('#radial-incident-svg svg');
+        if (!svg) { showToast('Graph belum dirender.', 'warning'); return; }
+        const bg = (getComputedStyle(document.documentElement).getPropertyValue('--graph-bg') || '#ffffff').trim();
+        const clone = svg.cloneNode(true);
+        clone.setAttribute('width', 1600); clone.setAttribute('height', 1600);
+        const xml = new XMLSerializer().serializeToString(clone);
+        const img = new Image();
+        img.onload = () => {
+            const cv = document.createElement('canvas'); cv.width = 1600; cv.height = 1600;
+            const ctx = cv.getContext('2d');
+            ctx.fillStyle = (bg && bg !== 'transparent') ? bg : '#ffffff';
+            ctx.fillRect(0, 0, 1600, 1600);
+            ctx.drawImage(img, 0, 0, 1600, 1600);
+            const a = document.createElement('a'); a.download = 'Radial_Insiden_Regulasi.png'; a.href = cv.toDataURL('image/png'); a.click();
+            _toast(window.currentLang === 'en' ? 'Image downloaded.' : 'Gambar berhasil diunduh.');
+        };
+        img.onerror = () => showToast('Export PNG gagal.', 'error');
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(xml);
+    };
 
     // ===================================================================
     // AI TAB SWITCHER
