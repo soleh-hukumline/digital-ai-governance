@@ -20,7 +20,9 @@ NET = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'network')
 INC = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'incidents', 'indonesia_incidents.json')
 LLM = os.path.join(NET, 'llm_edge_confidence.json')
 OUT = os.path.join(NET, 'radial_incident.json')
-CALIB_P = 95
+# Raw relevant flag (strict-role judge is already conservative; P>=95 would hide
+# genuine consumer/regulator provisions rated 85-90%).
+CALIB_P = 0
 
 SECTOR_LABEL = {
     'government': 'Pemerintahan', 'finance': 'Keuangan', 'ecommerce_telco': 'E-Commerce/Telco',
@@ -68,6 +70,8 @@ def main():
     inc_by = {i['id']: i for i in incidents}
     j = json.load(open(LLM, encoding='utf-8'))
     llm = j['incidents']
+    from warrant_review import apply_overrides
+    llm, _ = apply_overrides(llm)
 
     G = nx.DiGraph()
     edges = []
@@ -135,7 +139,7 @@ def main():
 
     holes = [n['id'] for n in nodes if n['type'] == 'incident' and n['degree'] == 0]
     out = {
-        'operating_point': f'few-shot, P>={CALIB_P}',
+        'operating_point': 'few-shot strict-role, relevant flag (raw)',
         'n_incidents': len(incidents), 'n_regulations': len(regs),
         'n_edges': len(edges), 'structural_holes': len(holes),
         'nodes': nodes, 'edges': edges,

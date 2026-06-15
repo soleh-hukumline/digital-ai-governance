@@ -220,28 +220,42 @@ collapsing them into one "coverage" number is biased (relevant *to whom?*). Usin
 the role-aware LLM judge (`llm_judge.py`, Gemini), each warrant is tagged by the
 subject it binds, and coverage is reported per subject:
 
-The production judge is **few-shot primed with a recall-complete candidate set**
-(§3.2). Coverage is reported at the conservative **calibrated P≥95** operating point
-(high-confidence warrants only); the raw flag is shown for comparison.
+The judge uses **strict, duty/right-based role assignment** (one provision → the
+subject(s) it actually obliges or empowers; being *notified* is not redress). An
+earlier lax version inflated consumer/regulator to ~100% by tagging a single
+breach-notification article (UU PDP Pasal 46) with three subjects at once — that
+artifact is removed. Coverage at the judge's relevant flag:
 
-| Legal subject | Coverage **(calibrated P≥95)** | Structural hole | (raw P≥50) |
-|---|---|---|---|
-| Perpetrator (criminal liability) | **88.9% (40/45)** | 11.1% | 100% |
-| **Operator / PSE** (security & compliance) | **73.3% (33/45)** | 26.7% | 88.9% |
-| Consumer / victim (protection & redress) | **73.3% (33/45)** | 26.7% | 84.4% |
-| Regulator / state (supervision) | **73.3% (33/45)** | 26.7% | 86.7% |
-| **Any subject** | **88.9% (40/45)** | 11.1% | 100% |
+| Legal subject | Coverage | Uncovered |
+|---|---|---|
+| Perpetrator (criminal liability) | **100% (45/45)** | 0% |
+| **Operator / PSE** (security & compliance) | **88.9% (40/45)** | 11.1% |
+| Consumer / victim (protection & redress) | **26.7% (12/45)** | 73.3% |
+| Regulator / state (supervision) | **11.1% (5/45)** | 88.9% |
+| **Any subject** | **100% (45/45)** | 0% |
 
-**Copy-paste — Results finding (role-aware, validated):**
-> Existing law reaches most incidents, but **asymmetrically across legal subjects**.
-> The **perpetrator's criminal basis is the best covered (88.9%)** — UU PDP Pasal
-> 67/68 and ITE offences apply to almost any unlawful data act. The deficits fall on
-> the **protective and supervisory side**: operators' security duties, consumers'
-> redress, and the regulator's supervisory hook each reach only **73.3%** of
-> incidents at high confidence. So Indonesia can largely *punish* a cyber incident
-> but is materially weaker at *preventing* it, *compensating* victims, and
-> *supervising* operators. (Figures: `role_coverage.py` → `role_coverage.json`,
-> raw + calibrated; judge validated at F1 0.67 / κ 0.77, §3.)
+> ⚠️ **Validation status (be explicit in the paper):** *relevance* is human-validated
+> (κ 0.77, F1 0.67, §3); the *role/subject* assignment is **not yet human-coded**
+> (the gold's `annotator_role` is empty). These per-subject figures are therefore
+> **LLM-assigned, indicative** — see the human-in-the-loop tool below.
+
+**Copy-paste — Results finding (role-aware):**
+> Existing law reaches every incident for *some* subject, but **starkly asymmetric**:
+> a **perpetrator criminal basis exists for 100%** (UU PDP Pasal 67/68, ITE offences)
+> and an **operator duty for 89%**, yet a **consumer-redress basis for only 27%** and
+> a **regulator-supervision basis for only 11%**. Indonesia can *punish* a cyber
+> incident and *oblige operators*, but rarely *compensates victims* or *empowers
+> oversight*. (Role assignment is LLM-proposed and expert-reviewable; relevance is
+> validated at F1 0.67 / κ 0.77.)
+
+**Human-in-the-loop (`warrant_overrides.json`).** Because role is not auto-validated,
+the dashboard's "Analisis Kasus" tab lets a human reviewer open each incident, **read
+the actual article** (📖) and its context, and set **Relevant/Not + the bound subject**
+per warrant. Decisions save in-browser (live coverage update), **Export** to
+`warrant_overrides.json`, and the Python pipeline (`warrant_review.py`, imported by
+`role_coverage`/`sector_coverage`/`build_radial_incident`) treats them as ground truth
+that **overrides the LLM** — reproducible and in version control. This converts the
+per-subject figures from LLM-only to expert-curated as review proceeds.
 
 ---
 

@@ -1,0 +1,11 @@
+{
+  "_README": "KEPUTUSAN MANUSIA per pasangan insiden<->pasal (human-in-the-loop). Kunci = '<incident_id> | <regulation_label>'. Field: relevant (true/false), roles (subset dari pelaku/pse/konsumen/regulator), note, reviewer. Keputusan manusia MENANG atas LLM dan dipakai BAIK oleh pipeline Python (role_coverage/sector_coverage/radial) MAUPUN dashboard. Diisi otomatis via tombol 'Export Tinjauan' di tab Analisis Kasus, atau diedit manual. TIDAK pernah ditimpa skrip.",
+  "_example": {
+    "kai-stormous-ransomware-2024 | UU_PDP_No27_2022 - Pasal 35": {
+      "relevant": true,
+      "roles": ["pse"],
+      "note": "Contoh; hapus baris _example ini.",
+      "reviewer": "wahid"
+    }
+  }
+}

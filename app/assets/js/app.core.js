@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260615_11';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260615_12';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -978,7 +978,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===================================================================
     // RADIAL (CHORD) Insiden↔Regulasi  — replaces the force graph for §incident
     // ===================================================================
-    const RADIAL = { data: null, sel: null, nav: 0, bindingOnly: false, pos: {}, byId: {}, rendered: false };
+    const RADIAL = { data: null, sel: null, nav: 0, bindingOnly: false, pos: {}, byId: {}, rendered: false, cands: null };
+
+    // ── HUMAN REVIEW STORE (localStorage; exported to warrant_overrides.json) ──
+    const REV_KEY = 'lna_warrant_review_v1';
+    const _revAll = () => { try { return JSON.parse(localStorage.getItem(REV_KEY)) || {}; } catch (e) { return {}; } };
+    const _revSave = o => { try { localStorage.setItem(REV_KEY, JSON.stringify(o)); } catch (e) {} };
+    const _revK = (iid, label) => iid + ' | ' + label;
+    const _revGet = (iid, label) => _revAll()[_revK(iid, label)] || null;
+    const _revCount = () => Object.keys(_revAll()).length;
+    function _revSet(iid, label, patch) {
+        const a = _revAll(); a[_revK(iid, label)] = Object.assign({ reviewer: '', ts: 0 }, a[_revK(iid, label)] || {}, patch, { ts: 1 });
+        _revSave(a);
+    }
+    function _revDel(iid, label) { const a = _revAll(); delete a[_revK(iid, label)]; _revSave(a); }
+    // effective warrant = human override (if any) over the LLM row
+    function _eff(iid, r) {
+        const ov = _revGet(iid, r.regulation_label);
+        if (!ov) return { relevant: !!r.relevant, roles: r.roles || [], reviewed: false };
+        return { relevant: ov.relevant != null ? !!ov.relevant : !!r.relevant, roles: ov.roles || r.roles || [], reviewed: true };
+    }
+    window.exportWarrantOverrides = function () {
+        const a = _revAll(); const out = { '_README': 'Keputusan manusia (human-in-the-loop) hasil ekspor dashboard. Letakkan di data/network/warrant_overrides.json lalu jalankan: python role_coverage.py && python sector_coverage.py && python build_radial_incident.py — lalu deploy.' };
+        Object.keys(a).forEach(k => { const v = a[k]; out[k] = { relevant: !!v.relevant, roles: v.roles || [], note: v.note || '', reviewer: v.reviewer || '' }; });
+        _downloadBlob(JSON.stringify(out, null, 2), 'warrant_overrides.json', 'application/json');
+        _toast((window.currentLang === 'en' ? 'Exported ' : 'Diekspor ') + _revCount() + ' review → warrant_overrides.json');
+    };
     const RVB = 820, RCX = 410, RCY = 410, RR = 235, RBAR = 40, RLAB = RR + RBAR + 10;
     const ROLE_META = {
         pelaku:   { c: '#ef4444', id: 'Pelaku (pidana)',  en: 'Perpetrator' },
@@ -1005,6 +1030,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const res = await fetch(`./data/network/radial_incident.json?v=${DATA_V}`);
                 RADIAL.data = await res.json();
             } catch (e) { svgBox.innerHTML = '<div class="rp-empty">Gagal memuat data radial.</div>'; return; }
+        }
+        if (!RADIAL.cands) {   // full candidate warrants per incident (for human review)
+            try {
+                const r2 = await fetch(`./data/network/llm_edge_confidence.json?v=${DATA_V}`);
+                RADIAL.cands = (await r2.json()).incidents || {};
+            } catch (e) { RADIAL.cands = {}; }
         }
         const d = RADIAL.data;
         RADIAL.byId = {}; d.nodes.forEach(n => RADIAL.byId[n.id] = n);
@@ -1159,6 +1190,73 @@ document.addEventListener('DOMContentLoaded', () => {
         _radialPanel();
     };
 
+    const _ROLE_KEYS = ['pelaku', 'pse', 'konsumen', 'regulator'];
+    // live coverage (LLM + human overrides) — recomputed on every edit
+    function _liveCoverageHTML() {
+        const isEn = window.currentLang === 'en';
+        const cands = RADIAL.cands || {};
+        const ids = Object.keys(cands); const n = ids.length || 1;
+        const cov = { pelaku: 0, pse: 0, konsumen: 0, regulator: 0, any: 0 };
+        ids.forEach(iid => {
+            const rel = cands[iid].map(r => _eff(iid, r)).filter(e => e.relevant);
+            if (rel.length) cov.any++;
+            _ROLE_KEYS.forEach(role => { if (rel.some(e => (e.roles || []).includes(role))) cov[role]++; });
+        });
+        const bar = (k, lbl) => { const p = Math.round(100 * cov[k] / n); const col = _rRoleColor([k]); return `<div class="rp-cent"><span>${lbl}</span><b style="color:${col};">${p}%</b></div>`; };
+        return `<div class="rp-section" style="background:var(--sunken);border-radius:8px;padding:8px 10px;border-top:none;">
+            <div class="rp-section-h" style="margin-top:0;">${isEn ? 'Live coverage (LLM + your review)' : 'Coverage langsung (LLM + tinjauan Anda)'} · ${_revCount()} ${isEn ? 'reviewed' : 'ditinjau'}</div>
+            <div class="rp-cent-grid">
+              ${bar('pelaku', isEn ? 'Perpetrator' : 'Pelaku')}${bar('pse', 'Operator/PSE')}
+              ${bar('konsumen', isEn ? 'Consumer' : 'Konsumen')}${bar('regulator', 'Regulator')}
+            </div></div>`;
+    }
+    function _reviewRow(iid, r) {
+        const isEn = window.currentLang === 'en';
+        const eff = _eff(iid, r);
+        const ov = _revGet(iid, r.regulation_label);
+        const lblEsc = String(r.regulation_label).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+        const iidEsc = String(iid).replace(/'/g, "\\'");
+        const relBtn = (val, txt, col) => `<button onclick="_revRel('${iidEsc}','${lblEsc}',${val})" style="border:1px solid var(--border);border-radius:6px;padding:1px 7px;font-size:0.7rem;cursor:pointer;background:${eff.relevant === val ? col : 'var(--overlay-soft)'};color:${eff.relevant === val ? '#fff' : 'var(--text-3)'};">${txt}</button>`;
+        const RLET = { pelaku: 'P', pse: 'O', konsumen: 'K', regulator: 'R' };
+        const roleChip = role => { const on = (eff.roles || []).includes(role); const c = ROLE_META[role].c; return `<button onclick="_revRole('${iidEsc}','${lblEsc}','${role}')" title="${isEn ? ROLE_META[role].en : ROLE_META[role].id}" style="border:1px solid ${c};border-radius:5px;width:22px;height:20px;font-size:0.66rem;font-weight:700;cursor:pointer;background:${on ? c : 'transparent'};color:${on ? '#fff' : c};">${RLET[role]}</button>`; };
+        const llm = `LLM: ${r.relevant ? '✓' : '✗'} ${r.confidence}%${(r.roles || []).length ? ' ' + r.roles.join('/') : ''}`;
+        return `<div style="border-bottom:1px dashed var(--border);padding:7px 0;">
+            <div style="display:flex;justify-content:space-between;gap:6px;align-items:flex-start;">
+              <span onclick="showProvisionText('${lblEsc}')" style="cursor:pointer;font-weight:700;font-size:0.8rem;color:var(--text-1);text-decoration:underline dotted;text-underline-offset:2px;">${_rEsc(nodeCode(r.regulation_label))} 📖</span>
+              ${ov ? '<span title="' + (isEn ? 'human-reviewed' : 'ditinjau manusia') + '" style="color:#10b981;font-weight:700;flex-shrink:0;">✔</span>' : ''}
+            </div>
+            <div style="font-size:0.68rem;color:var(--text-4);margin:2px 0 4px;">${_rEsc(llm)}</div>
+            <div style="display:flex;gap:4px;align-items:center;flex-wrap:wrap;">
+              ${relBtn(true, isEn ? 'Relevant' : 'Relevan', '#10b981')}${relBtn(false, isEn ? 'Not' : 'Tidak', '#ef4444')}
+              <span style="width:1px;height:16px;background:var(--border);margin:0 2px;"></span>
+              ${_ROLE_KEYS.map(roleChip).join('')}
+              ${ov ? `<button onclick="_revReset('${iidEsc}','${lblEsc}')" title="${isEn ? 'reset to LLM' : 'kembalikan ke LLM'}" style="border:none;background:none;color:var(--text-4);cursor:pointer;font-size:0.7rem;margin-left:auto;">↺</button>` : ''}
+            </div>
+          </div>`;
+    }
+    function _reviewListHTML(iid) {
+        const cands = (RADIAL.cands && RADIAL.cands[iid]) || [];
+        const sorted = [...cands].sort((a, b) => (Number(_eff(iid, b).relevant) - Number(_eff(iid, a).relevant)) || (b.confidence - a.confidence));
+        if (!sorted.length) return `<div class="rp-empty" style="padding:0.6rem 0;">${window.currentLang === 'en' ? 'No candidate provisions.' : 'Tidak ada kandidat pasal.'}</div>`;
+        return sorted.map(r => _reviewRow(iid, r)).join('');
+    }
+    window._revRel = function (iid, label, val) {
+        const cur = _revGet(iid, label) || {};
+        _revSet(iid, label, { relevant: !!val, roles: val ? (cur.roles || []) : [] });
+        _radialPanel();
+    };
+    window._revRole = function (iid, label, role) {
+        const cur = _revGet(iid, label);
+        // start from effective roles so first edit keeps LLM's roles
+        let base = cur ? (cur.roles || []) : ((RADIAL.cands[iid] || []).find(r => r.regulation_label === label) || {}).roles || [];
+        base = base.slice();
+        const i = base.indexOf(role);
+        if (i >= 0) base.splice(i, 1); else base.push(role);
+        _revSet(iid, label, { relevant: true, roles: base });
+        _radialPanel();
+    };
+    window._revReset = function (iid, label) { _revDel(iid, label); _radialPanel(); };
+
     function _radialPanel() {
         const panel = document.getElementById('radial-incident-panel');
         if (!panel || !RADIAL.sel) return;
@@ -1212,9 +1310,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>`;
         }
 
+        let detail;
+        if (n.type === 'incident') {
+            const iid = RADIAL.sel.replace('CASE_', '');
+            const cands = (RADIAL.cands && RADIAL.cands[iid]) || [];
+            const reviewed = cands.filter(r => _revGet(iid, r.regulation_label)).length;
+            detail = `<div class="rp-section"><div class="rp-section-h">${isEn ? 'Warrants — human review' : 'Warrant — tinjauan manusia'} (${reviewed}/${cands.length} ${isEn ? 'reviewed' : 'ditinjau'})</div>`
+                + `<div style="font-size:0.7rem;color:var(--text-4);margin-bottom:6px;">${isEn ? 'Set Relevant/Not and the bound subject (P=perpetrator, O=operator, K=consumer, R=regulator). 📖 reads the article. Saved in your browser; Export to commit.' : 'Tentukan Relevan/Tidak & subjek terikat (P=pelaku, O=operator, K=konsumen, R=regulator). 📖 baca pasal. Tersimpan di browser; Export untuk commit.'}</div>`
+                + _reviewListHTML(iid) + `</div>`;
+        } else {
+            detail = `<div class="rp-section"><div class="rp-section-h">${isEn ? 'Connected nodes' : 'Node terhubung'} (${conns.length})</div>${edgeCard}</div>`;
+        }
         panel.innerHTML = header
             + `<div class="rp-section"><div class="rp-section-h">${isEn ? 'Centrality' : 'Sentralitas'}</div><div class="rp-cent-grid">${centRows}</div></div>`
-            + `<div class="rp-section"><div class="rp-section-h">${isEn ? 'Connected nodes' : 'Node terhubung'} (${conns.length})</div>${edgeCard}</div>`;
+            + _liveCoverageHTML()
+            + detail;
     }
 
     window.exportRadialCSV = function () {

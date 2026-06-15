@@ -38,6 +38,16 @@ CHOSEN = [
 ]
 
 
+# STRICT primary-subject roles for the positive exemplars (duty/right-based). The
+# gold's llm_roles came from the OLD lax judge (e.g. tagged Pasal 46 with 3 subjects),
+# which is exactly the inflation we are fixing — so we set the exemplar roles by hand.
+EXEMPLAR_ROLES = {
+    ('cermati-data-breach-2020', 'UU_PDP_No27_2022 - Pasal 35'): ['pse'],       # security duty → operator
+    ('bsi-lockbit-ransomware-2023', 'UU_PDP_No27_2022 - Pasal 67'): ['pelaku'],  # criminal liability → perpetrator
+    ('inafis-polri-fingerprint-leak-2024', 'UU_PDP_No27_2022 - Pasal 46'): ['pse'],  # notification DUTY is on the operator only
+}
+
+
 def to01(v):
     s = str(v).strip().lower()
     return 1 if s in ('1', 'yes', 'y', 'true', 'relevant') else 0 if s in ('0', 'no', 'n', 'false', 'irrelevant') else None
@@ -65,7 +75,7 @@ def main():
             'incident_summary': ' '.join(str(d['incident_summary']).split()),
             'regulation_text': ' '.join(str(d['regulation_text']).split())[:240],
             'relevant': bool(g1),
-            'roles': [r for r in str(d['llm_roles']).split('|') if r] if g1 else [],
+            'roles': EXEMPLAR_ROLES.get((iid, label), [r for r in str(d['llm_roles']).split('|') if r]) if g1 else [],
             'rationale': ' '.join(str(d['notes']).split()),
         })
 

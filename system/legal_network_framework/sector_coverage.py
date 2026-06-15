@@ -20,13 +20,12 @@ NET = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'network')
 INC = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'incidents', 'indonesia_incidents.json')
 LLM = os.path.join(NET, 'llm_edge_confidence.json')
 ROLES = ['pelaku', 'pse', 'konsumen', 'regulator']
-# Operating point: high-confidence warrants only (P>=95), matching role_coverage's
-# calibrated column and the reframed thesis (lead with the conservative figure).
-CALIB_P = 95
-
-
+# Operating point: the strict-role judge's own relevant flag (raw). We do NOT apply
+# the P>=95 cut here: with strict single-subject role assignment the judge is already
+# conservative, and P>=95 wrongly zeroes out genuine consumer/regulator provisions
+# that the judge rates at 85-90% confidence (creating a false 0%).
 def _is_warrant(r):
-    return bool(r.get('relevant')) and int(r.get('confidence', 0)) >= CALIB_P
+    return bool(r.get('relevant'))
 
 # Human-readable sector metadata (keys = incident `sector` field). Bilingual.
 SECTOR_META = {
@@ -52,13 +51,15 @@ def main():
     title = {i['id']: i.get('title_en', i['id']) for i in incidents}
     j = json.load(open(LLM, encoding='utf-8'))
     llm = j['incidents']
+    from warrant_review import apply_overrides
+    llm, _ = apply_overrides(llm)
 
     by_sector = defaultdict(list)
     for iid, s in sec.items():
         by_sector[s].append(iid)
 
     out = {'source': os.path.basename(LLM), 'fewshot': bool(j.get('fewshot')),
-           'operating_point': f'calibrated P>={CALIB_P}',
+           'operating_point': 'strict-role judge, relevant flag (raw)',
            'n_incidents': len(incidents), 'sectors': []}
 
     for s in sorted(by_sector, key=lambda x: -len(by_sector[x])):

@@ -174,21 +174,27 @@ def main():
             f'{j}. [{c["regulation_label"]}] {label_text.get(c["regulation_label"], "(text n/a)")[:280]}'
             for j, c in enumerate(cands))
         prompt = (
-            'You are an Indonesian legal expert analysing a cyber/AI incident. A single incident '
-            'involves MULTIPLE legal subjects, each governed by different provisions:\n'
-            '- pelaku = the perpetrator (criminal liability)\n'
-            '- pse = the operator/platform/data controller (administrative/security/civil duties)\n'
-            '- konsumen = the consumer/victim/data subject (protection & redress)\n'
-            '- regulator = the state/regulator (supervision & enforcement)\n\n'
-            'For EACH candidate provision decide if it is a relevant legal basis (warrant) and, '
-            'IF SO, which subject(s) it binds.\n\n'
+            'You are an Indonesian legal expert analysing a cyber/AI incident. For EACH candidate '
+            'provision decide if it is a relevant legal basis (warrant) and, IF SO, which legal '
+            'subject(s) it BINDS.\n\n'
+            'STRICT role rules — assign a subject ONLY when the provision imposes a DUTY on, or '
+            'grants a RIGHT/REMEDY/POWER to, that subject. Do NOT tag a subject that is merely '
+            'mentioned, notified, or indirectly benefited.\n'
+            '- pelaku = imposes CRIMINAL or civil LIABILITY on the wrongdoer.\n'
+            '- pse = imposes a DUTY on the operator/controller (security, breach-notification, compliance).\n'
+            '- konsumen = grants the consumer/victim a RIGHT, PROTECTION or REDRESS (compensation, '
+            'erasure, right to sue). NOTE: merely BEING NOTIFIED is NOT redress → do NOT tag konsumen.\n'
+            '- regulator = establishes the state\'s SUPERVISION / ENFORCEMENT power. NOTE: merely '
+            'RECEIVING a breach report is NOT supervision → do NOT tag regulator.\n'
+            'Assign the FEWEST roles that are genuinely bound — usually exactly ONE. A breach-'
+            'notification article (e.g. UU PDP Pasal 46) binds ONLY pse. Never tag all subjects on one article.\n\n'
             + fewshot_block +
             f'INCIDENT ({inc.get("year")}, {inc.get("type")}): {inc.get("peristiwa_hukum_kronologi","")}\n\n'
             f'CANDIDATE PROVISIONS:\n{clist}\n\n'
             'Return ONLY a JSON array, one object per candidate index: '
             '[{"i":0,"relevant":true,"roles":["pse"],"confidence":0-100,"reason":"<=12 words"}]. '
-            'roles is a subset of ["pelaku","pse","konsumen","regulator"] (empty if not relevant). '
-            'confidence = how sure this provision applies to THIS incident.')
+            'roles is the MINIMAL subset of ["pelaku","pse","konsumen","regulator"] truly bound '
+            '(empty if not relevant). confidence = how sure this provision applies to THIS incident.')
         resp = gemini(prompt, key)
         arr = parse_json(resp)
         rows = []

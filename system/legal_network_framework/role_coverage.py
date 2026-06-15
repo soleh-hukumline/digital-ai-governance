@@ -45,6 +45,10 @@ def _coverage(inc, calibrated):
 def main():
     d = json.load(open(LLM, encoding='utf-8'))
     inc = d['incidents']
+    from warrant_review import apply_overrides
+    inc, _nov = apply_overrides(inc)
+    if _nov:
+        print(f"(human overrides applied: {_nov})")
     out = {'n_incidents': len(inc), 'calibration': {'cutoff_P': CALIB_P, 'basis': 'human gold n=48, κ=0.77, F1-optimal'}}
 
     for mode, calibrated in (('raw (P>=50, LLM flag)', False), (f'calibrated (P>={CALIB_P})', True)):

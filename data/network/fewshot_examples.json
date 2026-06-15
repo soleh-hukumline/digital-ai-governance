@@ -63,9 +63,7 @@
       "regulation_text": "(1) Dalam hal terjadi kegagalan Pelindungan Data Pribadi, Pengendali Data Pribadi wajib menyampaikan pemberitahuan secara tertulis paling lambat 3 x 24 (tiga kali dua puluh empat) jam kepada: a. Subjek Data Pribadi; dan b. lembaga. (2) Pemb",
       "relevant": true,
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "rationale": "Ps46 (notifikasi kegagalan pelindungan 3x24 jam) terpicu oleh kebocoran."
     },

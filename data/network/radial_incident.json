@@ -1,10 +1,61 @@
 {
-  "operating_point": "few-shot, P>=95",
+  "operating_point": "few-shot strict-role, relevant flag (raw)",
   "n_incidents": 45,
-  "n_regulations": 23,
-  "n_edges": 183,
-  "structural_holes": 5,
+  "n_regulations": 32,
+  "n_edges": 344,
+  "structural_holes": 0,
   "nodes": [
+    {
+      "id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_33",
+      "type": "regulation",
+      "label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 33",
+      "code": "ASEAN Guide §33",
+      "group": "ASEAN Guide",
+      "binding": false,
+      "degree": 1,
+      "cent": {
+        "degree": 0.0132,
+        "in": 0.0,
+        "out": 0.0132,
+        "betweenness": 0.0,
+        "closeness": 0.3234
+      },
+      "order": 0
+    },
+    {
+      "id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
+      "type": "regulation",
+      "label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+      "code": "ASEAN Guide §38",
+      "group": "ASEAN Guide",
+      "binding": false,
+      "degree": 2,
+      "cent": {
+        "degree": 0.0263,
+        "in": 0.0,
+        "out": 0.0263,
+        "betweenness": 0.0001,
+        "closeness": 0.3207
+      },
+      "order": 1
+    },
+    {
+      "id": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_11",
+      "type": "regulation",
+      "label": "Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 11",
+      "code": "CoE FCAI Art.11",
+      "group": "CoE FCAI",
+      "binding": false,
+      "degree": 1,
+      "cent": {
+        "degree": 0.0132,
+        "in": 0.0,
+        "out": 0.0132,
+        "betweenness": 0.0,
+        "closeness": 0.3102
+      },
+      "order": 2
+    },
     {
       "id": "IDN_PP_PSTE_No71_2019_Pasal_14",
       "type": "regulation",
@@ -12,15 +63,15 @@
       "code": "PP PSTE Ps.14",
       "group": "PP PSTE",
       "binding": true,
-      "degree": 8,
+      "degree": 35,
       "cent": {
-        "degree": 0.1194,
+        "degree": 0.4605,
         "in": 0.0,
-        "out": 0.1194,
-        "betweenness": 0.0277,
-        "closeness": 0.3415
+        "out": 0.4605,
+        "betweenness": 0.1083,
+        "closeness": 0.5547
       },
-      "order": 0
+      "order": 3
     },
     {
       "id": "IDN_PP_PSTE_No71_2019_Pasal_20",
@@ -29,15 +80,32 @@
       "code": "PP PSTE Ps.20",
       "group": "PP PSTE",
       "binding": true,
-      "degree": 2,
+      "degree": 4,
       "cent": {
-        "degree": 0.0299,
+        "degree": 0.0526,
         "in": 0.0,
-        "out": 0.0299,
-        "betweenness": 0.0034,
-        "closeness": 0.3085
+        "out": 0.0526,
+        "betweenness": 0.0005,
+        "closeness": 0.3262
       },
-      "order": 1
+      "order": 4
+    },
+    {
+      "id": "IDN_PP_PSTE_No71_2019_Pasal_71",
+      "type": "regulation",
+      "label": "PP_PSTE_No71_2019 - Pasal 71",
+      "code": "PP PSTE Ps.71",
+      "group": "PP PSTE",
+      "binding": true,
+      "degree": 1,
+      "cent": {
+        "degree": 0.0132,
+        "in": 0.0,
+        "out": 0.0132,
+        "betweenness": 0.0,
+        "closeness": 0.3052
+      },
+      "order": 5
     },
     {
       "id": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_7",
@@ -48,13 +116,64 @@
       "binding": false,
       "degree": 1,
       "cent": {
-        "degree": 0.0149,
+        "degree": 0.0132,
         "in": 0.0,
-        "out": 0.0149,
+        "out": 0.0132,
         "betweenness": 0.0,
-        "closeness": 0.2452
+        "closeness": 0.329
       },
-      "order": 2
+      "order": 6
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
+      "type": "regulation",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+      "code": "Stranas AI §29",
+      "group": "Stranas AI",
+      "binding": false,
+      "degree": 1,
+      "cent": {
+        "degree": 0.0132,
+        "in": 0.0,
+        "out": 0.0132,
+        "betweenness": 0.0,
+        "closeness": 0.3102
+      },
+      "order": 7
+    },
+    {
+      "id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_46",
+      "type": "regulation",
+      "label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 46",
+      "code": "Stranas AI §46",
+      "group": "Stranas AI",
+      "binding": false,
+      "degree": 1,
+      "cent": {
+        "degree": 0.0132,
+        "in": 0.0,
+        "out": 0.0132,
+        "betweenness": 0.0,
+        "closeness": 0.3077
+      },
+      "order": 8
+    },
+    {
+      "id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_10",
+      "type": "regulation",
+      "label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 10",
+      "code": "UNESCO §10",
+      "group": "UNESCO",
+      "binding": false,
+      "degree": 1,
+      "cent": {
+        "degree": 0.0132,
+        "in": 0.0,
+        "out": 0.0132,
+        "betweenness": 0.0,
+        "closeness": 0.3102
+      },
+      "order": 9
     },
     {
       "id": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_73",
@@ -65,13 +184,13 @@
       "binding": false,
       "degree": 1,
       "cent": {
-        "degree": 0.0149,
+        "degree": 0.0132,
         "in": 0.0,
-        "out": 0.0149,
+        "out": 0.0132,
         "betweenness": 0.0,
-        "closeness": 0.2758
+        "closeness": 0.3077
       },
-      "order": 3
+      "order": 10
     },
     {
       "id": "IDN_UU_ITE_No19_2016_Pasal_26",
@@ -80,32 +199,15 @@
       "code": "UU ITE 2016 Ps.26",
       "group": "UU ITE 2016",
       "binding": true,
-      "degree": 4,
+      "degree": 16,
       "cent": {
-        "degree": 0.0597,
+        "degree": 0.2105,
         "in": 0.0,
-        "out": 0.0597,
-        "betweenness": 0.0165,
-        "closeness": 0.3187
+        "out": 0.2105,
+        "betweenness": 0.0311,
+        "closeness": 0.4153
       },
-      "order": 4
-    },
-    {
-      "id": "IDN_UU_ITE_No19_2016_Pasal_45",
-      "type": "regulation",
-      "label": "UU_ITE_No19_2016 - Pasal 45",
-      "code": "UU ITE 2016 Ps.45",
-      "group": "UU ITE 2016",
-      "binding": true,
-      "degree": 1,
-      "cent": {
-        "degree": 0.0149,
-        "in": 0.0,
-        "out": 0.0149,
-        "betweenness": 0.0,
-        "closeness": 0.2869
-      },
-      "order": 5
+      "order": 11
     },
     {
       "id": "IDN_UU_ITE_No1_2024_Pasal_27",
@@ -114,15 +216,15 @@
       "code": "UU ITE 2024 Ps.27",
       "group": "UU ITE 2024",
       "binding": true,
-      "degree": 9,
+      "degree": 12,
       "cent": {
-        "degree": 0.1343,
+        "degree": 0.1579,
         "in": 0.0,
-        "out": 0.1343,
-        "betweenness": 0.0812,
-        "closeness": 0.3678
+        "out": 0.1579,
+        "betweenness": 0.034,
+        "closeness": 0.3979
       },
-      "order": 6
+      "order": 12
     },
     {
       "id": "IDN_UU_ITE_No1_2024_Pasal_28",
@@ -131,15 +233,32 @@
       "code": "UU ITE 2024 Ps.28",
       "group": "UU ITE 2024",
       "binding": true,
-      "degree": 4,
+      "degree": 8,
       "cent": {
-        "degree": 0.0597,
+        "degree": 0.1053,
         "in": 0.0,
-        "out": 0.0597,
-        "betweenness": 0.0321,
-        "closeness": 0.2988
+        "out": 0.1053,
+        "betweenness": 0.0071,
+        "closeness": 0.3707
       },
-      "order": 7
+      "order": 13
+    },
+    {
+      "id": "IDN_UU_ITE_No1_2024_Pasal_43",
+      "type": "regulation",
+      "label": "UU_ITE_No1_2024 - Pasal 43",
+      "code": "UU ITE 2024 Ps.43",
+      "group": "UU ITE 2024",
+      "binding": true,
+      "degree": 1,
+      "cent": {
+        "degree": 0.0132,
+        "in": 0.0,
+        "out": 0.0132,
+        "betweenness": 0.0,
+        "closeness": 0.3207
+      },
+      "order": 14
     },
     {
       "id": "IDN_UU_ITE_No1_2024_Pasal_45A",
@@ -148,15 +267,15 @@
       "code": "UU ITE 2024 Ps.45A",
       "group": "UU ITE 2024",
       "binding": true,
-      "degree": 3,
+      "degree": 9,
       "cent": {
-        "degree": 0.0448,
+        "degree": 0.1184,
         "in": 0.0,
-        "out": 0.0448,
-        "betweenness": 0.007,
-        "closeness": 0.2295
+        "out": 0.1184,
+        "betweenness": 0.0119,
+        "closeness": 0.3858
       },
-      "order": 8
+      "order": 15
     },
     {
       "id": "IDN_UU_ITE_No1_2024_Pasal_45B",
@@ -165,15 +284,15 @@
       "code": "UU ITE 2024 Ps.45B",
       "group": "UU ITE 2024",
       "binding": true,
-      "degree": 4,
+      "degree": 8,
       "cent": {
-        "degree": 0.0597,
+        "degree": 0.1053,
         "in": 0.0,
-        "out": 0.0597,
-        "betweenness": 0.0161,
-        "closeness": 0.326
+        "out": 0.1053,
+        "betweenness": 0.0074,
+        "closeness": 0.3707
       },
-      "order": 9
+      "order": 16
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_12",
@@ -182,15 +301,15 @@
       "code": "UU PDP Ps.12",
       "group": "UU PDP",
       "binding": true,
-      "degree": 1,
+      "degree": 4,
       "cent": {
-        "degree": 0.0149,
+        "degree": 0.0526,
         "in": 0.0,
-        "out": 0.0149,
-        "betweenness": 0.0,
-        "closeness": 0.2706
+        "out": 0.0526,
+        "betweenness": 0.0014,
+        "closeness": 0.347
       },
-      "order": 10
+      "order": 17
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_20",
@@ -199,15 +318,15 @@
       "code": "UU PDP Ps.20",
       "group": "UU PDP",
       "binding": true,
-      "degree": 3,
+      "degree": 6,
       "cent": {
-        "degree": 0.0448,
+        "degree": 0.0789,
         "in": 0.0,
-        "out": 0.0448,
-        "betweenness": 0.0073,
-        "closeness": 0.3118
+        "out": 0.0789,
+        "betweenness": 0.006,
+        "closeness": 0.3671
       },
-      "order": 11
+      "order": 18
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -216,15 +335,15 @@
       "code": "UU PDP Ps.35",
       "group": "UU PDP",
       "binding": true,
-      "degree": 26,
+      "degree": 36,
       "cent": {
-        "degree": 0.3881,
+        "degree": 0.4737,
         "in": 0.0,
-        "out": 0.3881,
-        "betweenness": 0.1227,
-        "closeness": 0.4482
+        "out": 0.4737,
+        "betweenness": 0.1346,
+        "closeness": 0.5802
       },
-      "order": 12
+      "order": 19
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -233,15 +352,32 @@
       "code": "UU PDP Ps.36",
       "group": "UU PDP",
       "binding": true,
-      "degree": 16,
+      "degree": 32,
       "cent": {
-        "degree": 0.2388,
+        "degree": 0.4211,
         "in": 0.0,
-        "out": 0.2388,
-        "betweenness": 0.0475,
-        "closeness": 0.393
+        "out": 0.4211,
+        "betweenness": 0.0673,
+        "closeness": 0.4841
       },
-      "order": 13
+      "order": 20
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_38",
+      "type": "regulation",
+      "label": "UU_PDP_No27_2022 - Pasal 38",
+      "code": "UU PDP Ps.38",
+      "group": "UU PDP",
+      "binding": true,
+      "degree": 1,
+      "cent": {
+        "degree": 0.0132,
+        "in": 0.0,
+        "out": 0.0132,
+        "betweenness": 0.0,
+        "closeness": 0.3102
+      },
+      "order": 21
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_39",
@@ -250,15 +386,15 @@
       "code": "UU PDP Ps.39",
       "group": "UU PDP",
       "binding": true,
-      "degree": 2,
+      "degree": 1,
       "cent": {
-        "degree": 0.0299,
+        "degree": 0.0132,
         "in": 0.0,
-        "out": 0.0299,
-        "betweenness": 0.0008,
-        "closeness": 0.2957
+        "out": 0.0132,
+        "betweenness": 0.0,
+        "closeness": 0.3128
       },
-      "order": 14
+      "order": 22
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_40",
@@ -269,13 +405,13 @@
       "binding": true,
       "degree": 1,
       "cent": {
-        "degree": 0.0149,
+        "degree": 0.0132,
         "in": 0.0,
-        "out": 0.0149,
+        "out": 0.0132,
         "betweenness": 0.0,
-        "closeness": 0.1938
+        "closeness": 0.3154
       },
-      "order": 15
+      "order": 23
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_46",
@@ -284,32 +420,32 @@
       "code": "UU PDP Ps.46",
       "group": "UU PDP",
       "binding": true,
-      "degree": 28,
+      "degree": 35,
       "cent": {
-        "degree": 0.4179,
+        "degree": 0.4605,
         "in": 0.0,
-        "out": 0.4179,
-        "betweenness": 0.1458,
-        "closeness": 0.4781
+        "out": 0.4605,
+        "betweenness": 0.1063,
+        "closeness": 0.5547
       },
-      "order": 16
+      "order": 24
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_55",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_57",
       "type": "regulation",
-      "label": "UU_PDP_No27_2022 - Pasal 55",
-      "code": "UU PDP Ps.55",
+      "label": "UU_PDP_No27_2022 - Pasal 57",
+      "code": "UU PDP Ps.57",
       "group": "UU PDP",
       "binding": true,
-      "degree": 1,
+      "degree": 2,
       "cent": {
-        "degree": 0.0149,
+        "degree": 0.0263,
         "in": 0.0,
-        "out": 0.0149,
-        "betweenness": 0.0,
-        "closeness": 0.2812
+        "out": 0.0263,
+        "betweenness": 0.0003,
+        "closeness": 0.3408
       },
-      "order": 17
+      "order": 25
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_60",
@@ -318,15 +454,15 @@
       "code": "UU PDP Ps.60",
       "group": "UU PDP",
       "binding": true,
-      "degree": 1,
+      "degree": 5,
       "cent": {
-        "degree": 0.0149,
+        "degree": 0.0658,
         "in": 0.0,
-        "out": 0.0149,
-        "betweenness": 0.0,
-        "closeness": 0.2758
+        "out": 0.0658,
+        "betweenness": 0.0014,
+        "closeness": 0.3535
       },
-      "order": 18
+      "order": 26
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -335,15 +471,15 @@
       "code": "UU PDP Ps.65",
       "group": "UU PDP",
       "binding": true,
-      "degree": 24,
+      "degree": 30,
       "cent": {
-        "degree": 0.3582,
+        "degree": 0.3947,
         "in": 0.0,
-        "out": 0.3582,
-        "betweenness": 0.069,
-        "closeness": 0.4157
+        "out": 0.3947,
+        "betweenness": 0.0715,
+        "closeness": 0.5033
       },
-      "order": 19
+      "order": 27
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_66",
@@ -352,15 +488,15 @@
       "code": "UU PDP Ps.66",
       "group": "UU PDP",
       "binding": true,
-      "degree": 8,
+      "degree": 25,
       "cent": {
-        "degree": 0.1194,
+        "degree": 0.3289,
         "in": 0.0,
-        "out": 0.1194,
-        "betweenness": 0.0969,
-        "closeness": 0.3678
+        "out": 0.3289,
+        "betweenness": 0.0567,
+        "closeness": 0.4663
       },
-      "order": 20
+      "order": 28
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -369,15 +505,15 @@
       "code": "UU PDP Ps.67",
       "group": "UU PDP",
       "binding": true,
-      "degree": 29,
+      "degree": 36,
       "cent": {
-        "degree": 0.4328,
+        "degree": 0.4737,
         "in": 0.0,
-        "out": 0.4328,
-        "betweenness": 0.1718,
-        "closeness": 0.4946
+        "out": 0.4737,
+        "betweenness": 0.1134,
+        "closeness": 0.5714
       },
-      "order": 21
+      "order": 29
     },
     {
       "id": "IDN_UU_PDP_No27_2022_Pasal_68",
@@ -386,15 +522,32 @@
       "code": "UU PDP Ps.68",
       "group": "UU PDP",
       "binding": true,
-      "degree": 6,
+      "degree": 26,
       "cent": {
-        "degree": 0.0896,
+        "degree": 0.3421,
         "in": 0.0,
-        "out": 0.0896,
-        "betweenness": 0.06,
-        "closeness": 0.326
+        "out": 0.3421,
+        "betweenness": 0.0663,
+        "closeness": 0.4903
       },
-      "order": 22
+      "order": 30
+    },
+    {
+      "id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "type": "regulation",
+      "label": "UU_PDP_No27_2022 - Pasal 6O",
+      "code": "UU PDP Ps.6O",
+      "group": "UU PDP",
+      "binding": true,
+      "degree": 1,
+      "cent": {
+        "degree": 0.0132,
+        "in": 0.0,
+        "out": 0.0132,
+        "betweenness": 0.0,
+        "closeness": 0.3052
+      },
+      "order": 31
     },
     {
       "id": "CASE_election-candidate-deepfakes-2024",
@@ -407,15 +560,15 @@
       "title": "Deepfake videos of presidential candidates before the 2024 election",
       "year": 2024,
       "chronology": "Menjelang Pemilu 14 Februari 2024, video deepfake AI tanpa label yang menampilkan capres Prabowo dan Anies seolah fasih berbahasa Arab beredar di TikTok. Pelaporan menyebut deepfake atas ketiga tiket capres turut menyebar dengan potensi menyesatkan pemilih.",
-      "degree": 2,
+      "degree": 4,
       "cent": {
-        "degree": 0.0299,
-        "in": 0.0299,
+        "degree": 0.0526,
+        "in": 0.0526,
         "out": 0.0,
-        "betweenness": 0.003,
-        "closeness": 0.2719
+        "betweenness": 0.0023,
+        "closeness": 0.427
       },
-      "order": 23
+      "order": 32
     },
     {
       "id": "CASE_prabowo-deepfake-aid-scam-2024",
@@ -428,15 +581,15 @@
       "title": "Deepfake videos of President Prabowo & ministers in nationwide 'aid' fraud",
       "year": 2024,
       "chronology": "Mulai ~Desember 2024 penipu menyebar video deepfake AI yang menampilkan Presiden Prabowo Subianto dan pejabat lain seolah menawarkan bantuan pemerintah. Korban diarahkan ke nomor WhatsApp dan diminta 'biaya administrasi' Rp250.000-1.000.000 untuk bantuan fiktif. Bareskrim Polri menangkap pelaku 25 tahun (JS) di Lampung pada 4 Februari 2025; JS dan AMA diserahkan ke jaksa April 2025.",
-      "degree": 3,
+      "degree": 6,
       "cent": {
-        "degree": 0.0448,
-        "in": 0.0448,
+        "degree": 0.0789,
+        "in": 0.0789,
         "out": 0.0,
-        "betweenness": 0.0126,
-        "closeness": 0.2745
+        "betweenness": 0.0029,
+        "closeness": 0.4419
       },
-      "order": 24
+      "order": 33
     },
     {
       "id": "CASE_suharto-deepfake-golkar-2024",
@@ -449,15 +602,15 @@
       "title": "AI deepfake 'resurrecting' Suharto used to urge votes for Golkar",
       "year": 2024,
       "chronology": "Pada 6 Januari 2024 Erwin Aksa mengunggah ke X deepfake AI yang merekonstruksi wajah dan suara tiruan mendiang Soeharto (wafat 2008), di mana 'Soeharto' sintetis mengajak memilih dan mendukung Golkar. Klip menyebar luas menjelang Pemilu Presiden 14 Februari 2024.",
-      "degree": 2,
+      "degree": 4,
       "cent": {
-        "degree": 0.0299,
-        "in": 0.0299,
+        "degree": 0.0526,
+        "in": 0.0526,
         "out": 0.0,
-        "betweenness": 0.0034,
-        "closeness": 0.2826
+        "betweenness": 0.0019,
+        "closeness": 0.4318
       },
-      "order": 25
+      "order": 34
     },
     {
       "id": "CASE_ojk-ai-voice-deepfake-fraud-2025",
@@ -470,15 +623,15 @@
       "title": "OJK-documented wave of AI voice-cloning & deepfake financial fraud",
       "year": 2025,
       "chronology": "OJK melaporkan dua metode penipuan AI paling umum di Indonesia adalah voice cloning (meniru suara kerabat/kolega/pejabat untuk meminta transfer mendesak) dan deepfake video, termasuk menembus pengecekan liveness biometrik/eKYC. Kerugian mencapai Rp7,8 triliun antara November 2024-November 2025, dengan 70.000+ laporan penipuan ber-AI per Agustus 2025.",
-      "degree": 2,
+      "degree": 12,
       "cent": {
-        "degree": 0.0299,
-        "in": 0.0299,
+        "degree": 0.1579,
+        "in": 0.1579,
         "out": 0.0,
-        "betweenness": 0.0018,
-        "closeness": 0.2361
+        "betweenness": 0.0404,
+        "closeness": 0.475
       },
-      "order": 26
+      "order": 35
     },
     {
       "id": "CASE_sri-mulyani-deepfake-2025",
@@ -491,15 +644,15 @@
       "title": "Deepfake of Finance Minister Sri Mulyani fabricating a remark",
       "year": 2025,
       "chronology": "Pertengahan Agustus 2025 sebuah deepfake memanipulasi rekaman asli pidato Menkeu Sri Mulyani (7 Agustus 2025 di forum ITB) sehingga ia seolah menyebut guru 'beban negara'. Biro komunikasi Kemenkeu (Deni Surjantoro) memastikan klip adalah deepfake AI dari potongan tak utuh; akun resmi Indonesia.go.id juga membantahnya.",
-      "degree": 0,
+      "degree": 2,
       "cent": {
-        "degree": 0.0,
-        "in": 0.0,
+        "degree": 0.0263,
+        "in": 0.0263,
         "out": 0.0,
-        "betweenness": 0.0,
-        "closeness": 0.0
+        "betweenness": 0.0001,
+        "closeness": 0.3878
       },
-      "order": 27
+      "order": 36
     },
     {
       "id": "CASE_undip-deepfake-ncii-2025",
@@ -512,15 +665,15 @@
       "title": "Undip student created AI deepfake pornography of schoolmates & teachers",
       "year": 2025,
       "chronology": "Seorang mahasiswa hukum Undip diam-diam memotret siswi dan guru perempuan SMAN 11 Semarang, lalu memakai alat deepfake/face-swap AI untuk membuat citra pornografi non-konsensual dan video berjudul 'Skandal Smanse' yang diunggah ke X. Polda Jateng menyelidiki; ia ditetapkan tersangka dan ditahan pada 10-17 November 2025, dengan ribuan berkas ditemukan di penyimpanannya.",
-      "degree": 6,
+      "degree": 7,
       "cent": {
-        "degree": 0.0896,
-        "in": 0.0896,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0636,
-        "closeness": 0.4128
+        "betweenness": 0.0143,
+        "closeness": 0.4368
       },
-      "order": 28
+      "order": 37
     },
     {
       "id": "CASE_bukalapak-13m-2019",
@@ -533,15 +686,15 @@
       "title": "Bukalapak ~13 million accounts sold by Gnosticplayers",
       "year": 2019,
       "chronology": "Maret 2019 Gnosticplayers menjual batch keempat di Dream Market; ~13 juta dari 26 juta data berasal dari Bukalapak (pelanggaran berasal 2017). Data memuat username, nama, email, hash kata sandi (bcrypt/SHA-512 ber-salt), dan riwayat belanja, ditawarkan ~1,24 BTC (~USD 5.000).",
-      "degree": 5,
+      "degree": 7,
       "cent": {
-        "degree": 0.0746,
-        "in": 0.0746,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0017,
-        "closeness": 0.3608
+        "betweenness": 0.0025,
+        "closeness": 0.4471
       },
-      "order": 29
+      "order": 38
     },
     {
       "id": "CASE_malindo-lionair-30m-2019",
@@ -554,15 +707,15 @@
       "title": "Lion Air Group (Malindo Air) passenger data of ~30 million leaked",
       "year": 2019,
       "chronology": "September 2019 data penumpang anak usaha Lion Air Group, Malindo Air, bocor ke forum, mengeksposur rincian paspor, alamat, dan telepon (data pembayaran dilaporkan tidak terdampak). Peneliti Kaspersky menemukan >30 juta data maskapai di forum dengan dugaan server cloud salah konfigurasi. Malindo mengonfirmasi dan memberi tahu regulator Malaysia serta menggandeng AWS/GoQuo.",
-      "degree": 5,
+      "degree": 7,
       "cent": {
-        "degree": 0.0746,
-        "in": 0.0746,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0017,
-        "closeness": 0.3608
+        "betweenness": 0.0025,
+        "closeness": 0.4471
       },
-      "order": 30
+      "order": 39
     },
     {
       "id": "CASE_bhinneka-1-2m-2020",
@@ -575,15 +728,15 @@
       "title": "Bhinneka.com ~1.2 million accounts dumped online",
       "year": 2020,
       "chronology": "Bhinneka.com dibobol pada 27 Januari 2020; Juli 2020 basis data (~1,26 juta data, dua berkas SQL) disebar cuma-cuma. Data memuat ID, nama, email, gender, telepon, hash kata sandi ber-salt, alamat, TTL, ID media sosial, dan log login terakhir.",
-      "degree": 5,
+      "degree": 7,
       "cent": {
-        "degree": 0.0746,
-        "in": 0.0746,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0448,
-        "closeness": 0.3903
+        "betweenness": 0.0318,
+        "closeness": 0.4419
       },
-      "order": 31
+      "order": 40
     },
     {
       "id": "CASE_lazada-redmart-1-1m-2020",
@@ -596,15 +749,15 @@
       "title": "Lazada RedMart 1.1 million accounts breached (regional)",
       "year": 2020,
       "chronology": "Pada 29 Oktober 2020 Lazada menemukan akses ilegal ke basis data lama layanan grosir RedMart. >1,1 juta akun dijual ~USD 1.500 di forum peretas, memuat email, hash kata sandi SHA-1, nama, telepon, alamat surat/tagihan, serta sebagian nomor kartu kredit dengan masa berlaku. Lazada menyebut data berusia >18 bulan.",
-      "degree": 3,
+      "degree": 7,
       "cent": {
-        "degree": 0.0448,
-        "in": 0.0448,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0003,
-        "closeness": 0.3436
+        "betweenness": 0.0274,
+        "closeness": 0.4471
       },
-      "order": 32
+      "order": 41
     },
     {
       "id": "CASE_tokopedia-91m-2020",
@@ -617,15 +770,15 @@
       "title": "Tokopedia 91 million accounts breached and sold",
       "year": 2020,
       "chronology": "Maret 2020 basis data pengguna Tokopedia dicuri. Awal Mei 2020 sebagian ~15 juta data diunggah ke forum dan basis data penuh 91 juta dijual di dark web mulai ~USD 5.000, memuat email, nama, TTL, nomor ponsel, dan kata sandi ter-hash; lebih dari 200.000 kredensial kemudian di-dehash dan disebar.",
-      "degree": 3,
+      "degree": 7,
       "cent": {
-        "degree": 0.0448,
-        "in": 0.0448,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0003,
-        "closeness": 0.3436
+        "betweenness": 0.002,
+        "closeness": 0.4471
       },
-      "order": 33
+      "order": 42
     },
     {
       "id": "CASE_indihome-browsing-26m-2022",
@@ -638,15 +791,15 @@
       "title": "IndiHome 26.7 million subscriber browsing-history leak",
       "year": 2022,
       "chronology": "Agustus 2022 'Bjorka' memuat dataset 26.730.798 riwayat browsing pelanggan IndiHome (Agu 2018-Nov 2019) di BreachForums, mencakup tanggal, domain, platform, peramban, URL, plus NIK, email, telepon, dan gender. Kominfo memanggil Telkom; Telkom/IndiHome tidak mengonfirmasi kebocoran.",
-      "degree": 5,
+      "degree": 8,
       "cent": {
-        "degree": 0.0746,
-        "in": 0.0746,
+        "degree": 0.1053,
+        "in": 0.1053,
         "out": 0.0,
-        "betweenness": 0.0017,
-        "closeness": 0.3608
+        "betweenness": 0.0026,
+        "closeness": 0.4524
       },
-      "order": 34
+      "order": 43
     },
     {
       "id": "CASE_jasamarga-jmto-breach-2022",
@@ -659,15 +812,15 @@
       "title": "Toll-road operator Jasa Marga (JMTO) breached by DESORDEN",
       "year": 2022,
       "chronology": "Pada 25 Agustus 2022 DESORDEN mengumumkan membobol JMTO dan mengeksfiltrasi ~252 GB dari lima server. Setelah Jasa Marga menyatakan tak ada data pelanggan, DESORDEN meninjau dan memastikan data adalah informasi korporat dan karyawan. Jasa Marga mematikan server terdampak dan memigrasikan sistem.",
-      "degree": 4,
+      "degree": 7,
       "cent": {
-        "degree": 0.0597,
-        "in": 0.0597,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0008,
-        "closeness": 0.3564
+        "betweenness": 0.0067,
+        "closeness": 0.4471
       },
-      "order": 35
+      "order": 44
     },
     {
       "id": "CASE_mypertamina-44m-2022",
@@ -682,13 +835,13 @@
       "chronology": "November 2022 dataset yang diatribusikan ke MyPertamina bocor dalam format CSV, memuat ~44 juta data dan ~6 juta email unik, plus nama, TTL, gender, alamat, telepon, dan riwayat pembelian. Have I Been Pwned mengindeks pelanggaran ini (ditambahkan Januari 2024).",
       "degree": 7,
       "cent": {
-        "degree": 0.1045,
-        "in": 0.1045,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0466,
-        "closeness": 0.4128
+        "betweenness": 0.002,
+        "closeness": 0.4471
       },
-      "order": 36
+      "order": 45
     },
     {
       "id": "CASE_pln-customer-data-leak-2022",
@@ -701,15 +854,15 @@
       "title": "PLN electricity customer data of 17 million listed for sale",
       "year": 2022,
       "chronology": "Agustus 2022 data >17 juta pelanggan PLN ditawarkan di forum peretas (nama, alamat, ID pelanggan, nomor meteran, konsumsi kWh). PLN menyatakan data adalah salinan dashboard publik, bukan sistem transaksi langsungnya; Kominfo dan BSSN membuka investigasi.",
-      "degree": 4,
+      "degree": 6,
       "cent": {
-        "degree": 0.0597,
-        "in": 0.0597,
+        "degree": 0.0789,
+        "in": 0.0789,
         "out": 0.0,
-        "betweenness": 0.0147,
-        "closeness": 0.375
+        "betweenness": 0.0011,
+        "closeness": 0.4419
       },
-      "order": 37
+      "order": 46
     },
     {
       "id": "CASE_myindihome-35m-2023",
@@ -722,15 +875,15 @@
       "title": "MyIndiHome 35 million customer records leaked",
       "year": 2023,
       "chronology": "Awal Juli 2023 'Bjorka' menawarkan ~35,9 juta data aplikasi MyIndiHome (~7 GB terkompres), tertandai 3 Juli 2023, diklaim memuat email, telepon, nomor pelanggan, NIK, nama, jenis perangkat, alamat, dan IP, seharga ~USD 5.000. Telkom Group menyatakan data MyIndiHome aman dan tidak menemukan serangan server.",
-      "degree": 4,
+      "degree": 8,
       "cent": {
-        "degree": 0.0597,
-        "in": 0.0597,
+        "degree": 0.1053,
+        "in": 0.1053,
         "out": 0.0,
-        "betweenness": 0.0153,
-        "closeness": 0.3851
+        "betweenness": 0.0337,
+        "closeness": 0.4471
       },
-      "order": 38
+      "order": 47
     },
     {
       "id": "CASE_kai-stormous-ransomware-2024",
@@ -743,15 +896,15 @@
       "title": "PT KAI (Indonesian Railways) Stormous ransomware claim",
       "year": 2024,
       "chronology": "Januari 2024 Stormous mengklaim membobol PT KAI via akses VPN memakai kredensial pegawai dan mencuri data pegawai, pelanggan, pajak, dan korporat, menuntut ~11,69 BTC (~Rp7,7 miliar) dengan ancaman publikasi 15 hari. KAI membantah bukti kebocoran data penumpang dan menyatakan menyelidiki.",
-      "degree": 6,
+      "degree": 9,
       "cent": {
-        "degree": 0.0896,
-        "in": 0.0896,
+        "degree": 0.1184,
+        "in": 0.1184,
         "out": 0.0,
-        "betweenness": 0.0188,
-        "closeness": 0.3851
+        "betweenness": 0.0133,
+        "closeness": 0.4578
       },
-      "order": 39
+      "order": 48
     },
     {
       "id": "CASE_ugm-ft-website-defacement-2022",
@@ -764,15 +917,15 @@
       "title": "UGM engineering faculty website defaced by 'Bangsin'",
       "year": 2022,
       "chronology": "Pada Desember 2022 peretas beralias 'Bangsin' merusak tampilan situs 'FIND IT!' FT UGM (findit.ft.ugm.ac.id) dengan pesan 'BANGSIN WAS HERE AGAIN' dan berkas audio. Dilaporkan sebagai insiden berulang oleh pelaku yang sama; unit keamanan informasi UGM (DSSDI) menangani.",
-      "degree": 0,
+      "degree": 4,
       "cent": {
-        "degree": 0.0,
-        "in": 0.0,
+        "degree": 0.0526,
+        "in": 0.0526,
         "out": 0.0,
-        "betweenness": 0.0,
-        "closeness": 0.0
+        "betweenness": 0.0014,
+        "closeness": 0.4086
       },
-      "order": 40
+      "order": 49
     },
     {
       "id": "CASE_kemendikbud-leak-claim-2025",
@@ -785,15 +938,15 @@
       "title": "Ministry of Education (Kemendikbudristek) ~25 GB data leak claim",
       "year": 2025,
       "chronology": "Awal Februari 2025 anggota BreachForums (terindeks via FalconFeeds.io) mengklaim menjual ~25 GB data yang diatribusikan ke Kemendikbudristek (nama, nomor identitas, gender, TTL, telepon, ID provinsi/kota). Kementerian belum mengeluarkan konfirmasi resmi pada saat pelaporan.",
-      "degree": 4,
+      "degree": 8,
       "cent": {
-        "degree": 0.0597,
-        "in": 0.0597,
+        "degree": 0.1053,
+        "in": 0.1053,
         "out": 0.0,
-        "betweenness": 0.0008,
-        "closeness": 0.3564
+        "betweenness": 0.0026,
+        "closeness": 0.4524
       },
-      "order": 41
+      "order": 50
     },
     {
       "id": "CASE_cermati-data-breach-2020",
@@ -806,15 +959,15 @@
       "title": "Cermati fintech aggregator data breach (2.9 million users)",
       "year": 2020,
       "chronology": "Data 2,9 juta pengguna Cermati dijual ~USD 2.200 di forum peretas, terungkap publik via Teguh Aprianto pada 4 November 2020, memuat nama, email, alamat, telepon, rekening bank, pekerjaan, NPWP, dan NIK. Cermati mengirim peringatan akses tidak sah ke pengguna pada 31 Oktober dan menggandeng BSSN serta pakar eksternal.",
-      "degree": 4,
+      "degree": 8,
       "cent": {
-        "degree": 0.0597,
-        "in": 0.0597,
+        "degree": 0.1053,
+        "in": 0.1053,
         "out": 0.0,
-        "betweenness": 0.0008,
-        "closeness": 0.3564
+        "betweenness": 0.0026,
+        "closeness": 0.4524
       },
-      "order": 42
+      "order": 51
     },
     {
       "id": "CASE_kreditplus-data-leak-2020",
@@ -827,15 +980,15 @@
       "title": "KreditPlus customer data leak on RaidForums (~896k)",
       "year": 2020,
       "chronology": "Data ~896.169 nasabah KreditPlus dijual di RaidForums, pertama oleh 'Megadimarus' (27 Juni 2020) lalu 'ShinyHunters' (16 Juli 2020), memuat nama, NIK, email, alamat, TTL, telepon, data pekerjaan dan penjamin. Kominfo dan OJK meminta klarifikasi perusahaan.",
-      "degree": 4,
+      "degree": 9,
       "cent": {
-        "degree": 0.0597,
-        "in": 0.0597,
+        "degree": 0.1184,
+        "in": 0.1184,
         "out": 0.0,
-        "betweenness": 0.0162,
-        "closeness": 0.3701
+        "betweenness": 0.0044,
+        "closeness": 0.4578
       },
-      "order": 43
+      "order": 52
     },
     {
       "id": "CASE_bri-life-data-leak-2021",
@@ -848,15 +1001,15 @@
       "title": "BRI Life insurance data leak (~2 million policyholders)",
       "year": 2021,
       "chronology": "Akhir Juli 2021 pengguna RaidForums menawarkan ~460.000 dokumen dari data >2 juta pemegang polis BRI Life seharga ~USD 7.000 disertai video sampel, dilaporkan memuat rincian rekening, salinan KTP, dan data pajak. Hudson Rock menyebut beberapa komputer pegawai BRI/BRI Life terkompromi yang dapat memfasilitasi akses awal.",
-      "degree": 4,
+      "degree": 7,
       "cent": {
-        "degree": 0.0597,
-        "in": 0.0597,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0008,
-        "closeness": 0.3564
+        "betweenness": 0.0321,
+        "closeness": 0.4368
       },
-      "order": 44
+      "order": 53
     },
     {
       "id": "CASE_bank-indonesia-conti-ransomware-2022",
@@ -869,15 +1022,15 @@
       "title": "Bank Indonesia (central bank) Conti ransomware attack",
       "year": 2022,
       "chronology": "Bank Indonesia mengonfirmasi serangan ransomware yang terjadi Desember 2021 dan dilaporkan peneliti Januari 2022. Conti menanam ransomware pada belasan sistem dan mengklaim ~13,88 GB dokumen yang mulai dibocorkan. BI dan BSSN menyatakan penyerang hanya memperoleh data pegawai non-kritikal dan operasi publik tidak terganggu.",
-      "degree": 7,
+      "degree": 8,
       "cent": {
-        "degree": 0.1045,
-        "in": 0.1045,
+        "degree": 0.1053,
+        "in": 0.1053,
         "out": 0.0,
-        "betweenness": 0.0687,
-        "closeness": 0.3903
+        "betweenness": 0.033,
+        "closeness": 0.4524
       },
-      "order": 45
+      "order": 54
     },
     {
       "id": "CASE_adakami-pinjol-conduct-2023",
@@ -890,15 +1043,15 @@
       "title": "AdaKami pinjol abusive debt-collection case and OJK sanction",
       "year": 2023,
       "chronology": "Pada September 2023, laporan viral menuding seorang peminjam meninggal dunia akibat intimidasi penagih AdaKami, disertai dugaan order fiktif untuk meneror serta bunga/biaya berlebih. OJK memanggil AdaKami (20-21 September 2023), memerintahkan investigasi menyeluruh dan kanal pengaduan, lalu menjatuhkan sanksi surat peringatan atas pelanggaran praktik penagihan.",
-      "degree": 0,
+      "degree": 14,
       "cent": {
-        "degree": 0.0,
-        "in": 0.0,
+        "degree": 0.1842,
+        "in": 0.1842,
         "out": 0.0,
-        "betweenness": 0.0,
-        "closeness": 0.0
+        "betweenness": 0.064,
+        "closeness": 0.4872
       },
-      "order": 46
+      "order": 55
     },
     {
       "id": "CASE_bsi-lockbit-ransomware-2023",
@@ -911,15 +1064,15 @@
       "title": "Bank Syariah Indonesia (BSI) ransomware attack and 1.5TB leak (LockBit)",
       "year": 2023,
       "chronology": "Pada 8 Mei 2023 layanan ATM dan cabang BSI lumpuh; LockBit mengklaim mencuri 1,5 TB data ~15 juta nasabah dan pegawai. Log negosiasi menunjukkan bank menawar ~USD 10 juta sementara LockBit menuntut USD 20 juta; setelah gagal, data dipublikasikan 15-16 Mei 2023.",
-      "degree": 6,
+      "degree": 7,
       "cent": {
-        "degree": 0.0896,
-        "in": 0.0896,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0061,
-        "closeness": 0.375
+        "betweenness": 0.0037,
+        "closeness": 0.4471
       },
-      "order": 47
+      "order": 56
     },
     {
       "id": "CASE_bank-jatim-bifast-fraud-2024",
@@ -932,15 +1085,15 @@
       "title": "Bank Jatim BI-Fast payment-system fraud (Rp119.9 billion)",
       "year": 2024,
       "chronology": "Pada 22 Juni 2024, antara ~12.22-15.38 WIB, 483 transaksi BI-Fast anomali senilai ~Rp119,96 miliar menguras dana Bank Jatim. Pelaku memakai rekening atas nama orang lain untuk menampung transfer, lalu mengonversi hasil ke kripto. Empat terdakwa divonis pencucian uang oleh PN Surabaya pada 6 Agustus 2025 (masing-masing 2 tahun); otak 'Deni' buron.",
-      "degree": 2,
+      "degree": 9,
       "cent": {
-        "degree": 0.0299,
-        "in": 0.0299,
+        "degree": 0.1184,
+        "in": 0.1184,
         "out": 0.0,
-        "betweenness": 0.0276,
-        "closeness": 0.2441
+        "betweenness": 0.0388,
+        "closeness": 0.4578
       },
-      "order": 48
+      "order": 57
     },
     {
       "id": "CASE_indodax-crypto-hack-2024",
@@ -953,15 +1106,15 @@
       "title": "Indodax cryptocurrency exchange hot-wallet hack (~$22M)",
       "year": 2024,
       "chronology": "Pada 11 September 2024 penyerang menguras hot wallet Indodax lebih dari USD 22 juta (a.l. ~USD 14 jt ETH, USD 2,5 jt MATIC, USD 2,4 jt TRX, USD 1,4 jt BTC), diidentifikasi SlowMist dan CertiK. Indodax menangguhkan platform dengan dalih pemeliharaan; Cyvers menilai taktik menyerupai Lazarus, namun atribusi tidak dikonfirmasi.",
-      "degree": 0,
+      "degree": 10,
       "cent": {
-        "degree": 0.0,
-        "in": 0.0,
+        "degree": 0.1316,
+        "in": 0.1316,
         "out": 0.0,
-        "betweenness": 0.0,
-        "closeness": 0.0
+        "betweenness": 0.0327,
+        "closeness": 0.4524
       },
-      "order": 49
+      "order": 58
     },
     {
       "id": "CASE_bank-dki-bifast-breach-2025",
@@ -974,15 +1127,15 @@
       "title": "Bank DKI / Bank Jakarta BI-Fast cyber breach (Rp227 billion)",
       "year": 2025,
       "chronology": "Pada 29 Maret 2025 sistem pembayaran Bank DKI dibobol via BI-Fast, menghasilkan 807 transaksi anomali senilai ~Rp227,1 miliar terhadap rekening giro banknya di BNI. Tim monitoring mendeteksi penurunan saldo tajam ~11.00-11.20 WIB dan mengaktifkan protokol 'panic button' pada 11.44 WIB; PPATK membekukan rekening terkait, dengan indikasi serangan sejak 2024.",
-      "degree": 0,
+      "degree": 12,
       "cent": {
-        "degree": 0.0,
-        "in": 0.0,
+        "degree": 0.1579,
+        "in": 0.1579,
         "out": 0.0,
-        "betweenness": 0.0,
-        "closeness": 0.0
+        "betweenness": 0.0181,
+        "closeness": 0.475
       },
-      "order": 50
+      "order": 59
     },
     {
       "id": "CASE_pedulilindungi-jokowi-cert-2021",
@@ -995,15 +1148,15 @@
       "title": "President Jokowi's vaccine certificate exposed via PeduliLindungi feature",
       "year": 2021,
       "chronology": "Awal September 2021 sertifikat vaksin Presiden Joko Widodo diakses dan beredar daring setelah pengguna mengeksploitasi fitur cek vaksinasi di aplikasi PeduliLindungi. Menkes menyatakan akses ke data pejabat telah diblokir dan keamanan diperbaiki; Kominfo berargumen data NIK/vaksinasi mungkin berasal dari sumber pemerintah lain.",
-      "degree": 4,
+      "degree": 9,
       "cent": {
-        "degree": 0.0597,
-        "in": 0.0597,
+        "degree": 0.1184,
+        "in": 0.1184,
         "out": 0.0,
-        "betweenness": 0.0008,
-        "closeness": 0.3564
+        "betweenness": 0.0118,
+        "closeness": 0.4578
       },
-      "order": 51
+      "order": 60
     },
     {
       "id": "CASE_bjorka-sim-registration-1-3b-2022",
@@ -1016,15 +1169,15 @@
       "title": "Bjorka leak of 1.3 billion SIM-card registration records",
       "year": 2022,
       "chronology": "Pada 31 Agustus-1 September 2022 'Bjorka' menawarkan ~1,3 miliar data registrasi SIM (NIK, nomor telepon, operator, tanggal registrasi; ~87 GB) seharga ~USD 50.000. Kominfo membantah datanya berasal dari sistemnya; insiden ini membuka rangkaian kebocoran 'Bjorka' 2022.",
-      "degree": 5,
+      "degree": 9,
       "cent": {
-        "degree": 0.0746,
-        "in": 0.0746,
+        "degree": 0.1184,
+        "in": 0.1184,
         "out": 0.0,
-        "betweenness": 0.0298,
-        "closeness": 0.2912
+        "betweenness": 0.0108,
+        "closeness": 0.4578
       },
-      "order": 52
+      "order": 61
     },
     {
       "id": "CASE_immigration-passport-leak-2023",
@@ -1037,15 +1190,15 @@
       "title": "Immigration Directorate passport data leak (~34.9 million)",
       "year": 2023,
       "chronology": "Pada 5 Juli 2023 peneliti Teguh Aprianto melaporkan 'Bjorka' menjual data ~34,9 juta pemegang paspor (nama, nomor paspor, masa berlaku, TTL, gender) periode 2009-2020 seharga ~USD 10.000. Imigrasi dan BSSN menyelidiki; otoritas memperdebatkan kecocokan sampel dengan data terkini.",
-      "degree": 6,
+      "degree": 9,
       "cent": {
-        "degree": 0.0896,
-        "in": 0.0896,
+        "degree": 0.1184,
+        "in": 0.1184,
         "out": 0.0,
-        "betweenness": 0.0467,
-        "closeness": 0.3316
+        "betweenness": 0.0044,
+        "closeness": 0.4578
       },
-      "order": 53
+      "order": 62
     },
     {
       "id": "CASE_kpu-dpt-jimbo-2023",
@@ -1058,15 +1211,15 @@
       "title": "KPU voter roll (DPT) leak of ~204 million records ('Jimbo')",
       "year": 2023,
       "chronology": "Sekitar 27-28 November 2023 'Jimbo' menawarkan 204.807.203 data pemilih unik dari DPT (NIK, KK, KTP, nama, TTL, status, alamat, TPS) seharga ~USD 74.000, dengan 500.000 data contoh sebagai bukti. Resecurity kemudian mengaitkan kompromi dengan malware pencuri info (info-stealer) pada endpoint KPU.",
-      "degree": 6,
+      "degree": 8,
       "cent": {
-        "degree": 0.0896,
-        "in": 0.0896,
+        "degree": 0.1053,
+        "in": 0.1053,
         "out": 0.0,
-        "betweenness": 0.0061,
-        "closeness": 0.375
+        "betweenness": 0.0026,
+        "closeness": 0.4524
       },
-      "order": 54
+      "order": 63
     },
     {
       "id": "CASE_bais-tni-intelligence-leak-2024",
@@ -1079,15 +1232,15 @@
       "title": "BAIS TNI military strategic-intelligence data allegedly breached",
       "year": 2024,
       "chronology": "Sekitar 24-27 Juni 2024 'MoonzHaxor' mengklaim membobol BAIS TNI dan memuat berkas contoh, menawarkan data hingga ~USD 7.000. Tim Siber TNI menyatakan menyelidiki dan menonaktifkan sementara server BAIS; pejabat menyebut materi sebagai data lama.",
-      "degree": 5,
+      "degree": 6,
       "cent": {
-        "degree": 0.0746,
-        "in": 0.0746,
+        "degree": 0.0789,
+        "in": 0.0789,
         "out": 0.0,
-        "betweenness": 0.0017,
-        "closeness": 0.3608
+        "betweenness": 0.0048,
+        "closeness": 0.4419
       },
-      "order": 55
+      "order": 64
     },
     {
       "id": "CASE_bkn-asn-leak-topiax-2024",
@@ -1100,15 +1253,15 @@
       "title": "BKN civil-servant (ASN) data allegedly leaked and sold (~4.7M)",
       "year": 2024,
       "chronology": "Pada 10 Agustus 2024 pengguna BreachForums 'TopiAx' mengklaim mencuri 4.759.218 data BKN (NIP, NIK, nama, TTL, jabatan, instansi, alamat, kontak, pendidikan) dan menawarkannya seharga ~USD 10.000. CISSReC memverifikasi sampel 128 ASN Aceh sebagai otentik; BKN menyatakan menyelidiki bersama BSSN dan Kominfo.",
-      "degree": 4,
+      "degree": 8,
       "cent": {
-        "degree": 0.0597,
-        "in": 0.0597,
+        "degree": 0.1053,
+        "in": 0.1053,
         "out": 0.0,
-        "betweenness": 0.0008,
-        "closeness": 0.3564
+        "betweenness": 0.0115,
+        "closeness": 0.4471
       },
-      "order": 56
+      "order": 65
     },
     {
       "id": "CASE_bkn-teacher-intrusion-2024",
@@ -1121,15 +1274,15 @@
       "title": "Elementary teacher arrested for intruding into BKN database (6.3 GB)",
       "year": 2024,
       "chronology": "Pada September 2024 polisi menangkap seorang guru SD honorer berusia 25 tahun di Banyuwangi yang memperoleh kredensial login pegawai BKN dari BreachForums, mengunduh ~6,3 GB data sampel, mengunggahnya ke Pastebin, lalu menjualnya ~USD 8.000 di BreachForums dan Telegram. Pelaku otodidak tanpa pendidikan TI formal.",
-      "degree": 3,
+      "degree": 6,
       "cent": {
-        "degree": 0.0448,
-        "in": 0.0448,
+        "degree": 0.0789,
+        "in": 0.0789,
         "out": 0.0,
-        "betweenness": 0.0071,
-        "closeness": 0.3701
+        "betweenness": 0.0291,
+        "closeness": 0.4419
       },
-      "order": 57
+      "order": 66
     },
     {
       "id": "CASE_inafis-polri-fingerprint-leak-2024",
@@ -1142,15 +1295,15 @@
       "title": "INAFIS police fingerprint-identification system data leaked",
       "year": 2024,
       "chronology": "Pada 22 Juni 2024 'MoonzHaxor' mengunggah data dugaan pembobolan INAFIS (citra sidik jari, email, berkas aplikasi SpringBoot) seharga ~USD 1.000. Kepala BSSN berkoordinasi dengan Polri dan menyatakan data lama serta layanan INAFIS berjalan normal.",
-      "degree": 5,
+      "degree": 8,
       "cent": {
-        "degree": 0.0746,
-        "in": 0.0746,
+        "degree": 0.1053,
+        "in": 0.1053,
         "out": 0.0,
-        "betweenness": 0.0017,
-        "closeness": 0.3608
+        "betweenness": 0.0026,
+        "closeness": 0.4524
       },
-      "order": 58
+      "order": 67
     },
     {
       "id": "CASE_npwp-tax-bjorka-2024",
@@ -1163,15 +1316,15 @@
       "title": "Bjorka sells ~6 million taxpayer IDs (NPWP), incl. President's",
       "year": 2024,
       "chronology": "Pada 18 September 2024 'Bjorka' menawarkan ~6 juta data NPWP (NIK, NPWP, nama, alamat, kontak, data pajak) seharga ~USD 10.000; sampel menyebut Presiden Joko Widodo, Gibran, Kaesang, dan dua menteri. DJP menyatakan log aksesnya tidak menunjukkan indikasi pembobolan dan membuka penyelidikan.",
-      "degree": 4,
+      "degree": 9,
       "cent": {
-        "degree": 0.0597,
-        "in": 0.0597,
+        "degree": 0.1184,
+        "in": 0.1184,
         "out": 0.0,
-        "betweenness": 0.0008,
-        "closeness": 0.3564
+        "betweenness": 0.0069,
+        "closeness": 0.4578
       },
-      "order": 59
+      "order": 68
     },
     {
       "id": "CASE_pdns2-surabaya-ransomware-2024",
@@ -1184,15 +1337,15 @@
       "title": "Brain Cipher ransomware cripples Temporary National Data Center (PDNS 2)",
       "year": 2024,
       "chronology": "Pada 20 Juni 2024 PDNS 2 Surabaya dienkripsi ransomware Brain Cipher (varian turunan LockBit 3.0) setelah Windows Defender dinonaktifkan, melumpuhkan 282 layanan pada 210+ instansi pusat dan daerah termasuk autogate imigrasi dan registrasi pendidikan. Penyerang meminta tebusan USD 8 juta yang ditolak pemerintah; pada 3 Juli 2024 kelompok itu merilis kunci dekripsi secara cuma-cuma.",
-      "degree": 6,
+      "degree": 7,
       "cent": {
-        "degree": 0.0896,
-        "in": 0.0896,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0175,
-        "closeness": 0.3654
+        "betweenness": 0.0555,
+        "closeness": 0.4471
       },
-      "order": 60
+      "order": 69
     },
     {
       "id": "CASE_wannacry-hospitals-2017",
@@ -1207,13 +1360,13 @@
       "chronology": "Pada pertengahan Mei 2017, saat wabah WannaCry global, RS Dharmais dan RS Harapan Kita di Jakarta terkena ransomware yang mengenkripsi berkas Windows via kerentanan SMB. Direktur Dharmais melaporkan hampir seluruh komputer terdampak; sistem rekam medis dan tagihan terkunci dengan tebusan ~USD 300 dalam Bitcoin. Operasi pulih via cadangan, dan Kominfo menyatakan rekam medis tidak bocor.",
       "degree": 7,
       "cent": {
-        "degree": 0.1045,
-        "in": 0.1045,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0775,
-        "closeness": 0.4012
+        "betweenness": 0.0067,
+        "closeness": 0.4471
       },
-      "order": 61
+      "order": 70
     },
     {
       "id": "CASE_bpjs-kesehatan-279m-2021",
@@ -1226,15 +1379,15 @@
       "title": "BPJS Kesehatan national health insurance data leak (~279 million)",
       "year": 2021,
       "chronology": "Pada Mei 2021 akun RaidForums 'Kotz' menjual data yang diklaim milik ~279 juta peserta BPJS Kesehatan (NIK, KTP, telepon, email, nama, alamat, gaji), dengan ~20 juta disertai foto. Kasus diselidiki BSSN, Dittipidsiber, dan Kominfo; forensik digital tidak konklusif menetapkan sumber kebocoran.",
-      "degree": 5,
+      "degree": 8,
       "cent": {
-        "degree": 0.0746,
-        "in": 0.0746,
+        "degree": 0.1053,
+        "in": 0.1053,
         "out": 0.0,
-        "betweenness": 0.059,
-        "closeness": 0.4012
+        "betweenness": 0.0079,
+        "closeness": 0.4524
       },
-      "order": 62
+      "order": 71
     },
     {
       "id": "CASE_ehac-covid-app-leak-2021",
@@ -1247,15 +1400,15 @@
       "title": "eHAC COVID-19 health-alert app exposes ~1.3 million users",
       "year": 2021,
       "chronology": "Pada 15 Juli 2021 tim vpnMentor menemukan basis data Elasticsearch eHAC tanpa autentikasi yang mengeksposur ~1,3 juta orang (NIK, telepon, foto, hasil tes COVID-19, data perjalanan/rumah sakit, kredensial staf). Setelah notifikasi, server dimatikan pada 24 Agustus 2021; Kemenkes menyebut kebocoran melibatkan eHAC versi lama.",
-      "degree": 6,
+      "degree": 7,
       "cent": {
-        "degree": 0.0896,
-        "in": 0.0896,
+        "degree": 0.0921,
+        "in": 0.0921,
         "out": 0.0,
-        "betweenness": 0.0061,
-        "closeness": 0.375
+        "betweenness": 0.0025,
+        "closeness": 0.4471
       },
-      "order": 63
+      "order": 72
     },
     {
       "id": "CASE_kemenkes-patient-records-2022",
@@ -1268,15 +1421,15 @@
       "title": "Health Ministry patient medical records leak (~6 million / 720 GB)",
       "year": 2022,
       "chronology": "Pada 6 Januari 2022 Kemenkes mengakui menyelidiki dugaan kebocoran ~6 juta rekam medis pasien (~720 GB) yang dijual di RaidForums, mencakup nama, rumah sakit, foto pasien, hasil rontgen, hasil lab/COVID-19, surat rujukan BPJS, dan laporan radiologi. Kemenkes berkoordinasi dengan BSSN untuk investigasi.",
-      "degree": 5,
+      "degree": 8,
       "cent": {
-        "degree": 0.0746,
-        "in": 0.0746,
+        "degree": 0.1053,
+        "in": 0.1053,
         "out": 0.0,
-        "betweenness": 0.0017,
-        "closeness": 0.3608
+        "betweenness": 0.0026,
+        "closeness": 0.4524
       },
-      "order": 64
+      "order": 73
     },
     {
       "id": "CASE_pedulilindungi-id-gambling-hijack-2025",
@@ -1289,15 +1442,15 @@
       "title": "Legacy PeduliLindungi.id domain hijacked to show online gambling content",
       "year": 2025,
       "chronology": "Sekitar 19-20 Mei 2025 situs legacy PeduliLindungi.id ditemukan menampilkan konten promosi judi daring setelah disusupi. Komdigi memblokir domain pada 21 Mei 2025; layanan kesehatan telah bermigrasi ke SatuSehat sejak 2023, dan Telkom memulai investigasi internal.",
-      "degree": 1,
+      "degree": 5,
       "cent": {
-        "degree": 0.0149,
-        "in": 0.0149,
+        "degree": 0.0658,
+        "in": 0.0658,
         "out": 0.0,
-        "betweenness": 0.0,
-        "closeness": 0.2644
+        "betweenness": 0.0281,
+        "closeness": 0.4368
       },
-      "order": 65
+      "order": 74
     },
     {
       "id": "CASE_satusehat-kotim-breach-2025",
@@ -1310,15 +1463,15 @@
       "title": "Alleged breach of SatuSehat instance for East Kotawaringin (Kotim)",
       "year": 2025,
       "chronology": "Sekitar 7 Agustus 2025 pengguna baru forum dark web menawarkan basis data yang diklaim dari instance SatuSehat Kabupaten Kotawaringin Timur, memuat timestamp, nomor rekam medis, nomor BPJS, nama, gender, poliklinik, status cetak, dan barcode, dengan data dilaporkan rentang 2020-2025.",
-      "degree": 7,
+      "degree": 8,
       "cent": {
-        "degree": 0.1045,
-        "in": 0.1045,
+        "degree": 0.1053,
+        "in": 0.1053,
         "out": 0.0,
-        "betweenness": 0.0246,
-        "closeness": 0.3903
+        "betweenness": 0.0026,
+        "closeness": 0.4524
       },
-      "order": 66
+      "order": 75
     },
     {
       "id": "CASE_kejaksaan-agung-defacement-2025",
@@ -1331,15 +1484,15 @@
       "title": "Attorney General's Office (Kejaksaan Agung) website defacement",
       "year": 2025,
       "chronology": "Pada Februari 2025 situs resmi Kejaksaan Agung (kejaksaan.go.id) terkena serangan defacement, dilaporkan via media sosial sekitar 10 Februari 2025. Pelaku, melalui handel Instagram, mengklaim mengakses basis data termasuk data pegawai, tamu, e-ticketing, dan perkara.",
-      "degree": 7,
+      "degree": 11,
       "cent": {
-        "degree": 0.1045,
-        "in": 0.1045,
+        "degree": 0.1447,
+        "in": 0.1447,
         "out": 0.0,
-        "betweenness": 0.0337,
-        "closeness": 0.38
+        "betweenness": 0.0408,
+        "closeness": 0.4691
       },
-      "order": 67
+      "order": 76
     }
   ],
   "edges": [
@@ -1350,83 +1503,115 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE untuk melindungi dan memastikan keamanan data terpicu oleh serangan ransomware."
+      "reason": "Imposes duty on data controller to protect and ensure data security, relevant to ransomware."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "source": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_11",
       "target": "CASE_pdns2-surabaya-ransomware-2024",
       "roles": [
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE menjaga kerahasiaan data terlanggar oleh serangan ransomware."
+      "reason": "Imposes duty on data controller to maintain confidentiality, relevant to data breach."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_39",
+      "source": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_10",
       "target": "CASE_pdns2-surabaya-ransomware-2024",
       "roles": [
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE mencegah akses tidak sah terpicu oleh serangan ransomware."
+      "reason": "Imposes duty on data controller to prevent unauthorized access, relevant to ransomware."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45A",
       "target": "CASE_pdns2-surabaya-ransomware-2024",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE memberitahukan kegagalan perlindungan data kepada subjek dan lembaga."
+      "reason": "Imposes duty on data controller to notify data breach within 3x24 hours."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_pdns2-surabaya-ransomware-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Imposes duty on PSE to implement personal data protection principles during processing."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_pdns2-surabaya-ransomware-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Imposes criminal liability for unlawfully obtaining/collecting personal data."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_27",
+      "target": "CASE_pdns2-surabaya-ransomware-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Prohibits unlawful obtaining/collecting personal data, relevant to ransomware data theft."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
-      "target": "CASE_pdns2-surabaya-ransomware-2024",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Pelaku ransomware memperoleh data secara melawan hukum untuk keuntungan."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
-      "target": "CASE_pdns2-surabaya-ransomware-2024",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Pelaku ransomware memperoleh data secara melawan hukum untuk keuntungan."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
       "target": "CASE_bkn-asn-leak-topiax-2024",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku memperoleh dan mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Pasal ini mengikat pelaku yang memperoleh data secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_12",
+      "target": "CASE_bkn-asn-leak-topiax-2024",
+      "roles": [
+        "konsumen"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini memberikan hak kepada subjek data untuk menggugat ganti rugi atas pelanggaran."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45B",
+      "target": "CASE_bkn-asn-leak-topiax-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pasal ini mewajibkan pengendali data untuk memberitahukan kegagalan perlindungan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_bkn-asn-leak-topiax-2024",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
-      ],
-      "confidence": 95,
-      "reason": "Kewajiban PSE memberitahukan kegagalan perlindungan data kepada subjek dan lembaga."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
-      "target": "CASE_bkn-asn-leak-topiax-2024",
-      "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku dilarang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Pasal ini melarang perolehan atau pengumpulan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_28",
+      "target": "CASE_bkn-asn-leak-topiax-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini mewajibkan PSE untuk melaksanakan prinsip perlindungan data pribadi."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_bkn-asn-leak-topiax-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pasal ini mewajibkan pengendali data untuk melindungi dan memastikan keamanan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -1434,8 +1619,17 @@
       "roles": [
         "pse"
       ],
-      "confidence": 95,
-      "reason": "PSE wajib melindungi dan memastikan keamanan data pribadi yang diprosesnya."
+      "confidence": 90,
+      "reason": "Pasal ini mewajibkan pengendali data untuk menjaga kerahasiaan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_bkn-asn-leak-topiax-2024",
+      "roles": [
+        "konsumen"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini memberikan hak kepada subjek data yang dilanggar haknya."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -1447,15 +1641,40 @@
       "reason": "Pelaku memperoleh dan menjual data pribadi secara melawan hukum untuk keuntungan."
     },
     {
+      "source": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_46",
+      "target": "CASE_bkn-teacher-intrusion-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "BKN sebagai pengendali data wajib melindungi data, kegagalan memicu pasal ini."
+    },
+    {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
       "target": "CASE_bkn-teacher-intrusion-2024",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
-      "confidence": 95,
-      "reason": "BKN wajib memberitahukan kegagalan perlindungan data kepada subjek data dan lembaga."
+      "confidence": 90,
+      "reason": "BKN sebagai pengendali data wajib memberitahukan kegagalan perlindungan data."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_bkn-teacher-intrusion-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Penyelenggara sistem elektronik (BKN) wajib melindungi data pribadi."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_bkn-teacher-intrusion-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "BKN sebagai pengendali data wajib menjaga kerahasiaan data pribadi."
     },
     {
       "source": "IDN_UU_ITE_No1_2024_Pasal_27",
@@ -1464,18 +1683,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku secara melawan hukum memperoleh dan mengumpulkan data pribadi yang bukan miliknya."
+      "reason": "Pelaku memperoleh dan mengumpulkan data pribadi secara melawan hukum untuk keuntungan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_kpu-dpt-jimbo-2023",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data terpicu oleh kebocoran data."
+      "reason": "Pasal 46 mewajibkan Pengendali Data Pribadi (KPU) untuk memberitahukan kegagalan perlindungan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -1484,7 +1701,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal ini mengatur perolehan/pengumpulan data pribadi secara melawan hukum oleh pelaku."
+      "reason": "Pasal 67 mengikat 'Setiap Orang' yang memperoleh/mengumpulkan data secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_kpu-dpt-jimbo-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 68 mengikat 'Setiap Orang' yang membuat/memalsukan data pribadi untuk keuntungan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -1493,7 +1719,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban menjaga kerahasiaan data terpicu oleh insiden kebocoran data."
+      "reason": "Pasal 36 mewajibkan Pengendali Data Pribadi (KPU) menjaga kerahasiaan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -1502,7 +1728,16 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban melindungi dan memastikan keamanan data terpicu oleh kebocoran data."
+      "reason": "Pasal 35 mewajibkan Pengendali Data Pribadi (KPU) melindungi dan memastikan keamanan data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_kpu-dpt-jimbo-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 66 melarang 'Setiap Orang' membuat/memalsukan data pribadi untuk keuntungan."
     },
     {
       "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
@@ -1511,7 +1746,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban melaksanakan prinsip perlindungan data pribadi relevan dengan insiden kebocoran."
+      "reason": "Pasal 14 PP PSTE mewajibkan Penyelenggara Sistem Elektronik (KPU) melaksanakan prinsip perlindungan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -1520,163 +1755,29 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Larangan memperoleh/mengumpulkan data pribadi secara melawan hukum relevan untuk pelaku."
+      "reason": "Pasal 65 melarang 'Setiap Orang' memperoleh/mengumpulkan data secara melawan hukum."
     },
     {
-      "source": "IDN_UU_ITE_No1_2024_Pasal_45A",
-      "target": "CASE_bjorka-sim-registration-1-3b-2022",
-      "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
-      ],
-      "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data kepada subjek data dan lembaga."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_20",
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_20",
       "target": "CASE_bjorka-sim-registration-1-3b-2022",
       "roles": [
         "pse"
       ],
-      "confidence": 95,
-      "reason": "Kewajiban pengendali data untuk melindungi dan memastikan keamanan data yang diproses."
-    },
-    {
-      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
-      "target": "CASE_bjorka-sim-registration-1-3b-2022",
-      "roles": [
-        "pse"
-      ],
-      "confidence": 95,
-      "reason": "Kewajiban pengendali data untuk menjaga kerahasiaan data pribadi."
-    },
-    {
-      "source": "IDN_UU_ITE_No1_2024_Pasal_45B",
-      "target": "CASE_bjorka-sim-registration-1-3b-2022",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Tepat untuk pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
-      "target": "CASE_bjorka-sim-registration-1-3b-2022",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Tepat untuk pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
-    },
-    {
-      "source": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_7",
-      "target": "CASE_immigration-passport-leak-2023",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Pasal 67 mengatur perolehan/pengumpulan data secara melawan hukum oleh pelaku."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_20",
-      "target": "CASE_immigration-passport-leak-2023",
-      "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
-      ],
-      "confidence": 95,
-      "reason": "Pasal 46 mewajibkan notifikasi kegagalan perlindungan data kepada subjek dan lembaga."
-    },
-    {
-      "source": "IDN_UU_ITE_No1_2024_Pasal_45B",
-      "target": "CASE_immigration-passport-leak-2023",
-      "roles": [
-        "pse"
-      ],
-      "confidence": 95,
-      "reason": "Pasal 35 mewajibkan pengendali data melindungi dan memastikan keamanan data."
-    },
-    {
-      "source": "IDN_UU_ITE_No1_2024_Pasal_27",
-      "target": "CASE_immigration-passport-leak-2023",
-      "roles": [
-        "pse"
-      ],
-      "confidence": 95,
-      "reason": "Pasal 14 PP PSTE mewajibkan penyelenggara sistem elektronik melindungi data pribadi."
-    },
-    {
-      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
-      "target": "CASE_immigration-passport-leak-2023",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Pasal 65 melarang perolehan/pengumpulan data secara melawan hukum oleh pelaku."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
-      "target": "CASE_immigration-passport-leak-2023",
-      "roles": [
-        "pse"
-      ],
-      "confidence": 95,
-      "reason": "Pasal 36 mewajibkan pengendali data menjaga kerahasiaan data pribadi."
+      "confidence": 85,
+      "reason": "Kewajiban PSE untuk rencana keberlangsungan dan pengelolaan data relevan dengan insiden."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
-      "target": "CASE_npwp-tax-bjorka-2024",
-      "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
-      ],
-      "confidence": 95,
-      "reason": "Pasal 46 (notifikasi kegagalan pelindungan 3x24 jam) terpicu oleh kebocoran data."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
-      "target": "CASE_npwp-tax-bjorka-2024",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Pasal 67 (memperoleh/mengumpulkan data melawan hukum) tepat untuk pelaku."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
-      "target": "CASE_npwp-tax-bjorka-2024",
+      "target": "CASE_bjorka-sim-registration-1-3b-2022",
       "roles": [
         "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 35 (kewajiban keamanan data) terpicu oleh kegagalan keamanan/kebocoran."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
-      "target": "CASE_npwp-tax-bjorka-2024",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Pasal 65 (memperoleh/mengumpulkan data melawan hukum) tepat untuk pelaku."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
-      "target": "CASE_bais-tni-intelligence-leak-2024",
-      "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
-      ],
-      "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data kepada subjek dan lembaga."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data oleh Pengendali Data Pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
-      "target": "CASE_bais-tni-intelligence-leak-2024",
+      "target": "CASE_bjorka-sim-registration-1-3b-2022",
       "roles": [
         "pse"
       ],
@@ -1684,46 +1785,350 @@
       "reason": "Kewajiban Pengendali Data Pribadi untuk melindungi dan memastikan keamanan data."
     },
     {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_bjorka-sim-registration-1-3b-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE melaksanakan prinsip perlindungan data pribadi, termasuk pengumpulan terbatas."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_bjorka-sim-registration-1-3b-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban Pengendali Data Pribadi untuk menjaga kerahasiaan Data Pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_bjorka-sim-registration-1-3b-2022",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Mengatur pidana bagi pembuat/pemalsu data pribadi, relevan jika Bjorka memalsukan data."
+    },
+    {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
-      "target": "CASE_bais-tni-intelligence-leak-2024",
+      "target": "CASE_bjorka-sim-registration-1-3b-2022",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Tepat untuk pelaku yang memperoleh atau mengumpulkan data secara melawan hukum."
+      "reason": "Mengatur pidana bagi yang memperoleh/mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_bjorka-sim-registration-1-3b-2022",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Larangan membuat/memalsukan data pribadi, relevan jika Bjorka memalsukan data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_bjorka-sim-registration-1-3b-2022",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Larangan memperoleh/mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "target": "CASE_immigration-passport-leak-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 67 UU PDP mengatur larangan memperoleh/mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "target": "CASE_immigration-passport-leak-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 46 UU PDP mewajibkan pengendali data memberitahukan kegagalan perlindungan data."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_immigration-passport-leak-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "reason": "Pasal 26 UU ITE mengatur penggunaan data pribadi harus atas persetujuan, yang dilanggar oleh kebocoran."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_immigration-passport-leak-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 35 UU PDP mewajibkan pengendali data melindungi dan memastikan keamanan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_immigration-passport-leak-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pasal 68 UU PDP mengatur larangan membuat/memalsukan data pribadi untuk keuntungan."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_immigration-passport-leak-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Pasal 14 PP PSTE mewajibkan PSE melaksanakan prinsip perlindungan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_immigration-passport-leak-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 65 UU PDP melarang memperoleh/mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_immigration-passport-leak-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pasal 66 UU PDP melarang membuat/memalsukan data pribadi untuk keuntungan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_immigration-passport-leak-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 36 UU PDP mewajibkan pengendali data menjaga kerahasiaan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_60",
+      "target": "CASE_npwp-tax-bjorka-2024",
+      "roles": [
+        "regulator"
+      ],
+      "confidence": 80,
+      "reason": "Pasal 60 (b) memberikan wewenang pengawasan kepada lembaga, relevan untuk penyelidikan DJP."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "target": "CASE_npwp-tax-bjorka-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 46 mewajibkan Pengendali Data Pribadi untuk memberitahukan kegagalan perlindungan data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "target": "CASE_npwp-tax-bjorka-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 67 mengikat pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_npwp-tax-bjorka-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 35 mewajibkan Pengendali Data Pribadi untuk melindungi dan memastikan keamanan data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_npwp-tax-bjorka-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 68 mengikat pelaku yang sengaja membuat atau memalsukan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_npwp-tax-bjorka-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 36 mewajibkan Pengendali Data Pribadi untuk menjaga kerahasiaan data pribadi."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_npwp-tax-bjorka-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Pasal 14 PP PSTE mewajibkan PSE melaksanakan prinsip perlindungan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_npwp-tax-bjorka-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 66 melarang pembuatan atau pemalsuan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_npwp-tax-bjorka-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal 65 melarang perolehan atau pengumpulan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_bais-tni-intelligence-leak-2024",
       "roles": [
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban Pengendali Data Pribadi untuk menjaga kerahasiaan Data Pribadi."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data pribadi kepada subjek dan lembaga."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_bais-tni-intelligence-leak-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE untuk melindungi data pribadi, relevan dengan insiden kebocoran."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_bais-tni-intelligence-leak-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban pengendali data pribadi untuk melindungi dan memastikan keamanan data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
       "target": "CASE_bais-tni-intelligence-leak-2024",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Tepat untuk pelaku yang memperoleh atau mengumpulkan data secara melawan hukum."
+      "reason": "Mengatur sanksi pidana bagi pelaku yang memperoleh data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_27",
+      "target": "CASE_bais-tni-intelligence-leak-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban pengendali data pribadi untuk menjaga kerahasiaan data pribadi."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_28",
+      "target": "CASE_bais-tni-intelligence-leak-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Melarang perolehan atau pengumpulan data pribadi secara melawan hukum."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_inafis-polri-fingerprint-leak-2024",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data kepada subjek dan lembaga."
+      "reason": "Kewajiban PSE untuk memberitahukan kegagalan perlindungan data dalam 3x24 jam."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
       "target": "CASE_inafis-polri-fingerprint-leak-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban PSE untuk melindungi dan memastikan keamanan Data Pribadi yang diprosesnya."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_inafis-polri-fingerprint-leak-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE untuk melaksanakan prinsip perlindungan Data Pribadi dalam pemrosesan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_inafis-polri-fingerprint-leak-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban PSE untuk menjaga kerahasiaan Data Pribadi selama pemrosesan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "target": "CASE_inafis-polri-fingerprint-leak-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Mengatur sanksi pidana bagi setiap orang yang memperoleh data secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_inafis-polri-fingerprint-leak-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Mengatur sanksi pidana bagi setiap orang yang membuat atau memalsukan Data Pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_inafis-polri-fingerprint-leak-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Larangan membuat atau memalsukan Data Pribadi dengan maksud menguntungkan diri sendiri."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_inafis-polri-fingerprint-leak-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Larangan memperoleh atau mengumpulkan Data Pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_pedulilindungi-jokowi-cert-2021",
       "roles": [
         "pse"
       ],
@@ -1731,8 +2136,44 @@
       "reason": "Kewajiban pengendali data untuk melindungi dan memastikan keamanan data pribadi."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
-      "target": "CASE_inafis-polri-fingerprint-leak-2024",
+      "source": "IDN_UU_PDP_No27_2022_Pasal_20",
+      "target": "CASE_pedulilindungi-jokowi-cert-2021",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE untuk melaksanakan prinsip perlindungan data pribadi."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_pedulilindungi-jokowi-cert-2021",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban pengendali data untuk memberitahukan kegagalan perlindungan data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "target": "CASE_pedulilindungi-jokowi-cert-2021",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Larangan membuat atau memalsukan data pribadi yang merugikan orang lain."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_pedulilindungi-jokowi-cert-2021",
+      "roles": [
+        "konsumen"
+      ],
+      "confidence": 90,
+      "reason": "Hak subjek data atas persetujuan penggunaan data pribadi dan hak ganti rugi."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_pedulilindungi-jokowi-cert-2021",
       "roles": [
         "pse"
       ],
@@ -1740,71 +2181,49 @@
       "reason": "Kewajiban pengendali data untuk menjaga kerahasiaan data pribadi."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
-      "target": "CASE_inafis-polri-fingerprint-leak-2024",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Larangan memperoleh atau mengumpulkan data pribadi secara melawan hukum."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
-      "target": "CASE_inafis-polri-fingerprint-leak-2024",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Larangan memperoleh atau mengumpulkan data pribadi secara melawan hukum."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45A",
       "target": "CASE_pedulilindungi-jokowi-cert-2021",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Larangan memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45B",
+      "target": "CASE_pedulilindungi-jokowi-cert-2021",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Sanksi pidana bagi yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "target": "CASE_pedulilindungi-jokowi-cert-2021",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Sanksi pidana bagi yang membuat atau memalsukan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "target": "CASE_kemenkes-patient-records-2022",
       "roles": [
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE melindungi dan memastikan keamanan data terpicu oleh akses tidak sah."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data pribadi dalam 3x24 jam."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
-      "target": "CASE_pedulilindungi-jokowi-cert-2021",
-      "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
-      ],
-      "confidence": 95,
-      "reason": "Kewajiban PSE memberitahukan kegagalan pelindungan data kepada subjek data dan lembaga."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
-      "target": "CASE_pedulilindungi-jokowi-cert-2021",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Larangan memperoleh/mengumpulkan data pribadi secara melawan hukum terpicu oleh pelaku."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
-      "target": "CASE_pedulilindungi-jokowi-cert-2021",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Pasal ini mengatur sanksi pidana bagi pelaku yang memperoleh data secara melawan hukum."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
       "target": "CASE_kemenkes-patient-records-2022",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pelaku"
       ],
       "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data kepada subjek data dan lembaga."
+      "reason": "Sanksi pidana bagi pelaku yang sengaja membuat atau memalsukan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -1813,7 +2232,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal ini mengatur pidana bagi pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Sanksi pidana bagi pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -1822,7 +2241,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban pengendali data pribadi untuk melindungi dan memastikan keamanan data yang diproses."
+      "reason": "Kewajiban pengendali data pribadi untuk melindungi dan memastikan keamanan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -1834,6 +2253,24 @@
       "reason": "Kewajiban pengendali data pribadi untuk menjaga kerahasiaan data pribadi."
     },
     {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_kemenkes-patient-records-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban penyelenggara sistem elektronik untuk melaksanakan prinsip perlindungan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_kemenkes-patient-records-2022",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Larangan membuat atau memalsukan data pribadi yang merugikan orang lain."
+    },
+    {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
       "target": "CASE_kemenkes-patient-records-2022",
       "roles": [
@@ -1849,18 +2286,25 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal 67 (1) UU PDP mengatur pidana bagi pelaku yang memperoleh/mengumpulkan data secara melawan hukum."
+      "reason": "Pasal ini mengikat pelaku yang memperoleh data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_bpjs-kesehatan-279m-2021",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal ini mengikat pelaku yang membuat atau memalsukan data pribadi."
     },
     {
       "source": "IDN_UU_ITE_No1_2024_Pasal_28",
       "target": "CASE_bpjs-kesehatan-279m-2021",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 46 UU PDP mewajibkan notifikasi kegagalan perlindungan data kepada subjek dan lembaga."
+      "reason": "Pasal ini mewajibkan PSE untuk memberitahukan kegagalan perlindungan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
@@ -1869,7 +2313,25 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 35 UU PDP mewajibkan pengendali data melindungi dan memastikan keamanan data."
+      "reason": "Pasal ini mewajibkan PSE melindungi dan memastikan keamanan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_bpjs-kesehatan-279m-2021",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal ini melarang pembuatan atau pemalsuan data pribadi untuk keuntungan."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_bpjs-kesehatan-279m-2021",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini mewajibkan PSE melaksanakan prinsip perlindungan data pribadi."
     },
     {
       "source": "IDN_UU_ITE_No1_2024_Pasal_27",
@@ -1878,7 +2340,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 36 UU PDP mewajibkan pengendali data menjaga kerahasiaan data pribadi."
+      "reason": "Pasal ini mewajibkan PSE menjaga kerahasiaan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -1887,18 +2349,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal 65 (1) UU PDP melarang perolehan/pengumpulan data secara melawan hukum."
+      "reason": "Pasal ini melarang perolehan atau pengumpulan data pribadi secara melawan hukum."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_ehac-covid-app-leak-2021",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kegagalan perlindungan data memicu kewajiban notifikasi kepada subjek data dan lembaga."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data pribadi kepada subjek dan lembaga."
     },
     {
       "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
@@ -1907,7 +2367,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Penyelenggara sistem elektronik wajib melaksanakan prinsip perlindungan data pribadi."
+      "reason": "Kewajiban PSE untuk melaksanakan prinsip perlindungan data pribadi, termasuk pengumpulan terbatas."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -1916,7 +2376,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Pengendali data pribadi wajib melindungi dan memastikan keamanan data yang diproses."
+      "reason": "Kewajiban pengendali data pribadi untuk melindungi dan memastikan keamanan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -1925,7 +2385,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Pengendali data pribadi wajib menjaga kerahasiaan data pribadi selama pemrosesan."
+      "reason": "Kewajiban pengendali data pribadi untuk menjaga kerahasiaan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -1934,7 +2394,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku yang memperoleh atau mengumpulkan data secara melawan hukum dapat dikenakan pasal ini."
+      "reason": "Melarang setiap orang memperoleh/mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_ehac-covid-app-leak-2021",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Penggunaan informasi data pribadi harus atas persetujuan, relevan jika data bocor tanpa persetujuan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -1943,16 +2412,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku yang memperoleh atau mengumpulkan data secara melawan hukum dapat dikenakan pasal ini."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_55",
-      "target": "CASE_wannacry-hospitals-2017",
-      "roles": [
-        "pse"
-      ],
-      "confidence": 95,
-      "reason": "Kewajiban PSE publik memiliki rencana keberlangsungan kegiatan untuk menanggulangi gangguan/bencana."
+      "reason": "Melarang setiap orang memperoleh/mengumpulkan data pribadi secara melawan hukum."
     },
     {
       "source": "IDN_PP_PSTE_No71_2019_Pasal_20",
@@ -1961,36 +2421,34 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban pengendali data untuk melindungi dan memastikan keamanan data pribadi."
+      "reason": "Kewajiban PSE untuk memiliki rencana keberlangsungan kegiatan relevan dengan insiden ransomware."
     },
     {
-      "source": "IDN_UU_ITE_No1_2024_Pasal_45B",
-      "target": "CASE_wannacry-hospitals-2017",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Pelaku ransomware memperoleh data secara melawan hukum untuk keuntungan."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
       "target": "CASE_wannacry-hospitals-2017",
       "roles": [
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban pengendali data untuk menjaga kerahasiaan data pribadi."
+      "reason": "Kewajiban pengendali data untuk melindungi dan memastikan keamanan data relevan dengan ransomware."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_20",
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
       "target": "CASE_wannacry-hospitals-2017",
       "roles": [
-        "pse",
-        "konsumen",
-        "regulator"
+        "pelaku"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE memberitahukan kegagalan perlindungan data kepada subjek data dan lembaga."
+      "reason": "Pasal ini mengikat pelaku yang memperoleh data secara melawan hukum, relevan dengan ransomware."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_wannacry-hospitals-2017",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban menjaga kerahasiaan data pribadi relevan dengan insiden ransomware."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
@@ -1999,16 +2457,43 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE melaksanakan prinsip perlindungan data pribadi."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data relevan jika ada indikasi kebocoran data."
     },
     {
-      "source": "IDN_UU_ITE_No1_2024_Pasal_27",
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_wannacry-hospitals-2017",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban PSE melaksanakan prinsip perlindungan data pribadi relevan dengan insiden keamanan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
       "target": "CASE_wannacry-hospitals-2017",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku ransomware memperoleh data secara melawan hukum untuk keuntungan."
+      "reason": "Pasal ini mengikat pelaku yang memperoleh data secara melawan hukum, relevan dengan ransomware."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_71",
+      "target": "CASE_pedulilindungi-id-gambling-hijack-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 80,
+      "reason": "Penyelenggara sertifikasi elektronik wajib memiliki metode andal untuk identifikasi penanggung jawab situs web."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_pedulilindungi-id-gambling-hijack-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "reason": "Kewajiban PSE untuk melindungi data pribadi relevan dengan insiden keamanan situs."
     },
     {
       "source": "IDN_UU_ITE_No1_2024_Pasal_27",
@@ -2017,7 +2502,25 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Ps27 (muatan melanggar kesusilaan) relevan untuk konten judi daring yang disiarkan pelaku."
+      "reason": "Pelaku defacement yang menyiarkan konten judi melanggar kesusilaan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_pedulilindungi-id-gambling-hijack-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pengendali Data Pribadi wajib melindungi dan memastikan keamanan data yang diproses."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_pedulilindungi-id-gambling-hijack-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pengendali Data Pribadi wajib menjaga kerahasiaan Data Pribadi."
     },
     {
       "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
@@ -2026,18 +2529,16 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE untuk melindungi data pribadi, terpicu oleh kebocoran data."
+      "reason": "Pasal 14 PP PSTE mewajibkan PSE melindungi data pribadi, relevan untuk kebocoran."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_satusehat-kotim-breach-2025",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data kepada subjek dan lembaga."
+      "reason": "Pasal 46 UU PDP mewajibkan notifikasi kegagalan perlindungan data, relevan untuk kebocoran."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -2046,7 +2547,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban menjaga kerahasiaan data pribadi oleh pengendali data."
+      "reason": "Pasal 36 UU PDP mewajibkan PSE menjaga kerahasiaan data pribadi, relevan untuk kebocoran."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2055,7 +2556,16 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban melindungi dan memastikan keamanan data pribadi oleh pengendali data."
+      "reason": "Pasal 35 UU PDP mewajibkan PSE melindungi dan memastikan keamanan data, relevan untuk kebocoran."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_satusehat-kotim-breach-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pasal 66 UU PDP melarang pembuatan/pemalsuan data pribadi, relevan jika pelaku memalsukan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2064,7 +2574,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Tepat untuk pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Pasal 67 UU PDP mengikat pelaku yang memperoleh/mengumpulkan data secara melawan hukum."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_68",
@@ -2072,8 +2582,8 @@
       "roles": [
         "pelaku"
       ],
-      "confidence": 95,
-      "reason": "Tepat untuk pelaku yang membuat atau memalsukan data pribadi secara melawan hukum."
+      "confidence": 90,
+      "reason": "Pasal 68 UU PDP mengikat pelaku yang membuat/memalsukan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -2082,18 +2592,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Tepat untuk pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Pasal 65 UU PDP melarang memperoleh/mengumpulkan data secara melawan hukum."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_kemendikbud-leak-claim-2025",
       "roles": [
-        "pse",
-        "konsumen",
-        "regulator"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data kepada subjek dan lembaga."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data oleh Pengendali Data Pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2102,7 +2610,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Mengatur sanksi pidana bagi pelaku yang memperoleh/mengumpulkan data secara melawan hukum."
+      "reason": "Mengatur pidana bagi pihak yang memperoleh data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_kemendikbud-leak-claim-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE untuk melaksanakan prinsip perlindungan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2111,7 +2628,34 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban pengendali data untuk melindungi dan memastikan keamanan data."
+      "reason": "Kewajiban Pengendali Data Pribadi untuk melindungi dan memastikan keamanan data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_kemendikbud-leak-claim-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Mengatur pidana bagi pihak yang membuat/memalsukan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_kemendikbud-leak-claim-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban Pengendali Data Pribadi untuk menjaga kerahasiaan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_kemendikbud-leak-claim-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Larangan membuat/memalsukan data pribadi yang merugikan orang lain."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -2120,7 +2664,25 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Melarang perolehan/pengumpulan data pribadi secara melawan hukum oleh pelaku."
+      "reason": "Larangan memperoleh/mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_60",
+      "target": "CASE_kejaksaan-agung-defacement-2025",
+      "roles": [
+        "regulator"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini memberikan wewenang pengawasan kepada lembaga terkait perlindungan data pribadi."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_43",
+      "target": "CASE_kejaksaan-agung-defacement-2025",
+      "roles": [
+        "regulator"
+      ],
+      "confidence": 85,
+      "reason": "Pasal ini menetapkan wewenang penyidikan bagi pejabat di bidang TIK."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_12",
@@ -2128,8 +2690,8 @@
       "roles": [
         "konsumen"
       ],
-      "confidence": 95,
-      "reason": "Konsumen/subjek data berhak menggugat ganti rugi atas pelanggaran pemrosesan data."
+      "confidence": 85,
+      "reason": "Pasal ini memberikan hak gugat dan ganti rugi kepada subjek data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2138,7 +2700,16 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "PSE (Kejaksaan Agung) wajib melindungi dan memastikan keamanan data yang diprosesnya."
+      "reason": "Kewajiban melindungi dan memastikan keamanan data pribadi terpicu oleh defacement dan dugaan kebocoran."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_kejaksaan-agung-defacement-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini mengikat pelaku yang membuat atau memalsukan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2147,7 +2718,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku memperoleh/mengumpulkan data pribadi secara melawan hukum untuk keuntungan diri sendiri."
+      "reason": "Pasal ini mengikat pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_kejaksaan-agung-defacement-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini melarang pembuatan atau pemalsuan data pribadi oleh pelaku."
     },
     {
       "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
@@ -2155,19 +2735,17 @@
       "roles": [
         "pse"
       ],
-      "confidence": 95,
-      "reason": "PSE wajib melaksanakan prinsip perlindungan data pribadi, termasuk keamanan data."
+      "confidence": 90,
+      "reason": "Kewajiban penyelenggara sistem elektronik untuk melindungi data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_kejaksaan-agung-defacement-2025",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "PSE wajib memberitahukan kegagalan perlindungan data kepada subjek data dan lembaga (regulator)."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data pribadi terpicu oleh dugaan kebocoran."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -2176,7 +2754,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku dilarang memperoleh/mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Pasal ini melarang perolehan atau pengumpulan data pribadi secara melawan hukum."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -2185,7 +2763,43 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "PSE (Kejaksaan Agung) wajib menjaga kerahasiaan data pribadi yang diprosesnya."
+      "reason": "Kewajiban menjaga kerahasiaan data pribadi terpicu oleh dugaan kebocoran."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45B",
+      "target": "CASE_ugm-ft-website-defacement-2022",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Defacement situs web dapat dikategorikan sebagai perbuatan melanggar kesusilaan atau merusak."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_ugm-ft-website-defacement-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Defacement menunjukkan kegagalan PSE dalam melindungi dan memastikan keamanan data/sistem."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_ugm-ft-website-defacement-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Defacement menunjukkan kegagalan PSE dalam melaksanakan prinsip perlindungan data pribadi."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_ugm-ft-website-defacement-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Defacement dapat dianggap sebagai kegagalan perlindungan data pribadi yang memerlukan notifikasi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2194,18 +2808,25 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku memperoleh dan mempublikasikan data secara melawan hukum untuk keuntungan."
+      "reason": "Pelaku ransomware memperoleh data secara melawan hukum untuk keuntungan."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45B",
+      "target": "CASE_bsi-lockbit-ransomware-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Ancaman dan menakut-nakuti (ransomware) relevan dengan pasal ini."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_bsi-lockbit-ransomware-2023",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "BSI wajib memberitahukan kegagalan perlindungan data kepada subjek data dan lembaga."
+      "reason": "Kegagalan perlindungan data (ransomware) memicu kewajiban notifikasi PSE."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2214,7 +2835,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "BSI sebagai pengendali data wajib melindungi dan memastikan keamanan data yang diproses."
+      "reason": "Pengendali data wajib melindungi dan memastikan keamanan data yang diproses."
     },
     {
       "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
@@ -2222,8 +2843,8 @@
       "roles": [
         "pse"
       ],
-      "confidence": 95,
-      "reason": "BSI sebagai PSE wajib melaksanakan prinsip perlindungan data pribadi, termasuk keamanan."
+      "confidence": 90,
+      "reason": "Penyelenggara sistem elektronik wajib melaksanakan prinsip perlindungan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -2232,7 +2853,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "BSI sebagai pengendali data wajib menjaga kerahasiaan data pribadi."
+      "reason": "Pengendali data pribadi wajib menjaga kerahasiaan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -2241,7 +2862,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku memperoleh dan mempublikasikan data secara melawan hukum untuk keuntungan."
+      "reason": "Pelaku ransomware memperoleh data secara melawan hukum untuk keuntungan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2250,7 +2871,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE melindungi dan memastikan keamanan data terpicu oleh serangan ransomware."
+      "reason": "Mandates data protection and security measures for data controllers."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_39",
@@ -2259,7 +2880,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE mencegah akses tidak sah dan menjaga sistem keamanan terpicu oleh ransomware."
+      "reason": "Mandates data controllers to prevent unauthorized access to personal data."
     },
     {
       "source": "IDN_PP_PSTE_No71_2019_Pasal_20",
@@ -2267,57 +2888,152 @@
       "roles": [
         "pse"
       ],
-      "confidence": 95,
-      "reason": "Kewajiban PSE memiliki rencana keberlangsungan kegiatan untuk menanggulangi gangguan/bencana."
+      "confidence": 90,
+      "reason": "Requires public PSEs to have business continuity and disaster recovery plans."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_60",
-      "target": "CASE_bank-indonesia-conti-ransomware-2022",
-      "roles": [
-        "regulator",
-        "pse",
-        "konsumen"
-      ],
-      "confidence": 95,
-      "reason": "Kewajiban PSE memberitahukan kegagalan perlindungan data kepada subjek data dan lembaga."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
-      "target": "CASE_bank-indonesia-conti-ransomware-2022",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Pelaku ransomware memperoleh data secara melawan hukum untuk keuntungan diri sendiri."
-    },
-    {
-      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_bank-indonesia-conti-ransomware-2022",
       "roles": [
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE menjaga kerahasiaan data pribadi terpicu oleh kebocoran data."
+      "reason": "Mandates data breach notification within 3x24 hours."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
       "target": "CASE_bank-indonesia-conti-ransomware-2022",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku ransomware memperoleh data secara melawan hukum untuk keuntungan diri sendiri."
+      "reason": "Imposes criminal liability for unlawfully obtaining/collecting personal data."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_bank-indonesia-conti-ransomware-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Requires PSEs to implement personal data protection principles during processing."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_bank-indonesia-conti-ransomware-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Mandates data controllers to maintain confidentiality of personal data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_bank-indonesia-conti-ransomware-2022",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Prohibits unlawful acquisition/collection of personal data."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "target": "CASE_indodax-crypto-hack-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Penyerang menyebabkan kerugian material bagi konsumen melalui informasi menyesatkan (penangguhan platform)."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "target": "CASE_indodax-crypto-hack-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Penyerang memperoleh data pribadi secara melawan hukum untuk keuntungan diri sendiri."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_indodax-crypto-hack-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Jika penyerang memalsukan data untuk menguras wallet, pasal ini relevan."
+    },
+    {
+      "source": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
+      "target": "CASE_indodax-crypto-hack-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kegagalan perlindungan data pribadi (pengurasan wallet) memicu kewajiban notifikasi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "target": "CASE_indodax-crypto-hack-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Jika penyerang membuat/memalsukan data pribadi untuk menguras wallet, pasal ini relevan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_indodax-crypto-hack-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Penyerang menyebabkan kerugian material bagi konsumen melalui informasi menyesatkan (penangguhan platform)."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_28",
+      "target": "CASE_indodax-crypto-hack-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Indodax wajib melindungi dan memastikan keamanan data pribadi, yang gagal dalam insiden ini."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_indodax-crypto-hack-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Penyelenggara sistem elektronik (Indodax) wajib melindungi data pribadi, yang gagal dalam insiden ini."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_27",
+      "target": "CASE_indodax-crypto-hack-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Penyerang memperoleh data pribadi secara melawan hukum untuk keuntungan diri sendiri."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_57",
+      "target": "CASE_indodax-crypto-hack-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pengendali data pribadi (Indodax) wajib menjaga kerahasiaan data pribadi, yang gagal dalam insiden ini."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_kreditplus-data-leak-2020",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data kepada subjek data dan lembaga."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data oleh Pengendali Data Pribadi."
     },
     {
       "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
@@ -2325,59 +3041,21 @@
       "roles": [
         "pse"
       ],
-      "confidence": 95,
-      "reason": "Kewajiban pengendali data pribadi untuk melindungi dan memastikan keamanan data."
+      "confidence": 90,
+      "reason": "Kewajiban PSE untuk melaksanakan prinsip perlindungan data pribadi dalam pemrosesan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
       "target": "CASE_kreditplus-data-leak-2020",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Setiap orang yang secara melawan hukum memperoleh/mengumpulkan data pribadi."
-    },
-    {
-      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
-      "target": "CASE_kreditplus-data-leak-2020",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Larangan secara melawan hukum memperoleh atau mengumpulkan data pribadi."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
-      "target": "CASE_cermati-data-breach-2020",
-      "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
-      ],
-      "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data kepada subjek data dan lembaga."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
-      "target": "CASE_cermati-data-breach-2020",
       "roles": [
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban pengendali data untuk melindungi dan memastikan keamanan data pribadi."
+      "reason": "Kewajiban Pengendali Data Pribadi untuk melindungi dan memastikan keamanan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
-      "target": "CASE_cermati-data-breach-2020",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Setiap orang yang sengaja dan melawan hukum memperoleh data pribadi orang lain."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
-      "target": "CASE_cermati-data-breach-2020",
+      "target": "CASE_kreditplus-data-leak-2020",
       "roles": [
         "pelaku"
       ],
@@ -2385,42 +3063,330 @@
       "reason": "Larangan memperoleh atau mengumpulkan data pribadi secara melawan hukum."
     },
     {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_kreditplus-data-leak-2020",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Larangan membuat atau memalsukan data pribadi untuk keuntungan diri sendiri/orang lain."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_kreditplus-data-leak-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban Pengendali Data Pribadi untuk menjaga kerahasiaan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_kreditplus-data-leak-2020",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Larangan membuat atau memalsukan data pribadi untuk keuntungan diri sendiri/orang lain."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_kreditplus-data-leak-2020",
+      "roles": [
+        "pse",
+        "konsumen"
+      ],
+      "confidence": 90,
+      "reason": "Penggunaan data pribadi harus atas persetujuan, dan hak korban yang dilanggar."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_kreditplus-data-leak-2020",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Larangan memperoleh, mengumpulkan, atau mengungkapkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_cermati-data-breach-2020",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pelaku menjual data yang kemungkinan palsu atau dipalsukan untuk keuntungan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "target": "CASE_cermati-data-breach-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Cermati wajib memberitahukan kegagalan perlindungan data kepada subjek data dan lembaga."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_cermati-data-breach-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Cermati wajib melindungi dan memastikan keamanan data pribadi yang diprosesnya."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "target": "CASE_cermati-data-breach-2020",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pelaku memperoleh atau mengumpulkan data pribadi secara melawan hukum untuk keuntungan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_cermati-data-breach-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Cermati wajib menjaga kerahasiaan data pribadi dalam pemrosesan."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_cermati-data-breach-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Penyelenggara sistem elektronik (Cermati) wajib melaksanakan prinsip perlindungan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_cermati-data-breach-2020",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pelaku dilarang membuat atau memalsukan data pribadi untuk keuntungan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_cermati-data-breach-2020",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pelaku dilarang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
       "target": "CASE_bri-life-data-leak-2021",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku memperoleh dan menjual data pribadi secara melawan hukum untuk keuntungan."
+      "reason": "Pelaku memperoleh/mengumpulkan data pribadi secara melawan hukum untuk keuntungan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_bri-life-data-leak-2021",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kegagalan perlindungan data memicu kewajiban notifikasi kepada subjek data dan lembaga."
+      "reason": "Kewajiban PSE untuk memberitahukan kegagalan perlindungan data pribadi."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "source": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "target": "CASE_bri-life-data-leak-2021",
+      "roles": [
+        "konsumen"
+      ],
+      "confidence": 90,
+      "reason": "Memberikan hak kepada subjek data yang dilanggar haknya atas data pribadi."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_bri-life-data-leak-2021",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE untuk melaksanakan prinsip perlindungan data pribadi."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_27",
       "target": "CASE_bri-life-data-leak-2021",
       "roles": [
         "pse"
       ],
       "confidence": 95,
-      "reason": "Pengendali data wajib melindungi dan memastikan keamanan data, yang gagal dalam insiden ini."
+      "reason": "Kewajiban pengendali data pribadi untuk melindungi dan memastikan keamanan data."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "source": "IDN_UU_ITE_No1_2024_Pasal_28",
+      "target": "CASE_bri-life-data-leak-2021",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban pengendali data pribadi untuk menjaga kerahasiaan data pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_20",
       "target": "CASE_bri-life-data-leak-2021",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku secara melawan hukum memperoleh dan mengumpulkan data pribadi yang bukan miliknya."
+      "reason": "Larangan memperoleh/mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45B",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal ini mengikat pelaku yang mengirim ancaman/menakut-nakuti, relevan dengan intimidasi penagih."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_60",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "regulator"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini memberikan wewenang kepada lembaga untuk pengawasan dan penegakan hukum PDP."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pasal ini mengikat pelaku yang mengirim ancaman/menakut-nakuti, relevan dengan intimidasi penagih."
+    },
+    {
+      "source": "IDN_SE_Komdigi_No9_2023_Etika_AI_Bagian_7",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "reason": "Pasal ini mengikat pelaku yang memperoleh/mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pse",
+        "konsumen"
+      ],
+      "confidence": 85,
+      "reason": "Pasal ini mewajibkan persetujuan penggunaan data pribadi dan memberikan hak bagi yang dilanggar."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "reason": "Pasal ini mengikat pelaku yang membuat/memalsukan data pribadi untuk keuntungan diri sendiri."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 80,
+      "reason": "Jika intimidasi melibatkan kegagalan perlindungan data, PSE wajib notifikasi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "reason": "PSE wajib memiliki dasar pemrosesan data pribadi, relevan jika data digunakan tanpa dasar sah."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_20",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "reason": "PSE wajib melindungi dan memastikan keamanan data pribadi, relevan jika ada kebocoran/penyalahgunaan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "reason": "Pasal ini melarang pembuatan/pemalsuan data pribadi untuk keuntungan diri sendiri."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini mengikat pelaku yang menyebarkan informasi bohong/menyesatkan yang merugikan konsumen."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_57",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "reason": "PSE wajib melaksanakan prinsip perlindungan data pribadi, relevan dengan penggunaan data untuk intimidasi."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "reason": "Pasal ini melarang perolehan/pengumpulan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_adakami-pinjol-conduct-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "reason": "PSE wajib menjaga kerahasiaan data pribadi, relevan jika data digunakan untuk intimidasi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "target": "CASE_bank-jatim-bifast-fraud-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pelaku memperoleh data pribadi (rekening orang lain) secara melawan hukum untuk keuntungan."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "target": "CASE_bank-jatim-bifast-fraud-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 80,
+      "reason": "Pelaku menggunakan informasi menyesatkan (rekening palsu) yang merugikan konsumen bank."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_68",
@@ -2428,8 +3394,17 @@
       "roles": [
         "pelaku"
       ],
-      "confidence": 95,
-      "reason": "Pelaku membuat/memalsukan data pribadi (rekening atas nama orang lain) untuk keuntungan."
+      "confidence": 90,
+      "reason": "Pelaku membuat atau memalsukan data pribadi (rekening) untuk keuntungan dan kerugian orang lain."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_12",
+      "target": "CASE_bank-jatim-bifast-fraud-2024",
+      "roles": [
+        "konsumen"
+      ],
+      "confidence": 70,
+      "reason": "Korban fraud berhak menggugat dan menerima ganti rugi atas pelanggaran data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_40",
@@ -2437,8 +3412,161 @@
       "roles": [
         "pelaku"
       ],
-      "confidence": 95,
-      "reason": "Pelaku dilarang membuat/memalsukan data pribadi untuk keuntungan, sesuai dengan tindakan pelaku."
+      "confidence": 90,
+      "reason": "Pelaku dilarang membuat atau memalsukan data pribadi (rekening) untuk keuntungan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_20",
+      "target": "CASE_bank-jatim-bifast-fraud-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 80,
+      "reason": "Pelaku mentransmisikan informasi bohong/menyesatkan (rekening palsu) yang merugikan konsumen."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_bank-jatim-bifast-fraud-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pelaku memperoleh data pribadi (rekening orang lain) secara melawan hukum untuk keuntungan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_bank-jatim-bifast-fraud-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 70,
+      "reason": "Bank Jatim sebagai pengendali data wajib melindungi dan memastikan keamanan data nasabah."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_bank-jatim-bifast-fraud-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 70,
+      "reason": "Bank Jatim sebagai pengendali data wajib menjaga kerahasiaan data pribadi nasabah."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "reason": "Penyebaran informasi bohong/menyesatkan yang merugikan konsumen dalam transaksi elektronik."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_60",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "regulator"
+      ],
+      "confidence": 85,
+      "reason": "Memberikan wewenang kepada lembaga untuk pengawasan kepatuhan Pengendali Data Pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 80,
+      "reason": "Kegagalan perlindungan data pribadi mungkin terjadi, memicu kewajiban notifikasi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Memperoleh atau mengumpulkan data pribadi secara melawan hukum untuk keuntungan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Membuat atau memalsukan data pribadi untuk keuntungan yang merugikan orang lain."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE untuk melindungi dan memastikan keamanan data pribadi."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE untuk melaksanakan prinsip perlindungan data pribadi."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "konsumen"
+      ],
+      "confidence": 85,
+      "reason": "Hak konsumen atas persetujuan penggunaan data pribadi dan hak jika dilanggar."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Larangan membuat atau memalsukan data pribadi untuk keuntungan yang merugikan."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_28",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "reason": "Penyebaran informasi bohong/menyesatkan yang mengakibatkan kerugian material bagi konsumen."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban Pengendali Data Pribadi untuk menjaga kerahasiaan Data Pribadi."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_bank-dki-bifast-breach-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Larangan memperoleh atau mengumpulkan data pribadi secara melawan hukum untuk keuntungan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_tokopedia-91m-2020",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Membuat atau memalsukan data pribadi untuk keuntungan, relevan jika pelaku memanipulasi data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2447,18 +3575,43 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku memperoleh dan mengumpulkan data pribadi secara melawan hukum untuk keuntungan."
+      "reason": "Memperoleh atau mengumpulkan data pribadi secara melawan hukum untuk keuntungan, relevan untuk pelaku pencurian."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_tokopedia-91m-2020",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Larangan membuat atau memalsukan data pribadi untuk keuntungan, relevan jika pelaku memanipulasi data."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_tokopedia-91m-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE untuk melindungi data pribadi, termasuk pengumpulan yang sah dan persetujuan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_tokopedia-91m-2020",
       "roles": [
-        "pse",
-        "konsumen",
-        "regulator"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kegagalan perlindungan data mewajibkan PSE memberitahu subjek data dan lembaga."
+      "reason": "Kewajiban PSE memberitahukan kegagalan perlindungan data pribadi dalam 3x24 jam."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_tokopedia-91m-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban PSE menjaga kerahasiaan data pribadi selama pemrosesan, terlanggar saat kebocoran."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -2467,18 +3620,16 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Pengendali data wajib melindungi dan memastikan keamanan data pribadi yang diproses."
+      "reason": "Kewajiban PSE melindungi dan memastikan keamanan data pribadi, terlanggar saat kebocoran."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_bukalapak-13m-2019",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data kepada subjek dan lembaga."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data pribadi kepada subjek dan lembaga."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -2487,7 +3638,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban menjaga kerahasiaan data pribadi terpicu oleh kebocoran."
+      "reason": "Kewajiban pengendali data pribadi untuk menjaga kerahasiaan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2496,7 +3647,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Mengatur perolehan atau pengumpulan data pribadi secara melawan hukum oleh pelaku."
+      "reason": "Melarang perolehan data pribadi secara melawan hukum untuk keuntungan diri sendiri/orang lain."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2505,7 +3656,16 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban melindungi dan memastikan keamanan data pribadi terpicu oleh kebocoran."
+      "reason": "Kewajiban pengendali data pribadi untuk melindungi dan memastikan keamanan data."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_bukalapak-13m-2019",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban penyelenggara sistem elektronik untuk melindungi data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -2514,18 +3674,35 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Melarang perolehan atau pengumpulan data pribadi secara melawan hukum oleh pelaku."
+      "reason": "Melarang perolehan data pribadi secara melawan hukum untuk keuntungan diri sendiri/orang lain."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_bukalapak-13m-2019",
+      "roles": [
+        "pse",
+        "konsumen"
+      ],
+      "confidence": 90,
+      "reason": "Penggunaan data pribadi harus atas persetujuan, dan hak korban dilindungi."
     },
     {
       "source": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_73",
       "target": "CASE_bhinneka-1-2m-2020",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 46 (notifikasi kegagalan pelindungan 3x24 jam) terpicu oleh kebocoran data."
+      "reason": "Pasal 46 mewajibkan Pengendali Data Pribadi (Bhinneka) untuk notifikasi kegagalan perlindungan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "target": "CASE_bhinneka-1-2m-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Pasal 14 PP PSTE mewajibkan PSE (Bhinneka) melaksanakan prinsip perlindungan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_68",
@@ -2534,7 +3711,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 36 (kewajiban menjaga kerahasiaan data) terpicu oleh kebocoran data."
+      "reason": "Pasal 36 mewajibkan Pengendali Data Pribadi (Bhinneka) menjaga kerahasiaan data pribadi."
     },
     {
       "source": "IDN_UU_ITE_No1_2024_Pasal_27",
@@ -2543,7 +3720,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal 67 (memperoleh/mengumpulkan data melawan hukum) tepat untuk pelaku pembobolan."
+      "reason": "Pasal 67 mengatur pidana bagi pelaku yang memperoleh/mengumpulkan data secara melawan hukum."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2552,7 +3729,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 35 (kewajiban keamanan data) terpicu oleh kegagalan keamanan/kebocoran."
+      "reason": "Pasal 35 mewajibkan Pengendali Data Pribadi (Bhinneka) melindungi dan memastikan keamanan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2561,7 +3738,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal 65 (memperoleh/mengumpulkan data melawan hukum) tepat untuk pelaku pembobolan."
+      "reason": "Pasal 65 melarang setiap orang memperoleh/mengumpulkan data secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_20",
+      "target": "CASE_bhinneka-1-2m-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "reason": "Pasal 26 UU ITE mewajibkan persetujuan penggunaan data pribadi, relevan dengan insiden."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2570,7 +3756,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku memperoleh dan mengumpulkan data secara melawan hukum untuk keuntungan."
+      "reason": "Pelaku menjual data yang diperoleh secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_38",
+      "target": "CASE_lazada-redmart-1-1m-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Pengendali Data Pribadi wajib melindungi data dari pemrosesan tidak sah."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -2579,29 +3774,61 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku dilarang memperoleh atau mengumpulkan data secara melawan hukum."
+      "reason": "Pelaku memperoleh atau mengumpulkan data pribadi secara melawan hukum."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_lazada-redmart-1-1m-2020",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "PSE wajib memberitahukan kegagalan perlindungan data kepada subjek dan lembaga."
+      "reason": "Kegagalan perlindungan data mewajibkan PSE untuk memberitahukan insiden."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_lazada-redmart-1-1m-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Pengendali Data Pribadi wajib menjaga kerahasiaan data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_lazada-redmart-1-1m-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Pengendali Data Pribadi wajib melindungi dan memastikan keamanan data."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_lazada-redmart-1-1m-2020",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Penyelenggara Sistem Elektronik wajib melaksanakan prinsip perlindungan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_indihome-browsing-26m-2022",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kegagalan perlindungan data memicu kewajiban notifikasi kepada subjek data dan lembaga."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data oleh pengendali data."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_indihome-browsing-26m-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE untuk melindungi data pribadi, relevan dengan insiden kebocoran."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2610,7 +3837,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban pengendali data untuk melindungi dan memastikan keamanan data pribadi."
+      "reason": "Kewajiban pengendali data untuk melindungi dan memastikan keamanan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2619,7 +3846,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Mengatur pidana bagi yang memperoleh/mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_indihome-browsing-26m-2022",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Mengatur pidana bagi yang membuat/memalsukan data pribadi untuk keuntungan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -2631,42 +3867,85 @@
       "reason": "Kewajiban pengendali data untuk menjaga kerahasiaan data pribadi."
     },
     {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_indihome-browsing-26m-2022",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Larangan membuat/memalsukan data pribadi untuk keuntungan."
+    },
+    {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
       "target": "CASE_indihome-browsing-26m-2022",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku yang secara melawan hukum memperoleh atau mengumpulkan/mengungkapkan data pribadi."
+      "reason": "Larangan memperoleh/mengumpulkan data pribadi secara melawan hukum."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_myindihome-35m-2023",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 46 (notifikasi kegagalan pelindungan 3x24 jam) terpicu oleh kebocoran data."
+      "reason": "Mandates breach notification by the data controller (PSE) within 3x24 hours."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "source": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_29",
       "target": "CASE_myindihome-35m-2023",
       "roles": [
         "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 35 UU PDP (kewajiban keamanan data) terpicu oleh kegagalan keamanan/kebocoran."
+      "reason": "Imposes duty on data controller (PSE) to protect and ensure data security."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "source": "IDN_UU_PDP_No27_2022_Pasal_20",
+      "target": "CASE_myindihome-35m-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Requires PSE to implement data protection principles during processing."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
       "target": "CASE_myindihome-35m-2023",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal 67 UU PDP (memperoleh/mengumpulkan data melawan hukum) tepat untuk pelaku."
+      "reason": "Imposes criminal liability for making false personal data to gain advantage."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_myindihome-35m-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Imposes criminal liability for unlawfully obtaining/collecting personal data."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45B",
+      "target": "CASE_myindihome-35m-2023",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Imposes duty on data controller (PSE) to maintain confidentiality of personal data."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_27",
+      "target": "CASE_myindihome-35m-2023",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Prohibits making false personal data to gain advantage, leading to harm."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_66",
@@ -2675,18 +3954,25 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal 65 UU PDP (memperoleh/mengumpulkan data melawan hukum) tepat untuk pelaku."
+      "reason": "Prohibits unlawful obtaining/collecting or disclosing personal data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_pln-customer-data-leak-2022",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data kepada subjek dan lembaga."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data oleh Pengendali Data Pribadi (PLN)."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_pln-customer-data-leak-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban Pengendali Data Pribadi (PLN) untuk menjaga kerahasiaan data selama pemrosesan."
     },
     {
       "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
@@ -2695,25 +3981,34 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban melindungi dan memastikan keamanan data terpicu oleh kebocoran data."
+      "reason": "Kewajiban PSE (PLN) untuk melaksanakan prinsip perlindungan data pribadi, termasuk keamanan."
     },
     {
-      "source": "IDN_UU_ITE_No1_2024_Pasal_27",
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_pln-customer-data-leak-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "reason": "Kewajiban Pengendali Data Pribadi (PLN) untuk melindungi dan memastikan keamanan data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
       "target": "CASE_pln-customer-data-leak-2022",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Tepat untuk pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Melarang perolehan atau pengumpulan data pribadi secara melawan hukum oleh pelaku."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
       "target": "CASE_pln-customer-data-leak-2022",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Tepat untuk pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Melarang perolehan atau pengumpulan data pribadi secara melawan hukum oleh pelaku."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_68",
@@ -2722,7 +4017,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal 68 (membuat/memalsukan data palsu) relevan jika pelaku memanipulasi data."
+      "reason": "Membuat data palsu untuk keuntungan, relevan jika pelaku memalsukan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2731,18 +4026,25 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal 67 (memperoleh/mengumpulkan data melawan hukum) relevan untuk pelaku kebocoran."
+      "reason": "Memperoleh/mengumpulkan data pribadi secara melawan hukum, relevan untuk pelaku kebocoran."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_mypertamina-44m-2022",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 46 (notifikasi kegagalan pelindungan 3x24 jam) terpicu oleh kebocoran data."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data pribadi dalam 3x24 jam."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_mypertamina-44m-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE melaksanakan prinsip perlindungan data pribadi, termasuk keamanan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2751,45 +4053,52 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 35 (kewajiban keamanan data) terpicu oleh kegagalan keamanan/kebocoran."
+      "reason": "Kewajiban melindungi dan memastikan keamanan data pribadi yang diproses."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_66",
       "target": "CASE_mypertamina-44m-2022",
       "roles": [
-        "pelaku"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Pasal 66 (membuat/memalsukan data palsu) relevan jika pelaku memanipulasi data."
+      "reason": "Kewajiban menjaga kerahasiaan data pribadi selama pemrosesan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
       "target": "CASE_mypertamina-44m-2022",
       "roles": [
-        "pse"
-      ],
-      "confidence": 95,
-      "reason": "Pasal 36 (kewajiban menjaga kerahasiaan data) terpicu oleh kebocoran data."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
-      "target": "CASE_mypertamina-44m-2022",
-      "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal 65 (memperoleh/mengumpulkan data melawan hukum) relevan untuk pelaku kebocoran."
+      "reason": "Larangan memperoleh/mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_20",
+      "target": "CASE_jasamarga-jmto-breach-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE Publik memiliki rencana keberlangsungan kegiatan untuk menanggulangi gangguan/bencana."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_jasamarga-jmto-breach-2022",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE memberitahukan kegagalan perlindungan data kepada subjek dan lembaga."
+      "reason": "Kewajiban PSE untuk memberitahukan kegagalan perlindungan data pribadi dalam 3x24 jam."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_jasamarga-jmto-breach-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE untuk melaksanakan prinsip perlindungan data pribadi dalam pemrosesan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2798,7 +4107,16 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE melindungi dan memastikan keamanan data pribadi yang diprosesnya."
+      "reason": "Kewajiban Pengendali Data Pribadi untuk melindungi dan memastikan keamanan data yang diproses."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_jasamarga-jmto-breach-2022",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban Pengendali Data Pribadi untuk menjaga kerahasiaan Data Pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -2807,7 +4125,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Larangan memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Melarang secara melawan hukum memperoleh/mengumpulkan data pribadi yang bukan miliknya."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2816,7 +4134,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pidana bagi setiap orang yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Mengatur pidana bagi yang secara sengaja dan melawan hukum memperoleh/mengumpulkan data pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2828,24 +4146,40 @@
       "reason": "Kewajiban PSE melindungi dan memastikan keamanan data terpicu oleh serangan ransomware."
     },
     {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_60",
+      "target": "CASE_kai-stormous-ransomware-2024",
+      "roles": [
+        "regulator"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini memberikan wewenang kepada lembaga untuk pengawasan kepatuhan Pengendali Data Pribadi."
+    },
+    {
       "source": "IDN_UU_ITE_No1_2024_Pasal_45B",
       "target": "CASE_kai-stormous-ransomware-2024",
       "roles": [
         "pelaku"
       ],
-      "confidence": 95,
-      "reason": "Ancaman publikasi data oleh Stormous termasuk pengiriman informasi berisi ancaman kekerasan."
+      "confidence": 90,
+      "reason": "Pasal ini mengikat pelaku yang mengirim ancaman kekerasan/menakut-nakuti (ransomware)."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_12",
+      "target": "CASE_kai-stormous-ransomware-2024",
+      "roles": [
+        "konsumen"
+      ],
+      "confidence": 90,
+      "reason": "Subjek Data Pribadi berhak menggugat dan menerima ganti rugi atas pelanggaran pemrosesan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_kai-stormous-ransomware-2024",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE memberitahukan kegagalan perlindungan data kepada subjek data dan lembaga."
+      "reason": "Kewajiban PSE untuk memberitahukan kegagalan perlindungan data dalam 3x24 jam."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2854,7 +4188,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku ransomware memperoleh data secara melawan hukum untuk menguntungkan diri sendiri."
+      "reason": "Pasal ini mengikat pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_kai-stormous-ransomware-2024",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban PSE melaksanakan prinsip perlindungan data pribadi dalam pemrosesan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -2863,7 +4206,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban PSE menjaga kerahasiaan data pribadi terpicu oleh kebocoran data."
+      "reason": "Kewajiban Pengendali Data Pribadi untuk menjaga kerahasiaan Data Pribadi."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -2872,18 +4215,25 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku ransomware memperoleh dan mengumumkan data secara melawan hukum untuk keuntungan."
+      "reason": "Pasal ini mengikat pelaku yang memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+    },
+    {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_malindo-lionair-30m-2019",
+      "roles": [
+        "konsumen"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini memberikan hak kepada subjek data pribadi atas persetujuan penggunaan data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_46",
       "target": "CASE_malindo-lionair-30m-2019",
       "roles": [
-        "pse",
-        "regulator",
-        "konsumen"
+        "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban notifikasi kegagalan perlindungan data kepada subjek data dan lembaga."
+      "reason": "Kewajiban notifikasi kegagalan perlindungan data terpicu oleh kebocoran data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_35",
@@ -2892,7 +4242,16 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban pengendali data untuk melindungi dan memastikan keamanan data pribadi."
+      "reason": "Kewajiban melindungi dan memastikan keamanan data pribadi terpicu oleh kebocoran data."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_malindo-lionair-30m-2019",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "reason": "Kewajiban melaksanakan prinsip perlindungan data pribadi relevan dengan insiden kebocoran."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -2901,7 +4260,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Larangan memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Larangan memperoleh atau mengumpulkan data pribadi secara melawan hukum relevan untuk pelaku."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_36",
@@ -2910,7 +4269,7 @@
         "pse"
       ],
       "confidence": 95,
-      "reason": "Kewajiban pengendali data untuk menjaga kerahasiaan data pribadi."
+      "reason": "Kewajiban menjaga kerahasiaan data pribadi terpicu oleh kebocoran data."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_67",
@@ -2919,7 +4278,7 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Larangan memperoleh atau mengumpulkan data pribadi secara melawan hukum."
+      "reason": "Larangan memperoleh atau mengumpulkan data pribadi secara melawan hukum relevan untuk pelaku."
     },
     {
       "source": "IDN_UU_ITE_No1_2024_Pasal_45A",
@@ -2928,7 +4287,25 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal ini mengatur distribusi informasi bohong yang merugikan konsumen, sesuai deepfake penipuan."
+      "reason": "Pasal ini mengikat pelaku yang menyebarkan informasi bohong/menyesatkan yang merugikan konsumen."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_prabowo-deepfake-aid-scam-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini mengikat pelaku yang membuat/memalsukan data pribadi untuk keuntungan dan kerugian orang lain."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "target": "CASE_prabowo-deepfake-aid-scam-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini mengikat pelaku yang memperoleh/mengumpulkan data pribadi secara melawan hukum."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_66",
@@ -2936,17 +4313,26 @@
       "roles": [
         "pelaku"
       ],
-      "confidence": 95,
-      "reason": "Deepfake adalah tindakan membuat data pribadi palsu (citra/suara) untuk merugikan orang lain."
+      "confidence": 90,
+      "reason": "Pasal ini melarang pembuatan/pemalsuan data pribadi untuk keuntungan dan kerugian orang lain."
     },
     {
-      "source": "IDN_UU_ITE_No1_2024_Pasal_28",
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
       "target": "CASE_prabowo-deepfake-aid-scam-2024",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pasal ini mengatur distribusi informasi bohong yang merugikan konsumen, sesuai deepfake penipuan."
+      "reason": "Pasal ini mengikat pelaku yang menyebarkan informasi bohong/menyesatkan yang merugikan konsumen."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_prabowo-deepfake-aid-scam-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Pasal ini mengikat pelaku yang memperoleh/mengumpulkan data pribadi secara melawan hukum."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_68",
@@ -2955,7 +4341,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku membuat dan memalsukan data pribadi (deepfake) untuk keuntungan/kerugian orang lain."
+      "reason": "Pelaku membuat dan memalsukan data pribadi (deepfake) untuk keuntungan pribadi."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45A",
+      "target": "CASE_undip-deepfake-ncii-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Pelaku membuat data pribadi palsu (deepfake) dengan maksud merugikan orang lain."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_66",
@@ -2964,19 +4359,10 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku membuat data pribadi palsu (deepfake) yang merugikan orang lain."
+      "reason": "Pelaku mendistribusikan informasi elektronik bermuatan melanggar kesusilaan (deepfake)."
     },
     {
-      "source": "IDN_UU_ITE_No19_2016_Pasal_45",
-      "target": "CASE_undip-deepfake-ncii-2025",
-      "roles": [
-        "pelaku"
-      ],
-      "confidence": 95,
-      "reason": "Pelaku mendistribusikan informasi elektronik bermuatan melanggar kesusilaan (pornografi non-konsensual)."
-    },
-    {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "source": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
       "target": "CASE_undip-deepfake-ncii-2025",
       "roles": [
         "pelaku"
@@ -2985,13 +4371,22 @@
       "reason": "Pelaku memperoleh/mengumpulkan data pribadi (foto) secara melawan hukum."
     },
     {
+      "source": "IDN_UU_ITE_No19_2016_Pasal_26",
+      "target": "CASE_undip-deepfake-ncii-2025",
+      "roles": [
+        "konsumen"
+      ],
+      "confidence": 90,
+      "reason": "Korban memiliki hak atas persetujuan penggunaan data pribadi yang dilanggar."
+    },
+    {
       "source": "IDN_UU_ITE_No1_2024_Pasal_27",
       "target": "CASE_undip-deepfake-ncii-2025",
       "roles": [
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Pelaku menyiarkan/mendistribusikan informasi elektronik bermuatan melanggar kesusilaan (pornografi non-konsensual)."
+      "reason": "Pelaku menyiarkan/mendistribusikan informasi elektronik bermuatan melanggar kesusilaan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_65",
@@ -3008,8 +4403,26 @@
       "roles": [
         "pelaku"
       ],
-      "confidence": 95,
-      "reason": "Pembuatan deepfake Soeharto dapat dianggap sebagai pemalsuan data pribadi (suara/wajah)."
+      "confidence": 90,
+      "reason": "Membuat data pribadi palsu (wajah/suara Soeharto) untuk keuntungan (politik) adalah relevan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_suharto-deepfake-golkar-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "reason": "Deepfake menyesatkan untuk tujuan politik dapat dianggap pemberitahuan bohong."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_suharto-deepfake-golkar-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "reason": "Mendistribusikan deepfake menyesatkan untuk tujuan politik dapat dianggap pemberitahuan bohong."
     },
     {
       "source": "IDN_UU_ITE_No1_2024_Pasal_27",
@@ -3017,8 +4430,17 @@
       "roles": [
         "pelaku"
       ],
-      "confidence": 95,
-      "reason": "Pembuatan deepfake Soeharto dapat dianggap sebagai pemalsuan data pribadi (suara/wajah)."
+      "confidence": 90,
+      "reason": "Membuat data pribadi palsu (wajah/suara Soeharto) untuk keuntungan (politik) adalah relevan."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_27",
+      "target": "CASE_election-candidate-deepfakes-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Membuat deepfake capres dapat dianggap memalsukan data pribadi dengan maksud merugikan."
     },
     {
       "source": "IDN_UU_PDP_No27_2022_Pasal_66",
@@ -3026,8 +4448,8 @@
       "roles": [
         "pelaku"
       ],
-      "confidence": 95,
-      "reason": "Deepfake capres adalah pemberitahuan bohong/informasi menyesatkan yang berpotensi merugikan pemilih."
+      "confidence": 90,
+      "reason": "Deepfake capres adalah informasi menyesatkan yang dapat merugikan pemilih dalam konteks pemilu."
     },
     {
       "source": "IDN_UU_ITE_No1_2024_Pasal_28",
@@ -3035,8 +4457,44 @@
       "roles": [
         "pelaku"
       ],
-      "confidence": 95,
-      "reason": "Deepfake capres adalah pemberitahuan bohong/informasi menyesatkan yang berpotensi merugikan pemilih."
+      "confidence": 90,
+      "reason": "Deepfake capres adalah informasi menyesatkan yang dapat merugikan pemilih dalam konteks pemilu."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_election-candidate-deepfakes-2024",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Membuat deepfake capres dapat dianggap memalsukan data pribadi dengan maksud merugikan."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_sri-mulyani-deepfake-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Deepfake yang menyesatkan dapat dikategorikan sebagai informasi bohong."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_sri-mulyani-deepfake-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "reason": "Deepfake yang menyesatkan dapat dikategorikan sebagai informasi bohong."
+    },
+    {
+      "source": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_33",
+      "target": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 80,
+      "reason": "Emphasizes data privacy and protection during AI system deployment, relevant for AI fraud."
     },
     {
       "source": "IDN_UU_ITE_No1_2024_Pasal_45A",
@@ -3045,7 +4503,16 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Penipuan AI voice cloning/deepfake menyesatkan konsumen dan menyebabkan kerugian material."
+      "reason": "Prohibits distributing misleading information causing material loss to consumers."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_68",
+      "target": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Prohibits making or falsifying personal data for self-gain, causing harm."
     },
     {
       "source": "IDN_UU_ITE_No1_2024_Pasal_28",
@@ -3054,7 +4521,79 @@
         "pelaku"
       ],
       "confidence": 95,
-      "reason": "Penipuan AI voice cloning/deepfake menyesatkan konsumen dan menyebabkan kerugian material."
+      "reason": "Prohibits distributing misleading information causing material loss to consumers."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_35",
+      "target": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "reason": "Requires data controllers to protect and ensure security of processed personal data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_66",
+      "target": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Prohibits making or falsifying personal data for self-gain, causing harm."
+    },
+    {
+      "source": "IDN_PP_PSTE_No71_2019_Pasal_14",
+      "target": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "reason": "Requires PSEs to implement personal data protection principles during processing."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_67",
+      "target": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Prohibits unlawfully obtaining or collecting personal data for self-gain."
+    },
+    {
+      "source": "IDN_UU_ITE_No1_2024_Pasal_45B",
+      "target": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Prohibits sending electronic information containing threats or intimidation."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_36",
+      "target": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "reason": "Requires data controllers to maintain confidentiality of personal data."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_46",
+      "target": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "reason": "Requires data controllers to notify data breaches within 3x24 hours."
+    },
+    {
+      "source": "IDN_UU_PDP_No27_2022_Pasal_65",
+      "target": "CASE_ojk-ai-voice-deepfake-fraud-2025",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "reason": "Prohibits unlawfully obtaining or collecting personal data for self-gain."
     }
   ]
 }
