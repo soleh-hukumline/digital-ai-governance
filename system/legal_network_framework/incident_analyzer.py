@@ -85,20 +85,35 @@ def analyze_incidents():
     report.append("# Analisis Insiden — Pemetaan Warrant per Kasus\n")
     report.append(
         "Laporan ini memetakan distribusi warrant normatif (dasar hukum) untuk setiap insiden "
-        "siber berbasis AI di Indonesia. Seluruh metrik dihitung dari koneksi 'governs' "
-        "pada graf LNA.\n"
+        "siber berbasis AI di Indonesia. Metrik di bawah dihitung dari koneksi 'governs' "
+        "pada graf LNA, yaitu hasil *retrieval* kemiripan semantik (SBERT/cosine) — bersifat "
+        "EKSPLORATIF, BUKAN lapisan otoritas hukum.\n"
+    )
+    report.append(
+        "> ⚠️ **Catatan otoritas & koreksi.** Angka 'tanpa warrant' di bawah adalah baseline "
+        "*cosine retrieval* (≈44,4% insiden tanpa edge `governs`). Ini **artefak retrieval, "
+        "BUKAN kekosongan hukum**: cosine gagal me-ranking pasal yang berlaku (mis. UU PDP "
+        "Pasal 35 sempat di peringkat 154). Setelah pemetaan tervalidasi (judge few-shot, "
+        "kandidat recall-complete, ambang P≥95), **88,9% insiden (40/45) memiliki dasar hukum** "
+        "dan celah riil bersifat **asimetris-subjek + spesifik-AI** (lih. REVIEWER_RESPONSE.md §2.3/§2.5). "
+        "Klaim '55,6% vacuum / structural holes' DITARIK. Lapisan **otoritas eksplisit** (sitasi "
+        "antar-instrumen) ada di `../../data/network/citations.json` — bukan pada edge `governs` di sini.\n"
     )
 
-    report.append("## 1. Distribusi Warrant per Insiden")
+    report.append("## 1. Distribusi Warrant per Insiden (baseline cosine — eksploratif)")
     report.append("| Kategori | Jumlah | Persentase |")
     report.append("| --- | --- | --- |")
-    report.append(f"| Tanpa warrant (degree=0) | {len(vacuum_incidents)} | {vacuum_rate:.1f}% |")
+    report.append(f"| Tanpa edge `governs` cosine (degree=0; ≠ kekosongan hukum) | {len(vacuum_incidents)} | {vacuum_rate:.1f}% |")
     report.append(f"| Warrant nasional saja | {len(natl_only)} | {natl_rate:.1f}% |")
     report.append(f"| Warrant internasional saja | {len(intl_only)} | {intl_dep_rate:.1f}% |")
     report.append(f"| Warrant ganda (Natl + Intl) | {len(mixed_warrant)} | {mixed_rate:.1f}% |")
     report.append(f"| **Total Insiden** | **{len(incidents)}** | **100%** |\n")
 
-    report.append("## 2. Regulasi yang Paling Sering Menjadi Warrant")
+    report.append("## 2. Regulasi yang Paling Sering Menjadi Warrant (baseline cosine — eksploratif)")
+    report.append(
+        "*Peringkat berikut adalah artefak presisi cosine (pasal definitional bisa menonjol). "
+        "Untuk otoritas eksplisit antar-instrumen lihat `../../data/network/citations.json`.*"
+    )
     report.append("| Peringkat | Regulasi | Klasifikasi | Jumlah Insiden |")
     report.append("| --- | --- | --- | --- |")
     for idx, (reg_id, count) in enumerate(sorted_regs[:15]):
@@ -107,8 +122,12 @@ def analyze_incidents():
         report.append(f"| {idx+1} | {label} | {cls} | {count} |")
     report.append("")
 
-    report.append("## 3. Insiden Tanpa Warrant (Structural Holes)")
-    report.append(f"Total: **{len(vacuum_incidents)}** insiden tanpa koneksi ke regulasi apapun.\n")
+    report.append("## 3. Insiden Tanpa Edge `governs` Cosine (artefak retrieval — BUKAN structural holes)")
+    report.append(
+        f"Total: **{len(vacuum_incidents)}** insiden tanpa edge `governs` cosine (≈{vacuum_rate:.1f}%). "
+        "Ini **bukan** kekosongan hukum: di pemetaan tervalidasi (judge P≥95) hanya **5/45 (11,1%)** "
+        "yang benar-benar tanpa dasar hukum berkepercayaan-tinggi (lih. REVIEWER_RESPONSE.md §2.3).\n"
+    )
     if vacuum_incidents:
         report.append("| No | Insiden |")
         report.append("| --- | --- |")
@@ -132,8 +151,10 @@ def analyze_incidents():
         cls_list = set(G.nodes[r].get('classification', '')[:4] for r in regs)
         report.append(f"| {idx+1} | {label} | {len(regs)} | {', '.join(cls_list)} |")
 
-    report.append("\n---\n*Laporan dihasilkan dari analisis 'governs' edges pada graf LNA. "
-                  "Metrik dihitung dari data graf aktual tanpa interpretasi manual.*")
+    report.append("\n---\n*Laporan dihasilkan dari edge 'governs' (kemiripan semantik SBERT/cosine, "
+                  "EKSPLORATIF) pada graf LNA. Coverage tervalidasi = 88,9% (40/45), bukan 'vacuum'; "
+                  "lihat REVIEWER_RESPONSE.md §2.3/§2.5. Otoritas eksplisit (sitasi antar-instrumen): "
+                  "../../data/network/citations.json.*")
 
     with open('laporan_khusus_insiden.md', 'w', encoding='utf-8') as f:
         f.write("\n".join(report))

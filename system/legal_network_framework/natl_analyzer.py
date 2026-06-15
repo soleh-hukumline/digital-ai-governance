@@ -1,5 +1,59 @@
 import json
+import os
 import networkx as nx
+
+# Display labels for the national-corpus instruments (doc-id -> human label)
+NATL_LABELS = {
+    "UU_ITE_No19_2016": "UU ITE No.19/2016",
+    "PP_PSTE_No71_2019": "PP PSTE No.71/2019",
+    "UU_PDP_No27_2022": "UU PDP No.27/2022",
+    "UU_ITE_No1_2024": "UU ITE No.1/2024",
+    "SE_Komdigi_No9_2023_Etika_AI": "SE Komdigi No.9/2023 (Etika AI)",
+    "Stranas_AI_Indonesia_2020-2045_Full": "Stranas AI 2020-2045",
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan": "POJK No.3/2024 (Inovasi Teknologi Keuangan)",
+}
+
+
+def load_citation_authority(view_docs):
+    """Read the instrument-level citation graph (data/network/citations.json) and
+    return per-document authority (in-degree = how often an instrument is CITED
+    within the corpus), scoped to the documents relevant to this view.
+
+    This is the PRIMARY, defensible authority layer: explicit instrument-to-instrument
+    cross-references, independent of any embedding model. It is computed directly from
+    citations.json — no SBERT, no network model — so the script still runs from the
+    already-built graph alone.
+    """
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        '..', '..', 'data', 'network', 'citations.json')
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            cit = json.load(f)
+    except Exception as e:
+        print(f"(citations.json unavailable: {e})")
+        return None
+
+    cov = {c['doc']: c for c in cit.get('coverage', [])}
+    rows = []
+    for doc in view_docs:
+        c = cov.get(doc)
+        if not c:
+            continue
+        rows.append({
+            'doc': doc,
+            'label': NATL_LABELS.get(doc, doc),
+            'in': c.get('in', 0),     # authority = times cited within corpus
+            'out': c.get('out', 0),   # references this doc makes
+            'role': c.get('role', ''),
+        })
+    rows.sort(key=lambda r: r['in'], reverse=True)
+    return {
+        'rows': rows,
+        'n_docs': cit.get('n_docs'),
+        'n_isolated': cit.get('n_isolated'),
+        'edges': len(cit.get('edges', [])),
+    }
+
 
 def analyze_natl_only():
     G = nx.Graph()
@@ -60,10 +114,61 @@ def analyze_natl_only():
     report = []
     report.append("# Analisis Jaringan Regulasi Nasional Indonesia\n")
     report.append(
-        "Sub-analisis ini memetakan struktur internal regulasi nasional Indonesia "
-        "berdasarkan semantic similarity (multilingual embeddings). Seluruh metrik "
-        "dihitung langsung dari topologi sub-graf nasional.\n"
+        "Sub-analisis ini memetakan regulasi nasional Indonesia pada dua lapisan. "
+        "**Lapisan otoritas utama** adalah *sitasi instrumen-ke-instrumen* (cross-reference "
+        "eksplisit) yang dibaca dari `data/network/citations.json` — metrik legal yang "
+        "dapat dipertanggungjawabkan dan tidak bergantung pada model embedding. "
+        "**Lapisan sekunder** adalah kemiripan tekstual SBERT (multilingual embeddings) yang "
+        "bersifat *eksploratif* untuk memetakan tumpang-tindih semantik, BUKAN otoritas.\n"
     )
+
+    # === 0. CITATION AUTHORITY (PRIMARY LAYER) — prepended ===
+    # National-corpus instruments, ranked by in-degree (times cited within corpus).
+    natl_view_docs = [
+        "UU_ITE_No19_2016",
+        "PP_PSTE_No71_2019",
+        "UU_PDP_No27_2022",
+        "UU_ITE_No1_2024",
+        "SE_Komdigi_No9_2023_Etika_AI",
+        "Stranas_AI_Indonesia_2020-2045_Full",
+        "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+    ]
+    auth = load_citation_authority(natl_view_docs)
+    if auth:
+        report.append("## 0. Otoritas Sitasi — Lapisan Otoritas Utama (PRIMER)")
+        report.append(
+            "*Otoritas = **in-degree**: seberapa sering sebuah instrumen DIKUTIP "
+            "(cross-reference eksplisit) oleh instrumen lain dalam korpus 17 dokumen "
+            f"(**{auth['edges']} edge sitasi**, **{auth['n_docs']} dokumen**, "
+            f"**{auth['n_isolated']} terisolasi-by-citation**). Lapisan ini berbasis "
+            "instrumen, dihitung langsung dari `citations.json`, dan TIDAK bergantung "
+            "pada embedding — inilah ukuran otoritas yang dipakai untuk interpretasi.*\n"
+        )
+        report.append("| Peringkat | Instrumen Nasional | Dikutip (in-degree) | Peran sitasi |")
+        report.append("| --- | --- | --- | --- |")
+        rank = 0
+        for r in auth['rows']:
+            if r['in'] <= 0:
+                continue
+            rank += 1
+            report.append(f"| {rank} | {r['label']} | **{r['in']}** | {r['role']} |")
+        report.append(
+            "\n**Pembacaan:** **UU ITE No.19/2016** adalah hub otoritas sesungguhnya dari "
+            "korpus nasional (dikutip 39×), jauh di atas **PP PSTE No.71/2019** (6×) dan "
+            "**UU PDP No.27/2022** (1×). Ini berbeda tajam dari tabel kemiripan semantik "
+            "SBERT di bawah, yang justru didominasi soft-law (Stranas AI, SE Komdigi)."
+        )
+        # Source/leaf instruments: cite others but are cited 0x within the corpus
+        leaves = [r['label'] for r in auth['rows'] if r['in'] == 0]
+        if leaves:
+            report.append(
+                "\n**Instrumen sumber/leaf (mengutip pihak lain tetapi dikutip 0× dalam "
+                "korpus)** — yakni *adopter soft-law hilir*, bukan otoritas: "
+                + ", ".join(leaves) + ". "
+                "Termasuk **SE Komdigi No.9/2023** dan **UU ITE No.1/2024**, yang mengutip "
+                "instrumen lain tetapi belum menjadi rujukan otoritatif dalam korpus."
+            )
+        report.append("")
 
     # Kohesi Internal
     density = nx.density(G)
@@ -98,8 +203,15 @@ def analyze_natl_only():
     degree_dict = nx.degree_centrality(G)
     sorted_degree = sorted(degree_dict.items(), key=lambda x: x[1], reverse=True)
 
-    report.append("## 3. Degree Centrality — Top 10")
-    report.append("| Peringkat | Node | Instrumen | Skor |")
+    report.append("## 3. Sentralitas Semantik (SBERT — eksploratif, BUKAN otoritas)")
+    report.append(
+        "*Tabel berikut adalah **degree centrality berbasis kemiripan tekstual SBERT**, "
+        "bukan otoritas sitasi. Metrik ini mengukur tumpang-tindih semantik dan "
+        "cenderung **menggelembungkan soft-law panjang** (mis. Stranas AI, SE Komdigi) "
+        "karena banyaknya seksi generik. Gunakan sebagai lensa sekunder/eksploratif; "
+        "lapisan otoritas adalah tabel sitasi pada §0 (UU ITE 19/2016 = hub, in-degree 39).*\n"
+    )
+    report.append("| Peringkat | Node | Instrumen | Skor SBERT |")
     report.append("| --- | --- | --- | --- |")
     for idx, (node_id, score) in enumerate(sorted_degree[:10]):
         label = G.nodes[node_id].get('label', node_id)

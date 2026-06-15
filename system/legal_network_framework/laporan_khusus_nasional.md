@@ -1,6 +1,19 @@
 # Analisis Jaringan Regulasi Nasional Indonesia
 
-Sub-analisis ini memetakan struktur internal regulasi nasional Indonesia berdasarkan semantic similarity (multilingual embeddings). Seluruh metrik dihitung langsung dari topologi sub-graf nasional.
+Sub-analisis ini memetakan regulasi nasional Indonesia pada dua lapisan. **Lapisan otoritas utama** adalah *sitasi instrumen-ke-instrumen* (cross-reference eksplisit) yang dibaca dari `data/network/citations.json` — metrik legal yang dapat dipertanggungjawabkan dan tidak bergantung pada model embedding. **Lapisan sekunder** adalah kemiripan tekstual SBERT (multilingual embeddings) yang bersifat *eksploratif* untuk memetakan tumpang-tindih semantik, BUKAN otoritas.
+
+## 0. Otoritas Sitasi — Lapisan Otoritas Utama (PRIMER)
+*Otoritas = **in-degree**: seberapa sering sebuah instrumen DIKUTIP (cross-reference eksplisit) oleh instrumen lain dalam korpus 17 dokumen (**69 edge sitasi**, **17 dokumen**, **0 terisolasi-by-citation**). Lapisan ini berbasis instrumen, dihitung langsung dari `citations.json`, dan TIDAK bergantung pada embedding — inilah ukuran otoritas yang dipakai untuk interpretasi.*
+
+| Peringkat | Instrumen Nasional | Dikutip (in-degree) | Peran sitasi |
+| --- | --- | --- | --- |
+| 1 | UU ITE No.19/2016 | **39** | both |
+| 2 | PP PSTE No.71/2019 | **6** | both |
+| 3 | UU PDP No.27/2022 | **1** | both |
+
+**Pembacaan:** **UU ITE No.19/2016** adalah hub otoritas sesungguhnya dari korpus nasional (dikutip 39×), jauh di atas **PP PSTE No.71/2019** (6×) dan **UU PDP No.27/2022** (1×). Ini berbeda tajam dari tabel kemiripan semantik SBERT di bawah, yang justru didominasi soft-law (Stranas AI, SE Komdigi).
+
+**Instrumen sumber/leaf (mengutip pihak lain tetapi dikutip 0× dalam korpus)** — yakni *adopter soft-law hilir*, bukan otoritas: UU ITE No.1/2024, SE Komdigi No.9/2023 (Etika AI), Stranas AI 2020-2045, POJK No.3/2024 (Inovasi Teknologi Keuangan). Termasuk **SE Komdigi No.9/2023** dan **UU ITE No.1/2024**, yang mengutip instrumen lain tetapi belum menjadi rujukan otoritatif dalam korpus.
 
 ## 1. Metrik Kohesi Nasional
 | Metrik | Nilai |
@@ -20,8 +33,10 @@ Sub-analisis ini memetakan struktur internal regulasi nasional Indonesia berdasa
 | UU_ITE_No1_2024 | 17 | 15 | 210 | 88.2% |
 | UU_PDP_No27_2022 | 68 | 37 | 121 | 54.4% |
 
-## 3. Degree Centrality — Top 10
-| Peringkat | Node | Instrumen | Skor |
+## 3. Sentralitas Semantik (SBERT — eksploratif, BUKAN otoritas)
+*Tabel berikut adalah **degree centrality berbasis kemiripan tekstual SBERT**, bukan otoritas sitasi. Metrik ini mengukur tumpang-tindih semantik dan cenderung **menggelembungkan soft-law panjang** (mis. Stranas AI, SE Komdigi) karena banyaknya seksi generik. Gunakan sebagai lensa sekunder/eksploratif; lapisan otoritas adalah tabel sitasi pada §0 (UU ITE 19/2016 = hub, in-degree 39).*
+
+| Peringkat | Node | Instrumen | Skor SBERT |
 | --- | --- | --- | --- |
 | 1 | UU_ITE_No1_2024 - Pasal 13A | UU_ITE_No1_2024 | 0.1307 |
 | 2 | SE_Komdigi_No9_2023_Etika_AI - Bagian 5 | SE_Komdigi_No9_2023_Etika_AI | 0.1185 |

@@ -187,8 +187,47 @@ baseline; the validated incident↔regulation mapping is the few-shot judge belo
 2025 bank breach, and a deepfake — i.e. mostly non-data-theft or AI-specific events
 where no clean statutory basis reaches high confidence.*
 
-**Table — Top regulation hubs (degree centrality)**
-| Rank | Node | Class | Score |
+**Table — Authority by explicit citation (in-degree — the PRIMARY, defensible authority layer)**
+
+*Authority here = how often an instrument is **explicitly cross-referenced (cited)**
+by another instrument within the 17-document corpus (`data/network/citations.json`):
+**69 citation edges** (44 by-name + 25 by-number), **17 documents**, **0 isolated by
+citation**. This is an instrument-level, legally-defensible authority metric — it does
+not depend on embeddings.*
+
+| Rank | Instrument | In-degree (times cited) |
+|---|---|---|
+| 1 | **UU ITE No.19/2016** | **39** *(the real authority/hub)* |
+| 2 | Council of Europe Framework Convention (CETS 225) | 23 |
+| 3 | UNGA Res. 78/265 | 7 |
+| 4 | PP PSTE (71/2019) | 6 |
+| 5 | OECD AI Principles | 5 |
+| 6 | EU AI Act | 4 |
+| 7 | UNESCO Recommendation | 3 |
+| 8 | UU PDP (27/2022) | 1 |
+| — | all others | 0 |
+
+**Source/leaf instruments (cite others but are themselves cited 0× within the corpus,
+n=8):** WHO, Stranas AI, UU ITE 1/2024, ISO/IEC 42001, SE Komdigi, ASEAN Guide,
+G7 Hiroshima, POJK. These are *downstream/soft-law adopters*, not authorities.
+
+> **Reading note for reviewers:** the binding statute **UU ITE 19/2016** is the genuine
+> hub of the corpus by explicit citation (in-degree 39), with the **Council of Europe
+> Framework Convention** the leading international anchor (23). The soft-law documents
+> that dominate the *semantic-similarity* table below (Stranas AI, SE Komdigi) are in
+> fact **citation leaves (cited 0×)** — they adopt others but are not relied upon as
+> authority. We therefore lead with citation-based authority and treat the SBERT table
+> as exploratory.
+
+**Table — Semantic centrality (SBERT — exploratory semantic-overlap, NOT authority)**
+
+*This is **textual cosine-similarity degree centrality** over SBERT section embeddings.
+It measures semantic overlap, not citation authority, and **systematically inflates long
+soft-law documents** (Stranas AI, WHO, SE Komdigi) because they contain many generic
+sections that resemble everything. Treat it as a secondary, exploratory lens — the
+authority layer is the citation table above.*
+
+| Rank | Node | Class | SBERT score |
 |---|---|---|---|
 | 1 | Stranas AI 2020–2045 — §70 | Natl: Strategy/Soft Law | 0.2197 |
 | 2 | Stranas AI 2020–2045 — §56 | Natl: Strategy/Soft Law | 0.1858 |
@@ -206,19 +245,25 @@ cosine-precision artifact; the validated judge instead surfaces operative bases 
 UU PDP Pasal 35 (security), 46 (notification), 67/68 (criminal).*
 
 **Copy-paste — Results finding (corrected):**
-> Indonesia's AI/cyber governance leans on **soft law** at the centre — the most
-> central instruments by degree are the **national AI strategy (Stranas AI)** and
-> the **Komdigi AI-ethics circular (SE 9/2023)**, neither binding — and
-> international frameworks are peripheral (**12.9% of international provisions
-> isolated**). However, the earlier claim of a **55.6% "structural-hole vacuum"
-> was a cosine-retrieval artifact** (§2.3): embedding similarity simply failed to
-> rank the applicable Indonesian statute near the top. Under a recall-complete,
-> human-validated mapping, **88.9% of incidents have a high-confidence statutory
-> basis** — predominantly UU PDP (security/notification/criminal). The genuine
-> deficit is therefore not the *absence* of law but its **subject-asymmetry and
-> lack of AI-specificity** (§2.5–2.6): perpetrators are well covered, while
-> operators, consumers, and regulators are not, and AI-misuse incidents have no
-> AI-specific provision at all.
+> By the **primary, defensible authority metric — explicit cross-citation
+> (in-degree) among instruments — the hub of Indonesia's AI/cyber corpus is the
+> binding statute *UU ITE No.19/2016* (cited 39×)**, with the *Council of Europe
+> Framework Convention* (23×) as the leading international anchor; the corpus has
+> **69 citation edges across 17 documents and no citation-isolated instrument**.
+> Notably, the soft-law documents that *look* central under exploratory
+> textual-similarity centrality — the **national AI strategy (Stranas AI)** and the
+> **Komdigi AI-ethics circular (SE 9/2023)** — are in fact **citation leaves (cited
+> 0×)**: they adopt other instruments but are not themselves relied upon as
+> authority, and their apparent centrality is an artifact of SBERT inflating long,
+> generically-worded soft-law texts. Separately, the earlier claim of a **55.6%
+> "structural-hole vacuum" was a cosine-retrieval artifact** (§2.3): embedding
+> similarity simply failed to rank the applicable Indonesian statute near the top.
+> Under a recall-complete, human-validated mapping, **88.9% of incidents have a
+> high-confidence statutory basis** — predominantly UU PDP
+> (security/notification/criminal). The genuine deficit is therefore not the
+> *absence* of law but its **subject-asymmetry and lack of AI-specificity**
+> (§2.5–2.6): perpetrators are well covered, while operators, consumers, and
+> regulators are not, and AI-misuse incidents have no AI-specific provision at all.
 
 ### 2.5 Per-subject coverage (role-aware — fixes the conflation bias)
 A single incident binds several legal subjects with different applicable regimes;
@@ -444,10 +489,12 @@ artifacts, support a "no hallucination" guarantee.
 
 - Added **`make_figures.py`** — regenerates both report figures **from the real
   graph**, so they can no longer drift from the data:
-  - `master_metrics.png` — node composition + top regulation hubs. *(NB: this
-    static PNG shows the **cosine-baseline** 44.4% coverage; the validated,
-    reported figure is the per-subject coverage of §2.5–2.6 — regenerate the PNG
-    before final submission if you cite a coverage number on it.)*
+  - `master_metrics.png` — node composition + top regulation hubs. *(NB: the
+    "hubs" bars are **SBERT semantic-centrality** (exploratory, NOT authority — see
+    §2.4); the defensible authority ranking is the citation in-degree table in §2.4,
+    led by UU ITE 19/2016 at 39. This static PNG also shows the **cosine-baseline**
+    44.4% coverage; the validated, reported figure is the per-subject coverage of
+    §2.5–2.6 — regenerate the PNG before final submission if you cite a number on it.)*
   - `master_lna.png` — the network (spring layout), coloured by class,
     incident nodes labelled.
 - `Laporan_aplikasi_AI_GOV.html` embeds them with correct relative paths

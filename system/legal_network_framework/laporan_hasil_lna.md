@@ -2,6 +2,44 @@
 
 Laporan ini dihasilkan secara otomatis menggunakan **Legal Network Analysis (LNA)** berbasis multilingual sentence embeddings (paraphrase-multilingual-MiniLM-L12-v2) dan NetworkX. Seluruh metrik dihitung langsung dari topologi graf.
 
+## Otoritas berdasarkan Sitasi Eksplisit
+Lapisan ini adalah **lapisan OTORITAS PRIMER dan paling defensibel** dalam analisis: ia dihitung dari **lintas-referensi sitasi eksplisit antar-instrumen** (level-instrumen), bukan dari kedekatan tekstual. **Otoritas = in-degree**, yaitu seberapa sering sebuah instrumen *disitasi* oleh dokumen lain di dalam korpus. Angka diambil verbatim dari `data/network/citations.json` (field `coverage[].in`).
+
+Total **69 edge sitasi** (44 by-name, 25 by-number) di antara **17 dokumen**; dokumen **terisolasi-secara-sitasi = 0**.
+
+### Hub Otoritas — Instrumen Paling Sering Disitasi (in-degree)
+| Peringkat | Instrumen | Disitasi (in-degree) | Menyitasi (out) | Peran |
+| --- | --- | --- | --- | --- |
+| 1 | UU ITE 19/2016 | 39 | 3 | both |
+| 2 | Council of Europe Framework Convention (CETS225) | 23 | 3 | both |
+| 3 | UNGA Res 78/265 | 7 | 21 | both |
+| 4 | PP PSTE 71/2019 | 6 | 9 | both |
+| 5 | OECD AI Principles | 5 | 5 | both |
+| 6 | EU AI Act | 4 | 24 | both |
+| 7 | UNESCO Recommendation on AI Ethics | 3 | 7 | both |
+| 8 | UNGA Res 78/311 (Global Digital Compact) | 1 | 11 | both |
+| 9 | UU PDP 27/2022 | 1 | 3 | both |
+
+> **UU ITE 19/2016 adalah hub otoritas nyata** (disitasi 39×) — simpul rujukan inti rezim digital Indonesia, jauh melampaui instrumen lain. **Council of Europe Framework Convention (CETS225)** menyusul (23×), lalu **UNGA Res 78/265** (7×), **PP PSTE 71/2019** (6×), dan **OECD AI Principles** (5×).
+
+### Instrumen SOURCE/LEAF (menyitasi, tetapi disitasi 0× di dalam korpus)
+| Instrumen | Disitasi (in-degree) | Menyitasi (out) |
+| --- | --- | --- |
+| WHO Ethics & Governance of AI for Health | 0 | 59 |
+| Stranas AI 2020-2045 | 0 | 44 |
+| UU ITE 1/2024 | 0 | 31 |
+| ISO/IEC 42001 | 0 | 10 |
+| SE Komdigi 9/2023 (Etika AI) | 0 | 8 |
+| POJK 3/2024 (Inovasi Teknologi Keuangan) | 0 | 5 |
+| ASEAN Guide on AI Governance | 0 | 4 |
+| G7 Hiroshima Code of Conduct | 0 | 3 |
+
+> Terdapat **8 instrumen source/leaf** yang aktif merujuk instrumen lain namun belum pernah dirujuk balik di dalam korpus — termasuk soft-law/standar yang relatif baru atau berperan sebagai penerima norma (mis. WHO, Stranas AI, UU ITE 1/2024, ISO/IEC 42001, SE Komdigi, ASEAN Guide, G7 Hiroshima, POJK).
+
+> **CATATAN METODOLOGIS:** Otoritas berbasis-sitasi di atas adalah lapisan PRIMER. Seksi *Sentralitas Semantik (SBERT)* di bawah bersifat **eksploratif/sekunder** — ia mengukur tumpang-tindih tekstual dan cenderung *menggelembungkan* soft-law panjang (Stranas/WHO/SE Komdigi) karena banyaknya seksi generik, sehingga **BUKAN ukuran otoritas**.
+
+---
+
 ## 1. Topologi Jaringan Makro
 | Metrik | Nilai |
 | --- | --- |
@@ -13,7 +51,10 @@ Laporan ini dihasilkan secara otomatis menggunakan **Legal Network Analysis (LNA
 | **Densitas Jaringan** | 0.01910 |
 | **Insiden Terhubung ke ≥1 Regulasi** | 20/45 (44.4%) |
 
-## 2. Degree Centrality — Top 10
+> **Catatan.** Angka di atas adalah metrik *degree>0* pada graf kemiripan SBERT (eksploratif) — **bukan** klaim cakupan tervalidasi. Cakupan insiden yang defensibel = **88.9% (40/45)** dari *LLM judge* tervalidasi-manusia; nilai 44.4% di sini kebetulan sama dengan baseline kosinus yang sudah DITARIK dan tidak boleh disamakan dengan klaim vakum tersebut (lihat REVIEWER_RESPONSE.md §2.3/§2.4).
+
+## 2. Sentralitas Semantik (SBERT — eksploratif, BUKAN otoritas) — Top 10
+> **Eksploratif/sekunder.** Skor di bawah adalah *degree centrality* pada graf **kemiripan tekstual SBERT** (paraphrase-multilingual-MiniLM-L12-v2), yang mengukur **tumpang-tindih semantik**, BUKAN otoritas hukum. Metrik ini cenderung *menggelembungkan* soft-law panjang (mis. Stranas/WHO/SE Komdigi) karena banyaknya seksi generik. Untuk otoritas yang defensibel, lihat seksi *Otoritas berdasarkan Sitasi Eksplisit* di atas (in-degree sitasi).
 | Peringkat | Node | Klasifikasi | Skor |
 | --- | --- | --- | --- |
 | 1 | Stranas_AI_Indonesia_2020-2045_Full - Bagian 70 | Natl: Strategy & Soft Law | 0.2197 |
@@ -94,6 +135,9 @@ Laporan ini dihasilkan secara otomatis menggunakan **Legal Network Analysis (LNA
 | UU_ITE_No1_2024 | 17 | 16 | 94.1% |
 | UU_PDP_No27_2022 | 68 | 61 | 89.7% |
 | WHO_Ethics_and_Governance_of_AI_for_Health | 80 | 59 | 73.8% |
+
+> **Catatan (baris _Insiden Kasus_).** Coverage 44.4% (20/45) di sini identik dengan metrik *degree>0* pada graf kemiripan SBERT di §1 — bersifat **eksploratif**, **bukan** klaim cakupan tervalidasi. Cakupan insiden yang defensibel = **88.9% (40/45)** dari *LLM judge* tervalidasi-manusia; angka 44.4% kebetulan sama dengan baseline kosinus yang sudah DITARIK dan tidak boleh disamakan dengan klaim vakum tersebut (lihat REVIEWER_RESPONSE.md §2.3/§2.4).
+
 
 ## 6. Connected Components
 | Metrik | Nilai |

@@ -1,17 +1,20 @@
 # Analisis Insiden — Pemetaan Warrant per Kasus
 
-Laporan ini memetakan distribusi warrant normatif (dasar hukum) untuk setiap insiden siber berbasis AI di Indonesia. Seluruh metrik dihitung dari koneksi 'governs' pada graf LNA.
+Laporan ini memetakan distribusi warrant normatif (dasar hukum) untuk setiap insiden siber berbasis AI di Indonesia. Metrik di bawah dihitung dari koneksi 'governs' pada graf LNA, yaitu hasil *retrieval* kemiripan semantik (SBERT/cosine) — bersifat EKSPLORATIF, BUKAN lapisan otoritas hukum.
 
-## 1. Distribusi Warrant per Insiden
+> ⚠️ **Catatan otoritas & koreksi.** Angka 'tanpa warrant' di bawah adalah baseline *cosine retrieval* (≈44,4% insiden tanpa edge `governs`). Ini **artefak retrieval, BUKAN kekosongan hukum**: cosine gagal me-ranking pasal yang berlaku (mis. UU PDP Pasal 35 sempat di peringkat 154). Setelah pemetaan tervalidasi (judge few-shot, kandidat recall-complete, ambang P≥95), **88,9% insiden (40/45) memiliki dasar hukum** dan celah riil bersifat **asimetris-subjek + spesifik-AI** (lih. REVIEWER_RESPONSE.md §2.3/§2.5). Klaim '55,6% vacuum / structural holes' DITARIK. Lapisan **otoritas eksplisit** (sitasi antar-instrumen) ada di `../../data/network/citations.json` — bukan pada edge `governs` di sini.
+
+## 1. Distribusi Warrant per Insiden (baseline cosine — eksploratif)
 | Kategori | Jumlah | Persentase |
 | --- | --- | --- |
-| Tanpa warrant (degree=0) | 25 | 55.6% |
+| Tanpa edge `governs` cosine (degree=0; ≠ kekosongan hukum) | 25 | 55.6% |
 | Warrant nasional saja | 15 | 33.3% |
 | Warrant internasional saja | 1 | 2.2% |
 | Warrant ganda (Natl + Intl) | 4 | 8.9% |
 | **Total Insiden** | **45** | **100%** |
 
-## 2. Regulasi yang Paling Sering Menjadi Warrant
+## 2. Regulasi yang Paling Sering Menjadi Warrant (baseline cosine — eksploratif)
+*Peringkat berikut adalah artefak presisi cosine (pasal definitional bisa menonjol). Untuk otoritas eksplisit antar-instrumen lihat `../../data/network/citations.json`.*
 | Peringkat | Regulasi | Klasifikasi | Jumlah Insiden |
 | --- | --- | --- | --- |
 | 1 | UU_PDP_No27_2022 - Pasal 4 | Natl: Binding Law | 7 |
@@ -30,8 +33,8 @@ Laporan ini memetakan distribusi warrant normatif (dasar hukum) untuk setiap ins
 | 14 | Stranas_AI_Indonesia_2020-2045_Full - Bagian 80 | Natl: Strategy & Soft Law | 2 |
 | 15 | SE_Komdigi_No9_2023_Etika_AI - Bagian 15 | Natl: Sectoral/Agency Guidance | 2 |
 
-## 3. Insiden Tanpa Warrant (Structural Holes)
-Total: **25** insiden tanpa koneksi ke regulasi apapun.
+## 3. Insiden Tanpa Edge `governs` Cosine (artefak retrieval — BUKAN structural holes)
+Total: **25** insiden tanpa edge `governs` cosine (≈55.6%). Ini **bukan** kekosongan hukum: di pemetaan tervalidasi (judge P≥95) hanya **5/45 (11,1%)** yang benar-benar tanpa dasar hukum berkepercayaan-tinggi (lih. REVIEWER_RESPONSE.md §2.3).
 
 | No | Insiden |
 | --- | --- |
@@ -72,4 +75,4 @@ Total: **25** insiden tanpa koneksi ke regulasi apapun.
 | 10 | PEDULILINDUNGI-JOKOWI-CERT-2021 - Awal September 2021 sertifikat vaksin Preside... | 2 | Natl, Intl |
 
 ---
-*Laporan dihasilkan dari analisis 'governs' edges pada graf LNA. Metrik dihitung dari data graf aktual tanpa interpretasi manual.*
+*Laporan dihasilkan dari edge 'governs' (kemiripan semantik SBERT/cosine, EKSPLORATIF) pada graf LNA. Coverage tervalidasi = 88,9% (40/45), bukan 'vacuum'; lihat REVIEWER_RESPONSE.md §2.3/§2.5. Otoritas eksplisit (sitasi antar-instrumen): ../../data/network/citations.json.*

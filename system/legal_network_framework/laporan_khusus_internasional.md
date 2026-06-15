@@ -1,6 +1,22 @@
 # Analisis Jaringan Regulasi Internasional
 
-Sub-analisis ini memetakan **struktur internal** jaringan regulasi AI internasional berdasarkan semantic similarity (multilingual embeddings). Seluruh metrik dihitung langsung dari topologi sub-graf internasional.
+Sub-analisis ini memetakan jaringan regulasi AI internasional pada dua lapisan. **Lapisan otoritas utama** adalah *sitasi instrumen-ke-instrumen* (cross-reference eksplisit) yang dibaca dari `data/network/citations.json` — metrik legal yang dapat dipertanggungjawabkan dan tidak bergantung pada model embedding. **Lapisan sekunder** adalah kemiripan tekstual SBERT (multilingual embeddings) yang bersifat *eksploratif* untuk memetakan tumpang-tindih semantik, BUKAN otoritas.
+
+## 0. Otoritas Sitasi — Lapisan Otoritas Utama (PRIMER)
+*Otoritas = **in-degree**: seberapa sering sebuah instrumen DIKUTIP (cross-reference eksplisit) oleh instrumen lain dalam korpus 17 dokumen (**69 edge sitasi**, **17 dokumen**, **0 terisolasi-by-citation**). Lapisan ini berbasis instrumen, dihitung langsung dari `citations.json`, dan TIDAK bergantung pada embedding — inilah ukuran otoritas yang dipakai untuk interpretasi.*
+
+| Peringkat | Instrumen Internasional | Dikutip (in-degree) | Peran sitasi |
+| --- | --- | --- | --- |
+| 1 | Council of Europe Framework Convention (CETS 225) | **23** | both |
+| 2 | UNGA Res. 78/265 | **7** | both |
+| 3 | OECD AI Principles | **5** | both |
+| 4 | EU AI Act | **4** | both |
+| 5 | UNESCO Recommendation on AI Ethics | **3** | both |
+| 6 | UNGA Res. 78/311 (Global Digital Compact) | **1** | both |
+
+**Pembacaan:** dalam korpus internasional, **Council of Europe Framework Convention (CETS 225)** adalah jangkar otoritas tertinggi (dikutip 23×), diikuti **UNGA Res. 78/265** (7×), **OECD AI Principles** (5×), **EU AI Act** (4×), dan **UNESCO Recommendation** (3×).
+
+**Instrumen sumber/leaf (mengutip pihak lain tetapi dikutip 0× dalam korpus)** — yakni *adopter soft-law hilir*, bukan otoritas: ISO/IEC 42001 (AI Management System), ASEAN Guide on AI Governance & Ethics, G7 Hiroshima Code of Conduct, WHO Ethics & Governance of AI for Health. Contohnya **G7 Hiroshima, ISO/IEC 42001, dan ASEAN Guide** muncul sebagai sumber-sitasi, bukan rujukan otoritatif.
 
 ## 1. Metrik Kohesi Internal
 | Metrik | Nilai |
@@ -24,8 +40,10 @@ Sub-analisis ini memetakan **struktur internal** jaringan regulasi AI internasio
 | UNGA_Res_78_311_Global_Digital_Compact_or_AI | 17 | 17 | 171 | 100.0% |
 | WHO_Ethics_and_Governance_of_AI_for_Health | 80 | 45 | 574 | 56.2% |
 
-## 3. Degree Centrality — Top 10
-| Peringkat | Node | Instrumen | Skor |
+## 3. Sentralitas Semantik (SBERT — eksploratif, BUKAN otoritas)
+*Tabel berikut adalah **degree centrality berbasis kemiripan tekstual SBERT**, bukan otoritas sitasi. Metrik ini mengukur tumpang-tindih semantik dan cenderung **menggelembungkan soft-law panjang** (mis. Stranas AI, WHO, SE Komdigi) karena banyaknya seksi generik. Gunakan sebagai lensa sekunder/eksploratif; lapisan otoritas adalah tabel sitasi pada §0.*
+
+| Peringkat | Node | Instrumen | Skor SBERT |
 | --- | --- | --- | --- |
 | 1 | G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 10 | G7_Hiroshima_Code_of_Conduct_for_AI | 0.1870 |
 | 2 | OECD_AI_Principles_2024 - Bagian 22 | OECD_AI_Principles_2024 | 0.1722 |

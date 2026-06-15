@@ -45,7 +45,8 @@ def analyze_gap():
         for u, v, attr in G_gap.edges(data=True):
             edges_export.append({
                 "from": u, "to": v,
-                "label": f"korelasi ({attr.get('weight',1)} edge)",
+                # SBERT semantic-overlap (eksploratif), BUKAN sitasi/otoritas
+                "label": f"tumpang-tindih semantik ({attr.get('weight',1)} edge)",
                 "value": attr.get('weight',1),
                 "arrows": "to" if "Incid" in u or "Incid" in v else ""
             })
@@ -61,8 +62,20 @@ def analyze_gap():
     report.append("# Gap Analysis — Konsolidasi Temuan LNA\n")
     report.append(
         "Laporan ini mengkonsolidasikan temuan dari seluruh sub-analisis LNA. "
-        "Seluruh metrik dihitung dari topologi graf aktual menggunakan NetworkX "
-        "dan multilingual sentence embeddings.\n"
+        "Metrik di bawah dihitung dengan NetworkX dari topologi graf berbasis "
+        "**kemiripan semantik (SBERT/cosine)** — lapisan ini bersifat EKSPLORATIF "
+        "(tumpang-tindih semantik antar-teks), BUKAN otoritas hukum. Konektivitas "
+        "antar-klaster di sini adalah *semantic-overlap*, bukan sitasi/otoritas.\n"
+    )
+    report.append(
+        "> ⚠️ **Catatan otoritas & koreksi.** Edge & 'korelasi' antar-klaster di laporan ini "
+        "berasal dari kemiripan SBERT, yang cenderung meng-inflasi soft-law panjang "
+        "(Stranas AI, WHO, SE Komdigi) karena banyak seksi generik — jadi BUKAN ukuran otoritas. "
+        "Lapisan **otoritas eksplisit** (sitasi antar-instrumen, in-degree) ada di "
+        "`../../data/network/citations.json` (mis. UU ITE 19/2016 dirujuk 39×; CoE CETS225 23×; "
+        "ISOLATED-by-citation = 0). Klaim '55,6% vacuum / structural holes' DITARIK: 44,4% cosine "
+        "adalah artefak retrieval; coverage tervalidasi = 88,9% (40/45), celah riil bersifat "
+        "asimetris-subjek + spesifik-AI (lih. REVIEWER_RESPONSE.md §2.3/§2.5).\n"
     )
 
     # 1. Macro summary
@@ -83,8 +96,12 @@ def analyze_gap():
     report.append(f"| **Koneksi Antar-Klaster** | {G_gap.number_of_edges()} |\n")
 
     # 2. Coverage per group (data-driven)
-    report.append("## 2. Coverage per Klaster Regulasi")
-    report.append("| Klaster | Klasifikasi | Total Node | Node Terhubung | Cross-Group Edge | Coverage |")
+    report.append("## 2. Coverage per Klaster Regulasi (konektivitas semantik SBERT — eksploratif)")
+    report.append(
+        "*'Coverage' di sini = pangsa node klaster yang punya edge kemiripan SBERT, BUKAN "
+        "coverage hukum insiden (yang tervalidasi 88,9% di REVIEWER_RESPONSE.md §2.3).*"
+    )
+    report.append("| Klaster | Klasifikasi | Total Node | Node Terhubung | Cross-Group Edge | Coverage Semantik |")
     report.append("| --- | --- | --- | --- | --- | --- |")
 
     group_stats = {}
@@ -106,7 +123,11 @@ def analyze_gap():
         report.append(f"| {grp} | {s['classification']} | {s['total']} | {s['connected']} | {s['cross_edges']} | {cov:.1f}% |")
 
     # 3. Isolated groups (gap graph nodes with no edges)
-    report.append("\n## 3. Klaster Terisolasi (Tanpa Koneksi Antar-Klaster)")
+    report.append("\n## 3. Klaster Tanpa Tumpang-Tindih Semantik Antar-Klaster (SBERT — eksploratif)")
+    report.append(
+        "*Terisolasi secara semantik ≠ terisolasi secara otoritas. Berdasarkan sitasi eksplisit, "
+        "ISOLATED-by-citation = 0 (lihat `../../data/network/citations.json`).*"
+    )
     isolated_groups = [n for n in G_gap.nodes() if G_gap.degree(n) == 0]
     if isolated_groups:
         report.append("| Klaster | Klasifikasi | Jumlah Node |")
@@ -119,8 +140,12 @@ def analyze_gap():
         report.append("*Semua klaster memiliki setidaknya satu koneksi antar-klaster.*\n")
 
     # 4. Inter-cluster connectivity matrix
-    report.append("\n## 4. Matriks Konektivitas Antar-Klaster (Top 15 Pasangan)")
-    report.append("| Klaster A | Klaster B | Jumlah Edge |")
+    report.append("\n## 4. Matriks Tumpang-Tindih Semantik Antar-Klaster (SBERT — eksploratif, BUKAN otoritas; Top 15)")
+    report.append(
+        "*Bobot edge = jumlah kemiripan SBERT lintas-klaster, BUKAN korelasi/otoritas hukum. "
+        "Otoritas eksplisit (sitasi antar-instrumen): `../../data/network/citations.json`.*"
+    )
+    report.append("| Klaster A | Klaster B | Jumlah Edge Semantik |")
     report.append("| --- | --- | --- |")
     sorted_gap_edges = sorted(G_gap.edges(data=True), key=lambda x: x[2].get('weight', 0), reverse=True)
     for u, v, attr in sorted_gap_edges[:15]:
@@ -128,9 +153,11 @@ def analyze_gap():
 
     # 5. Nodes with zero connections in raw graph
     all_isolated = [n for n in G_raw.nodes() if G_raw.degree(n) == 0]
-    report.append(f"\n## 5. Node Terisolasi (degree=0)")
+    report.append(f"\n## 5. Node Terisolasi Secara Semantik (degree=0, SBERT — eksploratif)")
     report.append(f"Total: **{len(all_isolated)}** node dari {G_raw.number_of_nodes()} "
-                  f"({len(all_isolated)/max(G_raw.number_of_nodes(),1)*100:.1f}%)\n")
+                  f"({len(all_isolated)/max(G_raw.number_of_nodes(),1)*100:.1f}%). "
+                  f"Isolasi semantik ini BUKAN isolasi otoritas: berdasarkan sitasi eksplisit "
+                  f"ISOLATED-by-citation = 0 (`../../data/network/citations.json`).\n")
 
     # Break down by classification
     iso_by_cls = {}
@@ -157,8 +184,11 @@ def analyze_gap():
             report.append(f"| **Komponen Ke-2** | {len(sorted_comps[1])} node |")
         report.append(f"| **Komponen Singleton** | {len([c for c in components if len(c) == 1])} |")
 
-    report.append("\n---\n*Laporan ini di-generate otomatis dari dataset LNA + NetworkX. "
-                  "Seluruh angka dihitung dari topologi graf aktual tanpa interpretasi manual.*")
+    report.append("\n---\n*Laporan ini di-generate otomatis dari dataset LNA + NetworkX atas graf "
+                  "kemiripan semantik (SBERT/cosine) — lapisan EKSPLORATIF, BUKAN otoritas. "
+                  "Otoritas eksplisit (sitasi antar-instrumen, in-degree): ../../data/network/citations.json. "
+                  "Coverage hukum tervalidasi = 88,9% (40/45); klaim '55,6% vacuum' DITARIK "
+                  "(lih. REVIEWER_RESPONSE.md §2.3/§2.5).*")
 
     with open('laporan_gap_analysis.md', 'w', encoding='utf-8') as f:
         f.write("\n".join(report))

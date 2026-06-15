@@ -1,8 +1,29 @@
 # Analisis Lintas Yurisdiksi (Cross-Jurisdiction)
 
-Laporan ini mengukur koneksi semantik antara regulasi internasional dan nasional menggunakan multilingual sentence embeddings. Setiap koneksi diklasifikasikan ke dalam tiga tier berdasarkan skor similarity.
+Laporan ini bekerja pada dua lapisan. **Lapisan otoritas utama (§0)** adalah *sitasi instrumen-ke-instrumen* (cross-reference eksplisit) yang dibaca dari `data/network/citations.json` — metrik legal yang dapat dipertanggungjawabkan dan tidak bergantung pada embedding. **Lapisan sekunder (§1 dst.)** mengukur koneksi *kemiripan tekstual* SBERT antara regulasi internasional dan nasional (tier similarity); lapisan ini bersifat **eksploratif** untuk memetakan tumpang-tindih semantik, BUKAN otoritas.
 
-## 1. Distribusi Tier Similarity
+## 0. Otoritas Sitasi Lintas Yurisdiksi — Lapisan Otoritas Utama (PRIMER)
+*Otoritas = **in-degree**: seberapa sering sebuah instrumen DIKUTIP (cross-reference eksplisit) oleh instrumen lain dalam korpus 17 dokumen (**69 edge sitasi**, **17 dokumen**, **0 terisolasi-by-citation**). Lapisan ini berbasis instrumen, dihitung langsung dari `citations.json`, dan TIDAK bergantung pada embedding — inilah ukuran otoritas yang dipakai untuk interpretasi.*
+
+| Peringkat | Instrumen | Yurisdiksi | Dikutip (in-degree) | Peran sitasi |
+| --- | --- | --- | --- | --- |
+| 1 | UU ITE No.19/2016 | Nasional | **39** | both |
+| 2 | Council of Europe Framework Convention (CETS 225) | Internasional | **23** | both |
+| 3 | UNGA Res. 78/265 | Internasional | **7** | both |
+| 4 | PP PSTE No.71/2019 | Nasional | **6** | both |
+| 5 | OECD AI Principles | Internasional | **5** | both |
+| 6 | EU AI Act | Internasional | **4** | both |
+| 7 | UNESCO Recommendation on AI Ethics | Internasional | **3** | both |
+| 8 | UNGA Res. 78/311 (Global Digital Compact) | Internasional | **1** | both |
+| 9 | UU PDP No.27/2022 | Nasional | **1** | both |
+
+**Pembacaan:** secara lintas yurisdiksi, hub otoritas didominasi instrumen **nasional yang mengikat** — **UU ITE No.19/2016** (dikutip 39×) — disusul jangkar internasional **Council of Europe Framework Convention (CETS 225)** (23×), lalu **UNGA Res. 78/265** (7×), **PP PSTE No.71/2019** (6×), **OECD AI Principles** (5×), **EU AI Act** (4×), dan **UNESCO Recommendation** (3×). Otoritas sitasi ini independen dari tier kemiripan SBERT di §1-§3.
+
+**Instrumen sumber/leaf (mengutip pihak lain tetapi dikutip 0× dalam korpus)** — *adopter soft-law hilir*, bukan otoritas: WHO Ethics & Governance of AI for Health (Internasional), Stranas AI 2020-2045 (Nasional), UU ITE No.1/2024 (Nasional), ISO/IEC 42001 (AI Management System) (Internasional), SE Komdigi No.9/2023 (Etika AI) (Nasional), POJK No.3/2024 (Nasional), ASEAN Guide on AI Governance & Ethics (Internasional), G7 Hiroshima Code of Conduct (Internasional).
+
+## 1. Distribusi Tier Similarity (SBERT — eksploratif, BUKAN otoritas)
+*Tier berikut dihitung dari **kemiripan tekstual SBERT** antar-yurisdiksi, bukan sitasi. Ini lensa sekunder/eksploratif untuk tumpang-tindih semantik; lapisan otoritas adalah tabel sitasi pada §0.*
+
 | Tier | Skor Similarity | Jumlah Koneksi | Persentase |
 | --- | --- | --- | --- |
 | **Full Adoption** | ≥30% | 0 | 0.0% |
@@ -10,7 +31,7 @@ Laporan ini mengukur koneksi semantik antara regulasi internasional dan nasional
 | **Low Similarity** | <10% | 4787 | 100.0% |
 | **Total** | — | 4787 | 100% |
 
-## 2. Node Internasional dengan Koneksi Terbanyak ke Nasional
+## 2. Node Internasional dengan Koneksi Terbanyak ke Nasional (degree SBERT — eksploratif, BUKAN otoritas)
 | Peringkat | Node | Instrumen | Jumlah Koneksi | Avg Similarity |
 | --- | --- | --- | --- | --- |
 | 1 | UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 19 | UNGA_Res_78_265_Safe_Secure_Trustworthy_AI | 70 | 5.0% |
@@ -24,7 +45,7 @@ Laporan ini mengukur koneksi semantik antara regulasi internasional dan nasional
 | 9 | Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 11 | Council_of_Europe_Framework_Convention_on_AI_CETS225 | 46 | 5.0% |
 | 10 | UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 23 | UNGA_Res_78_265_Safe_Secure_Trustworthy_AI | 44 | 5.0% |
 
-## 3. Node Nasional dengan Koneksi Terbanyak ke Internasional
+## 3. Node Nasional dengan Koneksi Terbanyak ke Internasional (degree SBERT — eksploratif, BUKAN otoritas)
 | Peringkat | Node | Instrumen | Jumlah Koneksi | Avg Similarity |
 | --- | --- | --- | --- | --- |
 | 1 | Stranas_AI_Indonesia_2020-2045_Full - Bagian 70 | Stranas_AI_Indonesia_2020-2045_Full | 194 | 5.0% |

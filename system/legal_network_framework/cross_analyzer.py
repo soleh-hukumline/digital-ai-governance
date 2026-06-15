@@ -1,5 +1,71 @@
 import json
+import os
 import networkx as nx
+
+# Display labels + jurisdiction tag for the full corpus (doc-id -> (label, juris))
+CROSS_LABELS = {
+    # National
+    "UU_ITE_No19_2016": ("UU ITE No.19/2016", "Nasional"),
+    "PP_PSTE_No71_2019": ("PP PSTE No.71/2019", "Nasional"),
+    "UU_PDP_No27_2022": ("UU PDP No.27/2022", "Nasional"),
+    "UU_ITE_No1_2024": ("UU ITE No.1/2024", "Nasional"),
+    "SE_Komdigi_No9_2023_Etika_AI": ("SE Komdigi No.9/2023 (Etika AI)", "Nasional"),
+    "Stranas_AI_Indonesia_2020-2045_Full": ("Stranas AI 2020-2045", "Nasional"),
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan": ("POJK No.3/2024", "Nasional"),
+    # International
+    "Council_of_Europe_Framework_Convention_on_AI_CETS225":
+        ("Council of Europe Framework Convention (CETS 225)", "Internasional"),
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI": ("UNGA Res. 78/265", "Internasional"),
+    "OECD_AI_Principles_2024": ("OECD AI Principles", "Internasional"),
+    "EU_AI_Act_2024": ("EU AI Act", "Internasional"),
+    "UNESCO_Recommendation_on_AI_Ethics_2021": ("UNESCO Recommendation on AI Ethics", "Internasional"),
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI": ("UNGA Res. 78/311 (Global Digital Compact)", "Internasional"),
+    "ISO_IEC_42001_AI_Management_System": ("ISO/IEC 42001 (AI Management System)", "Internasional"),
+    "ASEAN_Guide_AI_Governance_Ethics_2024": ("ASEAN Guide on AI Governance & Ethics", "Internasional"),
+    "G7_Hiroshima_Code_of_Conduct_for_AI": ("G7 Hiroshima Code of Conduct", "Internasional"),
+    "WHO_Ethics_and_Governance_of_AI_for_Health": ("WHO Ethics & Governance of AI for Health", "Internasional"),
+}
+
+
+def load_citation_authority():
+    """Read the instrument-level citation graph (data/network/citations.json) and
+    return per-document authority (in-degree = how often an instrument is CITED
+    within the corpus) across BOTH jurisdictions for the cross-jurisdiction view.
+
+    This is the PRIMARY, defensible authority layer: explicit instrument-to-instrument
+    cross-references, independent of any embedding model. It is computed directly from
+    citations.json — no SBERT, no network model — so the script still runs from the
+    already-built graph alone.
+    """
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        '..', '..', 'data', 'network', 'citations.json')
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            cit = json.load(f)
+    except Exception as e:
+        print(f"(citations.json unavailable: {e})")
+        return None
+
+    rows = []
+    for c in cit.get('coverage', []):
+        doc = c.get('doc')
+        label, juris = CROSS_LABELS.get(doc, (doc, ""))
+        rows.append({
+            'doc': doc,
+            'label': label,
+            'juris': juris,
+            'in': c.get('in', 0),     # authority = times cited within corpus
+            'out': c.get('out', 0),   # references this doc makes
+            'role': c.get('role', ''),
+        })
+    rows.sort(key=lambda r: r['in'], reverse=True)
+    return {
+        'rows': rows,
+        'n_docs': cit.get('n_docs'),
+        'n_isolated': cit.get('n_isolated'),
+        'edges': len(cit.get('edges', [])),
+    }
+
 
 def analyze_cross_only():
     G = nx.Graph()
@@ -82,16 +148,63 @@ def analyze_cross_only():
     report = []
     report.append("# Analisis Lintas Yurisdiksi (Cross-Jurisdiction)\n")
     report.append(
-        "Laporan ini mengukur koneksi semantik antara regulasi internasional dan nasional "
-        "menggunakan multilingual sentence embeddings. Setiap koneksi diklasifikasikan ke dalam "
-        "tiga tier berdasarkan skor similarity.\n"
+        "Laporan ini bekerja pada dua lapisan. **Lapisan otoritas utama (§0)** adalah "
+        "*sitasi instrumen-ke-instrumen* (cross-reference eksplisit) yang dibaca dari "
+        "`data/network/citations.json` — metrik legal yang dapat dipertanggungjawabkan "
+        "dan tidak bergantung pada embedding. **Lapisan sekunder (§1 dst.)** mengukur "
+        "koneksi *kemiripan tekstual* SBERT antara regulasi internasional dan nasional "
+        "(tier similarity); lapisan ini bersifat **eksploratif** untuk memetakan tumpang-"
+        "tindih semantik, BUKAN otoritas.\n"
     )
+
+    # === 0. CITATION AUTHORITY (PRIMARY LAYER) — prepended ===
+    # Cross-jurisdiction view: authority across BOTH jurisdictions by in-degree.
+    auth = load_citation_authority()
+    if auth:
+        report.append("## 0. Otoritas Sitasi Lintas Yurisdiksi — Lapisan Otoritas Utama (PRIMER)")
+        report.append(
+            "*Otoritas = **in-degree**: seberapa sering sebuah instrumen DIKUTIP "
+            "(cross-reference eksplisit) oleh instrumen lain dalam korpus 17 dokumen "
+            f"(**{auth['edges']} edge sitasi**, **{auth['n_docs']} dokumen**, "
+            f"**{auth['n_isolated']} terisolasi-by-citation**). Lapisan ini berbasis "
+            "instrumen, dihitung langsung dari `citations.json`, dan TIDAK bergantung "
+            "pada embedding — inilah ukuran otoritas yang dipakai untuk interpretasi.*\n"
+        )
+        report.append("| Peringkat | Instrumen | Yurisdiksi | Dikutip (in-degree) | Peran sitasi |")
+        report.append("| --- | --- | --- | --- | --- |")
+        rank = 0
+        for r in auth['rows']:
+            if r['in'] <= 0:
+                continue
+            rank += 1
+            report.append(f"| {rank} | {r['label']} | {r['juris']} | **{r['in']}** | {r['role']} |")
+        report.append(
+            "\n**Pembacaan:** secara lintas yurisdiksi, hub otoritas didominasi instrumen "
+            "**nasional yang mengikat** — **UU ITE No.19/2016** (dikutip 39×) — disusul "
+            "jangkar internasional **Council of Europe Framework Convention (CETS 225)** "
+            "(23×), lalu **UNGA Res. 78/265** (7×), **PP PSTE No.71/2019** (6×), "
+            "**OECD AI Principles** (5×), **EU AI Act** (4×), dan **UNESCO Recommendation** (3×). "
+            "Otoritas sitasi ini independen dari tier kemiripan SBERT di §1-§3."
+        )
+        leaves = [f"{r['label']} ({r['juris']})" for r in auth['rows'] if r['in'] == 0]
+        if leaves:
+            report.append(
+                "\n**Instrumen sumber/leaf (mengutip pihak lain tetapi dikutip 0× dalam "
+                "korpus)** — *adopter soft-law hilir*, bukan otoritas: "
+                + ", ".join(leaves) + "."
+            )
+        report.append("")
 
     pseudo_rate = len(pseudo_adoption) / max(total, 1) * 100
     partial_rate = len(partial_adoption) / max(total, 1) * 100
     full_rate = len(full_adoption) / max(total, 1) * 100
 
-    report.append("## 1. Distribusi Tier Similarity")
+    report.append("## 1. Distribusi Tier Similarity (SBERT — eksploratif, BUKAN otoritas)")
+    report.append(
+        "*Tier berikut dihitung dari **kemiripan tekstual SBERT** antar-yurisdiksi, "
+        "bukan sitasi. Ini lensa sekunder/eksploratif untuk tumpang-tindih semantik; "
+        "lapisan otoritas adalah tabel sitasi pada §0.*\n"
+    )
     report.append("| Tier | Skor Similarity | Jumlah Koneksi | Persentase |")
     report.append("| --- | --- | --- | --- |")
     report.append(f"| **Full Adoption** | ≥30% | {len(full_adoption)} | {full_rate:.1f}% |")
@@ -99,7 +212,8 @@ def analyze_cross_only():
     report.append(f"| **Low Similarity** | <10% | {len(pseudo_adoption)} | {pseudo_rate:.1f}% |")
     report.append(f"| **Total** | — | {total} | 100% |\n")
 
-    report.append("## 2. Node Internasional dengan Koneksi Terbanyak ke Nasional")
+    report.append("## 2. Node Internasional dengan Koneksi Terbanyak ke Nasional "
+                  "(degree SBERT — eksploratif, BUKAN otoritas)")
     report.append("| Peringkat | Node | Instrumen | Jumlah Koneksi | Avg Similarity |")
     report.append("| --- | --- | --- | --- | --- |")
     for idx, (node_id, degree) in enumerate(sorted_intl[:10]):
@@ -110,7 +224,8 @@ def analyze_cross_only():
         avg_score = sum(node_scores) / max(len(node_scores), 1)
         report.append(f"| {idx+1} | {label} | {grp} | {degree} | {avg_score*100:.1f}% |")
 
-    report.append("\n## 3. Node Nasional dengan Koneksi Terbanyak ke Internasional")
+    report.append("\n## 3. Node Nasional dengan Koneksi Terbanyak ke Internasional "
+                  "(degree SBERT — eksploratif, BUKAN otoritas)")
     report.append("| Peringkat | Node | Instrumen | Jumlah Koneksi | Avg Similarity |")
     report.append("| --- | --- | --- | --- | --- |")
     for idx, (node_id, degree) in enumerate(sorted_natl[:10]):
