@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260615_1';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260615_2';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'section-natl': { icon: 'account_balance', title: 'Regulasi Nasional Indonesia', sub: 'UU PDP · UU ITE · PP PSTE · POJK · UU Perdagangan' },
         'section-cross': { icon: 'sync_alt', title: 'Intl vs Nasional · Cross-Jurisdiction', sub: 'Pemetaan Semantic Similarity lintas yurisdiksi · Full/Partial/Low' },
         'section-incident': { icon: 'gavel', title: 'Analisis Kasus Forensik', sub: 'Pemetaan 45 insiden siber riil ke regulasi · Structural Holes' },
-        'section-sector': { icon: 'category', title: 'Analisis Kesenjangan Regulasi Per Sektor', sub: 'Sektor Prioritas · Coverage Score · Pemetaan Regulasi' },
+        'section-sector': { icon: 'category', title: 'Analisis Kesenjangan Regulasi Per Sektor', sub: 'Coverage Empiris per Subjek Hukum · Pemetaan Regulasi (few-shot)' },
         'section-gap': { icon: 'insights', title: 'Konklusi: Gap Analysis', sub: 'Konsolidasi Temuan LNA · Coverage per Klaster · Connected Components' },
         'section-database': { icon: 'database_search', title: 'Katalog Data Forensik Insiden Siber', sub: 'Registry 45 kasus riil bersumber · Searchable · Filter per kategori' },
         'section-ai': { icon: 'smart_toy', title: 'AI Legal Assistant', sub: 'Argumentasi Toulmin + Panduan Praktisi · Gemini · Groq' },
@@ -752,256 +752,99 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeSelect) typeSelect.addEventListener('change', applyIncidentFilters);
 
     // ===================================================================
-    // SECTOR ANALYSIS (5 Sektor Prioritas)
+    // SECTOR ANALYSIS — EMPIRICAL coverage per sector (few-shot LLM judge)
+    // Driven by data/network/sector_coverage.json (built by sector_coverage.py).
+    // Replaces the former hand-set "Coverage Score" per sector, which was an
+    // editorial number that did not even match the provisions it displayed.
+    // Coverage = % of that sector's real incidents with >=1 applicable warrant,
+    // disaggregated by legal subject. Judge validated at F1=0.83 on held-out
+    // human gold (REVIEWER_RESPONSE §3.2).
     // ===================================================================
-    const SECTOR_DATA_ID = [
-        {
-            key: 'fintech',
-            icon: '🏦',
-            iconBg: 'linear-gradient(135deg, #1d4ed8, #2563eb)',
-            title: 'Keuangan & Fintech AI',
-            subtitle: 'Credit Scoring · Fraud Detection · Robo-Advisor',
-            coverageScore: 38,
-            coverageColor: '#f59e0b',
-            pasals: [
-                { status: 'partial', name: 'UU PDP Ps. 16-20', desc: 'Prinsip pemrosesan data, dasar hukum — belum mengatur keputusan otomatis AI.' },
-                { status: 'partial', name: 'POJK 11/2022 Mnj. Risiko TI', desc: 'Manajemen risiko TI Perbankan — tidak spesifik mengatur algoritma AI prediktif.' },
-                { status: 'gap', name: 'Sandbox AI Keuangan', desc: 'BELUM ADA: Regulasi sandbox untuk uji coba AI di sektor keuangan.' },
-                { status: 'gap', name: 'Kewajiban Audit Bias', desc: 'BELUM ADA: Kewajiban audit bias algoritmik untuk credit scoring.' },
-                { status: 'covered', name: 'POJK 77/2016 Fintech', desc: 'Penyelenggaraan layanan pinjam meminjam berbasis teknologi.' },
-                { status: 'gap', name: 'Human Oversight AI', desc: 'BELUM ADA: Kewajiban pengawasan manusia dalam keputusan kredit otomatis.' },
-            ],
-            recom: 'Studi merekomendasikan: regulasi berbasis sandbox, kewajiban audit bias algoritma credit scoring, dan mekanisme pengawasan manusia (human-in-the-loop) wajib untuk keputusan keuangan berrisiko tinggi.',
-            studyRef: 'OECD AI Principle 1.4 · EU AI Act Art. 9 (High-Risk AI Systems)'
-        },
-        {
-            key: 'facial',
-            icon: '👁️',
-            iconBg: 'linear-gradient(135deg, #7c3aed, #a855f7)',
-            title: 'Facial Recognition & Biometrik',
-            subtitle: 'eKYC · Pengawasan Publik · Akses Sistem',
-            coverageScore: 22,
-            coverageColor: '#f43f5e',
-            pasals: [
-                { status: 'partial', name: 'UU PDP Ps. 26 (Data Biometrik)', desc: 'Mengatur data biometrik sebagai data sensitif — tidak ada ketentuan teknis FR.' },
-                { status: 'partial', name: 'PP PSTE Ps. 28', desc: 'Keamanan sistem elektronik — tidak menyebut facial recognition secara eksplisit.' },
-                { status: 'gap', name: 'Izin Khusus Penggunaan FR', desc: 'BELUM ADA: Regulasi yang mensyaratkan izin tertulis sebelum menggunakan FR di ruang publik.' },
-                { status: 'gap', name: 'Standar Akurasi & Bias FR', desc: 'BELUM ADA: Standar teknis akurasi pengenalan wajah dan larangan bias demografis.' },
-                { status: 'gap', name: 'Hak Menolak FR', desc: 'BELUM ADA: Hak eksplisit warga untuk menolak pengenalan wajah.' },
-            ],
-            recom: 'Studi merekomendasikan: regulasi khusus facial recognition, mekanisme pengawasan mandiri, larangan penggunaan FR untuk profiling massal oleh sektor swasta tanpa izin eksplisit.',
-            studyRef: 'EU AI Act Art. 5(1)(d) (Prohibited FR in Public) · UNESCO Rec. Value 10 (Privacy)'
-        },
-        {
-            key: 'ecommerce',
-            icon: '🛒',
-            iconBg: 'linear-gradient(135deg, #0369a1, #0ea5e9)',
-            title: 'E-Commerce & Perdagangan Digital',
-            subtitle: 'Algoritma Rekomendasi · Ranking · Personalisasi Harga',
-            coverageScore: 29,
-            coverageColor: '#f59e0b',
-            pasals: [
-                { status: 'covered', name: 'UU Perdagangan Ps. 65', desc: 'Informasi produk dalam perdagangan elektronik.' },
-                { status: 'partial', name: 'UU PK Ps. 7 (Hak Konsumen)', desc: 'Hak atas informasi yang benar — tidak eksplisit mengatur transparansi algoritma.' },
-                { status: 'partial', name: 'PP PSTE Ps. 25', desc: 'Konten sistem elektronik — tidak mengatur algoritma ranking produk.' },
-                { status: 'gap', name: 'Larangan Self-Preferencing', desc: 'BELUM ADA: Larangan platform lebih mengutamakan produk sendiri dalam algoritma.' },
-                { status: 'gap', name: 'Transparansi Algoritma Ranking', desc: 'BELUM ADA: Kewajiban mengungkap faktor penentu ranking produk kepada pelaku usaha.' },
-                { status: 'gap', name: 'Personalisasi Harga AI', desc: 'BELUM ADA: Larangan diskriminasi harga berbasis profiling AI.' },
-            ],
-            recom: 'Studi merekomendasikan: kewajiban transparansi faktor ranking, larangan self-preferencing, dan mekanisme keberatan pedagang terhadap keputusan algoritma.',
-            studyRef: 'EU Digital Markets Act Art. 6 · OECD AI Rec. 1.3 (Fairness & Non-Discrimination)'
-        },
-        {
-            key: 'content',
-            icon: '🎭',
-            iconBg: 'linear-gradient(135deg, #be185d, #ec4899)',
-            title: 'AI-Generated Content & Media',
-            subtitle: 'Deepfake · Voice Cloning · Synthetic Media',
-            coverageScore: 35,
-            coverageColor: '#f59e0b',
-            pasals: [
-                { status: 'partial', name: 'UU ITE Ps. 27A (Konten Kesusilaan)', desc: 'Melarang konten asusila — tidak ada ketentuan khusus konten sintetis AI.' },
-                { status: 'partial', name: 'UU ITE Ps. 28 (Informasi Bohong)', desc: 'Melarang hoaks — sulit dibuktikan untuk deepfake tanpa watermark mandatori.' },
-                { status: 'partial', name: 'UU Hak Cipta Ps. 40', desc: 'Karya cipta — belum mengatur kepemilikan konten yang dihasilkan AI.' },
-                { status: 'gap', name: 'Label Wajib Konten AI', desc: 'BELUM ADA: Kewajiban watermark/label visible pada setiap konten yang dihasilkan AI.' },
-                { status: 'gap', name: 'Akuntabilitas Platform', desc: 'BELUM ADA: Tanggung jawab platform AI atas konten berbahaya yang dihasilkan.' },
-                { status: 'gap', name: 'Mekanisme Pengaduan Korban Deepfake', desc: 'BELUM ADA: Prosedur pengaduan cepat dan take-down wajib untuk konten deepfake non-konsensual.' },
-            ],
-            recom: 'Studi merekomendasikan: kewajiban watermarking konten AI, akuntabilitas penyedia model, dan mekanisme pengaduan serta take-down yang cepat bagi korban deepfake.',
-            studyRef: 'EU AI Act Art. 50 (Transparency for GPAI) · UNESCO Rec. Value 9 (Freedom of Expression)'
-        },
-        {
-            key: 'judicial',
-            icon: '⚖️',
-            iconBg: 'linear-gradient(135deg, #065f46, #10b981)',
-            title: 'AI di Peradilan & Hukum',
-            subtitle: 'Sistem Prediksi Vonis · RisikoPenilaian Tersangka · Legal Research AI',
-            coverageScore: 18,
-            coverageColor: '#f43f5e',
-            pasals: [
-                { status: 'covered', name: 'UU Kekuasaan Kehakiman Ps. 1', desc: 'Hakim sebagai pemegang kekuasaan yudisial — melarang substitusi hakim.' },
-                { status: 'partial', name: 'KUHAP Ps. 183 (Pembuktian)', desc: 'Standar pembuktian — bukti AI belum diatur validitasnya secara eksplisit.' },
-                { status: 'gap', name: 'Batas Peran AI di Pengadilan', desc: 'BELUM ADA: Regulasi yang menetapkan AI hanya sebagai "alat bantu" hakim.' },
-                { status: 'gap', name: 'Transparansi Algoritma Penilaian', desc: 'BELUM ADA: Hak terdakwa mengetahui bagaimana AI menilai risiko.' },
-                { status: 'gap', name: 'Standar Validasi Model AI Peradilan', desc: 'BELUM ADA: Lembaga yang berwenang memvalidasi AI yang digunakan di peradilan.' },
-            ],
-            recom: 'Studi merekomendasikan: AI di peradilan harus dibatasi sebagai alat bantu (non-determinatif), hakim tetap harus memiliki reasoning independen, dan setiap AI peradilan wajib diaudit secara berkala.',
-            studyRef: 'CETS225 Art. 17 (Judicial Review of AI) · EU AI Act Art. 6(2) High-Risk AI List'
-        }
-    ];
-    const SECTOR_DATA_EN = [
-        {
-            key: 'fintech',
-            icon: '🏦',
-            iconBg: 'linear-gradient(135deg, #1d4ed8, #2563eb)',
-            title: 'Finance & Fintech AI',
-            subtitle: 'Credit Scoring · Fraud Detection · Robo-Advisor',
-            coverageScore: 38,
-            coverageColor: '#f59e0b',
-            pasals: [
-                { status: 'partial', name: 'UU PDP Ps. 16-20', desc: 'Data processing principles, legal basis — has not regulated automated AI decisions.' },
-                { status: 'partial', name: 'POJK 11/2022 Mnj. Risiko TI', desc: 'Banking IT risk management — does not specifically regulate predictive AI algorithms.' },
-                { status: 'gap', name: 'Financial AI Sandbox', desc: 'NOT YET EXISTS: Sandbox regulation for AI trials in the financial sector.' },
-                { status: 'gap', name: 'Bias Audit Obligation', desc: 'NOT YET EXISTS: Obligation for algorithmic bias audit for credit scoring.' },
-                { status: 'covered', name: 'POJK 77/2016 Fintech', desc: 'Organizing technology-based lending and borrowing services.' },
-                { status: 'gap', name: 'Human Oversight AI', desc: 'NOT YET EXISTS: Obligation for human oversight in automated credit decisions.' },
-            ],
-            recom: 'Studies recommend: sandbox-based regulation, obligation to audit algorithms for credit scoring bias, and mandatory human-in-the-loop oversight mechanisms for high-risk financial decisions.',
-            studyRef: 'OECD AI Principle 1.4 · EU AI Act Art. 9 (High-Risk AI Systems)'
-        },
-        {
-            key: 'facial',
-            icon: '👁️',
-            iconBg: 'linear-gradient(135deg, #7c3aed, #a855f7)',
-            title: 'Facial Recognition & Biometrics',
-            subtitle: 'eKYC · Public Surveillance · System Access',
-            coverageScore: 22,
-            coverageColor: '#f43f5e',
-            pasals: [
-                { status: 'partial', name: 'UU PDP Ps. 26 (Data Biometrik)', desc: 'Regulates biometric data as sensitive data — no technical provisions for FR.' },
-                { status: 'partial', name: 'PP PSTE Ps. 28', desc: 'Security of electronic systems — does not explicitly mention facial recognition.' },
-                { status: 'gap', name: 'Special Permit for FR Use', desc: 'NOT YET EXISTS: Regulation requiring written permission before using FR in public spaces.' },
-                { status: 'gap', name: 'FR Accuracy & Bias Standards', desc: 'NOT YET EXISTS: Technical standards for facial recognition accuracy and prohibition of demographic bias.' },
-                { status: 'gap', name: 'Right to Refuse FR', desc: 'NOT YET EXISTS: Explicit right of citizens to refuse facial recognition.' },
-            ],
-            recom: 'Studies recommend: specific regulation for facial recognition, independent oversight mechanisms, and prohibition of FR use for mass profiling by the private sector without explicit permission.',
-            studyRef: 'EU AI Act Art. 5(1)(d) (Prohibited FR in Public) · UNESCO Rec. Value 10 (Privacy)'
-        },
-        {
-            key: 'ecommerce',
-            icon: '🛒',
-            iconBg: 'linear-gradient(135deg, #0369a1, #0ea5e9)',
-            title: 'E-Commerce & Digital Trade',
-            subtitle: 'Recommendation Algorithms · Ranking · Price Personalization',
-            coverageScore: 29,
-            coverageColor: '#f59e0b',
-            pasals: [
-                { status: 'covered', name: 'UU Perdagangan Ps. 65', desc: 'Product information in electronic trading.' },
-                { status: 'partial', name: 'UU PK Ps. 7 (Hak Konsumen)', desc: 'Right to correct information — does not explicitly regulate algorithm transparency.' },
-                { status: 'partial', name: 'PP PSTE Ps. 25', desc: 'Electronic system content — does not regulate product ranking algorithms.' },
-                { status: 'gap', name: 'Prohibition of Self-Preferencing', desc: 'NOT YET EXISTS: Platform prohibition from prioritizing its own products in algorithms.' },
-                { status: 'gap', name: 'Ranking Algorithm Transparency', desc: 'NOT YET EXISTS: Obligation to disclose factors determining product ranking to businesses.' },
-                { status: 'gap', name: 'AI Price Personalization', desc: 'NOT YET EXISTS: Prohibition of price discrimination based on AI profiling.' },
-            ],
-            recom: 'Studies recommend: transparency obligation for ranking factors, prohibition of self-preferencing, and merchant objection mechanisms against algorithmic decisions.',
-            studyRef: 'EU Digital Markets Act Art. 6 · OECD AI Rec. 1.3 (Fairness & Non-Discrimination)'
-        },
-        {
-            key: 'content',
-            icon: '🎭',
-            iconBg: 'linear-gradient(135deg, #be185d, #ec4899)',
-            title: 'AI-Generated Content & Media',
-            subtitle: 'Deepfake · Voice Cloning · Synthetic Media',
-            coverageScore: 35,
-            coverageColor: '#f59e0b',
-            pasals: [
-                { status: 'partial', name: 'UU ITE Ps. 27A (Konten Kesusilaan)', desc: 'Prohibits obscene content — no specific provisions for AI synthetic content.' },
-                { status: 'partial', name: 'UU ITE Ps. 28 (Informasi Bohong)', desc: 'Prohibits hoaxes — difficult to prove for deepfakes without a mandatory watermark.' },
-                { status: 'partial', name: 'UU Hak Cipta Ps. 40', desc: 'Copyright — has not regulated ownership of AI-generated content.' },
-                { status: 'gap', name: 'Mandatory AI Content Label', desc: 'NOT YET EXISTS: Obligation for visible watermark/label on any AI-generated content.' },
-                { status: 'gap', name: 'Platform Accountability', desc: 'NOT YET EXISTS: AI platform responsibility for generated harmful content.' },
-                { status: 'gap', name: 'Deepfake Victim Grievance Mechanism', desc: 'NOT YET EXISTS: Fast reporting and mandatory take-down procedures for non-consensual deepfake content.' },
-            ],
-            recom: 'Studies recommend: AI content watermarking obligation, model provider accountability, and fast grievance/take-down mechanisms for deepfake victims.',
-            studyRef: 'EU AI Act Art. 50 (Transparency for GPAI) · UNESCO Rec. Value 9 (Freedom of Expression)'
-        },
-        {
-            key: 'judicial',
-            icon: '⚖️',
-            iconBg: 'linear-gradient(135deg, #065f46, #10b981)',
-            title: 'AI in Justice & Law',
-            subtitle: 'Verdict Prediction Systems · Suspect Risk Assessment · Legal Research AI',
-            coverageScore: 18,
-            coverageColor: '#f43f5e',
-            pasals: [
-                { status: 'covered', name: 'UU Kekuasaan Kehakiman Ps. 1', desc: 'Judges as holders of judicial power — prohibits judge substitution.' },
-                { status: 'partial', name: 'KUHAP Ps. 183 (Pembuktian)', desc: 'Proof standards — AI evidence validity has not been explicitly regulated.' },
-                { status: 'gap', name: "Limits of AI's Role in Courts", desc: 'NOT YET EXISTS: Regulation designating AI solely as an "assistant" to judges.' },
-                { status: 'gap', name: 'Assessment Algorithm Transparency', desc: "NOT YET EXISTS: Defendant's right to know how AI assesses their risk." },
-                { status: 'gap', name: 'Judicial AI Model Validation Standard', desc: 'NOT YET EXISTS: Authority responsible for validating AI used in the judicial system.' },
-            ],
-            recom: 'Studies recommend: AI in the judiciary must be limited as a tool (non-determinative), judges must retain independent reasoning, and judicial AI must be audited periodically.',
-            studyRef: 'CETS225 Art. 17 (Judicial Review of AI) · EU AI Act Art. 6(2) High-Risk AI List'
-        }
-    ];
 
-    function initSectorAnalysis() {
+    const _covColor = p => (p < 30 ? '#f43f5e' : p < 60 ? '#f59e0b' : '#34d399');
+    const _SECTOR_ICONBG = {
+        government: 'linear-gradient(135deg,#1d4ed8,#2563eb)',
+        finance: 'linear-gradient(135deg,#065f46,#10b981)',
+        ecommerce_telco: 'linear-gradient(135deg,#0369a1,#0ea5e9)',
+        health: 'linear-gradient(135deg,#be185d,#ec4899)',
+        ai_misuse: 'linear-gradient(135deg,#7c3aed,#a855f7)',
+        education: 'linear-gradient(135deg,#b45309,#f59e0b)',
+        judicial: 'linear-gradient(135deg,#475569,#64748b)',
+    };
+
+    async function initSectorAnalysis() {
         const container = document.getElementById('sector-grid-container');
         if (!container || container.dataset.rendered === 'true') return;
+        const isEn = (typeof window !== 'undefined' && window.currentLang === 'en');
+        const L = (id, en) => (isEn ? en : id);
+
+        if (!window.sectorCoverageData) {
+            try {
+                const res = await fetch(`./data/network/sector_coverage.json?v=${DATA_V}`);
+                window.sectorCoverageData = await res.json();
+            } catch (e) {
+                container.innerHTML = `<div class="muted" style="padding:16px;">${L('Data sektor gagal dimuat.', 'Failed to load sector data.')}</div>`;
+                return;
+            }
+        }
+        const data = window.sectorCoverageData;
         container.innerHTML = '';
         container.dataset.rendered = 'true';
+        const RL = data.role_label || {};
+        const SLBL = 'font-size:11px;font-weight:700;color:var(--text-muted,#94a3b8);margin:12px 0 4px;text-transform:uppercase;letter-spacing:.04em;';
 
-        const activeSectorData = (typeof window !== 'undefined' && window.currentLang === 'en') ? SECTOR_DATA_EN : SECTOR_DATA_ID;
-        activeSectorData.forEach(sector => {
-            const covered = sector.pasals.filter(p => p.status === 'covered').length;
-            const partial = sector.pasals.filter(p => p.status === 'partial').length;
-            const gap = sector.pasals.filter(p => p.status === 'gap').length;
+        data.sectors.forEach(s => {
+            const title = isEn ? s.title_en : s.title_id;
+            const cov = s.coverage_pct;
+            const covColor = _covColor(cov);
+            const borderColor = cov < 30 ? 'rgba(251,113,133,0.25)' : cov < 60 ? 'rgba(251,191,36,0.25)' : 'rgba(52,211,153,0.25)';
 
-            const pasalListHTML = sector.pasals.map(p => `
-                <div class="pasal-item">
-                    <div class="p-dot ${p.status}"></div>
-                    <div>
-                        <span class="p-name">${p.name}</span>
-                        <span class="p-desc">${p.desc}</span>
-                    </div>
-                </div>
-            `).join('');
+            const roleRows = Object.keys(RL).map(r => {
+                const pct = s.per_role[r] ? s.per_role[r].coverage_pct : 0;
+                const lbl = isEn ? RL[r].en : RL[r].id;
+                return `
+                    <div class="gauge-row">
+                        <span class="gauge-label" style="min-width:130px;">${lbl}</span>
+                        <div class="gauge-bar"><div class="gauge-fill" style="width:${pct}%;background:${_covColor(pct)};"></div></div>
+                        <span class="gauge-pct" style="color:${_covColor(pct)};">${pct}%</span>
+                    </div>`;
+            }).join('');
 
-            const borderColor = sector.coverageScore < 30
-                ? 'rgba(251,113,133,0.25)'
-                : sector.coverageScore < 60
-                    ? 'rgba(251,191,36,0.25)'
-                    : 'rgba(52,211,153,0.25)';
+            const warrantsHTML = (s.top_warrants && s.top_warrants.length)
+                ? s.top_warrants.map(w => `
+                    <div class="pasal-item">
+                        <div class="p-dot covered"></div>
+                        <div><span class="p-name">${w.label.replace(/_/g, ' ')}</span>
+                        <span class="p-desc">${L('dasar hukum di', 'cited in')} ${w.count} ${L('insiden', 'incident(s)')}</span></div>
+                    </div>`).join('')
+                : `<div class="pasal-item"><div class="p-dot gap"></div><div><span class="p-desc">${L('Tidak ada dasar hukum teridentifikasi.', 'No legal basis identified.')}</span></div></div>`;
+
+            const weakLbl = (RL[s.weakest_role] ? (isEn ? RL[s.weakest_role].en : RL[s.weakest_role].id) : s.weakest_role);
 
             container.innerHTML += `
                 <div class="sector-card" style="border-color:${borderColor};">
                     <div class="sc-header">
-                        <div class="sc-icon" style="background:${sector.iconBg};">${sector.icon}</div>
+                        <div class="sc-icon" style="background:${_SECTOR_ICONBG[s.key] || 'linear-gradient(135deg,#475569,#64748b)'};">${s.icon}</div>
                         <div>
-                            <div class="sc-title">${sector.title}</div>
-                            <div class="sc-sub">${sector.subtitle}</div>
+                            <div class="sc-title">${title}</div>
+                            <div class="sc-sub">${s.n_incidents} ${L('insiden riil · coverage empiris (few-shot)', 'real incidents · empirical coverage (few-shot)')}</div>
                         </div>
                     </div>
                     <div class="gauge-row">
-                        <span class="gauge-label">Coverage</span>
-                        <div class="gauge-bar">
-                            <div class="gauge-fill" style="width:${sector.coverageScore}%; background:${sector.coverageColor};"></div>
-                        </div>
-                        <span class="gauge-pct" style="color:${sector.coverageColor};">${sector.coverageScore}%</span>
+                        <span class="gauge-label" style="min-width:130px;">${L('Ada dasar hukum', 'Has any warrant')}</span>
+                        <div class="gauge-bar"><div class="gauge-fill" style="width:${cov}%;background:${covColor};"></div></div>
+                        <span class="gauge-pct" style="color:${covColor};">${cov}%</span>
                     </div>
                     <div class="sc-badge-row">
-                        <span class="badge covered">✓ ${covered} Covered</span>
-                        <span class="badge partial">⚠ ${partial} Parsial</span>
-                        <span class="badge gap">✕ ${gap} Gap</span>
+                        <span class="badge covered">✓ ${s.covered}/${s.n_incidents} ${L('terjangkau', 'covered')}</span>
+                        <span class="badge gap">✕ ${L('gap terbesar', 'widest gap')}: ${weakLbl} (${s.weakest_pct}%)</span>
                     </div>
-                    <div class="pasal-list">${pasalListHTML}</div>
-                    <div class="sc-recom">
-                        <strong>💡 Rekomendasi Studi Terdahulu</strong>
-                        ${sector.recom}
-                        <div class="sc-ref">📚 Ref: ${sector.studyRef}</div>
-                    </div>
-                </div>
-            `;
+                    ${s.n_incidents < 3 ? `<div style="font-size:11px;color:#f59e0b;margin-top:6px;">${L('⚠ Sampel kecil (n&lt;3) — angka indikatif, bukan estimasi populasi.', '⚠ Small sample (n&lt;3) — indicative, not a population estimate.')}</div>` : ''}
+                    <div style="${SLBL}">${L('Coverage per subjek hukum', 'Coverage per legal subject')}</div>
+                    ${roleRows}
+                    <div style="${SLBL}">${L('Pemetaan Regulasi (dasar hukum terbanyak)', 'Regulation Mapping (most-cited warrants)')}</div>
+                    <div class="pasal-list">${warrantsHTML}</div>
+                </div>`;
         });
         if (typeof applyTranslations === 'function') applyTranslations();
     }
@@ -2283,27 +2126,33 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
     function _toCSV(rows) { return rows.map(r => r.map(_csvCell).join(',')).join('\n'); }
     function _toast(msg, type) { if (typeof showToast === 'function') showToast(msg, type || 'success'); }
     function _getSectorData() {
-        const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
-        return (isEn && typeof SECTOR_DATA_EN !== 'undefined') ? SECTOR_DATA_EN : SECTOR_DATA_ID;
+        return (typeof window !== 'undefined' && window.sectorCoverageData) ? window.sectorCoverageData : null;
     }
 
-    // ── Sektoral: CSV / JSON / PNG ────────────────────────────────────
+    // ── Sektoral: CSV / JSON / PNG (empirical few-shot coverage) ───────
     window.exportSectorCSV = function () {
         const isEn = window.currentLang === 'en';
         const data = _getSectorData();
-        const rows = [[isEn ? 'Sector' : 'Sektor', isEn ? 'Focus' : 'Fokus', 'Coverage Score (%)',
-            isEn ? 'Provision Status' : 'Status Pasal', isEn ? 'Provision / Regulation' : 'Pasal / Regulasi',
-            isEn ? 'Description' : 'Deskripsi', isEn ? 'Recommendation' : 'Rekomendasi', isEn ? 'Study Reference' : 'Referensi Studi']];
-        data.forEach(s => {
-            const pasals = s.pasals && s.pasals.length ? s.pasals : [{ status: '', name: '', desc: '' }];
-            pasals.forEach(p => rows.push([s.title, s.subtitle, s.coverageScore, p.status, p.name, p.desc, s.recom, s.studyRef]));
+        if (!data || !data.sectors) { _toast(isEn ? 'Open the Sector tab first.' : 'Buka tab Sektor dulu untuk memuat data.', 'warning'); return; }
+        const rows = [[isEn ? 'Sector' : 'Sektor', isEn ? 'Incidents' : 'Insiden',
+            isEn ? 'Any-warrant coverage (%)' : 'Coverage ada-dasar-hukum (%)',
+            'Pelaku (%)', 'PSE (%)', 'Konsumen (%)', 'Regulator (%)',
+            isEn ? 'Widest gap' : 'Gap terbesar', isEn ? 'Top warrants (count)' : 'Dasar hukum terbanyak (jumlah)']];
+        data.sectors.forEach(s => {
+            const tw = (s.top_warrants || []).map(w => `${w.label} (${w.count})`).join(' | ');
+            rows.push([isEn ? s.title_en : s.title_id, s.n_incidents, s.coverage_pct,
+                s.per_role.pelaku.coverage_pct, s.per_role.pse.coverage_pct,
+                s.per_role.konsumen.coverage_pct, s.per_role.regulator.coverage_pct,
+                `${s.weakest_role} (${s.weakest_pct}%)`, tw]);
         });
-        _downloadBlob(_toCSV(rows), `Analisis_Kesenjangan_Sektoral_${isEn ? 'EN' : 'ID'}.csv`, 'text/csv;charset=utf-8;');
+        _downloadBlob(_toCSV(rows), `Coverage_Sektoral_Empiris_${isEn ? 'EN' : 'ID'}.csv`, 'text/csv;charset=utf-8;');
         _toast(isEn ? 'CSV downloaded.' : 'CSV berhasil diunduh.');
     };
     window.exportSectorJSON = function () {
         const isEn = window.currentLang === 'en';
-        _downloadBlob(JSON.stringify(_getSectorData(), null, 2), `Analisis_Kesenjangan_Sektoral_${isEn ? 'EN' : 'ID'}.json`, 'application/json');
+        const data = _getSectorData();
+        if (!data) { _toast(isEn ? 'Open the Sector tab first.' : 'Buka tab Sektor dulu untuk memuat data.', 'warning'); return; }
+        _downloadBlob(JSON.stringify(data, null, 2), `Coverage_Sektoral_Empiris_${isEn ? 'EN' : 'ID'}.json`, 'application/json');
         _toast(isEn ? 'JSON downloaded.' : 'JSON berhasil diunduh.');
     };
     window.exportSectorPNG = function () {

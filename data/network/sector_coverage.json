@@ -1,0 +1,450 @@
+{
+  "source": "llm_edge_confidence.json",
+  "fewshot": true,
+  "n_incidents": 45,
+  "sectors": [
+    {
+      "key": "ecommerce_telco",
+      "title_id": "E-Commerce & Telekomunikasi",
+      "title_en": "E-Commerce & Telecom",
+      "icon": "🛒",
+      "n_incidents": 11,
+      "coverage_pct": 72.7,
+      "covered": 8,
+      "per_role": {
+        "pelaku": {
+          "covered": 4,
+          "coverage_pct": 36.4
+        },
+        "pse": {
+          "covered": 7,
+          "coverage_pct": 63.6
+        },
+        "konsumen": {
+          "covered": 6,
+          "coverage_pct": 54.5
+        },
+        "regulator": {
+          "covered": 6,
+          "coverage_pct": 54.5
+        }
+      },
+      "weakest_role": "pelaku",
+      "weakest_pct": 36.4,
+      "top_warrants": [
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 46",
+          "count": 5
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 67",
+          "count": 3
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 35",
+          "count": 2
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 38",
+          "count": 1
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 36",
+          "count": 1
+        },
+        {
+          "label": "PP_PSTE_No71_2019 - Pasal 14",
+          "count": 1
+        }
+      ],
+      "incident_ids": [
+        "tokopedia-91m-2020",
+        "bukalapak-13m-2019",
+        "bhinneka-1-2m-2020",
+        "lazada-redmart-1-1m-2020",
+        "indihome-browsing-26m-2022",
+        "myindihome-35m-2023",
+        "pln-customer-data-leak-2022",
+        "mypertamina-44m-2022",
+        "jasamarga-jmto-breach-2022",
+        "kai-stormous-ransomware-2024",
+        "malindo-lionair-30m-2019"
+      ],
+      "uncovered_ids": [
+        "bukalapak-13m-2019",
+        "bhinneka-1-2m-2020",
+        "malindo-lionair-30m-2019"
+      ]
+    },
+    {
+      "key": "government",
+      "title_id": "Pemerintahan & Layanan Publik",
+      "title_en": "Government & Public Services",
+      "icon": "🏛️",
+      "n_incidents": 10,
+      "coverage_pct": 100.0,
+      "covered": 10,
+      "per_role": {
+        "pelaku": {
+          "covered": 4,
+          "coverage_pct": 40.0
+        },
+        "pse": {
+          "covered": 6,
+          "coverage_pct": 60.0
+        },
+        "konsumen": {
+          "covered": 4,
+          "coverage_pct": 40.0
+        },
+        "regulator": {
+          "covered": 6,
+          "coverage_pct": 60.0
+        }
+      },
+      "weakest_role": "pelaku",
+      "weakest_pct": 40.0,
+      "top_warrants": [
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 67",
+          "count": 4
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 46",
+          "count": 3
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 60",
+          "count": 3
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 35",
+          "count": 2
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 36",
+          "count": 1
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 39",
+          "count": 1
+        }
+      ],
+      "incident_ids": [
+        "pdns2-surabaya-ransomware-2024",
+        "bkn-asn-leak-topiax-2024",
+        "bkn-teacher-intrusion-2024",
+        "kpu-dpt-jimbo-2023",
+        "bjorka-sim-registration-1-3b-2022",
+        "immigration-passport-leak-2023",
+        "npwp-tax-bjorka-2024",
+        "bais-tni-intelligence-leak-2024",
+        "inafis-polri-fingerprint-leak-2024",
+        "pedulilindungi-jokowi-cert-2021"
+      ],
+      "uncovered_ids": []
+    },
+    {
+      "key": "finance",
+      "title_id": "Keuangan & Perbankan",
+      "title_en": "Finance & Banking",
+      "icon": "🏦",
+      "n_incidents": 9,
+      "coverage_pct": 100.0,
+      "covered": 9,
+      "per_role": {
+        "pelaku": {
+          "covered": 7,
+          "coverage_pct": 77.8
+        },
+        "pse": {
+          "covered": 6,
+          "coverage_pct": 66.7
+        },
+        "konsumen": {
+          "covered": 5,
+          "coverage_pct": 55.6
+        },
+        "regulator": {
+          "covered": 6,
+          "coverage_pct": 66.7
+        }
+      },
+      "weakest_role": "konsumen",
+      "weakest_pct": 55.6,
+      "top_warrants": [
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 46",
+          "count": 4
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 67",
+          "count": 3
+        },
+        {
+          "label": "UU_ITE_No1_2024 - Pasal 45B",
+          "count": 3
+        },
+        {
+          "label": "UU_ITE_No1_2024 - Pasal 45A",
+          "count": 3
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 35",
+          "count": 2
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 60",
+          "count": 2
+        }
+      ],
+      "incident_ids": [
+        "bsi-lockbit-ransomware-2023",
+        "bank-indonesia-conti-ransomware-2022",
+        "indodax-crypto-hack-2024",
+        "kreditplus-data-leak-2020",
+        "cermati-data-breach-2020",
+        "bri-life-data-leak-2021",
+        "adakami-pinjol-conduct-2023",
+        "bank-jatim-bifast-fraud-2024",
+        "bank-dki-bifast-breach-2025"
+      ],
+      "uncovered_ids": []
+    },
+    {
+      "key": "health",
+      "title_id": "Kesehatan",
+      "title_en": "Health",
+      "icon": "🏥",
+      "n_incidents": 6,
+      "coverage_pct": 83.3,
+      "covered": 5,
+      "per_role": {
+        "pelaku": {
+          "covered": 2,
+          "coverage_pct": 33.3
+        },
+        "pse": {
+          "covered": 4,
+          "coverage_pct": 66.7
+        },
+        "konsumen": {
+          "covered": 2,
+          "coverage_pct": 33.3
+        },
+        "regulator": {
+          "covered": 3,
+          "coverage_pct": 50.0
+        }
+      },
+      "weakest_role": "pelaku",
+      "weakest_pct": 33.3,
+      "top_warrants": [
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 46",
+          "count": 2
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 67",
+          "count": 2
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 55",
+          "count": 1
+        },
+        {
+          "label": "PP_PSTE_No71_2019 - Pasal 20",
+          "count": 1
+        },
+        {
+          "label": "PP_PSTE_No71_2019 - Pasal 71",
+          "count": 1
+        },
+        {
+          "label": "PP_PSTE_No71_2019 - Pasal 82",
+          "count": 1
+        }
+      ],
+      "incident_ids": [
+        "kemenkes-patient-records-2022",
+        "bpjs-kesehatan-279m-2021",
+        "ehac-covid-app-leak-2021",
+        "wannacry-hospitals-2017",
+        "pedulilindungi-id-gambling-hijack-2025",
+        "satusehat-kotim-breach-2025"
+      ],
+      "uncovered_ids": [
+        "satusehat-kotim-breach-2025"
+      ]
+    },
+    {
+      "key": "ai_misuse",
+      "title_id": "Penyalahgunaan AI (Deepfake/Disinformasi)",
+      "title_en": "AI Misuse (Deepfake/Disinformation)",
+      "icon": "🤖",
+      "n_incidents": 6,
+      "coverage_pct": 83.3,
+      "covered": 5,
+      "per_role": {
+        "pelaku": {
+          "covered": 2,
+          "coverage_pct": 33.3
+        },
+        "pse": {
+          "covered": 3,
+          "coverage_pct": 50.0
+        },
+        "konsumen": {
+          "covered": 0,
+          "coverage_pct": 0.0
+        },
+        "regulator": {
+          "covered": 4,
+          "coverage_pct": 66.7
+        }
+      },
+      "weakest_role": "konsumen",
+      "weakest_pct": 0.0,
+      "top_warrants": [
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 68",
+          "count": 2
+        },
+        {
+          "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 1",
+          "count": 2
+        },
+        {
+          "label": "UU_ITE_No1_2024 - Pasal 45A",
+          "count": 1
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 60",
+          "count": 1
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 66",
+          "count": 1
+        },
+        {
+          "label": "UU_ITE_No19_2016 - Pasal 45",
+          "count": 1
+        }
+      ],
+      "incident_ids": [
+        "prabowo-deepfake-aid-scam-2024",
+        "undip-deepfake-ncii-2025",
+        "suharto-deepfake-golkar-2024",
+        "election-candidate-deepfakes-2024",
+        "sri-mulyani-deepfake-2025",
+        "ojk-ai-voice-deepfake-fraud-2025"
+      ],
+      "uncovered_ids": [
+        "suharto-deepfake-golkar-2024"
+      ]
+    },
+    {
+      "key": "education",
+      "title_id": "Pendidikan",
+      "title_en": "Education",
+      "icon": "🎓",
+      "n_incidents": 2,
+      "coverage_pct": 50.0,
+      "covered": 1,
+      "per_role": {
+        "pelaku": {
+          "covered": 0,
+          "coverage_pct": 0.0
+        },
+        "pse": {
+          "covered": 1,
+          "coverage_pct": 50.0
+        },
+        "konsumen": {
+          "covered": 1,
+          "coverage_pct": 50.0
+        },
+        "regulator": {
+          "covered": 1,
+          "coverage_pct": 50.0
+        }
+      },
+      "weakest_role": "pelaku",
+      "weakest_pct": 0.0,
+      "top_warrants": [
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 46",
+          "count": 1
+        }
+      ],
+      "incident_ids": [
+        "kemendikbud-leak-claim-2025",
+        "ugm-ft-website-defacement-2022"
+      ],
+      "uncovered_ids": [
+        "ugm-ft-website-defacement-2022"
+      ]
+    },
+    {
+      "key": "judicial",
+      "title_id": "Peradilan & Penegakan Hukum",
+      "title_en": "Justice & Law Enforcement",
+      "icon": "⚖️",
+      "n_incidents": 1,
+      "coverage_pct": 100.0,
+      "covered": 1,
+      "per_role": {
+        "pelaku": {
+          "covered": 0,
+          "coverage_pct": 0.0
+        },
+        "pse": {
+          "covered": 0,
+          "coverage_pct": 0.0
+        },
+        "konsumen": {
+          "covered": 1,
+          "coverage_pct": 100.0
+        },
+        "regulator": {
+          "covered": 1,
+          "coverage_pct": 100.0
+        }
+      },
+      "weakest_role": "pelaku",
+      "weakest_pct": 0.0,
+      "top_warrants": [
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 60",
+          "count": 1
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 12",
+          "count": 1
+        }
+      ],
+      "incident_ids": [
+        "kejaksaan-agung-defacement-2025"
+      ],
+      "uncovered_ids": []
+    }
+  ],
+  "role_label": {
+    "pelaku": {
+      "id": "Pelaku (pidana)",
+      "en": "Perpetrator (criminal)"
+    },
+    "pse": {
+      "id": "Operator/PSE",
+      "en": "Operator/PSE"
+    },
+    "konsumen": {
+      "id": "Konsumen/korban",
+      "en": "Consumer/victim"
+    },
+    "regulator": {
+      "id": "Regulator/negara",
+      "en": "Regulator/state"
+    }
+  }
+}

@@ -225,6 +225,36 @@ column is kept only to show how the precision fix tightened the estimate.
 
 ---
 
+### 2.6 Sectoral coverage — now empirical (was hand-set)
+
+The dashboard's "Analisis Kesenjangan Regulasi Per Sektor" tab previously showed a
+hand-set **Coverage Score** per sector that (a) did not even match the provisions
+listed in its own card and (b) was unconnected to any data. It is now **computed**
+from the few-shot judge over the 45 real incidents grouped by their `sector` field
+(`sector_coverage.py` → `sector_coverage.json`): coverage = share of a sector's
+incidents with ≥1 applicable warrant, disaggregated by legal subject, plus the
+regulations actually cited as warrants. Sectors with n<3 are flagged as indicative.
+
+| Sector (n) | Any warrant | Pelaku | PSE | Konsumen | Regulator |
+|---|---|---|---|---|---|
+| E-Commerce & Telco (11) | 73% | 36% | 64% | 55% | 55% |
+| Government & Public (10) | 100% | 40% | 60% | 40% | 60% |
+| Finance & Banking (9) | 100% | 78% | 67% | 56% | 67% |
+| Health (6) | 83% | 33% | 67% | 33% | 50% |
+| AI Misuse / Deepfake (6) | 83% | 33% | 50% | **0%** | 67% |
+| Education (2)* | 50% | 0% | 50% | 50% | 50% |
+| Justice/Law Enf. (1)* | 100% | 0% | 0% | 100% | 100% |
+
+*small sample (n<3), indicative only.*
+
+**Headline finding (copy-paste):** even where *some* legal basis exists, the gaps
+are subject-specific. The starkest is **AI-misuse/deepfake incidents: 0% have a
+consumer-redress basis** for the victim, despite the perpetrator/operator being
+partly addressed — the AI-specific harm to individuals is the least-covered cell in
+the entire matrix. Perpetrator (criminal) coverage is also thin outside finance.
+
+---
+
 ## 3. Validation (reviewer: zero validation metrics)
 
 This was a genuine gap. It is now closed with a **human-coded ground truth** and a

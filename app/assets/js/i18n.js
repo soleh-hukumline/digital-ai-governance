@@ -93,6 +93,7 @@ const i18nDict = {
     'Pemetaan Semantic Similarity lintas yurisdiksi · Full/Partial/Low': 'Cross-jurisdiction Semantic Similarity mapping · Full/Partial/Low',
     'Pemetaan 45 insiden siber riil ke regulasi · Structural Holes': 'Mapping 45 real cyber incidents to regulations · Structural Holes',
     'Sektor Prioritas · Coverage Score · Pemetaan Regulasi': 'Priority Sectors · Coverage Score · Regulation Mapping',
+    'Coverage Empiris per Subjek Hukum · Pemetaan Regulasi (few-shot)': 'Empirical Coverage per Legal Subject · Regulation Mapping (few-shot)',
     'Konsolidasi Temuan LNA · Coverage per Klaster · Connected Components': 'Consolidated LNA Findings · Coverage per Cluster · Connected Components',
     'Registry 45 kasus riil bersumber · Searchable · Filter per kategori': 'Registry of 45 sourced real cases · Searchable · Filter by category',
     'Argumentasi Toulmin + Panduan Praktisi · Gemini · Groq': 'Toulmin Argumentation + Practitioner Guide · Gemini · Groq',
