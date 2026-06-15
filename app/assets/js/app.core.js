@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260615_15';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260615_16';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -425,6 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadAllNetworkGraphs() {
         if (isLoadingNetworkGraphs) return;
         isLoadingNetworkGraphs = true;
+        await _ensureUiText();   // so editable-narrative file overrides apply on first paint
         const analyzers = [
             { id: 'all', graph: 'legal_graph.json', report: 'laporan_hasil_lna.md' },
             { id: 'intl', graph: 'intl_graph.json', report: 'laporan_khusus_internasional.md' },
@@ -1721,6 +1722,92 @@ document.addEventListener('DOMContentLoaded', () => {
         return M;
     }
 
+    // ===================================================================
+    // EDITABLE NARRATIVE — ui_text_overrides (human-editable claims/captions)
+    // Resolution: localStorage(lna_ui_text_v1) > ui_text_overrides.json > default.
+    // "Edit Teks" toggle → click dashed text to edit; "Export Teks" → JSON to commit.
+    // ===================================================================
+    const _UI_TEXT_LS = 'lna_ui_text_v1';
+    let UI_TEXT_FILE = null;
+    const _UITEXT_DEF = {};
+    function _uiLocal() { try { return JSON.parse(localStorage.getItem(_UI_TEXT_LS) || '{}'); } catch (e) { return {}; } }
+    async function _ensureUiText() {
+        if (UI_TEXT_FILE) return UI_TEXT_FILE;
+        try { const r = await fetch(`./data/network/ui_text_overrides.json?v=${DATA_V}`); UI_TEXT_FILE = await r.json(); }
+        catch (e) { UI_TEXT_FILE = {}; }
+        return UI_TEXT_FILE;
+    }
+    function _uiText(id, def) {
+        const loc = _uiLocal();
+        if (id in loc) return loc[id];
+        if (UI_TEXT_FILE && id in UI_TEXT_FILE) return UI_TEXT_FILE[id];
+        return def;
+    }
+    // editable inline wrapper (HTML-capable); registers the default for reset
+    function _editText(id, def) {
+        _UITEXT_DEF[id] = def;
+        return `<span class="uitext" data-uitext-id="${id}">${_uiText(id, def)}</span>`;
+    }
+    function _setUiText(id, val) {
+        const loc = _uiLocal();
+        if (val == null || val === '') delete loc[id]; else loc[id] = val;
+        localStorage.setItem(_UI_TEXT_LS, JSON.stringify(loc));
+        const resolved = _uiText(id, _UITEXT_DEF[id] != null ? _UITEXT_DEF[id] : '');
+        document.querySelectorAll(`[data-uitext-id="${(window.CSS && CSS.escape) ? CSS.escape(id) : id}"]`).forEach(el => { el.innerHTML = resolved; });
+    }
+    // apply overrides to STATIC [data-uitext-id] nodes authored in index.html
+    function _applyStaticUiText() {
+        document.querySelectorAll('[data-uitext-id]').forEach(el => {
+            const id = el.getAttribute('data-uitext-id');
+            if (_UITEXT_DEF[id] == null) _UITEXT_DEF[id] = el.innerHTML;   // capture authored default
+            el.innerHTML = _uiText(id, _UITEXT_DEF[id]);
+        });
+    }
+    window.toggleTextEdit = function () {
+        const on = document.body.classList.toggle('uitext-editing');
+        const btn = document.getElementById('btn-edit-teks');
+        if (btn) btn.innerHTML = on
+            ? '<span class="material-symbols-rounded" style="font-size:16px;">check</span>'
+            : '<span class="material-symbols-rounded" style="font-size:16px;">edit_note</span>';
+        if (typeof _toast === 'function') _toast(on ? 'Mode Edit Teks: klik teks bergaris untuk mengubah klaim/narasi.' : 'Mode Edit Teks selesai.');
+    };
+    function _openTextEditor(id) {
+        const el = document.querySelector(`[data-uitext-id="${(window.CSS && CSS.escape) ? CSS.escape(id) : id}"]`);
+        if (!el) return;
+        let modal = document.getElementById('uitext-modal');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'uitext-modal';
+            modal.innerHTML = `<div class="uitext-modal-card">
+                <div style="font-weight:700;margin-bottom:6px;color:var(--text-1);">Edit teks <code id="uitext-modal-id" style="font-size:0.72rem;color:var(--text-3);"></code></div>
+                <textarea id="uitext-modal-ta" spellcheck="false" style="width:100%;min-height:150px;font-family:inherit;font-size:0.85rem;line-height:1.5;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--sunken);color:var(--text-1);box-sizing:border-box;"></textarea>
+                <div style="font-size:0.72rem;color:var(--text-4);margin:6px 0;">HTML sederhana (mis. &lt;b&gt;…&lt;/b&gt;) diperbolehkan. Kosongkan lalu Simpan untuk kembali ke teks asli. Simpan tersimpan di browser ini; klik "Export Teks" untuk file yang bisa di-commit.</div>
+                <div style="display:flex;gap:8px;justify-content:flex-end;">
+                    <button class="btn-secondary btn-sm" onclick="document.getElementById('uitext-modal').style.display='none'">Batal</button>
+                    <button class="btn-secondary btn-sm" id="uitext-modal-reset">↺ Teks asli</button>
+                    <button class="btn-secondary btn-sm" id="uitext-modal-save" style="background:var(--primary);color:#fff;border-color:var(--primary);">Simpan</button>
+                </div></div>`;
+            document.body.appendChild(modal);
+        }
+        modal.style.display = 'flex';
+        modal.querySelector('#uitext-modal-id').textContent = id;
+        const ta = modal.querySelector('#uitext-modal-ta');
+        ta.value = el.innerHTML.trim();
+        modal.querySelector('#uitext-modal-save').onclick = () => { _setUiText(id, ta.value.trim()); modal.style.display = 'none'; };
+        modal.querySelector('#uitext-modal-reset').onclick = () => { _setUiText(id, ''); modal.style.display = 'none'; };
+    }
+    document.addEventListener('click', function (ev) {
+        if (!document.body.classList.contains('uitext-editing')) return;
+        const t = ev.target.closest('.uitext');
+        if (t) { ev.preventDefault(); ev.stopPropagation(); _openTextEditor(t.getAttribute('data-uitext-id')); }
+    }, true);
+    window.exportUiText = function () {
+        const merged = Object.assign({}, UI_TEXT_FILE || {}, _uiLocal());
+        Object.keys(merged).forEach(k => { if (merged[k] == null || merged[k] === '') delete merged[k]; });
+        if (typeof _downloadBlob === 'function') _downloadBlob(JSON.stringify(merged, null, 2), 'ui_text_overrides.json', 'application/json');
+        if (typeof _toast === 'function') _toast(Object.keys(merged).length + ' teks diekspor — commit data/network/ui_text_overrides.json agar permanen.');
+    };
+
     async function renderCitationNetwork() {
         const box = document.getElementById('citation-network');
         if (!box) return;
@@ -1790,7 +1877,7 @@ document.addEventListener('DOMContentLoaded', () => {
             + `<thead><tr><th style="${th}">${isEn ? 'Document' : 'Dokumen'}</th><th style="${th};text-align:center;">${isEn ? 'Cites (out)' : 'Menyitir'}</th><th style="${th};text-align:center;">${isEn ? 'Cited (in)' : 'Disitir'}</th><th style="${th};text-align:center;">${isEn ? 'Role' : 'Peran'}</th></tr></thead>`
             + `<tbody>${rowsC}</tbody></table></div>`;
 
-        box.innerHTML = note + tableA + tableB + tableC;
+        box.innerHTML = _editText('caveat-citation-panel', note) + tableA + tableB + tableC;
     }
     window.renderCitationNetwork = renderCitationNetwork;
 
@@ -2842,9 +2929,9 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
               ${_exportBar('ranking-' + graphId, 'Ranking_SBERT_SemanticOverlap_' + graphId)}
               ${betNote}
               <div style="font-size:0.75rem; color:var(--text-4); margin-top:8px; line-height:1.55; border-top:1px dashed var(--border); padding-top:8px;">
-                ${isEn
+                ${_editText('caveat-ranking-sbert', isEn
                     ? '⚠ <b>What this means:</b> “Semantic centrality” here = how many <i>other provisions are textually similar</i> (SBERT cosine ≥ threshold) to this one — a <b>semantic-overlap</b> measure, <b>not</b> legal authority or cross-citation. Soft-law guidance ranks high because it has many long, generic sections (more chances to match), NOT because it is authoritative. <b>For authority, see the “Citation Cross-Reference Network” panel below</b> — there the central nodes are UU ITE 19/2016 (cited 39×) and the CoE Framework Convention (23×), not this soft-law. Treat this table as an exploratory map; click a node to read the actual text.'
-                    : '⚠ <b>Arti angka ini:</b> “Sentralitas semantik” di sini = berapa <i>pasal lain yang mirip secara teks</i> (SBERT cosine ≥ ambang) dengan pasal ini — ukuran <b>tumpang-tindih semantik</b>, <b>bukan</b> otoritas hukum atau sitasi. Soft-law muncul di puncak karena punya banyak bagian panjang & generik (lebih banyak peluang mirip), <b>bukan</b> karena otoritatif. <b>Untuk OTORITAS, lihat panel “Jaringan Rujukan Silang” di bawah</b> — di sana yang sentral adalah UU ITE 19/2016 (disitir 39×) & CoE Framework Convention (23×), bukan soft-law ini. Anggap tabel ini peta eksploratif; klik node untuk baca teks asli.'}
+                    : '⚠ <b>Arti angka ini:</b> “Sentralitas semantik” di sini = berapa <i>pasal lain yang mirip secara teks</i> (SBERT cosine ≥ ambang) dengan pasal ini — ukuran <b>tumpang-tindih semantik</b>, <b>bukan</b> otoritas hukum atau sitasi. Soft-law muncul di puncak karena punya banyak bagian panjang & generik (lebih banyak peluang mirip), <b>bukan</b> karena otoritatif. <b>Untuk OTORITAS, lihat panel “Jaringan Rujukan Silang” di bawah</b> — di sana yang sentral adalah UU ITE 19/2016 (disitir 39×) & CoE Framework Convention (23×), bukan soft-law ini. Anggap tabel ini peta eksploratif; klik node untuk baca teks asli.')}
               </div>
             </div>`;
 
@@ -3424,6 +3511,7 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
     // 2. baru render graph (canvas punya ukuran nyata)
     // ===================================================================
     navigateTo('section-all');       // ← buka section SEBELUM render graph
+    _ensureUiText().then(_applyStaticUiText);   // editable-narrative overrides (subtitles etc.)
     loadAllNetworkGraphs();          // ← sekarang canvas sudah berukuran
     window.reloadIncidentRegistry = loadIncidentRegistry;
     window.reRenderSectorData = function() {
