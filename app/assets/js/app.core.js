@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'section-intl': { icon: 'public', title: 'Regulasi Internasional', sub: 'EU AI Act · OECD AI Principles · CETS225 · Thematic Cluster' },
         'section-natl': { icon: 'account_balance', title: 'Regulasi Nasional Indonesia', sub: 'UU PDP · UU ITE · PP PSTE · POJK · UU Perdagangan' },
         'section-cross': { icon: 'sync_alt', title: 'Intl vs Nasional · Cross-Jurisdiction', sub: 'Pemetaan Semantic Similarity lintas yurisdiksi · Full/Partial/Low' },
-        'section-incident': { icon: 'gavel', title: 'Analisis Kasus Forensik', sub: 'Pemetaan 45 insiden ke regulasi · LLM-judge tervalidasi (P≥95) · Structural Holes' },
+        'section-incident': { icon: 'gavel', title: 'Analisis Kasus Forensik', sub: 'Pemetaan 45 insiden ke regulasi · LLM-judge tervalidasi + tinjauan manusia · Asimetri Subjek & Gap AI-spesifik' },
         'section-sector': { icon: 'category', title: 'Analisis Kesenjangan Regulasi Per Sektor', sub: 'Coverage Empiris per Subjek Hukum · Pemetaan Regulasi (few-shot)' },
         'section-gap': { icon: 'insights', title: 'Konklusi: Gap Analysis', sub: 'Konsolidasi Temuan LNA · Coverage per Klaster · Connected Components' },
         'section-database': { icon: 'database_search', title: 'Katalog Data Forensik Insiden Siber', sub: 'Registry 45 kasus riil bersumber · Searchable · Filter per kategori' },
@@ -1230,7 +1230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const isEn = window.currentLang === 'en';
         let h = `<div style="width:100%;font-size:10px;color:var(--text-4);font-weight:700;text-transform:uppercase;letter-spacing:.5px;">${isEn ? 'Edge = role' : 'Warna garis = peran'}:</div>`;
         for (const k in ROLE_META) h += `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);"><span style="width:16px;height:2px;background:${ROLE_META[k].c};display:inline-block;margin-right:5px;"></span>${isEn ? ROLE_META[k].en : ROLE_META[k].id}</span>`;
-        h += `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);"><span style="width:9px;height:9px;border:1.5px dashed #ef4444;border-radius:50%;display:inline-block;margin-right:5px;"></span>${isEn ? 'Structural hole' : 'Structural hole (tanpa warrant)'}</span>`;
+        h += `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);"><span style="width:9px;height:9px;border:1.5px dashed #ef4444;border-radius:50%;display:inline-block;margin-right:5px;"></span>${isEn ? 'AI-specific gap (no validated warrant)' : 'Gap AI-spesifik (tanpa warrant tervalidasi)'}</span>`;
         h += `<span style="width:100%;"></span>`;
         h += `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);"><span style="width:9px;height:9px;background:var(--text-3);border-radius:50%;display:inline-block;margin-right:5px;"></span>${isEn ? 'Binding law / incident' : 'Hukum mengikat / insiden'}</span>`;
         h += `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);"><span style="width:9px;height:9px;background:var(--text-3);display:inline-block;margin-right:5px;transform:rotate(45deg);"></span>${isEn ? 'Soft law' : 'Soft law (tidak mengikat)'}</span>`;
@@ -1245,9 +1245,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const rows = [
             [isEn ? 'Incidents' : 'Total Insiden', d.n_incidents, isEn ? 'Real sourced cases' : 'Kasus riil bersumber'],
             [isEn ? 'Regulations cited' : 'Regulasi terpakai', d.n_regulations, isEn ? 'Provisions acting as warrants' : 'Pasal yang menjadi dasar hukum'],
-            [isEn ? 'Warrants (edges)' : 'Warrant (edges)', d.n_edges, isEn ? 'High-confidence (P≥95) incident–law links' : 'Tautan insiden–hukum confidence tinggi (P≥95)'],
+            [isEn ? 'Warrants (edges)' : 'Warrant (edges)', d.n_edges, isEn ? 'Validated + human-reviewed incident–law links' : 'Tautan insiden–hukum tervalidasi + ditinjau manusia'],
             [isEn ? 'Incident coverage' : 'Coverage insiden', cov.toFixed(1) + '%', `${d.n_incidents - d.structural_holes}/${d.n_incidents} ${isEn ? 'with a warrant' : 'punya dasar hukum'}`],
-            [isEn ? 'Structural holes' : 'Structural holes', d.structural_holes, isEn ? 'No high-confidence warrant' : 'Tanpa dasar hukum confidence tinggi'],
+            [isEn ? 'AI-specific gaps' : 'Gap AI-spesifik', d.structural_holes, isEn ? 'No validated AI-specific warrant (general statutes may apply by analogy)' : 'Tanpa warrant AI-spesifik tervalidasi (statuta umum bisa berlaku analogis)'],
         ];
         tb.innerHTML = rows.map(r => `<tr><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-2);">${r[0]}</td><td style="padding:8px 12px;border-bottom:1px solid var(--border);text-align:right;font-weight:700;color:var(--text-1);">${r[1]}</td><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-3);">${r[2]}</td></tr>`).join('');
         _attachMetricsExport('incident', 'Metrik_Insiden');
@@ -2137,8 +2137,8 @@ Jelaskan secara singkat posisi legal sistem AI yang sedang dibangun: apakah aman
 Daftar 3-5 tindakan konkret dari sisi manajerial/hukum dan arsitektur teknis. 
 **PENTING: Anda WAJIB menyebutkan nama regulasi beserta nomor pasalnya secara eksplisit (sesuai Peta Regulasi LNA di atas) pada setiap poin sebagai landasan argumen Anda.**
 
-## ⚠️ Area Kelabu (Gap Hukum yang Perlu Diantisipasi)
-Identifikasi 2-3 area di mana regulasi spesifik belum ada (kekosongan hukum), dan bagaimana tim legal & developer harus merancang mitigasi.
+## ⚠️ Area Kelabu (Gap AI-spesifik yang Perlu Diantisipasi)
+Identifikasi 2-3 area di mana regulasi AI-spesifik belum ada (gap AI-spesifik — catat bila statuta umum spt UU ITE/UU PDP masih berlaku analogis, hindari klaim "vakum absolut"), dan bagaimana tim legal & developer harus merancang mitigasi.
 
 ## 🛡️ Praktik Terbaik Internasional yang Direkomendasikan
 Berdasarkan OECD AI Principles, EU AI Act, dan CETS225, rekomendasikan 3 praktik teknis dan tata kelola yang sebaiknya diadopsi walaupun belum diwajibkan oleh hukum positif Indonesia.
@@ -2345,7 +2345,7 @@ Daftar dokumen hukum (mis. klausul consent, DPIA) dan artefak teknis (mis. audit
         </div>
         <div><h5 style="color:#10b981; font-family:Outfit; margin-bottom:6px; font-size:0.95rem;">⬤ <strong>Warrant</strong> — ${warr.length} ${isEn ? 'legal basis (validated judge + your review)' : 'dasar hukum (judge tervalidasi + tinjauan Anda)'}</h5>`;
         if (!warr.length) {
-            html += `<p style="font-size:0.82rem; font-style:italic; color:var(--text-3);">⚠️ ${isEn ? 'No applicable legal basis — structural hole.' : 'Tidak ada dasar hukum yang berlaku — structural hole.'}</p>`;
+            html += `<p style="font-size:0.82rem; font-style:italic; color:var(--text-3);">⚠️ ${isEn ? 'No validated AI-specific warrant — an AI-specific gap. General statutes (UU ITE/PDP) may still apply by analogy.' : 'Tidak ada warrant AI-spesifik tervalidasi — gap AI-spesifik. Statuta umum (UU ITE/PDP) mungkin masih berlaku secara analogis.'}</p>`;
         } else {
             warr.forEach(({ r, e }) => {
                 const txt = (PROVISION_TEXTS[r.regulation_label] || '').slice(0, 240);
@@ -2407,11 +2407,11 @@ Perkuat dengan standar internasional yang relevan (OECD AI Principles, EU AI Act
 ### 5. QUALIFIER (Tingkat Kepastian)
 Gunakan data kuantitatif LNA: ${regCount} pasal terdeteksi, jelaskan tingkat kepastian klaim (pasti/kemungkinan besar/dugaan) beserta alasannya.
 
-### 6. REBUTTAL (Bantahan & Kesimpulan Asimetri)
-Identifikasi bantahan. Kemudian nyatakan:
-- Jika tidak ada warrant → **Kekosongan Hukum Absolut**
-- Jika warrant ada tapi tidak cukup → **Asimetri Regulasi (Normative Gap)**  
-- Jika warrant kuat → **Instrumen Cukup, Perlu Penegakan**
+### 6. REBUTTAL (Bantahan & Kesimpulan Asimetri Subjek)
+Identifikasi bantahan. Kemudian nyatakan (HINDARI klaim "vakum absolut" — bedakan ketiadaan norma AI-spesifik dari keberlakuan statuta umum secara analogis):
+- Jika tidak ada warrant AI-spesifik → **Gap AI-spesifik** (sebutkan apakah statuta umum spt UU ITE/UU PDP masih dapat diterapkan secara analogis, dan untuk SUBJEK hukum mana yang terjangkau/tidak)
+- Jika warrant ada tapi timpang antar-subjek → **Asimetri Subjek Hukum (pelaku terjangkau, konsumen/regulator tipis)**
+- Jika warrant kuat & menyeluruh → **Instrumen Cukup, Perlu Penegakan**
 
 ### 7. REKOMENDASI KONKRET (Action Items)
 Berdasarkan temuan di atas, berikan **3-5 rekomendasi spesifik** yang berbeda dari studi terdahulu:
@@ -2425,7 +2425,7 @@ Berdasarkan temuan di atas, berikan **3-5 rekomendasi spesifik** yang berbeda da
 ${incidentText}
 
 **DATA WARRANT (dasar hukum dari LLM-judge tervalidasi κ=0.77 + tinjauan manusia; "DIVALIDASI MANUSIA" = sudah ditinjau ahli. Gunakan HANYA pasal-pasal ini sebagai warrant; jangan mengarang pasal lain):**
-${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan ini Kekosongan Hukum.'}
+${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — nyatakan ini sebagai gap AI-spesifik, BUKAN vakum hukum absolut; pertimbangkan apakah statuta umum (UU ITE/UU PDP) masih berlaku secara analogis.'}
 `;
 
         try {
@@ -3139,27 +3139,27 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
             const dc = dcMap[id];
             const bc = bcMap[id];
             const deg = degMap[id];
-            if (deg === 0) return { score: 'KRITIS', label: 'Structural Hole — Tidak ada norma yang merespons' };
+            if (deg === 0) return { score: 'ISOLASI', label: 'Isolasi semantik (SBERT) — tak ada pasal lain yang mirip teks (BUKAN indikator vakum hukum; cek lapisan sitasi/judge)' };
             if (dc > 0.15 && bc < 0.01)
-                return { score: 'TINGGI', label: 'Lex Generalis Trap — Digunakan luas tapi tidak spesifik untuk AI' };
+                return { score: 'TINGGI', label: 'Tumpang-tindih semantik tinggi (SBERT) — sering jadi tetangga teks; bukan klaim otoritas/spesifisitas AI' };
             if (dc < 0.03 && bc < 0.005)
-                return { score: 'SEDANG', label: 'Norma Periferal — Cakupan terbatas, risiko gap interpretasi' };
-            return { score: 'RENDAH', label: 'Norma memiliki koneksi memadai' };
+                return { score: 'SEDANG', label: 'Tetangga semantik sedikit (SBERT) — overlap teks terbatas' };
+            return { score: 'RENDAH', label: 'Overlap semantik memadai (SBERT)' };
         };
 
-        // ── 8. POLICY DESIGN FAILURE FLAG ───────────────────────────────
+        // ── 8. CATATAN TOPOLOGI SBERT (eksploratif — bukan klaim otoritas) ──
         const pdfFlag = (id) => {
             const deg = degMap[id];
             const cls = (nodeMap[id] || {}).classification || '';
             if (deg === 0 && cls.startsWith('Intl:'))
-                return '⛔ GAGAL ADOPSI — Norma internasional tidak diadopsi ke domestik';
+                return '◽ Terisolasi semantik (SBERT) — tak ada pasal yang mirip teks; cek lapisan sitasi untuk adopsi/rujukan nyata';
             if (deg === 0 && cls.startsWith('Natl:'))
-                return '⚠️ GAGAL KONEKSI — Norma nasional tidak terhubung ke insiden/regulasi lain';
+                return '◽ Terisolasi semantik (SBERT, nasional) — tak ada pasal yang mirip teks';
             if (deg === 0)
-                return '🔴 Structural Hole — Kekosongan regulasi terdeteksi';
+                return '◽ Terisolasi semantik (SBERT) — bukan vakum hukum';
             const dc = dcMap[id];
             if (dc > 0.2)
-                return '🟡 DOMINASI LEX GENERALIS — Digunakan sebagai penyumbat gap bukan solusi spesifik';
+                return '🟡 Overlap SBERT tinggi — sering jadi tetangga semantik (deskriptif, bukan otoritas)';
             return '✅ Normal';
         };
 
@@ -3179,7 +3179,7 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
         lines.push(row('Total Node (Pasal/Regulasi/Insiden)', n));
         lines.push(row('Total Relasi (Edges)', m));
         lines.push(row('Densitas Jaringan', (m / Math.max(n * (n - 1) / 2, 1)).toFixed(6)));
-        lines.push(row('Node Terisolasi (Structural Holes)', isolated.length));
+        lines.push(row('Node Terisolasi Semantik (SBERT)', isolated.length));
         lines.push(row('Modularity Score (Q)', Q.toFixed(4)));
         lines.push(row('Tingkat Fragmentasi', fragLabel));
         lines.push(sep());
@@ -3187,24 +3187,24 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
         // ── SECTION B: METRIK TOPOLOGI ────────────────────────────────────
         lines.push(row('=== BAGIAN 1: METRIK TOPOLOGI — IMPLIKASI HUKUM ==='));
         lines.push(row('Metrik', 'Nilai', 'Interpretasi Legal', 'Relevansi'));
-        lines.push(row('Densitas Jaringan', (m / Math.max(n * (n - 1) / 2, 1)).toFixed(6),
-            'Jaringan sangat jarang → regulasi tidak saling terhubung secara substantif',
-            'Legal Uncertainty: hakim sulit menemukan norma yang koheren (rechtsvinding terhambat)'));
-        lines.push(row('Modularity (Q)', Q.toFixed(4), fragInterpret,
-            `Policy Design Failure: Q=${Q.toFixed(3)} → fragmentasi klaster regulasi menghambat keseragaman penerapan norma`));
-        lines.push(row('Node Terisolasi', isolated.length,
-            `${isolated.length} pasal/regulasi tidak terhubung ke jaringan → structural holes`,
-            'Legal Uncertainty + Policy Design Failure: area tanpa regulasi efektif'));
+        lines.push(row('Densitas Jaringan (SBERT)', (m / Math.max(n * (n - 1) / 2, 1)).toFixed(6),
+            'Graf kemiripan SBERT jarang → sedikit pasangan pasal yang mirip teks (deskriptif)',
+            'EKSPLORATIF — kemiripan redaksi, BUKAN klaim koherensi/otoritas hukum; lihat lapisan sitasi & judge'));
+        lines.push(row('Modularity (Q, SBERT)', Q.toFixed(4), fragInterpret,
+            `Q=${Q.toFixed(3)} → modularitas klaster pada graf kemiripan SBERT (deskriptif, bukan klaim kegagalan kebijakan)`));
+        lines.push(row('Node Terisolasi Semantik', isolated.length,
+            `${isolated.length} pasal tanpa pasal lain yang mirip teks (isolasi SBERT)`,
+            'Isolasi SEMANTIK (SBERT) — BUKAN vakum hukum; cakupan hukum riil = lapisan sitasi/judge (UU ITE 19/2016 disitir 39×)'));
         lines.push(row('Max Degree', Math.max(...nodes.map(nd => degMap[nd.id])),
             'Didominasi lex generalis — satu/beberapa pasal menanggung semua kasus',
             'Rechtsvinding terpaksa leapfrog ke pasal generalis tanpa dasar AI spesifik'));
         lines.push(sep());
 
         // ── SECTION C: DEGREE CENTRALITY — NORMA DOMINAN ────────────────
-        lines.push(row('=== BAGIAN 2: DEGREE CENTRALITY — NORMA DOMINAN ==='));
-        lines.push(row('Keterangan: DC = degree(v)/(n-1). DC tinggi = norma paling banyak dirujuk. Jika norma bersifat lex generalis, maka DC tinggi mengindikasikan LEGAL UNCERTAINTY karena norma digunakan di luar konteks aslinya.'));
+        lines.push(row('=== BAGIAN 2: SENTRALITAS SEMANTIK SBERT (eksploratif — BUKAN otoritas) ==='));
+        lines.push(row('Keterangan: DC = degree(v)/(n-1) pada graf KEMIRIPAN SBERT = berapa pasal lain yang mirip teks. Ini ukuran tumpang-tindih SEMANTIK (deskriptif), BUKAN otoritas hukum. Soft-law panjang berskor tinggi karena banyak bagian generik. Otoritas riil = lapisan sitasi (UU ITE 19/2016 disitir 39×).'));
         lines.push(sep());
-        lines.push(row('Rank', 'Kode Pasal/Norma', 'Label Lengkap', 'Klaster/Regulasi', 'Klasifikasi', 'Degree', 'DC Score (0-1)', 'Status Norma', 'Implikasi Legal Uncertainty', 'Terhubung Ke'));
+        lines.push(row('Rank', 'Kode Pasal/Norma', 'Label Lengkap', 'Klaster/Regulasi', 'Klasifikasi', 'Degree', 'DC Score (0-1)', 'Status (SBERT)', 'Catatan (eksploratif)', 'Terhubung Ke'));
         sorted_dc.slice(0, Math.min(50, nodes.length)).forEach((nd, i) => {
             const lu = luScore(nd.id);
             const dcVal = dcMap[nd.id];
@@ -3258,10 +3258,10 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
         lines.push(sep());
 
         // ── SECTION E: MODULARITY — FRAGMENTASI & POLICY DESIGN FAILURE ──
-        lines.push(row('=== BAGIAN 4: MODULARITY PER KLASTER — TINGKAT FRAGMENTASI & POLICY DESIGN FAILURE ==='));
-        lines.push(row(`Modularity Global (Q) = ${Q.toFixed(4)} → ${fragLabel} → ${fragInterpret}`));
+        lines.push(row('=== BAGIAN 4: MODULARITY KLASTER (graf kemiripan SBERT) — DESKRIPTIF ==='));
+        lines.push(row(`Modularity Global (Q) = ${Q.toFixed(4)} → ${fragLabel} → ${fragInterpret} (catatan: ini modularitas pada graf KEMIRIPAN SBERT — deskriptif, bukan klaim kegagalan kebijakan)`));
         lines.push(sep());
-        lines.push(row('Klaster Regulasi', 'Jumlah Node', 'Intra-Edges', 'Sum Degree', 'Kontribusi ke Q', 'Isolated Nodes', '% Isolated', 'Status', 'Policy Design Failure Diagnosis'));
+        lines.push(row('Klaster Regulasi', 'Jumlah Node', 'Intra-Edges', 'Sum Degree', 'Kontribusi ke Q', 'Isolated Nodes', '% Isolated', 'Status (SBERT)', 'Catatan Modularitas (SBERT, deskriptif)'));
 
         const totalDeg = nodes.reduce((s, nd) => s + degMap[nd.id], 0);
         Object.entries(communities).sort((a, b) => b[1].nodes.length - a[1].nodes.length).forEach(([comm, data]) => {
@@ -3271,43 +3271,43 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
             let status = '';
             let diagnosis = '';
             if (isolatedInComm / data.nodes.length > 0.7) {
-                status = '🔴 KRITIS';
-                diagnosis = 'Policy Design Failure: >70% norma dalam klaster ini tidak terhubung — indikasi kuat gagalnya perancangan regulasi sektoral';
+                status = '🔴 ISOLASI TINGGI';
+                diagnosis = '>70% pasal dalam klaster ini tanpa tetangga semantik SBERT — isolasi SEMANTIK (deskriptif); keterhubungan/otoritas hukum riil ada di lapisan sitasi & judge, bukan dari SBERT';
             } else if (isolatedInComm / data.nodes.length > 0.3) {
                 status = '🟡 PERHATIAN';
-                diagnosis = 'Fragmentasi tinggi dalam klaster — norma ada namun tidak terintegrasi, menciptakan legal uncertainty bagi pelaksana';
+                diagnosis = 'Banyak pasal dalam klaster tanpa tetangga semantik SBERT (overlap teks rendah) — deskriptif; bukan klaim legal uncertainty';
             } else {
                 status = '🟢 MODERAT';
-                diagnosis = 'Klaster relatif terhubung — fragmentasi tidak kritis namun desain masih generalis';
+                diagnosis = 'Klaster relatif rapat secara semantik (SBERT) — deskriptif';
             }
             lines.push(row(comm, data.nodes.length, data.L, data.d, qContrib.toFixed(5),
                 isolatedInComm, pct + '%', status, diagnosis));
         });
         lines.push(sep());
 
-        // ── SECTION F: STRUCTURAL HOLES — POLICY DESIGN FAILURE ──────────
-        lines.push(row('=== BAGIAN 5: STRUCTURAL HOLES — BUKTI EMPIRIS POLICY DESIGN FAILURE & LEGAL UNCERTAINTY ==='));
-        lines.push(row('Keterangan: Node dengan degree=0 adalah "lubang struktural" — area yang tidak dicakup manapun secara normatif. Ini adalah bukti kuantitatif kegagalan desain kebijakan.'));
+        // ── SECTION F: NODE TERISOLASI SEMANTIK (SBERT) — EKSPLORATIF ──────────
+        lines.push(row('=== BAGIAN 5: NODE TERISOLASI SEMANTIK (SBERT) — EKSPLORATIF, BUKAN VAKUM HUKUM ==='));
+        lines.push(row('Keterangan: degree=0 pada graf KEMIRIPAN SBERT = tak ada pasal lain yang mirip teks (isolasi SEMANTIK). Ini BUKAN bukti vakum/kegagalan hukum — untuk insiden, isolasi SBERT sering ARTEFAK RETRIEVAL (cosine melewatkan statuta yang berlaku; mis. UU PDP Ps.35 pernah ranking ke-154). Otoritas & cakupan hukum riil ada di lapisan SITASI (citations.json) dan JUDGE tervalidasi (tab Analisis Kasus).'));
         lines.push(sep());
-        lines.push(row('No', 'Kode Pasal/Insiden', 'Label Lengkap', 'Klaster', 'Klasifikasi', 'Status Regulasi', 'Dampak Rechtsvinding', 'Dampak Legal Uncertainty', 'Dampak Policy Design Failure'));
+        lines.push(row('No', 'Kode Pasal/Insiden', 'Label Lengkap', 'Klaster', 'Klasifikasi', 'Status Topologi (SBERT)', 'Catatan Semantik', 'Cakupan Hukum Riil (cek lapisan lain)', 'Tindak Lanjut'));
         isolated.forEach((nd, i) => {
             const cls = nd.classification || '';
             let statusReg = '', dampRV = '', dampLU = '', dampPDF = '';
             if (cls.startsWith('Intl:')) {
-                statusReg = 'Norma Internasional TIDAK DIADOPSI';
-                dampRV = 'Hakim tidak bisa merujuk norma internasional ini karena tidak ada padanannya di hukum nasional yang mengikat';
-                dampLU = 'Warga & perusahaan AI tidak dapat mengantisipasi kewajiban hukum yang akan berlaku';
-                dampPDF = 'GAGAL ADOPSI: Pemerintah tidak menyediakan mekanisme transplantasi norma internasional ke regulasi domestik';
+                statusReg = 'Norma intl tanpa tetangga SBERT';
+                dampRV = 'Cosine tak menemukan pasal domestik yang mirip teks (isolasi semantik) — bukan klaim non-adopsi';
+                dampLU = 'Adopsi/rujukan riil dilihat dari lapisan SITASI (mis. SE Komdigi → UU PDP), bukan dari SBERT';
+                dampPDF = 'Periksa lapisan sitasi sebelum menyimpulkan apa pun soal adopsi';
             } else if (cls.startsWith('Natl:')) {
-                statusReg = 'Norma Nasional TERISOLASI';
-                dampRV = 'Pasal ini tidak memiliki koneksi ke kasus/insiden manapun — existentially irrelevant untuk kasus AI';
-                dampLU = 'Pasal ada namun tidak operasional dalam konteks AI — menciptakan ilusi kepastian hukum';
-                dampPDF = 'DESAIN GAGAL: Pasal dirancang terlalu sempit atau tidak memperhitung perkembangan AI';
+                statusReg = 'Norma nasional tanpa tetangga SBERT';
+                dampRV = 'Tak ada pasal lain yang mirip teks (isolasi semantik)';
+                dampLU = 'Keterhubungan hukum riil = lapisan sitasi/judge; SBERT hanya kemiripan redaksi';
+                dampPDF = 'Deskriptif — bukan klaim kegagalan desain kebijakan';
             } else {
-                statusReg = 'Insiden Tanpa Warrant Normatif';
-                dampRV = 'Tidak ada norma yang bisa dirujuk hakim untuk menentukan pelanggaran hukum kasus ini';
-                dampLU = 'KEKOSONGAN ABSOLUT: Pelaku tidak dapat ditindak, korban tidak mendapat kepastian ganti rugi';
-                dampPDF = 'POLICY GAP KRITIS: Pemerintah belum mengantisipasi tipologi kejahatan AI ini dalam desain regulasi';
+                statusReg = 'Insiden tanpa tetangga SBERT (cosine)';
+                dampRV = 'Cosine tak menemukan regulasi mirip teks — SERING ARTEFAK RETRIEVAL, BUKAN bukti tanpa dasar hukum';
+                dampLU = 'Cek tab Analisis Kasus (judge tervalidasi): banyak insiden "terisolasi SBERT" justru PUNYA warrant. Gap riil = AI-spesifik + asimetri subjek, bukan vakum absolut';
+                dampPDF = 'Verifikasi via judge+sitasi dulu; bila benar tanpa warrant AI-spesifik → gap AI-spesifik (statuta umum bisa analogis)';
             }
             lines.push(row(i + 1, nd.id, nd.label || nd.id, nd.group || '', cls, statusReg, dampRV, dampLU, dampPDF));
         });
