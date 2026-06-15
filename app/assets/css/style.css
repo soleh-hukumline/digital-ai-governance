@@ -50,6 +50,7 @@
   --bg-inspector:  rgba(15, 23, 42, 0.97);
   --graph-bg:      transparent;
   --graph-font:    #ffffff;
+  --graph-stroke:  rgba(15, 23, 42, 0.85);
   --legend-chip:   rgba(0, 0, 0, 0.40);
   --accent-soft:   #fde68a;   /* warm text on blockquote */
 }
@@ -99,6 +100,7 @@ html[data-theme="light"] {
   --bg-inspector:  rgba(255, 255, 255, 0.98);
   --graph-bg:      #f8fafc;
   --graph-font:    #1e293b;
+  --graph-stroke:  rgba(248, 250, 252, 0.92);
   --legend-chip:   rgba(15, 23, 42, 0.05);
   --accent-soft:   #b45309;
 }

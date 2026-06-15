@@ -480,8 +480,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const degSorted = Object.values(degMap).sort((a, b) => b - a);
                 const hubCut = degSorted.length ? degSorted[Math.min(degSorted.length - 1, Math.floor(degSorted.length * 0.12))] : 1;
                 const graphFont = (getComputedStyle(document.documentElement).getPropertyValue('--graph-font') || '#ffffff').trim();
+                const graphStroke = (getComputedStyle(document.documentElement).getPropertyValue('--graph-stroke') || '#0f172a').trim();
                 const isIncidentNode = n => n.group === 'Insiden Kasus' || String(n.classification || '').includes('Insiden');
-                const labelFor = n => (isIncidentNode(n) || (degMap[n.id] || 0) >= Math.max(hubCut, 4)) ? n.label : undefined;
+                const labelFor = n => {
+                    if (model.id === 'incident') {
+                        // Bipartite incident↔law view: labelling all 45 incidents made an
+                        // illegible pile-up. Label the LAW hubs only; incident names appear
+                        // on hover (tooltip) and click (inspector), and via Katalog Insiden.
+                        return (!isIncidentNode(n) && (degMap[n.id] || 0) >= 2) ? n.label : undefined;
+                    }
+                    return (isIncidentNode(n) || (degMap[n.id] || 0) >= Math.max(hubCut, 4)) ? n.label : undefined;
+                };
 
                 // Pre-assign circular positions so nodes are spread out
                 // (prevents 0x0 canvas stacking bug when section is display:none)
@@ -509,13 +518,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     nodes: {
                         shape: 'dot',
-                        font: { color: graphFont, face: 'Inter', size: 13, strokeWidth: 0 },
+                        // strokeWidth gives labels a halo so they stay legible where
+                        // they overlap nodes/edges; smaller max stops hub labels ballooning.
+                        font: { color: graphFont, face: 'Inter', size: 13, strokeWidth: 3, strokeColor: graphStroke },
                         borderWidth: 1.5,
                         scaling: {
                             label: {
                                 enabled: true,
                                 min: 10,
-                                max: 40,
+                                max: 16,
                                 maxVisible: 200,
                                 drawThreshold: 7   // hidden labels reappear as you zoom in
                             }
