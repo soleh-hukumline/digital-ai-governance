@@ -342,6 +342,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let isLoadingNetworkGraphs = false;
+    // Declutter the dense similarity graphs: keep only each node's STRONGEST links
+    // and drop nodes left with no relationship. The full graph stays available for
+    // metrics/ranking/inspector ("kept in the database"); only the render is sparse.
+    // Edge strength is parsed from the label (e.g. "…(Lemah 73.9%)" / "Sim 5.0%").
+    const STRONGEST_K = { all: 2, intl: 2, natl: 3, cross: 2 };
+    function pruneToStrongest(gd, modelId) {
+        const K = STRONGEST_K[modelId];
+        if (!K || !gd.edges || !gd.edges.length) return gd;        // incident/gap untouched
+        const pctOf = e => { const m = /(\d+(?:\.\d+)?)\s*%/.exec(e.label || ''); return m ? parseFloat(m[1]) : 999; };
+        const byNode = {};
+        gd.edges.forEach(e => {
+            const w = pctOf(e);
+            (byNode[e.from] = byNode[e.from] || []).push({ e, w });
+            (byNode[e.to] = byNode[e.to] || []).push({ e, w });
+        });
+        const eid = e => e.from + '|' + e.to + '|' + (e.label || '');
+        const kept = new Map();
+        Object.values(byNode).forEach(list => {        // each node keeps its K strongest (union)
+            list.sort((a, b) => b.w - a.w);
+            list.slice(0, K).forEach(({ e }) => kept.set(eid(e), e));
+        });
+        const edges = [...kept.values()];
+        const used = new Set();
+        edges.forEach(e => { used.add(e.from); used.add(e.to); });
+        const nodes = gd.nodes.filter(n => used.has(n.id));
+        return { nodes, edges };
+    }
+
     async function loadAllNetworkGraphs() {
         if (isLoadingNetworkGraphs) return;
         isLoadingNetworkGraphs = true;
@@ -380,6 +408,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         }))]
                     };
                 }
+
+                // Full graph kept for metrics/ranking/inspector; render only the
+                // strongest links + connected nodes (declutters the hairball).
+                const fullData = graphData;
+                graphData = pruneToStrongest(fullData, model.id);
 
                 const palette = [
                     '#f43f5e', '#ec4899', '#a855f7', '#6366f1', '#3b82f6',
@@ -527,12 +560,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 container.innerHTML = '';
                 const network = new vis.Network(container, netData, options);
 
-                // Store network & graph data for export and filtering
-                networkInstances[model.id] = { network, graphData, netData };
+                // Store network & graph data for export and filtering.
+                // Metrics/ranking use the FULL graph (the rendered one is sparse).
+                networkInstances[model.id] = { network, graphData: fullData, netData };
 
                 // Populate metrics directly since sync stabilization is disabled
-                populateMetricsTable(model.id, graphData);
-                populateRankingTable(model.id, graphData);
+                populateMetricsTable(model.id, fullData);
+                populateRankingTable(model.id, fullData);
 
                 // Let physics run for exactly 3 seconds to spread nodes out elegantly, 
                 // then freeze them to stop CPU burn and prevent jitter
@@ -572,7 +606,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             const nodeData = graphData.nodes.find(n => n.id === nodeId);
                             if (nodeData) {
                                 inspectorTitle.textContent = nodeData.label || nodeId;
-                                inspectorBody.innerHTML = buildNodeInspectorHTML(nodeData, graphData);
+                                // inspector shows the node's FULL relationships (incl. weak)
+                                inspectorBody.innerHTML = buildNodeInspectorHTML(nodeData, fullData);
                                 inspectorPanel.classList.add('visible');
                             }
                         } else {
@@ -804,7 +839,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const lbl = isEn ? RL[r].en : RL[r].id;
                 return `
                     <div class="gauge-row">
-                        <span class="gauge-label" style="min-width:130px;">${lbl}</span>
+                        <span class="gauge-label" style="min-width:min(130px,34vw);">${lbl}</span>
                         <div class="gauge-bar"><div class="gauge-fill" style="width:${pct}%;background:${_covColor(pct)};"></div></div>
                         <span class="gauge-pct" style="color:${_covColor(pct)};">${pct}%</span>
                     </div>`;
@@ -831,7 +866,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="gauge-row">
-                        <span class="gauge-label" style="min-width:130px;">${L('Ada dasar hukum', 'Has any warrant')}</span>
+                        <span class="gauge-label" style="min-width:min(130px,34vw);">${L('Ada dasar hukum', 'Has any warrant')}</span>
                         <div class="gauge-bar"><div class="gauge-fill" style="width:${cov}%;background:${covColor};"></div></div>
                         <span class="gauge-pct" style="color:${covColor};">${cov}%</span>
                     </div>
@@ -1375,30 +1410,31 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
     window.toggleIsolatedNodes = function(graphId) {
         const inst = networkInstances[graphId];
         if (!inst) { showToast('Graph belum dirender.', 'warning'); return; }
-        
+
         inst.isolatedHidden = !inst.isolatedHidden;
-        const { netData, graphData, network } = inst;
-        
+        const { netData, network } = inst;
+
+        // Operate on the nodes that are ACTUALLY rendered (the 4 similarity graphs
+        // are already pruned to connected + strongest links, so updating against the
+        // full graph would inject phantom nodes). Connectivity from rendered edges.
+        const renderedNodes = netData.nodes.get();
+        const connectedSet = new Set();
+        netData.edges.get().forEach(e => { connectedSet.add(e.from); connectedSet.add(e.to); });
+
         let visibleNodeIds = [];
-        
         if (inst.isolatedHidden) {
-            const connectedSet = new Set();
-            graphData.edges.forEach(e => { connectedSet.add(e.from); connectedSet.add(e.to); });
-            
-            const updates = graphData.nodes.map(n => {
+            netData.nodes.update(renderedNodes.map(n => {
                 const isHidden = !connectedSet.has(n.id);
                 if (!isHidden) visibleNodeIds.push(n.id);
                 return { id: n.id, hidden: isHidden };
-            });
-            netData.nodes.update(updates);
-            showToast('Pasal independen berhasil disembunyikan. Hanya node terhubung yang tampil.', 'success');
+            }));
+            showToast('Node tak terhubung disembunyikan. Hanya node terhubung yang tampil.', 'success');
         } else {
-            const updates = graphData.nodes.map(n => {
+            netData.nodes.update(renderedNodes.map(n => {
                 visibleNodeIds.push(n.id);
                 return { id: n.id, hidden: false };
-            });
-            netData.nodes.update(updates);
-            showToast('Semua pasal ditampilkan kembali.', 'success');
+            }));
+            showToast('Semua node yang dirender ditampilkan kembali.', 'success');
         }
         
         // Stabilize and refit the view strictly around the VISIBLE nodes
@@ -1456,14 +1492,16 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
         // Font putih tak akan terlihat di PNG putih, set ke gelap
         network.setOptions({ nodes: { font: { color: '#1e293b' } } });
 
-        // Tentukan apa yang difit secara otomatis
+        // Fit to the nodes that are actually rendered (the graph is pruned to the
+        // strongest links); respect the hide-isolated toggle on top of that.
         let visibleNodeIds = [];
+        const renderedNodes = inst.netData.nodes.get();
         if (inst.isolatedHidden) {
             const connectedSet = new Set();
-            inst.graphData.edges.forEach(e => { connectedSet.add(e.from); connectedSet.add(e.to); });
-            inst.graphData.nodes.forEach(n => { if (connectedSet.has(n.id)) visibleNodeIds.push(n.id); });
+            inst.netData.edges.get().forEach(e => { connectedSet.add(e.from); connectedSet.add(e.to); });
+            renderedNodes.forEach(n => { if (connectedSet.has(n.id)) visibleNodeIds.push(n.id); });
         } else {
-            visibleNodeIds = inst.graphData.nodes.map(n => n.id);
+            visibleNodeIds = renderedNodes.map(n => n.id);
         }
 
         // KEMBALIKAN AUTO FIT: karena sekarang topologi padat, auto-fit tidak akan membuat debu

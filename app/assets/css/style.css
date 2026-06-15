@@ -649,6 +649,15 @@ body {
 .p-name { font-weight:700; color:var(--text-2); display:block; margin-bottom:1px; }
 .p-desc { color:var(--text-3); line-height:1.45; }
 
+/* Overflow guards: let long labels wrap instead of spilling out of the card.
+   Flex children default to min-width:auto, which prevents shrinking below the
+   longest token — so explicitly allow them to shrink and wrap. */
+.sc-header > div { min-width:0; flex:1; }
+.sc-title, .sc-sub { overflow-wrap:anywhere; word-break:break-word; }
+.pasal-item > div { min-width:0; flex:1; }
+.p-name, .p-desc { overflow-wrap:anywhere; word-break:break-word; }
+.gauge-bar { min-width:24px; }
+
 .sc-recom {
   margin:0.5rem 1.25rem 1.25rem;
   padding:0.75rem 1rem;
@@ -732,6 +741,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 /* Long unbroken tokens (e.g. Council_of_Europe_..._Article_1) must wrap */
 .ni-title, .ni-body, .ic-body, .ic-row, .ic-causal,
+.sc-title, .sc-sub, .p-name, .p-desc, .gauge-label,
 .markdown-prose, .markdown-prose td, .markdown-prose th,
 .metrics-table td, .metrics-table th {
   overflow-wrap: anywhere;
