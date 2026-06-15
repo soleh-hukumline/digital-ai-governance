@@ -227,7 +227,25 @@ def main():
     json.dump(payload, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 
     named = sum(1 for e in edges if e['type'] == 'named')
+
+    # record provenance in methods_config.json: citations = PRIMARY authority, SBERT = exploratory
+    mc_path = os.path.join(NET, 'methods_config.json')
+    try:
+        mc = json.load(open(mc_path, encoding='utf-8'))
+    except Exception:
+        mc = {}
+    top_auth = sorted(coverage, key=lambda c: -c['in'])[:5]
+    mc['citation_network'] = {
+        'n_edges': len(edges), 'n_by_name': named, 'n_by_number': len(edges) - named,
+        'n_docs': len(basenames), 'n_isolated': payload['n_isolated'],
+        'top_authorities_by_in_degree': {c['doc']: c['in'] for c in top_auth if c['in'] > 0},
+        'role': 'PRIMARY authority layer (explicit cross-citation); SBERT textual similarity is exploratory/secondary',
+        'source_script': 'build_citations.py', 'output': 'data/network/citations.json',
+    }
+    json.dump(mc, open(mc_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+
     print(f"✅ citations.json: {len(edges)} edge sitasi ({named} by-name, {len(edges)-named} by-number) dari {len(docs)} dokumen")
+    print("   ↳ methods_config.json: blok 'citation_network' diperbarui")
     print("\n— Sitasi ke instrumen/regulasi YANG ADA di korpus (tautan defensible) —")
     for e in sorted([e for e in edges if e['in_corpus']], key=lambda x: -x['count']):
         tag = '◆' if e['type'] == 'named' else '#'

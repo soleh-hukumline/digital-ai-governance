@@ -43,6 +43,10 @@ def main():
     from builder import build_deep_network
     run_step('1. Build Master Graph (Multilingual Embeddings)', build_deep_network)
 
+    # Step 1b: Explicit citation cross-reference network (PRIMARY authority layer)
+    from build_citations import main as build_citations
+    run_step('1b. Citation Cross-Reference Network (authority)', build_citations)
+
     # Step 2: Master LNA report
     from analyzer import analyze_network
     run_step('2. Generate Master LNA Report', analyze_network)
@@ -93,6 +97,13 @@ def main():
             print(f'   ✅ {os.path.basename(gf)}: {n} nodes, {e} edges ({size_kb:.0f} KB)')
         else:
             print(f'   ❌ {os.path.basename(gf)}: MISSING')
+
+    cit = '../../data/network/citations.json'
+    if os.path.exists(cit):
+        cd = json.load(open(cit))
+        print(f"   ✅ citations.json: {len(cd.get('edges', []))} citation edges, {cd.get('n_docs', '?')} docs, {cd.get('n_isolated', '?')} isolated")
+    else:
+        print('   ❌ citations.json: MISSING')
 
     report_files = [
         'laporan_hasil_lna.md',
