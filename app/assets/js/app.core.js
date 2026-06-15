@@ -1296,6 +1296,27 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window._revReset = function (iid, label) { _revDel(iid, label); _radialPanel(); };
 
+    // shared editable control row (Relevant/Not + role chips + reset) for a warrant
+    // (iid, regulation label). Used by the review list AND the connection card so a
+    // warrant is correctable from BOTH the incident side and the regulation side.
+    const _RLET = { pelaku: 'P', pse: 'O', konsumen: 'K', regulator: 'R' };
+    function _revControls(iid, label) {
+        const isEn = window.currentLang === 'en';
+        const row = (RADIAL.cands[iid] || []).find(x => x.regulation_label === label) || { regulation_label: label, roles: [], relevant: true };
+        const eff = _eff(iid, row);
+        const ov = _revGet(iid, label);
+        const lblEsc = String(label).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+        const iidEsc = String(iid).replace(/'/g, "\\'");
+        const relBtn = (val, txt, col) => `<button onclick="_revRel('${iidEsc}','${lblEsc}',${val})" style="border:1px solid var(--border);border-radius:6px;padding:1px 7px;font-size:0.7rem;cursor:pointer;background:${eff.relevant === val ? col : 'var(--overlay-soft)'};color:${eff.relevant === val ? '#fff' : 'var(--text-3)'};">${txt}</button>`;
+        const roleChip = role => { const on = (eff.roles || []).includes(role); const c = ROLE_META[role].c; return `<button onclick="_revRole('${iidEsc}','${lblEsc}','${role}')" title="${isEn ? ROLE_META[role].en : ROLE_META[role].id}" style="border:1px solid ${c};border-radius:5px;width:22px;height:20px;font-size:0.66rem;font-weight:700;cursor:pointer;background:${on ? c : 'transparent'};color:${on ? '#fff' : c};">${_RLET[role]}</button>`; };
+        return `<div style="display:flex;gap:4px;align-items:center;flex-wrap:wrap;margin-top:8px;">
+              <span style="font-size:0.68rem;color:var(--text-4);">${isEn ? 'Your call:' : 'Anda:'}</span>
+              ${relBtn(true, isEn ? 'Relevant' : 'Relevan', '#10b981')}${relBtn(false, isEn ? 'Not' : 'Tidak', '#ef4444')}
+              <span style="width:1px;height:16px;background:var(--border);margin:0 2px;"></span>${_ROLE_KEYS.map(roleChip).join('')}
+              ${ov ? `<button onclick="_revReset('${iidEsc}','${lblEsc}')" title="${isEn ? 'reset to LLM' : 'kembalikan ke LLM'}" style="border:none;background:none;color:var(--text-4);cursor:pointer;font-size:0.75rem;margin-left:auto;">↺</button>` : ''}
+            </div>`;
+    }
+
     function _radialPanel() {
         const panel = document.getElementById('radial-incident-panel');
         if (!panel || !RADIAL.sel) return;
@@ -1332,20 +1353,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const dirLbl = e.target === RADIAL.sel
                 ? (isEn ? 'Governed by ←' : 'Diatur oleh ←')
                 : (isEn ? 'Governs →' : 'Mengatur →');
-            const roleChips = (e.roles || []).map(r => `<span class="rp-chip" style="background:${(ROLE_META[r] || {}).c || '#94a3b8'}22;color:${(ROLE_META[r] || {}).c || '#94a3b8'};">${isEn ? (ROLE_META[r] || {}).en : (ROLE_META[r] || {}).id || r}</span>`).join('') || `<span class="rp-chip" style="background:var(--overlay-hover);color:var(--text-4);">${isEn ? 'role n/a' : 'peran n/a'}</span>`;
+            // the warrant = (incident, regulation); editable from either side
+            const incNode = other.type === 'incident' ? other : n;
+            const regNode = other.type === 'regulation' ? other : n;
+            const wIid = String(incNode.id).replace('CASE_', '');
+            const wLabel = regNode.label;
+            const wEff = _eff(wIid, { regulation_label: wLabel, roles: e.roles, relevant: true });
+            const roleChips = (wEff.roles || []).map(r => `<span class="rp-chip" style="background:${(ROLE_META[r] || {}).c || '#94a3b8'}22;color:${(ROLE_META[r] || {}).c || '#94a3b8'};">${isEn ? (ROLE_META[r] || {}).en : (ROLE_META[r] || {}).id || r}</span>`).join('') || `<span class="rp-chip" style="background:var(--overlay-hover);color:var(--text-4);">${isEn ? 'role n/a' : 'peran n/a'}</span>`;
             edgeCard = `<div class="rp-nav">
                     <button onclick="radialNav(-1)">‹</button>
                     <span class="rp-counter">${RADIAL.nav + 1} / ${conns.length}</span>
                     <button onclick="radialNav(1)">›</button>
                     <span class="rp-counter" style="margin-left:auto;color:var(--primary);font-weight:700;">${dirLbl}</span>
                 </div>
-                <div class="rp-edge" style="border-left-color:${_rRoleColor(e.roles)};">
-                    <div class="rp-edge-node" ${other.type === 'regulation' ? `onclick="showProvisionText('${String(other.label || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'")}')" style="cursor:pointer;text-decoration:underline dotted;text-underline-offset:2px;" title="${isEn ? 'Read full article' : 'Baca bunyi pasal'}"` : ''}>${_rEsc(other.code || otherId)}${other.type === 'regulation' ? ' 📖' : ''}</div>
+                <div class="rp-edge" style="border-left-color:${_rRoleColor(wEff.roles)};">
+                    <div class="rp-edge-node" ${other.type === 'regulation' ? `onclick="showProvisionText('${String(other.label || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'")}')" style="cursor:pointer;text-decoration:underline dotted;text-underline-offset:2px;" title="${isEn ? 'Read full article' : 'Baca bunyi pasal'}"` : ''}>${_rEsc(other.code || otherId)}${other.type === 'regulation' ? ' 📖' : ''}${wEff.reviewed ? ' <span style="color:#10b981;" title="ditinjau manusia">✔</span>' : ''}</div>
                     <div class="rp-k" style="font-family:ui-monospace,Menlo,monospace;">${_rEsc(other.label || '')}</div>
                     <div style="margin-top:6px;">${roleChips}</div>
-                    <div class="rp-k" style="margin-top:6px;">${isEn ? 'Confidence' : 'Keyakinan'}: <b style="color:var(--text-1);">${e.confidence}%</b></div>
-                    <div class="rp-conf-bar"><div class="rp-conf-fill" style="width:${e.confidence}%;background:${_rRoleColor(e.roles)};"></div></div>
+                    <div class="rp-k" style="margin-top:6px;">${isEn ? 'LLM confidence' : 'Keyakinan LLM'}: <b style="color:var(--text-1);">${e.confidence}%</b></div>
+                    <div class="rp-conf-bar"><div class="rp-conf-fill" style="width:${e.confidence}%;background:${_rRoleColor(wEff.roles)};"></div></div>
                     <div class="rp-reason">${_rEsc(e.reason || '')}</div>
+                    ${_revControls(wIid, wLabel)}
                 </div>`;
         }
 
