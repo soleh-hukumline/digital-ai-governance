@@ -171,7 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof applyTranslations === 'function') applyTranslations();
 
         // Lazy-load sector analysis only when section displayed
-        if (targetId === 'section-sector') initSectorAnalysis();
+        if (targetId === 'section-sector') {   // always re-render so it reflects your latest review
+            const _sc = document.getElementById('sector-grid-container');
+            if (_sc) _sc.dataset.rendered = 'false';
+            initSectorAnalysis();
+        }
         // Radial (chord) Insiden↔Regulasi view replaces the force graph here
         if (targetId === 'section-incident') renderRadialIncident();
 
@@ -889,6 +893,36 @@ document.addEventListener('DOMContentLoaded', () => {
         ai_misuse: 'smart_toy', education: 'school', judicial: 'gavel',
     };
 
+    // Recompute sector coverage from the SAME candidates + human overrides as the
+    // radial, so the Sector tab reflects your in-browser review live (consistent).
+    async function _sectorLiveRecompute(staticData) {
+        if (!RADIAL.cands) {
+            try { const r = await fetch(`./data/network/llm_edge_confidence.json?v=${DATA_V}`); RADIAL.cands = (await r.json()).incidents || {}; }
+            catch (e) { return staticData; }   // fall back to static if candidates unavailable
+        }
+        const cands = RADIAL.cands;
+        const out = Object.assign({}, staticData, { reviewed: _revCount(), live: true });
+        out.sectors = staticData.sectors.map(s => {
+            const ids = s.incident_ids || [];
+            const n = ids.length || 1;
+            let any = 0; const rc = { pelaku: 0, pse: 0, konsumen: 0, regulator: 0 }; const warr = {};
+            ids.forEach(iid => {
+                const rel = (cands[iid] || []).map(r => ({ e: _eff(iid, r), r })).filter(x => x.e.relevant);
+                if (rel.length) any++;
+                _ROLE_KEYS.forEach(role => { if (rel.some(x => (x.e.roles || []).includes(role))) rc[role]++; });
+                rel.forEach(x => { warr[x.r.regulation_label] = (warr[x.r.regulation_label] || 0) + 1; });
+            });
+            const per_role = {}; _ROLE_KEYS.forEach(role => per_role[role] = { coverage_pct: Math.round(1000 * rc[role] / n) / 10, incidents_covered: rc[role] });
+            const weakest = _ROLE_KEYS.reduce((a, b) => rc[b] < rc[a] ? b : a);
+            const top = Object.entries(warr).sort((a, b) => b[1] - a[1]).slice(0, 6).map(([label, count]) => ({ label, count }));
+            return Object.assign({}, s, {
+                coverage_pct: Math.round(1000 * any / n) / 10, covered: any,
+                per_role, weakest_role: weakest, weakest_pct: per_role[weakest].coverage_pct, top_warrants: top,
+            });
+        });
+        return out;
+    }
+
     async function initSectorAnalysis() {
         const container = document.getElementById('sector-grid-container');
         if (!container || container.dataset.rendered === 'true') return;
@@ -904,13 +938,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
         }
-        const data = window.sectorCoverageData;
+        // Recompute LIVE from the same candidates + human overrides as the radial,
+        // so the sector tab stays consistent with your review (not a stale snapshot).
+        const data = await _sectorLiveRecompute(window.sectorCoverageData);
+        const nrev = _revCount();
         container.innerHTML = `<div style="grid-column:1/-1;font-size:0.78rem;color:var(--text-3);background:var(--sunken);border:1px solid var(--border);border-radius:10px;padding:10px 14px;line-height:1.55;">${L(
-            '<b>Cara baca:</b> "Coverage" = porsi insiden sektor ini yang punya ≥1 dasar hukum <b>keyakinan tinggi (P≥95)</b> untuk subjek terkait. Coverage 100% berarti tiap insiden punya pasal yang berlaku untuk subjek itu — sering lewat pasal UU PDP yang berlaku luas (mis. Ps.35/46/67), sehingga sektor data-breach tampak tinggi & seragam. Ini <b>bukan</b> ukuran kualitas penegakan, dan penetapan peran oleh LLM bisa <b>longgar</b> untuk pasal berumusan umum. Gap tajam yang paling bermakna ada di sektor <b>Penyalahgunaan AI</b> (konsumen/operator/regulator rendah).',
-            '<b>How to read:</b> "Coverage" = share of this sector\'s incidents with ≥1 <b>high-confidence (P≥95)</b> legal basis for that subject. 100% means every incident has an applicable article for that subject — often via broadly-worded UU PDP articles (e.g. Art.35/46/67), so data-breach sectors look high & uniform. It is <b>not</b> an enforcement-quality measure, and the LLM\'s role assignment can be <b>generous</b> for broadly-worded provisions. The most meaningful gap is in <b>AI Misuse</b> (low consumer/operator/regulator).')
+            '<b>Cara baca:</b> "Coverage" = porsi insiden sektor yang punya ≥1 dasar hukum untuk subjek itu (judge peran-ketat: notifikasi ≠ ganti rugi). <b>Relevansi tervalidasi manusia</b> (κ 0.77), tapi <b>penetapan peran masih usulan LLM</b> (indikatif) sampai Anda tinjau di tab <b>Analisis Kasus</b>. Angka di sini <b>ikut tinjauan Anda secara langsung</b> (kini ' + nrev + ' warrant ditinjau); klik <b>Export Tinjauan</b> di sana lalu rebuild agar permanen. Gap nyata: <b>konsumen & regulator rendah</b> (paling tajam di Penyalahgunaan AI).',
+            '<b>How to read:</b> "Coverage" = share of a sector\'s incidents with ≥1 legal basis for that subject (strict-role judge: notification ≠ redress). <b>Relevance is human-validated</b> (κ 0.77), but the <b>role assignment is still an LLM proposal</b> (indicative) until you review it in the <b>Analisis Kasus</b> tab. These figures <b>follow your review live</b> (currently ' + nrev + ' warrants reviewed); click <b>Export Tinjauan</b> there then rebuild to persist. Real gap: <b>low consumer & regulator</b> (sharpest in AI Misuse).')
             }</div>`;
         container.dataset.rendered = 'true';
-        const RL = data.role_label || {};
+        const RL = data.role_label || window.sectorCoverageData.role_label || {};
         const SLBL = 'font-size:11px;font-weight:700;color:var(--text-muted,#94a3b8);margin:12px 0 4px;padding:0 1.25rem;text-transform:uppercase;letter-spacing:.04em;';
 
         data.sectors.forEach(s => {
