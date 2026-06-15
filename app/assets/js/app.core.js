@@ -1042,6 +1042,80 @@ document.addEventListener('DOMContentLoaded', () => {
         _downloadBlob(JSON.stringify(out, null, 2), 'warrant_overrides.json', 'application/json');
         _toast((window.currentLang === 'en' ? 'Exported ' : 'Diekspor ') + _revCount() + ' review → warrant_overrides.json');
     };
+
+    // ── Candidate-error detector: flag warrants whose role contradicts the
+    // provision's legal character (mirror of flag_review_candidates.py), live. ──
+    const _REVIEW_EXPECT = {
+        'UU_PDP_No27_2022 - Pasal 65': ['pelaku'], 'UU_PDP_No27_2022 - Pasal 66': ['pelaku'],
+        'UU_PDP_No27_2022 - Pasal 67': ['pelaku'], 'UU_PDP_No27_2022 - Pasal 68': ['pelaku'],
+        'UU_PDP_No27_2022 - Pasal 20': ['pse'], 'UU_PDP_No27_2022 - Pasal 35': ['pse'],
+        'UU_PDP_No27_2022 - Pasal 36': ['pse'], 'UU_PDP_No27_2022 - Pasal 46': ['pse'],
+        'PP_PSTE_No71_2019 - Pasal 14': ['pse'],
+        'UU_PDP_No27_2022 - Pasal 57': ['regulator'], 'UU_PDP_No27_2022 - Pasal 60': ['regulator'],
+        'UU_PDP_No27_2022 - Pasal 12': ['konsumen'],
+        'UU_ITE_No19_2016 - Pasal 26': ['pse', 'konsumen'],
+        'UU_ITE_No1_2024 - Pasal 27': ['pelaku'], 'UU_ITE_No1_2024 - Pasal 28': ['pelaku'],
+        'UU_ITE_No1_2024 - Pasal 45A': ['pelaku'], 'UU_ITE_No1_2024 - Pasal 45B': ['pelaku'],
+    };
+    const _REVIEW_RIGHTS = new Set(['5', '6', '6O', '7O', '8', '9', '13', '33'].map(n => `UU_PDP_No27_2022 - Pasal ${n}`));
+    const _REVIEW_SOFT = /Stranas|SE_Komdigi|OECD|UNESCO|ASEAN|UNGA|ISO|WHO|G7|Global_Digital/i;
+    const _REVIEW_DEF = new Set(['UU_PDP_No27_2022 - Pasal 1O', 'UU_PDP_No27_2022 - Pasal 4']);
+    function _expectRoles(label) {
+        if (_REVIEW_EXPECT[label]) return _REVIEW_EXPECT[label];
+        if (_REVIEW_RIGHTS.has(label)) return ['konsumen'];
+        if (_REVIEW_DEF.has(label) || _REVIEW_SOFT.test(label)) return [];   // should NOT be a binding warrant
+        return null;                                                          // no opinion
+    }
+    function _reviewCandidates() {
+        const out = []; const cands = RADIAL.cands || {};
+        for (const iid in cands) {
+            for (const r of cands[iid]) {
+                const eff = _eff(iid, r);
+                if (!eff.relevant || eff.reviewed) continue;
+                const exp = _expectRoles(r.regulation_label);
+                if (exp === null) continue;
+                const roles = eff.roles || [];
+                if (exp.length === 0) {
+                    out.push({ iid, label: r.regulation_label, roles, sev: 2, why: (window.currentLang === 'en' ? 'soft-law/definitional — not a binding basis' : 'soft-law/definitif — bukan dasar hukum mengikat') });
+                } else {
+                    const wrong = roles.filter(x => !exp.includes(x));
+                    if (wrong.length) out.push({ iid, label: r.regulation_label, roles, sev: roles.some(x => exp.includes(x)) ? 1 : 2, why: (window.currentLang === 'en' ? `role ${wrong.join('/')} unexpected; expected ${exp.join('/')}` : `peran ${wrong.join('/')} tak lazim; seharusnya ${exp.join('/')}`) });
+                }
+            }
+        }
+        out.sort((a, b) => b.sev - a.sev);
+        return out;
+    }
+    window.reviewCandidateCount = () => _reviewCandidates().length;
+    window.showReviewCandidates = function () {
+        const isEn = window.currentLang === 'en';
+        const list = _reviewCandidates();
+        const old = document.getElementById('candmodal'); if (old) old.remove();
+        const m = document.createElement('div');
+        m.id = 'candmodal';
+        m.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;padding:24px;';
+        const rows = list.map(c => {
+            const inc = (RADIAL.byId['CASE_' + c.iid] || {}).code || c.iid;
+            const sevc = c.sev >= 2 ? '#ef4444' : '#f59e0b';
+            return `<div onclick="_gotoCandidate('${String(c.iid).replace(/'/g, "\\'")}')" style="cursor:pointer;border-bottom:1px solid var(--border);padding:9px 4px;">
+                <div style="display:flex;justify-content:space-between;gap:8px;"><b style="font-size:0.82rem;color:var(--text-1);">${_rEsc(inc)}</b><span style="font-size:0.7rem;color:${sevc};">${c.sev >= 2 ? '●●' : '●'}</span></div>
+                <div style="font-size:0.78rem;color:var(--primary);">${_rEsc(nodeCode(c.label))} <span style="color:var(--text-4);">[${(c.roles || []).join('/') || '—'}]</span></div>
+                <div style="font-size:0.73rem;color:var(--text-3);">${_rEsc(c.why)}</div></div>`;
+        }).join('') || `<div class="rp-empty" style="padding:1.5rem 0;">${isEn ? 'No suspicious warrants 🎉' : 'Tidak ada warrant mencurigakan 🎉'}</div>`;
+        m.innerHTML = `<div style="background:var(--bg-card);max-width:620px;width:100%;max-height:82vh;overflow:auto;border-radius:14px;border:1px solid var(--border);box-shadow:0 24px 60px rgba(0,0,0,0.45);padding:1.3rem 1.5rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;"><div class="rp-title" style="font-size:1.1rem;">${isEn ? 'Likely-wrong warrants' : 'Kandidat error warrant'} (${list.length})</div>
+              <button onclick="document.getElementById('candmodal').remove()" style="border:none;background:var(--overlay-soft);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:16px;color:var(--text-2);">✕</button></div>
+            <div style="font-size:0.75rem;color:var(--text-4);margin:4px 0 10px;line-height:1.5;">${isEn ? 'Role contradicts the provision’s legal character (●● = no expected role matches; ● = partial). Click a row to open & fix it. Resolved ones drop off.' : 'Peran bertentangan dgn karakter pasal (●● = tak ada peran yang cocok; ● = sebagian). Klik baris untuk buka & perbaiki. Yang sudah ditinjau hilang dari daftar.'}</div>
+            ${rows}</div>`;
+        m.onclick = ev => { if (ev.target === m) m.remove(); };
+        document.body.appendChild(m);
+    };
+    window._gotoCandidate = function (iid) {
+        const m = document.getElementById('candmodal'); if (m) m.remove();
+        const navItem = document.querySelector('.nav-item[data-target="section-incident"]');
+        if (navItem) (navItem.querySelector('a') || navItem).click();
+        setTimeout(() => _radialSelect('CASE_' + iid), 400);
+    };
     const RVB = 820, RCX = 410, RCY = 410, RR = 235, RBAR = 40, RLAB = RR + RBAR + 10;
     const ROLE_META = {
         pelaku:   { c: '#ef4444', id: 'Pelaku (pidana)',  en: 'Perpetrator' },

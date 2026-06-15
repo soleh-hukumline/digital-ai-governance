@@ -1,0 +1,546 @@
+{
+  "n": 54,
+  "candidates": [
+    {
+      "incident": "pdns2-surabaya-ransomware-2024",
+      "regulation": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 10",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "definitional/soft-law asserted as a binding warrant"
+    },
+    {
+      "incident": "pdns2-surabaya-ransomware-2024",
+      "regulation": "UU_ITE_No1_2024 - Pasal 45A",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "pdns2-surabaya-ransomware-2024",
+      "regulation": "PP_PSTE_No71_2019 - Pasal 14",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "bkn-asn-leak-topiax-2024",
+      "regulation": "UU_ITE_No1_2024 - Pasal 45B",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bkn-asn-leak-topiax-2024",
+      "regulation": "UU_PDP_No27_2022 - Pasal 46",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "bais-tni-intelligence-leak-2024",
+      "regulation": "UU_ITE_No1_2024 - Pasal 27",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bpjs-kesehatan-279m-2021",
+      "regulation": "UU_ITE_No1_2024 - Pasal 28",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bpjs-kesehatan-279m-2021",
+      "regulation": "UU_PDP_No27_2022 - Pasal 35",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "bpjs-kesehatan-279m-2021",
+      "regulation": "UU_ITE_No1_2024 - Pasal 27",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bpjs-kesehatan-279m-2021",
+      "regulation": "UU_PDP_No27_2022 - Pasal 36",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "pedulilindungi-id-gambling-hijack-2025",
+      "regulation": "UU_PDP_No27_2022 - Pasal 66",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "indodax-crypto-hack-2024",
+      "regulation": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "definitional/soft-law asserted as a binding warrant"
+    },
+    {
+      "incident": "indodax-crypto-hack-2024",
+      "regulation": "UU_ITE_No1_2024 - Pasal 28",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "indodax-crypto-hack-2024",
+      "regulation": "UU_PDP_No27_2022 - Pasal 57",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['regulator']"
+    },
+    {
+      "incident": "bri-life-data-leak-2021",
+      "regulation": "UU_ITE_No1_2024 - Pasal 27",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bri-life-data-leak-2021",
+      "regulation": "UU_ITE_No1_2024 - Pasal 28",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bri-life-data-leak-2021",
+      "regulation": "UU_PDP_No27_2022 - Pasal 20",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "tokopedia-91m-2020",
+      "regulation": "UU_PDP_No27_2022 - Pasal 65",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bhinneka-1-2m-2020",
+      "regulation": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 73",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "definitional/soft-law asserted as a binding warrant"
+    },
+    {
+      "incident": "bhinneka-1-2m-2020",
+      "regulation": "UU_PDP_No27_2022 - Pasal 68",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bhinneka-1-2m-2020",
+      "regulation": "UU_PDP_No27_2022 - Pasal 67",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bhinneka-1-2m-2020",
+      "regulation": "UU_PDP_No27_2022 - Pasal 35",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "myindihome-35m-2023",
+      "regulation": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 29",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "definitional/soft-law asserted as a binding warrant"
+    },
+    {
+      "incident": "myindihome-35m-2023",
+      "regulation": "UU_ITE_No19_2016 - Pasal 26",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['konsumen', 'pse']"
+    },
+    {
+      "incident": "myindihome-35m-2023",
+      "regulation": "UU_ITE_No1_2024 - Pasal 45B",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "mypertamina-44m-2022",
+      "regulation": "UU_PDP_No27_2022 - Pasal 66",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "mypertamina-44m-2022",
+      "regulation": "UU_PDP_No27_2022 - Pasal 36",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "prabowo-deepfake-aid-scam-2024",
+      "regulation": "PP_PSTE_No71_2019 - Pasal 14",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "undip-deepfake-ncii-2025",
+      "regulation": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 95,
+      "severity": "high",
+      "why": "definitional/soft-law asserted as a binding warrant"
+    },
+    {
+      "incident": "pdns2-surabaya-ransomware-2024",
+      "regulation": "UU_PDP_No27_2022 - Pasal 68",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bkn-asn-leak-topiax-2024",
+      "regulation": "UU_ITE_No1_2024 - Pasal 28",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bkn-asn-leak-topiax-2024",
+      "regulation": "UU_PDP_No27_2022 - Pasal 36",
+      "roles": [
+        "konsumen"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['konsumen'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "bkn-teacher-intrusion-2024",
+      "regulation": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 46",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "definitional/soft-law asserted as a binding warrant"
+    },
+    {
+      "incident": "pedulilindungi-jokowi-cert-2021",
+      "regulation": "UU_PDP_No27_2022 - Pasal 46",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "pedulilindungi-jokowi-cert-2021",
+      "regulation": "UU_PDP_No27_2022 - Pasal 66",
+      "roles": [
+        "konsumen"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['konsumen'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "ugm-ft-website-defacement-2022",
+      "regulation": "UU_PDP_No27_2022 - Pasal 65",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "indodax-crypto-hack-2024",
+      "regulation": "UU_PDP_No27_2022 - Pasal 46",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "bank-jatim-bifast-fraud-2024",
+      "regulation": "UU_ITE_No19_2016 - Pasal 26",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['konsumen', 'pse']"
+    },
+    {
+      "incident": "prabowo-deepfake-aid-scam-2024",
+      "regulation": "UU_PDP_No27_2022 - Pasal 36",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "suharto-deepfake-golkar-2024",
+      "regulation": "UU_ITE_No19_2016 - Pasal 26",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['konsumen', 'pse']"
+    },
+    {
+      "incident": "sri-mulyani-deepfake-2025",
+      "regulation": "UU_PDP_No27_2022 - Pasal 35",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "sri-mulyani-deepfake-2025",
+      "regulation": "UU_PDP_No27_2022 - Pasal 36",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 90,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "adakami-pinjol-conduct-2023",
+      "regulation": "SE_Komdigi_No9_2023_Etika_AI - Bagian 7",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "severity": "high",
+      "why": "definitional/soft-law asserted as a binding warrant"
+    },
+    {
+      "incident": "adakami-pinjol-conduct-2023",
+      "regulation": "UU_PDP_No27_2022 - Pasal 67",
+      "roles": [
+        "konsumen",
+        "pse"
+      ],
+      "confidence": 85,
+      "severity": "high",
+      "why": "role ['konsumen', 'pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "adakami-pinjol-conduct-2023",
+      "regulation": "UU_ITE_No19_2016 - Pasal 26",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['konsumen', 'pse']"
+    },
+    {
+      "incident": "adakami-pinjol-conduct-2023",
+      "regulation": "UU_PDP_No27_2022 - Pasal 35",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "adakami-pinjol-conduct-2023",
+      "regulation": "UU_PDP_No27_2022 - Pasal 57",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['regulator']"
+    },
+    {
+      "incident": "adakami-pinjol-conduct-2023",
+      "regulation": "PP_PSTE_No71_2019 - Pasal 14",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "adakami-pinjol-conduct-2023",
+      "regulation": "UU_PDP_No27_2022 - Pasal 65",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 85,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "suharto-deepfake-golkar-2024",
+      "regulation": "UU_PDP_No27_2022 - Pasal 36",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 85,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "adakami-pinjol-conduct-2023",
+      "regulation": "UU_PDP_No27_2022 - Pasal 68",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 80,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    },
+    {
+      "incident": "bank-jatim-bifast-fraud-2024",
+      "regulation": "UU_PDP_No27_2022 - Pasal 20",
+      "roles": [
+        "pelaku"
+      ],
+      "confidence": 80,
+      "severity": "high",
+      "why": "role ['pelaku'] unexpected; expected ['pse']"
+    },
+    {
+      "incident": "ojk-ai-voice-deepfake-fraud-2025",
+      "regulation": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 33",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 80,
+      "severity": "high",
+      "why": "definitional/soft-law asserted as a binding warrant"
+    },
+    {
+      "incident": "bank-jatim-bifast-fraud-2024",
+      "regulation": "UU_PDP_No27_2022 - Pasal 65",
+      "roles": [
+        "pse"
+      ],
+      "confidence": 70,
+      "severity": "high",
+      "why": "role ['pse'] unexpected; expected ['pelaku']"
+    }
+  ]
+}
