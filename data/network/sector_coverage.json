@@ -1,6 +1,7 @@
 {
   "source": "llm_edge_confidence.json",
   "fewshot": true,
+  "operating_point": "calibrated P>=95",
   "n_incidents": 45,
   "sectors": [
     {
@@ -9,52 +10,52 @@
       "title_en": "E-Commerce & Telecom",
       "icon": "🛒",
       "n_incidents": 11,
-      "coverage_pct": 72.7,
-      "covered": 8,
+      "coverage_pct": 100.0,
+      "covered": 11,
       "per_role": {
         "pelaku": {
-          "covered": 4,
-          "coverage_pct": 36.4
+          "covered": 11,
+          "coverage_pct": 100.0
         },
         "pse": {
-          "covered": 7,
-          "coverage_pct": 63.6
+          "covered": 11,
+          "coverage_pct": 100.0
         },
         "konsumen": {
-          "covered": 6,
-          "coverage_pct": 54.5
+          "covered": 11,
+          "coverage_pct": 100.0
         },
         "regulator": {
-          "covered": 6,
-          "coverage_pct": 54.5
+          "covered": 11,
+          "coverage_pct": 100.0
         }
       },
       "weakest_role": "pelaku",
-      "weakest_pct": 36.4,
+      "weakest_pct": 100.0,
       "top_warrants": [
         {
-          "label": "UU_PDP_No27_2022 - Pasal 46",
-          "count": 5
+          "label": "UU_PDP_No27_2022 - Pasal 67",
+          "count": 10
         },
         {
-          "label": "UU_PDP_No27_2022 - Pasal 67",
-          "count": 3
+          "label": "UU_PDP_No27_2022 - Pasal 46",
+          "count": 10
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 65",
+          "count": 8
         },
         {
           "label": "UU_PDP_No27_2022 - Pasal 35",
-          "count": 2
-        },
-        {
-          "label": "UU_PDP_No27_2022 - Pasal 38",
-          "count": 1
+          "count": 8
         },
         {
           "label": "UU_PDP_No27_2022 - Pasal 36",
-          "count": 1
+          "count": 5
         },
         {
-          "label": "PP_PSTE_No71_2019 - Pasal 14",
-          "count": 1
+          "label": "UU_PDP_No27_2022 - Pasal 68",
+          "count": 3
         }
       ],
       "incident_ids": [
@@ -70,11 +71,7 @@
         "kai-stormous-ransomware-2024",
         "malindo-lionair-30m-2019"
       ],
-      "uncovered_ids": [
-        "bukalapak-13m-2019",
-        "bhinneka-1-2m-2020",
-        "malindo-lionair-30m-2019"
-      ]
+      "uncovered_ids": []
     },
     {
       "key": "government",
@@ -86,48 +83,48 @@
       "covered": 10,
       "per_role": {
         "pelaku": {
-          "covered": 4,
-          "coverage_pct": 40.0
+          "covered": 10,
+          "coverage_pct": 100.0
         },
         "pse": {
-          "covered": 6,
-          "coverage_pct": 60.0
+          "covered": 10,
+          "coverage_pct": 100.0
         },
         "konsumen": {
-          "covered": 4,
-          "coverage_pct": 40.0
+          "covered": 10,
+          "coverage_pct": 100.0
         },
         "regulator": {
-          "covered": 6,
-          "coverage_pct": 60.0
+          "covered": 10,
+          "coverage_pct": 100.0
         }
       },
       "weakest_role": "pelaku",
-      "weakest_pct": 40.0,
+      "weakest_pct": 100.0,
       "top_warrants": [
         {
+          "label": "UU_PDP_No27_2022 - Pasal 35",
+          "count": 8
+        },
+        {
           "label": "UU_PDP_No27_2022 - Pasal 67",
-          "count": 4
+          "count": 8
         },
         {
           "label": "UU_PDP_No27_2022 - Pasal 46",
-          "count": 3
+          "count": 7
         },
         {
-          "label": "UU_PDP_No27_2022 - Pasal 60",
-          "count": 3
-        },
-        {
-          "label": "UU_PDP_No27_2022 - Pasal 35",
-          "count": 2
+          "label": "UU_PDP_No27_2022 - Pasal 65",
+          "count": 7
         },
         {
           "label": "UU_PDP_No27_2022 - Pasal 36",
-          "count": 1
+          "count": 4
         },
         {
-          "label": "UU_PDP_No27_2022 - Pasal 39",
-          "count": 1
+          "label": "UU_ITE_No1_2024 - Pasal 27",
+          "count": 2
         }
       ],
       "incident_ids": [
@@ -150,29 +147,33 @@
       "title_en": "Finance & Banking",
       "icon": "🏦",
       "n_incidents": 9,
-      "coverage_pct": 100.0,
-      "covered": 9,
+      "coverage_pct": 66.7,
+      "covered": 6,
       "per_role": {
         "pelaku": {
-          "covered": 7,
-          "coverage_pct": 77.8
-        },
-        "pse": {
           "covered": 6,
           "coverage_pct": 66.7
+        },
+        "pse": {
+          "covered": 5,
+          "coverage_pct": 55.6
         },
         "konsumen": {
           "covered": 5,
           "coverage_pct": 55.6
         },
         "regulator": {
-          "covered": 6,
-          "coverage_pct": 66.7
+          "covered": 5,
+          "coverage_pct": 55.6
         }
       },
-      "weakest_role": "konsumen",
+      "weakest_role": "pse",
       "weakest_pct": 55.6,
       "top_warrants": [
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 35",
+          "count": 5
+        },
         {
           "label": "UU_PDP_No27_2022 - Pasal 46",
           "count": 4
@@ -182,19 +183,15 @@
           "count": 3
         },
         {
-          "label": "UU_ITE_No1_2024 - Pasal 45B",
+          "label": "UU_PDP_No27_2022 - Pasal 65",
           "count": 3
         },
         {
-          "label": "UU_ITE_No1_2024 - Pasal 45A",
-          "count": 3
-        },
-        {
-          "label": "UU_PDP_No27_2022 - Pasal 35",
+          "label": "PP_PSTE_No71_2019 - Pasal 14",
           "count": 2
         },
         {
-          "label": "UU_PDP_No27_2022 - Pasal 60",
+          "label": "UU_PDP_No27_2022 - Pasal 36",
           "count": 2
         }
       ],
@@ -209,7 +206,11 @@
         "bank-jatim-bifast-fraud-2024",
         "bank-dki-bifast-breach-2025"
       ],
-      "uncovered_ids": []
+      "uncovered_ids": [
+        "indodax-crypto-hack-2024",
+        "adakami-pinjol-conduct-2023",
+        "bank-dki-bifast-breach-2025"
+      ]
     },
     {
       "key": "health",
@@ -217,52 +218,52 @@
       "title_en": "Health",
       "icon": "🏥",
       "n_incidents": 6,
-      "coverage_pct": 83.3,
-      "covered": 5,
+      "coverage_pct": 100.0,
+      "covered": 6,
       "per_role": {
         "pelaku": {
-          "covered": 2,
-          "coverage_pct": 33.3
+          "covered": 6,
+          "coverage_pct": 100.0
         },
         "pse": {
-          "covered": 4,
-          "coverage_pct": 66.7
+          "covered": 5,
+          "coverage_pct": 83.3
         },
         "konsumen": {
-          "covered": 2,
-          "coverage_pct": 33.3
+          "covered": 5,
+          "coverage_pct": 83.3
         },
         "regulator": {
-          "covered": 3,
-          "coverage_pct": 50.0
+          "covered": 5,
+          "coverage_pct": 83.3
         }
       },
-      "weakest_role": "pelaku",
-      "weakest_pct": 33.3,
+      "weakest_role": "pse",
+      "weakest_pct": 83.3,
       "top_warrants": [
         {
           "label": "UU_PDP_No27_2022 - Pasal 46",
-          "count": 2
+          "count": 5
         },
         {
           "label": "UU_PDP_No27_2022 - Pasal 67",
-          "count": 2
+          "count": 5
         },
         {
-          "label": "UU_PDP_No27_2022 - Pasal 55",
-          "count": 1
+          "label": "UU_PDP_No27_2022 - Pasal 36",
+          "count": 4
         },
         {
-          "label": "PP_PSTE_No71_2019 - Pasal 20",
-          "count": 1
+          "label": "UU_PDP_No27_2022 - Pasal 35",
+          "count": 3
         },
         {
-          "label": "PP_PSTE_No71_2019 - Pasal 71",
-          "count": 1
+          "label": "UU_PDP_No27_2022 - Pasal 65",
+          "count": 3
         },
         {
-          "label": "PP_PSTE_No71_2019 - Pasal 82",
-          "count": 1
+          "label": "UU_ITE_No1_2024 - Pasal 27",
+          "count": 3
         }
       ],
       "incident_ids": [
@@ -273,9 +274,7 @@
         "pedulilindungi-id-gambling-hijack-2025",
         "satusehat-kotim-breach-2025"
       ],
-      "uncovered_ids": [
-        "satusehat-kotim-breach-2025"
-      ]
+      "uncovered_ids": []
     },
     {
       "key": "ai_misuse",
@@ -287,43 +286,43 @@
       "covered": 5,
       "per_role": {
         "pelaku": {
-          "covered": 2,
-          "coverage_pct": 33.3
+          "covered": 5,
+          "coverage_pct": 83.3
         },
         "pse": {
-          "covered": 3,
-          "coverage_pct": 50.0
+          "covered": 0,
+          "coverage_pct": 0.0
         },
         "konsumen": {
           "covered": 0,
           "coverage_pct": 0.0
         },
         "regulator": {
-          "covered": 4,
-          "coverage_pct": 66.7
+          "covered": 0,
+          "coverage_pct": 0.0
         }
       },
-      "weakest_role": "konsumen",
+      "weakest_role": "pse",
       "weakest_pct": 0.0,
       "top_warrants": [
         {
-          "label": "UU_PDP_No27_2022 - Pasal 68",
-          "count": 2
+          "label": "UU_PDP_No27_2022 - Pasal 66",
+          "count": 3
         },
         {
-          "label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 1",
-          "count": 2
+          "label": "UU_ITE_No1_2024 - Pasal 28",
+          "count": 3
         },
         {
           "label": "UU_ITE_No1_2024 - Pasal 45A",
-          "count": 1
+          "count": 2
         },
         {
-          "label": "UU_PDP_No27_2022 - Pasal 60",
-          "count": 1
+          "label": "UU_ITE_No1_2024 - Pasal 27",
+          "count": 2
         },
         {
-          "label": "UU_PDP_No27_2022 - Pasal 66",
+          "label": "UU_PDP_No27_2022 - Pasal 68",
           "count": 1
         },
         {
@@ -340,7 +339,7 @@
         "ojk-ai-voice-deepfake-fraud-2025"
       ],
       "uncovered_ids": [
-        "suharto-deepfake-golkar-2024"
+        "sri-mulyani-deepfake-2025"
       ]
     },
     {
@@ -353,8 +352,8 @@
       "covered": 1,
       "per_role": {
         "pelaku": {
-          "covered": 0,
-          "coverage_pct": 0.0
+          "covered": 1,
+          "coverage_pct": 50.0
         },
         "pse": {
           "covered": 1,
@@ -370,10 +369,22 @@
         }
       },
       "weakest_role": "pelaku",
-      "weakest_pct": 0.0,
+      "weakest_pct": 50.0,
       "top_warrants": [
         {
           "label": "UU_PDP_No27_2022 - Pasal 46",
+          "count": 1
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 67",
+          "count": 1
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 35",
+          "count": 1
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 65",
           "count": 1
         }
       ],
@@ -395,12 +406,12 @@
       "covered": 1,
       "per_role": {
         "pelaku": {
-          "covered": 0,
-          "coverage_pct": 0.0
+          "covered": 1,
+          "coverage_pct": 100.0
         },
         "pse": {
-          "covered": 0,
-          "coverage_pct": 0.0
+          "covered": 1,
+          "coverage_pct": 100.0
         },
         "konsumen": {
           "covered": 1,
@@ -412,14 +423,30 @@
         }
       },
       "weakest_role": "pelaku",
-      "weakest_pct": 0.0,
+      "weakest_pct": 100.0,
       "top_warrants": [
         {
-          "label": "UU_PDP_No27_2022 - Pasal 60",
+          "label": "UU_PDP_No27_2022 - Pasal 12",
           "count": 1
         },
         {
-          "label": "UU_PDP_No27_2022 - Pasal 12",
+          "label": "UU_PDP_No27_2022 - Pasal 35",
+          "count": 1
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 67",
+          "count": 1
+        },
+        {
+          "label": "PP_PSTE_No71_2019 - Pasal 14",
+          "count": 1
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 46",
+          "count": 1
+        },
+        {
+          "label": "UU_PDP_No27_2022 - Pasal 65",
           "count": 1
         }
       ],

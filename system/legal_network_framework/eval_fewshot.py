@@ -22,7 +22,9 @@ import openpyxl
 NET = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'network')
 GOLD = os.path.join(NET, 'validation_2_revisi.xlsx')
 FEW = os.path.join(NET, 'fewshot_examples.json')
-ZERO = os.path.join(NET, 'llm_edge_confidence.json')
+# ZERO = true zero-shot baseline (production file is now the few-shot judge, so we
+# read the backed-up zero-shot run for an apples-to-apples comparison).
+ZERO = os.path.join(NET, 'llm_edge_confidence_zeroshot.json')
 FEWOUT = os.path.join(NET, 'llm_edge_confidence_fewshot.json')
 
 

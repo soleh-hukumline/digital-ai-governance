@@ -7,59 +7,59 @@
   "raw": {
     "per_role": {
       "pelaku": {
-        "incidents_covered": 19,
-        "coverage_pct": 42.2,
-        "structural_hole_pct": 57.8,
-        "relevant_pairs": 29
+        "incidents_covered": 45,
+        "coverage_pct": 100.0,
+        "structural_hole_pct": 0.0,
+        "relevant_pairs": 124
       },
       "pse": {
-        "incidents_covered": 27,
-        "coverage_pct": 60.0,
-        "structural_hole_pct": 40.0,
-        "relevant_pairs": 43
+        "incidents_covered": 40,
+        "coverage_pct": 88.9,
+        "structural_hole_pct": 11.1,
+        "relevant_pairs": 166
       },
       "konsumen": {
-        "incidents_covered": 19,
-        "coverage_pct": 42.2,
-        "structural_hole_pct": 57.8,
-        "relevant_pairs": 19
+        "incidents_covered": 38,
+        "coverage_pct": 84.4,
+        "structural_hole_pct": 15.6,
+        "relevant_pairs": 46
       },
       "regulator": {
-        "incidents_covered": 27,
-        "coverage_pct": 60.0,
-        "structural_hole_pct": 40.0,
-        "relevant_pairs": 36
+        "incidents_covered": 39,
+        "coverage_pct": 86.7,
+        "structural_hole_pct": 13.3,
+        "relevant_pairs": 43
       }
     },
-    "any_role_coverage": 86.7
+    "any_role_coverage": 100.0
   },
   "calibrated": {
     "per_role": {
       "pelaku": {
-        "incidents_covered": 17,
-        "coverage_pct": 37.8,
-        "structural_hole_pct": 62.2,
-        "relevant_pairs": 20
+        "incidents_covered": 40,
+        "coverage_pct": 88.9,
+        "structural_hole_pct": 11.1,
+        "relevant_pairs": 87
       },
       "pse": {
-        "incidents_covered": 22,
-        "coverage_pct": 48.9,
-        "structural_hole_pct": 51.1,
-        "relevant_pairs": 31
+        "incidents_covered": 33,
+        "coverage_pct": 73.3,
+        "structural_hole_pct": 26.7,
+        "relevant_pairs": 95
       },
       "konsumen": {
-        "incidents_covered": 15,
-        "coverage_pct": 33.3,
-        "structural_hole_pct": 66.7,
-        "relevant_pairs": 15
+        "incidents_covered": 33,
+        "coverage_pct": 73.3,
+        "structural_hole_pct": 26.7,
+        "relevant_pairs": 34
       },
       "regulator": {
-        "incidents_covered": 17,
-        "coverage_pct": 37.8,
-        "structural_hole_pct": 62.2,
-        "relevant_pairs": 17
+        "incidents_covered": 33,
+        "coverage_pct": 73.3,
+        "structural_hole_pct": 26.7,
+        "relevant_pairs": 33
       }
     },
-    "any_role_coverage": 75.6
+    "any_role_coverage": 88.9
   }
 }

@@ -31,6 +31,34 @@ FEWSHOT_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'netw
 MODEL    = 'gemini-2.5-flash'
 TOP_K    = 12          # candidate regulations per incident (by cosine)
 
+# Recall-complete candidate augmentation. Cosine is a poor RETRIEVER for
+# cross-vocabulary legal matching (validated: F1 0.28; the right statute is often
+# buried — e.g. UU PDP Ps.35 ranked ~150th for some breaches), so the top-K cosine
+# shortlist alone makes the LLM judge miss obviously-applicable law. We therefore
+# ALWAYS add these core Indonesian statutory bases for cyber/data/AI incidents to
+# every candidate set (union with top-K cosine) and let the precise judge decide.
+# IDs must match data/network legal_graph node ids (verified present).
+WHITELIST = {
+    # UU PDP 27/2022 — data-protection duties & offences
+    'IDN_UU_PDP_No27_2022_Pasal_20',  # basis pemrosesan yang sah
+    'IDN_UU_PDP_No27_2022_Pasal_35',  # kewajiban keamanan data
+    'IDN_UU_PDP_No27_2022_Pasal_36',  # mencegah akses tidak sah
+    'IDN_UU_PDP_No27_2022_Pasal_46',  # notifikasi kegagalan pelindungan (3x24 jam)
+    'IDN_UU_PDP_No27_2022_Pasal_57',  # sanksi administratif
+    'IDN_UU_PDP_No27_2022_Pasal_65',  # larangan perolehan/pengungkapan/penggunaan melawan hukum
+    'IDN_UU_PDP_No27_2022_Pasal_66',  # larangan membuat data pribadi palsu
+    'IDN_UU_PDP_No27_2022_Pasal_67',  # pidana: perolehan melawan hukum
+    'IDN_UU_PDP_No27_2022_Pasal_68',  # pidana: pengungkapan melawan hukum
+    # UU ITE — penggunaan data & delik siber yang tersedia di korpus
+    'IDN_UU_ITE_No19_2016_Pasal_26',  # penggunaan data pribadi atas persetujuan; hak gugat
+    'IDN_UU_ITE_No1_2024_Pasal_27',   # kesusilaan/konten
+    'IDN_UU_ITE_No1_2024_Pasal_28',   # informasi bohong/SARA
+    'IDN_UU_ITE_No1_2024_Pasal_45A',  # pidana informasi bohong
+    'IDN_UU_ITE_No1_2024_Pasal_45B',  # pidana ancaman/pemerasan
+    # PP PSTE 71/2019 — kewajiban keamanan PSE
+    'IDN_PP_PSTE_No71_2019_Pasal_14',  # penyelenggaraan sistem elektronik yang andal & aman
+}
+
 
 def build_fewshot_block():
     """Return (text_block, holdout_keys) from fewshot_examples.json, or ('', set())."""
@@ -125,7 +153,11 @@ def main():
             cand.setdefault(iid, []).append(r)
     for iid in cand:
         cand[iid].sort(key=lambda r: -float(r['cosine']))
-        cand[iid] = cand[iid][:TOP_K]
+        top = cand[iid][:TOP_K]
+        seen = {r['regulation_id'] for r in top}
+        # recall-complete: append core statutes the cosine shortlist missed
+        wl = [r for r in cand[iid] if r['regulation_id'] in WHITELIST and r['regulation_id'] not in seen]
+        cand[iid] = top + wl
 
     ids = list(incidents.keys())
     if limit:

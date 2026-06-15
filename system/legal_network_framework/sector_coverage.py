@@ -20,6 +20,13 @@ NET = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'network')
 INC = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'incidents', 'indonesia_incidents.json')
 LLM = os.path.join(NET, 'llm_edge_confidence.json')
 ROLES = ['pelaku', 'pse', 'konsumen', 'regulator']
+# Operating point: high-confidence warrants only (P>=95), matching role_coverage's
+# calibrated column and the reframed thesis (lead with the conservative figure).
+CALIB_P = 95
+
+
+def _is_warrant(r):
+    return bool(r.get('relevant')) and int(r.get('confidence', 0)) >= CALIB_P
 
 # Human-readable sector metadata (keys = incident `sector` field). Bilingual.
 SECTOR_META = {
@@ -51,6 +58,7 @@ def main():
         by_sector[s].append(iid)
 
     out = {'source': os.path.basename(LLM), 'fewshot': bool(j.get('fewshot')),
+           'operating_point': f'calibrated P>={CALIB_P}',
            'n_incidents': len(incidents), 'sectors': []}
 
     for s in sorted(by_sector, key=lambda x: -len(by_sector[x])):
@@ -61,7 +69,7 @@ def main():
         warrant_counter = Counter()
         uncovered = []
         for iid in ids:
-            rel = [r for r in llm.get(iid, []) if r.get('relevant')]
+            rel = [r for r in llm.get(iid, []) if _is_warrant(r)]
             if rel:
                 any_cov += 1
             else:
