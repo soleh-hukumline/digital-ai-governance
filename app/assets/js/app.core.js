@@ -303,6 +303,49 @@ document.addEventListener('DOMContentLoaded', () => {
         return { color: 'rgba(203, 213, 225, 0.35)', highlight: '#6366f1' };
     }
 
+    // ── Human-readable node labels ───────────────────────────────────
+    // Raw ids like "EU_AI_Act_2024 - Article 24" are machine-y. We show a short
+    // CODE on the graph ("EU AI Act Art.24"), a clean full name in tooltip/inspector
+    // title ("EU AI Act 2024 — Article 24"), and keep the raw id verbatim in the
+    // inspector (nothing lost).
+    const INSTRUMENT_ABBR = [
+        [/UU_PDP/i, 'UU PDP'], [/UU_ITE_No1_2024/i, 'UU ITE 2024'],
+        [/UU_ITE_No19_2016/i, 'UU ITE 2016'], [/UU_ITE/i, 'UU ITE'],
+        [/PP_PSTE/i, 'PP PSTE'], [/POJK/i, 'POJK'], [/SE_Komdigi/i, 'SE Komdigi'],
+        [/Stranas_AI/i, 'Stranas AI'], [/UU_Perdagangan/i, 'UU Dagang'],
+        [/EU_AI_Act/i, 'EU AI Act'], [/OECD/i, 'OECD AI'], [/UNESCO/i, 'UNESCO'],
+        [/Council_of_Europe|CETS2?25/i, 'CoE FCAI'], [/ASEAN/i, 'ASEAN Guide'],
+        [/UNGA_Res/i, 'UNGA Res'], [/ISO.*42001/i, 'ISO 42001'], [/^WHO|WHO_/i, 'WHO Health AI'],
+        [/G7.*Hiroshima/i, 'G7 Hiroshima'], [/Global_Digital_Compact|UN_Global/i, 'UN GDC'],
+    ];
+    function _abbrInst(inst) {
+        for (const [re, ab] of INSTRUMENT_ABBR) if (re.test(inst)) return ab;
+        return String(inst).replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+    }
+    function _splitNode(raw) {
+        const s = String(raw || '');
+        let parts = s.split(' - ');
+        if (parts.length >= 2) return { inst: parts[0], prov: parts.slice(1).join(' - ') };
+        const m = s.match(/^(.*?)[_ ](Article|Pasal|Bagian)[_ ](\S+)$/i);
+        if (m) return { inst: m[1], prov: `${m[2]} ${m[3]}` };
+        return { inst: s, prov: '' };
+    }
+    const _isIncidentRaw = s => /^CASE_/.test(s) || /-(19|20)\d{2}\b/.test(String(s).split(' - ')[0]);
+    function nodeCode(raw) {                         // compact label for the graph
+        const s = String(raw || '');
+        if (_isIncidentRaw(s)) return s.split(' - ')[0].replace(/^CASE_/, '');
+        const { inst, prov } = _splitNode(s);
+        const ps = prov.replace(/Article\s*/i, 'Art.').replace(/Pasal\s*/i, 'Ps.')
+            .replace(/Bagian\s*/i, '§').replace(/\s+/g, '').trim();
+        return (_abbrInst(inst) + (ps ? ' ' + ps : '')).trim();
+    }
+    function nodeFull(raw) {                         // clean full name for tooltip/title
+        const s = String(raw || '');
+        if (_isIncidentRaw(s)) return s.split(' - ')[0].replace(/^CASE_/, '');
+        const { inst, prov } = _splitNode(s);
+        return _abbrInst(inst) + (prov ? ' — ' + prov.replace(/_/g, ' ') : '');
+    }
+
     function buildNodeInspectorHTML(nodeData, graphData) {
         const degree = graphData.edges.filter(e => e.from === nodeData.id || e.to === nodeData.id).length;
         const connectedNodes = graphData.edges
@@ -310,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .map(e => {
                 const otherId = e.from === nodeData.id ? e.to : e.from;
                 const other = graphData.nodes.find(n => n.id === otherId);
-                return other ? other.label : otherId;
+                return nodeCode(other ? other.label : otherId);
             }).slice(0, 5);
 
         const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
@@ -323,9 +366,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const connectedLbl = isEn ? 'Connected to:' : 'Terhubung ke:';
         const othersLbl = isEn ? `...and ${degree - 5} others` : `...dan ${degree - 5} lainnya`;
 
+        const kodeLbl = isEn ? 'Code' : 'Kode';
         return `
-            <div style="font-size:0.78rem; margin-bottom:0.5rem; color:var(--primary); font-weight:700; letter-spacing:0.5px; text-transform:uppercase;">${nodeData.group || 'Unknown'}</div>
-            <div style="font-size:0.85rem; color:var(--text-2); margin-bottom:0.75rem; line-height:1.4;">${nodeData.id}</div>
+            <div style="font-size:0.78rem; margin-bottom:0.5rem; color:var(--primary); font-weight:700; letter-spacing:0.5px; text-transform:uppercase;">${_abbrInst(nodeData.group || 'Unknown')}</div>
+            <div style="font-size:0.7rem; color:var(--text-4); margin-bottom:2px;">${kodeLbl}</div>
+            <div style="font-size:0.78rem; color:var(--text-3); margin-bottom:0.75rem; line-height:1.4; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; word-break:break-all;">${nodeData.id}</div>
             ${coverageBadge}
             <div style="margin-top:0.75rem; padding-top:0.75rem; border-top:1px solid var(--border);">
                 <div style="font-size:0.75rem; color:var(--text-3); margin-bottom:4px;">${degreeLbl} <strong style="color:var(--text-1);">${degree}</strong></div>
@@ -428,7 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     visGroupsObj[groupName] = { color: { background: color, border: 'rgba(0,0,0,0.5)' } };
                     legendHtml += `<div style="display:inline-flex; align-items:center; background:var(--legend-chip); padding:3px 10px; border-radius:20px; font-size:11px;">
                                      <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:${color}; margin-right:6px;"></span>
-                                     <span style="color:var(--text-2);">${groupName}</span>
+                                     <span style="color:var(--text-2);">${groupName === 'Insiden Kasus' ? groupName : _abbrInst(groupName)}</span>
                                    </div>`;
                 });
 
@@ -450,7 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: n.id, label: n.label, group: n.group,
                     classification: n.classification,
                     value: n.value || 10,
-                    title: `[${n.group}] ${n.label}`
+                    title: nodeFull(n.label)
                 })));
 
                 const edges = new vis.DataSet(graphData.edges.map((e, i) => {
@@ -487,9 +532,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         // Bipartite incident↔law view: labelling all 45 incidents made an
                         // illegible pile-up. Label the LAW hubs only; incident names appear
                         // on hover (tooltip) and click (inspector), and via Katalog Insiden.
-                        return (!isIncidentNode(n) && (degMap[n.id] || 0) >= 2) ? n.label : undefined;
+                        return (!isIncidentNode(n) && (degMap[n.id] || 0) >= 2) ? nodeCode(n.label) : undefined;
                     }
-                    return (isIncidentNode(n) || (degMap[n.id] || 0) >= Math.max(hubCut, 4)) ? n.label : undefined;
+                    return (isIncidentNode(n) || (degMap[n.id] || 0) >= Math.max(hubCut, 4)) ? nodeCode(n.label) : undefined;
                 };
 
                 // Pre-assign circular positions so nodes are spread out
@@ -503,7 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         id: n.id, label: labelFor(n), group: n.group,
                         classification: n.classification,
                         value: n.value || 10,
-                        title: `[${n.group}] ${n.label}`,
+                        title: nodeFull(n.label),
                         x: r * Math.cos(angle),
                         y: r * Math.sin(angle)
                     };
@@ -616,7 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             const nodeId = params.nodes[0];
                             const nodeData = graphData.nodes.find(n => n.id === nodeId);
                             if (nodeData) {
-                                inspectorTitle.textContent = nodeData.label || nodeId;
+                                inspectorTitle.textContent = nodeFull(nodeData.label || nodeId);
                                 // inspector shows the node's FULL relationships (incl. weak)
                                 inspectorBody.innerHTML = buildNodeInspectorHTML(nodeData, fullData);
                                 inspectorPanel.classList.add('visible');
