@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260615_10';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260615_11';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -940,6 +940,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 : `<div class="pasal-item"><div class="p-dot gap"></div><div><span class="p-desc">${L('Tidak ada dasar hukum teridentifikasi.', 'No legal basis identified.')}</span></div></div>`;
 
             const weakLbl = (RL[s.weakest_role] ? (isEn ? RL[s.weakest_role].en : RL[s.weakest_role].id) : s.weakest_role);
+            // Only call it a "gap" when the weakest subject is actually below 100%.
+            // (Bug fix: when every subject is 100% there is NO gap — don't mislabel one.)
+            const gapBadge = (s.weakest_pct >= 100)
+                ? `<span class="badge covered">✓ ${L('Semua subjek terjangkau', 'All subjects covered')}</span>`
+                : `<span class="badge gap">✕ ${L('terlemah', 'weakest')}: ${weakLbl} (${s.weakest_pct}%)</span>`;
 
             container.innerHTML += `
                 <div class="sector-card" style="border-color:${borderColor};">
@@ -957,7 +962,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="sc-badge-row">
                         <span class="badge covered">✓ ${s.covered}/${s.n_incidents} ${L('terjangkau', 'covered')}</span>
-                        <span class="badge gap">✕ ${L('gap terbesar', 'widest gap')}: ${weakLbl} (${s.weakest_pct}%)</span>
+                        ${gapBadge}
                     </div>
                     ${s.n_incidents < 3 ? `<div style="font-size:11px;color:#f59e0b;margin-top:6px;">${L('⚠ Sampel kecil (n&lt;3) — angka indikatif, bukan estimasi populasi.', '⚠ Small sample (n&lt;3) — indicative, not a population estimate.')}</div>` : ''}
                     <div style="${SLBL}">${L('Coverage per subjek hukum', 'Coverage per legal subject')}</div>
@@ -2187,13 +2192,15 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
         catch (e) { PROVISION_TEXTS = {}; }
         return PROVISION_TEXTS;
     }
+    let _PROV_CUR = { label: '', text: '' };
     window.showProvisionText = async function (label) {
         const isEn = window.currentLang === 'en';
         const map = await _ensureProvisionTexts();
-        const txt = map[label];
+        const txt = map[label] || '';
+        _PROV_CUR = { label, text: txt };
         const body = txt
             ? `<div style="white-space:pre-wrap;line-height:1.7;font-size:0.92rem;color:var(--text-2);">${_rEsc(txt)}</div>`
-            : `<div class="rp-empty" style="padding:1rem 0;">${isEn ? 'Full text unavailable (this may be an incident node or a non-article section).' : 'Teks lengkap tidak tersedia (kemungkinan node insiden atau bagian non-pasal).'}</div>`;
+            : `<div class="rp-empty" style="padding:1rem 0;">${isEn ? 'Full text unavailable — use Edit to add it as an override.' : 'Teks lengkap belum tersedia — pakai Edit untuk menambah lewat override.'}</div>`;
         const old = document.getElementById('provmodal'); if (old) old.remove();
         const m = document.createElement('div');
         m.id = 'provmodal';
@@ -2205,14 +2212,45 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
                 <div class="rp-title" style="font-size:1.12rem;">${_rEsc(nodeFull(label))}</div>
                 <div style="font-size:0.72rem;color:var(--text-4);font-family:ui-monospace,Menlo,monospace;margin-top:3px;word-break:break-all;">${_rEsc(label)}</div>
               </div>
-              <button onclick="document.getElementById('provmodal').remove()" style="border:none;background:var(--overlay-soft);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:16px;color:var(--text-2);flex-shrink:0;">✕</button>
+              <div style="display:flex;gap:6px;flex-shrink:0;">
+                <button onclick="_provToggleEdit()" class="btn-secondary btn-sm" title="${isEn ? 'Edit & export as override' : 'Edit & ekspor sebagai override'}"><span class="material-symbols-rounded" style="font-size:14px;">edit</span> ${isEn ? 'Edit' : 'Edit'}</button>
+                <button onclick="document.getElementById('provmodal').remove()" style="border:none;background:var(--overlay-soft);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:16px;color:var(--text-2);">✕</button>
+              </div>
             </div>
-            <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);">${body}</div>
-            <div style="margin-top:0.9rem;font-size:0.72rem;color:var(--text-4);">${isEn ? 'Source: extracted from the official regulation PDF.' : 'Sumber: diekstrak dari PDF regulasi resmi.'}</div>
+            <div id="provtext-view" style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);">${body}</div>
+            <div id="provtext-edit" style="display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);">
+              <textarea id="provtext-area" style="width:100%;min-height:240px;box-sizing:border-box;font-size:0.9rem;line-height:1.6;padding:10px;border:1px solid var(--border);border-radius:8px;background:var(--sunken);color:var(--text-1);font-family:inherit;">${_rEsc(txt)}</textarea>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+                <button onclick="_provCopyOverride()" class="btn-secondary btn-sm"><span class="material-symbols-rounded" style="font-size:14px;">content_copy</span> ${isEn ? 'Copy as override (JSON)' : 'Salin sebagai override (JSON)'}</button>
+                <button onclick="_provToggleEdit()" class="btn-secondary btn-sm">${isEn ? 'Back to view' : 'Kembali ke tampilan'}</button>
+              </div>
+              <div style="font-size:0.72rem;color:var(--text-4);margin-top:8px;line-height:1.5;">${isEn
+                ? 'Paste the copied line into <code>data/network/provision_texts_overrides.json</code>, then run <code>python build_provision_texts.py</code> and redeploy. Overrides win and are never auto-overwritten.'
+                : 'Tempel baris yang disalin ke <code>data/network/provision_texts_overrides.json</code>, lalu jalankan <code>python build_provision_texts.py</code> dan deploy ulang. Override selalu menang & tak akan tertimpa otomatis.'}</div>
+            </div>
+            <div style="margin-top:0.9rem;font-size:0.72rem;color:var(--text-4);">${isEn ? 'Source: extracted from the official regulation PDF (auto-extraction may contain OCR noise).' : 'Sumber: diekstrak dari PDF regulasi resmi (ekstraksi otomatis bisa mengandung noise OCR).'}</div>
           </div>`;
         m.onclick = ev => { if (ev.target === m) m.remove(); };
         document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape') { const x = document.getElementById('provmodal'); if (x) x.remove(); document.removeEventListener('keydown', esc); } });
         document.body.appendChild(m);
+    };
+    window._provToggleEdit = function () {
+        const v = document.getElementById('provtext-view'), e = document.getElementById('provtext-edit');
+        if (!v || !e) return;
+        const editing = e.style.display !== 'none';
+        v.style.display = editing ? '' : 'none';
+        e.style.display = editing ? 'none' : 'block';
+        if (!editing) { const a = document.getElementById('provtext-area'); if (a) a.focus(); }
+    };
+    window._provCopyOverride = function () {
+        const a = document.getElementById('provtext-area'); if (!a) return;
+        const val = a.value.replace(/\s+/g, ' ').trim();
+        const snippet = '  ' + JSON.stringify(_PROV_CUR.label) + ': ' + JSON.stringify(val) + ',';
+        const isEn = window.currentLang === 'en';
+        navigator.clipboard.writeText(snippet).then(
+            () => _toast(isEn ? 'Override copied — paste into provision_texts_overrides.json' : 'Override tersalin — tempel ke provision_texts_overrides.json'),
+            () => { window.prompt(isEn ? 'Copy this line:' : 'Salin baris ini:', snippet); }
+        );
     };
 
     function populateRankingTable(graphId, graphData) {
