@@ -459,6 +459,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Full graph kept for metrics/ranking/inspector; render only the
                 // strongest links + connected nodes (declutters the hairball).
                 const fullData = graphData;
+
+                // The 4 regulation networks now render as an INTER-INSTRUMENT CHORD
+                // (ribbon = #strong links between two instruments) instead of a force
+                // hairball. Metrics/ranking still come from the full node-level graph.
+                if (['all', 'intl', 'natl', 'cross'].includes(model.id)) {
+                    if (model.id === 'intl') {  // keep thematic edges in the aggregate
+                        const ex = new Set(rawData.nodes.map(n => n.id));
+                        fullData.edges = [...rawData.edges, ...THEMATIC_INTL_EDGES
+                            .filter(e => ex.has(e.from) && ex.has(e.to))
+                            .map(e => ({ from: e.from, to: e.to, label: e.theme, arrows: 'to' }))];
+                    }
+                    populateMetricsTable(model.id, fullData);
+                    populateRankingTable(model.id, fullData);
+                    networkInstances[model.id] = { graphData: fullData, isChord: true };
+                    renderInstrumentChord(model.id, fullData);
+                    continue;
+                }
+
                 graphData = pruneToStrongest(fullData, model.id);
 
                 const palette = [
@@ -1013,10 +1031,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     + `transform="rotate(${rot.toFixed(1)} ${lx.toFixed(1)} ${ly.toFixed(1)})">${_rEsc(n.code)}</text>`;
             }
             const hole = (n.type === 'incident' && n.degree === 0);
+            // Shape encodes legal force: binding law + incidents = circle; SOFT LAW = diamond.
+            const soft = isReg && !n.binding;
+            const x = p.x, y = p.y;
+            let shape;
+            if (soft) {
+                const r = rad + 1;
+                shape = `<polygon points="${x.toFixed(1)},${(y - r).toFixed(1)} ${(x + r).toFixed(1)},${y.toFixed(1)} ${x.toFixed(1)},${(y + r).toFixed(1)} ${(x - r).toFixed(1)},${y.toFixed(1)}" fill="${col}" stroke="rgba(0,0,0,0.3)" stroke-width="0.8"/>`;
+            } else {
+                shape = `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${rad}" fill="${hole ? 'transparent' : col}" stroke="${hole ? '#ef4444' : 'rgba(0,0,0,0.25)'}" stroke-width="${hole ? 1.5 : 0.8}" ${hole ? 'stroke-dasharray="2 2"' : ''}/>`;
+            }
             marks += `<g class="rnode" data-id="${_rEsc(n.id)}" style="cursor:pointer">`
                 + `<line x1="${bx1.toFixed(1)}" y1="${by1.toFixed(1)}" x2="${bx2.toFixed(1)}" y2="${by2.toFixed(1)}" stroke="${col}" stroke-width="${isReg ? 3 : 2}" stroke-opacity="0.7"/>`
-                + `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${rad}" fill="${hole ? 'transparent' : col}" stroke="${hole ? '#ef4444' : 'rgba(0,0,0,0.25)'}" stroke-width="${hole ? 1.5 : 0.8}" ${hole ? 'stroke-dasharray="2 2"' : ''}/>`
-                + `<title>${_rEsc(n.code)} — ${_rEsc(n.label)}</title>`
+                + shape
+                + `<title>${_rEsc(n.code)} — ${_rEsc(n.label)}${soft ? ' (soft law)' : ''}</title>`
                 + lbl + `</g>`;
         });
 
@@ -1043,6 +1071,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let h = `<div style="width:100%;font-size:10px;color:var(--text-4);font-weight:700;text-transform:uppercase;letter-spacing:.5px;">${isEn ? 'Edge = role' : 'Warna garis = peran'}:</div>`;
         for (const k in ROLE_META) h += `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);"><span style="width:16px;height:2px;background:${ROLE_META[k].c};display:inline-block;margin-right:5px;"></span>${isEn ? ROLE_META[k].en : ROLE_META[k].id}</span>`;
         h += `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);"><span style="width:9px;height:9px;border:1.5px dashed #ef4444;border-radius:50%;display:inline-block;margin-right:5px;"></span>${isEn ? 'Structural hole' : 'Structural hole (tanpa warrant)'}</span>`;
+        h += `<span style="width:100%;"></span>`;
+        h += `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);"><span style="width:9px;height:9px;background:var(--text-3);border-radius:50%;display:inline-block;margin-right:5px;"></span>${isEn ? 'Binding law / incident' : 'Hukum mengikat / insiden'}</span>`;
+        h += `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);"><span style="width:9px;height:9px;background:var(--text-3);display:inline-block;margin-right:5px;transform:rotate(45deg);"></span>${isEn ? 'Soft law' : 'Soft law (tidak mengikat)'}</span>`;
         el.innerHTML = h;
     }
 
@@ -1183,11 +1214,16 @@ document.addEventListener('DOMContentLoaded', () => {
         _downloadBlob(_toCSV(rows), `Radial_Insiden_Warrant_${isEn ? 'EN' : 'ID'}.csv`, 'text/csv;charset=utf-8;');
         _toast(isEn ? 'CSV downloaded.' : 'CSV berhasil diunduh.');
     };
-    window.exportRadialPNG = function () {
-        const svg = document.querySelector('#radial-incident-svg svg');
+    // shared SVG→PNG exporter (radial + chord); resolves text CSS vars to literals
+    function _svgToPng(containerId, filename) {
+        const svg = document.querySelector('#' + containerId + ' svg');
         if (!svg) { showToast('Graph belum dirender.', 'warning'); return; }
-        const bg = (getComputedStyle(document.documentElement).getPropertyValue('--graph-bg') || '#ffffff').trim();
+        const cs = getComputedStyle(document.documentElement);
+        const bg = (cs.getPropertyValue('--graph-bg') || '#ffffff').trim();
+        const fontCol = (cs.getPropertyValue('--graph-font') || '#1e293b').trim();
         const clone = svg.cloneNode(true);
+        // SVG-in-<img> can't read CSS vars → inline the label colour
+        clone.querySelectorAll('text').forEach(t => { t.setAttribute('fill', fontCol); });
         clone.setAttribute('width', 1600); clone.setAttribute('height', 1600);
         const xml = new XMLSerializer().serializeToString(clone);
         const img = new Image();
@@ -1197,12 +1233,130 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.fillStyle = (bg && bg !== 'transparent') ? bg : '#ffffff';
             ctx.fillRect(0, 0, 1600, 1600);
             ctx.drawImage(img, 0, 0, 1600, 1600);
-            const a = document.createElement('a'); a.download = 'Radial_Insiden_Regulasi.png'; a.href = cv.toDataURL('image/png'); a.click();
+            const a = document.createElement('a'); a.download = filename; a.href = cv.toDataURL('image/png'); a.click();
             _toast(window.currentLang === 'en' ? 'Image downloaded.' : 'Gambar berhasil diunduh.');
         };
         img.onerror = () => showToast('Export PNG gagal.', 'error');
         img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(xml);
-    };
+    }
+    window.exportRadialPNG = function () { _svgToPng('radial-incident-svg', 'Radial_Insiden_Regulasi.png'); };
+
+    // ===================================================================
+    // INTER-INSTRUMENT CHORD — replaces the force graph for the 4 reg networks
+    // Ribbon width = number of strong links between two instruments/groups.
+    // ===================================================================
+    const CHORD = {};   // per graphId: { groups, matrix, sel, byGroupColor }
+    function _chordPt(cx, cy, r, a) { return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; }
+
+    const _chordDisp = g => (g === 'Insiden Kasus' ? g : _abbrInst(g));
+    function renderInstrumentChord(graphId, fullData) {
+        const box = document.getElementById('network-' + graphId);
+        if (!box) return;
+        const isEn = window.currentLang === 'en';
+        // aggregate inter-group edge counts
+        const groupOf = {}; fullData.nodes.forEach(n => groupOf[n.id] = n.group);
+        const gset = [...new Set(fullData.nodes.map(n => n.group))];
+        const idx = {}; gset.forEach((g, i) => idx[g] = i);
+        const M = gset.map(() => gset.map(() => 0));
+        fullData.edges.forEach(e => {
+            const a = idx[groupOf[e.from]], b = idx[groupOf[e.to]];
+            if (a == null || b == null || a === b) return;   // inter-group only
+            M[a][b]++; M[b][a]++;
+        });
+        // keep groups with any connection
+        const keep = gset.map((g, i) => M[i].reduce((s, v) => s + v, 0) > 0);
+        const groups = gset.filter((g, i) => keep[i]);
+        const gi = {}; groups.forEach((g, i) => gi[g] = i);
+        const N = groups.length;
+        if (!N) { box.innerHTML = '<div class="rp-empty">' + (isEn ? 'No inter-instrument links.' : 'Tidak ada tautan antar-instrumen.') + '</div>'; return; }
+        const matrix = groups.map(ga => groups.map(gb => M[idx[ga]][idx[gb]]));
+
+        const palette = ['#ef4444', '#ec4899', '#a855f7', '#6366f1', '#3b82f6', '#0ea5e9', '#14b8a6', '#10b981', '#84cc16', '#eab308', '#f59e0b', '#f97316', '#78716c', '#be123c', '#6d28d9', '#1d4ed8', '#0891b2', '#65a30d', '#c026d3', '#db2777'];
+        const gcol = {}; groups.forEach((g, i) => gcol[g] = palette[i % palette.length]);
+        CHORD[graphId] = { groups, matrix, gcol, sel: null };
+
+        // layout
+        const VB = 820, CX = 410, CY = 410, Rin = 250, Rout = 270, Rlab = 280;
+        const rowSum = matrix.map(r => r.reduce((a, b) => a + b, 0));
+        const total = rowSum.reduce((a, b) => a + b, 0) || 1;
+        const PAD = 0.045, avail = 2 * Math.PI - N * PAD;
+        let ang = -Math.PI / 2;
+        const arcs = [], sub = [];
+        for (let i = 0; i < N; i++) {
+            const a0 = ang, span = (rowSum[i] / total) * avail, a1 = a0 + span;
+            arcs.push({ a0, a1, mid: (a0 + a1) / 2 });
+            let s = a0; sub[i] = [];
+            for (let j = 0; j < N; j++) { const w = matrix[i][j]; const sp = rowSum[i] ? (w / rowSum[i]) * span : 0; sub[i].push({ a0: s, a1: s + sp }); s += sp; }
+            ang = a1 + PAD;
+        }
+        const arcPath = (a0, a1) => {
+            const [x0, y0] = _chordPt(CX, CY, Rout, a0), [x1, y1] = _chordPt(CX, CY, Rout, a1);
+            const [x2, y2] = _chordPt(CX, CY, Rin, a1), [x3, y3] = _chordPt(CX, CY, Rin, a0);
+            const la = (a1 - a0) > Math.PI ? 1 : 0;
+            return `M${x0.toFixed(1)},${y0.toFixed(1)} A${Rout},${Rout} 0 ${la} 1 ${x1.toFixed(1)},${y1.toFixed(1)} L${x2.toFixed(1)},${y2.toFixed(1)} A${Rin},${Rin} 0 ${la} 0 ${x3.toFixed(1)},${y3.toFixed(1)} Z`;
+        };
+        const ribbonPath = (si, sj) => {
+            const [ai0x, ai0y] = _chordPt(CX, CY, Rin, si.a0), [ai1x, ai1y] = _chordPt(CX, CY, Rin, si.a1);
+            const [aj0x, aj0y] = _chordPt(CX, CY, Rin, sj.a0), [aj1x, aj1y] = _chordPt(CX, CY, Rin, sj.a1);
+            return `M${ai0x.toFixed(1)},${ai0y.toFixed(1)} A${Rin},${Rin} 0 0 1 ${ai1x.toFixed(1)},${ai1y.toFixed(1)} Q${CX},${CY} ${aj0x.toFixed(1)},${aj0y.toFixed(1)} A${Rin},${Rin} 0 0 1 ${aj1x.toFixed(1)},${aj1y.toFixed(1)} Q${CX},${CY} ${ai0x.toFixed(1)},${ai0y.toFixed(1)} Z`;
+        };
+
+        let ribbons = '';
+        for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
+            if (matrix[i][j] <= 0) continue;
+            ribbons += `<path class="cribbon" data-i="${i}" data-j="${j}" d="${ribbonPath(sub[i][j], sub[j][i])}" fill="${gcol[groups[i]]}" fill-opacity="0.3" stroke="none"><title>${_rEsc(_chordDisp(groups[i]))} ↔ ${_rEsc(_chordDisp(groups[j]))}: ${matrix[i][j]} ${isEn ? 'links' : 'tautan'}</title></path>`;
+        }
+        let bands = '';
+        for (let i = 0; i < N; i++) {
+            const a = arcs[i], col = gcol[groups[i]];
+            bands += `<path class="cband" data-i="${i}" d="${arcPath(a.a0, a.a1)}" fill="${col}" stroke="rgba(0,0,0,0.25)" stroke-width="0.5" style="cursor:pointer"><title>${_rEsc(_chordDisp(groups[i]))} (${rowSum[i]} ${isEn ? 'links' : 'tautan'})</title></path>`;
+            const flip = (a.mid > Math.PI / 2 && a.mid < 3 * Math.PI / 2);
+            const [lx, ly] = _chordPt(CX, CY, Rlab, a.mid);
+            const deg = a.mid * 180 / Math.PI;
+            bands += `<text class="clabel" data-i="${i}" x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" font-size="11" fill="var(--graph-font)" text-anchor="${flip ? 'end' : 'start'}" dominant-baseline="middle" transform="rotate(${(flip ? deg + 180 : deg).toFixed(1)} ${lx.toFixed(1)} ${ly.toFixed(1)})" style="cursor:pointer;pointer-events:auto;">${_rEsc(_chordDisp(groups[i]))}</text>`;
+        }
+
+        box.innerHTML = `<svg viewBox="0 0 ${VB} ${VB}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">`
+            + `<g class="cribbons">${ribbons}</g><g class="cbands">${bands}</g></svg>`;
+        box.onclick = ev => {
+            const el = ev.target.closest('[data-i]');
+            if (el && (el.classList.contains('cband') || el.classList.contains('clabel'))) _chordSelect(graphId, +el.getAttribute('data-i'));
+            else _chordSelect(graphId, null);
+        };
+        _chordSelect(graphId, null);
+        _chordLegend(graphId);
+    }
+
+    function _chordLegend(graphId) {
+        const el = document.getElementById('legend-' + graphId);
+        if (!el || !CHORD[graphId]) return;
+        const { groups, gcol } = CHORD[graphId];
+        el.innerHTML = groups.map(g => `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);background:var(--legend-chip);padding:3px 9px;border-radius:20px;"><span style="width:10px;height:10px;border-radius:50%;background:${gcol[g]};display:inline-block;margin-right:6px;"></span>${_rEsc(_chordDisp(g))}</span>`).join('');
+    }
+
+    function _chordSelect(graphId, i) {
+        const c = CHORD[graphId]; if (!c) return;
+        c.sel = i;
+        const box = document.getElementById('network-' + graphId);
+        box.querySelectorAll('.cribbon').forEach(p => {
+            const pi = +p.getAttribute('data-i'), pj = +p.getAttribute('data-j');
+            const on = (i == null) || pi === i || pj === i;
+            p.setAttribute('fill-opacity', i == null ? 0.3 : (on ? 0.72 : 0.05));
+        });
+        box.querySelectorAll('.cband').forEach(b => { b.style.opacity = (i == null || +b.getAttribute('data-i') === i) ? 1 : 0.35; });
+        // inspector panel
+        const panel = document.getElementById('inspector-' + graphId);
+        const title = document.getElementById('inspector-' + graphId + '-title');
+        const body = document.getElementById('inspector-' + graphId + '-body');
+        if (!panel || i == null) { if (panel) panel.classList.remove('visible'); return; }
+        const isEn = window.currentLang === 'en';
+        const { groups, matrix, gcol } = c;
+        const conns = groups.map((g, j) => ({ g, w: matrix[i][j] })).filter(o => o.w > 0).sort((a, b) => b.w - a.w);
+        title.textContent = _chordDisp(groups[i]);
+        body.innerHTML = `<div style="font-size:0.78rem;color:var(--text-3);margin-bottom:8px;">${isEn ? 'Connected instruments' : 'Instrumen terhubung'} (${conns.length}):</div>`
+            + conns.map(o => `<div style="display:flex;justify-content:space-between;gap:8px;font-size:0.8rem;padding:3px 0;border-bottom:1px dashed var(--border);"><span style="color:var(--text-2);"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${gcol[o.g]};margin-right:5px;"></span>${_rEsc(_chordDisp(o.g))}</span><b style="color:var(--text-1);">${o.w}</b></div>`).join('');
+        panel.classList.add('visible');
+    }
 
     // ===================================================================
     // AI TAB SWITCHER
@@ -1729,6 +1883,7 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
     window.toggleIsolatedNodes = function(graphId) {
         const inst = networkInstances[graphId];
         if (!inst) { showToast('Graph belum dirender.', 'warning'); return; }
+        if (inst.isChord) { _chordSelect(graphId, null); return; }  // chord: clear selection
 
         inst.isolatedHidden = !inst.isolatedHidden;
         const { netData, network } = inst;
@@ -1789,6 +1944,7 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
 
     window.exportGraphPNG = function(graphId, filename) {
         const inst = networkInstances[graphId];
+        if (inst && inst.isChord) { _svgToPng('network-' + graphId, filename || ('Chord_' + graphId + '.png')); return; }
         if (!inst || !inst.network) { showToast('Graph belum selesai dirender.', 'error'); return; }
 
         showToast('Memproses High-Resolution Export (4K), mohon tunggu...', 'info');
