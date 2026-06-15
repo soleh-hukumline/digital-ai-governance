@@ -1189,7 +1189,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="rp-counter" style="margin-left:auto;color:var(--primary);font-weight:700;">${dirLbl}</span>
                 </div>
                 <div class="rp-edge" style="border-left-color:${_rRoleColor(e.roles)};">
-                    <div class="rp-edge-node">${_rEsc(other.code || otherId)}</div>
+                    <div class="rp-edge-node" ${other.type === 'regulation' ? `onclick="showProvisionText('${String(other.label || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'")}')" style="cursor:pointer;text-decoration:underline dotted;text-underline-offset:2px;" title="${isEn ? 'Read full article' : 'Baca bunyi pasal'}"` : ''}>${_rEsc(other.code || otherId)}${other.type === 'regulation' ? ' 📖' : ''}</div>
                     <div class="rp-k" style="font-family:ui-monospace,Menlo,monospace;">${_rEsc(other.label || '')}</div>
                     <div style="margin-top:6px;">${roleChips}</div>
                     <div class="rp-k" style="margin-top:6px;">${isEn ? 'Confidence' : 'Keyakinan'}: <b style="color:var(--text-1);">${e.confidence}%</b></div>
@@ -1331,7 +1331,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const el = document.getElementById('legend-' + graphId);
         if (!el || !CHORD[graphId]) return;
         const { groups, gcol } = CHORD[graphId];
-        el.innerHTML = groups.map(g => `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);background:var(--legend-chip);padding:3px 9px;border-radius:20px;"><span style="width:10px;height:10px;border-radius:50%;background:${gcol[g]};display:inline-block;margin-right:6px;"></span>${_rEsc(_chordDisp(g))}</span>`).join('');
+        const isEn = window.currentLang === 'en';
+        const note = `<div style="width:100%;font-size:10.5px;color:var(--text-4);line-height:1.5;margin-bottom:4px;">${isEn
+            ? '<b>Ribbon</b> = number of provision-pairs with high textual (SBERT) similarity between two instruments — a descriptive semantic-overlap map, not legal citation. Click an arc to rank its links.'
+            : '<b>Ribbon</b> = jumlah pasangan pasal dgn kemiripan teks (SBERT) tinggi antar dua instrumen — peta tumpang-tindih semantik (deskriptif), bukan sitasi hukum. Klik busur untuk peringkat tautannya.'}</div>`;
+        el.innerHTML = note + groups.map(g => `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);background:var(--legend-chip);padding:3px 9px;border-radius:20px;"><span style="width:10px;height:10px;border-radius:50%;background:${gcol[g]};display:inline-block;margin-right:6px;"></span>${_rEsc(_chordDisp(g))}</span>`).join('');
     }
 
     function _chordSelect(graphId, i) {
@@ -2166,6 +2170,42 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
         return CB;
     }
 
+    // ── Provision full-text viewer (audit the analysis by reading the article) ──
+    let PROVISION_TEXTS = null;
+    async function _ensureProvisionTexts() {
+        if (PROVISION_TEXTS) return PROVISION_TEXTS;
+        try { const r = await fetch(`./data/network/provision_texts.json?v=${DATA_V}`); PROVISION_TEXTS = await r.json(); }
+        catch (e) { PROVISION_TEXTS = {}; }
+        return PROVISION_TEXTS;
+    }
+    window.showProvisionText = async function (label) {
+        const isEn = window.currentLang === 'en';
+        const map = await _ensureProvisionTexts();
+        const txt = map[label];
+        const body = txt
+            ? `<div style="white-space:pre-wrap;line-height:1.7;font-size:0.92rem;color:var(--text-2);">${_rEsc(txt)}</div>`
+            : `<div class="rp-empty" style="padding:1rem 0;">${isEn ? 'Full text unavailable (this may be an incident node or a non-article section).' : 'Teks lengkap tidak tersedia (kemungkinan node insiden atau bagian non-pasal).'}</div>`;
+        const old = document.getElementById('provmodal'); if (old) old.remove();
+        const m = document.createElement('div');
+        m.id = 'provmodal';
+        m.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;padding:24px;';
+        m.innerHTML = `<div style="background:var(--bg-card);max-width:680px;width:100%;max-height:82vh;overflow:auto;border-radius:14px;border:1px solid var(--border);box-shadow:0 24px 60px rgba(0,0,0,0.45);padding:1.4rem 1.6rem;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+              <div style="min-width:0;">
+                <div class="rp-eyebrow">${_rEsc(_abbrInst(String(label || '').split(' - ')[0]))}</div>
+                <div class="rp-title" style="font-size:1.12rem;">${_rEsc(nodeFull(label))}</div>
+                <div style="font-size:0.72rem;color:var(--text-4);font-family:ui-monospace,Menlo,monospace;margin-top:3px;word-break:break-all;">${_rEsc(label)}</div>
+              </div>
+              <button onclick="document.getElementById('provmodal').remove()" style="border:none;background:var(--overlay-soft);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:16px;color:var(--text-2);flex-shrink:0;">✕</button>
+            </div>
+            <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);">${body}</div>
+            <div style="margin-top:0.9rem;font-size:0.72rem;color:var(--text-4);">${isEn ? 'Source: extracted from the official regulation PDF.' : 'Sumber: diekstrak dari PDF regulasi resmi.'}</div>
+          </div>`;
+        m.onclick = ev => { if (ev.target === m) m.remove(); };
+        document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape') { const x = document.getElementById('provmodal'); if (x) x.remove(); document.removeEventListener('keydown', esc); } });
+        document.body.appendChild(m);
+    };
+
     function populateRankingTable(graphId, graphData) {
         const tb = document.getElementById(`tbody-metrics-${graphId}`);
         if (!tb) return;
@@ -2196,10 +2236,11 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
             const dc = (deg[nd.id] / denom);
             const cls = nd.classification || nd.group || '';
             const lbl = String(nd.label || nd.id);
+            const jsEsc = lbl.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
             const betCell = bet ? `<td style="padding:8px 12px; text-align:right; font-family:monospace; color:var(--sky);">${bet[nd.id].toFixed(4)}</td>` : '';
             return `<tr style="border-bottom:1px solid var(--border);">
                 <td style="padding:8px 12px; color:var(--text-4); text-align:right;">${i + 1}</td>
-                <td style="padding:8px 12px; color:var(--text-1); font-weight:600;">${lbl}</td>
+                <td style="padding:8px 12px;"><span onclick="showProvisionText('${jsEsc}')" style="color:var(--primary); font-weight:600; cursor:pointer; text-decoration:underline dotted; text-underline-offset:2px;" title="${isEn ? 'Click to read the full article text' : 'Klik untuk baca bunyi pasal lengkap'}">${_rEsc(nodeFull(lbl))} <span class="material-symbols-rounded" style="font-size:13px; vertical-align:-2px;">article</span></span></td>
                 <td style="padding:8px 12px; color:var(--text-3); font-size:0.8rem;">${cls}</td>
                 <td style="padding:8px 12px; text-align:right; font-family:monospace; font-weight:700; color:var(--primary);">${deg[nd.id]}</td>
                 <td style="padding:8px 12px; text-align:right; font-family:monospace; color:var(--emerald);">${dc.toFixed(4)}</td>
@@ -2225,6 +2266,11 @@ ${regText || 'TIDAK ADA PASAL TERDETEKSI.'}
                 <tbody>${rowsHtml}</tbody>
               </table>
               ${betNote}
+              <div style="font-size:0.75rem; color:var(--text-4); margin-top:8px; line-height:1.55; border-top:1px dashed var(--border); padding-top:8px;">
+                ${isEn
+                    ? '⚠ <b>What this means:</b> “Degree” here = how many <i>other provisions are textually similar</i> (SBERT cosine ≥ threshold) to this one — a <b>semantic-overlap</b> measure, <b>not</b> legal authority or cross-citation. Instruments with more articles (e.g. PP PSTE, 100 articles) score higher by volume. Treat it as an exploratory map; click a node to read the actual text and judge for yourself.'
+                    : '⚠ <b>Arti angka ini:</b> “Degree” di sini = berapa <i>pasal lain yang mirip secara teks</i> (SBERT cosine ≥ ambang) dengan pasal ini — ukuran <b>tumpang-tindih semantik</b>, <b>bukan</b> otoritas hukum atau sitasi. Instrumen dengan lebih banyak pasal (mis. PP PSTE, 100 pasal) otomatis berskor lebih tinggi. Anggap sebagai peta eksploratif; klik node untuk baca teks asli dan nilai sendiri.'}
+              </div>
             </div>`;
 
         let cont = document.getElementById(`ranking-${graphId}`);
