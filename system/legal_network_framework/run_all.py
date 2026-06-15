@@ -63,9 +63,14 @@ def main():
     from cross_analyzer import analyze_cross_only
     run_step('5. Cross-Jurisdiction Sub-Graph + Report', analyze_cross_only)
 
-    # Step 6: Incident sub-graph
+    # Step 6: Incident sub-graph (EXPLORATORY cosine baseline → incident_graph_cosine.json + report)
     from incident_analyzer import analyze_incidents
-    run_step('6. Incident Analysis Sub-Graph + Report', analyze_incidents)
+    run_step('6. Incident Analysis (cosine baseline) Sub-Graph + Report', analyze_incidents)
+
+    # Step 6b: CANONICAL incident graph from the validated few-shot judge
+    # (owns incident_graph.json — the version the dashboard radial view derives from).
+    from build_incident_graph_fewshot import main as build_incident_graph_fewshot
+    run_step('6b. Canonical Incident Graph (few-shot judge)', build_incident_graph_fewshot)
 
     # Step 7: Gap analysis
     from gap_analyzer import analyze_gap

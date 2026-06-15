@@ -37,7 +37,11 @@ def analyze_incidents():
         for u, v, attrs in G.edges(data=True):
             edges_export.append({"from": u, "to": v,
                                   "label": attrs.get("type", "governs"), "arrows": "to"})
-        with open('../../data/network/incident_graph.json', 'w', encoding='utf-8') as f:
+        # NOTE: this is the EXPLORATORY cosine baseline graph. The canonical
+        # incident_graph.json (used by the dashboard) is built by
+        # build_incident_graph_fewshot.py from the validated few-shot judge.
+        # Write to a clearly-named backup so this never clobbers the few-shot graph.
+        with open('../../data/network/incident_graph_cosine.json', 'w', encoding='utf-8') as f:
             json.dump({"nodes": nodes_export, "edges": edges_export}, f, indent=2)
 
     except Exception as e:
