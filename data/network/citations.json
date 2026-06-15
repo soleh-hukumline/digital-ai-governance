@@ -1,0 +1,952 @@
+{
+  "docs": {
+    "PP_PSTE_No71_2019": [
+      {
+        "id": "UU ITE",
+        "count": 8,
+        "context": "…an Republik Indonesia, perlu pengaturan secara menyeluruh pemanfaatan teknologi informasi dan transaksi elektronik; Pasal 5 ayat (2) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945; 2019, No. 185…",
+        "type": "named",
+        "name": "UU ITE",
+        "in_corpus": true,
+        "corpus_doc": "UU_ITE_No19_2016",
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "PP 82/2012",
+        "count": 3,
+        "context": "…IK DENGAN RAHMAT TUHAN YANG MAHA ESA PRESIDEN REPUBLIK INDONESIA, Menimbang : a. b. bahwa Peraturan Pemerintah Nomor 82 Tahun 2012 tentang Penyelenggaraan Sistem dan Transaksi Elektronik sudah tidak sesuai lagi dengan pe…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "PP PSTE (lama, dicabut)",
+        "self_ref": false
+      },
+      {
+        "id": "UU 11/2008",
+        "count": 2,
+        "context": "…5 ayat (2) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945; 2019, No. 185 -2- 2. Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik (Lembaran Negara Republik Indonesia Tahun 2008…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "UU_ITE_No19_2016",
+        "in_corpus": true,
+        "name": "UU ITE (asli)",
+        "self_ref": false
+      },
+      {
+        "id": "UU 19/2016",
+        "count": 1,
+        "context": "…, Tambahan Lembaran Negara Republik Indonesia Nomor 4843) sebagaimana telah diubah dengan Undang-Undang Nomor 19 Tahun 2016 tentang Perubahan Atas Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi …",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "UU_ITE_No19_2016",
+        "in_corpus": true,
+        "name": "UU ITE (perubahan I)",
+        "self_ref": false
+      },
+      {
+        "id": "PP 71/2019",
+        "count": 1,
+        "context": "…an. Pencabutan. (Penjelasan Dalam Tambahan Lembaran Negara Republik Indonesia Nomor 6400) PERATURAN PEMERINTAH REPUBLIK INDONESIA NOMOR 71 TAHUN 2019 TENTANG PENYELENGGARAAN SISTEM DAN TRANSAKSI ELEKTRONIK DENGAN RAHMAT TUHAN YANG MAHA ESA…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "PP_PSTE_No71_2019",
+        "in_corpus": true,
+        "name": "PP PSTE",
+        "self_ref": true
+      }
+    ],
+    "UU_ITE_No19_2016": [
+      {
+        "id": "UU 19/2016",
+        "count": 2,
+        "context": "…{ip PRESIDEN REPUBLIK INDONESIA SALINAN UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 19 TAHUN 2016 TENTANG PERUBAHAN ATAS UNDANG-UNDANG NOMOR I1 TAHUN 2OO8 TENTANG INFORMASI DAN TRANSAKSI …",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "UU_ITE_No19_2016",
+        "in_corpus": true,
+        "name": "UU ITE (perubahan I)",
+        "self_ref": true
+      },
+      {
+        "id": "UU 11/2008",
+        "count": 1,
+        "context": "…oral, nilai-nilai agama, keamanan, dan ketertiban umum dalam suatu masyarakat demokratis. Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik (UU ITE) adalah undang-undang pertama di bidan…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "UU_ITE_No19_2016",
+        "in_corpus": true,
+        "name": "UU ITE (asli)",
+        "self_ref": true
+      }
+    ],
+    "UU_ITE_No1_2024": [
+      {
+        "id": "UU ITE",
+        "count": 37,
+        "context": "…HUN 2024 TENTANG PERUBAHAN KEDUA ATAS UNDANG-UNDANG NOMOR I1 TAHUN 2OO8 TENTANG INFORMASI DAN TRANSAKSI ELEKTRONIK DENGAN RAHMATTUHAN YANG MAHA ESA PRESIDEN REPUBLIK INDONESIA, ivlenimbang a, b c bahwa un…",
+        "type": "named",
+        "name": "UU ITE",
+        "in_corpus": true,
+        "corpus_doc": "UU_ITE_No19_2016",
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "UU 11/2008",
+        "count": 8,
+        "context": "…atau Transaksi Elektronik yang mengganggu ketertiban umum; bahwa beberapa ketentuan dalam Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik sebagaimana telah diubah dengan Undang-Undang …",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "UU_ITE_No19_2016",
+        "in_corpus": true,
+        "name": "UU ITE (asli)",
+        "self_ref": false
+      },
+      {
+        "id": "UU 19/2016",
+        "count": 5,
+        "context": "… 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik sebagaimana telah diubah dengan Undang-Undang Nomor 19 Tahun 2016 tentang Perubahan atas Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi …",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "UU_ITE_No19_2016",
+        "in_corpus": true,
+        "name": "UU ITE (perubahan I)",
+        "self_ref": false
+      },
+      {
+        "id": "UU 1/2024",
+        "count": 1,
+        "context": "…ng-undangan dan trasi Hukum, Djaman SK No l90l75A TI.I JTFIIIilNFIEFI;FIA PENJELASAN ATAS UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 1 TAHUN 2024 TENTANG PERUBAHAN KEDUA ATAS UNDANG-UNDANG NOMOR 11 TAHUN 2OO8 TENTANG INFORMASI DAN TRAN…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "UU_ITE_No1_2024",
+        "in_corpus": true,
+        "name": "UU ITE (perubahan II)",
+        "self_ref": true
+      }
+    ],
+    "UU_PDP_No27_2022": [
+      {
+        "id": "UU 27/2022",
+        "count": 1,
+        "context": "…SALINAN PRESIDEN REPUELIK INDONESIA UNDANG-UNDANG REPUBLIK INDONESIA NOMOR 27 TAHUN 2022 TENTANG PELINDUNGAN DATA PRIBADI DENGAN RAHMATTUHAN YANG MAHA ESA PRESIDEN REPUBLIK INDON…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "UU_PDP_No27_2022",
+        "in_corpus": true,
+        "name": "UU PDP",
+        "self_ref": true
+      }
+    ],
+    "Stranas_AI_Indonesia_2020-2045_Full": [
+      {
+        "id": "Perpres 38/2018",
+        "count": 3,
+        "context": "…pengetahuan dan teknologi, dan b) menciptakan keunggulan kompetitif bangsa secara global (Peraturan Presiden Nomor 38 Tahun 2018)Sebagai penjabaran lebih lanjut perlu dibuat perencanaan lebih teknis dalam bentuk Priori…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "Perpres 38/2018 (Riset Prioritas)",
+        "self_ref": false
+      },
+      {
+        "id": "G20 AI Principles",
+        "count": 3,
+        "context": "…al dari G20 Sejalan dengan ketetapan prinsip-prinsip Kecerdasan Artifisial G20 (G20 AI Principles) [7] yang disepakati dalam pertemuan KTT G20 tanggal 28-29 Juni 2019 di Osaka-Jepang, pem…",
+        "type": "named",
+        "name": "G20 AI Principles  [≈ OECD AI Principles (G20 mengadopsi 2019)]",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "UU 3/2014",
+        "count": 1,
+        "context": "…n artifisial dalam inovasi industri untuk mendukung revolusi industri ke 4, sesuai dengan Undang-Undang Nomor 3 Tahun 2014 [11] tentang Perindustrian yang meletakkan industri sebagai salah satu pilar ekonomi dan …",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "UU 3/2014",
+        "self_ref": false
+      },
+      {
+        "id": "UU 12/2011",
+        "count": 1,
+        "context": "…ks hukum positif, Indonesia yang memiliki sistem hirarkis perundang- undangan berdasarkan Undang-Undang Nomor 12 Tahun 2011 tentang (“UU No. 12/2011”) sudah mengatur bentuk-bentuk dan kedudukan masing-masing perat…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "UU 12/2011",
+        "self_ref": false
+      },
+      {
+        "id": "Perpres 133/2017",
+        "count": 1,
+        "context": "…ka pendek pertama adalah memastikan peraturan ini dapat dijalankan secara optimal. Sesuai Peraturan Presiden Nomor 133 Tahun 2017 tentang perubahan atas Peraturan Presiden Nomor 53 Tahun 2017 tentang Badan Siber dan San…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "Perpres 133/2017",
+        "self_ref": false
+      },
+      {
+        "id": "Perpres 53/2017",
+        "count": 1,
+        "context": "…kan secara optimal. Sesuai Peraturan Presiden Nomor 133 Tahun 2017 tentang perubahan atas Peraturan Presiden Nomor 53 Tahun 2017 tentang Badan Siber dan Sandi Negara dalam Pasal 56 disebutkan pelaksanaan seluruh tugas …",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "Perpres 53/2017",
+        "self_ref": false
+      },
+      {
+        "id": "Perpres 39/2019",
+        "count": 1,
+        "context": "…itas data - data yang dipertukarkan secara elektronik telah dilakukan dengan mengeluarkan Peraturan Presiden Nomor 39 Tahun 2019 tentang Satu Data Indonesia yang mengatur tentang tatacara pengambilan data, walidata dan…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "Perpres 39/2019",
+        "self_ref": false
+      },
+      {
+        "id": "Perpres 26/2012",
+        "count": 1,
+        "context": "… hal yang perlu diperhatikan, yakni: a. Cetak Biru Pengembangan Sistem Logistik Nasional (Peraturan Presiden Republik Indonesia Nomor 26 Tahun 2012) Sistem Logistik Nasional diharapkan dapat berperan dalam mencapai sasaran Rencana Pemban…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "Perpres 26/2012",
+        "self_ref": false
+      },
+      {
+        "id": "Perpres 80/2011",
+        "count": 1,
+        "context": "…eraturan untuk menjadi landasan dalam pelaksanaan reformasi birokrasi di Indonesia, yaitu Peraturan Presiden nomor 80 tahun 2011 tentang Grand Design Reformasi Birokrasi Indonesia 2010-2025. Reformasi birokrasi yang me…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "Perpres 80/2011",
+        "self_ref": false
+      },
+      {
+        "id": "Perpres 95/2018",
+        "count": 1,
+        "context": "…ra efektif dan efisien. Untuk memperkuat Perpres No.80 tahun 2011, pemerintah menerbitkan Peraturan Presiden nomor 95 tahun 2018 tentang Sistem Pemerintahan Berbasis Elektronik atau SPBE. Perpres ini menjadi salah satu…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "Perpres 95/2018",
+        "self_ref": false
+      }
+    ],
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan": [
+      {
+        "id": "UU 4/2023",
+        "count": 4,
+        "context": "…anakan kewenangan pengaturan dan pengawasan sebagaimana dimaksud dalam Pasal 216 ayat (1) Undang-Undang Nomor 4 Tahun 2023 tentang Pengembangan dan Penguatan Sektor Keuangan, Otoritas Jasa Keuangan berwenang meng…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "UU P2SK",
+        "self_ref": false
+      },
+      {
+        "id": "UU 21/2011",
+        "count": 1,
+        "context": "…an Otoritas Jasa Keuangan tentang Penyelenggaraan Inovasi Teknologi Sektor Keuangan; : 1. Undang-Undang Nomor 21 Tahun 2011 tentang Otoritas Jasa Keuangan (Lembaran Negara Republik Indonesia Tahun 2011 Nomor 111, …",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "UU OJK",
+        "self_ref": false
+      }
+    ],
+    "SE_Komdigi_No9_2023_Etika_AI": [
+      {
+        "id": "UU 11/2008",
+        "count": 2,
+        "context": "…an Menteri ini didasarkan pada ketentuan peraturan perundang-undangan sebagai berikut: a. Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik (Lembaran Negara Republik Indonesia Tahun 2OO8…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "UU_ITE_No19_2016",
+        "in_corpus": true,
+        "name": "UU ITE (asli)",
+        "self_ref": false
+      },
+      {
+        "id": "UU ITE",
+        "count": 2,
+        "context": "…erundang-undangan sebagai berikut: a. Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik (Lembaran Negara Republik Indonesia Tahun 2OO8 Nomor 58, Tambahan Lembaran Negara Republi…",
+        "type": "named",
+        "name": "UU ITE",
+        "in_corpus": true,
+        "corpus_doc": "UU_ITE_No19_2016",
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "UU 6/2023",
+        "count": 1,
+        "context": "…donesia Tahun 2016 Nomor 251, Tambahan Lembaran Negara Republik Indonesia 5- Nomor 5952); Undang-Undang Nomor 6 Tahun 2023 tentang Penetapan b c d e f Peraturan Pemerintah Pengganti Undang-undang Nomor 2 Tahun 20…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "UU Cipta Kerja",
+        "self_ref": true
+      },
+      {
+        "id": "UU 2/2022",
+        "count": 1,
+        "context": "…dang-Undang Nomor 6 Tahun 2023 tentang Penetapan b c d e f Peraturan Pemerintah Pengganti Undang-undang Nomor 2 Tahun 2022 tentang Cipta Kerja menjadi Undang-Undang (Lembaran Negara Republik Indonesia Tahun 2O23 …",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "UU 2/2022",
+        "self_ref": false
+      },
+      {
+        "id": "UU 27/2022",
+        "count": 1,
+        "context": "…k Indonesia Tahun 2O23 Nomor 41, Tambahan Lembaran Negara Republik Indonesia Nomor 6856); Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi (Lembaran Negara Republik Indonesia Tahun 2022 Nomor 196…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "UU_PDP_No27_2022",
+        "in_corpus": true,
+        "name": "UU PDP",
+        "self_ref": false
+      },
+      {
+        "id": "PP 5/2027",
+        "count": 1,
+        "context": "… Indonesia Tahun 2019 Nomor 185, Tambahan Lembaran Negara Republik Indonesia Nomor 64OO); Peraturan Pemerintah Nomor 5 Tahun 2027 tentang Penyelenggaraan Perizinan Berusaha Berbasis Risiko (Lembaran Negara Republik Indo…",
+        "type": "numbered",
+        "suspect_year": true,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "PP 5/2027",
+        "self_ref": false
+      },
+      {
+        "id": "Permen 3/202 1",
+        "count": 1,
+        "context": "…arakan usaha pemrograman berbasis kecerdasan artifisial sebagaimana diatur dalam Lampiran Peraturan Menteri Komunikasi dan Informatika Nomor 3 Tahun 202 1 tentang Standar Kegiatan Usaha dan Standar Produk pada Penyelenggaraan Perizinan Berusaha…",
+        "type": "numbered",
+        "suspect_year": true,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "Permen 3/202 1",
+        "self_ref": true
+      },
+      {
+        "id": "Permen 5/2020",
+        "count": 1,
+        "context": "…rian Komunikasi dan Informatika (Lembaran Negara Republik Indonesia Tahun 2O23 Nomor 51); Peraturan Menteri Komunikasi dan Informatika Nomor 5 Tahun 2020 tentang Penyelenggara Sistem Elektronik Lingkup Privat (Berita Negara Republik Indonesia …",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "Permenkominfo 5/2020 (PSE Lingkup Privat)",
+        "self_ref": false
+      },
+      {
+        "id": "PP PSTE",
+        "count": 1,
+        "context": "…ublik Indonesia Nomor 682O); Peraturan Pemerintah Nomor 7 1 Tahun 20 19 tentang Penyelenggaraan Sistem dan Transaksi Elektronik (Lembaran Negara Republik Indonesia Tahun 2019 Nomor 185, Tambahan Lembaran Negara Republ…",
+        "type": "named",
+        "name": "PP PSTE",
+        "in_corpus": true,
+        "corpus_doc": "PP_PSTE_No71_2019",
+        "self_ref": false,
+        "suspect_year": false
+      }
+    ],
+    "G7_Hiroshima_Code_of_Conduct_for_AI": [
+      {
+        "id": "OECD AI Principles",
+        "count": 1,
+        "context": "…tions is discussed and elaborated as a living document to build on the existing OECD AI Principles in response to the recent developments in advanced AI systems and is meant to help seize …",
+        "type": "named",
+        "name": "OECD AI Principles",
+        "in_corpus": true,
+        "corpus_doc": "OECD_AI_Principles_2024",
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+        "count": 1,
+        "context": "…ode of Conduct for Organizations Developing Advanced AI Systems aims to promote safe, secure, and trustworthy AI worldwide and will provide voluntary guidance for actions by organizations developing …",
+        "type": "named",
+        "name": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+        "in_corpus": true,
+        "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+        "self_ref": false,
+        "suspect_year": false
+      }
+    ],
+    "OECD_AI_Principles_2024": [
+      {
+        "id": "G20 AI Principles",
+        "count": 1,
+        "context": "… democratic values. In June 2019, at the Osaka Summit, G20 Leaders welcomed the G20 AI Principles, drawn from the Recommendation. The Recommendation was revised by the OECD Council on 8 N…",
+        "type": "named",
+        "name": "G20 AI Principles  [≈ OECD AI Principles (G20 mengadopsi 2019)]",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "Council of Europe Framework Convention on AI",
+        "count": 1,
+        "context": "…count work in other international fora, such as UNESCO, the European Union, the Council of Europe and the initiative to build an International Panel on AI (see https://pm.gc.ca/eng/news/2…",
+        "type": "named",
+        "name": "Council of Europe Framework Convention on AI",
+        "in_corpus": true,
+        "corpus_doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+        "self_ref": false,
+        "suspect_year": false
+      }
+    ],
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI": [
+      {
+        "id": "UNESCO Recommendation on AI Ethics",
+        "count": 1,
+        "context": "… of the United Nations Educational, Scientific and Cultural Organization of its Recommendation on the Ethics of Artificial Intelligence of 23 November 2021, 6 its implementation plan, including the Readiness Assessment Method…",
+        "type": "named",
+        "name": "UNESCO Recommendation on AI Ethics",
+        "in_corpus": true,
+        "corpus_doc": "UNESCO_Recommendation_on_AI_Ethics_2021",
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "Global Digital Compact (UNGA 78/311)",
+        "count": 1,
+        "context": "…Summit of the Future and, in this regard, looks forward to the development of a global digital compact; 12. Looks forward also to the overall review by the General Assembly, in 2025, of the pr…",
+        "type": "named",
+        "name": "Global Digital Compact (UNGA 78/311)",
+        "in_corpus": true,
+        "corpus_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+        "self_ref": false,
+        "suspect_year": false
+      }
+    ],
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI": [
+      {
+        "id": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+        "count": 6,
+        "context": "…es of the World Summit on the Information Society”, Reaffirming its resolutions 78/265 of 21 March 2024, entitled “Seizing the opportunities of safe, secure and trustworthy art…",
+        "type": "named",
+        "name": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+        "in_corpus": true,
+        "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+        "self_ref": false,
+        "suspect_year": false
+      }
+    ],
+    "ASEAN_Guide_AI_Governance_Ethics_2024": [
+      {
+        "id": "UNESCO Recommendation on AI Ethics",
+        "count": 2,
+        "context": "…g this Guide, existing AI governance frameworks and guidelines such as UNESCO’s Recommendation on the Ethics of Artificial Intelligence3 and EU’s Ethics Guidelines for Trustworthy AI were referenced4. The ASEAN Guide on AI Go…",
+        "type": "named",
+        "name": "UNESCO Recommendation on AI Ethics",
+        "in_corpus": true,
+        "corpus_doc": "UNESCO_Recommendation_on_AI_Ethics_2021",
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "OECD AI Principles",
+        "count": 1,
+        "context": "…igovframework2.pdf > 2 Organisation for Economic Co-operation and Development, “Recommendation of the Council on Artificial Intelligence” (22 May 2019) < https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449 > 3 Uni…",
+        "type": "named",
+        "name": "OECD AI Principles",
+        "in_corpus": true,
+        "corpus_doc": "OECD_AI_Principles_2024",
+        "self_ref": false,
+        "suspect_year": false
+      }
+    ],
+    "WHO_Ethics_and_Governance_of_AI_for_Health": [
+      {
+        "id": "Council of Europe Framework Convention on AI",
+        "count": 22,
+        "context": "…rs & Associations (IFPMA), Switzerland David Gruson, Jouve, France Lee Hibbard, Council of Europe, France Lauren Milner, US Food and Drug Administration, USA Rasha Abdul Rahim, Amnesty Te…",
+        "type": "named",
+        "name": "Council of Europe Framework Convention on AI",
+        "in_corpus": true,
+        "corpus_doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "OECD AI Principles",
+        "count": 3,
+        "context": "…ber countries and have since been applied by a number of partner economies. The OECD AI principles (81) provided the basis for the AI principles endorsed by G20 governments in June 2019 (8…",
+        "type": "named",
+        "name": "OECD AI Principles",
+        "in_corpus": true,
+        "corpus_doc": "OECD_AI_Principles_2024",
+        "self_ref": false,
+        "suspect_year": false
+      }
+    ],
+    "ISO_IEC_42001_AI_Management_System": [
+      {
+        "id": "EU AI Act",
+        "count": 4,
+        "context": "…ompliance with these regulations. Regulatory texts such as the European Union’s Artificial Intelligence Act (AI Act) [8] mandate the ethical and fair use of AI systems. As an integrated management …",
+        "type": "named",
+        "name": "EU AI Act",
+        "in_corpus": true,
+        "corpus_doc": "EU_AI_Act_2024",
+        "self_ref": false,
+        "suspect_year": false
+      }
+    ]
+  },
+  "edges": [
+    {
+      "source": "PP_PSTE_No71_2019",
+      "target": "UU 11/2008",
+      "name": "UU ITE (asli)",
+      "type": "numbered",
+      "in_corpus": true,
+      "corpus_doc": "UU_ITE_No19_2016",
+      "count": 2
+    },
+    {
+      "source": "PP_PSTE_No71_2019",
+      "target": "UU 19/2016",
+      "name": "UU ITE (perubahan I)",
+      "type": "numbered",
+      "in_corpus": true,
+      "corpus_doc": "UU_ITE_No19_2016",
+      "count": 1
+    },
+    {
+      "source": "PP_PSTE_No71_2019",
+      "target": "PP 82/2012",
+      "name": "PP PSTE (lama, dicabut)",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 3
+    },
+    {
+      "source": "PP_PSTE_No71_2019",
+      "target": "UU ITE",
+      "name": "UU ITE",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "UU_ITE_No19_2016",
+      "count": 8
+    },
+    {
+      "source": "UU_ITE_No1_2024",
+      "target": "UU 11/2008",
+      "name": "UU ITE (asli)",
+      "type": "numbered",
+      "in_corpus": true,
+      "corpus_doc": "UU_ITE_No19_2016",
+      "count": 8
+    },
+    {
+      "source": "UU_ITE_No1_2024",
+      "target": "UU 19/2016",
+      "name": "UU ITE (perubahan I)",
+      "type": "numbered",
+      "in_corpus": true,
+      "corpus_doc": "UU_ITE_No19_2016",
+      "count": 5
+    },
+    {
+      "source": "UU_ITE_No1_2024",
+      "target": "UU ITE",
+      "name": "UU ITE",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "UU_ITE_No19_2016",
+      "count": 37
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "UU 3/2014",
+      "name": "UU 3/2014",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "UU 12/2011",
+      "name": "UU 12/2011",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "Perpres 38/2018",
+      "name": "Perpres 38/2018 (Riset Prioritas)",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 3
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "Perpres 133/2017",
+      "name": "Perpres 133/2017",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "Perpres 53/2017",
+      "name": "Perpres 53/2017",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "Perpres 39/2019",
+      "name": "Perpres 39/2019",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "Perpres 26/2012",
+      "name": "Perpres 26/2012",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "Perpres 80/2011",
+      "name": "Perpres 80/2011",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "Perpres 95/2018",
+      "name": "Perpres 95/2018",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "G20 AI Principles",
+      "name": "G20 AI Principles  [≈ OECD AI Principles (G20 mengadopsi 2019)]",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 3
+    },
+    {
+      "source": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "target": "UU 4/2023",
+      "name": "UU P2SK",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 4
+    },
+    {
+      "source": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "target": "UU 21/2011",
+      "name": "UU OJK",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "SE_Komdigi_No9_2023_Etika_AI",
+      "target": "UU 11/2008",
+      "name": "UU ITE (asli)",
+      "type": "numbered",
+      "in_corpus": true,
+      "corpus_doc": "UU_ITE_No19_2016",
+      "count": 2
+    },
+    {
+      "source": "SE_Komdigi_No9_2023_Etika_AI",
+      "target": "UU 2/2022",
+      "name": "UU 2/2022",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "SE_Komdigi_No9_2023_Etika_AI",
+      "target": "UU 27/2022",
+      "name": "UU PDP",
+      "type": "numbered",
+      "in_corpus": true,
+      "corpus_doc": "UU_PDP_No27_2022",
+      "count": 1
+    },
+    {
+      "source": "SE_Komdigi_No9_2023_Etika_AI",
+      "target": "Permen 5/2020",
+      "name": "Permenkominfo 5/2020 (PSE Lingkup Privat)",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "SE_Komdigi_No9_2023_Etika_AI",
+      "target": "UU ITE",
+      "name": "UU ITE",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "UU_ITE_No19_2016",
+      "count": 2
+    },
+    {
+      "source": "SE_Komdigi_No9_2023_Etika_AI",
+      "target": "PP PSTE",
+      "name": "PP PSTE",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "PP_PSTE_No71_2019",
+      "count": 1
+    },
+    {
+      "source": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "target": "OECD AI Principles",
+      "name": "OECD AI Principles",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "OECD_AI_Principles_2024",
+      "count": 1
+    },
+    {
+      "source": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "target": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+      "name": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "count": 1
+    },
+    {
+      "source": "OECD_AI_Principles_2024",
+      "target": "G20 AI Principles",
+      "name": "G20 AI Principles  [≈ OECD AI Principles (G20 mengadopsi 2019)]",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "OECD_AI_Principles_2024",
+      "target": "Council of Europe Framework Convention on AI",
+      "name": "Council of Europe Framework Convention on AI",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "count": 1
+    },
+    {
+      "source": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "target": "UNESCO Recommendation on AI Ethics",
+      "name": "UNESCO Recommendation on AI Ethics",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "count": 1
+    },
+    {
+      "source": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "target": "Global Digital Compact (UNGA 78/311)",
+      "name": "Global Digital Compact (UNGA 78/311)",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "count": 1
+    },
+    {
+      "source": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "target": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+      "name": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "count": 6
+    },
+    {
+      "source": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "target": "OECD AI Principles",
+      "name": "OECD AI Principles",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "OECD_AI_Principles_2024",
+      "count": 1
+    },
+    {
+      "source": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "target": "UNESCO Recommendation on AI Ethics",
+      "name": "UNESCO Recommendation on AI Ethics",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "count": 2
+    },
+    {
+      "source": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "target": "OECD AI Principles",
+      "name": "OECD AI Principles",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "OECD_AI_Principles_2024",
+      "count": 3
+    },
+    {
+      "source": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "target": "Council of Europe Framework Convention on AI",
+      "name": "Council of Europe Framework Convention on AI",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "count": 22
+    },
+    {
+      "source": "ISO_IEC_42001_AI_Management_System",
+      "target": "EU AI Act",
+      "name": "EU AI Act",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "EU_AI_Act_2024",
+      "count": 4
+    }
+  ],
+  "in_corpus_targets": [
+    "Council of Europe Framework Convention on AI",
+    "EU AI Act",
+    "Global Digital Compact (UNGA 78/311)",
+    "OECD AI Principles",
+    "PP PSTE",
+    "UNESCO Recommendation on AI Ethics",
+    "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+    "UU 11/2008",
+    "UU 19/2016",
+    "UU 27/2022",
+    "UU ITE"
+  ],
+  "external_referenced": [
+    {
+      "id": "G20 AI Principles",
+      "name": "G20 AI Principles  [≈ OECD AI Principles (G20 mengadopsi 2019)]",
+      "count": 4
+    },
+    {
+      "id": "UU 4/2023",
+      "name": "UU P2SK",
+      "count": 4
+    },
+    {
+      "id": "PP 82/2012",
+      "name": "PP PSTE (lama, dicabut)",
+      "count": 3
+    },
+    {
+      "id": "Perpres 38/2018",
+      "name": "Perpres 38/2018 (Riset Prioritas)",
+      "count": 3
+    },
+    {
+      "id": "UU 3/2014",
+      "name": "UU 3/2014",
+      "count": 1
+    },
+    {
+      "id": "UU 12/2011",
+      "name": "UU 12/2011",
+      "count": 1
+    },
+    {
+      "id": "Perpres 133/2017",
+      "name": "Perpres 133/2017",
+      "count": 1
+    },
+    {
+      "id": "Perpres 53/2017",
+      "name": "Perpres 53/2017",
+      "count": 1
+    },
+    {
+      "id": "Perpres 39/2019",
+      "name": "Perpres 39/2019",
+      "count": 1
+    },
+    {
+      "id": "Perpres 26/2012",
+      "name": "Perpres 26/2012",
+      "count": 1
+    },
+    {
+      "id": "Perpres 80/2011",
+      "name": "Perpres 80/2011",
+      "count": 1
+    },
+    {
+      "id": "Perpres 95/2018",
+      "name": "Perpres 95/2018",
+      "count": 1
+    },
+    {
+      "id": "UU 21/2011",
+      "name": "UU OJK",
+      "count": 1
+    },
+    {
+      "id": "UU 2/2022",
+      "name": "UU 2/2022",
+      "count": 1
+    },
+    {
+      "id": "Permen 5/2020",
+      "name": "Permenkominfo 5/2020 (PSE Lingkup Privat)",
+      "count": 1
+    }
+  ]
+}

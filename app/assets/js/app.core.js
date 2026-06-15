@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260615_12';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260615_13';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -707,6 +707,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>`;
             }
         }
+        try { renderCitationNetwork(); } catch (e) { console.warn('citation net', e); }
         isLoadingNetworkGraphs = false;
     }
 
@@ -1626,6 +1627,82 @@ document.addEventListener('DOMContentLoaded', () => {
             + conns.map(o => `<div style="display:flex;justify-content:space-between;gap:8px;font-size:0.8rem;padding:3px 0;border-bottom:1px dashed var(--border);"><span style="color:var(--text-2);"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${gcol[o.g]};margin-right:5px;"></span>${_rEsc(_chordDisp(o.g))}</span><b style="color:var(--text-1);">${o.w}</b></div>`).join('');
         panel.classList.add('visible');
     }
+
+    // ===================================================================
+    // CITATION NETWORK — explicit cross-references (the DEFENSIBLE link)
+    // Built by build_citations.py: who cites whom by number ("Nomor X Tahun Y")
+    // or by named instrument ("G20 AI Principles", "OECD", "EU AI Act"…).
+    // Rigorous complement to the SBERT-similarity chord (which is descriptive).
+    // ===================================================================
+    const _CITE_NAMES = {
+        'UU_ITE_No1_2024': 'UU ITE 1/2024', 'UU_ITE_No19_2016': 'UU ITE 19/2016',
+        'UU_PDP_No27_2022': 'UU PDP', 'PP_PSTE_No71_2019': 'PP PSTE',
+        'SE_Komdigi': 'SE Komdigi (Etika AI)', 'Stranas_AI': 'Stranas AI',
+        'WHO_Ethics': 'WHO AI for Health', 'OECD_AI_Principles': 'OECD AI Principles',
+        'UNESCO_Recommendation': 'UNESCO AI Ethics', 'ASEAN_Guide': 'ASEAN AI Guide',
+        'G7_Hiroshima': 'G7 Hiroshima CoC', 'ISO_IEC_42001': 'ISO/IEC 42001',
+        'Council_of_Europe': 'CoE Framework Convention', 'UNGA_Res_78_265': 'UNGA 78/265',
+        'UNGA_Res_78_311': 'UNGA 78/311', 'EU_AI_Act': 'EU AI Act', 'POJK_No3': 'POJK 3/2024',
+    };
+    function _citeDoc(name) {
+        if (!name) return '';
+        for (const k in _CITE_NAMES) if (name.startsWith(k)) return _CITE_NAMES[k];
+        return name.replace(/_/g, ' ').slice(0, 28);
+    }
+    async function renderCitationNetwork() {
+        const box = document.getElementById('citation-network');
+        if (!box) return;
+        const isEn = window.currentLang === 'en';
+        let d;
+        try { const r = await fetch(`./data/network/citations.json?v=${DATA_V}`); d = await r.json(); }
+        catch (e) { box.innerHTML = '<div class="rp-empty">citations.json tidak ditemukan.</div>'; return; }
+        const edges = d.edges || [];
+        const internal = edges.filter(e => e.in_corpus).sort((a, b) => b.count - a.count);
+        const ext = d.external_referenced || [];
+        const named = edges.filter(e => e.type === 'named').length;
+        const ctxOf = (src, tid) => ((d.docs[src] || []).find(c => c.id === tid) || {}).context || '';
+        const th = 'text-align:left;padding:7px 12px;color:var(--text-3);font-weight:600;border-bottom:1px solid var(--border);font-size:0.8rem;';
+        const td = 'padding:6px 12px;border-bottom:1px solid var(--overlay-hover);font-size:0.82rem;';
+        const badge = t => t === 'named'
+            ? '<span style="font-size:0.65rem;background:rgba(99,102,241,0.15);color:var(--primary);padding:1px 6px;border-radius:10px;">nama</span>'
+            : '<span style="font-size:0.65rem;background:rgba(245,158,11,0.15);color:var(--amber);padding:1px 6px;border-radius:10px;">nomor</span>';
+
+        const note = `<div style="font-size:0.82rem;color:var(--text-3);line-height:1.55;margin-bottom:12px;background:var(--sunken);padding:10px 12px;border-radius:8px;border-left:3px solid var(--primary);">`
+            + (isEn
+                ? `<b>Defensible links.</b> Unlike the SBERT chord (descriptive semantic overlap), these are <b>explicit citations</b> — a document naming a regulation by number (<i>"Nomor 3 Tahun 2021"</i>) or instrument name (<i>"G20 AI Principles", "OECD", "EU AI Act"</i>). For guidance/soft-law this is the rigorous link. <b>${named}</b> by-name + <b>${edges.length - named}</b> by-number references.`
+                : `<b>Tautan defensible.</b> Berbeda dari chord SBERT (tumpang-tindih semantik, deskriptif), ini <b>sitasi eksplisit</b> — dokumen menyebut regulasi lewat nomor (<i>"Nomor 3 Tahun 2021"</i>) atau nama instrumen (<i>"G20 AI Principles", "OECD", "EU AI Act"</i>). Untuk pedoman/soft-law inilah tautan yang sahih. <b>${named}</b> rujukan by-name + <b>${edges.length - named}</b> by-number.`)
+            + `<br><b style="color:var(--text-2);">${isEn ? 'Finding' : 'Temuan'}:</b> `
+            + (isEn
+                ? `Stranas AI cites only the G20/OECD ethical principles + planning Perpres — never a binding AI/data statute, confirming it is strategy, not legal authority.`
+                : `Stranas AI hanya merujuk prinsip etika G20/OECD + Perpres perencanaan — tak satu pun statuta AI/data mengikat; menegaskan ia strategi, bukan otoritas hukum.`)
+            + `</div>`;
+
+        const rowsA = internal.map(e => {
+            const c = _rEsc(ctxOf(e.source, e.target));
+            return `<tr title="${c}"><td style="${td}"><b style="color:var(--text-1);">${_rEsc(_citeDoc(e.source))}</b></td>`
+                + `<td style="${td}color:var(--text-4);text-align:center;">→</td>`
+                + `<td style="${td}color:var(--text-2);">${_rEsc(e.name)}</td>`
+                + `<td style="${td}text-align:center;">${badge(e.type)}</td>`
+                + `<td style="${td}text-align:right;font-weight:700;color:var(--primary);">${e.count}×</td></tr>`;
+        }).join('');
+        const tableA = `<div style="font-size:0.74rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:0.4px;margin:4px 0 4px;">${isEn ? 'A · Citations to instruments IN the corpus' : 'A · Sitasi ke instrumen YANG ADA di korpus'}</div>`
+            + _exportBar('cite-internal', 'Sitasi_Internal')
+            + `<div id="cite-internal"><table style="width:100%;border-collapse:collapse;">`
+            + `<thead><tr><th style="${th}">${isEn ? 'Document' : 'Dokumen'}</th><th style="${th}"></th><th style="${th}">${isEn ? 'Cites' : 'Merujuk'}</th><th style="${th};text-align:center;">${isEn ? 'Type' : 'Tipe'}</th><th style="${th};text-align:right;">${isEn ? 'Count' : 'Jumlah'}</th></tr></thead>`
+            + `<tbody>${rowsA || `<tr><td colspan="5" style="${td}text-align:center;color:var(--text-4);">—</td></tr>`}</tbody></table></div>`;
+
+        const rowsB = ext.map(x => `<tr><td style="${td}color:var(--text-2);">${_rEsc(x.id)}</td>`
+            + `<td style="${td}color:var(--text-3);">${_rEsc(x.name && x.name !== x.id ? x.name : '')}</td>`
+            + `<td style="${td}text-align:right;font-weight:700;color:var(--amber);">${x.count}×</td></tr>`).join('');
+        const tableB = `<div style="font-size:0.74rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:0.4px;margin:16px 0 4px;">${isEn ? 'B · Referenced but NOT in corpus (completeness gap)' : 'B · Dirujuk tapi TIDAK ADA di korpus (gap kelengkapan)'}</div>`
+            + _exportBar('cite-external', 'Sitasi_Eksternal_Gap')
+            + `<div id="cite-external"><table style="width:100%;border-collapse:collapse;">`
+            + `<thead><tr><th style="${th}">${isEn ? 'Referenced regulation/instrument' : 'Regulasi/instrumen dirujuk'}</th><th style="${th}">${isEn ? 'Note' : 'Catatan'}</th><th style="${th};text-align:right;">${isEn ? 'Count' : 'Jumlah'}</th></tr></thead>`
+            + `<tbody>${rowsB || `<tr><td colspan="3" style="${td}text-align:center;color:var(--text-4);">—</td></tr>`}</tbody></table></div>`;
+
+        box.innerHTML = note + tableA + tableB;
+    }
+    window.renderCitationNetwork = renderCitationNetwork;
 
     // ===================================================================
     // GAP ANALYSIS — Warrant Mapping Matrix (incidents × legal subject)
