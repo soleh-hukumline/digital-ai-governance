@@ -2,17 +2,6 @@
   "docs": {
     "PP_PSTE_No71_2019": [
       {
-        "id": "UU ITE",
-        "count": 8,
-        "context": "…an Republik Indonesia, perlu pengaturan secara menyeluruh pemanfaatan teknologi informasi dan transaksi elektronik; Pasal 5 ayat (2) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945; 2019, No. 185…",
-        "type": "named",
-        "name": "UU ITE",
-        "in_corpus": true,
-        "corpus_doc": "UU_ITE_No19_2016",
-        "self_ref": false,
-        "suspect_year": false
-      },
-      {
         "id": "PP 82/2012",
         "count": 3,
         "context": "…IK DENGAN RAHMAT TUHAN YANG MAHA ESA PRESIDEN REPUBLIK INDONESIA, Menimbang : a. b. bahwa Peraturan Pemerintah Nomor 82 Tahun 2012 tentang Penyelenggaraan Sistem dan Transaksi Elektronik sudah tidak sesuai lagi dengan pe…",
@@ -35,6 +24,17 @@
         "self_ref": false
       },
       {
+        "id": "UU ITE",
+        "count": 2,
+        "context": "…ik Indonesia Tahun 1945; 2019, No. 185 -2- 2. Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik (Lembaran Negara Republik Indonesia Tahun 2008 Nomor 58, Tambahan Lembaran Negara Republi…",
+        "type": "named",
+        "name": "UU ITE",
+        "in_corpus": true,
+        "corpus_doc": "UU_ITE_No19_2016",
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
         "id": "UU 19/2016",
         "count": 1,
         "context": "…, Tambahan Lembaran Negara Republik Indonesia Nomor 4843) sebagaimana telah diubah dengan Undang-Undang Nomor 19 Tahun 2016 tentang Perubahan Atas Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi …",
@@ -55,9 +55,31 @@
         "in_corpus": true,
         "name": "PP PSTE",
         "self_ref": true
+      },
+      {
+        "id": "UUD 1945",
+        "count": 1,
+        "context": "…uruh pemanfaatan teknologi informasi dan transaksi elektronik; Pasal 5 ayat (2) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945; 2019, No. 185 -2- 2. Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi E…",
+        "type": "named",
+        "name": "UUD 1945",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
       }
     ],
     "UU_ITE_No19_2016": [
+      {
+        "id": "UUD 1945",
+        "count": 3,
+        "context": "…t (3), pasal 28F, pasal 28G ayat (1), pasal 28J ayat (2), dan pasal 33 ayat (2) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945; 2. Undang-Undang Nomor l l Tahun 200g tentang Informasi. dan Transaksi Elektronik (Lemba…",
+        "type": "named",
+        "name": "UUD 1945",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
       {
         "id": "UU 19/2016",
         "count": 2,
@@ -84,8 +106,8 @@
     "UU_ITE_No1_2024": [
       {
         "id": "UU ITE",
-        "count": 37,
-        "context": "…HUN 2024 TENTANG PERUBAHAN KEDUA ATAS UNDANG-UNDANG NOMOR I1 TAHUN 2OO8 TENTANG INFORMASI DAN TRANSAKSI ELEKTRONIK DENGAN RAHMATTUHAN YANG MAHA ESA PRESIDEN REPUBLIK INDONESIA, ivlenimbang a, b c bahwa un…",
+        "count": 17,
+        "context": "…MOR 1 TAHUN 2024 TENTANG PERUBAHAN KEDUA ATAS UNDANG-UNDANG NOMOR I1 TAHUN 2OO8 TENTANG INFORMASI DAN TRANSAKSI ELEKTRONIK DENGAN RAHMATTUHAN YANG MAHA ESA PRESIDEN REPUBLIK INDONESIA, ivlenimbang a, b c bahwa un…",
         "type": "named",
         "name": "UU ITE",
         "in_corpus": true,
@@ -125,9 +147,31 @@
         "in_corpus": true,
         "name": "UU ITE (perubahan II)",
         "self_ref": true
+      },
+      {
+        "id": "UUD 1945",
+        "count": 1,
+        "context": "…8D ayat (1), Pasal 28E, Pasal 28F, Pasal 28G ayat (1), Pasal 281, dan Pasal 28J Undang-Undang Dasar Negara Republik Indonesia Tahun 1945; Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik (Lembaran N…",
+        "type": "named",
+        "name": "UUD 1945",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
       }
     ],
     "UU_PDP_No27_2022": [
+      {
+        "id": "UUD 1945",
+        "count": 3,
+        "context": "…berikan landasan hukum untuk memberikan keamanan atas data pribadi, berdasarkan Undang-Undang Dasar Negara Republik Indonesia Tahun 1945; b. bahwa pelindungan data pribadi ditujukan untuk menjamin hak warga negara atas pelindu…",
+        "type": "named",
+        "name": "UUD 1945",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
       {
         "id": "UU 27/2022",
         "count": 1,
@@ -142,6 +186,50 @@
     ],
     "Stranas_AI_Indonesia_2020-2045_Full": [
       {
+        "id": "UUD 1945",
+        "count": 8,
+        "context": "…atuan bernafaskan kekeluargaan demi mencapai tujuan yang dianut dalam Pembukaan Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 yakni: “…yang melindungi segenap bangsa Indonesia dan seluruh tumpah darah Indonesia dan …",
+        "type": "named",
+        "name": "UUD 1945",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "UU 11/2019",
+        "count": 5,
+        "context": "…NUHI TUJUAN BERNEGARA. dengan Pasal 28C) dan Pasal 31 UUD 1945, sesuai dengan amanah pada UU No. 11/2019, menghasilkan produk kebijakan yang mengatur tata kelola, etika, dan pertanggungjawaban h…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "UU 11/2019",
+        "self_ref": false
+      },
+      {
+        "id": "PP 71/2019",
+        "count": 5,
+        "context": "… KEPENTINGAN STRATEGISNYA 1. Penentuan Lembaga Pengawas dan Pengatur Sektor (LPPS) sesuai PP No. 71/2019 LPPS bertugas salah satunya adalah menentukan kebutuhan data strategis yang dibutuhkan ne…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": "PP_PSTE_No71_2019",
+        "in_corpus": true,
+        "name": "PP PSTE",
+        "self_ref": false
+      },
+      {
+        "id": "Sustainable Development Goals (2030 Agenda)",
+        "count": 4,
+        "context": "…ra yang tergabung dalam Persatuan Bangsa-Bangsa (PBB) telah mencanangkan agenda Sustainable Development Goals (SDGs) yang terdiri dari 17 target untuk mencapai kesejahteraan dan perdamaian global pad…",
+        "type": "named",
+        "name": "Sustainable Development Goals (2030 Agenda)",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
         "id": "Perpres 38/2018",
         "count": 3,
         "context": "…pengetahuan dan teknologi, dan b) menciptakan keunggulan kompetitif bangsa secara global (Peraturan Presiden Nomor 38 Tahun 2018)Sebagai penjabaran lebih lanjut perlu dibuat perencanaan lebih teknis dalam bentuk Priori…",
@@ -150,6 +238,28 @@
         "corpus_doc": null,
         "in_corpus": false,
         "name": "Perpres 38/2018 (Riset Prioritas)",
+        "self_ref": false
+      },
+      {
+        "id": "Perpres 39/2019",
+        "count": 3,
+        "context": "…itas data - data yang dipertukarkan secara elektronik telah dilakukan dengan mengeluarkan Peraturan Presiden Nomor 39 Tahun 2019 tentang Satu Data Indonesia yang mengatur tentang tatacara pengambilan data, walidata dan…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "Perpres 39/2019",
+        "self_ref": false
+      },
+      {
+        "id": "Perpres 95/2018",
+        "count": 3,
+        "context": "…ra efektif dan efisien. Untuk memperkuat Perpres No.80 tahun 2011, pemerintah menerbitkan Peraturan Presiden nomor 95 tahun 2018 tentang Sistem Pemerintahan Berbasis Elektronik atau SPBE. Perpres ini menjadi salah satu…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "Perpres 95/2018",
         "self_ref": false
       },
       {
@@ -164,6 +274,17 @@
         "suspect_year": false
       },
       {
+        "id": "UU 12/2011",
+        "count": 2,
+        "context": "…ks hukum positif, Indonesia yang memiliki sistem hirarkis perundang- undangan berdasarkan Undang-Undang Nomor 12 Tahun 2011 tentang (“UU No. 12/2011”) sudah mengatur bentuk-bentuk dan kedudukan masing-masing perat…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "UU 12/2011",
+        "self_ref": false
+      },
+      {
         "id": "UU 3/2014",
         "count": 1,
         "context": "…n artifisial dalam inovasi industri untuk mendukung revolusi industri ke 4, sesuai dengan Undang-Undang Nomor 3 Tahun 2014 [11] tentang Perindustrian yang meletakkan industri sebagai salah satu pilar ekonomi dan …",
@@ -172,17 +293,6 @@
         "corpus_doc": null,
         "in_corpus": false,
         "name": "UU 3/2014",
-        "self_ref": false
-      },
-      {
-        "id": "UU 12/2011",
-        "count": 1,
-        "context": "…ks hukum positif, Indonesia yang memiliki sistem hirarkis perundang- undangan berdasarkan Undang-Undang Nomor 12 Tahun 2011 tentang (“UU No. 12/2011”) sudah mengatur bentuk-bentuk dan kedudukan masing-masing perat…",
-        "type": "numbered",
-        "suspect_year": false,
-        "corpus_doc": null,
-        "in_corpus": false,
-        "name": "UU 12/2011",
         "self_ref": false
       },
       {
@@ -208,17 +318,6 @@
         "self_ref": false
       },
       {
-        "id": "Perpres 39/2019",
-        "count": 1,
-        "context": "…itas data - data yang dipertukarkan secara elektronik telah dilakukan dengan mengeluarkan Peraturan Presiden Nomor 39 Tahun 2019 tentang Satu Data Indonesia yang mengatur tentang tatacara pengambilan data, walidata dan…",
-        "type": "numbered",
-        "suspect_year": false,
-        "corpus_doc": null,
-        "in_corpus": false,
-        "name": "Perpres 39/2019",
-        "self_ref": false
-      },
-      {
         "id": "Perpres 26/2012",
         "count": 1,
         "context": "… hal yang perlu diperhatikan, yakni: a. Cetak Biru Pengembangan Sistem Logistik Nasional (Peraturan Presiden Republik Indonesia Nomor 26 Tahun 2012) Sistem Logistik Nasional diharapkan dapat berperan dalam mencapai sasaran Rencana Pemban…",
@@ -241,14 +340,36 @@
         "self_ref": false
       },
       {
-        "id": "Perpres 95/2018",
+        "id": "Keppres 103/2001",
         "count": 1,
-        "context": "…ra efektif dan efisien. Untuk memperkuat Perpres No.80 tahun 2011, pemerintah menerbitkan Peraturan Presiden nomor 95 tahun 2018 tentang Sistem Pemerintahan Berbasis Elektronik atau SPBE. Perpres ini menjadi salah satu…",
+        "context": "…DATA PRIBADI DAN PERATURAN BPPT TENTANG AUDIT DAN KLIRING TEKNOLOGI Pasal 59 dan Pasal 60 Keputusan Presiden Nomor 103 Tahun 2001 tentang Kedudukan, Tugas, Fungsi, Kewenangan, Susunan Organisasi, dan Tata Kerja Lembaga …",
         "type": "numbered",
         "suspect_year": false,
         "corpus_doc": null,
         "in_corpus": false,
-        "name": "Perpres 95/2018",
+        "name": "Keppres 103/2001",
+        "self_ref": false
+      },
+      {
+        "id": "UU 17/2007",
+        "count": 1,
+        "context": "… yang dimaksud adalah kedaulatan dalam data dan infrastruktur sebagaimana tercantum dalam UU No.17/2007 tentang RPJP dan Visi Indonesia 2045 yakni Indonesia yang Berdaulat, Maju, Adil dan Makmu…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "UU 17/2007",
+        "self_ref": false
+      },
+      {
+        "id": "UU 25/2009",
+        "count": 1,
+        "context": "…an ketersediaan informasi publik dengan dukungan inovasi teknologi Kecerdasan Artifisial. UU Nomor 25 Tahun 2009 tentang Pelayanan Publik menjamin kebutuhan pelayanan bagi setiap warga negara dan pendud…",
+        "type": "numbered",
+        "suspect_year": false,
+        "corpus_doc": null,
+        "in_corpus": false,
+        "name": "UU 25/2009",
         "self_ref": false
       }
     ],
@@ -291,7 +412,7 @@
       {
         "id": "UU ITE",
         "count": 2,
-        "context": "…erundang-undangan sebagai berikut: a. Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik (Lembaran Negara Republik Indonesia Tahun 2OO8 Nomor 58, Tambahan Lembaran Negara Republi…",
+        "context": "…aturan perundang-undangan sebagai berikut: a. Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik (Lembaran Negara Republik Indonesia Tahun 2OO8 Nomor 58, Tambahan Lembaran Negara Republi…",
         "type": "named",
         "name": "UU ITE",
         "in_corpus": true,
@@ -368,11 +489,59 @@
       {
         "id": "PP PSTE",
         "count": 1,
-        "context": "…ublik Indonesia Nomor 682O); Peraturan Pemerintah Nomor 7 1 Tahun 20 19 tentang Penyelenggaraan Sistem dan Transaksi Elektronik (Lembaran Negara Republik Indonesia Tahun 2019 Nomor 185, Tambahan Lembaran Negara Republ…",
+        "context": "…gara Republik Indonesia Nomor 682O); Peraturan Pemerintah Nomor 7 1 Tahun 20 19 tentang Penyelenggaraan Sistem dan Transaksi Elektronik (Lembaran Negara Republik Indonesia Tahun 2019 Nomor 185, Tambahan Lembaran Negara Republ…",
         "type": "named",
         "name": "PP PSTE",
         "in_corpus": true,
         "corpus_doc": "PP_PSTE_No71_2019",
+        "self_ref": false,
+        "suspect_year": false
+      }
+    ],
+    "Council_of_Europe_Framework_Convention_on_AI_CETS225": [
+      {
+        "id": "Universal Declaration of Human Rights",
+        "count": 1,
+        "context": "… Mindful of applicable international human rights instruments, such as the 1948 Universal Declaration of Human Rights, the 1950 Convention for the Protection of Human Rights and Fundamental Freedoms (ETS No.…",
+        "type": "named",
+        "name": "Universal Declaration of Human Rights",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "ICCPR",
+        "count": 1,
+        "context": "…r the Protection of Human Rights and Fundamental Freedoms (ETS No. 5), the 1966 International Covenant on Civil and Political Rights, the 1966 International Covenant on Economic, Social and Cultural Rights, the 1961 Europe…",
+        "type": "named",
+        "name": "ICCPR",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "CoE Convention 108 (Data Protection)",
+        "count": 1,
+        "context": "…tection of personal data, as applicable and conferred, for example, by the 1981 Convention for the Protection of Individuals with regard to Automatic Processing of Personal Data (ETS No. 108) and its protocols; Aff…",
+        "type": "named",
+        "name": "CoE Convention 108 (Data Protection)",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      }
+    ],
+    "EU_AI_Act_2024": [
+      {
+        "id": "GDPR (EU 2016/679)",
+        "count": 24,
+        "context": "…l data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) (OJ L 119, 4.5.2016, p. 1). Regulation (EU) 2018/1725 of the European Parliament and of …",
+        "type": "named",
+        "name": "GDPR (EU 2016/679)",
+        "in_corpus": false,
+        "corpus_doc": null,
         "self_ref": false,
         "suspect_year": false
       }
@@ -399,9 +568,31 @@
         "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
         "self_ref": false,
         "suspect_year": false
+      },
+      {
+        "id": "Sustainable Development Goals (2030 Agenda)",
+        "count": 1,
+        "context": "…ation These efforts are undertaken in support of progress on the United Nations Sustainable Development Goals, and to encourage AI development for global benefit. Organizations should prioritize resp…",
+        "type": "named",
+        "name": "Sustainable Development Goals (2030 Agenda)",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
       }
     ],
     "OECD_AI_Principles_2024": [
+      {
+        "id": "Sustainable Development Goals (2030 Agenda)",
+        "count": 2,
+        "context": "…ity, consumer protection and responsible business conduct; HAVING REGARD to the Sustainable Development Goals set out in the 2030 Agenda for Sustainable Development adopted by the United Nations Gene…",
+        "type": "named",
+        "name": "Sustainable Development Goals (2030 Agenda)",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
       {
         "id": "G20 AI Principles",
         "count": 1,
@@ -423,9 +614,77 @@
         "corpus_doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
         "self_ref": false,
         "suspect_year": false
+      },
+      {
+        "id": "Universal Declaration of Human Rights",
+        "count": 1,
+        "context": "…adopted by the United Nations General Assembly (A/RES/70/1) as well as the 1948 Universal Declaration of Human Rights; HAVING REGARD to the important work being carried out on artificial intelligence (hereaf…",
+        "type": "named",
+        "name": "Universal Declaration of Human Rights",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      }
+    ],
+    "UNESCO_Recommendation_on_AI_Ethics_2021": [
+      {
+        "id": "Sustainable Development Goals (2030 Agenda)",
+        "count": 5,
+        "context": "…, scientific and economic sustainability objectives, such as the United Nations Sustainable Development Goals (SDGs). 10. Values play a powerful role as motivating ideals in shaping policy measures a…",
+        "type": "named",
+        "name": "Sustainable Development Goals (2030 Agenda)",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "Universal Declaration of Human Rights",
+        "count": 1,
+        "context": "…a key role in developing AI-related norms across the globe, Bearing in mind the Universal Declaration of Human Rights (1948), the instruments of the international human rights framework, including the Conven…",
+        "type": "named",
+        "name": "Universal Declaration of Human Rights",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "ICCPR",
+        "count": 1,
+        "context": "…Convention on the Elimination of All Forms of Racial Discrimination (1965), the International Covenant on Civil and Political Rights (1966), the International Covenant on Economic, Social and Cultural Rights (1966), the Co…",
+        "type": "named",
+        "name": "ICCPR",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
       }
     ],
     "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI": [
+      {
+        "id": "Sustainable Development Goals (2030 Agenda)",
+        "count": 17,
+        "context": "…July 2023 on the impact of rapid technological change on the achievement of the Sustainable Development Goals and targets, 78/132 of 19 December 2023 on information and communications technologies fo…",
+        "type": "named",
+        "name": "Sustainable Development Goals (2030 Agenda)",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "Universal Declaration of Human Rights",
+        "count": 2,
+        "context": "…ational law, in particular the Charter of the United Nations, and recalling the Universal Declaration of Human Rights, 1 Reaffirming also its resolution 70/1 of 25 September 2015, entitled “Transforming our …",
+        "type": "named",
+        "name": "Universal Declaration of Human Rights",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
       {
         "id": "UNESCO Recommendation on AI Ethics",
         "count": 1,
@@ -460,6 +719,28 @@
         "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
         "self_ref": false,
         "suspect_year": false
+      },
+      {
+        "id": "Sustainable Development Goals (2030 Agenda)",
+        "count": 4,
+        "context": "… 2023, entitled “Impact of rapid technological change on the achievement of the Sustainable Development Goals and targets”, 78/132 of 19 December 2023, entitled “Information and communications techno…",
+        "type": "named",
+        "name": "Sustainable Development Goals (2030 Agenda)",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "Universal Declaration of Human Rights",
+        "count": 1,
+        "context": "…ational law, in particular the Charter of the United Nations, and recalling the Universal Declaration of Human Rights, 1 Reaffirming also its resolution 70/1 of 25 September 2015, entitled “Transforming our …",
+        "type": "named",
+        "name": "Universal Declaration of Human Rights",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
       }
     ],
     "ASEAN_Guide_AI_Governance_Ethics_2024": [
@@ -484,6 +765,17 @@
         "corpus_doc": "OECD_AI_Principles_2024",
         "self_ref": false,
         "suspect_year": false
+      },
+      {
+        "id": "NIST AI Risk Management Framework",
+        "count": 1,
+        "context": "…ation/ai/sgisago.pdf > 12 National Institute of Standards and Technology, “NIST AI RMF Playbook” < https://airc.nist.gov/AI_RMF_Knowledge_Base/Playbook > 24 ASEAN Guide on AI G…",
+        "type": "named",
+        "name": "NIST AI Risk Management Framework",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
       }
     ],
     "WHO_Ethics_and_Governance_of_AI_for_Health": [
@@ -499,6 +791,28 @@
         "suspect_year": false
       },
       {
+        "id": "GDPR (EU 2016/679)",
+        "count": 22,
+        "context": "…CE OF ARTIFICIAL INTELLIGENCE FOR HEALTH ABBREVIATIONS AND ACRONYMS AI CeBIL EU GDPR HIC IP LMIC NHS OECD PPP SOFA UNESCO US USA artificial intelligence Centre for Advanced S…",
+        "type": "named",
+        "name": "GDPR (EU 2016/679)",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "Sustainable Development Goals (2030 Agenda)",
+        "count": 7,
+        "context": "…on was created in 2019 to support Member States in achieving the health-related Sustainable Development Goals (SDGs) and emergency preparedness and response. The Division provides global leadership i…",
+        "type": "named",
+        "name": "Sustainable Development Goals (2030 Agenda)",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
         "id": "OECD AI Principles",
         "count": 3,
         "context": "…ber countries and have since been applied by a number of partner economies. The OECD AI principles (81) provided the basis for the AI principles endorsed by G20 governments in June 2019 (8…",
@@ -508,9 +822,53 @@
         "corpus_doc": "OECD_AI_Principles_2024",
         "self_ref": false,
         "suspect_year": false
+      },
+      {
+        "id": "CoE Convention 108 (Data Protection)",
+        "count": 3,
+        "context": "…personal data in a world of big data, prepared by the Consultative Committee of Convention 108+ (69). Yet, even with robust human rights standards, organizations and institutions recog…",
+        "type": "named",
+        "name": "CoE Convention 108 (Data Protection)",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "Universal Declaration of Human Rights",
+        "count": 1,
+        "context": "…introducing AI technologies so that they do not disrupt such relationships. The Universal Declaration of Human Rights, which includes pillars of patient rights such as dignity, privacy, confidentiality and i…",
+        "type": "named",
+        "name": "Universal Declaration of Human Rights",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "ICCPR",
+        "count": 1,
+        "context": "…ghts (including General Comment No. 14, which defines the right to health), the International Covenant on Civil and Political Rights and regional human rights conventions, such as the African Charter on Human and People’s …",
+        "type": "named",
+        "name": "ICCPR",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
       }
     ],
     "ISO_IEC_42001_AI_Management_System": [
+      {
+        "id": "GDPR (EU 2016/679)",
+        "count": 6,
+        "context": "…rivacy: The protection of personal data and compliance with regulations such as GDPR are fundamental elements of ISO/IEC 42001:2023 [3]. These elements ensure that companies …",
+        "type": "named",
+        "name": "GDPR (EU 2016/679)",
+        "in_corpus": false,
+        "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
       {
         "id": "EU AI Act",
         "count": 4,
@@ -559,7 +917,25 @@
       "type": "named",
       "in_corpus": true,
       "corpus_doc": "UU_ITE_No19_2016",
-      "count": 8
+      "count": 2
+    },
+    {
+      "source": "PP_PSTE_No71_2019",
+      "target": "UUD 1945",
+      "name": "UUD 1945",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "UU_ITE_No19_2016",
+      "target": "UUD 1945",
+      "name": "UUD 1945",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 3
     },
     {
       "source": "UU_ITE_No1_2024",
@@ -586,7 +962,25 @@
       "type": "named",
       "in_corpus": true,
       "corpus_doc": "UU_ITE_No19_2016",
-      "count": 37
+      "count": 17
+    },
+    {
+      "source": "UU_ITE_No1_2024",
+      "target": "UUD 1945",
+      "name": "UUD 1945",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "UU_PDP_No27_2022",
+      "target": "UUD 1945",
+      "name": "UUD 1945",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 3
     },
     {
       "source": "Stranas_AI_Indonesia_2020-2045_Full",
@@ -604,7 +998,7 @@
       "type": "numbered",
       "in_corpus": false,
       "corpus_doc": null,
-      "count": 1
+      "count": 2
     },
     {
       "source": "Stranas_AI_Indonesia_2020-2045_Full",
@@ -640,7 +1034,7 @@
       "type": "numbered",
       "in_corpus": false,
       "corpus_doc": null,
-      "count": 1
+      "count": 3
     },
     {
       "source": "Stranas_AI_Indonesia_2020-2045_Full",
@@ -667,7 +1061,52 @@
       "type": "numbered",
       "in_corpus": false,
       "corpus_doc": null,
+      "count": 3
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "Keppres 103/2001",
+      "name": "Keppres 103/2001",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
       "count": 1
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "UU 11/2019",
+      "name": "UU 11/2019",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 5
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "UU 17/2007",
+      "name": "UU 17/2007",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "UU 25/2009",
+      "name": "UU 25/2009",
+      "type": "numbered",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "PP 71/2019",
+      "name": "PP PSTE",
+      "type": "numbered",
+      "in_corpus": true,
+      "corpus_doc": "PP_PSTE_No71_2019",
+      "count": 5
     },
     {
       "source": "Stranas_AI_Indonesia_2020-2045_Full",
@@ -677,6 +1116,24 @@
       "in_corpus": false,
       "corpus_doc": null,
       "count": 3
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "UUD 1945",
+      "name": "UUD 1945",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 8
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "Sustainable Development Goals (2030 Agenda)",
+      "name": "Sustainable Development Goals (2030 Agenda)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 4
     },
     {
       "source": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
@@ -751,6 +1208,42 @@
       "count": 1
     },
     {
+      "source": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "target": "Universal Declaration of Human Rights",
+      "name": "Universal Declaration of Human Rights",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "target": "ICCPR",
+      "name": "ICCPR",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "target": "CoE Convention 108 (Data Protection)",
+      "name": "CoE Convention 108 (Data Protection)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "EU_AI_Act_2024",
+      "target": "GDPR (EU 2016/679)",
+      "name": "GDPR (EU 2016/679)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 24
+    },
+    {
       "source": "G7_Hiroshima_Code_of_Conduct_for_AI",
       "target": "OECD AI Principles",
       "name": "OECD AI Principles",
@@ -766,6 +1259,15 @@
       "type": "named",
       "in_corpus": true,
       "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "count": 1
+    },
+    {
+      "source": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "target": "Sustainable Development Goals (2030 Agenda)",
+      "name": "Sustainable Development Goals (2030 Agenda)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
       "count": 1
     },
     {
@@ -787,6 +1289,51 @@
       "count": 1
     },
     {
+      "source": "OECD_AI_Principles_2024",
+      "target": "Universal Declaration of Human Rights",
+      "name": "Universal Declaration of Human Rights",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "OECD_AI_Principles_2024",
+      "target": "Sustainable Development Goals (2030 Agenda)",
+      "name": "Sustainable Development Goals (2030 Agenda)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 2
+    },
+    {
+      "source": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "target": "Universal Declaration of Human Rights",
+      "name": "Universal Declaration of Human Rights",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "target": "ICCPR",
+      "name": "ICCPR",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "target": "Sustainable Development Goals (2030 Agenda)",
+      "name": "Sustainable Development Goals (2030 Agenda)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 5
+    },
+    {
       "source": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "target": "UNESCO Recommendation on AI Ethics",
       "name": "UNESCO Recommendation on AI Ethics",
@@ -805,6 +1352,24 @@
       "count": 1
     },
     {
+      "source": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "target": "Universal Declaration of Human Rights",
+      "name": "Universal Declaration of Human Rights",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 2
+    },
+    {
+      "source": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "target": "Sustainable Development Goals (2030 Agenda)",
+      "name": "Sustainable Development Goals (2030 Agenda)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 17
+    },
+    {
       "source": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
       "target": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
       "name": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
@@ -812,6 +1377,24 @@
       "in_corpus": true,
       "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "count": 6
+    },
+    {
+      "source": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "target": "Universal Declaration of Human Rights",
+      "name": "Universal Declaration of Human Rights",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "target": "Sustainable Development Goals (2030 Agenda)",
+      "name": "Sustainable Development Goals (2030 Agenda)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 4
     },
     {
       "source": "ASEAN_Guide_AI_Governance_Ethics_2024",
@@ -832,6 +1415,15 @@
       "count": 2
     },
     {
+      "source": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "target": "NIST AI Risk Management Framework",
+      "name": "NIST AI Risk Management Framework",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
       "source": "WHO_Ethics_and_Governance_of_AI_for_Health",
       "target": "OECD AI Principles",
       "name": "OECD AI Principles",
@@ -850,6 +1442,51 @@
       "count": 22
     },
     {
+      "source": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "target": "GDPR (EU 2016/679)",
+      "name": "GDPR (EU 2016/679)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 22
+    },
+    {
+      "source": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "target": "Universal Declaration of Human Rights",
+      "name": "Universal Declaration of Human Rights",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "target": "ICCPR",
+      "name": "ICCPR",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 1
+    },
+    {
+      "source": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "target": "Sustainable Development Goals (2030 Agenda)",
+      "name": "Sustainable Development Goals (2030 Agenda)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 7
+    },
+    {
+      "source": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "target": "CoE Convention 108 (Data Protection)",
+      "name": "CoE Convention 108 (Data Protection)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 3
+    },
+    {
       "source": "ISO_IEC_42001_AI_Management_System",
       "target": "EU AI Act",
       "name": "EU AI Act",
@@ -857,6 +1494,15 @@
       "in_corpus": true,
       "corpus_doc": "EU_AI_Act_2024",
       "count": 4
+    },
+    {
+      "source": "ISO_IEC_42001_AI_Management_System",
+      "target": "GDPR (EU 2016/679)",
+      "name": "GDPR (EU 2016/679)",
+      "type": "named",
+      "in_corpus": false,
+      "corpus_doc": null,
+      "count": 6
     }
   ],
   "in_corpus_targets": [
@@ -864,6 +1510,7 @@
     "EU AI Act",
     "Global Digital Compact (UNGA 78/311)",
     "OECD AI Principles",
+    "PP 71/2019",
     "PP PSTE",
     "UNESCO Recommendation on AI Ethics",
     "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
@@ -874,6 +1521,31 @@
   ],
   "external_referenced": [
     {
+      "id": "GDPR (EU 2016/679)",
+      "name": "GDPR (EU 2016/679)",
+      "count": 52
+    },
+    {
+      "id": "Sustainable Development Goals (2030 Agenda)",
+      "name": "Sustainable Development Goals (2030 Agenda)",
+      "count": 40
+    },
+    {
+      "id": "UUD 1945",
+      "name": "UUD 1945",
+      "count": 16
+    },
+    {
+      "id": "Universal Declaration of Human Rights",
+      "name": "Universal Declaration of Human Rights",
+      "count": 7
+    },
+    {
+      "id": "UU 11/2019",
+      "name": "UU 11/2019",
+      "count": 5
+    },
+    {
       "id": "G20 AI Principles",
       "name": "G20 AI Principles  [≈ OECD AI Principles (G20 mengadopsi 2019)]",
       "count": 4
@@ -881,6 +1553,11 @@
     {
       "id": "UU 4/2023",
       "name": "UU P2SK",
+      "count": 4
+    },
+    {
+      "id": "CoE Convention 108 (Data Protection)",
+      "name": "CoE Convention 108 (Data Protection)",
       "count": 4
     },
     {
@@ -894,13 +1571,28 @@
       "count": 3
     },
     {
-      "id": "UU 3/2014",
-      "name": "UU 3/2014",
-      "count": 1
+      "id": "Perpres 39/2019",
+      "name": "Perpres 39/2019",
+      "count": 3
+    },
+    {
+      "id": "Perpres 95/2018",
+      "name": "Perpres 95/2018",
+      "count": 3
+    },
+    {
+      "id": "ICCPR",
+      "name": "ICCPR",
+      "count": 3
     },
     {
       "id": "UU 12/2011",
       "name": "UU 12/2011",
+      "count": 2
+    },
+    {
+      "id": "UU 3/2014",
+      "name": "UU 3/2014",
       "count": 1
     },
     {
@@ -914,11 +1606,6 @@
       "count": 1
     },
     {
-      "id": "Perpres 39/2019",
-      "name": "Perpres 39/2019",
-      "count": 1
-    },
-    {
       "id": "Perpres 26/2012",
       "name": "Perpres 26/2012",
       "count": 1
@@ -929,8 +1616,18 @@
       "count": 1
     },
     {
-      "id": "Perpres 95/2018",
-      "name": "Perpres 95/2018",
+      "id": "Keppres 103/2001",
+      "name": "Keppres 103/2001",
+      "count": 1
+    },
+    {
+      "id": "UU 17/2007",
+      "name": "UU 17/2007",
+      "count": 1
+    },
+    {
+      "id": "UU 25/2009",
+      "name": "UU 25/2009",
       "count": 1
     },
     {
@@ -946,6 +1643,11 @@
     {
       "id": "Permen 5/2020",
       "name": "Permenkominfo 5/2020 (PSE Lingkup Privat)",
+      "count": 1
+    },
+    {
+      "id": "NIST AI Risk Management Framework",
+      "name": "NIST AI Risk Management Framework",
       "count": 1
     }
   ]

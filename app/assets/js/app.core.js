@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260615_13';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260615_14';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -1659,6 +1659,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const edges = d.edges || [];
         const internal = edges.filter(e => e.in_corpus).sort((a, b) => b.count - a.count);
         const ext = d.external_referenced || [];
+        const topExt = ext.slice(0, 3).map(x => x.id).join(', ');
         const named = edges.filter(e => e.type === 'named').length;
         const ctxOf = (src, tid) => ((d.docs[src] || []).find(c => c.id === tid) || {}).context || '';
         const th = 'text-align:left;padding:7px 12px;color:var(--text-3);font-weight:600;border-bottom:1px solid var(--border);font-size:0.8rem;';
@@ -1671,10 +1672,10 @@ document.addEventListener('DOMContentLoaded', () => {
             + (isEn
                 ? `<b>Defensible links.</b> Unlike the SBERT chord (descriptive semantic overlap), these are <b>explicit citations</b> — a document naming a regulation by number (<i>"Nomor 3 Tahun 2021"</i>) or instrument name (<i>"G20 AI Principles", "OECD", "EU AI Act"</i>). For guidance/soft-law this is the rigorous link. <b>${named}</b> by-name + <b>${edges.length - named}</b> by-number references.`
                 : `<b>Tautan defensible.</b> Berbeda dari chord SBERT (tumpang-tindih semantik, deskriptif), ini <b>sitasi eksplisit</b> — dokumen menyebut regulasi lewat nomor (<i>"Nomor 3 Tahun 2021"</i>) atau nama instrumen (<i>"G20 AI Principles", "OECD", "EU AI Act"</i>). Untuk pedoman/soft-law inilah tautan yang sahih. <b>${named}</b> rujukan by-name + <b>${edges.length - named}</b> by-number.`)
-            + `<br><b style="color:var(--text-2);">${isEn ? 'Finding' : 'Temuan'}:</b> `
+            + `<br><b style="color:var(--text-2);">${isEn ? 'Completeness signal' : 'Sinyal kelengkapan'}:</b> `
             + (isEn
-                ? `Stranas AI cites only the G20/OECD ethical principles + planning Perpres — never a binding AI/data statute, confirming it is strategy, not legal authority.`
-                : `Stranas AI hanya merujuk prinsip etika G20/OECD + Perpres perencanaan — tak satu pun statuta AI/data mengikat; menegaskan ia strategi, bukan otoritas hukum.`)
+                ? `the most-cited references that are NOT themselves in the corpus are <b>${topExt}</b> (Table B) — instruments the analysis may need to include.`
+                : `rujukan terbanyak yang dokumennya TIDAK ada di korpus adalah <b>${topExt}</b> (Tabel B) — instrumen yang mungkin perlu dimasukkan ke analisis.`)
             + `</div>`;
 
         const rowsA = internal.map(e => {

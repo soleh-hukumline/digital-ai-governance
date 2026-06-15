@@ -21,12 +21,22 @@ OUT = os.path.join(NET, 'citations.json')
 
 YEAR = r'(\d[\d\s]{2,4}\d)'  # tolerate scan-garble like "Tahun 202 1"
 PATS = [
+    # full form: "<Instrumen> Nomor N Tahun YYYY"
     ('UU',      r'Undang[-\s]?Undang(?:\s+Republik\s+Indonesia)?\s+Nomor\s+(\d+)\s+Tahun\s+' + YEAR),
     ('PP',      r'Peraturan\s+Pemerintah(?:\s+Republik\s+Indonesia)?\s+Nomor\s+(\d+)\s+Tahun\s+' + YEAR),
     ('Permen',  r'Peraturan\s+Menteri\s+[A-Za-z ]{3,40}?\s+Nomor\s+(\d+)\s+Tahun\s+' + YEAR),
     ('Perpres', r'Peraturan\s+Presiden(?:\s+Republik\s+Indonesia)?\s+Nomor\s+(\d+)\s+Tahun\s+' + YEAR),
+    ('Keppres', r'Keputusan\s+Presiden(?:\s+Republik\s+Indonesia)?\s+Nomor\s+(\d+)\s+Tahun\s+' + YEAR),
+    ('Inpres',  r'Instruksi\s+Presiden(?:\s+Republik\s+Indonesia)?\s+Nomor\s+(\d+)\s+Tahun\s+' + YEAR),
+    ('Permenkes', r'Peraturan\s+Menteri\s+Kesehatan[\w\s]{0,20}?Nomor\s+(\d+)\s+Tahun\s+' + YEAR),
+    ('Perban',  r'Peraturan\s+Badan[\w\s]{0,40}?Nomor\s+(\d+)\s+Tahun\s+' + YEAR),
     ('POJK',    r'(?:Peraturan\s+Otoritas\s+Jasa\s+Keuangan|POJK)\s+Nomor\s+([\w./]+)\s+Tahun\s+' + YEAR),
     ('SE',      r'Surat\s+Edaran\s+[A-Za-z ]{3,40}?\s+Nomor\s+([\w./]+)\s+Tahun\s+' + YEAR),
+    # abbreviated/slash forms: "UU 27/2022", "UU No. 27 Tahun 2022", "PP 71/2019"
+    ('UU',      r'\bUU\s+(?:No\.?\s*|Nomor\s+)?(\d+)\s*/\s*' + YEAR),
+    ('UU',      r'\bUU\s+(?:No\.?\s*|Nomor\s+)(\d+)\s+Tahun\s+' + YEAR),
+    ('PP',      r'\bPP\s+(?:No\.?\s*|Nomor\s+)?(\d+)\s*/\s*' + YEAR),
+    ('Perpres', r'\bPerpres\s+(?:No\.?\s*|Nomor\s+)?(\d+)\s*/\s*' + YEAR),
 ]
 
 # friendly names + which cited ids map to a document already in the corpus
@@ -85,9 +95,34 @@ INSTR = [
     {'id': 'UU PDP', 'doc': 'UU_PDP', 'aliases': [
         r'Undang[- ]?Undang\s+(?:tentang\s+)?Pelindungan\s+Data\s+Pribadi', r'\bUU\s+PDP\b']},
     {'id': 'UU ITE', 'doc': 'UU_ITE_No19_2016', 'aliases': [
-        r'\bUU\s+ITE\b', r'Informasi\s+dan\s+Transaksi\s+Elektronik']},
+        r'\bUU\s+ITE\b', r'tentang\s+Informasi\s+dan\s+Transaksi\s+Elektronik',
+        r'\bITE\s+Law\b']},
     {'id': 'PP PSTE', 'doc': 'PP_PSTE', 'aliases': [
-        r'Penyelenggaraan\s+Sistem\s+dan\s+Transaksi\s+Elektronik', r'\bPP\s+PSTE\b']},
+        r'tentang\s+Penyelenggaraan\s+Sistem\s+dan\s+Transaksi\s+Elektronik', r'\bPP\s+PSTE\b']},
+    # ── constitutional / foundational ──
+    {'id': 'UUD 1945', 'doc': None, 'aliases': [
+        r'Undang[- ]?Undang\s+Dasar\s+(?:Negara\s+Republik\s+Indonesia\s+)?(?:Tahun\s+)?1945',
+        r'\bUUD\s+(?:Negara\s+Republik\s+Indonesia\s+)?(?:Tahun\s+)?1945', r'\bUUD\s*1945']},
+    # ── international legal instruments cited by guidelines (different styles) ──
+    {'id': 'GDPR (EU 2016/679)', 'doc': None, 'aliases': [
+        r'\bGDPR\b', r'General\s+Data\s+Protection\s+Regulation', r'Regulation\s+\(EU\)\s+2016/679']},
+    {'id': 'Universal Declaration of Human Rights', 'doc': None, 'aliases': [
+        r'Universal\s+Declaration\s+of\s+Human\s+Rights', r'\bUDHR\b',
+        r'Deklarasi\s+Universal\s+Hak[- ]?Hak\s+Asasi\s+Manusia']},
+    {'id': 'ICCPR', 'doc': None, 'aliases': [
+        r'International\s+Covenant\s+on\s+Civil\s+and\s+Political\s+Rights', r'\bICCPR\b']},
+    {'id': 'Sustainable Development Goals (2030 Agenda)', 'doc': None, 'aliases': [
+        r'Sustainable\s+Development\s+Goals', r'\bSDGs?\b', r'2030\s+Agenda',
+        r'Tujuan\s+Pembangunan\s+Berkelanjutan']},
+    {'id': 'CoE Convention 108 (Data Protection)', 'doc': None, 'aliases': [
+        r'Convention\s+108', r'Convention\s+for\s+the\s+Protection\s+of\s+Individuals']},
+    {'id': 'Budapest Convention on Cybercrime', 'doc': None, 'aliases': [
+        r'Budapest\s+Convention', r'Convention\s+on\s+Cybercrime']},
+    {'id': 'NIST AI Risk Management Framework', 'doc': None, 'aliases': [
+        r'NIST\s+AI\s+Risk\s+Management', r'\bAI\s+RMF\b']},
+    {'id': 'Bletchley Declaration', 'doc': None, 'aliases': [r'Bletchley\s+Declaration']},
+    {'id': 'OECD Privacy Guidelines', 'doc': None, 'aliases': [
+        r'OECD\s+Privacy\s+Guidelines', r'OECD\s+Guidelines\s+on\s+.{0,20}Privacy']},
 ]
 
 
