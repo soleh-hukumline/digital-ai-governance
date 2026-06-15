@@ -478,7 +478,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     populateMetricsTable(model.id, fullData);
                     populateRankingTable(model.id, fullData);
                     networkInstances[model.id] = { graphData: fullData, isChord: true };
-                    renderInstrumentChord(model.id, fullData);
+                    await _ensureCitations();                 // citation layer = PRIMARY chord mode
+                    renderInstrumentChord(model.id, fullData, 'citation');
                     continue;
                 }
 
@@ -1515,31 +1516,42 @@ document.addEventListener('DOMContentLoaded', () => {
     function _chordPt(cx, cy, r, a) { return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; }
 
     const _chordDisp = g => (g === 'Insiden Kasus' ? g : _abbrInst(g));
-    function renderInstrumentChord(graphId, fullData) {
+    function renderInstrumentChord(graphId, fullData, mode) {
         const box = document.getElementById('network-' + graphId);
         if (!box) return;
         const isEn = window.currentLang === 'en';
-        // aggregate inter-group edge counts
+        mode = mode || (CHORD[graphId] && CHORD[graphId].mode) || 'citation';
+        // group ids
         const groupOf = {}; fullData.nodes.forEach(n => groupOf[n.id] = n.group);
         const gset = [...new Set(fullData.nodes.map(n => n.group))];
         const idx = {}; gset.forEach((g, i) => idx[g] = i);
-        const M = gset.map(() => gset.map(() => 0));
+        // SBERT symmetric matrix (textual-similarity pair counts, inter-group)
+        const Msb = gset.map(() => gset.map(() => 0));
         fullData.edges.forEach(e => {
             const a = idx[groupOf[e.from]], b = idx[groupOf[e.to]];
             if (a == null || b == null || a === b) return;   // inter-group only
-            M[a][b]++; M[b][a]++;
+            Msb[a][b]++; Msb[b][a]++;
         });
-        // keep groups with any connection
+        // CITATION directed matrix (explicit cross-reference, instrument-level)
+        const Cdir = _citeMatrix(gset);
+        const hasCite = Cdir.some(r => r.some(v => v > 0));
+        if (mode === 'citation' && !hasCite) mode = 'sbert';   // fallback: no in-corpus citations in this view
+        // active matrix used for ribbon geometry (symmetrise citations for layout; direction kept in Cdir)
+        const M = (mode === 'citation')
+            ? gset.map((g, i) => gset.map((h, j) => Cdir[i][j] + Cdir[j][i]))
+            : Msb;
+        // keep groups with any connection in the active matrix
         const keep = gset.map((g, i) => M[i].reduce((s, v) => s + v, 0) > 0);
         const groups = gset.filter((g, i) => keep[i]);
-        const gi = {}; groups.forEach((g, i) => gi[g] = i);
         const N = groups.length;
         if (!N) { box.innerHTML = '<div class="rp-empty">' + (isEn ? 'No inter-instrument links.' : 'Tidak ada tautan antar-instrumen.') + '</div>'; return; }
         const matrix = groups.map(ga => groups.map(gb => M[idx[ga]][idx[gb]]));
+        const cdir = groups.map(ga => groups.map(gb => Cdir[idx[ga]][idx[gb]]));   // directed, for inspector/tooltip
+        const cov = _covByDoc();
 
         const palette = ['#ef4444', '#ec4899', '#a855f7', '#6366f1', '#3b82f6', '#0ea5e9', '#14b8a6', '#10b981', '#84cc16', '#eab308', '#f59e0b', '#f97316', '#78716c', '#be123c', '#6d28d9', '#1d4ed8', '#0891b2', '#65a30d', '#c026d3', '#db2777'];
         const gcol = {}; groups.forEach((g, i) => gcol[g] = palette[i % palette.length]);
-        CHORD[graphId] = { groups, matrix, gcol, sel: null };
+        CHORD[graphId] = { groups, matrix, cdir, gcol, sel: null, mode, cov };
 
         // layout
         const VB = 820, CX = 410, CY = 410, Rin = 250, Rout = 270, Rlab = 280;
@@ -1570,12 +1582,17 @@ document.addEventListener('DOMContentLoaded', () => {
         let ribbons = '';
         for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
             if (matrix[i][j] <= 0) continue;
-            ribbons += `<path class="cribbon" data-i="${i}" data-j="${j}" d="${ribbonPath(sub[i][j], sub[j][i])}" fill="${gcol[groups[i]]}" fill-opacity="0.3" stroke="none"><title>${_rEsc(_chordDisp(groups[i]))} ↔ ${_rEsc(_chordDisp(groups[j]))}: ${matrix[i][j]} ${isEn ? 'links' : 'tautan'}</title></path>`;
+            ribbons += `<path class="cribbon" data-i="${i}" data-j="${j}" d="${ribbonPath(sub[i][j], sub[j][i])}" fill="${gcol[groups[i]]}" fill-opacity="0.3" stroke="none"><title>${_rEsc(_chordDisp(groups[i]))} ↔ ${_rEsc(_chordDisp(groups[j]))}: ${matrix[i][j]} ${mode === 'citation' ? (isEn ? 'citations' : 'sitasi') : (isEn ? 'links' : 'tautan')}</title></path>`;
         }
         let bands = '';
         for (let i = 0; i < N; i++) {
             const a = arcs[i], col = gcol[groups[i]];
-            bands += `<path class="cband" data-i="${i}" d="${arcPath(a.a0, a.a1)}" fill="${col}" stroke="rgba(0,0,0,0.25)" stroke-width="0.5" style="cursor:pointer"><title>${_rEsc(_chordDisp(groups[i]))} (${rowSum[i]} ${isEn ? 'links' : 'tautan'})</title></path>`;
+            const cv = cov.get(groups[i]) || {};
+            const muted = (mode === 'citation' && cv.role === 'source');   // cite-only leaf → no authority
+            const btitle = (mode === 'citation')
+                ? `${_chordDisp(groups[i])} — ${isEn ? 'cited' : 'disitir'} ${cv.in || 0}× / ${isEn ? 'cites' : 'menyitir'} ${cv.out || 0}×`
+                : `${_chordDisp(groups[i])} (${rowSum[i]} ${isEn ? 'links' : 'tautan'})`;
+            bands += `<path class="cband" data-i="${i}" d="${arcPath(a.a0, a.a1)}" fill="${col}" fill-opacity="${muted ? 0.28 : 1}" stroke="${muted ? col : 'rgba(0,0,0,0.25)'}" stroke-width="${muted ? 1.2 : 0.5}" stroke-dasharray="${muted ? '4 2' : ''}" style="cursor:pointer"><title>${_rEsc(btitle)}</title></path>`;
             const flip = (a.mid > Math.PI / 2 && a.mid < 3 * Math.PI / 2);
             const [lx, ly] = _chordPt(CX, CY, Rlab, a.mid);
             const deg = a.mid * 180 / Math.PI;
@@ -1596,13 +1613,27 @@ document.addEventListener('DOMContentLoaded', () => {
     function _chordLegend(graphId) {
         const el = document.getElementById('legend-' + graphId);
         if (!el || !CHORD[graphId]) return;
-        const { groups, gcol } = CHORD[graphId];
+        const { groups, gcol, mode } = CHORD[graphId];
         const isEn = window.currentLang === 'en';
-        const note = `<div style="width:100%;font-size:10.5px;color:var(--text-4);line-height:1.5;margin-bottom:4px;">${isEn
-            ? '<b>Ribbon</b> = number of provision-pairs with high textual (SBERT) similarity between two instruments — a descriptive semantic-overlap map, not legal citation. Click an arc to rank its links.'
-            : '<b>Ribbon</b> = jumlah pasangan pasal dgn kemiripan teks (SBERT) tinggi antar dua instrumen — peta tumpang-tindih semantik (deskriptif), bukan sitasi hukum. Klik busur untuk peringkat tautannya.'}</div>`;
-        el.innerHTML = note + groups.map(g => `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);background:var(--legend-chip);padding:3px 9px;border-radius:20px;"><span style="width:10px;height:10px;border-radius:50%;background:${gcol[g]};display:inline-block;margin-right:6px;"></span>${_rEsc(_chordDisp(g))}</span>`).join('');
+        const toggleLabel = mode === 'citation'
+            ? (isEn ? 'Mode: Citation (authority) → switch to SBERT' : 'Mode: Sitasi (otoritas) → ganti ke SBERT')
+            : (isEn ? 'Mode: SBERT overlap (exploratory) → switch to Citation' : 'Mode: SBERT (eksploratif) → ganti ke Sitasi');
+        const toggle = `<button class="btn-secondary btn-sm" onclick="toggleChordMode('${graphId}')" style="margin-bottom:6px;"><span class="material-symbols-rounded" style="font-size:13px;vertical-align:-2px;">swap_horiz</span> ${toggleLabel}</button>`;
+        const note = `<div style="width:100%;font-size:10.5px;color:var(--text-4);line-height:1.5;margin:4px 0;">${mode === 'citation'
+            ? (isEn
+                ? '<b>Citation mode (primary).</b> Ribbon = explicit cross-citations between two instruments; arc size = total citations involving it; <b>dashed/muted arcs = cite-only “source” instruments (cited 0×, mostly soft-law)</b>; solid arcs = cited authorities. Click an arc to see who it cites vs who cites it.'
+                : '<b>Mode sitasi (utama).</b> Pita = sitasi-silang eksplisit antar dua instrumen; ukuran busur = total sitasi yang melibatkannya; <b>busur putus-putus/pudar = instrumen “sumber” yang hanya menyitir (disitir 0×, umumnya soft-law)</b>; busur penuh = otoritas yang disitir. Klik busur untuk lihat ia menyitir vs disitir siapa.')
+            : (isEn
+                ? '<b>SBERT mode (exploratory).</b> Ribbon = provision-pairs with high textual (SBERT) similarity — a semantic-overlap map, <b>NOT</b> legal citation/authority. Switch to Citation mode for the defensible authority view.'
+                : '<b>Mode SBERT (eksploratif).</b> Pita = pasangan pasal dgn kemiripan teks (SBERT) tinggi — peta tumpang-tindih semantik, <b>BUKAN</b> sitasi/otoritas hukum. Ganti ke mode Sitasi untuk pandangan otoritas yang defensible.')}</div>`;
+        el.innerHTML = toggle + note + groups.map(g => `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);background:var(--legend-chip);padding:3px 9px;border-radius:20px;"><span style="width:10px;height:10px;border-radius:50%;background:${gcol[g]};display:inline-block;margin-right:6px;"></span>${_rEsc(_chordDisp(g))}</span>`).join('');
     }
+    window.toggleChordMode = function (graphId) {
+        const inst = networkInstances[graphId];
+        if (!inst || !inst.graphData) return;
+        const cur = (CHORD[graphId] && CHORD[graphId].mode) || 'citation';
+        renderInstrumentChord(graphId, inst.graphData, cur === 'citation' ? 'sbert' : 'citation');
+    };
 
     function _chordSelect(graphId, i) {
         const c = CHORD[graphId]; if (!c) return;
@@ -1620,11 +1651,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const body = document.getElementById('inspector-' + graphId + '-body');
         if (!panel || i == null) { if (panel) panel.classList.remove('visible'); return; }
         const isEn = window.currentLang === 'en';
-        const { groups, matrix, gcol } = c;
-        const conns = groups.map((g, j) => ({ g, w: matrix[i][j] })).filter(o => o.w > 0).sort((a, b) => b.w - a.w);
+        const { groups, matrix, cdir, gcol, mode } = c;
         title.textContent = _chordDisp(groups[i]);
-        body.innerHTML = `<div style="font-size:0.78rem;color:var(--text-3);margin-bottom:8px;">${isEn ? 'Connected instruments' : 'Instrumen terhubung'} (${conns.length}):</div>`
-            + conns.map(o => `<div style="display:flex;justify-content:space-between;gap:8px;font-size:0.8rem;padding:3px 0;border-bottom:1px dashed var(--border);"><span style="color:var(--text-2);"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${gcol[o.g]};margin-right:5px;"></span>${_rEsc(_chordDisp(o.g))}</span><b style="color:var(--text-1);">${o.w}</b></div>`).join('');
+        const rowHtml = (o, suffix) => `<div style="display:flex;justify-content:space-between;gap:8px;font-size:0.8rem;padding:3px 0;border-bottom:1px dashed var(--border);"><span style="color:var(--text-2);"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${gcol[o.g]};margin-right:5px;"></span>${_rEsc(_chordDisp(o.g))}</span><b style="color:var(--text-1);">${o.w}${suffix || ''}</b></div>`;
+        if (mode === 'citation' && cdir) {
+            const out = groups.map((g, j) => ({ g, w: cdir[i][j] })).filter(o => o.w > 0).sort((a, b) => b.w - a.w);
+            const inn = groups.map((g, j) => ({ g, w: cdir[j][i] })).filter(o => o.w > 0).sort((a, b) => b.w - a.w);
+            const empty = `<div style="font-size:0.78rem;color:var(--text-4);padding:2px 0;">—</div>`;
+            body.innerHTML = `<div style="font-size:0.78rem;color:var(--primary);font-weight:600;margin-bottom:4px;">${isEn ? 'Cites (out)' : 'Menyitir (out)'} (${out.length}):</div>`
+                + (out.map(o => rowHtml(o, '×')).join('') || empty)
+                + `<div style="font-size:0.78rem;color:var(--amber);font-weight:600;margin:10px 0 4px;">${isEn ? 'Cited by (in) — authority' : 'Disitir oleh (in) — otoritas'} (${inn.length}):</div>`
+                + (inn.map(o => rowHtml(o, '×')).join('') || empty);
+        } else {
+            const conns = groups.map((g, j) => ({ g, w: matrix[i][j] })).filter(o => o.w > 0).sort((a, b) => b.w - a.w);
+            body.innerHTML = `<div style="font-size:0.78rem;color:var(--text-3);margin-bottom:8px;">${isEn ? 'Connected instruments' : 'Instrumen terhubung'} (${conns.length}):</div>`
+                + conns.map(o => rowHtml(o)).join('');
+        }
         panel.classList.add('visible');
     }
 
@@ -1649,13 +1691,42 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const k in _CITE_NAMES) if (name.startsWith(k)) return _CITE_NAMES[k];
         return name.replace(/_/g, ' ').slice(0, 28);
     }
+    // ── shared citation cache + instrument-level helpers (PRIMARY authority layer) ──
+    let CITATIONS = null;
+    async function _ensureCitations() {
+        if (CITATIONS) return CITATIONS;
+        try { const r = await fetch(`./data/network/citations.json?v=${DATA_V}`); CITATIONS = await r.json(); }
+        catch (e) { CITATIONS = {}; }
+        CITATIONS.docs = CITATIONS.docs || {};
+        CITATIONS.edges = CITATIONS.edges || [];
+        CITATIONS.coverage = CITATIONS.coverage || [];
+        CITATIONS.external_referenced = CITATIONS.external_referenced || [];
+        return CITATIONS;
+    }
+    function _covByDoc() {
+        const m = new Map();
+        ((CITATIONS && CITATIONS.coverage) || []).forEach(c => m.set(c.doc, c));
+        return m;
+    }
+    // directed instrument citation matrix over edges with in_corpus===true, restricted to `groups`
+    function _citeMatrix(groups) {
+        const gi = {}; groups.forEach((g, i) => gi[g] = i);
+        const M = groups.map(() => groups.map(() => 0));
+        ((CITATIONS && CITATIONS.edges) || []).forEach(e => {
+            if (!e.in_corpus || !e.corpus_doc) return;
+            const a = gi[e.source], b = gi[e.corpus_doc];
+            if (a == null || b == null || a === b) return;
+            M[a][b] += (e.count || 1);
+        });
+        return M;
+    }
+
     async function renderCitationNetwork() {
         const box = document.getElementById('citation-network');
         if (!box) return;
         const isEn = window.currentLang === 'en';
-        let d;
-        try { const r = await fetch(`./data/network/citations.json?v=${DATA_V}`); d = await r.json(); }
-        catch (e) { box.innerHTML = '<div class="rp-empty">citations.json tidak ditemukan.</div>'; return; }
+        const d = await _ensureCitations();
+        if (!d.edges || !d.edges.length) { box.innerHTML = '<div class="rp-empty">citations.json tidak ditemukan.</div>'; return; }
         const edges = d.edges || [];
         const internal = edges.filter(e => e.in_corpus).sort((a, b) => b.count - a.count);
         const ext = d.external_referenced || [];
@@ -2385,7 +2456,7 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
 
     window.exportGraphPNG = function(graphId, filename) {
         const inst = networkInstances[graphId];
-        if (inst && inst.isChord) { _svgToPng('network-' + graphId, filename || ('Chord_' + graphId + '.png')); return; }
+        if (inst && inst.isChord) { _svgToPng('network-' + graphId, 'Chord_' + graphId + '_' + ((CHORD[graphId] && CHORD[graphId].mode) || 'citation') + '.png'); return; }
         if (!inst || !inst.network) { showToast('Graph belum selesai dirender.', 'error'); return; }
 
         showToast('Memproses High-Resolution Export (4K), mohon tunggu...', 'info');
@@ -2542,7 +2613,7 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
         
         const avgDegLabel = avgDeg < 2 ? (isEn ? '⚠️ Nodes on average have few connections' : '⚠️ Node rata-rata memiliki sedikit koneksi') : (isEn ? '✅ Nodes have adequate connections' : '✅ Node memiliki koneksi yang memadai');
         
-        const topHubLabel = isEn ? `Strongest hub: "${topHub ? (topHub.label || topHub.id) : '-'}"` : `Hub terkuat: "${topHub ? (topHub.label || topHub.id) : '-'}"`;
+        const topHubLabel = isEn ? `SBERT semantic hub (exploratory — NOT authority): "${topHub ? (topHub.label || topHub.id) : '-'}"` : `Hub semantik SBERT (eksploratif — BUKAN otoritas): "${topHub ? (topHub.label || topHub.id) : '-'}"`;
         const coverageLabel = isEn ? `${n - isolated}/${n} connected nodes` : `${n - isolated}/${n} node terhubung`;
 
         const rows = [
@@ -2573,8 +2644,39 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
             </tr>
         `).join('');
         _attachMetricsExport(graphId, `Metrik_${graphId}`);
+        _appendCitationMetrics(graphId, graphData);   // PRIMARY citation-authority rows (async, below SBERT topology)
 
         if (typeof applyTranslations === 'function') applyTranslations();
+    }
+
+    // Append citation-grounded (PRIMARY authority) rows to the SBERT topology metrics table
+    async function _appendCitationMetrics(graphId, graphData) {
+        const tbody = document.getElementById(`tbody-metrics-${graphId}`);
+        if (!tbody) return;
+        const d = await _ensureCitations();
+        if (!d.coverage || !d.coverage.length) return;
+        const isEn = window.currentLang === 'en';
+        const groupsHere = new Set(graphData.nodes.map(n => n.group));
+        const cov = d.coverage.filter(c => groupsHere.has(c.doc));
+        if (!cov.length) return;
+        const authority = [...cov].sort((a, b) => b.in - a.in)[0];
+        const sources = cov.filter(c => c.role === 'source').length;
+        const iso = cov.filter(c => c.role === 'isolated').length;
+        const links = (d.edges || []).filter(e => e.in_corpus && groupsHere.has(e.source) && groupsHere.has(e.corpus_doc)).reduce((s, e) => s + (e.count || 1), 0);
+        const rows = [
+            [isEn ? '— Citation layer (PRIMARY authority) —' : '— Lapisan sitasi (OTORITAS utama) —', '', isEn ? 'Defensible cross-citation, instrument-level (vs SBERT topology above).' : 'Sitasi-silang defensible, level instrumen (vs topologi SBERT di atas).'],
+            [isEn ? 'Authority hub (by citations)' : 'Hub otoritas (berdasarkan sitasi)', authority && authority.in ? authority.in + '×' : '—', authority ? `${_citeDoc(authority.doc)} ${isEn ? 'cited' : 'disitir'} ${authority.in}× — ${isEn ? 'the real authority, not the SBERT hub' : 'otoritas nyata, bukan hub SBERT'}` : '—'],
+            [isEn ? 'Citation links (in-corpus)' : 'Tautan sitasi (dalam korpus)', links, isEn ? 'Explicit cross-references between corpus instruments' : 'Rujukan-silang eksplisit antar instrumen korpus'],
+            [isEn ? 'Source/leaf instruments (cited 0×)' : 'Instrumen sumber/daun (disitir 0×)', sources, isEn ? 'Cite others but are never cited back (mostly soft-law)' : 'Menyitir lain tapi tak pernah dirujuk balik (umumnya soft-law)'],
+            [isEn ? 'Isolated by citation' : 'Terisolasi menurut sitasi', iso, iso === 0 ? (isEn ? '✅ none' : '✅ tidak ada') : iso],
+        ];
+        const frag = rows.map(([metrik, nilai, implikasi], i) => `
+            <tr style="border-bottom:1px solid var(--border);background:rgba(245,158,11,0.04);">
+                <td style="padding:9px 12px; color:${i === 0 ? 'var(--amber)' : 'var(--text-2)'}; font-weight:${i === 0 ? 700 : 500};">${metrik}</td>
+                <td style="padding:9px 12px; text-align:right; font-family:monospace; font-weight:700; color:var(--amber);">${nilai}</td>
+                <td style="padding:9px 12px; color:var(--text-3); font-size:0.82rem; line-height:1.4;">${implikasi}</td>
+            </tr>`).join('');
+        tbody.insertAdjacentHTML('beforeend', frag);
     }
 
     // ===================================================================
@@ -2720,10 +2822,11 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
         }).join('');
 
         const html = `
+            <div id="authrank-${graphId}"></div>
             <div style="margin-top:1.5rem; overflow-x:auto;">
               <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.6rem;">
-                <span class="material-symbols-rounded" style="color:var(--primary); font-size:18px;">leaderboard</span>
-                <strong style="font-family:'Outfit'; color:var(--text-1); font-size:0.95rem;">${isEn ? 'Top Nodes by Semantic Overlap (SBERT · exploratory)' : 'Node dengan Tumpang-tindih Semantik Tertinggi (SBERT · eksploratif)'}</strong>
+                <span class="material-symbols-rounded" style="color:var(--text-3); font-size:18px;">leaderboard</span>
+                <strong style="font-family:'Outfit'; color:var(--text-2); font-size:0.95rem;">${isEn ? 'SECONDARY/exploratory: provision (pasal) semantic overlap (SBERT)' : 'Sekunder/eksploratif: tumpang-tindih semantik pasal (SBERT)'}</strong>
               </div>
               <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
                 <thead><tr>
@@ -2731,12 +2834,12 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
                   <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Node (Article/Regulation/Incident)' : 'Node (Pasal/Regulasi/Insiden)'}</th>
                   <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Classification' : 'Klasifikasi'}</th>
                   <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">Degree</th>
-                  <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Semantic Centrality' : 'Sentralitas Semantik'}</th>
+                  <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Semantic-overlap density' : 'Kepadatan Tumpang-tindih (SBERT)'}</th>
                   ${betHead}
                 </tr></thead>
                 <tbody>${rowsHtml}</tbody>
               </table>
-              ${_exportBar('ranking-' + graphId, 'Ranking_DegreeCentrality_' + graphId)}
+              ${_exportBar('ranking-' + graphId, 'Ranking_SBERT_SemanticOverlap_' + graphId)}
               ${betNote}
               <div style="font-size:0.75rem; color:var(--text-4); margin-top:8px; line-height:1.55; border-top:1px dashed var(--border); padding-top:8px;">
                 ${isEn
@@ -2756,6 +2859,48 @@ ${regText || 'TIDAK ADA DASAR HUKUM YANG BERLAKU (structural hole) — nyatakan 
         }
         cont.innerHTML = html;
         if (typeof applyTranslations === 'function') applyTranslations();
+        _renderAuthorityRanking(graphId, graphData);   // PRIMARY citation-authority table (async, above SBERT)
+    }
+
+    // PRIMARY authority ranking — instrument-level, by explicit-citation in-degree (defensible)
+    async function _renderAuthorityRanking(graphId, graphData) {
+        const host = document.getElementById(`authrank-${graphId}`);
+        if (!host) return;
+        const d = await _ensureCitations();
+        if (!d.coverage || !d.coverage.length) { host.innerHTML = ''; return; }
+        const isEn = window.currentLang === 'en';
+        const groupsHere = new Set(graphData.nodes.map(n => n.group));
+        const deg = {}; graphData.nodes.forEach(nd => deg[nd.id] = 0);
+        graphData.edges.forEach(e => { if (deg[e.from] !== undefined) deg[e.from]++; if (deg[e.to] !== undefined) deg[e.to]++; });
+        const degByGroup = {};
+        graphData.nodes.forEach(nd => { degByGroup[nd.group] = (degByGroup[nd.group] || 0) + (deg[nd.id] || 0); });
+        const rows = d.coverage.filter(c => groupsHere.has(c.doc)).sort((a, b) => (b.in - a.in) || (b.out - a.out));
+        if (!rows.length) { host.innerHTML = ''; return; }
+        const rb = {
+            both: ['↔ dua arah', 'rgba(16,185,129,0.15)', 'var(--emerald,#10b981)'],
+            source: ['→ menyitir', 'rgba(99,102,241,0.15)', 'var(--primary)'],
+            sink: ['← disitir', 'rgba(245,158,11,0.15)', 'var(--amber)'],
+            isolated: ['● isolated', 'rgba(239,68,68,0.15)', '#ef4444']
+        };
+        const th = 'text-align:left;padding:7px 12px;color:var(--text-3);font-weight:600;border-bottom:1px solid var(--border);font-size:0.8rem;';
+        const td = 'padding:6px 12px;border-bottom:1px solid var(--overlay-hover);font-size:0.82rem;';
+        const body = rows.map((c, i) => {
+            const b = rb[c.role] || ['—', 'transparent', 'var(--text-3)'];
+            return `<tr><td style="${td}color:var(--text-4);text-align:right;">${i + 1}</td>`
+                + `<td style="${td}"><b style="color:var(--text-1);">${_rEsc(_citeDoc(c.doc))}</b></td>`
+                + `<td style="${td}text-align:right;font-weight:700;color:var(--amber);">${c.in}</td>`
+                + `<td style="${td}text-align:right;font-weight:700;color:var(--primary);">${c.out}</td>`
+                + `<td style="${td}text-align:center;"><span style="font-size:0.65rem;background:${b[1]};color:${b[2]};padding:1px 6px;border-radius:10px;">${b[0]}</span></td>`
+                + `<td style="${td}text-align:right;color:var(--text-4);font-family:monospace;">${degByGroup[c.doc] || 0}</td></tr>`;
+        }).join('');
+        host.innerHTML = `<div style="margin-top:1.25rem;overflow-x:auto;">`
+            + `<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><span class="material-symbols-rounded" style="color:var(--amber);font-size:18px;">verified</span>`
+            + `<strong style="font-family:'Outfit';color:var(--text-1);font-size:0.95rem;">${isEn ? 'PRIMARY: Authority by explicit citation (instrument-level)' : 'PRIMER: Otoritas berdasarkan sitasi eksplisit (level instrumen)'}</strong></div>`
+            + `<div style="font-size:0.78rem;color:var(--text-3);margin-bottom:8px;line-height:1.5;">${isEn ? 'Ranked by how often each instrument is <b>cited</b> within the corpus — the defensible authority signal, vs the SBERT semantic-overlap table below. “Σ SBERT” = total provision-overlap degree of that instrument (granularity differs: citations are instrument-level, SBERT is pasal-level).' : 'Diurut dari seberapa sering tiap instrumen <b>disitir</b> di dalam korpus — sinyal otoritas yang defensible, vs tabel tumpang-tindih SBERT di bawah. “Σ SBERT” = total derajat tumpang-tindih pasal instrumen itu (beda granularitas: sitasi=level instrumen, SBERT=level pasal).'}</div>`
+            + _exportBar('authrank-tbl-' + graphId, 'Ranking_Otoritas_Sitasi_' + graphId)
+            + `<div id="authrank-tbl-${graphId}"><table style="width:100%;border-collapse:collapse;">`
+            + `<thead><tr><th style="${th}text-align:right;">#</th><th style="${th}">${isEn ? 'Instrument' : 'Instrumen'}</th><th style="${th}text-align:right;">${isEn ? 'Cited (in)' : 'Disitir'}</th><th style="${th}text-align:right;">${isEn ? 'Cites (out)' : 'Menyitir'}</th><th style="${th}text-align:center;">${isEn ? 'Role' : 'Peran'}</th><th style="${th}text-align:right;">Σ SBERT</th></tr></thead>`
+            + `<tbody>${body}</tbody></table></div></div>`;
     }
 
     // Re-render metric + ranking tables in the active language (called by toggleLanguage)
