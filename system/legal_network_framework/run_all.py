@@ -47,6 +47,17 @@ def main():
     from build_citations import main as build_citations
     run_step('1b. Citation Cross-Reference Network (authority)', build_citations)
 
+    # Step 1c: Full provision texts + PASAL-LEVEL citation ground truth (pasal→pasal /
+    # pasal→regulasi, each with the verbatim full-paragraph text of the citing pasal).
+    from build_provision_texts import main as build_provision_texts
+    run_step('1c-i. Provision Full Texts', build_provision_texts)
+    from build_provision_citations import main as build_provision_citations
+    run_step('1c-ii. Pasal-level Citation Ground Truth (full text)', build_provision_citations)
+    # instrument-level rollup of the pasal-level layer — SINGLE source of truth for the
+    # dashboard's citation topology/authority (merges human overrides; UU ITE = 3, not 39).
+    from build_citation_authority import main as build_citation_authority
+    run_step('1c-iii. Citation Authority Rollup (topology source)', build_citation_authority)
+
     # Step 2: Master LNA report
     from analyzer import analyze_network
     run_step('2. Generate Master LNA Report', analyze_network)

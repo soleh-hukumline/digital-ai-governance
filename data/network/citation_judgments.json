@@ -1,0 +1,2512 @@
+{
+  "model": "gemini-2.5-flash",
+  "n": 244,
+  "judgments": {
+    "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 9 :: UNESCO Recommendation on AI Ethics": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states that the 'UNESCO’s Recommendation on the Ethics of Artificial Intelligence' was used in the process of draftin",
+      "source_doc": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "source_prov": "Bagian 9",
+      "cited_ref": "UNESCO Recommendation on AI Ethics",
+      "kind": "named"
+    },
+    "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 10 :: OECD AI Principles": {
+      "is_citation": true,
+      "context_type": "toc_bibliography",
+      "confidence": 90,
+      "reason": "The snippet provides a full bibliographic entry for the 'Recommendation of the Council on Artificial Intelligence' (OECD AI Principles), inc",
+      "source_doc": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "source_prov": "Bagian 10",
+      "cited_ref": "OECD AI Principles",
+      "kind": "named"
+    },
+    "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 10 :: UNESCO Recommendation on AI Ethics": {
+      "is_citation": true,
+      "context_type": "toc_bibliography",
+      "confidence": 90,
+      "reason": "The snippet provides a full bibliographic entry for the 'Recommendation on the Ethics of Artificial Intelligence' (UNESCO Recommendation on ",
+      "source_doc": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "source_prov": "Bagian 10",
+      "cited_ref": "UNESCO Recommendation on AI Ethics",
+      "kind": "named"
+    },
+    "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 58 :: NIST AI Risk Management Framework": {
+      "is_citation": true,
+      "context_type": "toc_bibliography",
+      "confidence": 90,
+      "reason": "The snippet provides a full bibliographic entry for the 'NIST AI RMF Playbook', including the organization, title, and URL, which is a clear",
+      "source_doc": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "source_prov": "Bagian 58",
+      "cited_ref": "NIST AI Risk Management Framework",
+      "kind": "named"
+    },
+    "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 1 :: OECD AI Principles": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states that the document is meant 'to build on the existing OECD AI Principles,' indicating a direct normative refere",
+      "source_doc": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "source_prov": "Bagian 1",
+      "cited_ref": "OECD AI Principles",
+      "kind": "named"
+    },
+    "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 1 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)": {
+      "is_citation": false,
+      "context_type": "incidental",
+      "confidence": 70,
+      "reason": "The snippet mentions 'safe, secure, and trustworthy AI worldwide' as a general goal, which aligns with the UNGA resolution's title but doesn",
+      "source_doc": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "source_prov": "Bagian 1",
+      "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+      "kind": "named"
+    },
+    "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 15 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 90,
+      "reason": "The text states 'These efforts are undertaken in support of progress on the United Nations Sustainable Development Goals,' clearly indicatin",
+      "source_doc": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "source_prov": "Bagian 15",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "ISO_IEC_42001_AI_Management_System - Bagian 4 :: GDPR (EU 2016/679)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'compliance with regulations such as GDPR are fundamental elements of ISO/IEC 42001:2023', indicating GDPR as ",
+      "source_doc": "ISO_IEC_42001_AI_Management_System",
+      "source_prov": "Bagian 4",
+      "cited_ref": "GDPR (EU 2016/679)",
+      "kind": "named"
+    },
+    "ISO_IEC_42001_AI_Management_System - Bagian 11 :: GDPR (EU 2016/679)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 90,
+      "reason": "The text mentions 'processed in compliance with international regulations (e.g., GDPR)', directly invoking GDPR as an example of a regulatio",
+      "source_doc": "ISO_IEC_42001_AI_Management_System",
+      "source_prov": "Bagian 11",
+      "cited_ref": "GDPR (EU 2016/679)",
+      "kind": "named"
+    },
+    "ISO_IEC_42001_AI_Management_System - Bagian 13 :: EU AI Act": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Regulatory texts such as the European Union’s Artificial Intelligence Act (AI Act) [8] mandate the ethical and fair use ",
+      "source_doc": "ISO_IEC_42001_AI_Management_System",
+      "source_prov": "Bagian 13",
+      "cited_ref": "EU AI Act",
+      "kind": "named"
+    },
+    "ISO_IEC_42001_AI_Management_System - Bagian 26 :: EU AI Act": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The text explicitly calls the 'EU’s GDPR and the recently enforced AI Act' 'prime examples of regulations organizations must address to ensu",
+      "source_doc": "ISO_IEC_42001_AI_Management_System",
+      "source_prov": "Bagian 26",
+      "cited_ref": "EU AI Act",
+      "kind": "named"
+    },
+    "ISO_IEC_42001_AI_Management_System - Bagian 26 :: GDPR (EU 2016/679)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The text explicitly calls the 'EU’s GDPR and the recently enforced AI Act' 'prime examples of regulations organizations must address to ensu",
+      "source_doc": "ISO_IEC_42001_AI_Management_System",
+      "source_prov": "Bagian 26",
+      "cited_ref": "GDPR (EU 2016/679)",
+      "kind": "named"
+    },
+    "ISO_IEC_42001_AI_Management_System - Bagian 47 :: EU AI Act": {
+      "is_citation": false,
+      "context_type": "toc_bibliography",
+      "confidence": 99,
+      "reason": "The snippet is part of a numbered list of references/bibliography, indicated by the bracketed numbers and the format of the entry, which inc",
+      "source_doc": "ISO_IEC_42001_AI_Management_System",
+      "source_prov": "Bagian 47",
+      "cited_ref": "EU AI Act",
+      "kind": "named"
+    },
+    "ISO_IEC_42001_AI_Management_System - Bagian 48 :: GDPR (EU 2016/679)": {
+      "is_citation": false,
+      "context_type": "toc_bibliography",
+      "confidence": 99,
+      "reason": "The snippet is part of a numbered list of references/bibliography, indicated by the bracketed numbers and the format of the entry, which inc",
+      "source_doc": "ISO_IEC_42001_AI_Management_System",
+      "source_prov": "Bagian 48",
+      "cited_ref": "GDPR (EU 2016/679)",
+      "kind": "named"
+    },
+    "OECD_AI_Principles_2024 - Bagian 3 :: G20 AI Principles": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states that G20 Leaders 'welcomed the G20 AI Principles, drawn from the Recommendation,' indicating that the G20 AI P",
+      "source_doc": "OECD_AI_Principles_2024",
+      "source_prov": "Bagian 3",
+      "cited_ref": "G20 AI Principles",
+      "kind": "named"
+    },
+    "OECD_AI_Principles_2024 - Bagian 17 :: Council of Europe Framework Convention on AI": {
+      "is_citation": false,
+      "context_type": "incidental",
+      "confidence": 80,
+      "reason": "The snippet mentions 'Council of Europe' as one of the 'other international fora' where work on AI is being carried out. It does not specifi",
+      "source_doc": "OECD_AI_Principles_2024",
+      "source_prov": "Bagian 17",
+      "cited_ref": "Council of Europe Framework Convention on AI",
+      "kind": "named"
+    },
+    "OECD_AI_Principles_2024 - Bagian 20 :: Universal Declaration of Human Rights": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet uses the phrase 'HAVING REGARD to... the 1948 Universal Declaration of Human Rights,' which is a clear invocation of the instrum",
+      "source_doc": "OECD_AI_Principles_2024",
+      "source_prov": "Bagian 20",
+      "cited_ref": "Universal Declaration of Human Rights",
+      "kind": "named"
+    },
+    "OECD_AI_Principles_2024 - Bagian 20 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet uses the phrase 'HAVING REGARD to the Sustainable Development Goals set out in the 2030 Agenda for Sustainable Development,' exp",
+      "source_doc": "OECD_AI_Principles_2024",
+      "source_prov": "Bagian 20",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "SE_Komdigi_No9_2023_Etika_AI - Bagian 7 :: UU ITE": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik' (UU ITE) as a 'peraturan perunda",
+      "source_doc": "SE_Komdigi_No9_2023_Etika_AI",
+      "source_prov": "Bagian 7",
+      "cited_ref": "UU ITE",
+      "kind": "named"
+    },
+    "SE_Komdigi_No9_2023_Etika_AI - Bagian 7 :: UU 11/2008": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Undang-Undang Nomor 11 Tahun 2008' as a 'peraturan perundang-undangan' (legal regulation), indicating it's a f",
+      "source_doc": "SE_Komdigi_No9_2023_Etika_AI",
+      "source_prov": "Bagian 7",
+      "cited_ref": "UU 11/2008",
+      "kind": "regulation"
+    },
+    "SE_Komdigi_No9_2023_Etika_AI - Bagian 7 :: UU 6/2023": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Undang-Undang Nomor 6 Tahun 2023' as a 'peraturan perundang-undangan' (legal regulation), indicating it's a fo",
+      "source_doc": "SE_Komdigi_No9_2023_Etika_AI",
+      "source_prov": "Bagian 7",
+      "cited_ref": "UU 6/2023",
+      "kind": "regulation"
+    },
+    "SE_Komdigi_No9_2023_Etika_AI - Bagian 7 :: UU 2/2022": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Peraturan Pemerintah Pengganti Undang-undang Nomor 2 Tahun 2022' as a 'peraturan perundang-undangan' (legal re",
+      "source_doc": "SE_Komdigi_No9_2023_Etika_AI",
+      "source_prov": "Bagian 7",
+      "cited_ref": "UU 2/2022",
+      "kind": "regulation"
+    },
+    "SE_Komdigi_No9_2023_Etika_AI - Bagian 7 :: UU 27/2022": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi' as a 'peraturan perundang-undangan' (legal",
+      "source_doc": "SE_Komdigi_No9_2023_Etika_AI",
+      "source_prov": "Bagian 7",
+      "cited_ref": "UU 27/2022",
+      "kind": "regulation"
+    },
+    "SE_Komdigi_No9_2023_Etika_AI - Bagian 8 :: PP PSTE": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Peraturan Pemerintah Nomor 71 Tahun 2019 tentang Penyelenggaraan Sistem dan Transaksi Elektronik' (PP PSTE) as",
+      "source_doc": "SE_Komdigi_No9_2023_Etika_AI",
+      "source_prov": "Bagian 8",
+      "cited_ref": "PP PSTE",
+      "kind": "named"
+    },
+    "SE_Komdigi_No9_2023_Etika_AI - Bagian 8 :: Permen 5/2020": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Peraturan Menteri Komunikasi dan Informatika Nomor 5 Tahun 2020 tentang Penyelenggara Sistem Elektronik Lingku",
+      "source_doc": "SE_Komdigi_No9_2023_Etika_AI",
+      "source_prov": "Bagian 8",
+      "cited_ref": "Permen 5/2020",
+      "kind": "regulation"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 21 :: G20 AI Principles": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states that the Indonesian government will consider the G20 AI Principles as a basis for developing and utilizing AI,",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 21",
+      "cited_ref": "G20 AI Principles",
+      "kind": "named"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 26 :: UU 3/2014": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states that AI development in industry is 'sesuai dengan' (in accordance with) UU 3/2014, indicating it as a legal basis or alig",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 26",
+      "cited_ref": "UU 3/2014",
+      "kind": "regulation"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 26 :: Perpres 38/2018": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 90,
+      "reason": "The snippet attributes the goals of creating innovative, science- and technology-based excellence to Peraturan Presiden Nomor 38 Tahun 2018,",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 26",
+      "cited_ref": "Perpres 38/2018",
+      "kind": "regulation"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 37 :: UUD 1945": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states that the legal umbrella for AI ethics should be 'bersumber Pancasila dan UUD 1945', indicating UUD 1945 as a f",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 37",
+      "cited_ref": "UUD 1945",
+      "kind": "named"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 54 :: UUD 1945": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet refers to UUD 1945 (specifically Pasal 28C and Pasal 31) as the basis for policy products related to AI governance, ethics, and ",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 54",
+      "cited_ref": "UUD 1945",
+      "kind": "named"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 54 :: Pasal 28C": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet refers to Pasal 28C (along with Pasal 31 UUD 1945) as the basis for policy products related to AI governance, ethics, and legal ",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 54",
+      "cited_ref": "Pasal 28C",
+      "kind": "pasal_external"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 54 :: Pasal 31 UUD 1945": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet refers to Pasal 31 UUD 1945 (along with Pasal 28C) as the basis for policy products related to AI governance, ethics, and legal ",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 54",
+      "cited_ref": "Pasal 31 UUD 1945",
+      "kind": "pasal_external"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 54 :: UU 11/2019": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states that policy products are generated 'sesuai dengan amanah pada UU No. 11/2019', indicating UU 11/2019 as a legal mandate o",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 54",
+      "cited_ref": "UU 11/2019",
+      "kind": "regulation"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 61 :: UU 17/2007": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states that 'Kepentingan negara yang dimaksud adalah kedaulatan dalam data dan infrastruktur sebagaimana tercantum da",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 61",
+      "cited_ref": "UU 17/2007",
+      "kind": "regulation"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 67 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 90,
+      "reason": "The snippet states that AI development 'wajib diarahkan untuk mencapai tujuan pembangunan berkelanjutan', directly linking it to the Sustain",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 67",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 68 :: UUD 1945": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states that AI development must be based on Pancasila as the state's foundation, which is intrinsically linked to UUD",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 68",
+      "cited_ref": "UUD 1945",
+      "kind": "named"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 70 :: UU 11/2019": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet explicitly states 'E. PENERAPAN ASAS-ASAS UU NO. 11/2019 Di samping nilai-nilai etika di atas, asas-asas yang terkandung dalam U",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 70",
+      "cited_ref": "UU 11/2019",
+      "kind": "regulation"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 71 :: UUD 1945": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet refers to 'pembukaan konstitusi' and then explicitly cites 'Pasal 1 ayat (2) Undang-Undang Dasar Negara Republik Indonesia Tahun",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 71",
+      "cited_ref": "UUD 1945",
+      "kind": "named"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 71 :: Pasal 1 ayat (2) UUD 1945": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet explicitly states '(lihat Pasal 1 ayat (2) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945)', directly referencing the ",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 71",
+      "cited_ref": "Pasal 1 ayat (2) UUD 1945",
+      "kind": "pasal_external"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 71 :: UU 12/2011": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet states 'Indonesia yang memiliki sistem hirarkis perundang- undangan berdasarkan Undang-Undang Nomor 12 Tahun 2011 tentang (“UU N",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 71",
+      "cited_ref": "UU 12/2011",
+      "kind": "regulation"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 75 :: Pasal 56": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet explicitly states 'dalam Pasal 56 disebutkan pelaksanaan seluruh tugas dan fungsi...', directly referencing the content of Pasal",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 75",
+      "cited_ref": "Pasal 56",
+      "kind": "pasal_external"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 75 :: Perpres 133/2017": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet states 'Sesuai Peraturan Presiden Nomor 133 Tahun 2017 tentang perubahan atas Peraturan Presiden Nomor 53 Tahun 2017 tentang Bad",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 75",
+      "cited_ref": "Perpres 133/2017",
+      "kind": "regulation"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 75 :: Perpres 53/2017": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet states 'Sesuai Peraturan Presiden Nomor 133 Tahun 2017 tentang perubahan atas Peraturan Presiden Nomor 53 Tahun 2017 tentang Bad",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 75",
+      "cited_ref": "Perpres 53/2017",
+      "kind": "regulation"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76 :: Pasal 59": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet explicitly states 'Pasal 59 dan Pasal 60 Keputusan Presiden Nomor 103 Tahun 2001... mengatur bahwa Badan Pengk...', directly ref",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 76",
+      "cited_ref": "Pasal 59",
+      "kind": "pasal_external"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76 :: Pasal 60 Keppres 103/2001": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet explicitly states 'Pasal 59 dan Pasal 60 Keputusan Presiden Nomor 103 Tahun 2001 tentang Kedudukan, Tugas, Fungsi, Kewenangan, S",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 76",
+      "cited_ref": "Pasal 60 Keppres 103/2001",
+      "kind": "pasal_external"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76 :: Keppres 103/2001": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states that 'Pasal 59 dan Pasal 60 Keputusan Presiden Nomor 103 Tahun 2001... mengatur bahwa Badan Pengkajian dan Pen",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 76",
+      "cited_ref": "Keppres 103/2001",
+      "kind": "regulation"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 78 :: Pasal 39 UU 11/2019": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Komisi Etika yang diamanatkan Pasal 39 UU 11/2019 terbentuk berfungsi sebagai badan yang bertanggung jawab...', clearly ",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 78",
+      "cited_ref": "Pasal 39 UU 11/2019",
+      "kind": "pasal_external"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full - Bagian 78 :: UU 11/2019": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Komisi Etika yang diamanatkan Pasal 39 UU 11/2019 terbentuk berfungsi sebagai badan yang bertanggung jawab...', clearly ",
+      "source_doc": "Stranas_AI_Indonesia_2020-2045_Full",
+      "source_prov": "Bagian 78",
+      "cited_ref": "UU 11/2019",
+      "kind": "regulation"
+    },
+    "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 8 :: Universal Declaration of Human Rights": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Bearing in mind the Universal Declaration of Human Rights (1948), the instruments of the international human ",
+      "source_doc": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "source_prov": "Bagian 8",
+      "cited_ref": "Universal Declaration of Human Rights",
+      "kind": "named"
+    },
+    "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 8 :: ICCPR": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists 'the International Covenant on Civil and Political Rights (1966)' as part of 'the instruments of the international human r",
+      "source_doc": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "source_prov": "Bagian 8",
+      "cited_ref": "ICCPR",
+      "kind": "named"
+    },
+    "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 9 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet refers to 'the United Nations General Assembly Resolution on Transforming our world: the 2030 Agenda for Sustainable Development",
+      "source_doc": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "source_prov": "Bagian 9",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 24 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The text states that policies 'should be in line with internationally agreed social, political, environmental, educational, scientific and e",
+      "source_doc": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "source_prov": "Bagian 24",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 40 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states that AI technologies should be developed 'with full cognizance of the implications of AI technologies for sustainability ",
+      "source_doc": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "source_prov": "Bagian 40",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 1 :: Universal Declaration of Human Rights": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'recalling the Universal Declaration of Human Rights', indicating it as a normative reference.",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 1",
+      "cited_ref": "Universal Declaration of Human Rights",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 2 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet refers to 'its resolution 70/1 of 25 September 2015, entitled “Transforming our world: the 2030 Agenda for Sustainable Developme",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 2",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 3 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Recalling its resolutions 77/320 of 25 July 2023 on the impact of rapid technological change on the achieveme",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 3",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 5 :: UNESCO Recommendation on AI Ethics": {
+      "is_citation": false,
+      "context_type": "incidental",
+      "confidence": 80,
+      "reason": "The snippet mentions 'the adoption by the General Co' which is cut off, but the preceding text refers to 'Artificial Intelligence for Good p",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 5",
+      "cited_ref": "UNESCO Recommendation on AI Ethics",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 5 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'and the adoption by the General Conference of the United Nations Educational, Scientific and Cultural Organiz",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 5",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 7 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'have the potential to accelerate and enable progress towards the achievement of all 17 Sustainable Development Goals', i",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 7",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 8 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'pose risks that could hinder progress towards the achievement of the 2030 Agenda for Sustainable Development and its Sus",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 8",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 10 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet mentions 'their potential impact in accelerating the achievement of the Sustainable Development Goals', indicating the SDGs as a",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 10",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 12 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'in order to achieve all 17 Sustainable Development Goals', indicating the SDGs as a goal to be achieved.",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 12",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 15 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'towards the full realization of the 2030 Agenda and its Sustainable Development Goals', directly referencing the SDGs as",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 15",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 16 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly links funding for AI research and innovation to achieving 'Sustainable Development Goals related research and innovat",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 16",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 25 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The text encourages research and cooperation to understand AI's role in 'achieving all 17 Sustainable Development Goals', clearly positionin",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 25",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 28 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet discusses AI's impact on 'accelerating the achievement of all 17 Sustainable Development Goals', indicating the SDGs as a key ob",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 28",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 32 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The text mentions assisting developing countries in using AI systems 'in achieving all 17 Sustainable Development Goals', directly linking A",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 32",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 33 :: Global Digital Compact (UNGA 78/311)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 90,
+      "reason": "The snippet explicitly states 'looks forward to the development of a global digital compact', indicating that the document is referencing th",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 33",
+      "cited_ref": "Global Digital Compact (UNGA 78/311)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 33 :: Universal Declaration of Human Rights": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The text states that AI systems should be 'consistent with international law, in particular the Charter of the United Nations; the Universal",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 33",
+      "cited_ref": "Universal Declaration of Human Rights",
+      "kind": "named"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 33 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": false,
+      "context_type": "incidental",
+      "confidence": 70,
+      "reason": "The phrase 'for sustainable development' is a general objective, not a direct reference to the 'Sustainable Development Goals (2030 Agenda)'",
+      "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "source_prov": "Bagian 33",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 1 :: Universal Declaration of Human Rights": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'recalling the Universal Declaration of Human Rights', indicating it's being invoked as a prior normative refe",
+      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "source_prov": "Bagian 1",
+      "cited_ref": "Universal Declaration of Human Rights",
+      "kind": "named"
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 2 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 90,
+      "reason": "The snippet refers to 'its resolution 70/1 of 25 September 2015, entitled “Transforming our world: the 2030 Agenda for Sustainable Developme",
+      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "source_prov": "Bagian 2",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 3 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Reaffirming its resolutions 78/265 of 21 March 2024, entitled “Seizing the opportunities of safe, secure and ",
+      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "source_prov": "Bagian 3",
+      "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 3 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 90,
+      "reason": "The snippet refers to 'resolution 77/320 of 25 July 2023, entitled “Impact of rapid technological change on the achievement of the Sustainab",
+      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "source_prov": "Bagian 3",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 4 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 90,
+      "reason": "The snippet discusses the potential of AI to 'accelerate the progress and achievement of the Sustainable Development Goals', indicating the ",
+      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "source_prov": "Bagian 4",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 5 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 85,
+      "reason": "The snippet describes characteristics of AI systems ('safe, secure and trustworthy') that align with the title and intent of UNGA Res 78/265",
+      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "source_prov": "Bagian 5",
+      "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 8 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 85,
+      "reason": "The snippet discusses 'promoting safe, secure and trustworthy artificial intelligence systems for sustainable development', which directly e",
+      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "source_prov": "Bagian 8",
+      "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 9 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 90,
+      "reason": "The snippet explicitly mentions 'accelerating achievement of all 17 Sustainable Development Goals', clearly invoking the SDGs as a target or",
+      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "source_prov": "Bagian 9",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 12 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 85,
+      "reason": "The snippet calls for 'a fair, open, inclusive and non-discriminatory business environment across the life cycle of safe, secure and trustwo",
+      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "source_prov": "Bagian 12",
+      "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+      "kind": "named"
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 13 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 80,
+      "reason": "The snippet encourages Member States to consider 'the benefits and risks when scaling up the responsible use of digital solutions, such as o",
+      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "source_prov": "Bagian 13",
+      "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+      "kind": "named"
+    },
+    "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 13 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states that WHO's Science Division was created to support Member States in achieving the health-related Sustainable D",
+      "source_doc": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "source_prov": "Bagian 13",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 20 :: Council of Europe Framework Convention on AI": {
+      "is_citation": false,
+      "context_type": "affiliation_list",
+      "confidence": 98,
+      "reason": "The snippet lists 'Lee Hibbard, Council of Europe, France', which is part of an affiliation list of individuals and their organizations, not",
+      "source_doc": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "source_prov": "Bagian 20",
+      "cited_ref": "Council of Europe Framework Convention on AI",
+      "kind": "named"
+    },
+    "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 25 :: GDPR (EU 2016/679)": {
+      "is_citation": false,
+      "context_type": "acronym_glossary",
+      "confidence": 98,
+      "reason": "The snippet is clearly an 'ABBREVIATIONS AND ACRONYMS' list, where 'GDPR' is listed as an acronym, not invoked as a legal instrument.",
+      "source_doc": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "source_prov": "Bagian 25",
+      "cited_ref": "GDPR (EU 2016/679)",
+      "kind": "named"
+    },
+    "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 26 :: GDPR (EU 2016/679)": {
+      "is_citation": false,
+      "context_type": "acronym_glossary",
+      "confidence": 98,
+      "reason": "This snippet provides the full form of the acronym 'GDPR' as 'General Data Protection Regulation' within an acronym/definition list, not as ",
+      "source_doc": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "source_prov": "Bagian 26",
+      "cited_ref": "GDPR (EU 2016/679)",
+      "kind": "named"
+    },
+    "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 48 :: Sustainable Development Goals (2030 Agenda)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states that AI can help the world achieve the United Nations Sustainable Development Goals, including health-related objectives ",
+      "source_doc": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "source_prov": "Bagian 48",
+      "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+      "kind": "named"
+    },
+    "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 52 :: Universal Declaration of Human Rights": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'The Universal Declaration of Human Rights' as including 'pillars of patient rights such as dignity, privac",
+      "source_doc": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "source_prov": "Bagian 52",
+      "cited_ref": "Universal Declaration of Human Rights",
+      "kind": "named"
+    },
+    "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 60 :: OECD AI Principles": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet refers to 'A specific definition of AI in a recommendation of the Council on Artificial Intelligence of the OECD (4)', indicatin",
+      "source_doc": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "source_prov": "Bagian 60",
+      "cited_ref": "OECD AI Principles",
+      "kind": "named"
+    },
+    "EU_AI_Act_2024 - Article 9 :: GDPR (EU 2016/679)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Regulation (EU) 2016/679' and discusses its application ('subject to prohibition decisions by national dat",
+      "source_doc": "EU_AI_Act_2024",
+      "source_prov": "Article 9",
+      "cited_ref": "GDPR (EU 2016/679)",
+      "kind": "named"
+    },
+    "PP_PSTE_No71_2019 - Pasal 6 :: Pasal 2": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 2 ayat (2)' as the basis for the preceding statement ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 6",
+      "cited_ref": "Pasal 2 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 16 :: Pasal 15": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 15 ayat (2) huruf a' as the basis for the preceding statement ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 16",
+      "cited_ref": "Pasal 15 ayat (2) huruf a",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 17 :: Pasal 15": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 15 ayat (2) huruf b' as the basis for the preceding statement ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 17",
+      "cited_ref": "Pasal 15 ayat (2) huruf b",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 47 :: Pasal 46": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 46 ayat (1)' as the basis for the preceding statement ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 47",
+      "cited_ref": "Pasal 46 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 51 :: Pasal 2": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 2 ayat (2)' as the basis for the preceding statement ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 51",
+      "cited_ref": "Pasal 2 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 54 :: Pasal 53": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 53 ayat (3)' as the basis for the preceding statement ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 54",
+      "cited_ref": "Pasal 53 ayat (3)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 60 :: Pasal 59": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 59 ayat (3)' as the basis for the preceding statement ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 60",
+      "cited_ref": "Pasal 59 ayat (3)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 80 :: Pasal 79": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 79 ayat (3)' as the basis for the preceding statement ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 80",
+      "cited_ref": "Pasal 79 ayat (3)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 9 :: Pasal 2": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 2' using 'sebagaimana dimaksud dalam' (as referred to in), indicating a direct legal cross-reference",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 9",
+      "cited_ref": "Pasal 2",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 9 :: Pasal 8": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 8 ayat (1) huruf a' using 'sebagaimana dimaksud dalam' (as referred to in), indicating a direct lega",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 9",
+      "cited_ref": "Pasal 8 ayat (1) huruf a",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 9 :: Pasal 3": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 3 ayat (1)' using 'sebagaimana dimaksud dalam' (as referred to in), indicating a direct legal cross-",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 9",
+      "cited_ref": "Pasal 3 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 10 :: Pasal 9": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 9 ayat (5)' using 'sebagaimana dimaksud dalam' (as referred to in), indicating a direct legal cross-",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 10",
+      "cited_ref": "Pasal 9 ayat (5)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 11 :: Pasal 10": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 10 ayat (2)' using 'sebagaimana dimaksud dalam' (as referred to in), indicating a direct legal cross",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 11",
+      "cited_ref": "Pasal 10 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 13 :: Pasal 10": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 10 ayat (2)' using 'sebagaimana dimaksud dalam' (as referred to in), indicating a direct legal cross",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 13",
+      "cited_ref": "Pasal 10 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 13 :: Pasal 9": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 9 ayat (5) huruf h' using 'sebagaimana dimaksud dalam' (as referred to in), indicating a direct lega",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 13",
+      "cited_ref": "Pasal 9 ayat (5) huruf h",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 15 :: Pasal 14": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 14 ayat (2) huruf a' using 'sebagaimana dimaksud dalam' (as referred to in), indicating a direct leg",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 15",
+      "cited_ref": "Pasal 14 ayat (2) huruf a",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 16 :: Pasal 14": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 14 ayat (2) huruf a' using 'sebagaimana dimaksud dalam' (as referred to in), indicating a direct leg",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 16",
+      "cited_ref": "Pasal 14 ayat (2) huruf a",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 19 :: Pasal 11": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 11 ayat (2)' using 'sebagaimana dimaksud dalam' (as referred to in), indicating a direct legal cross",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 19",
+      "cited_ref": "Pasal 11 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 20 :: Pasal 15": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 15 ayat (2)' as a basis for the preceding statement ('sebagaimana dimaksud dalam Pasal 15 ayat (2)')",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 20",
+      "cited_ref": "Pasal 15 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 22 :: Pasal 21": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 21 ayat (2) dan/atau ayat (3) dikenakan sanksi administr",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 22",
+      "cited_ref": "Pasal 21 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 27 :: Pasal 26": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 26 ayat (1) dan/atau ayat (4) dikenakan sanksi administr",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 27",
+      "cited_ref": "Pasal 26 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 28 :: Pasal 21": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Asosiasi sebagaimana dimaksud dalam Pasal 21 menetapkan standar', indicating that 'Pasal 21' provides the basis or conte",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 28",
+      "cited_ref": "Pasal 21",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 30 :: Pasal 29": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 29 ayat (1), ayat (3), dan/atau ayat (4) dikenakan sanks",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 30",
+      "cited_ref": "Pasal 29 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 33 :: Pasal 31": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 31 dan/atau Pasal 32 dikenakan sanksi administratif', cl",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 33",
+      "cited_ref": "Pasal 31",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 33 :: Pasal 32": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 31 dan/atau Pasal 32 dikenakan sanksi administratif', cl",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 33",
+      "cited_ref": "Pasal 32",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 39 :: Pasal 38": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 38 ayat (1), ayat (2), dan/atau ayat (4) dikenakan sanks",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 39",
+      "cited_ref": "Pasal 38 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 40 :: Pasal 8": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet refers to 'tata kelola sebagaimana dimaksud dalam Pasal 8 ayat (3) huruf a', indicating that the target provides the definition ",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 40",
+      "cited_ref": "Pasal 8 ayat (3) huruf a",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 40 :: Pasal 9": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet refers to 'kesiapan permodalan dan sumber daya... sebagaimana dimaksud dalam Pasal 9 ayat (5) huruf f', indicating that the targ",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 40",
+      "cited_ref": "Pasal 9 ayat (5) huruf f",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 41 :: Pasal 40": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 40 ayat (4) dikenakan sanksi administratif', ",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 41",
+      "cited_ref": "Pasal 40 ayat (4)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 43 :: Pasal 42": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 42 ayat (2), ayat (3), dan/atau ayat (4) dike",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 43",
+      "cited_ref": "Pasal 42 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 49 :: Pasal 48": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 48 ayat (1) dikenakan sanksi administratif', ",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 49",
+      "cited_ref": "Pasal 48 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 50 :: Pasal 16": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 90,
+      "reason": "The phrase 'sebagaimana dimaksud dalam Pasal 16' clearly indicates that 'Pasal 16' is being referenced as a substantive cross-reference with",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pasal 50",
+      "cited_ref": "Pasal 16",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 81 :: Pasal 79": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 79 ayat (3) huruf a' as the basis for the described actions ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 81",
+      "cited_ref": "Pasal 79 ayat (3) huruf a",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 82 :: Pasal 79": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 79 ayat (3) huruf b' as the basis for the described actions ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 82",
+      "cited_ref": "Pasal 79 ayat (3) huruf b",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 82 :: Pasal 83": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet directly introduces 'Pasal 83' and then proceeds to list its subsections, indicating it is citing the content of that article.",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 82",
+      "cited_ref": "Pasal 83",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 91 :: Pasal 90": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 90 huruf a' as the basis for the described roles ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 91",
+      "cited_ref": "Pasal 90 huruf a",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 92 :: Pasal 91": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 91 huruf c' as the basis for the described infrastructure facilitation ('sebagaimana dimaksud dalam'",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 92",
+      "cited_ref": "Pasal 91 huruf c",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 93 :: Pasal 91": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 91 huruf d' as the basis for the described promotion and education ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 93",
+      "cited_ref": "Pasal 91 huruf d",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 94 :: Pasal 90": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 90 huruf b' as the basis for the described government role ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 94",
+      "cited_ref": "Pasal 90 huruf b",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 95 :: Pasal 90": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 90 huruf c' as the basis for the described government actions ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 95",
+      "cited_ref": "Pasal 90 huruf c",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 96 :: Pasal 95": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 95' as the basis for the described access termination ('sebagaimana dimaksud dalam').",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 96",
+      "cited_ref": "Pasal 95",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 97 :: Pasal 96": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 96' multiple times as the basis for the described actions regarding access termination ('sebagaimana",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 97",
+      "cited_ref": "Pasal 96",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 98 :: Pasal 96": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'sebagaimana dimaksud dalam Pasal 96' (as referred to in Article 96), indicating a direct legal reference.",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 98",
+      "cited_ref": "Pasal 96",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 4": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'Pasal 4' as one of the provisions against which 'Pelanggaran terhadap ketentuan' (violations of the provisions) are being",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 4",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 5": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'Pasal 5 ayat (1)' as one of the provisions against which 'Pelanggaran terhadap ketentuan' (violations of the provisions) ",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 5 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 6": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'Pasal 6 ayat (1)' as one of the provisions against which 'Pelanggaran terhadap ketentuan' (violations of the provisions) ",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 6 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 9": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'Pasal 9 ayat (1)' as one of the provisions against which 'Pelanggaran terhadap ketentuan' (violations of the provisions) ",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 9 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 14": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'Pasal 14 ayat (1)' as one of the provisions against which 'Pelanggaran terhadap ketentuan' (violations of the provisions)",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 14 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 15": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'Pasal 15 ayat (1)' as one of the provisions against which 'Pelanggaran terhadap ketentuan' (violations of the provisions)",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 15 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 17": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'Pasal 17 ayat (4)' as one of the provisions against which 'Pelanggaran terhadap ketentuan' (violations of the provisions)",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 17 ayat (4)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 18": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'Pasal 18 ayat (1)' as one of the provisions against which 'Pelanggaran terhadap ketentuan' (violations of the provisions)",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 18 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 21": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'Pasal 21 ayat (2)' as one of the provisions against which 'Pelanggaran terhadap ketentuan' (violations of the provisions)",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 21 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 22": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet is a list of 'Pasal' (articles) and their 'ayat' (sub-articles), indicating a direct reference to specific legal provisions with",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 22 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 23": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet is a list of 'Pasal' (articles) and their 'ayat' (sub-articles), indicating a direct reference to specific legal provisions with",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 23",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 24": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet is a list of 'Pasal' (articles) and their 'ayat' (sub-articles), indicating a direct reference to specific legal provisions with",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 24",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 25": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet is a list of 'Pasal' (articles) and their 'ayat' (sub-articles), indicating a direct reference to specific legal provisions with",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 25",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 26": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet is a list of 'Pasal' (articles) and their 'ayat' (sub-articles), indicating a direct reference to specific legal provisions with",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 26 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 28": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet is a list of 'Pasal' (articles) and their 'ayat' (sub-articles), indicating a direct reference to specific legal provisions with",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 28 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 29": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet is a list of 'Pasal' (articles) and their 'ayat' (sub-articles), indicating a direct reference to specific legal provisions with",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 29",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 30": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet is a list of 'Pasal' (articles) and their 'ayat' (sub-articles), indicating a direct reference to specific legal provisions with",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 30 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 31": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet is a list of 'Pasal' (articles) and their 'ayat' (sub-articles), indicating a direct reference to specific legal provisions with",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 31",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 32": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet is a list of 'Pasal' (articles) and their 'ayat' (sub-articles), indicating a direct reference to specific legal provisions with",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 32 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 33": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) in a sequence, indicating a reference to specific legal provisions. This is a common way to ci",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 33",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 34": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) in a sequence, indicating a reference to specific legal provisions. This is a common way to ci",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 34 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 37": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) in a sequence, indicating a reference to specific legal provisions. This is a common way to ci",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 37 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 38": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) in a sequence, indicating a reference to specific legal provisions. This is a common way to ci",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 38 ayat (3)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 39": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) in a sequence, indicating a reference to specific legal provisions. This is a common way to ci",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 39 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 40": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) in a sequence, indicating a reference to specific legal provisions. This is a common way to ci",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 40 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 42": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) in a sequence, indicating a reference to specific legal provisions. This is a common way to ci",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 42 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 51": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) in a sequence, indicating a reference to specific legal provisions. The phrase 'dikenai sanksi",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 51 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 53": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) in a sequence, indicating a reference to specific legal provisions. The phrase 'dikenai sanksi",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 53 ayat (3)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 55": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) in a sequence, indicating a reference to specific legal provisions. The phrase 'dikenai sanksi",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 55 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 63": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) followed by 'dikenai sanksi administratif' (subject to administrative sanctions), indicating t",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 63 ayat (3)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 64": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) followed by 'dikenai sanksi administratif' (subject to administrative sanctions), indicating t",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 64 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 69": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) followed by 'dikenai sanksi administratif' (subject to administrative sanctions), indicating t",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 69 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 82": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) followed by 'dikenai sanksi administratif' (subject to administrative sanctions), indicating t",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 82 ayat (7)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 84": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) followed by 'dikenai sanksi administratif' (subject to administrative sanctions), indicating t",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 84 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 87": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) followed by 'dikenai sanksi administratif' (subject to administrative sanctions), indicating t",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 87 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "PP_PSTE_No71_2019 - Pasal 100 :: Pasal 98": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet lists multiple 'Pasal' (articles) followed by 'dikenai sanksi administratif' (subject to administrative sanctions), indicating t",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pasal 100",
+      "cited_ref": "Pasal 98 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No19_2016 - Pasal 3 :: Pasal 40": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Di antara ayat (2) dan ayat (3) Pasal 4O disisipkan 2 (dua) ayat', indicating a modification or reference to ",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pasal 3",
+      "cited_ref": "Pasal 4O",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No19_2016 - Pasal 26 :: Pasal 27": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Ketentuan Pasal 27 tetap dengan perubahan penjelasan ayat (1), ayat (3), dan ayat (4)', which is a direct reference to a",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pasal 26",
+      "cited_ref": "Pasal 27",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No19_2016 - Pasal 26 :: Pasal 31": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Ketentuan ayat (3) dan ayat (4) Pasal 31 diubah', indicating a modification or reference to a specific legal ",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pasal 26",
+      "cited_ref": "Pasal 31",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No19_2016 - Pasal 45 :: Pasal 27": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet refers to 'sebagaimana dimaksud dalam Pasal 27 ayat (ll dipidana', which is a direct legal cross-reference for defining an offen",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pasal 45",
+      "cited_ref": "Pasal 27",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 13 :: Pasal 14": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Di antara Pasal 13 dan Pasal 14 disisipkan I (satu) pasal, yakni Pasal 13A', indicating a legal amendment or ",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 13",
+      "cited_ref": "Pasal 14",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 13 :: Pasal 13A": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Di antara Pasal 13 dan Pasal 14 disisipkan I (satu) pasal, yakni Pasal 13A', indicating a legal amendment or ",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 13",
+      "cited_ref": "Pasal 13A",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 17 :: Pasal 18": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Di antara Pasal 18 dan Pasal 19 disisipkan I (satu) pasal, yakni Pasal 18A', indicating a legal amendment or ",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 17",
+      "cited_ref": "Pasal 18",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 17 :: Pasal 19": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Di antara Pasal 18 dan Pasal 19 disisipkan I (satu) pasal, yakni Pasal 18A', indicating a legal amendment or ",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 17",
+      "cited_ref": "Pasal 19",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 17 :: Pasal 18A": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Di antara Pasal 18 dan Pasal 19 disisipkan I (satu) pasal, yakni Pasal 18A', indicating a legal amendment or ",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 17",
+      "cited_ref": "Pasal 18A",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 18A :: Pasal 27": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Ketentuan Pasal 27 diubah sehingga berbunyi sebagai berikut:', indicating a legal amendment or reference to a",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 18A",
+      "cited_ref": "Pasal 27",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 27 :: Pasal 28": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Di antara Pasal 27 dan Pasal 28 disisipkan 2 (dua) pasal, yakni Pasil 27A dan Pasal 27B', indicating a legal ",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 27",
+      "cited_ref": "Pasal 28",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 27 :: Pasal 27B": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Di antara Pasal 27 dan Pasal 28 disisipkan 2 (dua) pasal, yakni Pasil 27A dan Pasal 27B', indicating a legal ",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 27",
+      "cited_ref": "Pasal 27B",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 28 :: Pasal 29": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Ketentuan Pasal 29 diubah sehingga berbunyi sebagai berikut:', indicating a legal amendment or reference to a",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 28",
+      "cited_ref": "Pasal 29",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 29 :: Pasal 36": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Ketentuan Pasal 36 diubah sehingga berbunyi sebagai berikut:', indicating a legal amendment or reference to a",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 29",
+      "cited_ref": "Pasal 36",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 45A :: Pasal 28": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet explicitly uses 'sebagaimana dimaksud dalam Pasal 28 ayat (1)' which is a direct legal reference to a specific article and parag",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 45A",
+      "cited_ref": "Pasal 28 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 45A :: Pasal 45B": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Ketentuan Pasal 45B diubah sehingga berbunyi sebagai berikut:', which indicates that Pasal 45B is being amended, making ",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 45A",
+      "cited_ref": "Pasal 45B",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 45B :: Pasal 29": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet uses 'sebagaimana dimaksud dalam Pasal 29 dipidana dengan pidana penjara...', clearly referencing Pasal 29 as the legal basis fo",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 45B",
+      "cited_ref": "Pasal 29",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 45B :: Pasal 27": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'ketentuan dalam Pasal 27 ayat (1), Pasal 27A, Pasal. 28 ayat (2), Pasal 28 ayal (3), Pasal 36, Pasal 45 ayat (1), Pasal 4",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 45B",
+      "cited_ref": "Pasal 27 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 45B :: Pasal 27A": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'ketentuan dalam Pasal 27 ayat (1), Pasal 27A, Pasal. 28 ayat (2), Pasal 28 ayal (3), Pasal 36, Pasal 45 ayat (1), Pasal 4",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 45B",
+      "cited_ref": "Pasal 27A",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 45B :: Pasal 28": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'ketentuan dalam Pasal 27 ayat (1), Pasal 27A, Pasal. 28 ayat (2), Pasal 28 ayal (3), Pasal 36, Pasal 45 ayat (1), Pasal 4",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 45B",
+      "cited_ref": "Pasal 28",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 45B :: Pasal 36": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'ketentuan dalam Pasal 27 ayat (1), Pasal 27A, Pasal. 28 ayat (2), Pasal 28 ayal (3), Pasal 36, Pasal 45 ayat (1), Pasal 4",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 45B",
+      "cited_ref": "Pasal 36",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 45B :: Pasal 45": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'ketentuan dalam Pasal 27 ayat (1), Pasal 27A, Pasal. 28 ayat (2), Pasal 28 ayal (3), Pasal 36, Pasal 45 ayat (1), Pasal 4",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 45B",
+      "cited_ref": "Pasal 45 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 45B :: Pasal 45A": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'ketentuan dalam Pasal 27 ayat (1), Pasal 27A, Pasal. 28 ayat (2), Pasal 28 ayal (3), Pasal 36, Pasal 45 ayat (1), Pasal 4",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 45B",
+      "cited_ref": "Pasal 45A ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 168 :: Pasal 16A": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet states 'Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 16A dikenai sanksi administratif', which directly refere",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 168",
+      "cited_ref": "Pasal 16A",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 168 :: Pasal 17": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'Ketentuan ayat (1) Pasal 17 diubah...' which indicates a modification or reference to a specific article with",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 168",
+      "cited_ref": "Pasal 17",
+      "kind": "pasal_internal"
+    },
+    "UU_ITE_No1_2024 - Pasal 278 :: Pasal 28": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet states 'Ketentuan Pasal 28 diubah sehingga berbunyi sebagai berikut:', which clearly indicates a modification or rephrasing of a",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pasal 278",
+      "cited_ref": "Pasal 28",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 7O :: Pasal 67": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 67' as a basis for the described criminal acts ('sebagaimana dimaksud dalam Pasal 67').",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 7O",
+      "cited_ref": "Pasal 67",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 7O :: Pasal 68": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 68' as a basis for the described criminal acts ('sebagaimana dimaksud dalam Pasal 67 dan Pasal 68').",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 7O",
+      "cited_ref": "Pasal 68",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 14 :: Pasal 6": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet refers to 'Pasal 6' as part of a range of articles ('Pasal 6 sampai dengan Pasal 11') that define the rights of the Personal Dat",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 14",
+      "cited_ref": "Pasal 6",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 14 :: Pasal 11": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet refers to 'Pasal 11' as part of a range of articles ('Pasal 6 sampai dengan Pasal 11') that define the rights of the Personal Da",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 14",
+      "cited_ref": "Pasal 11",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 15 :: Pasal 8": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 8' as defining the rights of the Personal Data Subject ('Hak-hak Subjek Data Pribadi sebagaimana dim",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 15",
+      "cited_ref": "Pasal 8",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 15 :: Pasal 9": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 9' as defining the rights of the Personal Data Subject ('Hak-hak Subjek Data Pribadi sebagaimana dim",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 15",
+      "cited_ref": "Pasal 9",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 15 :: Pasal 1O": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 1O ayat (1)' as defining the rights of the Personal Data Subject ('Hak-hak Subjek Data Pribadi sebag",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 15",
+      "cited_ref": "Pasal 1O ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 15 :: Pasal 11": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 11' as defining the rights of the Personal Data Subject ('Hak-hak Subjek Data Pribadi sebagaimana di",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 15",
+      "cited_ref": "Pasal 11",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 21 :: Pasal 20": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 2O ayat (21 huruf a' as the basis for processing Personal Data ('pemrosesan Data Pribadi berdasarkan",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 21",
+      "cited_ref": "Pasal 2O",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 50 :: Pasal 30": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 30' as defining the obligations of the Personal Data Controller ('Kewajiban Pengendali Data Pribadi ",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 50",
+      "cited_ref": "Pasal 30",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 50 :: Pasal 32": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 32' as part of a list of articles defining obligations, using 'sebagaimana dimaksud dalam' (as refer",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 50",
+      "cited_ref": "Pasal 32",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 50 :: Pasal 36": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 36' as part of a list of articles defining obligations, using 'sebagaimana dimaksud dalam' (as refer",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 50",
+      "cited_ref": "Pasal 36",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 52 :: Pasal 29": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 29' as part of a list of articles defining obligations, using 'sebagaimana dimaksud dalam' (as refer",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 52",
+      "cited_ref": "Pasal 29",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 52 :: Pasal 31": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 31' as part of a list of articles defining obligations, using 'sebagaimana dimaksud dalam' (as refer",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 52",
+      "cited_ref": "Pasal 31",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 57 :: Pasal 20": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 2O ayat (l)' as part of a list of articles whose violation is being discussed, using 'Pelanggaran te",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 57",
+      "cited_ref": "Pasal 2O",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 57 :: Pasal 21": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 21' as part of a list of articles whose violation is being discussed, using 'Pelanggaran terhadap ke",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 57",
+      "cited_ref": "Pasal 21",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 57 :: Pasal 24": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 24' as part of a list of articles whose violation is being discussed, using 'Pelanggaran terhadap ke",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 57",
+      "cited_ref": "Pasal 24",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 57 :: Pasal 25": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 25 ayat (2)' as part of a list of articles whose violation is being discussed, using 'Pelanggaran te",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 57",
+      "cited_ref": "Pasal 25 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 57 :: Pasal 26a": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 26ayat(31' (likely a typo for Pasal 26 ayat (3)) as part of a list of articles whose violation is be",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 57",
+      "cited_ref": "Pasal 26a",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 60 :: Pasal 58": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 58 ayat (2)' as defining the 'Lembaga' (institution) being discussed, using 'sebagaimana dimaksud da",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 60",
+      "cited_ref": "Pasal 58 ayat (2)",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 67 :: Pasal 65": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet explicitly refers to 'sebagaimana dimaksud dalam Pasal 65 ayat (1)' to define a legal offense and its associated penalty, indica",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 67",
+      "cited_ref": "Pasal 65 ayat (1)",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 68 :: Pasal 66": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet uses 'sebagaimana dimaksud dalam Pasal 66' to describe an action that is subject to criminal penalties, clearly invoking Pasal 6",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 68",
+      "cited_ref": "Pasal 66",
+      "kind": "pasal_internal"
+    },
+    "UU_PDP_No27_2022 - Pasal 73 :: Pasal 71": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The phrase 'Ketentuan sebagaimana dimaksud dalam Pasal 7L dan Pdsal 72 juga berlaku' directly states that the provisions of Pasal 7L and Pas",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 73",
+      "cited_ref": "Pasal 7L",
+      "kind": "pasal_internal"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pembukaan :: Pasal 216 ayat (1) UU 4/2023": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'untuk melaksanakan kewenangan pengaturan dan pengawasan sebagaimana dimaksud dalam Pasal 216 ayat (1) Undang-",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 216 ayat (1) UU 4/2023",
+      "kind": "pasal_external"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pembukaan :: UU 4/2023": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly states 'untuk melaksanakan kewenangan pengaturan dan pengawasan sebagaimana dimaksud dalam Pasal 216 ayat (1) Undang-",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pembukaan",
+      "cited_ref": "UU 4/2023",
+      "kind": "regulation"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pembukaan :: UU 21/2011": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 95,
+      "reason": "The snippet lists 'Undang-Undang Nomor 21 Tahun 2011 tentang Otoritas Jasa Keuangan' under a numbered list following a colon, which is a com",
+      "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+      "source_prov": "Pembukaan",
+      "cited_ref": "UU 21/2011",
+      "kind": "regulation"
+    },
+    "PP_PSTE_No71_2019 - Pembukaan :: UUD 1945": {
+      "is_citation": false,
+      "context_type": "incidental",
+      "confidence": 95,
+      "reason": "The snippet mentions 'UUD 1945' in the 'Mengingat' section, but it's cut off and doesn't complete the reference. The preceding text is about",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pembukaan",
+      "cited_ref": "UUD 1945",
+      "kind": "named"
+    },
+    "PP_PSTE_No71_2019 - Pembukaan :: Pasal 5 ayat (2) UUD 1945": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 100,
+      "reason": "The snippet explicitly states 'Pasal 5 ayat (2) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945;' in a list of legal instruments be",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 5 ayat (2) UUD 1945",
+      "kind": "pasal_external"
+    },
+    "PP_PSTE_No71_2019 - Pembukaan :: PP 82/2012": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 100,
+      "reason": "The snippet explicitly states 'bahwa Peraturan Pemerintah Nomor 82 Tahun 2012 tentang Penyelenggaraan Sistem dan Transaksi Elektronik sudah ",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pembukaan",
+      "cited_ref": "PP 82/2012",
+      "kind": "regulation"
+    },
+    "PP_PSTE_No71_2019 - Pembukaan :: UU 11/2008": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 100,
+      "reason": "The snippet explicitly states 'Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik' in a numbered list of legal ins",
+      "source_doc": "PP_PSTE_No71_2019",
+      "source_prov": "Pembukaan",
+      "cited_ref": "UU 11/2008",
+      "kind": "regulation"
+    },
+    "UU_ITE_No19_2016 - Pembukaan :: UUD 1945": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet is from the 'Menimbang' (Considering) section of a legal document, which typically outlines the legal basis and rationale for th",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pembukaan",
+      "cited_ref": "UUD 1945",
+      "kind": "named"
+    },
+    "UU_ITE_No19_2016 - Pembukaan :: Pasal 5": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 100,
+      "reason": "The snippet explicitly lists 'Pasal 5 ayat (l)' (Article 5 paragraph 1) under the 'Mengingat' (Recalling/Considering) section, which is a st",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 5",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No19_2016 - Pembukaan :: Pasal 20": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 100,
+      "reason": "The snippet explicitly lists 'pasal 20' (Article 20) under the 'Mengingat' (Recalling/Considering) section, which is a standard legal practi",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 20",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No19_2016 - Pembukaan :: Pasal 25A": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 100,
+      "reason": "The snippet explicitly lists 'pasal 25A' (Article 25A) under the 'Mengingat' (Recalling/Considering) section, which is a standard legal prac",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 25A",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No19_2016 - Pembukaan :: Pasal 2g": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 100,
+      "reason": "The snippet explicitly lists 'pasal 2gD ayat (1)' (Article 28D paragraph 1) under the 'Mengingat' (Recalling/Considering) section, which is ",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 2g",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No19_2016 - Pembukaan :: Pasal 28E": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 100,
+      "reason": "The snippet explicitly lists 'Pasal 28E ayat (2)' (Article 28E paragraph 2) under the 'Mengingat' (Recalling/Considering) section, which is ",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 28E",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No19_2016 - Pembukaan :: Pasal 28E ayat (3)": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 100,
+      "reason": "The snippet explicitly lists 'pasal 28E ayat (3)' (Article 28E paragraph 3) under the 'Mengingat' (Recalling/Considering) section, which is ",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 28E ayat (3)",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No19_2016 - Pembukaan :: Pasal 28F": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 100,
+      "reason": "The snippet explicitly lists 'pasal 28F' (Article 28F) under the 'Mengingat' (Recalling/Considering) section, which is a standard legal prac",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 28F",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No19_2016 - Pembukaan :: Pasal 28G ayat (1)": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 100,
+      "reason": "The snippet explicitly lists 'pasal 28G ayat (1)' (Article 28G paragraph 1) under the 'Mengingat' (Recalling/Considering) section, which is ",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 28G ayat (1)",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No19_2016 - Pembukaan :: Pasal 28J ayat (2)": {
+      "is_citation": true,
+      "context_type": "legal_basis_list",
+      "confidence": 100,
+      "reason": "The snippet explicitly lists 'pasal 28J ayat (2)' (Article 28J paragraph 2) under the 'Mengingat' (Recalling/Considering) section, which is ",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 28J ayat (2)",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No19_2016 - Pembukaan :: Pasal 33 ayat (2) UUD 1945": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 98,
+      "reason": "The snippet explicitly lists 'Pasal 33 ayat (2) Undang-Undang Dasar Negara Republik Indonesia Tahun 1945' under a 'Mengingat' (Considering) ",
+      "source_doc": "UU_ITE_No19_2016",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 33 ayat (2) UUD 1945",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No1_2024 - Pembukaan :: UUD 1945": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Undang-Undang Dasar Negara Republik Indonesia Tahun 1945' under the 'Mengingat' (Considering) section, which i",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pembukaan",
+      "cited_ref": "UUD 1945",
+      "kind": "named"
+    },
+    "UU_ITE_No1_2024 - Pembukaan :: Pasal 5 ayat (1)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Pasal 5 ayat (1)' under the 'Mengingat' (Considering) section, indicating it is being invoked as a legal basis",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 5 ayat (1)",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No1_2024 - Pembukaan :: Pasal 20": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Pasal 20' under the 'Mengingat' (Considering) section, indicating it is being invoked as a legal basis.",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 20",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No1_2024 - Pembukaan :: Pasal 28D ayat (1)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Pasal 28D ayat (1)' under the 'Mengingat' (Considering) section, indicating it is being invoked as a legal bas",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 28D ayat (1)",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No1_2024 - Pembukaan :: Pasal 28E": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Pasal 28E' under the 'Mengingat' (Considering) section, indicating it is being invoked as a legal basis.",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 28E",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No1_2024 - Pembukaan :: Pasal 28F": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Pasal 28F' under the 'Mengingat' (Considering) section, indicating it is being invoked as a legal basis.",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 28F",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No1_2024 - Pembukaan :: Pasal 28G ayat (1)": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Pasal 28G ayat (1)' under the 'Mengingat' (Considering) section, indicating it is being invoked as a legal bas",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 28G ayat (1)",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No1_2024 - Pembukaan :: Pasal 281": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Pasal 28I' under the 'Mengingat' (Considering) section, indicating it is being invoked as a legal basis.",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 281",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No1_2024 - Pembukaan :: Pasal 28J UUD 1945": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Pasal 28J Undang-Undang Dasar Negara Republik Indonesia Tahun 1945' under the 'Mengingat' (Considering) sectio",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pembukaan",
+      "cited_ref": "Pasal 28J UUD 1945",
+      "kind": "pasal_external"
+    },
+    "UU_ITE_No1_2024 - Pembukaan :: UU 11/2008": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly lists 'Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik' under the 'Mengingat' (Consideri",
+      "source_doc": "UU_ITE_No1_2024",
+      "source_prov": "Pembukaan",
+      "cited_ref": "UU 11/2008",
+      "kind": "regulation"
+    }
+  },
+  "by_doc": {
+    "ASEAN_Guide_AI_Governance_Ethics_2024": {
+      "real": 4,
+      "noise": 0
+    },
+    "G7_Hiroshima_Code_of_Conduct_for_AI": {
+      "real": 2,
+      "noise": 1
+    },
+    "ISO_IEC_42001_AI_Management_System": {
+      "real": 5,
+      "noise": 2
+    },
+    "OECD_AI_Principles_2024": {
+      "real": 3,
+      "noise": 1
+    },
+    "SE_Komdigi_No9_2023_Etika_AI": {
+      "real": 7,
+      "noise": 0
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full": {
+      "real": 23,
+      "noise": 0
+    },
+    "UNESCO_Recommendation_on_AI_Ethics_2021": {
+      "real": 5,
+      "noise": 0
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI": {
+      "real": 15,
+      "noise": 2
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI": {
+      "real": 10,
+      "noise": 0
+    },
+    "WHO_Ethics_and_Governance_of_AI_for_Health": {
+      "real": 4,
+      "noise": 3
+    },
+    "EU_AI_Act_2024": {
+      "real": 1,
+      "noise": 0
+    },
+    "PP_PSTE_No71_2019": {
+      "real": 58,
+      "noise": 1
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan": {
+      "real": 27,
+      "noise": 0
+    },
+    "UU_ITE_No19_2016": {
+      "real": 15,
+      "noise": 0
+    },
+    "UU_ITE_No1_2024": {
+      "real": 32,
+      "noise": 0
+    },
+    "UU_PDP_No27_2022": {
+      "real": 23,
+      "noise": 0
+    }
+  }
+}

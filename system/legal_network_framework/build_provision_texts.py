@@ -31,6 +31,19 @@ def _clean(t):
     return t
 
 
+def _preamble(full_text):
+    """Menimbang+Mengingat (legal-basis) block — where a regulation cites the laws
+    it is grounded on. Returns '' for documents without one (soft-law / UN texts)."""
+    m = re.search(r'\b(Menimbang|Mengingat)\b\s*:', full_text)
+    if not m:
+        return ''
+    start = m.start()
+    tail = full_text[start:]
+    e = re.search(r'\bMEMUTUSKAN\b|\bMenetapkan\b\s*:|\n\s*BAB\s+[IVX]+\b|^\s*Pasal\s+1\b', tail, re.M)
+    end = start + (e.start() if e else min(len(tail), 5000))
+    return full_text[start:end]
+
+
 def main():
     texts = {}
     pdfs = glob.glob(os.path.join(builder.REG_BASE, '**', '*.pdf'), recursive=True)
@@ -45,6 +58,15 @@ def main():
             clean = _clean(txt)
             if clean:
                 texts[f'{doc} - {title}'] = clean[:4000]
+        # also capture the Menimbang/Mengingat preamble (legal-basis "dasar hukum"
+        # list) — where a regulation cites the laws it is based on. Article
+        # extraction skips it, yet it is the most authoritative citation source.
+        try:
+            pre = _clean(_preamble(builder._read_pdf_text(pdf)))
+            if len(pre) > 80:
+                texts[f'{doc} - Pembukaan'] = pre[:4000]
+        except Exception:
+            pass
 
     # MANUAL OVERRIDES win and are never regenerated (hand-edited; auto-clean can't
     # fix scanned-PDF OCR garble). Keys must match node labels exactly.

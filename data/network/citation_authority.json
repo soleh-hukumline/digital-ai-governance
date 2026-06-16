@@ -1,0 +1,226 @@
+{
+  "source": "provision_citations.json (validated pasal-level)",
+  "by_doc": {
+    "ASEAN_Guide_AI_Governance_Ethics_2024": {
+      "in": 0,
+      "out": 3,
+      "role": "source",
+      "juris": "INTL"
+    },
+    "Council_of_Europe_Framework_Convention_on_AI_CETS225": {
+      "in": 1,
+      "out": 0,
+      "role": "sink",
+      "juris": "INTL"
+    },
+    "EU_AI_Act_2024": {
+      "in": 2,
+      "out": 0,
+      "role": "sink",
+      "juris": "INTL"
+    },
+    "G7_Hiroshima_Code_of_Conduct_for_AI": {
+      "in": 0,
+      "out": 2,
+      "role": "source",
+      "juris": "INTL"
+    },
+    "ISO_IEC_42001_AI_Management_System": {
+      "in": 0,
+      "out": 2,
+      "role": "source",
+      "juris": "INTL"
+    },
+    "OECD_AI_Principles_2024": {
+      "in": 3,
+      "out": 1,
+      "role": "both",
+      "juris": "INTL"
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan": {
+      "in": 0,
+      "out": 0,
+      "role": "isolated",
+      "juris": "NATL"
+    },
+    "PP_PSTE_No71_2019": {
+      "in": 1,
+      "out": 1,
+      "role": "both",
+      "juris": "NATL"
+    },
+    "SE_Komdigi_No9_2023_Etika_AI": {
+      "in": 0,
+      "out": 3,
+      "role": "source",
+      "juris": "NATL"
+    },
+    "Stranas_AI_Indonesia_2020-2045_Full": {
+      "in": 0,
+      "out": 0,
+      "role": "isolated",
+      "juris": "NATL"
+    },
+    "UNESCO_Recommendation_on_AI_Ethics_2021": {
+      "in": 3,
+      "out": 0,
+      "role": "sink",
+      "juris": "INTL"
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI": {
+      "in": 6,
+      "out": 2,
+      "role": "both",
+      "juris": "INTL"
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI": {
+      "in": 1,
+      "out": 5,
+      "role": "both",
+      "juris": "INTL"
+    },
+    "UU_ITE_No19_2016": {
+      "in": 3,
+      "out": 0,
+      "role": "sink",
+      "juris": "NATL"
+    },
+    "UU_ITE_No1_2024": {
+      "in": 0,
+      "out": 1,
+      "role": "source",
+      "juris": "NATL"
+    },
+    "UU_PDP_No27_2022": {
+      "in": 1,
+      "out": 0,
+      "role": "sink",
+      "juris": "NATL"
+    },
+    "WHO_Ethics_and_Governance_of_AI_for_Health": {
+      "in": 0,
+      "out": 1,
+      "role": "source",
+      "juris": "INTL"
+    }
+  },
+  "edges": [
+    {
+      "source": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "target": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "count": 5,
+      "cross_juris": false
+    },
+    {
+      "source": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "target": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "count": 2,
+      "cross_juris": false
+    },
+    {
+      "source": "ISO_IEC_42001_AI_Management_System",
+      "target": "EU_AI_Act_2024",
+      "count": 2,
+      "cross_juris": false
+    },
+    {
+      "source": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "target": "OECD_AI_Principles_2024",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
+      "source": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "target": "OECD_AI_Principles_2024",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
+      "source": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "target": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
+      "source": "OECD_AI_Principles_2024",
+      "target": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
+      "source": "PP_PSTE_No71_2019",
+      "target": "UU_ITE_No19_2016",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
+      "source": "SE_Komdigi_No9_2023_Etika_AI",
+      "target": "UU_ITE_No19_2016",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
+      "source": "SE_Komdigi_No9_2023_Etika_AI",
+      "target": "UU_PDP_No27_2022",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
+      "source": "SE_Komdigi_No9_2023_Etika_AI",
+      "target": "PP_PSTE_No71_2019",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
+      "source": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "target": "UNESCO_Recommendation_on_AI_Ethics_2021",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
+      "source": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "target": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
+      "source": "UU_ITE_No1_2024",
+      "target": "UU_ITE_No19_2016",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
+      "source": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "target": "OECD_AI_Principles_2024",
+      "count": 1,
+      "cross_juris": false
+    }
+  ],
+  "summary": {
+    "intl": {
+      "n_docs": 10,
+      "n_edges": 10,
+      "isolated": [],
+      "top_authority": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "top_authority_in": 6
+    },
+    "natl": {
+      "n_docs": 7,
+      "n_edges": 5,
+      "isolated": [
+        "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
+        "Stranas_AI_Indonesia_2020-2045_Full"
+      ],
+      "top_authority": "UU_ITE_No19_2016",
+      "top_authority_in": 3
+    },
+    "cross": {
+      "n_edges": 0,
+      "edges": [],
+      "intl_docs": 10,
+      "natl_docs": 7,
+      "gap": true
+    }
+  },
+  "n_internal": 128
+}

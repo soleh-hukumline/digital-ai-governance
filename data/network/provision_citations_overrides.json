@@ -1,0 +1,51 @@
+{
+  "_README": "Koreksi manusia (human-in-the-loop) untuk ground truth sitiran antar-pasal. Disimpan otomatis oleh serve.py saat Anda mengedit di dashboard. Override MENANG dan tidak pernah ditimpa build_provision_citations.py. id = \"<source_label> :: <cited_norm>\".",
+  "text": {},
+  "edits": {
+    "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 1 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)": {
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 70,
+        "context_type": "incidental",
+        "reason": "The snippet mentions 'safe, secure, and trustworthy AI worldwide' as a general goal, which aligns with the UNGA resolution's title but doesn"
+      }
+    },
+    "OECD_AI_Principles_2024 - Bagian 17 :: Council of Europe Framework Convention on AI": {
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 80,
+        "context_type": "incidental",
+        "reason": "The snippet mentions 'Council of Europe' as one of the 'other international fora' where work on AI is being carried out. It does not specifi"
+      }
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 5 :: UNESCO Recommendation on AI Ethics": {
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 80,
+        "context_type": "incidental",
+        "reason": "The snippet mentions 'the adoption by the General Co' which is cut off, but the preceding text refers to 'Artificial Intelligence for Good p"
+      }
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 33 :: Sustainable Development Goals (2030 Agenda)": {
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 70,
+        "context_type": "incidental",
+        "reason": "The phrase 'for sustainable development' is a general objective, not a direct reference to the 'Sustainable Development Goals (2030 Agenda)'"
+      }
+    }
+  },
+  "deleted": [
+    "ISO_IEC_42001_AI_Management_System - Bagian 47 :: EU AI Act",
+    "ISO_IEC_42001_AI_Management_System - Bagian 48 :: GDPR (EU 2016/679)",
+    "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 20 :: Council of Europe Framework Convention on AI",
+    "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 25 :: GDPR (EU 2016/679)",
+    "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 26 :: GDPR (EU 2016/679)",
+    "PP_PSTE_No71_2019 - Pembukaan :: UUD 1945"
+  ],
+  "added": []
+}
