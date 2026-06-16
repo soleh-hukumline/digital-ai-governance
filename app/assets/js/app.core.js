@@ -749,10 +749,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const c = x.p;
             const col = c >= 70 ? 'var(--emerald)' : c >= 40 ? 'var(--amber)' : 'var(--text-4)';
             const lab = String(x.regulation_label).replace(/_/g, ' ').replace(/ - /g, ' · ');
+            const labEsc = String(x.regulation_label).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
             const roleTags = (x.roles || []).map(chip).join('');
             return `<div style="display:flex; gap:7px; align-items:baseline; font-size:0.72rem; line-height:1.45;">
                         <span style="font-family:monospace; font-weight:700; color:${col}; min-width:36px; text-align:right;">${c}%</span>
-                        <span style="color:var(--text-3);">${lab.slice(0, 54)}${roleTags}</span>
+                        <span onclick="showProvisionText('${labEsc}')" title="${isEn ? 'Read the full article text' : 'Baca bunyi pasal utuh'}" style="color:var(--text-3); cursor:pointer; text-decoration:underline dotted; text-underline-offset:2px;">${lab.slice(0, 54)} 📖</span>${roleTags}
                     </div>`;
         }).join('');
         return `<div class="ic-row" style="border-top:1px solid var(--border); padding-top:8px; flex-direction:column; align-items:stretch; gap:4px;">
