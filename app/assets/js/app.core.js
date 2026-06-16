@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'section-all': { icon: 'hub', title: 'Master Legal Network Analysis', sub: 'Semua jaringan regulasi · International + Nasional + Insiden' },
         'section-intl': { icon: 'public', title: 'Regulasi Internasional', sub: 'EU AI Act · OECD AI Principles · CETS225 · Thematic Cluster' },
         'section-natl': { icon: 'account_balance', title: 'Regulasi Nasional Indonesia', sub: 'UU PDP · UU ITE · PP PSTE · POJK · UU Perdagangan' },
-        'section-cross': { icon: 'sync_alt', title: 'Intl vs Nasional · Cross-Jurisdiction', sub: 'Pemetaan Semantic Similarity lintas yurisdiksi · Full/Partial/Low' },
+        'section-cross': { icon: 'sync_alt', title: 'Intl vs Nasional · Cross-Jurisdiction', sub: 'Gap sitasi lintas yurisdiksi · 0 rujukan formal Intl↔Nasional terdeteksi (sitir-menyitir)' },
         'section-incident': { icon: 'gavel', title: 'Analisis Kasus Forensik', sub: 'Pemetaan 45 insiden ke regulasi · LLM-judge tervalidasi + tinjauan manusia · Asimetri Subjek & Gap AI-spesifik' },
         'section-sector': { icon: 'category', title: 'Analisis Kesenjangan Regulasi Per Sektor', sub: 'Coverage Empiris per Subjek Hukum · Pemetaan Regulasi (few-shot)' },
         'section-gap': { icon: 'insights', title: 'Konklusi: Gap Analysis', sub: 'Konsolidasi Temuan LNA · Coverage per Klaster · Connected Components' },
@@ -1531,26 +1531,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const groupOf = {}; fullData.nodes.forEach(n => groupOf[n.id] = n.group);
         const gset = [...new Set(fullData.nodes.map(n => n.group))];
         const idx = {}; gset.forEach((g, i) => idx[g] = i);
-        // SBERT symmetric matrix (textual-similarity pair counts, inter-group)
-        const Msb = gset.map(() => gset.map(() => 0));
-        fullData.edges.forEach(e => {
-            const a = idx[groupOf[e.from]], b = idx[groupOf[e.to]];
-            if (a == null || b == null || a === b) return;   // inter-group only
-            Msb[a][b]++; Msb[b][a]++;
-        });
-        // CITATION directed matrix (explicit cross-reference, instrument-level)
-        const Cdir = _citeMatrix(gset);
-        const hasCite = Cdir.some(r => r.some(v => v > 0));
-        if (mode === 'citation' && !hasCite) mode = 'sbert';   // fallback: no in-corpus citations in this view
-        // active matrix used for ribbon geometry (symmetrise citations for layout; direction kept in Cdir)
-        const M = (mode === 'citation')
-            ? gset.map((g, i) => gset.map((h, j) => Cdir[i][j] + Cdir[j][i]))
-            : Msb;
+        // CITATION-only chord (SBERT removed). Directed cross-citation matrix, instrument-level.
+        mode = 'citation';
+        const _cov = _covByDoc();
+        let Cdir = _citeMatrix(gset);
+        if (graphId === 'cross') {
+            // Cross-jurisdiction tab = the GAP finding: keep ONLY Intl↔National edges (→ 0).
+            Cdir = Cdir.map((row, i) => row.map((v, j) => {
+                const ji = (_cov.get(gset[i]) || {}).juris, jj = (_cov.get(gset[j]) || {}).juris;
+                return (ji && jj && ji !== jj) ? v : 0;
+            }));
+        }
+        // active matrix used for ribbon geometry (symmetrise citations; direction kept in Cdir)
+        const M = gset.map((g, i) => gset.map((h, j) => Cdir[i][j] + Cdir[j][i]));
         // keep groups with any connection in the active matrix
         const keep = gset.map((g, i) => M[i].reduce((s, v) => s + v, 0) > 0);
         const groups = gset.filter((g, i) => keep[i]);
         const N = groups.length;
-        if (!N) { box.innerHTML = '<div class="rp-empty">' + (isEn ? 'No inter-instrument links.' : 'Tidak ada tautan antar-instrumen.') + '</div>'; return; }
+        if (!N) {
+            if (graphId === 'cross') {
+                box.innerHTML = _crossGapPanel(isEn);
+                const lg = document.getElementById('legend-' + graphId);
+                if (lg) lg.innerHTML = `<div style="font-size:10.5px;color:var(--text-4);line-height:1.5;">${isEn ? 'Citation basis (sitir-menyitir). 0 cross-jurisdiction links = the gap finding (SBERT removed).' : 'Basis sitasi (sitir-menyitir). 0 tautan lintas-yurisdiksi = temuan gap (SBERT dibuang).'}</div>`;
+            } else {
+                box.innerHTML = '<div class="rp-empty">' + (isEn ? 'No inter-instrument citations.' : 'Tidak ada sitasi antar-instrumen.') + '</div>';
+            }
+            return;
+        }
         const matrix = groups.map(ga => groups.map(gb => M[idx[ga]][idx[gb]]));
         const cdir = groups.map(ga => groups.map(gb => Cdir[idx[ga]][idx[gb]]));   // directed, for inspector/tooltip
         const cov = _covByDoc();
@@ -1616,30 +1623,29 @@ document.addEventListener('DOMContentLoaded', () => {
         _chordLegend(graphId);
     }
 
+    // Cross-jurisdiction "gap finding" callout (shown when the cross chord is empty —
+    // i.e. ZERO explicit Intl↔National citations, which is the headline result).
+    function _crossGapPanel(isEn) {
+        const s = (CITATIONS && CITATIONS.authority && CITATIONS.authority.summary) || {};
+        const intl = (s.intl && s.intl.n_edges) || 0, natl = (s.natl && s.natl.n_edges) || 0;
+        return `<div style="max-width:580px;margin:1.6rem auto;text-align:center;padding:1.4rem 1.2rem;">
+            <div style="font-size:2.8rem;font-weight:800;color:#ef4444;line-height:1;">0</div>
+            <div style="font-weight:700;color:var(--text-1);font-size:1.05rem;margin-top:6px;">${isEn ? 'cross-jurisdiction citations' : 'sitasi lintas-yurisdiksi'}</div>
+            <div style="font-size:0.86rem;color:var(--text-3);line-height:1.65;margin-top:12px;text-align:left;">${isEn
+                ? `Not a single explicit citation links an Indonesian instrument to an international AI instrument (or vice-versa) — despite <b>${intl}</b> intra-international and <b>${natl}</b> intra-national citation links in the same corpus. Indonesia’s AI governance aligns with international frameworks through <b>diffusion / borrowing</b>, not formal attribution: a structural <b>citation gap (disconnection)</b>, not a similarity map.`
+                : `Tidak ada satu pun sitasi eksplisit yang menghubungkan instrumen Indonesia dengan instrumen AI internasional (atau sebaliknya) — padahal di korpus yang sama ada <b>${intl}</b> tautan sitasi antar-internasional dan <b>${natl}</b> antar-nasional. Tata kelola AI Indonesia selaras dengan kerangka internasional lewat <b>difusi / peminjaman</b>, bukan atribusi formal: sebuah <b>gap sitasi (keterputusan)</b> struktural, bukan peta kemiripan.`}</div>
+          </div>`;
+    }
     function _chordLegend(graphId) {
         const el = document.getElementById('legend-' + graphId);
         if (!el || !CHORD[graphId]) return;
-        const { groups, gcol, mode } = CHORD[graphId];
+        const { groups, gcol } = CHORD[graphId];
         const isEn = window.currentLang === 'en';
-        const toggleLabel = mode === 'citation'
-            ? (isEn ? 'Mode: Citation (authority) → switch to SBERT' : 'Mode: Sitasi (otoritas) → ganti ke SBERT')
-            : (isEn ? 'Mode: SBERT overlap (exploratory) → switch to Citation' : 'Mode: SBERT (eksploratif) → ganti ke Sitasi');
-        const toggle = `<button class="btn-secondary btn-sm" onclick="toggleChordMode('${graphId}')" style="margin-bottom:6px;"><span class="material-symbols-rounded" style="font-size:13px;vertical-align:-2px;">swap_horiz</span> ${toggleLabel}</button>`;
-        const note = `<div style="width:100%;font-size:10.5px;color:var(--text-4);line-height:1.5;margin:4px 0;">${mode === 'citation'
-            ? (isEn
-                ? '<b>Citation mode (primary).</b> Ribbon = explicit cross-citations between two instruments; arc size = total citations involving it; <b>dashed/muted arcs = cite-only “source” instruments (cited 0×, mostly soft-law)</b>; solid arcs = cited authorities. Click an arc to see who it cites vs who cites it.'
-                : '<b>Mode sitasi (utama).</b> Pita = sitasi-silang eksplisit antar dua instrumen; ukuran busur = total sitasi yang melibatkannya; <b>busur putus-putus/pudar = instrumen “sumber” yang hanya menyitir (disitir 0×, umumnya soft-law)</b>; busur penuh = otoritas yang disitir. Klik busur untuk lihat ia menyitir vs disitir siapa.')
-            : (isEn
-                ? '<b>SBERT mode (exploratory).</b> Ribbon = provision-pairs with high textual (SBERT) similarity — a semantic-overlap map, <b>NOT</b> legal citation/authority. Switch to Citation mode for the defensible authority view.'
-                : '<b>Mode SBERT (eksploratif).</b> Pita = pasangan pasal dgn kemiripan teks (SBERT) tinggi — peta tumpang-tindih semantik, <b>BUKAN</b> sitasi/otoritas hukum. Ganti ke mode Sitasi untuk pandangan otoritas yang defensible.')}</div>`;
-        el.innerHTML = toggle + note + groups.map(g => `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);background:var(--legend-chip);padding:3px 9px;border-radius:20px;"><span style="width:10px;height:10px;border-radius:50%;background:${gcol[g]};display:inline-block;margin-right:6px;"></span>${_rEsc(_chordDisp(g))}</span>`).join('');
+        const note = `<div style="width:100%;font-size:10.5px;color:var(--text-4);line-height:1.5;margin:4px 0;">${isEn
+            ? '<b>Citation network (sitir-menyitir).</b> Ribbon = explicit cross-citations between two instruments; arc size = total citations involving it; <b>dashed/muted arcs = cite-only “source” instruments (cited 0×, mostly soft-law)</b>; solid arcs = cited authorities. Click an arc to see who it cites vs who cites it.'
+            : '<b>Jaringan sitasi (sitir-menyitir).</b> Pita = sitasi-silang eksplisit antar dua instrumen; ukuran busur = total sitasi yang melibatkannya; <b>busur putus-putus/pudar = instrumen “sumber” yang hanya menyitir (disitir 0×, umumnya soft-law)</b>; busur penuh = otoritas yang disitir. Klik busur untuk lihat ia menyitir vs disitir siapa.'}</div>`;
+        el.innerHTML = note + groups.map(g => `<span style="display:inline-flex;align-items:center;font-size:11px;color:var(--text-2);background:var(--legend-chip);padding:3px 9px;border-radius:20px;"><span style="width:10px;height:10px;border-radius:50%;background:${gcol[g]};display:inline-block;margin-right:6px;"></span>${_rEsc(_chordDisp(g))}</span>`).join('');
     }
-    window.toggleChordMode = function (graphId) {
-        const inst = networkInstances[graphId];
-        if (!inst || !inst.graphData) return;
-        const cur = (CHORD[graphId] && CHORD[graphId].mode) || 'citation';
-        renderInstrumentChord(graphId, inst.graphData, cur === 'citation' ? 'sbert' : 'citation');
-    };
 
     function _chordSelect(graphId, i) {
         const c = CHORD[graphId]; if (!c) return;
