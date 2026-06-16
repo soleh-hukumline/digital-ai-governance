@@ -1417,9 +1417,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 + `<div class="rp-sub">${_rEsc(n.title || n.label)}</div>`
                 + (n.chronology ? `<div style="font-size:0.78rem;color:var(--text-3);line-height:1.5;">${_rEsc(n.chronology).slice(0, 280)}…</div>` : '');
         } else {
+            const labEsc = String(n.label).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
             header = `<div class="rp-eyebrow">${_rEsc(n.group)}${n.binding ? ' · ' + (isEn ? 'Binding' : 'Mengikat') : ' · Soft law'}</div>`
-                + `<div class="rp-title">${_rEsc(n.code)}</div>`
-                + `<div class="rp-sub" style="font-family:ui-monospace,Menlo,monospace;">${_rEsc(n.label)}</div>`;
+                + `<div class="rp-title" onclick="showProvisionText('${labEsc}')" title="${isEn ? 'Read full article text' : 'Baca bunyi pasal utuh'}" style="cursor:pointer;">${_rEsc(n.code)} 📖</div>`
+                + `<div class="rp-sub" style="font-family:ui-monospace,Menlo,monospace;">${_rEsc(n.label)}</div>`
+                + `<button onclick="showProvisionText('${labEsc}')" class="btn-secondary btn-sm" style="margin-top:8px;"><span class="material-symbols-rounded" style="font-size:14px;vertical-align:-2px;">menu_book</span> ${isEn ? 'Read full article text' : 'Baca bunyi pasal utuh'}</button>`;
         }
 
         let edgeCard = `<div class="rp-empty" style="padding:1rem 0;">${isEn ? 'No connections.' : 'Tidak ada koneksi.'}</div>`;
