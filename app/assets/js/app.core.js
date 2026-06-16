@@ -1702,17 +1702,30 @@ document.addEventListener('DOMContentLoaded', () => {
         CITATIONS.edges = CITATIONS.edges || [];
         CITATIONS.coverage = CITATIONS.coverage || [];
         CITATIONS.external_referenced = CITATIONS.external_referenced || [];
+        // VALIDATED pasal-level rollup (build_citation_authority.py) — the SINGLE
+        // source for topology/authority/chord so the numbers match the clickable
+        // pasal evidence (e.g. UU ITE = 5, not the old instrument-scan "39").
+        try { const a = await fetch(`./data/network/citation_authority.json?v=${DATA_V}`); CITATIONS.authority = await a.json(); }
+        catch (e) { CITATIONS.authority = null; }
         return CITATIONS;
     }
     function _covByDoc() {
         const m = new Map();
+        const auth = CITATIONS && CITATIONS.authority && CITATIONS.authority.by_doc;
+        if (auth) { Object.keys(auth).forEach(d => m.set(d, { doc: d, in: auth[d].in, out: auth[d].out, role: auth[d].role, juris: auth[d].juris })); return m; }
         ((CITATIONS && CITATIONS.coverage) || []).forEach(c => m.set(c.doc, c));
         return m;
     }
-    // directed instrument citation matrix over edges with in_corpus===true, restricted to `groups`
+    // directed instrument citation matrix, restricted to `groups`. Uses the validated
+    // pasal-level edges (citation_authority.json); falls back to citations.json edges.
     function _citeMatrix(groups) {
         const gi = {}; groups.forEach((g, i) => gi[g] = i);
         const M = groups.map(() => groups.map(() => 0));
+        const auth = CITATIONS && CITATIONS.authority && CITATIONS.authority.edges;
+        if (auth) {
+            auth.forEach(e => { const a = gi[e.source], b = gi[e.target]; if (a == null || b == null || a === b) return; M[a][b] += (e.count || 1); });
+            return M;
+        }
         ((CITATIONS && CITATIONS.edges) || []).forEach(e => {
             if (!e.in_corpus || !e.corpus_doc) return;
             const a = gi[e.source], b = gi[e.corpus_doc];
@@ -1859,25 +1872,10 @@ document.addEventListener('DOMContentLoaded', () => {
             + `<thead><tr><th style="${th}">${isEn ? 'Referenced regulation/instrument' : 'Regulasi/instrumen dirujuk'}</th><th style="${th}">${isEn ? 'Note' : 'Catatan'}</th><th style="${th};text-align:right;">${isEn ? 'Count' : 'Jumlah'}</th></tr></thead>`
             + `<tbody>${rowsB || `<tr><td colspan="3" style="${td}text-align:center;color:var(--text-4);">—</td></tr>`}</tbody></table></div>`;
 
-        const cov = d.coverage || [];
-        const roleBadge = {
-            both: '<span style="font-size:0.65rem;background:rgba(16,185,129,0.15);color:var(--green,#10b981);padding:1px 6px;border-radius:10px;">↔ dua arah</span>',
-            source: '<span style="font-size:0.65rem;background:rgba(99,102,241,0.15);color:var(--primary);padding:1px 6px;border-radius:10px;">→ menyitir</span>',
-            sink: '<span style="font-size:0.65rem;background:rgba(245,158,11,0.15);color:var(--amber);padding:1px 6px;border-radius:10px;">← disitir</span>',
-            isolated: '<span style="font-size:0.65rem;background:rgba(239,68,68,0.15);color:#ef4444;padding:1px 6px;border-radius:10px;">● isolated</span>'
-        };
-        const rowsC = cov.map(c => `<tr><td style="${td}"><b style="color:var(--text-1);">${_rEsc(_citeDoc(c.doc))}</b></td>`
-            + `<td style="${td}text-align:center;color:var(--primary);font-weight:700;">${c.out}</td>`
-            + `<td style="${td}text-align:center;color:var(--amber);font-weight:700;">${c.in}</td>`
-            + `<td style="${td}text-align:center;">${roleBadge[c.role] || c.role}</td></tr>`).join('');
-        const nPart = d.n_docs - (d.n_isolated || 0);
-        const tableC = `<div style="font-size:0.74rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:0.4px;margin:16px 0 4px;">${isEn ? `C · Per-document participation — ${nPart}/${d.n_docs} docs` : `C · Partisipasi per dokumen — ${nPart}/${d.n_docs} dokumen`} ${d.n_isolated ? `(${d.n_isolated} isolated)` : (isEn ? '(none isolated)' : '(tak ada isolated)')}</div>`
-            + _exportBar('cite-coverage', 'Sitasi_Partisipasi_Dokumen')
-            + `<div id="cite-coverage"><table style="width:100%;border-collapse:collapse;">`
-            + `<thead><tr><th style="${th}">${isEn ? 'Document' : 'Dokumen'}</th><th style="${th};text-align:center;">${isEn ? 'Cites (out)' : 'Menyitir'}</th><th style="${th};text-align:center;">${isEn ? 'Cited (in)' : 'Disitir'}</th><th style="${th};text-align:center;">${isEn ? 'Role' : 'Peran'}</th></tr></thead>`
-            + `<tbody>${rowsC}</tbody></table></div>`;
-
-        box.innerHTML = _editText('caveat-citation-panel', note) + tableA + tableB + tableC;
+        // Table C (per-document participation) removed — it was redundant with the
+        // interactive "PRIMER: Authority by explicit citation" table (same coverage
+        // numbers, just sorted/columned differently and non-clickable).
+        box.innerHTML = _editText('caveat-citation-panel', note) + tableA + tableB;
     }
     window.renderCitationNetwork = renderCitationNetwork;
 
@@ -2631,98 +2629,57 @@ ${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — ny
     // ===================================================================
     // METRICS TABLE — Populate inline HTML table after graph stabilizes
     // ===================================================================
-    function populateMetricsTable(graphId, graphData) {
+    // CITATION-based topology (sitir-menyitir). SBERT semantic-overlap metrics removed.
+    // Reads the validated pasal-level rollup (_covByDoc / _citeMatrix → citation_authority.json)
+    // so every number matches the clickable PRIMER authority table and drill-down.
+    async function populateMetricsTable(graphId, graphData) {
         const tbody = document.getElementById(`tbody-metrics-${graphId}`);
         if (!tbody) return;
-
-        const nodes = graphData.nodes;
-        const edges = graphData.edges;
-        const n = nodes.length;
-        const m = edges.length;
-
-        // Degree map
-        const deg = {};
-        nodes.forEach(nd => { deg[nd.id] = 0; });
-        edges.forEach(e => {
-            if (deg[e.from] !== undefined) deg[e.from]++;
-            if (deg[e.to] !== undefined) deg[e.to]++;
-        });
-        const degrees = Object.values(deg);
-        const maxDeg = Math.max(...degrees);
-        const avgDeg = degrees.reduce((a, b) => a + b, 0) / Math.max(n, 1);
-        const isolated = nodes.filter(nd => deg[nd.id] === 0).length;
-        const density = m / Math.max(n * (n - 1) / 2, 1);
-
-        // Top hub node
-        const topHub = [...nodes].sort((a, b) => deg[b.id] - deg[a.id])[0];
-
-        // Modularity (cluster by classification)
-        const comms = {};
-        nodes.forEach(nd => {
-            const c = nd.classification || nd.group || 'Unknown';
-            if (!comms[c]) comms[c] = { L: 0, d: 0 };
-        });
-        edges.forEach(e => {
-            const cu = (graphData.nodes.find(nd => nd.id === e.from) || {}).classification || 'Unknown';
-            const cv = (graphData.nodes.find(nd => nd.id === e.to) || {}).classification || 'Unknown';
-            if (!comms[cu]) comms[cu] = { L: 0, d: 0 };
-            if (cu === cv) comms[cu].L++;
-        });
-        nodes.forEach(nd => {
-            const c = nd.classification || nd.group || 'Unknown';
-            if (!comms[c]) comms[c] = { L: 0, d: 0 };
-            comms[c].d += deg[nd.id];
-        });
-        let Q = 0;
-        if (m > 0) {
-            Object.values(comms).forEach(c => {
-                Q += (c.L / m) - Math.pow(c.d / (2 * m), 2);
-            });
-        }
-        Q = Math.max(-1, Math.min(1, Q));
-
-        // Coverage score
-        const coverage = ((n - isolated) / Math.max(n, 1) * 100).toFixed(1);
-
         const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
+        await _ensureCitations();
+        const cov = _covByDoc();
+        // instrument universe for THIS tab (node.group === citation doc id)
+        const groups = [...new Set(graphData.nodes.map(n => n.group))].filter(g => g && cov.has(g));
+        const M = _citeMatrix(groups);
+        let links = 0, pairs = 0, crossEdges = 0;
+        for (let i = 0; i < groups.length; i++) for (let j = 0; j < groups.length; j++) {
+            if (M[i][j] > 0) {
+                links += M[i][j]; pairs++;
+                const ji = (cov.get(groups[i]) || {}).juris, jj = (cov.get(groups[j]) || {}).juris;
+                if (ji && jj && ji !== jj) crossEdges++;
+            }
+        }
+        const nInst = groups.length;
+        const inOf = d => (cov.get(d) || {}).in || 0;
+        const outOf = d => (cov.get(d) || {}).out || 0;
+        const isolated = groups.filter(d => inOf(d) === 0 && outOf(d) === 0);
+        const sources = groups.filter(d => (cov.get(d) || {}).role === 'source');
+        const authority = groups.slice().sort((a, b) => inOf(b) - inOf(a))[0];
+        const density = pairs / Math.max(nInst * (nInst - 1), 1);
+        const showCross = (graphId === 'all' || graphId === 'cross');
 
-        const fragLabel = Q >= 0.4 ? (isEn ? '🔴 High — Regulatory clusters operate separately' : '🔴 Tinggi — Klaster regulasi beroperasi secara terpisah')
-            : Q >= 0.2 ? (isEn ? '🟡 Medium — Partial fragmentation between clusters' : '🟡 Sedang — Fragmentasi parsial antar klaster')
-                : (isEn ? '🟢 Low — Good relative cluster integration' : '🟢 Rendah — Integrasi klaster relatif baik');
-
-        const densityLabel = density < 0.01 ? (isEn ? '🔴 Very Sparse' : '🔴 Sangat Jarang')
-            : density < 0.05 ? (isEn ? '🟡 Sparse' : '🟡 Jarang')
-                : (isEn ? '🟢 Moderate' : '🟢 Moderat');
-
-        const isolatedLabel = isolated === 0 ? (isEn ? '✅ No isolated nodes' : '✅ Tidak ada node terisolasi')
-            : isolated < 5 ? (isEn ? `⚠️ ${isolated} isolated nodes` : `⚠️ ${isolated} node terisolasi`)
-                : (isEn ? `🔴 ${isolated} isolated nodes` : `🔴 ${isolated} node terisolasi`);
-        
-        const avgDegLabel = avgDeg < 2 ? (isEn ? '⚠️ Nodes on average have few connections' : '⚠️ Node rata-rata memiliki sedikit koneksi') : (isEn ? '✅ Nodes have adequate connections' : '✅ Node memiliki koneksi yang memadai');
-        
-        const topHubLabel = isEn ? `SBERT semantic hub (exploratory — NOT authority): "${topHub ? (topHub.label || topHub.id) : '-'}"` : `Hub semantik SBERT (eksploratif — BUKAN otoritas): "${topHub ? (topHub.label || topHub.id) : '-'}"`;
-        const coverageLabel = isEn ? `${n - isolated}/${n} connected nodes` : `${n - isolated}/${n} node terhubung`;
+        const densityLabel = density < 0.02 ? (isEn ? '🟡 Sparse network' : '🟡 Jaringan jarang')
+            : density < 0.08 ? (isEn ? '🟡 Moderately sparse' : '🟡 Cukup jarang') : (isEn ? '🟢 Moderate' : '🟢 Moderat');
 
         const rows = [
-            [isEn ? 'Total Nodes (Regulations/Incidents)' : 'Total Node (Regulasi/Insiden)', n, isEn ? 'Number of articles/regulations/incidents in the network' : 'Jumlah pasal/regulasi/insiden dalam jaringan'],
-            [isEn ? 'Total Relations (Edges)' : 'Total Relasi (Edges)', m, isEn ? 'Number of semantic connections between nodes' : 'Jumlah koneksi semantik antar node'],
-            [isEn ? 'Network Density' : 'Densitas Jaringan', density.toFixed(5), densityLabel],
-            [isEn ? 'Average Degree' : 'Rata-rata Degree', avgDeg.toFixed(2), avgDegLabel],
-            [isEn ? 'Maximum Degree' : 'Degree Maksimum', maxDeg, topHubLabel],
-            [isEn ? 'Isolated Nodes (Degree=0)' : 'Node Terisolasi (Degree=0)', isolated, isolatedLabel],
-            [isEn ? 'Coverage Score' : 'Coverage Score', coverage + '%', coverageLabel],
-            [isEn ? 'Modularity Score (Q)' : 'Modularity Score (Q)', Q.toFixed(4), fragLabel],
-            [isEn ? 'Number of Regulatory Clusters' : 'Jumlah Klaster Regulasi', Object.keys(comms).length, isEn ? 'Partition based on node classification' : 'Partisi berdasarkan klasifikasi node'],
+            [isEn ? 'Total Instruments' : 'Total Instrumen', nInst, isEn ? 'Legal instruments in this tab’s citation network' : 'Instrumen hukum dalam jaringan sitasi tab ini'],
+            [isEn ? 'Citation Links' : 'Tautan Sitasi', links, isEn ? 'Explicit cross-references (citing) between instruments' : 'Rujukan-silang eksplisit (sitir-menyitir) antar instrumen'],
+            [isEn ? 'Connected Pairs' : 'Pasangan Terhubung', pairs, isEn ? 'Distinct instrument→instrument citation pairs' : 'Pasangan instrumen→instrumen yang saling menyitir'],
+            [isEn ? 'Citation Density' : 'Densitas Sitasi', density.toFixed(4), densityLabel],
+            [isEn ? 'Authority Hub (most cited)' : 'Hub Otoritas (disitir terbanyak)', authority && inOf(authority) ? inOf(authority) + '×' : '—',
+                authority && inOf(authority) ? `${_citeDoc(authority)} ${isEn ? 'cited' : 'disitir'} ${inOf(authority)}× — ${isEn ? 'defensible authority by explicit citation' : 'otoritas defensible dari sitasi eksplisit'}` : (isEn ? 'no inbound citation' : 'tak ada sitasi masuk')],
+            [isEn ? 'Source/leaf instruments (cited 0×)' : 'Instrumen sumber/daun (disitir 0×)', sources.length, isEn ? 'Cite others but are never cited back (mostly soft-law)' : 'Menyitir lain tapi tak pernah dirujuk balik (umumnya soft-law)'],
+            [isEn ? 'Isolated by citation' : 'Terisolasi menurut sitasi', isolated.length, isolated.length === 0 ? (isEn ? '✅ none' : '✅ tidak ada') : `${isolated.length} ${isEn ? 'instrument(s)' : 'instrumen'}`],
         ];
+        if (showCross) rows.push([isEn ? 'Cross-jurisdiction citations' : 'Sitasi lintas-yurisdiksi', crossEdges,
+            crossEdges === 0 ? (isEn ? '🔴 GAP — no explicit Intl↔National citation' : '🔴 GAP — tak ada sitasi eksplisit Intl↔Nasional') : `${crossEdges}`]);
 
         const colorClass = (val, metric) => {
-            if (metric === 'Densitas Jaringan' && parseFloat(val) < 0.01) return '#fb7185';
-            if (metric === 'Modularity Score (Q)' && parseFloat(val) > 0.4) return '#fb7185';
-            if (metric === 'Node Terisolasi (Degree=0)' && parseInt(val) > 0) return '#fbbf24';
-            if (metric === 'Coverage Score' && parseFloat(val) < 70) return '#fbbf24';
+            if ((metric.includes('Densitas') || metric.includes('Density')) && parseFloat(val) < 0.02) return '#fbbf24';
+            if ((metric.includes('lintas-yurisdiksi') || metric.includes('Cross-jurisdiction')) && parseInt(val) === 0) return '#fb7185';
+            if ((metric.includes('Terisolasi') || metric.includes('Isolated')) && parseInt(val) > 0) return '#fbbf24';
             return '#34d399';
         };
-
         tbody.innerHTML = rows.map(([metrik, nilai, implikasi]) => `
             <tr style="border-bottom:1px solid var(--border);">
                 <td style="padding:9px 12px; color:var(--text-2); font-weight:500;">${metrik}</td>
@@ -2730,40 +2687,8 @@ ${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — ny
                 <td style="padding:9px 12px; color:var(--text-3); font-size:0.82rem; line-height:1.4;">${implikasi}</td>
             </tr>
         `).join('');
-        _attachMetricsExport(graphId, `Metrik_${graphId}`);
-        _appendCitationMetrics(graphId, graphData);   // PRIMARY citation-authority rows (async, below SBERT topology)
-
+        _attachMetricsExport(graphId, `Metrik_Sitasi_${graphId}`);
         if (typeof applyTranslations === 'function') applyTranslations();
-    }
-
-    // Append citation-grounded (PRIMARY authority) rows to the SBERT topology metrics table
-    async function _appendCitationMetrics(graphId, graphData) {
-        const tbody = document.getElementById(`tbody-metrics-${graphId}`);
-        if (!tbody) return;
-        const d = await _ensureCitations();
-        if (!d.coverage || !d.coverage.length) return;
-        const isEn = window.currentLang === 'en';
-        const groupsHere = new Set(graphData.nodes.map(n => n.group));
-        const cov = d.coverage.filter(c => groupsHere.has(c.doc));
-        if (!cov.length) return;
-        const authority = [...cov].sort((a, b) => b.in - a.in)[0];
-        const sources = cov.filter(c => c.role === 'source').length;
-        const iso = cov.filter(c => c.role === 'isolated').length;
-        const links = (d.edges || []).filter(e => e.in_corpus && groupsHere.has(e.source) && groupsHere.has(e.corpus_doc)).reduce((s, e) => s + (e.count || 1), 0);
-        const rows = [
-            [isEn ? '— Citation layer (PRIMARY authority) —' : '— Lapisan sitasi (OTORITAS utama) —', '', isEn ? 'Defensible cross-citation, instrument-level (vs SBERT topology above).' : 'Sitasi-silang defensible, level instrumen (vs topologi SBERT di atas).'],
-            [isEn ? 'Authority hub (by citations)' : 'Hub otoritas (berdasarkan sitasi)', authority && authority.in ? authority.in + '×' : '—', authority ? `${_citeDoc(authority.doc)} ${isEn ? 'cited' : 'disitir'} ${authority.in}× — ${isEn ? 'the real authority, not the SBERT hub' : 'otoritas nyata, bukan hub SBERT'}` : '—'],
-            [isEn ? 'Citation links (in-corpus)' : 'Tautan sitasi (dalam korpus)', links, isEn ? 'Explicit cross-references between corpus instruments' : 'Rujukan-silang eksplisit antar instrumen korpus'],
-            [isEn ? 'Source/leaf instruments (cited 0×)' : 'Instrumen sumber/daun (disitir 0×)', sources, isEn ? 'Cite others but are never cited back (mostly soft-law)' : 'Menyitir lain tapi tak pernah dirujuk balik (umumnya soft-law)'],
-            [isEn ? 'Isolated by citation' : 'Terisolasi menurut sitasi', iso, iso === 0 ? (isEn ? '✅ none' : '✅ tidak ada') : iso],
-        ];
-        const frag = rows.map(([metrik, nilai, implikasi], i) => `
-            <tr style="border-bottom:1px solid var(--border);background:rgba(245,158,11,0.04);">
-                <td style="padding:9px 12px; color:${i === 0 ? 'var(--amber)' : 'var(--text-2)'}; font-weight:${i === 0 ? 700 : 500};">${metrik}</td>
-                <td style="padding:9px 12px; text-align:right; font-family:monospace; font-weight:700; color:var(--amber);">${nilai}</td>
-                <td style="padding:9px 12px; color:var(--text-3); font-size:0.82rem; line-height:1.4;">${implikasi}</td>
-            </tr>`).join('');
-        tbody.insertAdjacentHTML('beforeend', frag);
     }
 
     // ===================================================================
@@ -2866,102 +2791,47 @@ ${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — ny
         );
     };
 
+    // The exploratory SBERT semantic-overlap ranking table was removed (semantic
+    // overlap is descriptive, not legal authority). Only the PRIMARY citation-based
+    // authority ranking is rendered now; this just hosts it.
     function populateRankingTable(graphId, graphData) {
         const tb = document.getElementById(`tbody-metrics-${graphId}`);
         if (!tb) return;
         const anchor = tb.closest('table');
         if (!anchor) return;
-
-        const nodes = graphData.nodes, edges = graphData.edges, n = nodes.length;
-        const deg = {}, adj = {};
-        nodes.forEach(nd => { deg[nd.id] = 0; adj[nd.id] = []; });
-        edges.forEach(e => {
-            if (deg[e.from] !== undefined) deg[e.from]++;
-            if (deg[e.to] !== undefined) deg[e.to]++;
-            if (adj[e.from] && adj[e.to]) { adj[e.from].push(e.to); adj[e.to].push(e.from); }
-        });
-        const ids = nodes.map(nd => nd.id);
-        const BET_CAP = 500;                       // betweenness is O(n·m): cap for responsiveness
-        let bet = null;
-        if (n > 2 && n <= BET_CAP) { try { bet = computeBetweenness(ids, adj); } catch (e) { bet = null; } }
-
-        const isEn = typeof window !== 'undefined' && window.currentLang === 'en';
-        const denom = Math.max(n - 1, 1);
-        const top = [...nodes].sort((a, b) => (deg[b.id] - deg[a.id]) || ((bet ? bet[b.id] : 0) - (bet ? bet[a.id] : 0))).slice(0, 15);
-
-        const betHead = bet ? `<th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">Betweenness</th>` : '';
-        const betNote = bet ? '' : `<div style="font-size:0.75rem; color:var(--text-4); margin-top:6px;">${isEn ? `Betweenness omitted for large graphs (n=${n} > ${BET_CAP}); see the LNA report (analyzer.py) for exact values.` : `Betweenness tidak dihitung untuk graf besar (n=${n} > ${BET_CAP}); lihat laporan LNA (analyzer.py) untuk nilai pastinya.`}</div>`;
-
-        const rowsHtml = top.map((nd, i) => {
-            const dc = (deg[nd.id] / denom);
-            const cls = nd.classification || nd.group || '';
-            const lbl = String(nd.label || nd.id);
-            const jsEsc = lbl.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-            const betCell = bet ? `<td style="padding:8px 12px; text-align:right; font-family:monospace; color:var(--sky);">${bet[nd.id].toFixed(4)}</td>` : '';
-            return `<tr style="border-bottom:1px solid var(--border);">
-                <td style="padding:8px 12px; color:var(--text-4); text-align:right;">${i + 1}</td>
-                <td style="padding:8px 12px;"><span onclick="showProvisionText('${jsEsc}')" style="color:var(--primary); font-weight:600; cursor:pointer; text-decoration:underline dotted; text-underline-offset:2px;" title="${isEn ? 'Click to read the full article text' : 'Klik untuk baca bunyi pasal lengkap'}">${_rEsc(nodeFull(lbl))} <span class="material-symbols-rounded" style="font-size:13px; vertical-align:-2px;">article</span></span></td>
-                <td style="padding:8px 12px; color:var(--text-3); font-size:0.8rem;">${cls}</td>
-                <td style="padding:8px 12px; text-align:right; font-family:monospace; font-weight:700; color:var(--primary);">${deg[nd.id]}</td>
-                <td style="padding:8px 12px; text-align:right; font-family:monospace; color:var(--emerald);">${dc.toFixed(4)}</td>
-                ${betCell}
-            </tr>`;
-        }).join('');
-
-        const html = `
-            <div id="authrank-${graphId}"></div>
-            <div style="margin-top:1.5rem; overflow-x:auto;">
-              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.6rem;">
-                <span class="material-symbols-rounded" style="color:var(--text-3); font-size:18px;">leaderboard</span>
-                <strong style="font-family:'Outfit'; color:var(--text-2); font-size:0.95rem;">${isEn ? 'SECONDARY/exploratory: provision (pasal) semantic overlap (SBERT)' : 'Sekunder/eksploratif: tumpang-tindih semantik pasal (SBERT)'}</strong>
-              </div>
-              <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
-                <thead><tr>
-                  <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">#</th>
-                  <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Node (Article/Regulation/Incident)' : 'Node (Pasal/Regulasi/Insiden)'}</th>
-                  <th style="text-align:left; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Classification' : 'Klasifikasi'}</th>
-                  <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">Degree</th>
-                  <th style="text-align:right; padding:8px 12px; color:var(--text-3); font-weight:600; border-bottom:1px solid var(--border);">${isEn ? 'Semantic-overlap density' : 'Kepadatan Tumpang-tindih (SBERT)'}</th>
-                  ${betHead}
-                </tr></thead>
-                <tbody>${rowsHtml}</tbody>
-              </table>
-              ${_exportBar('ranking-' + graphId, 'Ranking_SBERT_SemanticOverlap_' + graphId)}
-              ${betNote}
-              <div style="font-size:0.75rem; color:var(--text-4); margin-top:8px; line-height:1.55; border-top:1px dashed var(--border); padding-top:8px;">
-                ${_editText('caveat-ranking-sbert', isEn
-                    ? '⚠ <b>What this means:</b> “Semantic centrality” here = how many <i>other provisions are textually similar</i> (SBERT cosine ≥ threshold) to this one — a <b>semantic-overlap</b> measure, <b>not</b> legal authority or cross-citation. Soft-law guidance ranks high because it has many long, generic sections (more chances to match), NOT because it is authoritative. <b>For authority, see the “Citation Cross-Reference Network” panel below</b> — there the central nodes are UU ITE 19/2016 (cited 39×) and the CoE Framework Convention (23×), not this soft-law. Treat this table as an exploratory map; click a node to read the actual text.'
-                    : '⚠ <b>Arti angka ini:</b> “Sentralitas semantik” di sini = berapa <i>pasal lain yang mirip secara teks</i> (SBERT cosine ≥ ambang) dengan pasal ini — ukuran <b>tumpang-tindih semantik</b>, <b>bukan</b> otoritas hukum atau sitasi. Soft-law muncul di puncak karena punya banyak bagian panjang & generik (lebih banyak peluang mirip), <b>bukan</b> karena otoritatif. <b>Untuk OTORITAS, lihat panel “Jaringan Rujukan Silang” di bawah</b> — di sana yang sentral adalah UU ITE 19/2016 (disitir 39×) & CoE Framework Convention (23×), bukan soft-law ini. Anggap tabel ini peta eksploratif; klik node untuk baca teks asli.')}
-              </div>
-            </div>`;
-
         let cont = document.getElementById(`ranking-${graphId}`);
         if (!cont) {
             cont = document.createElement('div');
             cont.id = `ranking-${graphId}`;
-            // place ranking AFTER the metrics export bar so order is:
-            // metrics table → its PNG/CSV bar → ranking table → its PNG/CSV bar
             const after = document.getElementById(`metricsbar-${graphId}`) || anchor;
             after.insertAdjacentElement('afterend', cont);
         }
-        cont.innerHTML = html;
-        if (typeof applyTranslations === 'function') applyTranslations();
-        _renderAuthorityRanking(graphId, graphData);   // PRIMARY citation-authority table (async, above SBERT)
+        cont.innerHTML = `<div id="authrank-${graphId}"></div>`;
+        _renderAuthorityRanking(graphId, graphData);   // PRIMARY citation-authority table (async)
     }
 
     // PRIMARY authority ranking — instrument-level, by explicit-citation in-degree (defensible)
     async function _renderAuthorityRanking(graphId, graphData) {
         const host = document.getElementById(`authrank-${graphId}`);
         if (!host) return;
-        const d = await _ensureCitations();
-        if (!d.coverage || !d.coverage.length) { host.innerHTML = ''; return; }
+        const pc = await _ensureProvCites();
         const isEn = window.currentLang === 'en';
         const groupsHere = new Set(graphData.nodes.map(n => n.group));
-        const deg = {}; graphData.nodes.forEach(nd => deg[nd.id] = 0);
-        graphData.edges.forEach(e => { if (deg[e.from] !== undefined) deg[e.from]++; if (deg[e.to] !== undefined) deg[e.to]++; });
-        const degByGroup = {};
-        graphData.nodes.forEach(nd => { degByGroup[nd.group] = (degByGroup[nd.group] || 0) + (deg[nd.id] || 0); });
-        const rows = d.coverage.filter(c => groupsHere.has(c.doc)).sort((a, b) => (b.in - a.in) || (b.out - a.out));
+        // Disitir/Menyitir are computed from the AUDITABLE pasal-level layer
+        // (provision_citations.json) — every count is one clickable, full-text,
+        // deduped, Gemini-judged passage, so the number ALWAYS matches the drill-down.
+        const CROSS = new Set(['regulation', 'named', 'pasal_external']);
+        const stat = {};
+        const ens = dk => stat[dk] || (stat[dk] = { doc: dk, in: 0, out: 0 });
+        groupsHere.forEach(dk => ens(dk));
+        (pc.records || []).forEach(r => {
+            if (!CROSS.has(r.kind) || r.cited_doc === r.source_doc) return;
+            if (r.cited_doc && groupsHere.has(r.cited_doc)) ens(r.cited_doc).in++;
+            if (groupsHere.has(r.source_doc)) ens(r.source_doc).out++;
+        });
+        const rows = Object.values(stat).filter(c => groupsHere.has(c.doc));
+        rows.forEach(c => c.role = (c.in === 0 && c.out === 0) ? 'isolated' : (c.in === 0 ? 'source' : (c.out === 0 ? 'sink' : 'both')));
+        rows.sort((a, b) => (b.in - a.in) || (b.out - a.out));
         if (!rows.length) { host.innerHTML = ''; return; }
         const rb = {
             both: ['↔ dua arah', 'rgba(16,185,129,0.15)', 'var(--emerald,#10b981)'],
@@ -2973,22 +2843,202 @@ ${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — ny
         const td = 'padding:6px 12px;border-bottom:1px solid var(--overlay-hover);font-size:0.82rem;';
         const body = rows.map((c, i) => {
             const b = rb[c.role] || ['—', 'transparent', 'var(--text-3)'];
+            const docEsc = String(c.doc).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+            const clickBtn = (val, dir, col) => val > 0
+                ? `<button onclick="showCitationContext('${docEsc}','${dir}')" title="${dir === 'in' ? (isEn ? 'Show who cites this — verbatim passages' : 'Lihat siapa yang menyitir ini — cuplikan teks') : (isEn ? 'Show what this instrument cites — verbatim passages' : 'Lihat apa yang disitir instrumen ini — cuplikan teks')}" style="background:none;border:none;cursor:pointer;font-weight:700;color:${col};font-size:0.82rem;text-decoration:underline dotted;text-underline-offset:3px;padding:0;">${val}</button>`
+                : `<span style="color:var(--text-4);">0</span>`;
             return `<tr><td style="${td}color:var(--text-4);text-align:right;">${i + 1}</td>`
-                + `<td style="${td}"><b style="color:var(--text-1);">${_rEsc(_citeDoc(c.doc))}</b></td>`
-                + `<td style="${td}text-align:right;font-weight:700;color:var(--amber);">${c.in}</td>`
-                + `<td style="${td}text-align:right;font-weight:700;color:var(--primary);">${c.out}</td>`
-                + `<td style="${td}text-align:center;"><span style="font-size:0.65rem;background:${b[1]};color:${b[2]};padding:1px 6px;border-radius:10px;">${b[0]}</span></td>`
-                + `<td style="${td}text-align:right;color:var(--text-4);font-family:monospace;">${degByGroup[c.doc] || 0}</td></tr>`;
+                + `<td style="${td}"><b style="color:var(--text-1);">${_rEsc(_citeDoc(c.doc))}</b> <span onclick="showCitationContext('${docEsc}','all')" title="${isEn ? 'All pasal-level citations (full text)' : 'Semua sitiran antar-pasal (teks utuh)'}" style="cursor:pointer;font-size:0.82rem;opacity:0.7;">📖</span></td>`
+                + `<td style="${td}text-align:right;">${clickBtn(c.in, 'in', 'var(--amber)')}</td>`
+                + `<td style="${td}text-align:right;">${clickBtn(c.out, 'out', 'var(--primary)')}</td>`
+                + `<td style="${td}text-align:center;"><span style="font-size:0.65rem;background:${b[1]};color:${b[2]};padding:1px 6px;border-radius:10px;">${b[0]}</span></td></tr>`;
         }).join('');
         host.innerHTML = `<div style="margin-top:1.25rem;overflow-x:auto;">`
             + `<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><span class="material-symbols-rounded" style="color:var(--amber);font-size:18px;">verified</span>`
             + `<strong style="font-family:'Outfit';color:var(--text-1);font-size:0.95rem;">${isEn ? 'PRIMARY: Authority by explicit citation (instrument-level)' : 'PRIMER: Otoritas berdasarkan sitasi eksplisit (level instrumen)'}</strong></div>`
-            + `<div style="font-size:0.78rem;color:var(--text-3);margin-bottom:8px;line-height:1.5;">${isEn ? 'Ranked by how often each instrument is <b>cited</b> within the corpus — the defensible authority signal, vs the SBERT semantic-overlap table below. “Σ SBERT” = total provision-overlap degree of that instrument (granularity differs: citations are instrument-level, SBERT is pasal-level).' : 'Diurut dari seberapa sering tiap instrumen <b>disitir</b> di dalam korpus — sinyal otoritas yang defensible, vs tabel tumpang-tindih SBERT di bawah. “Σ SBERT” = total derajat tumpang-tindih pasal instrumen itu (beda granularitas: sitasi=level instrumen, SBERT=level pasal).'}</div>`
+            + `<div style="font-size:0.78rem;color:var(--text-3);margin-bottom:8px;line-height:1.5;">${isEn ? 'Ranked by how often each instrument is <b>cited</b> within the corpus — the defensible authority signal (explicit cross-citation, not textual similarity).' : 'Diurut dari seberapa sering tiap instrumen <b>disitir</b> di dalam korpus — sinyal otoritas yang defensible (sitasi-silang eksplisit, bukan kemiripan teks).'}</div>`
+            + `<div style="font-size:0.72rem;color:var(--primary);margin-bottom:8px;display:flex;align-items:center;gap:5px;"><span class="material-symbols-rounded" style="font-size:14px;">touch_app</span><span>${isEn ? 'Tip: click a <b>Cited</b>/<b>Cites</b> number for the pasal passages behind it, or 📖 next to an instrument for <b>all</b> its pasal-level citations (full paragraph text).' : 'Tip: klik angka <b>Disitir</b>/<b>Menyitir</b> untuk cuplikan pasal di baliknya, atau 📖 di sebelah instrumen untuk <b>semua</b> sitiran antar-pasalnya (teks paragraf utuh).'}</span></div>`
             + _exportBar('authrank-tbl-' + graphId, 'Ranking_Otoritas_Sitasi_' + graphId)
             + `<div id="authrank-tbl-${graphId}"><table style="width:100%;border-collapse:collapse;">`
-            + `<thead><tr><th style="${th}text-align:right;">#</th><th style="${th}">${isEn ? 'Instrument' : 'Instrumen'}</th><th style="${th}text-align:right;">${isEn ? 'Cited (in)' : 'Disitir'}</th><th style="${th}text-align:right;">${isEn ? 'Cites (out)' : 'Menyitir'}</th><th style="${th}text-align:center;">${isEn ? 'Role' : 'Peran'}</th><th style="${th}text-align:right;">Σ SBERT</th></tr></thead>`
+            + `<thead><tr><th style="${th}text-align:right;">#</th><th style="${th}">${isEn ? 'Instrument' : 'Instrumen'}</th><th style="${th}text-align:right;">${isEn ? 'Cited (in)' : 'Disitir'}</th><th style="${th}text-align:right;">${isEn ? 'Cites (out)' : 'Menyitir'}</th><th style="${th}text-align:center;">${isEn ? 'Role' : 'Peran'}</th></tr></thead>`
             + `<tbody>${body}</tbody></table></div></div>`;
     }
+
+    // PASAL-LEVEL citation drill-down (build_provision_citations.py → provision_citations.json).
+    // Each record = a PASAL that cites another pasal/regulation, carrying the FULL verbatim
+    // paragraph text of the citing pasal. Modes:
+    //   'in'  — passages from OTHER instruments that cite this one (cited_doc === doc)
+    //   'out' — passages where THIS instrument cites other instruments (cross-doc)
+    //   'all' — every pasal-level citation made by this document (internal + external) = full ground truth
+    let PROVCITES = null, _CITE_FETCH_N = 0;
+    async function _ensureProvCites(force) {
+        if (PROVCITES && !force) return PROVCITES;
+        try { const r = await fetch(`./data/network/provision_citations.json?v=${DATA_V}&t=${++_CITE_FETCH_N}`, { cache: 'no-store' }); PROVCITES = await r.json(); }
+        catch (e) { if (!PROVCITES) PROVCITES = { records: [] }; }
+        PROVCITES.records = PROVCITES.records || [];
+        return PROVCITES;
+    }
+    // is the editing backend (serve.py) available? (static hosting / file:// → false)
+    let _CITE_EDITOR = null;
+    async function _ensureCiteEditor() {
+        if (_CITE_EDITOR !== null) return _CITE_EDITOR;
+        try { const r = await fetch('./api/health', { cache: 'no-store' }); const j = await r.json(); _CITE_EDITOR = !!(j && j.editor); }
+        catch (e) { _CITE_EDITOR = false; }
+        return _CITE_EDITOR;
+    }
+    async function _citeApi(body) {
+        const r = await fetch('./api/cite', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+        let j = {}; try { j = await r.json(); } catch (e) { }
+        if (!r.ok || !j.ok) throw new Error(j.error || ('HTTP ' + r.status));
+        return j;
+    }
+    const _KIND_META = {
+        pasal_internal: { id: 'antar-pasal (internal)', en: 'cross-pasal (internal)', c: 'var(--primary)' },
+        pasal_external: { id: 'antar-pasal (regulasi lain)', en: 'cross-pasal (other law)', c: 'var(--amber)' },
+        regulation: { id: 'regulasi bernomor', en: 'numbered regulation', c: 'var(--amber)' },
+        named: { id: 'instrumen bernama', en: 'named instrument', c: 'var(--emerald,#10b981)' },
+    };
+    let _CITE_CTX = { doc: null, dir: 'all' }, _CITE_EDITING = null, _CITE_ADDING = false, _CITE_RECS = [];
+    window.showCitationContext = async function (doc, dir) {
+        _CITE_CTX = { doc, dir }; _CITE_EDITING = null; _CITE_ADDING = false;
+        await _ensureCiteEditor();
+        await _renderCiteModal();
+    };
+    const _kindSelect = (id, cur) => `<select id="${id}" style="width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:6px;background:var(--sunken);color:var(--text-1);font-size:0.82rem;">`
+        + Object.keys(_KIND_META).map(k => `<option value="${k}"${k === cur ? ' selected' : ''}>${_KIND_META[k].id}</option>`).join('') + `</select>`;
+    function _editForm(r) {
+        const isEn = window.currentLang === 'en';
+        const lbl = s => `<div style="font-size:0.68rem;color:var(--text-4);margin:8px 0 3px;font-weight:600;">${s}</div>`;
+        return `<div style="border:1.5px solid var(--primary);border-radius:10px;padding:12px 13px;margin-bottom:10px;background:var(--overlay-soft);">
+            <div style="font-weight:700;color:var(--text-1);font-size:0.86rem;">${_rEsc(_citeDoc(r.source_doc))} — ${_rEsc(r.source_prov)} <span style="font-size:0.66rem;color:var(--primary);">· ${isEn ? 'editing' : 'mengedit'}</span></div>
+            ${lbl(isEn ? 'Classification' : 'Klasifikasi')}${_kindSelect('cite-ed-kind', r.kind)}
+            ${lbl(isEn ? 'Cites (reference text)' : 'Menyebut (teks rujukan)')}<input id="cite-ed-ref" value="${_rEsc(r.cited_ref || '')}" style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid var(--border);border-radius:6px;background:var(--sunken);color:var(--text-1);font-size:0.82rem;">
+            ${lbl(isEn ? 'Full pasal text (verbatim)' : 'Teks pasal utuh (verbatim)')}<textarea id="cite-ed-text" style="width:100%;box-sizing:border-box;min-height:150px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;background:var(--sunken);color:var(--text-1);font-size:0.84rem;line-height:1.6;font-family:inherit;">${_rEsc(r.source_text || '')}</textarea>
+            <div style="display:flex;gap:8px;margin-top:10px;">
+              <button onclick="_citeSaveRow()" class="btn-secondary btn-sm" style="background:var(--primary);color:#fff;border-color:var(--primary);"><span class="material-symbols-rounded" style="font-size:14px;vertical-align:-2px;">save</span> ${isEn ? 'Save' : 'Simpan'}</button>
+              <button onclick="_citeCancel()" class="btn-secondary btn-sm">${isEn ? 'Cancel' : 'Batal'}</button>
+            </div>
+          </div>`;
+    }
+    function _addForm(doc) {
+        const isEn = window.currentLang === 'en';
+        const lbl = s => `<div style="font-size:0.68rem;color:var(--text-4);margin:8px 0 3px;font-weight:600;">${s}</div>`;
+        return `<div style="border:1.5px dashed var(--emerald,#10b981);border-radius:10px;padding:12px 13px;margin-bottom:12px;background:var(--overlay-soft);">
+            <div style="font-weight:700;color:var(--text-1);font-size:0.86rem;">${isEn ? 'Add citation' : 'Tambah sitiran'} · ${_rEsc(_citeDoc(doc))}</div>
+            ${lbl(isEn ? 'Source pasal (e.g. Pasal 5)' : 'Pasal sumber (mis. Pasal 5)')}<input id="cite-add-prov" placeholder="Pasal 5" style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid var(--border);border-radius:6px;background:var(--sunken);color:var(--text-1);font-size:0.82rem;">
+            ${lbl(isEn ? 'Classification' : 'Klasifikasi')}${_kindSelect('cite-add-kind', 'pasal_internal')}
+            ${lbl(isEn ? 'Cites (reference text)' : 'Menyebut (teks rujukan)')}<input id="cite-add-ref" placeholder="Pasal 2 ayat (2)" style="width:100%;box-sizing:border-box;padding:6px 8px;border:1px solid var(--border);border-radius:6px;background:var(--sunken);color:var(--text-1);font-size:0.82rem;">
+            ${lbl(isEn ? 'Full pasal text (verbatim)' : 'Teks pasal utuh (verbatim)')}<textarea id="cite-add-text" style="width:100%;box-sizing:border-box;min-height:120px;padding:8px 10px;border:1px solid var(--border);border-radius:6px;background:var(--sunken);color:var(--text-1);font-size:0.84rem;line-height:1.6;font-family:inherit;"></textarea>
+            <div style="display:flex;gap:8px;margin-top:10px;">
+              <button onclick="_citeSaveAdd()" class="btn-secondary btn-sm" style="background:var(--emerald,#10b981);color:#fff;border-color:var(--emerald,#10b981);"><span class="material-symbols-rounded" style="font-size:14px;vertical-align:-2px;">add</span> ${isEn ? 'Add' : 'Tambah'}</button>
+              <button onclick="_citeCancel()" class="btn-secondary btn-sm">${isEn ? 'Cancel' : 'Batal'}</button>
+            </div>
+          </div>`;
+    }
+    async function _renderCiteModal() {
+        const isEn = window.currentLang === 'en';
+        const { doc, dir } = _CITE_CTX;
+        const pc = await _ensureProvCites();
+        const editor = _CITE_EDITOR;
+        const cross = r => ['regulation', 'named', 'pasal_external'].includes(r.kind);
+        let recs;
+        if (dir === 'in') recs = pc.records.filter(r => r.cited_doc === doc && r.source_doc !== doc && cross(r));
+        else if (dir === 'out') recs = pc.records.filter(r => r.source_doc === doc && r.cited_doc !== doc && cross(r));
+        else recs = pc.records.filter(r => r.source_doc === doc);     // 'all'
+        const ord = { pasal_internal: 0, pasal_external: 1, regulation: 2, named: 3 };
+        recs = recs.slice().sort((a, b) =>
+            (dir === 'in' ? a.source_doc.localeCompare(b.source_doc) : (ord[a.kind] - ord[b.kind]))
+            || _provNum(a.source_prov) - _provNum(b.source_prov));
+        _CITE_RECS = recs;
+        const instName = _citeDoc(doc);
+        const accent = dir === 'in' ? 'var(--amber)' : 'var(--primary)';
+        const heading = dir === 'in'
+            ? (isEn ? 'Cited by — pasal that cite this instrument (full text)' : 'Disitir oleh — pasal yang menyitir instrumen ini (teks utuh)')
+            : dir === 'out'
+                ? (isEn ? 'Cites — this instrument citing other instruments (full text)' : 'Menyitir — instrumen ini merujuk instrumen lain (teks utuh)')
+                : (isEn ? 'All pasal-level citations (full text ground truth)' : 'Semua sitiran antar-pasal (ground truth teks utuh)');
+        const totalC = recs.reduce((s, r) => s + (r.count || 1), 0);
+        const subline = `${recs.length} ${isEn ? 'passage(s)' : 'cuplikan pasal'} · ${totalC}× ${isEn ? 'citation(s)' : 'sitiran'}`;
+        const kindBadge = k => { const meta = _KIND_META[k] || { id: k, en: k, c: 'var(--text-3)' }; return `<span style="font-size:0.62rem;border:1px solid ${meta.c};color:${meta.c};padding:0 6px;border-radius:9px;line-height:1.6;white-space:nowrap;">${isEn ? meta.en : meta.id}</span>`; };
+        const tagFor = r => (r.manual ? `<span style="font-size:0.6rem;background:var(--emerald,#10b981);color:#fff;padding:0 5px;border-radius:8px;">${isEn ? 'manual' : 'manual'}</span>` : '')
+            + (r.review ? `<span title="Gemini: ${_rEsc(r.review.reason || '')} · ${_rEsc(r.review.context_type || '')} (${r.review.confidence || 0}%)" style="font-size:0.6rem;background:#ef4444;color:#fff;padding:0 5px;border-radius:8px;margin-left:4px;cursor:help;">⚠ ${isEn ? 'review' : 'tinjau'}</span>` : '')
+            + (r.edited && !r.review ? `<span style="font-size:0.6rem;background:var(--amber);color:#1a1a1a;padding:0 5px;border-radius:8px;margin-left:4px;">${isEn ? 'edited' : 'diedit'}</span>` : '');
+        const rowsHtml = recs.length ? recs.map((r, i) => {
+            if (editor && i === _CITE_EDITING) return _editForm(r);
+            const tgt = r.cited_doc ? _citeDoc(r.cited_doc) : (isEn ? 'outside corpus' : 'di luar korpus');
+            const srcLabel = `${_citeDoc(r.source_doc)} — ${r.source_prov}`;
+            const editBtns = editor ? `<button onclick="_citeEditRow(${i})" title="${isEn ? 'Edit' : 'Edit'}" style="border:none;background:none;cursor:pointer;color:var(--text-3);padding:0;"><span class="material-symbols-rounded" style="font-size:17px;">edit</span></button>`
+                + `<button onclick="_citeDeleteRow(${i})" title="${isEn ? 'Delete' : 'Hapus'}" style="border:none;background:none;cursor:pointer;color:#ef4444;padding:0;"><span class="material-symbols-rounded" style="font-size:17px;">delete</span></button>` : '';
+            return `<div style="border:1px solid var(--border);border-radius:10px;padding:11px 13px;margin-bottom:10px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+                  <div style="font-weight:700;color:var(--text-1);font-size:0.86rem;min-width:0;">${_rEsc(srcLabel)} ${tagFor(r)}</div>
+                  <div style="display:flex;gap:7px;align-items:center;flex-shrink:0;">${kindBadge(r.kind)}${(r.count > 1) ? `<span style="font-size:0.72rem;font-weight:700;color:${accent};">${r.count}×</span>` : ''}${editBtns}</div>
+                </div>
+                <div style="font-size:0.78rem;color:var(--text-3);margin-top:4px;"><span style="color:${accent};font-weight:700;">→ ${isEn ? 'cites' : 'menyebut'}:</span> <b style="color:var(--text-2);">${_rEsc(r.cited_ref)}</b> <span style="color:var(--text-4);${r.cited_doc ? '' : 'font-style:italic;'}">(${_rEsc(tgt)})</span>${(r.merged_refs && r.merged_refs.length) ? ` <span style="color:var(--text-4);font-size:0.7rem;" title="${isEn ? 'duplicate surface forms folded in (double-count removed)' : 'bentuk-sebut duplikat digabung (double-count dihapus)'}">· ${isEn ? 'also' : 'juga'}: ${_rEsc(r.merged_refs.join(', '))}</span>` : ''}</div>
+                <div style="margin-top:7px;padding:9px 12px;background:var(--sunken);border-left:3px solid ${accent};border-radius:6px;font-size:0.85rem;line-height:1.7;color:var(--text-2);white-space:pre-wrap;">${_rEsc(r.source_text || '')}</div>
+              </div>`;
+        }).join('') : `<div class="rp-empty" style="padding:1rem 0;">${isEn ? 'No pasal-level citation passages for this instrument.' : 'Belum ada cuplikan sitiran antar-pasal untuk instrumen ini.'}</div>`;
+        const editorBar = editor
+            ? `<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+                 <span style="font-size:0.7rem;color:var(--emerald,#10b981);display:flex;align-items:center;gap:4px;"><span class="material-symbols-rounded" style="font-size:14px;">edit_note</span>${isEn ? 'Editor active — changes auto-save to disk' : 'Editor aktif — perubahan tersimpan otomatis ke disk'}</span>
+                 <button onclick="_citeAddOpen()" class="btn-secondary btn-sm"><span class="material-symbols-rounded" style="font-size:14px;vertical-align:-2px;">add</span> ${isEn ? 'Add citation' : 'Tambah sitiran'}</button>
+               </div>`
+            : `<div style="font-size:0.7rem;color:var(--amber);margin-bottom:10px;display:flex;align-items:center;gap:5px;line-height:1.5;"><span class="material-symbols-rounded" style="font-size:14px;">lock</span>${isEn ? 'Read-only. To edit & save, run <code>python3 serve.py</code> then open http://localhost:8080/' : 'Mode baca-saja. Untuk mengedit & menyimpan, jalankan <code>python3 serve.py</code> lalu buka http://localhost:8080/'}</div>`;
+        const addHtml = (editor && _CITE_ADDING) ? _addForm(doc) : '';
+        const old = document.getElementById('citemodal'); if (old) old.remove();
+        const m = document.createElement('div');
+        m.id = 'citemodal';
+        m.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;padding:24px;';
+        m.innerHTML = `<div style="background:var(--bg-card);max-width:760px;width:100%;max-height:84vh;overflow:auto;border-radius:14px;border:1px solid var(--border);box-shadow:0 24px 60px rgba(0,0,0,0.45);padding:1.4rem 1.6rem;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:sticky;top:-1.4rem;background:var(--bg-card);padding-top:0.2rem;">
+              <div style="min-width:0;">
+                <div class="rp-eyebrow" style="color:${accent};">${_rEsc(heading)}</div>
+                <div class="rp-title" style="font-size:1.12rem;">${_rEsc(instName)}</div>
+                <div style="font-size:0.74rem;color:var(--text-4);margin-top:3px;">${subline}</div>
+              </div>
+              <button onclick="document.getElementById('citemodal').remove()" style="border:none;background:var(--overlay-soft);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:16px;color:var(--text-2);flex-shrink:0;">✕</button>
+            </div>
+            <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);">${editorBar}${addHtml}${rowsHtml}</div>
+            <div style="margin-top:0.9rem;font-size:0.72rem;color:var(--text-4);line-height:1.5;">${isEn ? 'Each box is a pasal that cites another pasal/regulation; the quoted block is that pasal’s full paragraph text, verbatim from the official PDF (build_provision_citations.py). Scanned sources may carry OCR noise.' : 'Tiap kotak adalah satu pasal yang menyebut pasal/regulasi lain; blok kutipan adalah teks paragraf pasal itu secara utuh & verbatim dari PDF resmi (build_provision_citations.py). Sumber hasil pindai bisa mengandung noise OCR.'}</div>
+          </div>`;
+        m.onclick = ev => { if (ev.target === m) m.remove(); };
+        document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape') { const x = document.getElementById('citemodal'); if (x) x.remove(); document.removeEventListener('keydown', esc); } });
+        document.body.appendChild(m);
+    }
+    window._citeEditRow = function (i) { _CITE_EDITING = i; _CITE_ADDING = false; _renderCiteModal(); };
+    window._citeAddOpen = function () { _CITE_ADDING = true; _CITE_EDITING = null; _renderCiteModal(); };
+    window._citeCancel = function () { _CITE_EDITING = null; _CITE_ADDING = false; _renderCiteModal(); };
+    window._citeSaveRow = async function () {
+        const r = _CITE_RECS[_CITE_EDITING]; if (!r) return;
+        const kind = document.getElementById('cite-ed-kind').value;
+        const ref = document.getElementById('cite-ed-ref').value.trim();
+        const text = document.getElementById('cite-ed-text').value;
+        try {
+            if (kind !== r.kind || ref !== r.cited_ref) await _citeApi({ op: 'edit', id: r.id, fields: { kind, cited_ref: ref } });
+            if (text !== (r.source_text || '')) await _citeApi({ op: 'text', source_label: r.source_label, source_text: text });
+            _CITE_EDITING = null; await _ensureProvCites(true); await _renderCiteModal();
+            showToast(window.currentLang === 'en' ? 'Saved to disk.' : 'Tersimpan ke disk.', 'success');
+        } catch (e) { showToast((window.currentLang === 'en' ? 'Save failed: ' : 'Gagal menyimpan: ') + e.message, 'error'); }
+    };
+    window._citeDeleteRow = async function (i) {
+        const r = _CITE_RECS[i]; if (!r) return;
+        if (!confirm(window.currentLang === 'en' ? `Delete this citation?\n${r.source_prov} → ${r.cited_ref}` : `Hapus sitiran ini?\n${r.source_prov} → ${r.cited_ref}`)) return;
+        try { await _citeApi({ op: 'delete', id: r.id }); _CITE_EDITING = null; await _ensureProvCites(true); await _renderCiteModal(); showToast(window.currentLang === 'en' ? 'Deleted.' : 'Dihapus.', 'success'); }
+        catch (e) { showToast((window.currentLang === 'en' ? 'Delete failed: ' : 'Gagal menghapus: ') + e.message, 'error'); }
+    };
+    window._citeSaveAdd = async function () {
+        const prov = document.getElementById('cite-add-prov').value.trim();
+        const kind = document.getElementById('cite-add-kind').value;
+        const ref = document.getElementById('cite-add-ref').value.trim();
+        const text = document.getElementById('cite-add-text').value;
+        if (!prov || !ref) { showToast(window.currentLang === 'en' ? 'Source pasal and reference are required.' : 'Pasal sumber dan rujukan wajib diisi.', 'warning'); return; }
+        try {
+            await _citeApi({ op: 'add', record: { source_doc: _CITE_CTX.doc, source_prov: prov, kind, cited_ref: ref, cited_norm: ref, source_text: text } });
+            _CITE_ADDING = false; await _ensureProvCites(true); await _renderCiteModal();
+            showToast(window.currentLang === 'en' ? 'Citation added.' : 'Sitiran ditambahkan.', 'success');
+        } catch (e) { showToast((window.currentLang === 'en' ? 'Add failed: ' : 'Gagal menambah: ') + e.message, 'error'); }
+    };
+    function _provNum(prov) { const m = /(\d+)/.exec(prov || ''); return m ? parseInt(m[1], 10) : 9999; }
 
     // Re-render metric + ranking tables in the active language (called by toggleLanguage)
     window.reRenderAllMetrics = function () {
