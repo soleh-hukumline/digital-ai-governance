@@ -973,12 +973,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }).join('');
 
             const warrantsHTML = (s.top_warrants && s.top_warrants.length)
-                ? s.top_warrants.map(w => `
+                ? s.top_warrants.map(w => {
+                    const labEsc = String(w.label).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+                    return `
                     <div class="pasal-item">
                         <div class="p-dot covered"></div>
-                        <div><span class="p-name">${w.label.replace(/_/g, ' ')}</span>
+                        <div><span class="p-name" onclick="showProvisionText('${labEsc}')" title="${L('Baca bunyi pasal utuh', 'Read full article text')}" style="cursor:pointer;text-decoration:underline dotted;text-underline-offset:2px;">${w.label.replace(/_/g, ' ')} 📖</span>
                         <span class="p-desc">${L('dasar hukum di', 'cited in')} ${w.count} ${L('insiden', 'incident(s)')}</span></div>
-                    </div>`).join('')
+                    </div>`; }).join('')
                 : `<div class="pasal-item"><div class="p-dot gap"></div><div><span class="p-desc">${L('Tidak ada dasar hukum teridentifikasi.', 'No legal basis identified.')}</span></div></div>`;
 
             const weakLbl = (RL[s.weakest_role] ? (isEn ? RL[s.weakest_role].en : RL[s.weakest_role].id) : s.weakest_role);
