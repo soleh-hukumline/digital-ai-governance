@@ -268,8 +268,8 @@
         "context": "…al dari G20 Sejalan dengan ketetapan prinsip-prinsip Kecerdasan Artifisial G20 (G20 AI Principles) [7] yang disepakati dalam pertemuan KTT G20 tanggal 28-29 Juni 2019 di Osaka-Jepang, pem…",
         "type": "named",
         "name": "G20 AI Principles  [≈ OECD AI Principles (G20 mengadopsi 2019)]",
-        "in_corpus": false,
-        "corpus_doc": null,
+        "in_corpus": true,
+        "corpus_doc": "OECD_AI_Principles_2024",
         "self_ref": false,
         "suspect_year": false
       },
@@ -774,6 +774,17 @@
         "name": "NIST AI Risk Management Framework",
         "in_corpus": false,
         "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "Indonesia Personal Data Protection Law 2022",
+        "count": 1,
+        "context": "Data Protection Act 2019, Indonesia's Personal Data Protection Law 2022, and Vietnam's Personal Data Protection Decree",
+        "type": "named",
+        "name": "UU PDP Indonesia (Personal Data Protection Law 2022)",
+        "in_corpus": true,
+        "corpus_doc": "UU_PDP_No27_2022",
         "self_ref": false,
         "suspect_year": false
       }
@@ -1503,6 +1514,24 @@
       "in_corpus": false,
       "corpus_doc": null,
       "count": 6
+    },
+    {
+      "source": "Stranas_AI_Indonesia_2020-2045_Full",
+      "target": "G20 AI Principles",
+      "name": "G20 AI Principles [≈ OECD AI Principles]",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "OECD_AI_Principles_2024",
+      "count": 3
+    },
+    {
+      "source": "ASEAN_Guide_AI_Governance_Ethics_2024",
+      "target": "Indonesia Personal Data Protection Law 2022",
+      "name": "UU PDP Indonesia (Personal Data Protection Law 2022)",
+      "type": "named",
+      "in_corpus": true,
+      "corpus_doc": "UU_PDP_No27_2022",
+      "count": 1
     }
   ],
   "in_corpus_targets": [

@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260615_16';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260617_1';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'section-all': { icon: 'hub', title: 'Master Legal Network Analysis', sub: 'Semua jaringan regulasi · International + Nasional + Insiden' },
         'section-intl': { icon: 'public', title: 'Regulasi Internasional', sub: 'EU AI Act · OECD AI Principles · CETS225 · Thematic Cluster' },
         'section-natl': { icon: 'account_balance', title: 'Regulasi Nasional Indonesia', sub: 'UU PDP · UU ITE · PP PSTE · POJK · UU Perdagangan' },
-        'section-cross': { icon: 'sync_alt', title: 'Intl vs Nasional · Cross-Jurisdiction', sub: 'Gap sitasi lintas yurisdiksi · 0 rujukan formal Intl↔Nasional terdeteksi (sitir-menyitir)' },
+        'section-cross': { icon: 'sync_alt', title: 'Intl vs Nasional · Cross-Jurisdiction', sub: 'Analisis gap sitasi lintas yurisdiksi · Peta dua kluster terputus (sitir-menyitir)' },
         'section-incident': { icon: 'gavel', title: 'Analisis Kasus Forensik', sub: 'Pemetaan 45 insiden ke regulasi · LLM-judge tervalidasi + tinjauan manusia · Asimetri Subjek & Gap AI-spesifik' },
         'section-sector': { icon: 'category', title: 'Analisis Kesenjangan Regulasi Per Sektor', sub: 'Coverage Empiris per Subjek Hukum · Pemetaan Regulasi (few-shot)' },
         'section-gap': { icon: 'insights', title: 'Konklusi: Gap Analysis', sub: 'Konsolidasi Temuan LNA · Coverage per Klaster · Connected Components' },
@@ -928,6 +928,159 @@ document.addEventListener('DOMContentLoaded', () => {
         return out;
     }
 
+    // ── SECTOR COVERAGE MANUAL OVERRIDE (localStorage) ──
+    function _sectorOverrideGet(key) {
+        try { const v = localStorage.getItem(key); return v !== null ? parseFloat(v) : null; } catch (e) { return null; }
+    }
+    function _sectorOverrideSet(key, val) {
+        try { localStorage.setItem(key, String(val)); } catch (e) {}
+    }
+    function _sectorOverrideDel(key) {
+        try { localStorage.removeItem(key); } catch (e) {}
+    }
+    // Inline edit popup for a coverage percentage
+    window._sectorEditPct = function (sKey, role, ovKey, computedPct) {
+        const isEn = window.currentLang === 'en';
+        const cur = _sectorOverrideGet(ovKey);
+        const val = cur !== null ? cur : computedPct;
+        // Create inline edit popup
+        const existing = document.getElementById('sector-edit-popup');
+        if (existing) existing.remove();
+        const gaugeRow = document.getElementById(`gauge-${sKey}-${role}`);
+        if (!gaugeRow) return;
+        const pctSpan = gaugeRow.querySelector('.gauge-pct');
+        if (!pctSpan) return;
+        const popup = document.createElement('div');
+        popup.id = 'sector-edit-popup';
+        popup.style.cssText = 'position:fixed;z-index:10000;background:var(--card,#fff);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.18);padding:14px 16px;min-width:220px;';
+        // Position near the pctSpan
+        const rect = pctSpan.getBoundingClientRect();
+        popup.style.top = (rect.bottom + 6) + 'px';
+        popup.style.right = (window.innerWidth - rect.right) + 'px';
+        const RL = window.sectorCoverageData && window.sectorCoverageData.role_label || {};
+        const roleLbl = RL[role] ? (isEn ? RL[role].en : RL[role].id) : role;
+        popup.innerHTML = `
+            <div style="font-size:0.78rem;font-weight:700;color:var(--text-1);margin-bottom:8px;">${isEn ? 'Edit Coverage' : 'Edit Coverage'}: ${roleLbl}</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+                <input id="sector-edit-input" type="number" min="0" max="100" step="0.1" value="${val}"
+                    style="width:80px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:var(--sunken);color:var(--text-1);font-size:0.9rem;font-weight:700;text-align:right;">
+                <span style="font-size:0.85rem;color:var(--text-3);">%</span>
+            </div>
+            <div style="font-size:0.68rem;color:var(--text-4);margin-bottom:10px;">${isEn ? 'Computed: ' : 'Hitung otomatis: '}<b>${computedPct}%</b></div>
+            <div style="display:flex;gap:8px;">
+                <button onclick="_sectorSaveEdit('${sKey}','${role}','${ovKey}')" style="flex:1;padding:6px 10px;border:none;border-radius:6px;background:var(--primary);color:#fff;font-size:0.78rem;font-weight:600;cursor:pointer;">${isEn ? 'Save' : 'Simpan'}</button>
+                ${cur !== null ? `<button onclick="_sectorResetEdit('${sKey}','${role}','${ovKey}',${computedPct})" style="flex:1;padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--text-3);font-size:0.78rem;cursor:pointer;">${isEn ? 'Reset' : 'Reset'}</button>` : ''}
+                <button onclick="document.getElementById('sector-edit-popup').remove()" style="padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--text-3);font-size:0.78rem;cursor:pointer;">✕</button>
+            </div>`;
+        document.body.appendChild(popup);
+        const inp = document.getElementById('sector-edit-input');
+        if (inp) { inp.focus(); inp.select(); }
+        // Close on click outside
+        setTimeout(() => {
+            const closer = (ev) => {
+                if (!popup.contains(ev.target) && ev.target !== pctSpan) {
+                    popup.remove();
+                    document.removeEventListener('mousedown', closer);
+                }
+            };
+            document.addEventListener('mousedown', closer);
+        }, 100);
+    };
+    window._sectorSaveEdit = function (sKey, role, ovKey) {
+        const inp = document.getElementById('sector-edit-input');
+        if (!inp) return;
+        let v = parseFloat(inp.value);
+        if (isNaN(v)) v = 0;
+        v = Math.max(0, Math.min(100, Math.round(v * 10) / 10));
+        _sectorOverrideSet(ovKey, v);
+        _sectorUpdateGauge(sKey, role, ovKey, v, true);
+        const popup = document.getElementById('sector-edit-popup');
+        if (popup) popup.remove();
+        _toast((window.currentLang === 'en' ? 'Saved: ' : 'Tersimpan: ') + v + '%');
+    };
+    window._sectorResetEdit = function (sKey, role, ovKey, computedPct) {
+        _sectorOverrideDel(ovKey);
+        _sectorUpdateGauge(sKey, role, ovKey, computedPct, false);
+        const popup = document.getElementById('sector-edit-popup');
+        if (popup) popup.remove();
+        _toast(window.currentLang === 'en' ? 'Reset to computed value' : 'Direset ke nilai hitung otomatis');
+    };
+    function _sectorUpdateGauge(sKey, role, ovKey, pct, isOverridden) {
+        const row = document.getElementById(`gauge-${sKey}-${role}`);
+        if (!row) return;
+        const fill = row.querySelector('.gauge-fill');
+        const pctSpan = row.querySelector('.gauge-pct');
+        if (fill) { fill.style.width = pct + '%'; fill.style.background = _covColor(pct); }
+        if (pctSpan) {
+            const isEn = window.currentLang === 'en';
+            pctSpan.style.color = _covColor(pct);
+            pctSpan.innerHTML = `${pct}%${isOverridden ? '<span style="font-size:8px;color:var(--primary);margin-left:2px;">✎</span>' : ''}`;
+        }
+    }
+    // ── EXPORT sector overrides → JSON file ──
+    window.exportSectorOverrides = function () {
+        const PREFIX = 'lna_sector_override_';
+        const out = { _README: 'Manual sector coverage overrides. Letakkan di data/network/sector_coverage_overrides.json lalu deploy.', overrides: {} };
+        let count = 0;
+        for (let i = 0; i < localStorage.length; i++) {
+            const k = localStorage.key(i);
+            if (k && k.startsWith(PREFIX)) {
+                const v = parseFloat(localStorage.getItem(k));
+                if (!isNaN(v)) {
+                    // key format: lna_sector_override_{sector}_{role}
+                    const parts = k.slice(PREFIX.length);
+                    out.overrides[parts] = v;
+                    count++;
+                }
+            }
+        }
+        if (count === 0) { _toast(window.currentLang === 'en' ? 'No overrides to export.' : 'Tidak ada override untuk diekspor.'); return; }
+        _downloadBlob(JSON.stringify(out, null, 2), 'sector_coverage_overrides.json', 'application/json');
+        _toast((window.currentLang === 'en' ? 'Exported ' : 'Diekspor ') + count + ' override → sector_coverage_overrides.json');
+    };
+    // ── IMPORT sector overrides from JSON file ──
+    window.importSectorOverrides = function () {
+        const inp = document.createElement('input');
+        inp.type = 'file'; inp.accept = '.json';
+        inp.onchange = async () => {
+            const file = inp.files[0]; if (!file) return;
+            try {
+                const text = await file.text();
+                const data = JSON.parse(text);
+                const ovs = data.overrides || data;
+                let count = 0;
+                Object.entries(ovs).forEach(([k, v]) => {
+                    if (k.startsWith('_')) return; // skip _README etc
+                    const numV = parseFloat(v);
+                    if (!isNaN(numV)) {
+                        _sectorOverrideSet('lna_sector_override_' + k, numV);
+                        count++;
+                    }
+                });
+                _toast((window.currentLang === 'en' ? 'Imported ' : 'Diimpor ') + count + ' override. Reload tab untuk melihat.');
+            } catch (e) { _toast('Error: ' + e.message); }
+        };
+        inp.click();
+    };
+    // ── AUTO-LOAD overrides from data/network/sector_coverage_overrides.json ──
+    (async function _autoLoadSectorOverrides() {
+        try {
+            const r = await fetch(`./data/network/sector_coverage_overrides.json?v=${DATA_V}`, { cache: 'no-store' });
+            if (!r.ok) return;
+            const data = await r.json();
+            const ovs = data.overrides || data;
+            Object.entries(ovs).forEach(([k, v]) => {
+                if (k.startsWith('_')) return;
+                const lsKey = 'lna_sector_override_' + k;
+                // Only load from file if user hasn't set their own localStorage override
+                if (_sectorOverrideGet(lsKey) === null) {
+                    const numV = parseFloat(v);
+                    if (!isNaN(numV)) _sectorOverrideSet(lsKey, numV);
+                }
+            });
+        } catch (e) { /* file doesn't exist yet — OK */ }
+    })();
+
     async function initSectorAnalysis() {
         const container = document.getElementById('sector-grid-container');
         if (!container || container.dataset.rendered === 'true') return;
@@ -961,14 +1114,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const covColor = _covColor(cov);
             const borderColor = cov < 30 ? 'rgba(251,113,133,0.25)' : cov < 60 ? 'rgba(251,191,36,0.25)' : 'rgba(52,211,153,0.25)';
 
+            const sKey = s.key;
             const roleRows = Object.keys(RL).map(r => {
-                const pct = s.per_role[r] ? s.per_role[r].coverage_pct : 0;
+                const computedPct = s.per_role[r] ? s.per_role[r].coverage_pct : 0;
+                const ovKey = `lna_sector_override_${sKey}_${r}`;
+                const override = _sectorOverrideGet(ovKey);
+                const pct = override !== null ? override : computedPct;
                 const lbl = isEn ? RL[r].en : RL[r].id;
+                const isOverridden = override !== null;
                 return `
-                    <div class="gauge-row">
+                    <div class="gauge-row" id="gauge-${sKey}-${r}">
                         <span class="gauge-label" style="min-width:min(130px,34vw);">${lbl}</span>
                         <div class="gauge-bar"><div class="gauge-fill" style="width:${pct}%;background:${_covColor(pct)};"></div></div>
-                        <span class="gauge-pct" style="color:${_covColor(pct)};">${pct}%</span>
+                        <span class="gauge-pct" style="color:${_covColor(pct)};cursor:pointer;position:relative;" title="${isEn ? 'Click to edit manually' : 'Klik untuk edit manual'}" onclick="_sectorEditPct('${sKey}','${r}','${ovKey}',${computedPct})">${pct}%${isOverridden ? '<span style="font-size:8px;color:var(--primary);margin-left:2px;">✎</span>' : ''}</span>
                     </div>`;
             }).join('');
 
@@ -1535,18 +1693,29 @@ document.addEventListener('DOMContentLoaded', () => {
         mode = 'citation';
         const _cov = _covByDoc();
         let Cdir = _citeMatrix(gset);
+        // Count cross vs intra-jurisdiction citations for the gap analysis
+        let _crossJurisCt = 0, _intraNatl = 0, _intraIntl = 0;
+        Cdir.forEach((row, i) => row.forEach((v, j) => {
+            if (i === j || !v) return;
+            const ji = (_cov.get(gset[i]) || {}).juris, jj = (_cov.get(gset[j]) || {}).juris;
+            if (ji && jj && ji !== jj) _crossJurisCt += v;
+            else if (ji === 'NATL' && jj === 'NATL') _intraNatl += v;
+            else if (ji === 'INTL' && jj === 'INTL') _intraIntl += v;
+        }));
         if (graphId === 'cross') {
-            // Cross-jurisdiction tab = the GAP finding: keep ONLY Intl↔National edges (→ 0).
-            Cdir = Cdir.map((row, i) => row.map((v, j) => {
-                const ji = (_cov.get(gset[i]) || {}).juris, jj = (_cov.get(gset[j]) || {}).juris;
-                return (ji && jj && ji !== jj) ? v : 0;
-            }));
+            CHORD._crossMeta = { cross: _crossJurisCt, natl: _intraNatl, intl: _intraIntl };
+            // Keep ALL edges — chord shows two disconnected clusters as visual evidence
         }
         // active matrix used for ribbon geometry (symmetrise citations; direction kept in Cdir)
         const M = gset.map((g, i) => gset.map((h, j) => Cdir[i][j] + Cdir[j][i]));
         // keep groups with any connection in the active matrix
         const keep = gset.map((g, i) => M[i].reduce((s, v) => s + v, 0) > 0);
         const groups = gset.filter((g, i) => keep[i]);
+        // For cross-jurisdiction, sort groups so INTL and NATL form distinct visual clusters
+        if (graphId === 'cross') groups.sort((a, b) => {
+            const ja = (_cov.get(a) || {}).juris || '', jb = (_cov.get(b) || {}).juris || '';
+            return ja === jb ? 0 : (ja === 'INTL' ? -1 : 1);
+        });
         const N = groups.length;
         if (!N) {
             if (graphId === 'cross') {
@@ -1563,7 +1732,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const cov = _covByDoc();
 
         const palette = ['#ef4444', '#ec4899', '#a855f7', '#6366f1', '#3b82f6', '#0ea5e9', '#14b8a6', '#10b981', '#84cc16', '#eab308', '#f59e0b', '#f97316', '#78716c', '#be123c', '#6d28d9', '#1d4ed8', '#0891b2', '#65a30d', '#c026d3', '#db2777'];
-        const gcol = {}; groups.forEach((g, i) => gcol[g] = palette[i % palette.length]);
+        const gcol = {};
+        if (graphId === 'cross') {
+            const _nPal = ['#10b981','#059669','#047857','#34d399','#6ee7b7'];
+            const _iPal = ['#f59e0b','#d97706','#b45309','#fbbf24','#fcd34d'];
+            let _ni = 0, _ii = 0;
+            groups.forEach(g => {
+                const j = (cov.get(g) || {}).juris;
+                gcol[g] = j === 'NATL' ? _nPal[_ni++ % _nPal.length] : _iPal[_ii++ % _iPal.length];
+            });
+        } else {
+            groups.forEach((g, i) => gcol[g] = palette[i % palette.length]);
+        }
         CHORD[graphId] = { groups, matrix, cdir, gcol, sel: null, mode, cov };
 
         // layout
@@ -1612,8 +1792,37 @@ document.addEventListener('DOMContentLoaded', () => {
             bands += `<text class="clabel" data-i="${i}" x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" font-size="11" fill="var(--graph-font)" text-anchor="${flip ? 'end' : 'start'}" dominant-baseline="middle" transform="rotate(${(flip ? deg + 180 : deg).toFixed(1)} ${lx.toFixed(1)} ${ly.toFixed(1)})" style="cursor:pointer;pointer-events:auto;">${_rEsc(_chordDisp(groups[i]))}</text>`;
         }
 
-        box.innerHTML = `<svg viewBox="0 0 ${VB} ${VB}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">`
-            + `<g class="cribbons">${ribbons}</g><g class="cbands">${bands}</g></svg>`;
+        let _crossAnn = '', _crossBnr = '';
+        if (graphId === 'cross') {
+            const cm = CHORD._crossMeta || { cross: 0, natl: 0, intl: 0 };
+            // Cluster labels inside the chord ring
+            const _clusters = { INTL: [], NATL: [] };
+            for (let ci = 0; ci < N; ci++) {
+                const jur = (cov.get(groups[ci]) || {}).juris;
+                if (jur && _clusters[jur]) _clusters[jur].push(arcs[ci]);
+            }
+            Object.entries(_clusters).forEach(([jur, cArcs]) => {
+                if (!cArcs.length) return;
+                const midA = (cArcs[0].a0 + cArcs[cArcs.length - 1].a1) / 2;
+                const [lx, ly] = _chordPt(CX, CY, Rin - 55, midA);
+                const col = jur === 'NATL' ? '#10b981' : '#f59e0b';
+                const lbl = jur === 'NATL' ? (isEn ? '🇮🇩 NATIONAL' : '🇮🇩 NASIONAL') : (isEn ? '🌐 INT\'L' : '🌐 INT\'L');
+                _crossAnn += `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" font-size="13" font-weight="800" fill="${col}" opacity="0.65" dominant-baseline="middle">${lbl}</text>`;
+            });
+            // Center watermark showing cross-jurisdiction count
+            _crossAnn += `<text x="${CX}" y="${CY - 8}" text-anchor="middle" font-size="56" font-weight="900" fill="${cm.cross ? '#f59e0b' : '#ef4444'}" opacity="0.13">${cm.cross}</text>`;
+            _crossAnn += `<text x="${CX}" y="${CY + 20}" text-anchor="middle" font-size="11" fill="var(--text-4)" opacity="0.55">${isEn ? 'cross-jurisdiction' : 'lintas-yurisdiksi'}</text>`;
+            // Compact gap summary banner
+            _crossBnr = `<div style="display:flex;align-items:center;justify-content:center;gap:1.8rem;padding:14px 16px;background:var(--sunken);border-bottom:1px solid var(--border);flex-wrap:wrap;flex-shrink:0;">`
+                + `<div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:50%;background:#10b981;display:inline-block;"></span><span style="font-size:0.88rem;color:var(--text-2);"><b style="color:#10b981;font-size:1.1rem;">${cm.natl}</b> ${isEn ? 'intra-national' : 'antar-nasional'}</span></div>`
+                + `<div style="text-align:center;padding:0 12px;border-left:2px dashed var(--border);border-right:2px dashed var(--border);"><div style="font-size:2.2rem;font-weight:900;color:#ef4444;line-height:1;">${cm.cross}</div><div style="font-size:0.72rem;color:var(--text-4);line-height:1.3;margin-top:2px;">${isEn ? 'cross-jurisdiction' : 'lintas-yurisdiksi'}</div></div>`
+                + `<div style="display:flex;align-items:center;gap:8px;"><span style="width:14px;height:14px;border-radius:50%;background:#f59e0b;display:inline-block;"></span><span style="font-size:0.88rem;color:var(--text-2);"><b style="color:#f59e0b;font-size:1.1rem;">${cm.intl}</b> ${isEn ? 'intra-international' : 'antar-internasional'}</span></div>`
+                + `</div>`;
+            box.style.display = 'flex'; box.style.flexDirection = 'column';
+        }
+        const _svgWrap = graphId === 'cross' ? ['<div style="flex:1;min-height:0;overflow:hidden;">','</div>'] : ['',''];
+        box.innerHTML = _crossBnr + _svgWrap[0] + `<svg viewBox="0 0 ${VB} ${VB}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">`
+            + `<g class="cribbons">${ribbons}</g><g class="cbands">${bands}</g>${_crossAnn}</svg>` + _svgWrap[1];
         box.onclick = ev => {
             const el = ev.target.closest('[data-i]');
             if (el && (el.classList.contains('cband') || el.classList.contains('clabel'))) _chordSelect(graphId, +el.getAttribute('data-i'));
@@ -1621,6 +1830,24 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         _chordSelect(graphId, null);
         _chordLegend(graphId);
+        // Enhance legend for cross-jurisdiction with gap explanation
+        if (graphId === 'cross') {
+            const lg = document.getElementById('legend-cross');
+            if (lg) {
+                const s = (CITATIONS && CITATIONS.authority && CITATIONS.authority.summary) || {};
+                const intlN = (s.intl && s.intl.n_edges) || 0, natlN = (s.natl && s.natl.n_edges) || 0;
+                const crossN = (s.cross && s.cross.n_edges) || 0;
+                const crossColor = crossN ? '#f59e0b' : '#ef4444';
+                const gapNote = `<div style="width:100%;font-size:0.82rem;color:var(--text-3);line-height:1.6;margin:4px 0 8px;padding:10px 14px;background:var(--sunken);border-radius:8px;border-left:3px solid ${crossColor};">${isEn
+                    ? (crossN
+                        ? `<b>Near-gap finding:</b> Only <b>${crossN}</b> cross-jurisdiction citation link(s) found — compared to <b>${intlN}</b> intra-international and <b>${natlN}</b> intra-national in the same corpus. Indonesia's AI governance mostly aligns through <b>diffusion / borrowing</b>, with minimal formal cross-attribution.`
+                        : `<b>Gap finding:</b> No explicit citation links an Indonesian instrument to an international AI instrument (or vice-versa) — despite <b>${intlN}</b> intra-international and <b>${natlN}</b> intra-national citations in the same corpus. Indonesia's AI governance aligns through <b>diffusion / borrowing</b>, not formal attribution: a structural <b>citation gap</b>.`)
+                    : (crossN
+                        ? `<b>Temuan near-gap:</b> Hanya <b>${crossN}</b> tautan sitasi lintas-yurisdiksi ditemukan — dibandingkan <b>${intlN}</b> antar-internasional dan <b>${natlN}</b> antar-nasional di korpus yang sama. Tata kelola AI Indonesia sebagian besar selaras lewat <b>difusi / peminjaman</b>, dengan atribusi formal silang yang sangat minim.`
+                        : `<b>Temuan gap:</b> Tidak ada satu pun sitasi eksplisit yang menghubungkan instrumen Indonesia dengan instrumen AI internasional (atau sebaliknya) — padahal ada <b>${intlN}</b> sitasi antar-internasional dan <b>${natlN}</b> antar-nasional di korpus yang sama. Tata kelola AI Indonesia selaras lewat <b>difusi / peminjaman</b>, bukan atribusi formal: sebuah <b>gap sitasi</b> struktural.`)}</div>`;
+                lg.innerHTML = gapNote + lg.innerHTML;
+            }
+        }
     }
 
     // Cross-jurisdiction "gap finding" callout (shown when the cross chord is empty —
@@ -2835,15 +3062,64 @@ ${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — ny
         const stat = {};
         const ens = dk => stat[dk] || (stat[dk] = { doc: dk, in: 0, out: 0 });
         groupsHere.forEach(dk => ens(dk));
+
+        // For cross-jurisdiction: build jurisdiction lookup and only count cross-jurisdiction citations
+        const isCross = graphId === 'cross';
+        let _jurisMap = null;
+        if (isCross) {
+            _jurisMap = new Map();
+            const cov = _covByDoc();
+            groupsHere.forEach(dk => {
+                const j = (cov.get(dk) || {}).juris;
+                if (j) _jurisMap.set(dk, j);
+            });
+        }
+
         (pc.records || []).forEach(r => {
             if (!CROSS.has(r.kind) || r.cited_doc === r.source_doc) return;
+            // For cross-jurisdiction tab, only count citations that CROSS jurisdiction boundaries
+            if (isCross && _jurisMap) {
+                const srcJ = _jurisMap.get(r.source_doc), tgtJ = _jurisMap.get(r.cited_doc);
+                if (!srcJ || !tgtJ || srcJ === tgtJ) return;
+            }
             if (r.cited_doc && groupsHere.has(r.cited_doc)) ens(r.cited_doc).in++;
             if (groupsHere.has(r.source_doc)) ens(r.source_doc).out++;
         });
-        const rows = Object.values(stat).filter(c => groupsHere.has(c.doc));
+
+        // For cross-jurisdiction: also count from citation_authority.json edges (since provision_citations.json may not have the added edges)
+        if (isCross && CITATIONS && CITATIONS.authority) {
+            const authEdges = CITATIONS.authority.edges || [];
+            authEdges.forEach(e => {
+                const srcJ = _jurisMap.get(e.source), tgtJ = _jurisMap.get(e.target);
+                if (!srcJ || !tgtJ || srcJ === tgtJ) return;
+                // Avoid double counting if provision_citations already counted
+                const s = ens(e.source);
+                const t = ens(e.target);
+                if (s.out === 0) s.out = e.count || 1;
+                if (t.in === 0) t.in = e.count || 1;
+            });
+        }
+
+        let rows = Object.values(stat).filter(c => groupsHere.has(c.doc));
+        // For cross-jurisdiction: ONLY show instruments that have cross-jurisdiction connections
+        if (isCross) {
+            rows = rows.filter(c => c.in > 0 || c.out > 0);
+        }
         rows.forEach(c => c.role = (c.in === 0 && c.out === 0) ? 'isolated' : (c.in === 0 ? 'source' : (c.out === 0 ? 'sink' : 'both')));
         rows.sort((a, b) => (b.in - a.in) || (b.out - a.out));
-        if (!rows.length) { host.innerHTML = ''; return; }
+        if (!rows.length) {
+            if (isCross) host.innerHTML = `<div style="margin-top:1.25rem;padding:16px;background:var(--sunken);border-radius:8px;font-size:0.82rem;color:var(--text-3);text-align:center;">${isEn ? 'No instruments with cross-jurisdiction citations.' : 'Tidak ada instrumen dengan sitasi lintas-yurisdiksi.'}</div>`;
+            else host.innerHTML = '';
+            return;
+        }
+        // Jurisdiction badge for cross tab
+        const jurisBadge = (doc) => {
+            if (!isCross || !_jurisMap) return '';
+            const j = _jurisMap.get(doc);
+            if (j === 'NATL') return ' <span style="font-size:0.6rem;background:rgba(16,185,129,0.15);color:#10b981;padding:1px 5px;border-radius:8px;vertical-align:middle;">🇮🇩</span>';
+            if (j === 'INTL') return ' <span style="font-size:0.6rem;background:rgba(245,158,11,0.15);color:#f59e0b;padding:1px 5px;border-radius:8px;vertical-align:middle;">🌐</span>';
+            return '';
+        };
         const rb = {
             both: ['↔ dua arah', 'rgba(16,185,129,0.15)', 'var(--emerald,#10b981)'],
             source: ['→ menyitir', 'rgba(99,102,241,0.15)', 'var(--primary)'],
@@ -2859,16 +3135,22 @@ ${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — ny
                 ? `<button onclick="showCitationContext('${docEsc}','${dir}')" title="${dir === 'in' ? (isEn ? 'Show who cites this — verbatim passages' : 'Lihat siapa yang menyitir ini — cuplikan teks') : (isEn ? 'Show what this instrument cites — verbatim passages' : 'Lihat apa yang disitir instrumen ini — cuplikan teks')}" style="background:none;border:none;cursor:pointer;font-weight:700;color:${col};font-size:0.82rem;text-decoration:underline dotted;text-underline-offset:3px;padding:0;">${val}</button>`
                 : `<span style="color:var(--text-4);">0</span>`;
             return `<tr><td style="${td}color:var(--text-4);text-align:right;">${i + 1}</td>`
-                + `<td style="${td}"><b style="color:var(--text-1);">${_rEsc(_citeDoc(c.doc))}</b> <span onclick="showCitationContext('${docEsc}','all')" title="${isEn ? 'All pasal-level citations (full text)' : 'Semua sitiran antar-pasal (teks utuh)'}" style="cursor:pointer;font-size:0.82rem;opacity:0.7;">📖</span></td>`
+                + `<td style="${td}"><b style="color:var(--text-1);">${_rEsc(_citeDoc(c.doc))}</b>${jurisBadge(c.doc)} <span onclick="showCitationContext('${docEsc}','all')" title="${isEn ? 'All pasal-level citations (full text)' : 'Semua sitiran antar-pasal (teks utuh)'}" style="cursor:pointer;font-size:0.82rem;opacity:0.7;">📖</span></td>`
                 + `<td style="${td}text-align:right;">${clickBtn(c.in, 'in', 'var(--amber)')}</td>`
                 + `<td style="${td}text-align:right;">${clickBtn(c.out, 'out', 'var(--primary)')}</td>`
                 + `<td style="${td}text-align:center;"><span style="font-size:0.65rem;background:${b[1]};color:${b[2]};padding:1px 6px;border-radius:10px;">${b[0]}</span></td></tr>`;
         }).join('');
+        const titleText = isCross
+            ? (isEn ? 'Cross-Jurisdiction Citation Links' : 'Tautan Sitasi Lintas-Yurisdiksi')
+            : (isEn ? 'PRIMARY: Authority by explicit citation (instrument-level)' : 'PRIMER: Otoritas berdasarkan sitasi eksplisit (level instrumen)');
+        const descText = isCross
+            ? (isEn ? `Only instruments with at least one <b>cross-jurisdiction</b> citation (NATL↔INTL). ${rows.length} instrument(s) connected.` : `Hanya instrumen yang punya minimal satu sitasi <b>lintas-yurisdiksi</b> (NATL↔INTL). ${rows.length} instrumen terhubung.`)
+            : (isEn ? 'Ranked by how often each instrument is <b>cited</b> within the corpus — the defensible authority signal (explicit cross-citation, not textual similarity).' : 'Diurut dari seberapa sering tiap instrumen <b>disitir</b> di dalam korpus — sinyal otoritas yang defensible (sitasi-silang eksplisit, bukan kemiripan teks).');
         host.innerHTML = `<div style="margin-top:1.25rem;overflow-x:auto;">`
             + `<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><span class="material-symbols-rounded" style="color:var(--amber);font-size:18px;">verified</span>`
-            + `<strong style="font-family:'Outfit';color:var(--text-1);font-size:0.95rem;">${isEn ? 'PRIMARY: Authority by explicit citation (instrument-level)' : 'PRIMER: Otoritas berdasarkan sitasi eksplisit (level instrumen)'}</strong></div>`
-            + `<div style="font-size:0.78rem;color:var(--text-3);margin-bottom:8px;line-height:1.5;">${isEn ? 'Ranked by how often each instrument is <b>cited</b> within the corpus — the defensible authority signal (explicit cross-citation, not textual similarity).' : 'Diurut dari seberapa sering tiap instrumen <b>disitir</b> di dalam korpus — sinyal otoritas yang defensible (sitasi-silang eksplisit, bukan kemiripan teks).'}</div>`
-            + `<div style="font-size:0.72rem;color:var(--primary);margin-bottom:8px;display:flex;align-items:center;gap:5px;"><span class="material-symbols-rounded" style="font-size:14px;">touch_app</span><span>${isEn ? 'Tip: click a <b>Cited</b>/<b>Cites</b> number for the pasal passages behind it, or 📖 next to an instrument for <b>all</b> its pasal-level citations (full paragraph text).' : 'Tip: klik angka <b>Disitir</b>/<b>Menyitir</b> untuk cuplikan pasal di baliknya, atau 📖 di sebelah instrumen untuk <b>semua</b> sitiran antar-pasalnya (teks paragraf utuh).'}</span></div>`
+            + `<strong style="font-family:'Outfit';color:var(--text-1);font-size:0.95rem;">${titleText}</strong></div>`
+            + `<div style="font-size:0.78rem;color:var(--text-3);margin-bottom:8px;line-height:1.5;">${descText}</div>`
+            + (isCross ? '' : `<div style="font-size:0.72rem;color:var(--primary);margin-bottom:8px;display:flex;align-items:center;gap:5px;"><span class="material-symbols-rounded" style="font-size:14px;">touch_app</span><span>${isEn ? 'Tip: click a <b>Cited</b>/<b>Cites</b> number for the pasal passages behind it, or 📖 next to an instrument for <b>all</b> its pasal-level citations (full paragraph text).' : 'Tip: klik angka <b>Disitir</b>/<b>Menyitir</b> untuk cuplikan pasal di baliknya, atau 📖 di sebelah instrumen untuk <b>semua</b> sitiran antar-pasalnya (teks paragraf utuh).'}</span></div>`)
             + _exportBar('authrank-tbl-' + graphId, 'Ranking_Otoritas_Sitasi_' + graphId)
             + `<div id="authrank-tbl-${graphId}"><table style="width:100%;border-collapse:collapse;">`
             + `<thead><tr><th style="${th}text-align:right;">#</th><th style="${th}">${isEn ? 'Instrument' : 'Instrumen'}</th><th style="${th}text-align:right;">${isEn ? 'Cited (in)' : 'Disitir'}</th><th style="${th}text-align:right;">${isEn ? 'Cites (out)' : 'Menyitir'}</th><th style="${th}text-align:center;">${isEn ? 'Role' : 'Peran'}</th></tr></thead>`
