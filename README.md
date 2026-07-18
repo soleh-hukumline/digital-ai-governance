@@ -42,10 +42,16 @@ for the full change log and copy-paste manuscript text.
 - **Authority — by explicit citation, not text similarity.** Authority in this
   corpus is measured by the **citation network** (instrument-level, explicit
   cross-references in `data/network/citations.json`): in-degree counts how often an
-  instrument is *cited* by others. The hub is **UU ITE No.19/2016, cited 39×**,
-  followed by the **Council of Europe Framework Convention (CETS 225), 23×**. The
+  instrument is *cited* by others. The hub is **UU ITE No.19/2016, cited 39×**
+  (30 of them self-referential citations from its amendment UU 1/2024 to the
+  parent act), followed by **PP PSTE 71/2019, 6×**. *(An earlier count credited
+  CETS 225 with 23 citations; a matcher audit showed all 23 were false positives
+  on the generic string "Council of Europe" — 22 from affiliation lines in the
+  WHO 2021 guidance, which predates the Convention's adoption on 17 May 2024 —
+  and the matcher + `citations.json` have been corrected.)* The
   SBERT / force-directed map measures **semantic (textual) overlap**, which is
-  *exploratory* and inflates long soft-law documents (Stranas AI, WHO, SE Komdigi)
+  *exploratory* and inflates long soft-law documents (Stranas AI, WHO,
+  SE Menkominfo No. 9/2023 — the issuing ministry is now Komdigi)
   — it is **not** an authority signal. Authority = the citation network + the
   validation panel; SBERT degree centrality is secondary semantic context.
 - **Network metrics** (density, degree & betweenness centrality, components) via

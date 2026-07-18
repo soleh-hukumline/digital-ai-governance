@@ -25,8 +25,8 @@
       "title": "Degree: 3"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-      "label": "UU_PDP_No27_2022 - Pasal 6O",
+      "id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+      "label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 18,
@@ -1005,13 +1005,13 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "from": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "to": "CASE_inafis-polri-fingerprint-leak-2024",
       "label": "governs",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "from": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "to": "CASE_pln-customer-data-leak-2022",
       "label": "governs",
       "arrows": "to"

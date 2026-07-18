@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260617_1';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260718_1';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const SECTION_META = {
         'section-all': { icon: 'hub', title: 'Master Legal Network Analysis', sub: 'Semua jaringan regulasi · International + Nasional + Insiden' },
         'section-intl': { icon: 'public', title: 'Regulasi Internasional', sub: 'EU AI Act · OECD AI Principles · CETS225 · Thematic Cluster' },
-        'section-natl': { icon: 'account_balance', title: 'Regulasi Nasional Indonesia', sub: 'UU PDP · UU ITE · PP PSTE · POJK · UU Perdagangan' },
+        'section-natl': { icon: 'account_balance', title: 'Regulasi Nasional Indonesia', sub: 'UU PDP · UU ITE · PP PSTE · POJK · SE Komdigi · Stranas AI' },
         'section-cross': { icon: 'sync_alt', title: 'Intl vs Nasional · Cross-Jurisdiction', sub: 'Analisis gap sitasi lintas yurisdiksi · Peta dua kluster terputus (sitir-menyitir)' },
         'section-incident': { icon: 'gavel', title: 'Analisis Kasus Forensik', sub: 'Pemetaan 45 insiden ke regulasi · LLM-judge tervalidasi + tinjauan manusia · Asimetri Subjek & Gap AI-spesifik' },
         'section-sector': { icon: 'category', title: 'Analisis Kesenjangan Regulasi Per Sektor', sub: 'Coverage Empiris per Subjek Hukum · Pemetaan Regulasi (few-shot)' },
@@ -230,29 +230,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // THEMATIC CLUSTER EDGES (Intl-Intl)
     // Hardcoded based on academic thematic mapping of AI governance themes
     // ===================================================================
+    // NB: node OECD memakai skema id 'Bagian_N' (bukan 'Section_N'); mapping tema
+    // divalidasi 2026-07-18 terhadap teks verbatim provision_texts.json —
+    // Bagian 27=transparansi(1.3), 28=robustness/risiko(1.4), 29=akuntabilitas(1.5),
+    // 26=nilai human-centred(1.2), 32=agile policy/sandbox(2.3); CETS Art 8=transparansi&oversight,
+    // 9=akuntabilitas, 11=privasi/data, 16=kerangka manajemen risiko.
     const THEMATIC_INTL_EDGES = [
         // Theme: Transparency & Explainability
-        { from: 'EU_AI_Act_2024_Article_13', to: 'OECD_AI_Principles_2024_Section_1', theme: 'Transparansi & Eksplainabilitas' },
-        { from: 'EU_AI_Act_2024_Article_13', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_5', theme: 'Transparansi & Eksplainabilitas' },
+        { from: 'EU_AI_Act_2024_Article_13', to: 'OECD_AI_Principles_2024_Bagian_27', theme: 'Transparansi & Eksplainabilitas' },
+        { from: 'EU_AI_Act_2024_Article_13', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_8', theme: 'Transparansi & Eksplainabilitas' },
         // Theme: Risk Management
-        { from: 'EU_AI_Act_2024_Article_9', to: 'OECD_AI_Principles_2024_Section_2', theme: 'Manajemen Risiko' },
-        { from: 'EU_AI_Act_2024_Article_9', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_9', theme: 'Manajemen Risiko' },
-        { from: 'EU_AI_Act_2024_Article_6', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_6', theme: 'Manajemen Risiko' },
+        { from: 'EU_AI_Act_2024_Article_9', to: 'OECD_AI_Principles_2024_Bagian_28', theme: 'Manajemen Risiko' },
+        { from: 'EU_AI_Act_2024_Article_9', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_16', theme: 'Manajemen Risiko' },
+        { from: 'EU_AI_Act_2024_Article_6', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_16', theme: 'Manajemen Risiko' },
         // Theme: Human Oversight
-        { from: 'EU_AI_Act_2024_Article_14', to: 'OECD_AI_Principles_2024_Article_5', theme: 'Pengawasan Manusia' },
-        { from: 'EU_AI_Act_2024_Article_14', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_10', theme: 'Pengawasan Manusia' },
+        { from: 'EU_AI_Act_2024_Article_14', to: 'OECD_AI_Principles_2024_Bagian_26', theme: 'Pengawasan Manusia' },
+        { from: 'EU_AI_Act_2024_Article_14', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_8', theme: 'Pengawasan Manusia' },
         // Theme: Data Governance
         { from: 'EU_AI_Act_2024_Article_10', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_11', theme: 'Tata Kelola Data' },
         // Theme: Accountability
-        { from: 'EU_AI_Act_2024_Article_16', to: 'OECD_AI_Principles_2024_Section_2', theme: 'Akuntabilitas' },
-        { from: 'EU_AI_Act_2024_Article_16', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_8', theme: 'Akuntabilitas' },
-        // Theme: Prohibited Uses / High Risk
+        { from: 'EU_AI_Act_2024_Article_16', to: 'OECD_AI_Principles_2024_Bagian_29', theme: 'Akuntabilitas' },
+        { from: 'EU_AI_Act_2024_Article_16', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_9', theme: 'Akuntabilitas' },
+        // Theme: Prohibited Uses / High Risk (EU Art 5 practik terlarang ↔ CETS Art 5 integritas proses demokrasi — padanan parsial)
         { from: 'EU_AI_Act_2024_Article_5', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_5', theme: 'Larangan Penggunaan AI Berbahaya' },
-        { from: 'EU_AI_Act_2024_Article_26', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_7', theme: 'Kewajiban Penyedia AI' },
-        // Theme: Conformity & Certification
-        { from: 'EU_AI_Act_2024_Article_39', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_25', theme: 'Conformity & Sertifikasi' },
+        // Theme: Provider Obligations (EU Art 16 kewajiban penyedia ↔ CETS Art 8 transparansi & pengawasan)
+        { from: 'EU_AI_Act_2024_Article_16', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_8', theme: 'Kewajiban Penyedia AI' },
+        // Theme: Conformity & Certification (EU Art 43 penilaian kesesuaian ↔ CETS Art 16 kerangka manajemen risiko/dampak)
+        { from: 'EU_AI_Act_2024_Article_43', to: 'Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_16', theme: 'Conformity & Sertifikasi' },
         // Theme: Regulatory Sandbox
-        { from: 'EU_AI_Act_2024_Article_54', to: 'OECD_AI_Principles_2024_Section_1', theme: 'Regulatory Sandbox' },
+        { from: 'EU_AI_Act_2024_Article_57', to: 'OECD_AI_Principles_2024_Bagian_32', theme: 'Regulatory Sandbox' },
     ];
 
     const THEME_COLORS = {
@@ -1220,10 +1226,17 @@ document.addEventListener('DOMContentLoaded', () => {
         'UU_ITE_No19_2016 - Pasal 26': ['pse', 'konsumen'],
         'UU_ITE_No1_2024 - Pasal 27': ['pelaku'], 'UU_ITE_No1_2024 - Pasal 28': ['pelaku'],
         'UU_ITE_No1_2024 - Pasal 45A': ['pelaku'], 'UU_ITE_No1_2024 - Pasal 45B': ['pelaku'],
+        // audit 2026-07-18: Pasal 70 (dulu kunci OCR '7O') = pidana korporasi; Pasal 33 = kewajiban Pengendali
+        'UU_PDP_No27_2022 - Pasal 70': ['pelaku'],
+        'UU_PDP_No27_2022 - Pasal 33': ['pse'],
     };
-    const _REVIEW_RIGHTS = new Set(['5', '6', '6O', '7O', '8', '9', '13', '33'].map(n => `UU_PDP_No27_2022 - Pasal ${n}`));
+    // Hak Subjek Data Pribadi (UU PDP Ps. 5,6,8,9,10,11,13). Token OCR '6O'/'7O' dibuang
+    // (6O=Penjelasan Ps.60, 7O=Ps.70 pidana korporasi) & Ps.33 dibuang (kewajiban Pengendali,
+    // bukan hak) — lihat AUDIT_FIXES_TRACKER.md id=35. Peran Ps.70/33 dilengkapi saat reparasi OCR.
+    const _REVIEW_RIGHTS = new Set(['5', '6', '8', '9', '10', '11', '13'].map(n => `UU_PDP_No27_2022 - Pasal ${n}`));
     const _REVIEW_SOFT = /Stranas|SE_Komdigi|OECD|UNESCO|ASEAN|UNGA|ISO|WHO|G7|Global_Digital/i;
-    const _REVIEW_DEF = new Set(['UU_PDP_No27_2022 - Pasal 1O', 'UU_PDP_No27_2022 - Pasal 4']);
+    // Kunci 'Penjelasan Pasal 10/60' = hasil rename label OCR '1O'/'6O' (fix_ocr_labels.py)
+    const _REVIEW_DEF = new Set(['UU_PDP_No27_2022 - Penjelasan Pasal 10', 'UU_PDP_No27_2022 - Penjelasan Pasal 60', 'UU_PDP_No27_2022 - Pasal 4']);
     function _expectRoles(label) {
         if (_REVIEW_EXPECT[label]) return _REVIEW_EXPECT[label];
         if (_REVIEW_RIGHTS.has(label)) return ['konsumen'];
@@ -1918,7 +1931,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const _CITE_NAMES = {
         'UU_ITE_No1_2024': 'UU ITE 1/2024', 'UU_ITE_No19_2016': 'UU ITE 19/2016',
         'UU_PDP_No27_2022': 'UU PDP', 'PP_PSTE_No71_2019': 'PP PSTE',
-        'SE_Komdigi': 'SE Komdigi (Etika AI)', 'Stranas_AI': 'Stranas AI',
+        'SE_Komdigi': 'SE Menkominfo 9/2023 (Etika AI)', 'Stranas_AI': 'Stranas AI',
         'WHO_Ethics': 'WHO AI for Health', 'OECD_AI_Principles': 'OECD AI Principles',
         'UNESCO_Recommendation': 'UNESCO AI Ethics', 'ASEAN_Guide': 'ASEAN AI Guide',
         'G7_Hiroshima': 'G7 Hiroshima CoC', 'ISO_IEC_42001': 'ISO/IEC 42001',
@@ -2079,8 +2092,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const note = `<div style="font-size:0.82rem;color:var(--text-3);line-height:1.55;margin-bottom:12px;background:var(--sunken);padding:10px 12px;border-radius:8px;border-left:3px solid var(--primary);">`
             + (isEn
-                ? `<b>Defensible links.</b> Unlike the SBERT chord (descriptive semantic overlap), these are <b>explicit citations</b> — a document naming a regulation by number (<i>"Nomor 3 Tahun 2021"</i>) or instrument name (<i>"G20 AI Principles", "OECD", "EU AI Act"</i>). For guidance/soft-law this is the rigorous link. <b>${named}</b> by-name + <b>${edges.length - named}</b> by-number references.`
-                : `<b>Tautan defensible.</b> Berbeda dari chord SBERT (tumpang-tindih semantik, deskriptif), ini <b>sitasi eksplisit</b> — dokumen menyebut regulasi lewat nomor (<i>"Nomor 3 Tahun 2021"</i>) atau nama instrumen (<i>"G20 AI Principles", "OECD", "EU AI Act"</i>). Untuk pedoman/soft-law inilah tautan yang sahih. <b>${named}</b> rujukan by-name + <b>${edges.length - named}</b> by-number.`)
+                ? `<b>Defensible links.</b> Unlike the SBERT chord (descriptive semantic overlap), these are <b>explicit citations</b> — a document naming a regulation by number (<i>"Nomor 27 Tahun 2022"</i>) or instrument name (<i>"G20 AI Principles", "OECD", "EU AI Act"</i>). For guidance/soft-law this is the rigorous link. <b>${named}</b> by-name + <b>${edges.length - named}</b> by-number references.`
+                : `<b>Tautan defensible.</b> Berbeda dari chord SBERT (tumpang-tindih semantik, deskriptif), ini <b>sitasi eksplisit</b> — dokumen menyebut regulasi lewat nomor (<i>"Nomor 27 Tahun 2022"</i>) atau nama instrumen (<i>"G20 AI Principles", "OECD", "EU AI Act"</i>). Untuk pedoman/soft-law inilah tautan yang sahih. <b>${named}</b> rujukan by-name + <b>${edges.length - named}</b> by-number.`)
             + `<br><b style="color:var(--text-2);">${isEn ? 'Completeness signal' : 'Sinyal kelengkapan'}:</b> `
             + (isEn
                 ? `the most-cited references that are NOT themselves in the corpus are <b>${topExt}</b> (Table B) — instruments the analysis may need to include.`
@@ -2204,63 +2217,63 @@ document.addEventListener('DOMContentLoaded', () => {
     const COMPLIANCE_RULE_DB = {
         fintech: {
             recommendation: [
-                { status: 'covered', title: 'UU PDP Ps. 16-23 (Prinsip Pemrosesan Data)', desc: 'Pemrosesan data nasabah wajib memiliki dasar hukum yang sah. Relevan untuk setiap pemrosesan data oleh AI.', recom: 'Pastikan data nasabah yang diproses AI memiliki dasar hukum eksplisit (persetujuan/kontrak/kewajiban hukum).' },
-                { status: 'partial', title: 'POJK 11/2022 Manajemen Risiko TI', desc: 'Mengatur manajemen risiko teknologi informasi perbankan. Berlaku namun tidak spesifik untuk AI.', recom: 'Interpretasikan ketentuan "sistem yang berdampak material" sebagai mencakup model AI Anda.' },
-                { status: 'partial', title: 'POJK 77/2016 Peer-to-Peer Lending', desc: 'Berlaku untuk fintech lending. Tidak mengatur algoritma credit scoring secara spesifik.', recom: 'Dokumentasikan metodologi credit scoring sebagai bagian dari prosedur operasional yang wajib dilaporkan.' },
-                { status: 'gap', title: '⚠️ Sandbox Regulasi AI Keuangan', desc: 'BELUM ADA regulasi yang memungkinkan pengujian inovasi AI keuangan dalam lingkungan terkontrol.', recom: 'Advokasikan ke OJK untuk framework sandbox AI. Sementara itu, lakukan self-governance dan dokumentasi uji coba.' },
+                { status: 'covered', title: 'UU PDP Ps. 16-23 (Prinsip Pemrosesan Data)', prov: ['UU_PDP_No27_2022 - Pasal 16', 'UU_PDP_No27_2022 - Pasal 23'], verify: ['pemrosesan'], desc: 'Pemrosesan data nasabah wajib memiliki dasar hukum yang sah. Relevan untuk setiap pemrosesan data oleh AI.', recom: 'Pastikan data nasabah yang diproses AI memiliki dasar hukum eksplisit (persetujuan/kontrak/kewajiban hukum).' },
+                { status: 'partial', title: 'POJK 11/POJK.03/2022 Penyelenggaraan TI Bank Umum', ext: 'POJK 11/POJK.03/2022, mencabut POJK 38/POJK.03/2016; sumber: ojk.go.id — di luar korpus verbatim', desc: 'Mengatur penyelenggaraan teknologi informasi oleh bank umum termasuk manajemen risiko TI dan keamanan siber (menggantikan POJK 38/POJK.03/2016). Berlaku untuk bank umum — untuk LJK nonbank berlaku POJK 4/POJK.05/2021 — dan tidak spesifik untuk AI.', recom: 'Interpretasikan ketentuan "sistem yang berdampak material" sebagai mencakup model AI Anda.' },
+                { status: 'partial', title: 'POJK 40/2024 LPBBTI (Fintech Lending)', ext: 'POJK 40/2024 mencabut POJK 77/2016 (via POJK 10/2022); sumber: ojk.go.id — di luar korpus verbatim', desc: 'Menggantikan POJK 77/2016 (dicabut via POJK 10/2022, lalu POJK 40/2024). Berlaku untuk fintech lending; tetap tidak mengatur algoritma credit scoring secara spesifik.', recom: 'Dokumentasikan metodologi credit scoring sebagai bagian dari prosedur operasional yang wajib dilaporkan.' },
+                { status: 'gap', title: '⚠️ Sandbox AI-Spesifik Sektor Keuangan', desc: 'POJK 3/2024 menyediakan Regulatory Sandbox sektor keuangan (Pasal 6–11), tetapi BELUM ADA ketentuan sandbox yang spesifik untuk inovasi berbasis AI.', recom: 'Manfaatkan Sandbox POJK 3/2024 untuk uji coba; advokasikan ke OJK untuk kerangka sandbox AI-spesifik.' },
                 { status: 'gap', title: '⚠️ Kewajiban Audit Bias Algoritma', desc: 'BELUM ADA kewajiban hukum untuk mengaudit bias dalam model credit scoring.', recom: 'Lakukan internal bias audit secara berkala. Persiapkan dokumentasi untuk kemungkinan regulasi mendatang.' },
             ]
         },
         facial: {
             recommendation: [
-                { status: 'partial', title: 'UU PDP Ps. 26 (Data Biometrik Sensitif)', desc: 'Data wajah dikategorikan sebagai data sensitif berdasarkan UU PDP. Membutuhkan izin eksplisit.', recom: 'Dapatkan persetujuan eksplisit tertulis sebelum mengumpulkan dan memproses data wajah.' },
-                { status: 'partial', title: 'PP PSTE 71/2019 Ps. 28 (Keamanan SE)', desc: 'Sistem elektronik wajib memenuhi standar keamanan. Berlaku untuk sistem FR sebagai PSE.', recom: 'Implementasikan enkripsi data biometrik at-rest dan in-transit, lakukan security audit berkala.' },
+                { status: 'partial', title: 'UU PDP Ps. 4(2)(b) (Data Biometrik = Data Spesifik)', prov: ['UU_PDP_No27_2022 - Pasal 4', 'UU_PDP_No27_2022 - Pasal 20', 'UU_PDP_No27_2022 - Pasal 34'], verify: ['biometrik'], desc: 'Data wajah termasuk data biometrik yang dikategorikan sebagai Data Pribadi bersifat spesifik (Pasal 4 ayat (2) huruf b UU PDP). Pemrosesan berbasis persetujuan wajib memakai persetujuan yang sah secara eksplisit (Pasal 20 ayat (2) huruf a) dan penilaian dampak karena berisiko tinggi (Pasal 34).', recom: 'Dapatkan persetujuan eksplisit tertulis sebelum mengumpulkan dan memproses data wajah; lakukan DPIA.' },
+                { status: 'partial', title: 'PP PSTE 71/2019 Ps. 23-24 (Pengamanan SE)', prov: ['PP_PSTE_No71_2019 - Pasal 23', 'PP_PSTE_No71_2019 - Pasal 24'], verify: ['pengamanan'], desc: 'PSE wajib mengamankan komponen sistem elektronik serta memiliki prosedur dan sarana pengamanan untuk mencegah gangguan, kegagalan, dan kerugian. Berlaku untuk sistem FR sebagai PSE.', recom: 'Implementasikan enkripsi data biometrik at-rest dan in-transit, lakukan security audit berkala.' },
                 { status: 'gap', title: '⚠️ Izin Penggunaan FR di Ruang Publik', desc: 'BELUM ADA regulasi yang mengatur penggunaan facial recognition di ruang publik.', recom: 'Adopsi prinsip "Privacy by Design" secara sukarela. Hindari penggunaan FR untuk mass surveillance.' },
                 { status: 'gap', title: '⚠️ Standar Akurasi & Anti-Bias FR', desc: 'BELUM ADA standar teknis akurasi dan anti-diskriminasi untuk sistem FR di Indonesia.', recom: 'Patuhi standar internasional (NIST Face Recognition Vendor Test). Uji akurasi untuk semua kelompok demografis.' },
             ]
         },
         ecommerce: {
             recommendation: [
-                { status: 'covered', title: 'UU Perdagangan Ps. 65 (Informasi Produk)', desc: 'Wajib memberikan informasi produk yang benar dalam transaksi elektronik.', recom: 'Pastikan rekomendasi AI tidak menyesatkan konsumen tentang kualitas atau harga produk.' },
-                { status: 'partial', title: 'UU Perlindungan Konsumen Ps. 7', desc: 'Pelaku usaha wajib memberikan informasi yang benar, jelas, dan jujur.', recom: 'Interpretasikan sebagai kewajiban transparansi minimal tentang cara kerja sistem rekomendasi Anda.' },
+                { status: 'covered', title: 'UU Perdagangan Ps. 65 (Informasi Produk)', ext: 'UU 7/2014 tentang Perdagangan Pasal 65; di luar korpus verbatim', desc: 'Wajib memberikan informasi produk yang benar dalam transaksi elektronik.', recom: 'Pastikan rekomendasi AI tidak menyesatkan konsumen tentang kualitas atau harga produk.' },
+                { status: 'partial', title: 'UU Perlindungan Konsumen Ps. 7', ext: 'UU 8/1999 tentang Perlindungan Konsumen Pasal 7; di luar korpus verbatim', desc: 'Pelaku usaha wajib memberikan informasi yang benar, jelas, dan jujur.', recom: 'Interpretasikan sebagai kewajiban transparansi minimal tentang cara kerja sistem rekomendasi Anda.' },
                 { status: 'gap', title: '⚠️ Kewajiban Transparansi Algoritma Ranking', desc: 'BELUM ADA kewajiban mengungkap faktor penentu ranking produk kepada merchant.', recom: 'Terapkan prinsip transparency secara sukarela: informasikan merchant tentang faktor yang mempengaruhi ranking.' },
                 { status: 'gap', title: '⚠️ Larangan Self-Preferencing', desc: 'BELUM ADA regulasi yang melarang platform memprioritaskan produknya sendiri di algoritma.', recom: 'Siapkan dokumentasi untuk membuktikan netralitas algoritma. Kembangkan mekanisme naik banding merchant.' },
             ]
         },
         content: {
             recommendation: [
-                { status: 'partial', title: 'UU ITE Ps. 27A (Konten Asusila)', desc: 'Melarang konten asusila. Berlaku untuk deepfake asusila namun sulit pembuktiannya.', recom: 'Implementasikan content moderation aktif dan mekanisme pelaporan konten deepfake non-konsensual.' },
-                { status: 'partial', title: 'UU ITE Ps. 28 (Informasi Bohong)', desc: 'Melarang penyebaran informasi bohong. Dapat diterapkan pada deepfake politik.', recom: 'Terapkan sistem deteksi otomatis konten deepfake dan label mandatory pada konten AI.' },
-                { status: 'covered', title: 'UU Hak Cipta Ps. 9 (Hak Ekonomi)', desc: 'Melindungi karya cipta. Konten AI yang menggunakan dataset berhak cipta harus diperhatikan.', recom: 'Pastikan tidak menggunakan data berhak cipta untuk training tanpa lisensi yang tepat.' },
+                { status: 'partial', title: 'UU ITE Ps. 27 ayat (1) (Konten Melanggar Kesusilaan)', prov: ['UU_ITE_No1_2024 - Pasal 27', 'UU_ITE_No1_2024 - Pasal 45'], verify: ['kesusilaan'], desc: 'Pasal 27 ayat (1) UU ITE (sttd UU 1/2024) jo. Pasal 45 ayat (1) melarang penyebaran konten yang melanggar kesusilaan; dapat menjangkau deepfake asusila. Untuk deepfake seksual nonkonsensual lihat juga Pasal 14 UU 12/2022 (TPKS). Catatan: Pasal 27A mengatur pencemaran nama baik, bukan asusila.', recom: 'Implementasikan content moderation aktif dan mekanisme pelaporan konten deepfake non-konsensual.' },
+                { status: 'partial', title: 'UU ITE Ps. 28 ayat (3) (Pemberitahuan Bohong)', prov: ['UU_ITE_No1_2024 - Pasal 28', 'UU_ITE_No1_2024 - Pasal 45A'], verify: ['bohong'], desc: 'Pasal 28 ayat (3) UU ITE (sttd UU 1/2024) jo. Pasal 45A melarang penyebaran pemberitahuan bohong yang menimbulkan kerusuhan — dasar untuk deepfake politik; ayat (1) hanya mencakup informasi bohong yang merugikan konsumen dalam transaksi elektronik.', recom: 'Terapkan sistem deteksi otomatis konten deepfake dan label mandatory pada konten AI.' },
+                { status: 'covered', title: 'UU Hak Cipta Ps. 9 (Hak Ekonomi)', ext: 'UU 28/2014 tentang Hak Cipta Pasal 9; di luar korpus verbatim', desc: 'Melindungi karya cipta. Konten AI yang menggunakan dataset berhak cipta harus diperhatikan.', recom: 'Pastikan tidak menggunakan data berhak cipta untuk training tanpa lisensi yang tepat.' },
                 { status: 'gap', title: '⚠️ Kewajiban Label/Watermark Konten AI', desc: 'BELUM ADA kewajiban hukum pelabelan konten yang dihasilkan AI.', recom: 'Terapkan watermark/metadata secara sukarela. Ikuti standar C2PA (Coalition for Content Provenance).' },
                 { status: 'gap', title: '⚠️ Akuntabilitas Penyedia Model Generatif', desc: 'BELUM ADA regulasi yang menetapkan tanggung jawab penyedia model AI atas konten berbahaya.', recom: 'Implementasikan usage policy yang ketat dan mekanisme take-down dalam 24 jam.' },
             ]
         },
         judicial: {
             recommendation: [
-                { status: 'covered', title: 'UU Kekuasaan Kehakiman Ps. 1 (Kekuasaan Yudisial)', desc: 'Kekuasaan kehakiman tetap pada hakim. AI tidak dapat menggantikan keputusan hakim.', recom: 'AI harus diposisikan sebagai alat bantu non-determinatif. Hakim wajib memiliki reasoning independen.' },
-                { status: 'partial', title: 'KUHAP Ps. 183 (Standar Pembuktian)', desc: 'Standar pembuktian pidana minimum 2 alat bukti. Status bukti AI belum diatur.', recom: 'Dokumentasikan validitas dan reliabilitas model AI yang digunakan sebagai referensi. Tidak dijadikan satu-satunya bukti.' },
+                { status: 'covered', title: 'UU Kekuasaan Kehakiman Ps. 1 & 19', ext: 'UU 48/2009 Pasal 1 angka 1 & Pasal 19; di luar korpus verbatim', desc: 'Kekuasaan kehakiman adalah kekuasaan negara yang merdeka (Pasal 1 angka 1) dan dijalankan oleh hakim sebagai pejabat negara (Pasal 19 dst.). AI tidak dapat menggantikan keputusan hakim.', recom: 'AI harus diposisikan sebagai alat bantu non-determinatif. Hakim wajib memiliki reasoning independen.' },
+                { status: 'partial', title: 'KUHAP Ps. 183 (Standar Pembuktian)', ext: 'KUHAP (UU 8/1981) Pasal 183; di luar korpus verbatim', desc: 'Standar pembuktian pidana minimum 2 alat bukti. Status bukti AI belum diatur.', recom: 'Dokumentasikan validitas dan reliabilitas model AI yang digunakan sebagai referensi. Tidak dijadikan satu-satunya bukti.' },
                 { status: 'gap', title: '⚠️ Regulasi AI di Peradilan', desc: 'BELUM ADA regulasi yang secara eksplisit mengatur penggunaan AI dalam proses peradilan.', recom: 'Ikuti prinsip Mahkamah Agung tentang transparansi putusan. Dokumentasikan setiap penggunaan alat AI.' },
                 { status: 'gap', title: '⚠️ Hak Terdakwa atas Informasi AI', desc: 'BELUM ADA hak eksplisit terdakwa untuk mengetahui bagaimana AI menilai kasusnya.', recom: 'Terapkan prinsip explainability wajib kepada pihak yang terdampak keputusan AI.' },
             ]
         },
         health: {
             recommendation: [
-                { status: 'covered', title: 'UU Kesehatan No. 17/2023', desc: 'Mengatur standar layanan kesehatan. AI diagnostik wajib memenuhi standar klinis.', recom: 'Pastikan AI diagnostik mendapat persetujuan Kemenkes dan memiliki evidence klinis yang memadai.' },
-                { status: 'partial', title: 'UU PDP Ps. 26 (Data Kesehatan Sensitif)', desc: 'Data kesehatan adalah data sensitif yang memerlukan perlindungan khusus.', recom: 'Terapkan enkripsi penuh dan akses kontrol ketat untuk data kesehatan yang diproses AI.' },
+                { status: 'covered', title: 'UU Kesehatan No. 17/2023', ext: 'UU 17/2023 tentang Kesehatan; di luar korpus verbatim', desc: 'Mengatur standar layanan kesehatan. AI diagnostik wajib memenuhi standar klinis.', recom: 'Pastikan AI diagnostik mendapat persetujuan Kemenkes dan memiliki evidence klinis yang memadai.' },
+                { status: 'partial', title: 'UU PDP Ps. 4(2)(a) (Data Kesehatan = Data Spesifik)', prov: ['UU_PDP_No27_2022 - Pasal 4', 'UU_PDP_No27_2022 - Pasal 34'], verify: ['kesehatan'], desc: 'Data dan informasi kesehatan dikategorikan sebagai Data Pribadi bersifat spesifik (Pasal 4 ayat (2) huruf a UU PDP); pemrosesannya berisiko tinggi sehingga wajib penilaian dampak pelindungan data pribadi (Pasal 34).', recom: 'Terapkan enkripsi penuh dan kontrol akses ketat; lakukan DPIA untuk data kesehatan yang diproses AI.' },
                 { status: 'gap', title: '⚠️ Regulasi AI Diagnostik Medis', desc: 'BELUM ADA regulasi khusus untuk AI yang digunakan dalam diagnosis medis di Indonesia.', recom: 'Ikuti standar internasional FDA AI/ML-Based Software for Medical Devices. Dokumentasikan validasi klinis.' },
             ]
         },
         government: {
             recommendation: [
-                { status: 'covered', title: 'Perpres 95/2018 SPBE', desc: 'Kerangka Sistem Pemerintahan Berbasis Elektronik. Berlaku untuk semua sistem AI pemerintah.', recom: 'Pastikan sistem AI terdaftar dan diaudit sebagai bagian dari infrastruktur SPBE.' },
-                { status: 'partial', title: 'UU PDP (Pemerintah sebagai Pengendali Data)', desc: 'Pemerintah sebagai PSE publik wajib mematuhi UU PDP dalam pemrosesan data warga.', recom: 'Tunjuk Data Protection Officer (DPO) dan lakukan Data Protection Impact Assessment (DPIA) untuk setiap sistem AI baru.' },
+                { status: 'covered', title: 'Perpres 95/2018 SPBE', ext: 'Perpres 95/2018 tentang Sistem Pemerintahan Berbasis Elektronik; di luar korpus verbatim', desc: 'Kerangka Sistem Pemerintahan Berbasis Elektronik. Berlaku untuk semua sistem AI pemerintah.', recom: 'Pastikan sistem AI terdaftar dan diaudit sebagai bagian dari infrastruktur SPBE.' },
+                { status: 'partial', title: 'UU PDP Ps. 2, 34 & 53 (Pemerintah sebagai Badan Publik)', prov: ['UU_PDP_No27_2022 - Pasal 2', 'UU_PDP_No27_2022 - Pasal 34', 'UU_PDP_No27_2022 - Pasal 53'], verify: ['Badan Publik'], desc: 'Pemerintah sebagai Badan Publik tunduk pada UU PDP (Pasal 2 ayat (1)) dalam pemrosesan data warga.', recom: 'Tunjuk pejabat/petugas fungsi Pelindungan Data Pribadi (DPO) sesuai Pasal 53 ayat (1) huruf a dan lakukan penilaian dampak pelindungan data pribadi (DPIA, Pasal 34) untuk setiap sistem AI baru yang berisiko tinggi.' },
                 { status: 'gap', title: '⚠️ Panduan Pengadaan AI Pemerintah', desc: 'BELUM ADA panduan khusus pengadaan dan evaluasi sistem AI untuk instansi pemerintah.', recom: 'Gunakan OECD AI Procurement Checklist sebagai referensi sementara. Dorong BRIN/Kemkominfo untuk menerbitkan panduan.' },
             ]
         },
         other: {
             recommendation: [
-                { status: 'partial', title: 'UU PDP (Prinsip Umum)', desc: 'UU PDP berlaku untuk semua pemroses data pribadi di Indonesia tanpa terkecuali.', recom: 'Identifikasi semua data pribadi yang diproses oleh sistem AI Anda dan pastikan memiliki dasar hukum yang sah.' },
+                { status: 'partial', title: 'UU PDP Ps. 2 (Ruang Lingkup)', prov: ['UU_PDP_No27_2022 - Pasal 2'], verify: ['Badan Publik'], desc: 'UU PDP berlaku untuk Setiap Orang, Badan Publik, dan Organisasi Internasional yang memproses data pribadi, termasuk efek ekstrateritorial (Pasal 2 ayat (1)), dengan pengecualian pemrosesan oleh orang perseorangan dalam kegiatan pribadi atau rumah tangga (Pasal 2 ayat (2)).', recom: 'Identifikasi semua data pribadi yang diproses oleh sistem AI Anda dan pastikan memiliki dasar hukum yang sah.' },
                 { status: 'partial', title: 'UU ITE (Sistem Elektronik)', desc: 'Jika sistem AI dioperasikan sebagai PSE, wajib tunduk pada PP PSTE dan UU ITE.', recom: 'Daftarkan sistem AI sebagai PSE jika melayani publik melalui sistem elektronik.' },
                 { status: 'gap', title: '⚠️ Regulasi AI Sektoral Spesifik', desc: 'Belum ada regulasi AI horizontal yang mencakup semua sektor di Indonesia.', recom: 'Pantau perkembangan regulasi melalui BRIN, Kominfo, dan Kemenko. Terapkan prinsip-prinsip OECD AI secara sukarela.' },
             ]
@@ -2353,7 +2366,15 @@ document.addEventListener('DOMContentLoaded', () => {
             automation: 'Otomasi Proses'
         };
 
-        const prompt = `Anda adalah konsultan hukum AI senior yang membantu praktisi di Indonesia mematuhi regulasi yang berlaku. 
+        // Grounding (audit 2026-07-18): resolve kunci prov tiap entri ke teks pasal
+        // VERBATIM — pola yang sama dengan tab Toulmin — supaya LLM tidak pernah
+        // mengelaborasi peta kurasi menjadi ayat/huruf yang tidak ada.
+        const PT = await _ensureProvisionTexts();
+        const ruleList = JSON.parse(rules);
+        const provKeys = [...new Set(ruleList.flatMap(r => r.prov || []))];
+        const verbatim = provKeys.map(k => `[${k}]: ${(PT[k] || 'TEKS TIDAK TERSEDIA').slice(0, 700)}`).join('\n\n');
+
+        const prompt = `Anda adalah konsultan hukum AI senior yang membantu praktisi di Indonesia mematuhi regulasi yang berlaku.
 Yang dimaksud "praktisi" dalam konteks ini mencakup kolaborasi DUA PIHAK sekaligus: Praktisi Hukum (Legal/Compliance) dan Praktisi Teknologi (Developer/Engineer) yang selalu berpusat pada keamanan dan hak pengguna.
 
 Klien memiliki profil berikut:
@@ -2361,8 +2382,13 @@ Klien memiliki profil berikut:
 - **Jenis AI:** ${aiTypeNames[aiType] || aiType}
 - **Deskripsi Aktivitas:** ${desc || '(tidak dideskripsikan)'}
 
-**Peta regulasi yang berlaku (dari sistem LNA):**
-${JSON.parse(rules).map(r => `- [${r.status.toUpperCase()}] ${r.title}: ${r.desc}`).join('\n')}
+**Peta regulasi (kurasi manual tervalidasi; entri "ext" merujuk regulasi di luar korpus verbatim):**
+${ruleList.map(r => `- [${r.status.toUpperCase()}] ${r.title}: ${r.desc}`).join('\n')}
+
+**TEKS PASAL VERBATIM (satu-satunya dasar sitasi pasal — hasil OCR PDF resmi):**
+${verbatim || '(tidak ada pasal korpus untuk sektor ini — gunakan peta di atas pada tingkat regulasi saja)'}
+
+**ATURAN SITASI (WAJIB):** Kutip pasal HANYA yang tercantum pada teks verbatim di atas atau pada judul peta. JANGAN mengarang atau menyimpulkan ayat/huruf yang tidak terlihat eksplisit dalam teks verbatim — bila struktur internal pasal tidak terbaca jelas, kutip pada tingkat pasal saja (mis. "Pasal 4 UU PDP", bukan "Pasal 4 ayat (2) huruf b") .
 
 Berikan **Panduan Kepatuhan Konkret** dalam format berikut:
 
@@ -3537,7 +3563,7 @@ ${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — ny
             `Q=${Q.toFixed(3)} → modularitas klaster pada graf kemiripan SBERT (deskriptif, bukan klaim kegagalan kebijakan)`));
         lines.push(row('Node Terisolasi Semantik', isolated.length,
             `${isolated.length} pasal tanpa pasal lain yang mirip teks (isolasi SBERT)`,
-            'Isolasi SEMANTIK (SBERT) — BUKAN vakum hukum; cakupan hukum riil = lapisan sitasi/judge (UU ITE 19/2016 disitir 39×)'));
+            'Isolasi SEMANTIK (SBERT) — BUKAN vakum hukum; cakupan hukum riil = lapisan sitasi/judge tervalidasi (UU ITE 19/2016 disitir 5× oleh 3 instrumen; angka mentah 39× pada instrument-scan lama termasuk 30 sitiran-diri dari UU 1/2024 dan tidak dipakai lagi)'));
         lines.push(row('Max Degree', Math.max(...nodes.map(nd => degMap[nd.id])),
             'Didominasi lex generalis — satu/beberapa pasal menanggung semua kasus',
             'Rechtsvinding terpaksa leapfrog ke pasal generalis tanpa dasar AI spesifik'));
@@ -3545,7 +3571,7 @@ ${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — ny
 
         // ── SECTION C: DEGREE CENTRALITY — NORMA DOMINAN ────────────────
         lines.push(row('=== BAGIAN 2: SENTRALITAS SEMANTIK SBERT (eksploratif — BUKAN otoritas) ==='));
-        lines.push(row('Keterangan: DC = degree(v)/(n-1) pada graf KEMIRIPAN SBERT = berapa pasal lain yang mirip teks. Ini ukuran tumpang-tindih SEMANTIK (deskriptif), BUKAN otoritas hukum. Soft-law panjang berskor tinggi karena banyak bagian generik. Otoritas riil = lapisan sitasi (UU ITE 19/2016 disitir 39×).'));
+        lines.push(row('Keterangan: DC = degree(v)/(n-1) pada graf KEMIRIPAN SBERT = berapa pasal lain yang mirip teks. Ini ukuran tumpang-tindih SEMANTIK (deskriptif), BUKAN otoritas hukum. Soft-law panjang berskor tinggi karena banyak bagian generik. Otoritas riil = lapisan sitasi tervalidasi (UU ITE 19/2016 = otoritas puncak nasional, disitir 5× oleh 3 instrumen; bukan angka mentah 39× dari instrument-scan lama yang didominasi sitiran-diri UU 1/2024).'));
         lines.push(sep());
         lines.push(row('Rank', 'Kode Pasal/Norma', 'Label Lengkap', 'Klaster/Regulasi', 'Klasifikasi', 'Degree', 'DC Score (0-1)', 'Status (SBERT)', 'Catatan (eksploratif)', 'Terhubung Ke'));
         sorted_dc.slice(0, Math.min(50, nodes.length)).forEach((nd, i) => {

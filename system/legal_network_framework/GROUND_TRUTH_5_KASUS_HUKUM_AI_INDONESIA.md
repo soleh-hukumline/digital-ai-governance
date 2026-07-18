@@ -111,7 +111,7 @@ Aplikasi pinjaman online (P2P lending) — terutama **ilegal** — memanen data 
 
 ### Dasar Hukum & Bedah Pasal (terkoreksi — UU No. 27 Tahun 2022, UU PDP)
 - 🔴 KOREKSI FATAL: Hak menolak keputusan yang **hanya** didasarkan pemrosesan otomatis (termasuk *profiling*) ada di **Pasal 10**, **BUKAN Pasal 37**.
-  - **Pasal 10:** *"Subjek Data Pribadi berhak untuk mengajukan keberatan atas tindakan pengambilan keputusan yang hanya didasarkan pada pemrosesan secara otomatis, termasuk pemrofilan, yang menimbulkan akibat hukum atau berdampak signifikan terhadap Subjek Data Pribadi."* (Hak-hak subjek data ada di **Pasal 5–13**.)
+  - **Pasal 10 ayat (1):** *"Subjek Data Pribadi berhak untuk mengajukan keberatan atas tindakan pengambilan keputusan yang hanya didasarkan pada pemrosesan secara otomatis, termasuk pemrofilan, yang menimbulkan akibat hukum atau berdampak signifikan pada Subjek Data Pribadi."* (Hak-hak subjek data ada di **Pasal 5–13**.)
   - ❌ **Pasal 37 mengatur hal lain**: kewajiban *Pengendali Data Pribadi* mengawasi setiap pihak yang terlibat dalam pemrosesan di bawah kendalinya — **bukan** hak menolak ADM.
 - ✅ **Pasal 65 ayat (1) jo. Pasal 67 ayat (1) UU PDP** — **benar/tepat**:
   - **Pasal 65 ayat (1):** larangan **memperoleh/mengumpulkan** data pribadi orang lain secara melawan hukum untuk menguntungkan diri/orang lain yang merugikan subjek data.
@@ -153,7 +153,7 @@ Kerugian konsumen masif dari platform "robot trading" (Fahrenheit, Net89, DNA Pr
 
 ### Sumber (terkoreksi)
 - ❌ "Kajian Premium Hukumonline Pro: Aspek Hukum Tanggung Gugat Penyedia Layanan Robo-Advisor" **tidak ditemukan/fiktif**. Gunakan sumber nyata:
-  - Kerangka OJK: **POJK No. 22 Tahun 2023** (Perlindungan Konsumen Sektor Jasa Keuangan); robo-advisor beroperasi di bawah lisensi **APERD**. <https://ojk.go.id/id/regulasi/Pages/POJK-tentang-Perlindungan-Konsumen-Sektor-Jasa-Keuangan.aspx>
+  - Kerangka OJK: **POJK No. 22 Tahun 2023 tentang Pelindungan Konsumen dan Masyarakat di Sektor Jasa Keuangan** (berlaku sejak 22 Desember 2023, menggantikan POJK No. 6/POJK.07/2022); robo-advisor beroperasi di bawah lisensi **APERD** (Agen Penjual Efek Reksa Dana). <https://ojk.go.id/id/regulasi/Pages/POJK-tentang-Perlindungan-Konsumen-Sektor-Jasa-Keuangan.aspx>
   - Edmon Makarim, *Tanggung Jawab Hukum Penyelenggara Sistem Elektronik* (2010).
 - Pasal 1365: <https://www.hukumonline.com/klinik/a/isi-pasal-1365-kuh-perdata-tentang-perbuatan-melawan-hukum-lt6576f13b60c6a/>
 - Profil Edmon Makarim (Dekan FHUI 2019–2023): <https://law.ui.ac.id/edmon-makarim-terpilih-sebagai-dekan-fhui-periode-2019-2023/>

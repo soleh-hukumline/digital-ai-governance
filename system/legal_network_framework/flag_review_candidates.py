@@ -38,12 +38,18 @@ EXPECT = {
     'UU_ITE_No19_2016 - Pasal 26': {'pse', 'konsumen'},
     'UU_ITE_No1_2024 - Pasal 27': {'pelaku'}, 'UU_ITE_No1_2024 - Pasal 28': {'pelaku'},
     'UU_ITE_No1_2024 - Pasal 45A': {'pelaku'}, 'UU_ITE_No1_2024 - Pasal 45B': {'pelaku'},
+    # audit 2026-07-18: Pasal 70 (dulu kunci OCR '7O') = pidana korporasi -> pelaku;
+    # Pasal 33 = kewajiban Pengendali menolak akses perubahan -> pse (bukan hak subjek)
+    'UU_PDP_No27_2022 - Pasal 70': {'pelaku'},
+    'UU_PDP_No27_2022 - Pasal 33': {'pse'},
 }
 # definitional articles & soft-law/aspirational instruments: should not be a binding warrant
-DEFINITIONAL = {'UU_PDP_No27_2022 - Pasal 1O', 'UU_PDP_No27_2022 - Pasal 4'}
+# (kunci Penjelasan = hasil rename label OCR 'Pasal 1O'/'6O' oleh fix_ocr_labels.py)
+DEFINITIONAL = {'UU_PDP_No27_2022 - Penjelasan Pasal 10', 'UU_PDP_No27_2022 - Penjelasan Pasal 60',
+                'UU_PDP_No27_2022 - Pasal 4'}
 SOFTLAW = re.compile(r'Stranas|SE_Komdigi|OECD|UNESCO|ASEAN|UNGA|ISO|WHO|G7|Global_Digital', re.I)
 # data-subject rights articles (consent/withdraw/access/correct/erase) -> konsumen
-RIGHTS = {f'UU_PDP_No27_2022 - Pasal {n}' for n in ('5', '6', '6O', '7O', '8', '9', '13', '33')}
+RIGHTS = {f'UU_PDP_No27_2022 - Pasal {n}' for n in ('5', '6', '8', '9', '10', '11', '13')}
 
 
 def expected_roles(label):

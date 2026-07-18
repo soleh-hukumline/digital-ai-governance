@@ -22,7 +22,7 @@ AI-specific** gap.
 | B | Embedding model "not specified" | Only in code | Documented + in `methods_config.json` + Methods text below |
 | C | Threshold mismatch (">0.75/<0.50") | Paper ≠ code | Single source of truth: tiered **0.70 / 0.55 / 0.50**, reconciled + justified |
 | D | "No quantitative network metrics" | Computed but not surfaced | Static tables + figures from real graph (below) |
-| E | Coverage rate undefined | Implicit | Explicit formula; cosine baseline 44.4% **corrected** to validated **88.9%** — the "55.6% vacuum" was a retrieval artifact (§2.3); real gap = subject-asymmetry + AI-specificity |
+| E | Coverage rate undefined | Implicit | Explicit formula; cosine baseline 44.4% **corrected** to validated **86.7%** — the "55.6% vacuum" was a retrieval artifact (§2.3); real gap = subject-asymmetry + AI-specificity |
 | F | **Zero validation** (no ground truth / IAA / P-R) | True | **Done**: 2-annotator gold (Cohen's κ=0.77); cosine F1=0.28 vs validated judge **F1=0.67** (few-shot + recall-complete, strict roles). Relevance validated; per-subject coverage = pelaku 100 / PSE 89 / konsumen 27 / regulator 11% |
 | L | **Role assignment unvalidated; one notification article over-counted 3 subjects** | Found mid-revision | Strict-role judge (notification ≠ redress) + **human-in-the-loop** override (`warrant_overrides.json`) that wins over the LLM in every view & in the pipeline (§2.7) |
 | G | **"No hallucination" claim unsupported** | Asserted | Removed; replacement text provided |
@@ -142,7 +142,7 @@ is:
 | Estimate | Coverage | Method |
 |---|---|---|
 | Cosine retrieval (≥0.50) | **20/45 = 44.4%** | embedding shortlist only — *naive baseline* |
-| **Validated judge (P≥95)** | **40/45 = 88.9%** | recall-complete candidates + few-shot LLM judge |
+| **Validated judge (P≥95)** | **39/45 = 86.7%** | recall-complete candidates + few-shot LLM judge |
 
 The cosine figure is a **retrieval artifact, not a legal vacuum.** Validation (§3)
 showed cosine is a poor *retriever* (F1 0.28): it buries the applicable statute —
@@ -150,7 +150,7 @@ e.g. for a 2025 health-data breach UU PDP Pasal 35 (the security duty) ranked
 **154th** by cosine, so it never entered the shortlist. When the judge is given a
 **recall-complete candidate set** (cosine shortlist ∪ a whitelist of core ID
 statutes: UU PDP 35/46/65/67/68, UU ITE, PP PSTE) and screened at high confidence,
-**88.9% of incidents have an applicable provision.**
+**86.7% of incidents have an applicable provision.**
 
 > **Corrected thesis (use this):** Indonesia does **not** have a blanket
 > "vacuum of law" for cyber incidents — post-2022 UU PDP supplies a security,
@@ -169,7 +169,7 @@ Computed with NetworkX from the real graph (`analyzer.py`, `incident_analyzer.py
 | Edges (cross-juris / semantic / governs) | 8,005 (4,787 / 3,126 / 92) |
 | Network density | 0.01910 |
 | Incident coverage — cosine baseline (≥1 governs edge) | 20/45 (44.4%) *naive* |
-| **Incident coverage — validated judge (P≥95)** | **40/45 (88.9%)** |
+| **Incident coverage — validated judge (P≥95)** | **39/45 (86.7%)** |
 | Isolated international provisions | 70/541 (12.9%) |
 | Connected components / largest | 141 / 771 nodes |
 
@@ -180,7 +180,7 @@ baseline; the validated incident↔regulation mapping is the few-shot judge belo
 **Table — Warrant distribution across incidents (n=45), validated judge @ P≥95**
 | Category | Count | % |
 |---|---|---|
-| ≥1 high-confidence warrant (some subject) | 40 | 88.9% |
+| ≥1 high-confidence warrant (some subject) | 39 | 86.7% |
 | No high-confidence warrant (structural hole) | 5 | 11.1% |
 
 *Holes: a website defacement, a crypto-exchange hack, a lending-conduct case, a
@@ -191,21 +191,30 @@ where no clean statutory basis reaches high confidence.*
 
 *Authority here = how often an instrument is **explicitly cross-referenced (cited)**
 by another instrument within the 17-document corpus (`data/network/citations.json`):
-**69 citation edges** (44 by-name + 25 by-number), **17 documents**, **0 isolated by
+**66 citation edges** (41 by-name + 25 by-number), **17 documents**, **0 isolated by
 citation**. This is an instrument-level, legally-defensible authority metric — it does
 not depend on embeddings.*
 
 | Rank | Instrument | In-degree (times cited) |
 |---|---|---|
-| 1 | **UU ITE No.19/2016** | **39** *(the real authority/hub)* |
-| 2 | Council of Europe Framework Convention (CETS 225) | 23 |
-| 3 | UNGA Res. 78/265 | 7 |
-| 4 | PP PSTE (71/2019) | 6 |
-| 5 | OECD AI Principles | 5 |
-| 6 | EU AI Act | 4 |
-| 7 | UNESCO Recommendation | 3 |
+| 1 | **UU ITE No.19/2016** | **39** *(the real authority/hub; note: 30 of these are self-referential citations from its own amendment UU 1/2024 to the parent act)* |
+| 2 | PP PSTE (71/2019) | 6 |
+| 3 | OECD AI Principles | 5 |
+| 4 | EU AI Act | 4 |
+| 5 | UNESCO Recommendation | 3 |
+| 6 | UNGA Res. 78/265 | 1 |
+| 7 | UNGA Res. 78/311 | 1 |
 | 8 | UU PDP (27/2022) | 1 |
 | — | all others | 0 |
+
+*Correction (2026-07-18): an earlier version of this table credited CETS 225 with
+23 citations and UNGA Res. 78/265 with 7. A citation-matcher audit showed all 23
+CETS matches were false positives on the generic string "Council of Europe" — 22
+of them affiliation lines in the WHO 2021 guidance, which predates the
+Convention's adoption (17 May 2024) — and 6 of the 7 UNGA matches were generic
+occurrences of the phrase "safe, secure and trustworthy" rather than citations.
+The matcher now requires the Convention's name/CETS number and resolution
+numbers; `citations.json` was regenerated accordingly.*
 
 **Source/leaf instruments (cite others but are themselves cited 0× within the corpus,
 n=8):** WHO, Stranas AI, UU ITE 1/2024, ISO/IEC 42001, SE Komdigi, ASEAN Guide,
@@ -223,7 +232,7 @@ G7 Hiroshima, POJK. These are *downstream/soft-law adopters*, not authorities.
 
 *This is **textual cosine-similarity degree centrality** over SBERT section embeddings.
 It measures semantic overlap, not citation authority, and **systematically inflates long
-soft-law documents** (Stranas AI, WHO, SE Komdigi) because they contain many generic
+soft-law documents** (Stranas AI, WHO, SE Menkominfo 9/2023) because they contain many generic
 sections that resemble everything. Treat it as a secondary, exploratory lens — the
 authority layer is the citation table above.*
 
@@ -231,7 +240,7 @@ authority layer is the citation table above.*
 |---|---|---|---|
 | 1 | Stranas AI 2020–2045 — §70 | Natl: Strategy/Soft Law | 0.2197 |
 | 2 | Stranas AI 2020–2045 — §56 | Natl: Strategy/Soft Law | 0.1858 |
-| 3 | SE Komdigi No.9/2023 (AI Ethics) — §5 | Natl: Soft Law (circular) | 0.1770 |
+| 3 | SE Menkominfo No.9/2023 AI Ethics (now Komdigi) — §5 | Natl: Soft Law (circular) | 0.1770 |
 
 **Table — Most-applied warrants (cosine baseline — note the artifacts)**
 | Rank | Regulation | Incidents |
@@ -247,9 +256,13 @@ UU PDP Pasal 35 (security), 46 (notification), 67/68 (criminal).*
 **Copy-paste — Results finding (corrected):**
 > By the **primary, defensible authority metric — explicit cross-citation
 > (in-degree) among instruments — the hub of Indonesia's AI/cyber corpus is the
-> binding statute *UU ITE No.19/2016* (cited 39×)**, with the *Council of Europe
-> Framework Convention* (23×) as the leading international anchor; the corpus has
-> **69 citation edges across 17 documents and no citation-isolated instrument**.
+> binding statute *UU ITE No.19/2016* (cited 39×, of which 30 are
+> self-referential citations from its amendment UU 1/2024)**, with the *OECD AI
+> Principles* (5×) as the leading international anchor; the corpus has
+> **66 citation edges across 17 documents and no citation-isolated instrument**.
+> (An earlier draft credited CETS 225 with 23 citations; a matcher audit showed
+> all 23 were false positives on the generic string "Council of Europe" — see
+> the correction note under the ranking table in §2.4.)
 > Notably, the soft-law documents that *look* central under exploratory
 > textual-similarity centrality — the **national AI strategy (Stranas AI)** and the
 > **Komdigi AI-ethics circular (SE 9/2023)** — are in fact **citation leaves (cited
@@ -258,7 +271,7 @@ UU PDP Pasal 35 (security), 46 (notification), 67/68 (criminal).*
 > generically-worded soft-law texts. Separately, the earlier claim of a **55.6%
 > "structural-hole vacuum" was a cosine-retrieval artifact** (§2.3): embedding
 > similarity simply failed to rank the applicable Indonesian statute near the top.
-> Under a recall-complete, human-validated mapping, **88.9% of incidents have a
+> Under a recall-complete, human-validated mapping, **86.7% of incidents have a
 > high-confidence statutory basis** — predominantly UU PDP
 > (security/notification/criminal). The genuine deficit is therefore not the
 > *absence* of law but its **subject-asymmetry and lack of AI-specificity**
@@ -565,7 +578,7 @@ boilerplate/preamble/short-fragment filter that drops noise nodes entirely.
 - *(Thesis note — see §2.3):* the clean-cosine coverage of **44.4%** was later
   superseded; cosine is a weak **retriever** (it buried applicable statutes), so the
   validated incident↔regulation mapping uses the LLM judge (§2.5–2.7), giving
-  **88.9% any-subject coverage** and reframing the finding from a blanket "vacuum"
+  **86.7% any-subject coverage** and reframing the finding from a blanket "vacuum"
   to a **subject-asymmetric, AI-specific** gap.
 
 ---

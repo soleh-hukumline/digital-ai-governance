@@ -1902,53 +1902,53 @@
       "cited_ref": "Pasal 45A ayat (2)",
       "kind": "pasal_internal"
     },
-    "UU_ITE_No1_2024 - Pasal 168 :: Pasal 16A": {
+    "UU_ITE_No1_2024 - Pasal 16B :: Pasal 16A": {
       "is_citation": true,
       "context_type": "normative_citation",
       "confidence": 98,
       "reason": "The snippet states 'Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 16A dikenai sanksi administratif', which directly refere",
       "source_doc": "UU_ITE_No1_2024",
-      "source_prov": "Pasal 168",
+      "source_prov": "Pasal 16B",
       "cited_ref": "Pasal 16A",
       "kind": "pasal_internal"
     },
-    "UU_ITE_No1_2024 - Pasal 168 :: Pasal 17": {
+    "UU_ITE_No1_2024 - Pasal 16B :: Pasal 17": {
       "is_citation": true,
       "context_type": "normative_citation",
       "confidence": 95,
       "reason": "The snippet explicitly states 'Ketentuan ayat (1) Pasal 17 diubah...' which indicates a modification or reference to a specific article with",
       "source_doc": "UU_ITE_No1_2024",
-      "source_prov": "Pasal 168",
+      "source_prov": "Pasal 16B",
       "cited_ref": "Pasal 17",
       "kind": "pasal_internal"
     },
-    "UU_ITE_No1_2024 - Pasal 278 :: Pasal 28": {
+    "UU_ITE_No1_2024 - Pasal 27B :: Pasal 28": {
       "is_citation": true,
       "context_type": "normative_citation",
       "confidence": 95,
       "reason": "The snippet states 'Ketentuan Pasal 28 diubah sehingga berbunyi sebagai berikut:', which clearly indicates a modification or rephrasing of a",
       "source_doc": "UU_ITE_No1_2024",
-      "source_prov": "Pasal 278",
+      "source_prov": "Pasal 27B",
       "cited_ref": "Pasal 28",
       "kind": "pasal_internal"
     },
-    "UU_PDP_No27_2022 - Pasal 7O :: Pasal 67": {
+    "UU_PDP_No27_2022 - Pasal 70 :: Pasal 67": {
       "is_citation": true,
       "context_type": "normative_citation",
       "confidence": 95,
       "reason": "The snippet explicitly refers to 'Pasal 67' as a basis for the described criminal acts ('sebagaimana dimaksud dalam Pasal 67').",
       "source_doc": "UU_PDP_No27_2022",
-      "source_prov": "Pasal 7O",
+      "source_prov": "Pasal 70",
       "cited_ref": "Pasal 67",
       "kind": "pasal_internal"
     },
-    "UU_PDP_No27_2022 - Pasal 7O :: Pasal 68": {
+    "UU_PDP_No27_2022 - Pasal 70 :: Pasal 68": {
       "is_citation": true,
       "context_type": "normative_citation",
       "confidence": 95,
       "reason": "The snippet explicitly refers to 'Pasal 68' as a basis for the described criminal acts ('sebagaimana dimaksud dalam Pasal 67 dan Pasal 68').",
       "source_doc": "UU_PDP_No27_2022",
-      "source_prov": "Pasal 7O",
+      "source_prov": "Pasal 70",
       "cited_ref": "Pasal 68",
       "kind": "pasal_internal"
     },
@@ -1990,16 +1990,6 @@
       "source_doc": "UU_PDP_No27_2022",
       "source_prov": "Pasal 15",
       "cited_ref": "Pasal 9",
-      "kind": "pasal_internal"
-    },
-    "UU_PDP_No27_2022 - Pasal 15 :: Pasal 1O": {
-      "is_citation": true,
-      "context_type": "normative_citation",
-      "confidence": 95,
-      "reason": "The snippet explicitly refers to 'Pasal 1O ayat (1)' as defining the rights of the Personal Data Subject ('Hak-hak Subjek Data Pribadi sebag",
-      "source_doc": "UU_PDP_No27_2022",
-      "source_prov": "Pasal 15",
-      "cited_ref": "Pasal 1O ayat (1)",
       "kind": "pasal_internal"
     },
     "UU_PDP_No27_2022 - Pasal 15 :: Pasal 11": {
@@ -2441,6 +2431,16 @@
       "source_prov": "Pembukaan",
       "cited_ref": "UU 11/2008",
       "kind": "regulation"
+    },
+    "UU_PDP_No27_2022 - Pasal 15 :: Pasal 10": {
+      "is_citation": true,
+      "context_type": "normative_citation",
+      "confidence": 95,
+      "reason": "The snippet explicitly refers to 'Pasal 1O ayat (1)' as defining the rights of the Personal Data Subject ('Hak-hak Subjek Data Pribadi sebag",
+      "source_doc": "UU_PDP_No27_2022",
+      "source_prov": "Pasal 15",
+      "cited_ref": "Pasal 10 ayat (1)",
+      "kind": "pasal_internal"
     }
   },
   "by_doc": {

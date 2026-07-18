@@ -5209,8 +5209,8 @@
       "title": "Degree: 34"
     },
     {
-      "id": "IDN_UU_ITE_No1_2024_Pasal_168",
-      "label": "UU_ITE_No1_2024 - Pasal 168",
+      "id": "IDN_UU_ITE_No1_2024_Pasal_16B",
+      "label": "UU_ITE_No1_2024 - Pasal 16B",
       "group": "UU_ITE_No1_2024",
       "classification": "Natl: Binding Law",
       "value": 114,
@@ -5241,8 +5241,8 @@
       "title": "Degree: 12"
     },
     {
-      "id": "IDN_UU_ITE_No1_2024_Pasal_278",
-      "label": "UU_ITE_No1_2024 - Pasal 278",
+      "id": "IDN_UU_ITE_No1_2024_Pasal_27B",
+      "label": "UU_ITE_No1_2024 - Pasal 27B",
       "group": "UU_ITE_No1_2024",
       "classification": "Natl: Binding Law",
       "value": 46,
@@ -5817,8 +5817,8 @@
       "title": "Degree: 3"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_7O",
-      "label": "UU_PDP_No27_2022 - Pasal 7O",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_70",
+      "label": "UU_PDP_No27_2022 - Pasal 70",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 38,
@@ -5841,16 +5841,16 @@
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_1O",
-      "label": "UU_PDP_No27_2022 - Pasal 1O",
+      "id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_10",
+      "label": "UU_PDP_No27_2022 - Penjelasan Pasal 10",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 10,
       "title": "Degree: 0"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-      "label": "UU_PDP_No27_2022 - Pasal 6O",
+      "id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+      "label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 38,
@@ -8286,7 +8286,7 @@
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_11",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "cross jurisdiction (Lemah 58.4%)",
       "arrows": "to"
     },
@@ -9294,7 +9294,7 @@
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_34",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 61.9%)",
       "arrows": "to"
     },
@@ -9570,7 +9570,7 @@
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_33",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 57.7%)",
       "arrows": "to"
     },
@@ -12822,7 +12822,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_36",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 55.2%)",
       "arrows": ""
     },
@@ -15966,7 +15966,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_93",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 57.3%)",
       "arrows": ""
     },
@@ -16422,7 +16422,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_96",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 66.0%)",
       "arrows": ""
     },
@@ -16620,7 +16620,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_97",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 55.0%)",
       "arrows": ""
     },
@@ -16650,7 +16650,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_99",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 73.2%)",
       "arrows": ""
     },
@@ -16661,7 +16661,7 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_70",
       "to": "EU_AI_Act_2024_Article_99",
       "label": "cross jurisdiction (Lemah 69.3%)",
       "arrows": "to"
@@ -16734,7 +16734,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_100",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 57.1%)",
       "arrows": ""
     },
@@ -16751,7 +16751,7 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_70",
       "to": "EU_AI_Act_2024_Article_100",
       "label": "cross jurisdiction (Lemah 55.2%)",
       "arrows": "to"
@@ -16986,7 +16986,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_105",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 57.4%)",
       "arrows": ""
     },
@@ -17190,7 +17190,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_106",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 66.3%)",
       "arrows": ""
     },
@@ -17364,7 +17364,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_107",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 65.2%)",
       "arrows": ""
     },
@@ -17532,7 +17532,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_108",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 63.8%)",
       "arrows": ""
     },
@@ -17718,7 +17718,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_109",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 63.9%)",
       "arrows": ""
     },
@@ -18108,7 +18108,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_113",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "cross jurisdiction (Lemah 56.0%)",
       "arrows": ""
     },
@@ -34326,7 +34326,7 @@
     },
     {
       "from": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_72",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "cross jurisdiction (Lemah 55.9%)",
       "arrows": "to"
     },
@@ -34548,7 +34548,7 @@
     },
     {
       "from": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_72",
-      "to": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "to": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "label": "cross jurisdiction (Lemah 58.9%)",
       "arrows": "to"
     },
@@ -39833,7 +39833,7 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "from": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "to": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_27",
       "label": "cross jurisdiction (Lemah 57.6%)",
       "arrows": "to"
@@ -44867,7 +44867,7 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "from": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "to": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_34",
       "label": "cross jurisdiction (Lemah 55.1%)",
       "arrows": "to"
@@ -45335,7 +45335,7 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "from": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "to": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
       "label": "cross jurisdiction (Lemah 56.2%)",
       "arrows": "to"
@@ -47423,7 +47423,7 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "from": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "to": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
       "label": "cross jurisdiction (Lemah 55.4%)",
       "arrows": "to"
@@ -52344,7 +52344,7 @@
     },
     {
       "from": "IDN_PP_PSTE_No71_2019_Pasal_16",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Lemah 71.0%)",
       "arrows": "to"
     },
@@ -53880,7 +53880,7 @@
     },
     {
       "from": "IDN_PP_PSTE_No71_2019_Pasal_101",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "semantic similarity (Sangat Kuat 83.6%)",
       "arrows": "to"
     },
@@ -53946,7 +53946,7 @@
     },
     {
       "from": "IDN_UU_ITE_No19_2016_Pasal_26",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Lemah 78.6%)",
       "arrows": "to"
     },
@@ -54042,7 +54042,7 @@
     },
     {
       "from": "IDN_UU_ITE_No19_2016_Pasal_3",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Sangat Kuat 83.7%)",
       "arrows": "to"
     },
@@ -54126,7 +54126,7 @@
     },
     {
       "from": "IDN_UU_ITE_No19_2016_Pasal_45",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Lemah 71.8%)",
       "arrows": "to"
     },
@@ -54174,7 +54174,7 @@
     },
     {
       "from": "IDN_UU_ITE_No19_2016_Pasal_45A",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Lemah 70.2%)",
       "arrows": "to"
     },
@@ -54204,66 +54204,66 @@
     },
     {
       "from": "IDN_UU_PDP_No27_2022_Pasal_57",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "semantic similarity (Lemah 75.4%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_7O",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_70",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "semantic similarity (Lemah 71.0%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_19",
       "label": "semantic similarity (Lemah 73.1%)",
       "arrows": ""
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_22",
       "label": "semantic similarity (Sangat Kuat 92.4%)",
       "arrows": ""
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_27",
       "label": "semantic similarity (Sangat Kuat 92.0%)",
       "arrows": ""
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_30",
       "label": "semantic similarity (Sangat Kuat 92.5%)",
       "arrows": ""
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_33",
       "label": "semantic similarity (Sangat Kuat 90.0%)",
       "arrows": ""
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_39",
       "label": "semantic similarity (Sangat Kuat 92.3%)",
       "arrows": ""
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_41",
       "label": "semantic similarity (Sangat Kuat 91.3%)",
       "arrows": ""
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_43",
       "label": "semantic similarity (Sangat Kuat 91.7%)",
       "arrows": ""
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_49",
       "label": "semantic similarity (Sangat Kuat 90.2%)",
       "arrows": ""
@@ -54300,13 +54300,13 @@
     },
     {
       "from": "IDN_UU_PDP_No27_2022_Pasal_65",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Sangat Kuat 80.5%)",
       "arrows": "to"
     },
     {
       "from": "IDN_UU_PDP_No27_2022_Pasal_66",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Lemah 74.6%)",
       "arrows": "to"
     },
@@ -54767,37 +54767,37 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_70",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_22",
       "label": "semantic similarity (Lemah 71.8%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_70",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_30",
       "label": "semantic similarity (Lemah 70.4%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_70",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_39",
       "label": "semantic similarity (Lemah 70.9%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_70",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_43",
       "label": "semantic similarity (Lemah 70.8%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "from": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "to": "CASE_inafis-polri-fingerprint-leak-2024",
       "label": "governs (Lemah 52.4%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "from": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "to": "CASE_pln-customer-data-leak-2022",
       "label": "governs (Lemah 54.5%)",
       "arrows": ""

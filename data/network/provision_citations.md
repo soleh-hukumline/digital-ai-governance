@@ -1028,11 +1028,11 @@ Total **237 sitiran** dari **124 pasal sumber**. Tiap baris = satu pasal yang me
 
 ## UU_ITE_No19_2016
 
-### Pasal 3 → Pasal 4O  ·  _pasal→pasal (internal)_
-- **Menyebut:** `Pasal 4O` → `UU_ITE_No19_2016`
+### Pasal 3 → Pasal 40  ·  _pasal→pasal (internal)_
+- **Menyebut:** `Pasal 40` → `UU_ITE_No19_2016`
 - **Teks utuh Pasal 3 (UU_ITE_No19_2016):**
 
-  > 1 (l) Setiap Orang dengan sengaja dan tanpa hak atau melawan hukum melakukan intersepsi atau penyadapan atas Informasi Elektronik dan/atau Dokumen Elektronik dalam suatu Komputer dan/atau Sistem Elektronik tertentu milik Orang lain. (21 Setiap Orang dengan sengaja dan tanpa hak atau melawan hukum melakukan intersepsi atas transmisi Informasi Elektronik dan/atau Dokumen Elektronik yang tidak bersifat publik dari, ke, dan di dalam suatu Komputer dan/atau Sistem Elektronik tertentu milik Orang lain, baik yang tidak menyebabkan perubahan apa pun maupun yang menyebabkan adanya perubahan, penghilangan, dan/atau penghentian Informasi Elektronik dan/atau Dokumen Elektronik yang sedang ditransmisikan. (3) Ketentuan . PRESIDEN REPU BLIK INDONESIA (3) Ketentuan sebagaimana dimaksud pada ayat (l) dan ayal (21 tidak berlaku terhadap intersepsi atau penyadapan yang dilakukan dalam rangka penegakan hukum atas permintaan kepolisian, kejaksaan, atau institusi lainnya yang kewenangannya ditetapkan berdasarkan undang- undang. (41 Ketentuan lebih mengenai tata cara intersepsi sebagaimana dimaksud pada ayat (3) diatur dengan undang-undang. 6. Di antara ayat (2) dan ayat (3) Pasal 4O disisipkan 2 (dua) ayat, yakni ayat (2al dan ayat (2b); ketentuan ayat (6)
+  > 1 (l) Setiap Orang dengan sengaja dan tanpa hak atau melawan hukum melakukan intersepsi atau penyadapan atas Informasi Elektronik dan/atau Dokumen Elektronik dalam suatu Komputer dan/atau Sistem Elektronik tertentu milik Orang lain. (21 Setiap Orang dengan sengaja dan tanpa hak atau melawan hukum melakukan intersepsi atas transmisi Informasi Elektronik dan/atau Dokumen Elektronik yang tidak bersifat publik dari, ke, dan di dalam suatu Komputer dan/atau Sistem Elektronik tertentu milik Orang lain, baik yang tidak menyebabkan perubahan apa pun maupun yang menyebabkan adanya perubahan, penghilangan, dan/atau penghentian Informasi Elektronik dan/atau Dokumen Elektronik yang sedang ditransmisikan. (3) Ketentuan . PRESIDEN REPU BLIK INDONESIA (3) Ketentuan sebagaimana dimaksud pada ayat (l) dan ayal (21 tidak berlaku terhadap intersepsi atau penyadapan yang dilakukan dalam rangka penegakan hukum atas permintaan kepolisian, kejaksaan, atau institusi lainnya yang kewenangannya ditetapkan berdasarkan undang- undang. (41 Ketentuan lebih mengenai tata cara intersepsi sebagaimana dimaksud pada ayat (3) diatur dengan undang-undang. 6. Di antara ayat (2) dan ayat (3) Pasal 40 disisipkan 2 (dua) ayat, yakni ayat (2al dan ayat (2b); ketentuan ayat (6)
 
 ### Pasal 26 → Pasal 27  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 27` → `UU_ITE_No19_2016` (2×)
@@ -1133,6 +1133,18 @@ Total **237 sitiran** dari **124 pasal sumber**. Tiap baris = satu pasal yang me
 
   > (1) Setiap Orang berhak menggunakan Penyelenggara Sertifikasi Elektronik pembuatan Tanda Tangan Elektronik. Jasa untuk (21 Penyelenggara Sertilikasi Elektronik harus memastikan keterkaitan suatu Tanda Tangan Elektronik dengan pemiliknya. (3) Penyelenggara Sertifikasi Elektronik yang beroperasi di Indonesia harus berbadan hukum Indonesia dan berdomisili di Indonesia. (4) Ketentuan. i IHirEftXTIf.T.TIfdfA (4) Ketentuan sebagaimana dimaksud pada ayat (3) dikecualikan dalam hal penyelenggaraan layanan yang menggunakan Sertifikat Elektronik belum tersedia di Indonesia. (5) Pengakuan timbal balik (mutual recognition) untuk mengenali Sertifikat Elektronik antarnegara didasarkan pada perjanjian kerja sEuna. (6) Ketentuan lebih mengenai Penyelenggara Sertifikasi Elektronik sebagaimana dimaksud pada ayat (3), ayat (4), dan ayat (5) diatur dalam Peraturan Pemerintah. Di antara Pasal 13 dan Pasal 14 disisipkan I (satu) pasal, yakni Pasal 13A sehingga berbunyi sebagai berikut:
 
+### Pasal 16B → Pasal 16A  ·  _pasal→pasal (internal)_
+- **Menyebut:** `Pasal 16A` → `UU_ITE_No1_2024`
+- **Teks utuh Pasal 16B (UU_ITE_No1_2024):**
+
+  > (1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 16A dikenai sanksi administratif. (21 Sanksi administratif sebagaimana dimaksud pada ayat (1) dapat berupa: a. teguran tertulis; b. dendaadministratif; c. penghentian sementara; dan/atau d. pemutusan Akses. (3) Ketentuan lebih mengenai pengenaan sanksi administratif sebagaimana dimaksud pada ayat (1) dan ayat (21 diatur dalam Peraturan Pemerintah. 6 Ketentuan ayat (1) Pasal 17 diubah, dan di antara ayal l2l dan ayat (3) Pasal 17 disisipkan 1 (satu) ayat, yakni ayat (2a1, dar ketentuan ayat (3) Pasal 17 diubah sehingga Pasal 17 berbunyi sebagai berikut:
+
+### Pasal 16B → Pasal 17  ·  _pasal→pasal (internal)_
+- **Menyebut:** `Pasal 17` → `UU_ITE_No1_2024` (4×)
+- **Teks utuh Pasal 16B (UU_ITE_No1_2024):**
+
+  > (1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 16A dikenai sanksi administratif. (21 Sanksi administratif sebagaimana dimaksud pada ayat (1) dapat berupa: a. teguran tertulis; b. dendaadministratif; c. penghentian sementara; dan/atau d. pemutusan Akses. (3) Ketentuan lebih mengenai pengenaan sanksi administratif sebagaimana dimaksud pada ayat (1) dan ayat (21 diatur dalam Peraturan Pemerintah. 6 Ketentuan ayat (1) Pasal 17 diubah, dan di antara ayal l2l dan ayat (3) Pasal 17 disisipkan 1 (satu) ayat, yakni ayat (2a1, dar ketentuan ayat (3) Pasal 17 diubah sehingga Pasal 17 berbunyi sebagai berikut:
+
 ### Pasal 17 → Pasal 18  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 18` → `UU_ITE_No1_2024`
 - **Teks utuh Pasal 17 (UU_ITE_No1_2024):**
@@ -1168,6 +1180,12 @@ Total **237 sitiran** dari **124 pasal sumber**. Tiap baris = satu pasal yang me
 - **Teks utuh Pasal 27 (UU_ITE_No1_2024):**
 
   > (1) Setiap Orang dengan sengaja dan tanpa hak menyiarkan, mempertunjukkan, mendistribusikan, mentransmisikan, dan/atau membuat dapat diaksesnya Informasi Elektronik dan/ atau Dokumen Elektronik yang memiliki muatan yang melanggar kesusilaan untuk diketahui umum. (21 Setiap Orang dengan sengaja dan tanpa hak mendistribusikan, mentransmisikan, dan/atau membuat dapat diaksesnya Informasi Elektronik dan/atau Dokumen Elektronik yang memiliki muatan perjudian. 9 Di antara Pasal 27 dan Pasal 28 disisipkan 2 (dua) pasal, yakni Pasil 27A dan Pasal 27B sehingga berbunyi sebagai berikut: Pasal2TA Setiap Orang dengan sengaja menyerang kehormatan atau nama baik orang lain dengan cara menuduhkan suatu hal, dengan maksud supaya hal tersebut diketahui umum dalam bentuk Informasi Elektronik dan/ atau Dokumen Elektronik yang dilakukan melalui Sistem Elektronik.
+
+### Pasal 27B → Pasal 28  ·  _pasal→pasal (internal)_
+- **Menyebut:** `Pasal 28` → `UU_ITE_No1_2024`
+- **Teks utuh Pasal 27B (UU_ITE_No1_2024):**
+
+  > (1) Setiap Orang dengan sengaja dan tanpa hak mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik, dengan maksud untuk menguntungkan diri sendiri atau orang lain secara melawan hukum, memaksa orang dengan ancaman kekerasan untuk: a. memberikan suatu barang, yang sebagian atau seluruhnya milik orang tersebut atau milik orang lain; atau b. memberi. PRESIDEN NEPUELIK INDONESTA b memberi utang, membuat pengakuan utang, atau menghapuskan piutang. (21 Setiap Orang dengan sengaja dan tanpa hak mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik, dengan maksud untuk menguntungkan diri sendiri atau orang lain secara melawan hukum, dengan ancarnan pencemaran atau dengan ancaman akan membuka rahasia, memaksa orang supaya: a. memberikan suatu barang yang sebagial atau seluruhnya milik orang tersebut atau milik orang lain; atau b. memberi utang, membuat pengakuan utang, atau menghapuskan piutang. 10. Ketentuan Pasal 28 diubah sehingga berbunyi sebagai berikut: (1) (21
 
 ### Pasal 28 → Pasal 29  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 29` → `UU_ITE_No1_2024`
@@ -1235,24 +1253,6 @@ Total **237 sitiran** dari **124 pasal sumber**. Tiap baris = satu pasal yang me
 
   > Setiap Orang yang dengan sengaja dan tanpa hak mengirimkan Informasi Elektronik dan/atau Dokumen Elektronik secara langsung kepada korban yang berisi ancaman kekerasan dan/ atau menakut- nakuti sebagaimana dimaksud dalam Pasal 29 dipidana dengan pidana penjara paling lama 4 (empat) tahun dan/ atau denda paling banyak Rp750.000.000,00 (tqjuh ratus lima puluh juta rupiah). Pasal II 1 2 Pada saat Undang-Undang ini mulai berlaku, ketentuan dalam Pasal 27 ayat (1), Pasal 27A, Pasal. 28 ayat (2), Pasal 28 ayal (3), Pasal 36, Pasal 45 ayat (1), Pasal 45 ayat (2), Pasal 45 ayat (4), Pasal 45 ayat (5), Pasal 45 ayat (6), Pasal 45 ayat (7), Pasal 45A ayat (2), dan Pasal 45A ayat (3) berlaku sampai dengan diberlakukannya Undang-Undang Nomor 1 Tahun 2O23 tentang Kitab Undang-Undang Hukum Pidana (Lembaran Negara Republik Indonesia Tahun 2O23 Nomor 1, Tambahan Lembaran Negara Republik Indonesia Nomor 6842). Undang-Undang ini mulai berlaku pada tanggal diundangkan. Agar. FRESIDEN REPUBUK INDONESIA -2t- Agar setiap orang mengetahuinya, memerintahkan pengundangan Undang-Undang ini dengan penempatannya dalam l,embaran Negara Republik Indonesia. Disahkan di Jakarta pada tanggal 2 Januari2024 , ttd JOKO WIDODO Diundangkan di Jakarta pada tanggal 2 Jarruari 2024 MENTERI SEKRETARIS NEGARA REPUBLIK INDONESIA, ttd PRATIKNO LEMBARAN NEGARA REPUBLIK INDONESIA TAHUN 2024 NOMOR 1 Salinan sesuai dengan aslinya KEMENTERIAN SEKRETARIAT NEGARA REPUBLIK INDONESIA Perundang-undangan dan trasi Hukum, Djaman TI.I JTFIIIilNFIEFI;FIA
 
-### Pasal 168 → Pasal 16A  ·  _pasal→pasal (internal)_
-- **Menyebut:** `Pasal 16A` → `UU_ITE_No1_2024`
-- **Teks utuh Pasal 168 (UU_ITE_No1_2024):**
-
-  > (1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 16A dikenai sanksi administratif. (21 Sanksi administratif sebagaimana dimaksud pada ayat (1) dapat berupa: a. teguran tertulis; b. dendaadministratif; c. penghentian sementara; dan/atau d. pemutusan Akses. (3) Ketentuan lebih mengenai pengenaan sanksi administratif sebagaimana dimaksud pada ayat (1) dan ayat (21 diatur dalam Peraturan Pemerintah. 6 Ketentuan ayat (1) Pasal 17 diubah, dan di antara ayal l2l dan ayat (3) Pasal 17 disisipkan 1 (satu) ayat, yakni ayat (2a1, dar ketentuan ayat (3) Pasal 17 diubah sehingga Pasal 17 berbunyi sebagai berikut:
-
-### Pasal 168 → Pasal 17  ·  _pasal→pasal (internal)_
-- **Menyebut:** `Pasal 17` → `UU_ITE_No1_2024` (4×)
-- **Teks utuh Pasal 168 (UU_ITE_No1_2024):**
-
-  > (1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 16A dikenai sanksi administratif. (21 Sanksi administratif sebagaimana dimaksud pada ayat (1) dapat berupa: a. teguran tertulis; b. dendaadministratif; c. penghentian sementara; dan/atau d. pemutusan Akses. (3) Ketentuan lebih mengenai pengenaan sanksi administratif sebagaimana dimaksud pada ayat (1) dan ayat (21 diatur dalam Peraturan Pemerintah. 6 Ketentuan ayat (1) Pasal 17 diubah, dan di antara ayal l2l dan ayat (3) Pasal 17 disisipkan 1 (satu) ayat, yakni ayat (2a1, dar ketentuan ayat (3) Pasal 17 diubah sehingga Pasal 17 berbunyi sebagai berikut:
-
-### Pasal 278 → Pasal 28  ·  _pasal→pasal (internal)_
-- **Menyebut:** `Pasal 28` → `UU_ITE_No1_2024`
-- **Teks utuh Pasal 278 (UU_ITE_No1_2024):**
-
-  > (1) Setiap Orang dengan sengaja dan tanpa hak mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik, dengan maksud untuk menguntungkan diri sendiri atau orang lain secara melawan hukum, memaksa orang dengan ancaman kekerasan untuk: a. memberikan suatu barang, yang sebagian atau seluruhnya milik orang tersebut atau milik orang lain; atau b. memberi. PRESIDEN NEPUELIK INDONESTA b memberi utang, membuat pengakuan utang, atau menghapuskan piutang. (21 Setiap Orang dengan sengaja dan tanpa hak mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik, dengan maksud untuk menguntungkan diri sendiri atau orang lain secara melawan hukum, dengan ancarnan pencemaran atau dengan ancaman akan membuka rahasia, memaksa orang supaya: a. memberikan suatu barang yang sebagial atau seluruhnya milik orang tersebut atau milik orang lain; atau b. memberi utang, membuat pengakuan utang, atau menghapuskan piutang. 10. Ketentuan Pasal 28 diubah sehingga berbunyi sebagai berikut: (1) (21
-
 ### Pembukaan → UUD 1945  ·  _pasal→instrumen (bernama)_
 - **Menyebut:** `UUD 1945` → `(eksternal/di luar korpus)`
 - **Teks utuh Pembukaan (UU_ITE_No1_2024):**
@@ -1316,18 +1316,6 @@ Total **237 sitiran** dari **124 pasal sumber**. Tiap baris = satu pasal yang me
 
 ## UU_PDP_No27_2022
 
-### Pasal 7O → Pasal 67  ·  _pasal→pasal (internal)_
-- **Menyebut:** `Pasal 67` → `UU_PDP_No27_2022`
-- **Teks utuh Pasal 7O (UU_PDP_No27_2022):**
-
-  > (1) Dafam hal tindak pidana sebagaimana dimaksud dalam Pasal 67 dan Pasal 68 dilakukan oleh Korporasi, pidana dapat dljatuhkan kepada pengurus, pemegang kendali, pemberi perintah, pemilik manfaat, dan/ atau Korporasi. (2) Pidana yang dapat djatuhkan terhadap Korporasi hanya pidana denda. (3) Pidana denda yang dijatuhkan kepada Korporasi paling banyak 10 (sepuluh) kali dari maksimal pidana denda yang diancamkan. (4) Selain dijatuhi pidana denda sebagaimana dimaksud pada ayat (2), Korporasi dapat dijatuhi pidana ' tambahan berupa: a. perampasan keuntungan dan/ atau harta kekayaan yang diperoleh atau hasil dari tindak pidana; b. pembekuan seluruh atau sebagian usaha Korporasi; c. pelarangan permanen melakukan perbuatan tertentu; d. penutupan seluruh atau sebagian tempat usaha dan/ atau kegiatan Korporasi; e. melaksanakan kewajiban yang telah dilalaikan; f. pembayaran ganti kerugian; g. pencabutan izin; dan/atala h. pembubaranKorporasi.
-
-### Pasal 7O → Pasal 68  ·  _pasal→pasal (internal)_
-- **Menyebut:** `Pasal 68` → `UU_PDP_No27_2022`
-- **Teks utuh Pasal 7O (UU_PDP_No27_2022):**
-
-  > (1) Dafam hal tindak pidana sebagaimana dimaksud dalam Pasal 67 dan Pasal 68 dilakukan oleh Korporasi, pidana dapat dljatuhkan kepada pengurus, pemegang kendali, pemberi perintah, pemilik manfaat, dan/ atau Korporasi. (2) Pidana yang dapat djatuhkan terhadap Korporasi hanya pidana denda. (3) Pidana denda yang dijatuhkan kepada Korporasi paling banyak 10 (sepuluh) kali dari maksimal pidana denda yang diancamkan. (4) Selain dijatuhi pidana denda sebagaimana dimaksud pada ayat (2), Korporasi dapat dijatuhi pidana ' tambahan berupa: a. perampasan keuntungan dan/ atau harta kekayaan yang diperoleh atau hasil dari tindak pidana; b. pembekuan seluruh atau sebagian usaha Korporasi; c. pelarangan permanen melakukan perbuatan tertentu; d. penutupan seluruh atau sebagian tempat usaha dan/ atau kegiatan Korporasi; e. melaksanakan kewajiban yang telah dilalaikan; f. pembayaran ganti kerugian; g. pencabutan izin; dan/atala h. pembubaranKorporasi.
-
 ### Pasal 14 → Pasal 6  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 6` → `UU_PDP_No27_2022`
 - **Teks utuh Pasal 14 (UU_PDP_No27_2022):**
@@ -1344,31 +1332,31 @@ Total **237 sitiran** dari **124 pasal sumber**. Tiap baris = satu pasal yang me
 - **Menyebut:** `Pasal 8` → `UU_PDP_No27_2022`
 - **Teks utuh Pasal 15 (UU_PDP_No27_2022):**
 
-  > (1) Hak-hak Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 8, Pasal 9, Pasal 1O ayat (1), Pasal 11, dan
+  > (1) Hak-hak Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 8, Pasal 9, Pasal 10 ayat (1), Pasal 11, dan
 
 ### Pasal 15 → Pasal 9  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 9` → `UU_PDP_No27_2022`
 - **Teks utuh Pasal 15 (UU_PDP_No27_2022):**
 
-  > (1) Hak-hak Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 8, Pasal 9, Pasal 1O ayat (1), Pasal 11, dan
+  > (1) Hak-hak Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 8, Pasal 9, Pasal 10 ayat (1), Pasal 11, dan
 
-### Pasal 15 → Pasal 1O ayat (1)  ·  _pasal→pasal (internal)_
-- **Menyebut:** `Pasal 1O ayat (1)` → `UU_PDP_No27_2022`
+### Pasal 15 → Pasal 10 ayat (1)  ·  _pasal→pasal (internal)_
+- **Menyebut:** `Pasal 10 ayat (1)` → `UU_PDP_No27_2022`
 - **Teks utuh Pasal 15 (UU_PDP_No27_2022):**
 
-  > (1) Hak-hak Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 8, Pasal 9, Pasal 1O ayat (1), Pasal 11, dan
+  > (1) Hak-hak Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 8, Pasal 9, Pasal 10 ayat (1), Pasal 11, dan
 
 ### Pasal 15 → Pasal 11  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 11` → `UU_PDP_No27_2022`
 - **Teks utuh Pasal 15 (UU_PDP_No27_2022):**
 
-  > (1) Hak-hak Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 8, Pasal 9, Pasal 1O ayat (1), Pasal 11, dan
+  > (1) Hak-hak Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 8, Pasal 9, Pasal 10 ayat (1), Pasal 11, dan
 
-### Pasal 21 → Pasal 2O  ·  _pasal→pasal (internal)_
-- **Menyebut:** `Pasal 2O` → `UU_PDP_No27_2022`
+### Pasal 21 → Pasal 20  ·  _pasal→pasal (internal)_
+- **Menyebut:** `Pasal 20` → `UU_PDP_No27_2022`
 - **Teks utuh Pasal 21 (UU_PDP_No27_2022):**
 
-  > (1) Dalam hal pemrosesan Data Pribadi berdasarkan persetujuan sebagaimana dimaksud dalam Pasal 2O ayat (21 huruf a, Pengendali Data Pribadi wajib menyampaikan Informasi mengenai: a. legalitas dari pemrosesan Data Pribadi; b. tujuan pemrosesan Data Pribadi; c. jenis dan relevansi Data Pribadi yang akan diproses; d. jangka waktu retensi dokumen yang memuat Data Pribadi; e. rincian mengenai Informasi yang f. jangka waktu pemrosesan Data Pribadi; dan C. hak Subjek Data Pribadi. (2) Dalam. PRESIEIEN REPUBLIK INOONESIA -t2- (2) Dalam hal terdapat perubahan Informasi sebagaimana dimaksud pada ayat (1), Pengendali Data Pribadi wajib . memberitahukan kepada Subjek Data Pribadi sebelum terjadi perubahan Informasi. Pasa722 (1) Persetujuan pemrosesan Data Pribadi dilakukan melalui persetujuan tertulis atau terekam. (2) Persetqiuan sebagaimana dimaksud pada ayat (1) dapat disampaikan secara elektronik atau nonelektronik. (3) Persetqjuan sebagaimana dimaksud pada ayat (1) mempunyai kekuatan hukum yang sama. (4). Dalam hal persetqluan sebagaimana dimaksud pada ayat (1) memuat tujuan lain, permintaan persetqjuan harus memenuhi ketentuan: a. dapat dibedakan secara jelas dengan hal lainnya; b. dibuat dengan forrnat yang dapat dipahami dan mudah diakses; dan c. menggunalan bahasa yang sederhana dan jelas. (5) Persetqjuan yang tidak memenuhi ketentuan sebagaimana dimaksud pada ayat (1) dan ayat (4) dinyatakan batal demi hukum. '
+  > (1) Dalam hal pemrosesan Data Pribadi berdasarkan persetujuan sebagaimana dimaksud dalam Pasal 20 ayat (21 huruf a, Pengendali Data Pribadi wajib menyampaikan Informasi mengenai: a. legalitas dari pemrosesan Data Pribadi; b. tujuan pemrosesan Data Pribadi; c. jenis dan relevansi Data Pribadi yang akan diproses; d. jangka waktu retensi dokumen yang memuat Data Pribadi; e. rincian mengenai Informasi yang f. jangka waktu pemrosesan Data Pribadi; dan C. hak Subjek Data Pribadi. (2) Dalam. PRESIEIEN REPUBLIK INOONESIA -t2- (2) Dalam hal terdapat perubahan Informasi sebagaimana dimaksud pada ayat (1), Pengendali Data Pribadi wajib . memberitahukan kepada Subjek Data Pribadi sebelum terjadi perubahan Informasi. Pasa722 (1) Persetujuan pemrosesan Data Pribadi dilakukan melalui persetujuan tertulis atau terekam. (2) Persetqiuan sebagaimana dimaksud pada ayat (1) dapat disampaikan secara elektronik atau nonelektronik. (3) Persetqjuan sebagaimana dimaksud pada ayat (1) mempunyai kekuatan hukum yang sama. (4). Dalam hal persetqluan sebagaimana dimaksud pada ayat (1) memuat tujuan lain, permintaan persetqjuan harus memenuhi ketentuan: a. dapat dibedakan secara jelas dengan hal lainnya; b. dibuat dengan forrnat yang dapat dipahami dan mudah diakses; dan c. menggunalan bahasa yang sederhana dan jelas. (5) Persetqjuan yang tidak memenuhi ketentuan sebagaimana dimaksud pada ayat (1) dan ayat (4) dinyatakan batal demi hukum. '
 
 ### Pasal 50 → Pasal 30  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 30` → `UU_PDP_No27_2022`
@@ -1400,35 +1388,35 @@ Total **237 sitiran** dari **124 pasal sumber**. Tiap baris = satu pasal yang me
 
   > Ketentuan mengenai kewajiban Pengendali Data Pribadi sebagaimana dimaksud dalam Pasal 29, Pasal 31,
 
-### Pasal 57 → Pasal 2O  ·  _pasal→pasal (internal)_
-- **Menyebut:** `Pasal 2O` → `UU_PDP_No27_2022`
+### Pasal 57 → Pasal 20  ·  _pasal→pasal (internal)_
+- **Menyebut:** `Pasal 20` → `UU_PDP_No27_2022`
 - **Teks utuh Pasal 57 (UU_PDP_No27_2022):**
 
-  > (1) Pelanggaran terhadap ketentuan Pasal 2O ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,
+  > (1) Pelanggaran terhadap ketentuan Pasal 20 ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,
 
 ### Pasal 57 → Pasal 21  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 21` → `UU_PDP_No27_2022`
 - **Teks utuh Pasal 57 (UU_PDP_No27_2022):**
 
-  > (1) Pelanggaran terhadap ketentuan Pasal 2O ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,
+  > (1) Pelanggaran terhadap ketentuan Pasal 20 ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,
 
 ### Pasal 57 → Pasal 24  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 24` → `UU_PDP_No27_2022`
 - **Teks utuh Pasal 57 (UU_PDP_No27_2022):**
 
-  > (1) Pelanggaran terhadap ketentuan Pasal 2O ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,
+  > (1) Pelanggaran terhadap ketentuan Pasal 20 ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,
 
 ### Pasal 57 → Pasal 25 ayat (2)  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 25 ayat (2)` → `UU_PDP_No27_2022`
 - **Teks utuh Pasal 57 (UU_PDP_No27_2022):**
 
-  > (1) Pelanggaran terhadap ketentuan Pasal 2O ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,
+  > (1) Pelanggaran terhadap ketentuan Pasal 20 ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,
 
 ### Pasal 57 → Pasal 26a  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 26a` → `UU_PDP_No27_2022`
 - **Teks utuh Pasal 57 (UU_PDP_No27_2022):**
 
-  > (1) Pelanggaran terhadap ketentuan Pasal 2O ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,
+  > (1) Pelanggaran terhadap ketentuan Pasal 20 ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,
 
 ### Pasal 60 → Pasal 58 ayat (2)  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 58 ayat (2)` → `UU_PDP_No27_2022`
@@ -1447,6 +1435,18 @@ Total **237 sitiran** dari **124 pasal sumber**. Tiap baris = satu pasal yang me
 - **Teks utuh Pasal 68 (UU_PDP_No27_2022):**
 
   > Setiap Orang yang dengan sengaja membuat Data Pribadi palsu atau memalsukan Data Pribadi dengan maksud untuk menguntrrngkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian bagi orang lain sebagaimana dimaksud dalam Pasal 66 .tipidana dengan pidana penjara paling tama 6 (enam) tahun dan/atau pidana denda paling banyak Rp6.0OO. 000.000,00 (enam miliar rupiah).
+
+### Pasal 70 → Pasal 67  ·  _pasal→pasal (internal)_
+- **Menyebut:** `Pasal 67` → `UU_PDP_No27_2022`
+- **Teks utuh Pasal 70 (UU_PDP_No27_2022):**
+
+  > (1) Dafam hal tindak pidana sebagaimana dimaksud dalam Pasal 67 dan Pasal 68 dilakukan oleh Korporasi, pidana dapat dljatuhkan kepada pengurus, pemegang kendali, pemberi perintah, pemilik manfaat, dan/ atau Korporasi. (2) Pidana yang dapat djatuhkan terhadap Korporasi hanya pidana denda. (3) Pidana denda yang dijatuhkan kepada Korporasi paling banyak 10 (sepuluh) kali dari maksimal pidana denda yang diancamkan. (4) Selain dijatuhi pidana denda sebagaimana dimaksud pada ayat (2), Korporasi dapat dijatuhi pidana ' tambahan berupa: a. perampasan keuntungan dan/ atau harta kekayaan yang diperoleh atau hasil dari tindak pidana; b. pembekuan seluruh atau sebagian usaha Korporasi; c. pelarangan permanen melakukan perbuatan tertentu; d. penutupan seluruh atau sebagian tempat usaha dan/ atau kegiatan Korporasi; e. melaksanakan kewajiban yang telah dilalaikan; f. pembayaran ganti kerugian; g. pencabutan izin; dan/atala h. pembubaranKorporasi.
+
+### Pasal 70 → Pasal 68  ·  _pasal→pasal (internal)_
+- **Menyebut:** `Pasal 68` → `UU_PDP_No27_2022`
+- **Teks utuh Pasal 70 (UU_PDP_No27_2022):**
+
+  > (1) Dafam hal tindak pidana sebagaimana dimaksud dalam Pasal 67 dan Pasal 68 dilakukan oleh Korporasi, pidana dapat dljatuhkan kepada pengurus, pemegang kendali, pemberi perintah, pemilik manfaat, dan/ atau Korporasi. (2) Pidana yang dapat djatuhkan terhadap Korporasi hanya pidana denda. (3) Pidana denda yang dijatuhkan kepada Korporasi paling banyak 10 (sepuluh) kali dari maksimal pidana denda yang diancamkan. (4) Selain dijatuhi pidana denda sebagaimana dimaksud pada ayat (2), Korporasi dapat dijatuhi pidana ' tambahan berupa: a. perampasan keuntungan dan/ atau harta kekayaan yang diperoleh atau hasil dari tindak pidana; b. pembekuan seluruh atau sebagian usaha Korporasi; c. pelarangan permanen melakukan perbuatan tertentu; d. penutupan seluruh atau sebagian tempat usaha dan/ atau kegiatan Korporasi; e. melaksanakan kewajiban yang telah dilalaikan; f. pembayaran ganti kerugian; g. pencabutan izin; dan/atala h. pembubaranKorporasi.
 
 ### Pasal 73 → Pasal 7L  ·  _pasal→pasal (internal)_
 - **Menyebut:** `Pasal 7L` → `UU_PDP_No27_2022`

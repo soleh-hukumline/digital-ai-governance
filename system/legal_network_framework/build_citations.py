@@ -79,10 +79,16 @@ INSTR = [
         r'ASEAN\s+Guide\s+on\s+AI', r'ASEAN\s+.{0,20}AI\s+Governance\s+and\s+Ethics',
         r'Panduan\s+ASEAN']},
     {'id': 'ISO/IEC 42001', 'doc': 'ISO_IEC_42001', 'aliases': [r'ISO/?\s?IEC\s*42001', r'ISO\s*42001']},
+    # Audit 2026-07-18: alias longgar r'Council\s+of\s+Europe' menghasilkan 23 false
+    # positive (22 baris AFILIASI di WHO 2021 — terbit sebelum Konvensi diadopsi
+    # 17 Mei 2024 — dan 1 penyebutan organisasi di OECD). Wajibkan nama Konvensi/CETS.
     {'id': 'Council of Europe Framework Convention on AI', 'doc': 'Council_of_Europe', 'aliases': [
-        r'Council\s+of\s+Europe', r'Framework\s+Convention\s+on\s+Artificial\s+Intelligence']},
+        r'Council\s+of\s+Europe\s+Framework\s+Convention',
+        r'Framework\s+Convention\s+on\s+Artificial\s+Intelligence', r'CETS\s*(?:No\.?\s*)?225']},
+    # Audit 2026-07-18: alias frasa generik 'Safe, Secure and Trustworthy' kena wording
+    # G7 Hiroshima CoC (Okt 2023 — mendahului resolusi 21 Mar 2024). Cukup by-number.
     {'id': 'UNGA Res 78/265 (Safe, Secure, Trustworthy AI)', 'doc': 'UNGA_Res_78_265', 'aliases': [
-        r'78/265', r'Safe,?\s+Secure[, ]+and\s+Trustworthy']},
+        r'78/265']},
     {'id': 'Global Digital Compact (UNGA 78/311)', 'doc': 'UNGA_Res_78_311', 'aliases': [
         r'Global\s+Digital\s+Compact', r'78/311']},
     {'id': 'WHO Ethics & Governance of AI for Health', 'doc': 'WHO_Ethics', 'aliases': [

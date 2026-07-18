@@ -268,8 +268,8 @@
         "context": "…al dari G20 Sejalan dengan ketetapan prinsip-prinsip Kecerdasan Artifisial G20 (G20 AI Principles) [7] yang disepakati dalam pertemuan KTT G20 tanggal 28-29 Juni 2019 di Osaka-Jepang, pem…",
         "type": "named",
         "name": "G20 AI Principles  [≈ OECD AI Principles (G20 mengadopsi 2019)]",
-        "in_corpus": true,
-        "corpus_doc": "OECD_AI_Principles_2024",
+        "in_corpus": false,
+        "corpus_doc": null,
         "self_ref": false,
         "suspect_year": false
       },
@@ -559,17 +559,6 @@
         "suspect_year": false
       },
       {
-        "id": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-        "count": 1,
-        "context": "…ode of Conduct for Organizations Developing Advanced AI Systems aims to promote safe, secure, and trustworthy AI worldwide and will provide voluntary guidance for actions by organizations developing …",
-        "type": "named",
-        "name": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-        "in_corpus": true,
-        "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-        "self_ref": false,
-        "suspect_year": false
-      },
-      {
         "id": "Sustainable Development Goals (2030 Agenda)",
         "count": 1,
         "context": "…ation These efforts are undertaken in support of progress on the United Nations Sustainable Development Goals, and to encourage AI development for global benefit. Organizations should prioritize resp…",
@@ -601,17 +590,6 @@
         "name": "G20 AI Principles  [≈ OECD AI Principles (G20 mengadopsi 2019)]",
         "in_corpus": false,
         "corpus_doc": null,
-        "self_ref": false,
-        "suspect_year": false
-      },
-      {
-        "id": "Council of Europe Framework Convention on AI",
-        "count": 1,
-        "context": "…count work in other international fora, such as UNESCO, the European Union, the Council of Europe and the initiative to build an International Panel on AI (see https://pm.gc.ca/eng/news/2…",
-        "type": "named",
-        "name": "Council of Europe Framework Convention on AI",
-        "in_corpus": true,
-        "corpus_doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
         "self_ref": false,
         "suspect_year": false
       },
@@ -710,17 +688,6 @@
     ],
     "UNGA_Res_78_311_Global_Digital_Compact_or_AI": [
       {
-        "id": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-        "count": 6,
-        "context": "…es of the World Summit on the Information Society”, Reaffirming its resolutions 78/265 of 21 March 2024, entitled “Seizing the opportunities of safe, secure and trustworthy art…",
-        "type": "named",
-        "name": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-        "in_corpus": true,
-        "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-        "self_ref": false,
-        "suspect_year": false
-      },
-      {
         "id": "Sustainable Development Goals (2030 Agenda)",
         "count": 4,
         "context": "… 2023, entitled “Impact of rapid technological change on the achievement of the Sustainable Development Goals and targets”, 78/132 of 19 December 2023, entitled “Information and communications techno…",
@@ -728,6 +695,17 @@
         "name": "Sustainable Development Goals (2030 Agenda)",
         "in_corpus": false,
         "corpus_doc": null,
+        "self_ref": false,
+        "suspect_year": false
+      },
+      {
+        "id": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+        "count": 1,
+        "context": "…es of the World Summit on the Information Society”, Reaffirming its resolutions 78/265 of 21 March 2024, entitled “Seizing the opportunities of safe, secure and trustworthy art…",
+        "type": "named",
+        "name": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+        "in_corpus": true,
+        "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
         "self_ref": false,
         "suspect_year": false
       },
@@ -776,31 +754,9 @@
         "corpus_doc": null,
         "self_ref": false,
         "suspect_year": false
-      },
-      {
-        "id": "Indonesia Personal Data Protection Law 2022",
-        "count": 1,
-        "context": "Data Protection Act 2019, Indonesia's Personal Data Protection Law 2022, and Vietnam's Personal Data Protection Decree",
-        "type": "named",
-        "name": "UU PDP Indonesia (Personal Data Protection Law 2022)",
-        "in_corpus": true,
-        "corpus_doc": "UU_PDP_No27_2022",
-        "self_ref": false,
-        "suspect_year": false
       }
     ],
     "WHO_Ethics_and_Governance_of_AI_for_Health": [
-      {
-        "id": "Council of Europe Framework Convention on AI",
-        "count": 22,
-        "context": "…rs & Associations (IFPMA), Switzerland David Gruson, Jouve, France Lee Hibbard, Council of Europe, France Lauren Milner, US Food and Drug Administration, USA Rasha Abdul Rahim, Amnesty Te…",
-        "type": "named",
-        "name": "Council of Europe Framework Convention on AI",
-        "in_corpus": true,
-        "corpus_doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-        "self_ref": false,
-        "suspect_year": false
-      },
       {
         "id": "GDPR (EU 2016/679)",
         "count": 22,
@@ -1265,15 +1221,6 @@
     },
     {
       "source": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "target": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "name": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "type": "named",
-      "in_corpus": true,
-      "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "count": 1
-    },
-    {
-      "source": "G7_Hiroshima_Code_of_Conduct_for_AI",
       "target": "Sustainable Development Goals (2030 Agenda)",
       "name": "Sustainable Development Goals (2030 Agenda)",
       "type": "named",
@@ -1288,15 +1235,6 @@
       "type": "named",
       "in_corpus": false,
       "corpus_doc": null,
-      "count": 1
-    },
-    {
-      "source": "OECD_AI_Principles_2024",
-      "target": "Council of Europe Framework Convention on AI",
-      "name": "Council of Europe Framework Convention on AI",
-      "type": "named",
-      "in_corpus": true,
-      "corpus_doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
       "count": 1
     },
     {
@@ -1387,7 +1325,7 @@
       "type": "named",
       "in_corpus": true,
       "corpus_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "count": 6
+      "count": 1
     },
     {
       "source": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
@@ -1442,15 +1380,6 @@
       "in_corpus": true,
       "corpus_doc": "OECD_AI_Principles_2024",
       "count": 3
-    },
-    {
-      "source": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "target": "Council of Europe Framework Convention on AI",
-      "name": "Council of Europe Framework Convention on AI",
-      "type": "named",
-      "in_corpus": true,
-      "corpus_doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "count": 22
     },
     {
       "source": "WHO_Ethics_and_Governance_of_AI_for_Health",
@@ -1514,28 +1443,9 @@
       "in_corpus": false,
       "corpus_doc": null,
       "count": 6
-    },
-    {
-      "source": "Stranas_AI_Indonesia_2020-2045_Full",
-      "target": "G20 AI Principles",
-      "name": "G20 AI Principles [≈ OECD AI Principles]",
-      "type": "named",
-      "in_corpus": true,
-      "corpus_doc": "OECD_AI_Principles_2024",
-      "count": 3
-    },
-    {
-      "source": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "target": "Indonesia Personal Data Protection Law 2022",
-      "name": "UU PDP Indonesia (Personal Data Protection Law 2022)",
-      "type": "named",
-      "in_corpus": true,
-      "corpus_doc": "UU_PDP_No27_2022",
-      "count": 1
     }
   ],
   "in_corpus_targets": [
-    "Council of Europe Framework Convention on AI",
     "EU AI Act",
     "Global Digital Compact (UNGA 78/311)",
     "OECD AI Principles",
@@ -1682,12 +1592,6 @@
   ],
   "coverage": [
     {
-      "doc": "WHO_Ethics_and_Governance_of_AI_for_Health",
-      "out": 59,
-      "in": 0,
-      "role": "source"
-    },
-    {
       "doc": "Stranas_AI_Indonesia_2020-2045_Full",
       "out": 44,
       "in": 0,
@@ -1698,6 +1602,12 @@
       "out": 3,
       "in": 39,
       "role": "both"
+    },
+    {
+      "doc": "WHO_Ethics_and_Governance_of_AI_for_Health",
+      "out": 37,
+      "in": 0,
+      "role": "source"
     },
     {
       "doc": "UU_ITE_No1_2024",
@@ -1714,31 +1624,13 @@
     {
       "doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
       "out": 21,
-      "in": 7,
-      "role": "both"
-    },
-    {
-      "doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "out": 3,
-      "in": 23,
+      "in": 1,
       "role": "both"
     },
     {
       "doc": "PP_PSTE_No71_2019",
       "out": 9,
       "in": 6,
-      "role": "both"
-    },
-    {
-      "doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "out": 11,
-      "in": 1,
-      "role": "both"
-    },
-    {
-      "doc": "OECD_AI_Principles_2024",
-      "out": 5,
-      "in": 5,
       "role": "both"
     },
     {
@@ -1754,10 +1646,22 @@
       "role": "source"
     },
     {
+      "doc": "OECD_AI_Principles_2024",
+      "out": 4,
+      "in": 5,
+      "role": "both"
+    },
+    {
       "doc": "SE_Komdigi_No9_2023_Etika_AI",
       "out": 8,
       "in": 0,
       "role": "source"
+    },
+    {
+      "doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "out": 6,
+      "in": 1,
+      "role": "both"
     },
     {
       "doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
@@ -1778,8 +1682,14 @@
       "role": "source"
     },
     {
-      "doc": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
       "out": 3,
+      "in": 0,
+      "role": "source"
+    },
+    {
+      "doc": "G7_Hiroshima_Code_of_Conduct_for_AI",
+      "out": 2,
       "in": 0,
       "role": "source"
     }

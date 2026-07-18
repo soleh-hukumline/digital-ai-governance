@@ -3,7 +3,7 @@
   "by_doc": {
     "ASEAN_Guide_AI_Governance_Ethics_2024": {
       "in": 0,
-      "out": 4,
+      "out": 3,
       "role": "source",
       "juris": "INTL"
     },
@@ -32,7 +32,7 @@
       "juris": "INTL"
     },
     "OECD_AI_Principles_2024": {
-      "in": 6,
+      "in": 3,
       "out": 1,
       "role": "both",
       "juris": "INTL"
@@ -57,8 +57,8 @@
     },
     "Stranas_AI_Indonesia_2020-2045_Full": {
       "in": 0,
-      "out": 3,
-      "role": "source",
+      "out": 0,
+      "role": "isolated",
       "juris": "NATL"
     },
     "UNESCO_Recommendation_on_AI_Ethics_2021": {
@@ -92,7 +92,7 @@
       "juris": "NATL"
     },
     "UU_PDP_No27_2022": {
-      "in": 2,
+      "in": 1,
       "out": 0,
       "role": "sink",
       "juris": "NATL"
@@ -194,20 +194,6 @@
       "target": "OECD_AI_Principles_2024",
       "count": 1,
       "cross_juris": false
-    },
-    {
-      "source": "Stranas_AI_Indonesia_2020-2045_Full",
-      "target": "OECD_AI_Principles_2024",
-      "count": 3,
-      "type": "named",
-      "note": "via G20 AI Principles (G20 mengadopsi OECD AI Principles 2019)"
-    },
-    {
-      "source": "ASEAN_Guide_AI_Governance_Ethics_2024",
-      "target": "UU_PDP_No27_2022",
-      "count": 1,
-      "type": "named",
-      "note": "Indonesia Personal Data Protection Law 2022 referenced in ASEAN Guide Bagian 33"
     }
   ],
   "summary": {
@@ -229,24 +215,12 @@
       "top_authority_in": 3
     },
     "cross": {
-      "n_edges": 2,
-      "edges": [
-        {
-          "source": "Stranas_AI_Indonesia_2020-2045_Full",
-          "target": "OECD_AI_Principles_2024",
-          "count": 3
-        },
-        {
-          "source": "ASEAN_Guide_AI_Governance_Ethics_2024",
-          "target": "UU_PDP_No27_2022",
-          "count": 1
-        }
-      ],
+      "n_edges": 0,
+      "edges": [],
       "intl_docs": 10,
       "natl_docs": 7,
-      "gap": false,
-      "note": "Cross-jurisdiction citations exist but are minimal (2 edges, 4 citations total vs 10 intra-INTL + 5 intra-NATL)"
+      "gap": true
     }
   },
-  "n_internal": 17
+  "n_internal": 128
 }

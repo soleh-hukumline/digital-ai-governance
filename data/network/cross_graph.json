@@ -5209,8 +5209,8 @@
       "title": "Degree: 6"
     },
     {
-      "id": "IDN_UU_ITE_No1_2024_Pasal_168",
-      "label": "UU_ITE_No1_2024 - Pasal 168",
+      "id": "IDN_UU_ITE_No1_2024_Pasal_16B",
+      "label": "UU_ITE_No1_2024 - Pasal 16B",
       "group": "UU_ITE_No1_2024",
       "classification": "Natl: Binding Law",
       "value": 66,
@@ -5241,8 +5241,8 @@
       "title": "Degree: 3"
     },
     {
-      "id": "IDN_UU_ITE_No1_2024_Pasal_278",
-      "label": "UU_ITE_No1_2024 - Pasal 278",
+      "id": "IDN_UU_ITE_No1_2024_Pasal_27B",
+      "label": "UU_ITE_No1_2024 - Pasal 27B",
       "group": "UU_ITE_No1_2024",
       "classification": "Natl: Binding Law",
       "value": 18,
@@ -5817,8 +5817,8 @@
       "title": "Degree: 0"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_7O",
-      "label": "UU_PDP_No27_2022 - Pasal 7O",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_70",
+      "label": "UU_PDP_No27_2022 - Pasal 70",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 18,
@@ -5841,16 +5841,16 @@
       "title": "Degree: 1"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_1O",
-      "label": "UU_PDP_No27_2022 - Pasal 1O",
+      "id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_10",
+      "label": "UU_PDP_No27_2022 - Penjelasan Pasal 10",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 10,
       "title": "Degree: 0"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-      "label": "UU_PDP_No27_2022 - Pasal 6O",
+      "id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+      "label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 30,
@@ -8207,7 +8207,7 @@
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_11",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -9285,7 +9285,7 @@
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_34",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -9607,7 +9607,7 @@
     },
     {
       "from": "Council_of_Europe_Framework_Convention_on_AI_CETS225_Article_33",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -11833,7 +11833,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_36",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -14185,7 +14185,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_93",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -14563,7 +14563,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_96",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -14794,7 +14794,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_97",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -14829,7 +14829,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_99",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -14843,7 +14843,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_99",
-      "to": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "to": "IDN_UU_PDP_No27_2022_Pasal_70",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -14927,7 +14927,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_100",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -14948,7 +14948,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_100",
-      "to": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "to": "IDN_UU_PDP_No27_2022_Pasal_70",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -15221,7 +15221,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_105",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -15459,7 +15459,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_106",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -15662,7 +15662,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_107",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -15858,7 +15858,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_108",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -16075,7 +16075,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_109",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -16488,7 +16488,7 @@
     },
     {
       "from": "EU_AI_Act_2024_Article_113",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -23985,7 +23985,7 @@
     },
     {
       "from": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_72",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -24244,7 +24244,7 @@
     },
     {
       "from": "UNESCO_Recommendation_on_AI_Ethics_2021_Bagian_72",
-      "to": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "to": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -29319,7 +29319,7 @@
     },
     {
       "from": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_27",
-      "to": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "to": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -34156,7 +34156,7 @@
     },
     {
       "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_34",
-      "to": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "to": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -34555,7 +34555,7 @@
     },
     {
       "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_38",
-      "to": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "to": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05
@@ -36214,7 +36214,7 @@
     },
     {
       "from": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
-      "to": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "to": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "label": "Semantic Sim 5.0%",
       "arrows": "to",
       "value": 0.05

@@ -32,7 +32,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -115,7 +115,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -198,7 +198,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -275,7 +275,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -358,7 +358,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -441,7 +441,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -524,7 +524,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -607,7 +607,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -690,7 +690,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -757,7 +757,7 @@
       "id": "pedulilindungi-jokowi-cert-2021",
       "title_en": "President Jokowi's vaccine certificate exposed via PeduliLindungi feature",
       "peristiwa_hukum_kronologi": "Awal September 2021 sertifikat vaksin Presiden Joko Widodo diakses dan beredar daring setelah pengguna mengeksploitasi fitur cek vaksinasi di aplikasi PeduliLindungi. Menkes menyatakan akses ke data pejabat telah diblokir dan keamanan diperbaiki; Kominfo berargumen data NIK/vaksinasi mungkin berasal dari sumber pemerintah lain.",
-      "kualifikasi_peristiwa": "Dugaan kelalaian pengamanan akses data pribadi pada Sistem Elektronik publik (Pasal 35 & Pasal 36 UU 27/2022 tentang PDP).",
+      "kualifikasi_peristiwa": "Dugaan kelalaian pengamanan akses data pribadi pada Sistem Elektronik publik (saat insiden 2021 tunduk pada Pasal 24 PP No. 71/2019 tentang PSTE; kewajiban serupa kini diatur Pasal 35 & Pasal 36 UU No. 27/2022 tentang PDP, yang tidak berlaku surut).",
       "pemetaan_fakta_hukum": {
         "subjek_pelaku": "Individu yang mengeksploitasi fitur cek sertifikat aplikasi publik.",
         "subjek_korban": "Presiden Joko Widodo; kekhawatiran meluas pada pengguna PeduliLindungi.",
@@ -793,7 +793,7 @@
           "posisi_hukum": "Hak atas perlindungan & ganti rugi",
           "objek_hukum": "Hak & keselamatan pihak terdampak",
           "dasar_hukum": [
-            "UU 8/1999 / UU 4/2023 Perlindungan Konsumen",
+            "UU 8/1999 Perlindungan Konsumen / UU 4/2023 P2SK Ps. 235 dst. (pelindungan konsumen sektor keuangan)",
             "UU PDP Ps. 5–12"
           ]
         },
@@ -850,7 +850,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -933,7 +933,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1016,7 +1016,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1099,7 +1099,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1166,7 +1166,7 @@
       "id": "pedulilindungi-id-gambling-hijack-2025",
       "title_en": "Legacy PeduliLindungi.id domain hijacked to show online gambling content",
       "peristiwa_hukum_kronologi": "Sekitar 19-20 Mei 2025 situs legacy PeduliLindungi.id ditemukan menampilkan konten promosi judi daring setelah disusupi. Komdigi memblokir domain pada 21 Mei 2025; layanan kesehatan telah bermigrasi ke SatuSehat sejak 2023, dan Telkom memulai investigasi internal.",
-      "kualifikasi_peristiwa": "Akses ilegal dan perubahan/perusakan tampilan sistem elektronik (Pasal 30 & Pasal 32 jo. Pasal 46-48 UU ITE).",
+      "kualifikasi_peristiwa": "Akses ilegal dan perubahan/perusakan tampilan sistem elektronik (Pasal 30 & Pasal 32 jo. Pasal 46 & Pasal 48 UU ITE).",
       "pemetaan_fakta_hukum": {
         "subjek_pelaku": "Tidak dikenal (penyusupan domain/SEO-spam judi).",
         "subjek_korban": "Pengunjung domain legacy PeduliLindungi.id.",
@@ -1182,7 +1182,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1259,7 +1259,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1336,7 +1336,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1397,7 +1397,7 @@
       "id": "kejaksaan-agung-defacement-2025",
       "title_en": "Attorney General's Office (Kejaksaan Agung) website defacement",
       "peristiwa_hukum_kronologi": "Pada Februari 2025 situs resmi Kejaksaan Agung (kejaksaan.go.id) terkena serangan defacement, dilaporkan via media sosial sekitar 10 Februari 2025. Pelaku, melalui handel Instagram, mengklaim mengakses basis data termasuk data pegawai, tamu, e-ticketing, dan perkara.",
-      "kualifikasi_peristiwa": "Akses ilegal dan perubahan/perusakan tampilan sistem elektronik (Pasal 30 & Pasal 32 jo. Pasal 46-48 UU ITE).",
+      "kualifikasi_peristiwa": "Akses ilegal dan perubahan/perusakan tampilan sistem elektronik (Pasal 30 & Pasal 32 jo. Pasal 46 & Pasal 48 UU ITE).",
       "pemetaan_fakta_hukum": {
         "subjek_pelaku": "Individu dengan handel @unrooter.id, @raja_jawa19xx, @fablo_kecil.",
         "subjek_korban": "Kejaksaan Agung RI.",
@@ -1413,7 +1413,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1480,7 +1480,7 @@
       "id": "ugm-ft-website-defacement-2022",
       "title_en": "UGM engineering faculty website defaced by 'Bangsin'",
       "peristiwa_hukum_kronologi": "Pada Desember 2022 peretas beralias 'Bangsin' merusak tampilan situs 'FIND IT!' FT UGM (findit.ft.ugm.ac.id) dengan pesan 'BANGSIN WAS HERE AGAIN' dan berkas audio. Dilaporkan sebagai insiden berulang oleh pelaku yang sama; unit keamanan informasi UGM (DSSDI) menangani.",
-      "kualifikasi_peristiwa": "Akses ilegal dan perubahan/perusakan tampilan sistem elektronik (Pasal 30 & Pasal 32 jo. Pasal 46-48 UU ITE).",
+      "kualifikasi_peristiwa": "Akses ilegal dan perubahan/perusakan tampilan sistem elektronik (Pasal 30 & Pasal 32 jo. Pasal 46 & Pasal 48 UU ITE).",
       "pemetaan_fakta_hukum": {
         "subjek_pelaku": "Peretas dengan alias 'Bangsin'.",
         "subjek_korban": "Fakultas Teknik, Universitas Gadjah Mada.",
@@ -1496,7 +1496,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1573,7 +1573,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1656,7 +1656,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1821,7 +1821,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1904,7 +1904,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -1987,7 +1987,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -2054,7 +2054,7 @@
       "id": "adakami-pinjol-conduct-2023",
       "title_en": "AdaKami pinjol abusive debt-collection case and OJK sanction",
       "peristiwa_hukum_kronologi": "Pada September 2023, laporan viral menuding seorang peminjam meninggal dunia akibat intimidasi penagih AdaKami, disertai dugaan order fiktif untuk meneror serta bunga/biaya berlebih. OJK memanggil AdaKami (20-21 September 2023), memerintahkan investigasi menyeluruh dan kanal pengaduan, lalu menjatuhkan sanksi surat peringatan atas pelanggaran praktik penagihan.",
-      "kualifikasi_peristiwa": "Pelanggaran perlindungan konsumen sektor jasa keuangan dan praktik penagihan melawan hukum (UU 4/2023 PPSK & POJK perlindungan konsumen); sanksi administratif OJK.",
+      "kualifikasi_peristiwa": "Pelanggaran perlindungan konsumen sektor jasa keuangan dan praktik penagihan melawan hukum (UU 4/2023 P2SK & POJK 6/POJK.07/2022 tentang Perlindungan Konsumen dan Masyarakat di Sektor Jasa Keuangan — kini POJK 22/2023); sanksi administratif OJK.",
       "pemetaan_fakta_hukum": {
         "subjek_pelaku": "Praktik penagihan AdaKami yang diduga melanggar (debt collector).",
         "subjek_korban": "Konsumen/peminjam AdaKami.",
@@ -2090,7 +2090,7 @@
           "posisi_hukum": "Hak atas perlindungan & ganti rugi",
           "objek_hukum": "Hak & keselamatan pihak terdampak",
           "dasar_hukum": [
-            "UU 8/1999 / UU 4/2023 Perlindungan Konsumen",
+            "UU 8/1999 Perlindungan Konsumen / UU 4/2023 P2SK Ps. 235 dst. (pelindungan konsumen sektor keuangan)",
             "UU PDP Ps. 5–12"
           ]
         },
@@ -2311,7 +2311,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -2394,7 +2394,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -2477,7 +2477,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -2560,7 +2560,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -2643,7 +2643,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -2726,7 +2726,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -2809,7 +2809,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -2892,7 +2892,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -2975,7 +2975,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -3058,7 +3058,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -3141,7 +3141,7 @@
           "posisi_hukum": "Pertanggungjawaban pidana atas akses ilegal, pencurian/perusakan, dan/atau pemerasan data",
           "objek_hukum": "Keamanan & kerahasiaan Sistem Elektronik dan data pribadi",
           "dasar_hukum": [
-            "UU ITE Ps. 30, 32, 46–48",
+            "UU ITE Ps. 30, 32 jo. Ps. 46, 48",
             "UU ITE Ps. 27B (pemerasan)",
             "UU PDP Ps. 67–68",
             "KUHP"
@@ -3232,7 +3232,7 @@
           "dasar_hukum": [
             "PP PSTE No.71/2019",
             "UU PDP (data biometrik)",
-            "SE Komdigi 9/2023 Etika AI"
+            "SE Menkominfo No. 9/2023 Etika Kecerdasan Artifisial (pedoman, tidak mengikat)"
           ]
         },
         {
@@ -3241,7 +3241,7 @@
           "posisi_hukum": "Pelindungan martabat/integritas & hak penghapusan konten",
           "objek_hukum": "Martabat, integritas, dan citra/data pribadi korban",
           "dasar_hukum": [
-            "UU PDP Ps. 26 (hak penghapusan)",
+            "UU PDP Ps. 8 (hak penghapusan)",
             "UU 12/2022 TPKS",
             "UU ITE Ps. 26"
           ]
@@ -3254,7 +3254,7 @@
           "dasar_hukum": [
             "Komdigi",
             "Kepolisian",
-            "SE Komdigi 9/2023 (pedoman)"
+            "SE Menkominfo No. 9/2023 Etika AI (kini Komdigi; pedoman tidak mengikat)"
           ]
         }
       ],
@@ -3291,7 +3291,7 @@
         "subjek_korban": "Siswi, alumni, dan guru perempuan SMA Negeri 11 Semarang.",
         "subjek_pse": "Platform X (Twitter).",
         "objek_hukum": "Kehormatan, martabat, integritas seksual, dan data pribadi (citra wajah) korban.",
-        "akibat_hukum": "~30 korban teridentifikasi (sebagian minor); tersangka ditahan dan dijerat UU Pornografi, UU ITE, dan KUHP, terancam 9-12 tahun.",
+        "akibat_hukum": "~30 korban teridentifikasi (sebagian minor); tersangka ditahan dan dijerat Pasal 29 jo. Pasal 4 ayat (1) huruf d UU 44/2008 Pornografi serta Pasal 45 ayat (1) jo. Pasal 27 ayat (1) dan Pasal 51 ayat (1) jo. Pasal 35 UU ITE, terancam 6-12 tahun penjara dan denda maksimal Rp12 miliar.",
         "nexus_kausalitas": "Aksesibilitas alat AI generatif tanpa pengaman memungkinkan produksi citra intim non-konsensual massal."
       },
       "subjek_hukum": [
@@ -3315,7 +3315,7 @@
           "dasar_hukum": [
             "PP PSTE No.71/2019",
             "UU PDP (data biometrik)",
-            "SE Komdigi 9/2023 Etika AI"
+            "SE Menkominfo No. 9/2023 Etika Kecerdasan Artifisial (pedoman, tidak mengikat)"
           ]
         },
         {
@@ -3324,7 +3324,7 @@
           "posisi_hukum": "Pelindungan martabat/integritas & hak penghapusan konten",
           "objek_hukum": "Martabat, integritas, dan citra/data pribadi korban",
           "dasar_hukum": [
-            "UU PDP Ps. 26 (hak penghapusan)",
+            "UU PDP Ps. 8 (hak penghapusan)",
             "UU 12/2022 TPKS",
             "UU ITE Ps. 26"
           ]
@@ -3337,7 +3337,7 @@
           "dasar_hukum": [
             "Komdigi",
             "Kepolisian",
-            "SE Komdigi 9/2023 (pedoman)"
+            "SE Menkominfo No. 9/2023 Etika AI (kini Komdigi; pedoman tidak mengikat)"
           ]
         }
       ],
@@ -3398,7 +3398,7 @@
           "dasar_hukum": [
             "PP PSTE No.71/2019",
             "UU PDP (data biometrik)",
-            "SE Komdigi 9/2023 Etika AI"
+            "SE Menkominfo No. 9/2023 Etika Kecerdasan Artifisial (pedoman, tidak mengikat)"
           ]
         },
         {
@@ -3407,7 +3407,7 @@
           "posisi_hukum": "Pelindungan martabat/integritas & hak penghapusan konten",
           "objek_hukum": "Martabat, integritas, dan citra/data pribadi korban",
           "dasar_hukum": [
-            "UU PDP Ps. 26 (hak penghapusan)",
+            "UU PDP Ps. 8 (hak penghapusan)",
             "UU 12/2022 TPKS",
             "UU ITE Ps. 26"
           ]
@@ -3420,7 +3420,7 @@
           "dasar_hukum": [
             "Komdigi",
             "Kepolisian",
-            "SE Komdigi 9/2023 (pedoman)"
+            "SE Menkominfo No. 9/2023 Etika AI (kini Komdigi; pedoman tidak mengikat)"
           ]
         }
       ],
@@ -3481,7 +3481,7 @@
           "dasar_hukum": [
             "PP PSTE No.71/2019",
             "UU PDP (data biometrik)",
-            "SE Komdigi 9/2023 Etika AI"
+            "SE Menkominfo No. 9/2023 Etika Kecerdasan Artifisial (pedoman, tidak mengikat)"
           ]
         },
         {
@@ -3490,7 +3490,7 @@
           "posisi_hukum": "Pelindungan martabat/integritas & hak penghapusan konten",
           "objek_hukum": "Martabat, integritas, dan citra/data pribadi korban",
           "dasar_hukum": [
-            "UU PDP Ps. 26 (hak penghapusan)",
+            "UU PDP Ps. 8 (hak penghapusan)",
             "UU 12/2022 TPKS",
             "UU ITE Ps. 26"
           ]
@@ -3503,7 +3503,7 @@
           "dasar_hukum": [
             "Komdigi",
             "Kepolisian",
-            "SE Komdigi 9/2023 (pedoman)"
+            "SE Menkominfo No. 9/2023 Etika AI (kini Komdigi; pedoman tidak mengikat)"
           ]
         }
       ],
@@ -3558,7 +3558,7 @@
           "dasar_hukum": [
             "PP PSTE No.71/2019",
             "UU PDP (data biometrik)",
-            "SE Komdigi 9/2023 Etika AI"
+            "SE Menkominfo No. 9/2023 Etika Kecerdasan Artifisial (pedoman, tidak mengikat)"
           ]
         },
         {
@@ -3567,7 +3567,7 @@
           "posisi_hukum": "Pelindungan martabat/integritas & hak penghapusan konten",
           "objek_hukum": "Martabat, integritas, dan citra/data pribadi korban",
           "dasar_hukum": [
-            "UU PDP Ps. 26 (hak penghapusan)",
+            "UU PDP Ps. 8 (hak penghapusan)",
             "UU 12/2022 TPKS",
             "UU ITE Ps. 26"
           ]
@@ -3580,7 +3580,7 @@
           "dasar_hukum": [
             "Komdigi",
             "Kepolisian",
-            "SE Komdigi 9/2023 (pedoman)"
+            "SE Menkominfo No. 9/2023 Etika AI (kini Komdigi; pedoman tidak mengikat)"
           ]
         }
       ],

@@ -881,8 +881,8 @@
       "title": "Degree Semantik: 28"
     },
     {
-      "id": "IDN_UU_ITE_No1_2024_Pasal_168",
-      "label": "UU_ITE_No1_2024 - Pasal 168",
+      "id": "IDN_UU_ITE_No1_2024_Pasal_16B",
+      "label": "UU_ITE_No1_2024 - Pasal 16B",
       "group": "UU_ITE_No1_2024",
       "classification": "Natl: Binding Law",
       "value": 58,
@@ -913,8 +913,8 @@
       "title": "Degree Semantik: 9"
     },
     {
-      "id": "IDN_UU_ITE_No1_2024_Pasal_278",
-      "label": "UU_ITE_No1_2024 - Pasal 278",
+      "id": "IDN_UU_ITE_No1_2024_Pasal_27B",
+      "label": "UU_ITE_No1_2024 - Pasal 27B",
       "group": "UU_ITE_No1_2024",
       "classification": "Natl: Binding Law",
       "value": 38,
@@ -1489,8 +1489,8 @@
       "title": "Degree Semantik: 3"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_7O",
-      "label": "UU_PDP_No27_2022 - Pasal 7O",
+      "id": "IDN_UU_PDP_No27_2022_Pasal_70",
+      "label": "UU_PDP_No27_2022 - Pasal 70",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 30,
@@ -1513,16 +1513,16 @@
       "title": "Degree Semantik: 0"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_1O",
-      "label": "UU_PDP_No27_2022 - Pasal 1O",
+      "id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_10",
+      "label": "UU_PDP_No27_2022 - Penjelasan Pasal 10",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 10,
       "title": "Degree Semantik: 0"
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-      "label": "UU_PDP_No27_2022 - Pasal 6O",
+      "id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+      "label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
       "group": "UU_PDP_No27_2022",
       "classification": "Natl: Binding Law",
       "value": 10,
@@ -3190,7 +3190,7 @@
     },
     {
       "from": "IDN_PP_PSTE_No71_2019_Pasal_16",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Lemah 71.0%)",
       "arrows": "to"
     },
@@ -4696,7 +4696,7 @@
     },
     {
       "from": "IDN_PP_PSTE_No71_2019_Pasal_101",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "label": "semantic similarity (Sangat Kuat 83.6%)",
       "arrows": "to"
     },
@@ -4762,7 +4762,7 @@
     },
     {
       "from": "IDN_UU_ITE_No19_2016_Pasal_26",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Lemah 78.6%)",
       "arrows": "to"
     },
@@ -4852,7 +4852,7 @@
     },
     {
       "from": "IDN_UU_ITE_No19_2016_Pasal_3",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Sangat Kuat 83.7%)",
       "arrows": "to"
     },
@@ -4936,7 +4936,7 @@
     },
     {
       "from": "IDN_UU_ITE_No19_2016_Pasal_45",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Lemah 71.8%)",
       "arrows": "to"
     },
@@ -4972,7 +4972,7 @@
     },
     {
       "from": "IDN_UU_ITE_No19_2016_Pasal_45A",
-      "to": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "to": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "label": "semantic similarity (Lemah 70.2%)",
       "arrows": "to"
     },
@@ -5001,67 +5001,67 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_UU_PDP_No27_2022_Pasal_57",
       "label": "semantic similarity (Lemah 75.4%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
-      "to": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
+      "to": "IDN_UU_PDP_No27_2022_Pasal_70",
       "label": "semantic similarity (Lemah 71.0%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_19",
       "label": "semantic similarity (Lemah 73.1%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_22",
       "label": "semantic similarity (Sangat Kuat 92.4%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_27",
       "label": "semantic similarity (Sangat Kuat 92.0%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_30",
       "label": "semantic similarity (Sangat Kuat 92.5%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_33",
       "label": "semantic similarity (Sangat Kuat 90.0%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_39",
       "label": "semantic similarity (Sangat Kuat 92.3%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_41",
       "label": "semantic similarity (Sangat Kuat 91.3%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_43",
       "label": "semantic similarity (Sangat Kuat 91.7%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_168",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_16B",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_49",
       "label": "semantic similarity (Sangat Kuat 90.2%)",
       "arrows": "to"
@@ -5097,13 +5097,13 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "to": "IDN_UU_PDP_No27_2022_Pasal_65",
       "label": "semantic similarity (Sangat Kuat 80.5%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_ITE_No1_2024_Pasal_278",
+      "from": "IDN_UU_ITE_No1_2024_Pasal_27B",
       "to": "IDN_UU_PDP_No27_2022_Pasal_66",
       "label": "semantic similarity (Lemah 74.6%)",
       "arrows": "to"
@@ -5343,25 +5343,25 @@
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_70",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_22",
       "label": "semantic similarity (Lemah 71.8%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_70",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_30",
       "label": "semantic similarity (Lemah 70.4%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_70",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_39",
       "label": "semantic similarity (Lemah 70.9%)",
       "arrows": "to"
     },
     {
-      "from": "IDN_UU_PDP_No27_2022_Pasal_7O",
+      "from": "IDN_UU_PDP_No27_2022_Pasal_70",
       "to": "IDN_POJK_No3_2024_Inovasi_Teknologi_Keuangan_Pasal_43",
       "label": "semantic similarity (Lemah 70.8%)",
       "arrows": "to"

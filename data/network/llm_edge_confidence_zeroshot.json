@@ -820,8 +820,8 @@
         "reason": "Elaborates on regulator's policy formulation, not direct incident application."
       },
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.4834,
         "relevant": true,
         "roles": [
@@ -869,8 +869,8 @@
         "reason": "General policy statement, not directly applicable to this specific data breach incident."
       },
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.4601,
         "relevant": false,
         "roles": [],
@@ -977,8 +977,8 @@
     ],
     "inafis-polri-fingerprint-leak-2024": [
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.5236,
         "relevant": false,
         "roles": [],
@@ -1147,8 +1147,8 @@
         "reason": "Lembaga berwenang merumuskan kebijakan dan mengawasi kepatuhan pengendali data."
       },
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.4874,
         "relevant": false,
         "roles": [],
@@ -1442,8 +1442,8 @@
         "reason": "Focuses on spreading false news causing consumer loss, not data breach."
       },
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.3684,
         "relevant": true,
         "roles": [
@@ -1496,8 +1496,8 @@
         "reason": "eHAC is a PSE; this provision mandates reliable authentication methods."
       },
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.4493,
         "relevant": false,
         "roles": [],
@@ -2653,8 +2653,8 @@
     ],
     "kreditplus-data-leak-2020": [
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.424,
         "relevant": false,
         "roles": [],
@@ -2848,8 +2848,8 @@
         "reason": "This is an external review section, not a legal provision."
       },
       {
-        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_278",
-        "regulation_label": "UU_ITE_No1_2024 - Pasal 278",
+        "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_27B",
+        "regulation_label": "UU_ITE_No1_2024 - Pasal 27B",
         "cosine": 0.4063,
         "relevant": false,
         "roles": [],
@@ -3005,8 +3005,8 @@
         "reason": "The breached data (KTP, tax data) falls under specific personal data, requiring high protection."
       },
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.3847,
         "relevant": false,
         "roles": [],
@@ -3506,8 +3506,8 @@
     ],
     "bukalapak-13m-2019": [
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.3291,
         "relevant": false,
         "roles": [],
@@ -4129,8 +4129,8 @@
     ],
     "pln-customer-data-leak-2022": [
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.5451,
         "relevant": false,
         "roles": [],
@@ -4448,8 +4448,8 @@
         "reason": "Pasal ini mengatur pemberitahuan penghapusan/pemusnahan, bukan insiden kebocoran data."
       },
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.3808,
         "relevant": false,
         "roles": [],
@@ -4786,8 +4786,8 @@
         "reason": "Pelaku mungkin membuat/memalsukan data pribadi (misal identitas palsu) untuk keuntungan."
       },
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.425,
         "relevant": false,
         "roles": [],
@@ -5172,8 +5172,8 @@
         "reason": "OECD reference on privacy-enhancing technologies is too general for this incident."
       },
       {
-        "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_6O",
-        "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+        "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+        "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
         "cosine": 0.3573,
         "relevant": true,
         "roles": [

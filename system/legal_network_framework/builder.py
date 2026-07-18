@@ -88,6 +88,23 @@ FALLBACK_MAX_CHUNKS  = 80    # cap segments per document (graph-size guard)
 # ayat (1)…") — and last-write-wins stored the reference FRAGMENT as the article,
 # so ~half of all nodes carried garbled text. We now anchor on true HEADINGS only.
 HEADING_KINDS = ('Pasal', 'Article', 'Section', 'Principle')
+
+# OCR garble in heading NUMBERS (audit 2026-07-18). Two failure shapes:
+#   * letter O captured where a zero belongs → "Pasal 7O" (= Pasal 70). Fixed
+#     generically by _norm_heading_no(); legit letter suffixes (27A, 16B) keep
+#     their letter — no statute in this corpus uses an "O" suffix. Side effect
+#     (intended): Penjelasan spans that leaked as "Pasal 1O"/"6O" now collide
+#     with the real body title and are dropped by first-occurrence-wins.
+#   * letter B read as digit 8 → "Pasal 278"/"Pasal 168" (= 27B/16B, UU 1/2024;
+#     no corpus statute reaches article 160+). Fixed via the explicit map —
+#     revisit if a statute with >160 articles is ever added to the corpus.
+PASAL_OCR_FIX = {'Pasal 168': 'Pasal 16B', 'Pasal 278': 'Pasal 27B'}
+
+
+def _norm_heading_no(n):
+    return re.sub(r'(?<=\d)O$', '0', n)
+
+
 _REF_WORDS = ('dalam ', 'dimaksud', 'pada ', 'huruf ', 'ayat ', 'pasal ', 'sebagaimana',
               'pursuant', 'accordance', 'referred', 'point ', 'paragraph', 'under ', 'of this')
 _BOILER = re.compile(r'mulai berlaku|Ditetapkan di|Disahkan di|Diundangkan|Lembaran Negara|'
@@ -183,7 +200,8 @@ def _structured_provisions(text):
     for i, (s, e, k, n) in enumerate(heads):
         end = heads[i + 1][0] if i + 1 < len(heads) else len(body)
         txt = ' '.join(body[e:end].split())[:1600]
-        title = f'{k} {n}'
+        title = f'{k} {_norm_heading_no(n)}'
+        title = PASAL_OCR_FIX.get(title, title)
         if title not in prov and _is_valid_provision(txt):
             prov[title] = txt
     return prov

@@ -533,9 +533,9 @@
       "order": 30
     },
     {
-      "id": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "type": "regulation",
-      "label": "UU_PDP_No27_2022 - Pasal 6O",
+      "label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
       "code": "UU PDP Ps.6O",
       "group": "UU PDP",
       "binding": true,
@@ -3199,7 +3199,7 @@
       "reason": "Kewajiban PSE untuk memberitahukan kegagalan perlindungan data pribadi."
     },
     {
-      "source": "IDN_UU_PDP_No27_2022_Pasal_6O",
+      "source": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
       "target": "CASE_bri-life-data-leak-2021",
       "roles": [
         "konsumen"
