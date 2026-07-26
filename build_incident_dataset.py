@@ -955,7 +955,7 @@ RECORDS = [
         "kronologi": "Seorang mahasiswa hukum Undip diam-diam memotret siswi dan guru perempuan SMAN 11 Semarang, lalu memakai alat deepfake/face-swap AI untuk membuat citra pornografi non-konsensual dan video berjudul 'Skandal Smanse' yang diunggah ke X. Polda Jateng menyelidiki; ia ditetapkan tersangka dan ditahan pada 10-17 November 2025, dengan ribuan berkas ditemukan di penyimpanannya.",
         "akibat": "~30 korban teridentifikasi (sebagian minor); tersangka ditahan dan dijerat Pasal 29 jo. Pasal 4 ayat (1) huruf d UU 44/2008 Pornografi serta Pasal 45 ayat (1) jo. Pasal 27 ayat (1) dan Pasal 51 ayat (1) jo. Pasal 35 UU ITE, terancam 6-12 tahun penjara dan denda maksimal Rp12 miliar.",
         "nexus": "Aksesibilitas alat AI generatif tanpa pengaman memungkinkan produksi citra intim non-konsensual massal.",
-        "confidence": "high", "verification_note": "Kasus AI-NCII bernama dan dituntut terkuat; ancaman pidana berbeda antar artikel (9-12 tahun); sebagian korban minor.",
+        "confidence": "high", "verification_note": "Kasus AI-NCII bernama dan dituntut terkuat; ancaman pidana 6-12 tahun dan denda maksimal Rp12 miliar; sebagian korban minor.",
         "sources": [
             src("Tempo", "Polda Jateng Tahan Mahasiswa Undip Pembuat Deepfake Porn", "https://www.tempo.co/hukum/polda-jateng-tahan-mahasiswa-undip-pembuat-deepfake-porn-2090387", "2025-11-17"),
             src("Kompas", "Victims of 'Deepfake' Pornography in Semarang Demand That the Perpetrator Be Named a Suspect", "https://www.kompas.id/artikel/en-korban-konten-pornografi-deepfake-di-semarang-tuntut-pelaku-jadi-tersangka", "2025-11-10"),

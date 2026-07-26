@@ -4,9 +4,10 @@ A data-driven Legal Network Analysis (LNA) of Indonesia's AI and cybersecurity
 regulatory landscape. It maps a corpus of **real, individually-sourced cyber/AI
 incidents** against national and international regulatory provisions to identify
 the **subject-asymmetric, AI-specific** gap in coverage: existing law reaches
-**88.9% of incidents** (40/45) with a high-confidence statutory basis and **every
-incident for *some* legal subject** — but coverage is starkly uneven across the
-subjects each incident binds (perpetrators well covered; consumers and regulators
+**91.1% of incidents** (41/45) with a validated statutory basis (Claude LLM-judge,
+validated against expert final review: operative-warrant F1 0.95, κ 0.94) — but
+coverage is uneven across the subjects each incident binds (perpetrators, operators
+and consumers reasonably covered; the regulator/supervision basis
 largely not).
 
 ## Data integrity
@@ -33,11 +34,13 @@ for the full change log and copy-paste manuscript text.
   not a legal vacuum** — embedding similarity simply failed to rank the applicable
   Indonesian statute near the top (e.g. UU PDP Pasal 35 ranked 154th for a health
   breach). The earlier "55.6% structural-hole vacuum" framing is therefore
-  **retracted**. Under a recall-complete, human-validated LLM judge (P≥95),
-  **88.9% (40/45)** of incidents have a high-confidence statutory basis. The real,
-  validated finding is a **subject-asymmetric** gap (per-subject coverage:
-  perpetrator 100% · operator/PSE 88.9% · consumer 26.7% · regulator 11.1%; any
-  subject 100%) that is sharpest for **AI-misuse/deepfake** incidents. See
+  **retracted**. Under a recall-complete Claude LLM-judge validated against expert
+  final review (operative-warrant F1 0.95, κ 0.94) plus 52 expert overrides,
+  **91.1% (41/45)** of incidents have a validated statutory basis. The validated
+  finding is a **subject-asymmetric** gap (per-subject coverage: perpetrator 86.7% ·
+  operator/PSE 75.6% · consumer 77.8% · regulator 48.9%; any subject 91.1%) that is
+  sharpest for the **regulator/supervision** dimension and for **AI-misuse/deepfake**
+  incidents. See
   [`REVIEWER_RESPONSE.md`](REVIEWER_RESPONSE.md) §2.3 / §2.5.
 - **Authority — by explicit citation, not text similarity.** Authority in this
   corpus is measured by the **citation network** (instrument-level, explicit

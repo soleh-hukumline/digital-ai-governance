@@ -22,8 +22,8 @@ AI-specific** gap.
 | B | Embedding model "not specified" | Only in code | Documented + in `methods_config.json` + Methods text below |
 | C | Threshold mismatch (">0.75/<0.50") | Paper ≠ code | Single source of truth: tiered **0.70 / 0.55 / 0.50**, reconciled + justified |
 | D | "No quantitative network metrics" | Computed but not surfaced | Static tables + figures from real graph (below) |
-| E | Coverage rate undefined | Implicit | Explicit formula; cosine baseline 44.4% **corrected** to validated **86.7%** — the "55.6% vacuum" was a retrieval artifact (§2.3); real gap = subject-asymmetry + AI-specificity |
-| F | **Zero validation** (no ground truth / IAA / P-R) | True | **Done**: 2-annotator gold (Cohen's κ=0.77); cosine F1=0.28 vs validated judge **F1=0.67** (few-shot + recall-complete, strict roles). Relevance validated; per-subject coverage = pelaku 100 / PSE 89 / konsumen 27 / regulator 11% |
+| E | Coverage rate undefined | Implicit | Explicit formula; cosine baseline 44.4% **corrected** to validated **91.1%** — the "55.6% vacuum" was a retrieval artifact (§2.3); real gap = subject-asymmetry + AI-specificity |
+| F | **Zero validation** (no ground truth / IAA / P-R) | True | **Done**: single-annotator gold with test–retest consistency (48/52) + expert final review of all 52 pairs; cosine F1=0.28 vs validated **Claude** judge **F1=0.95** (operative warrants, κ=0.94; substantive-relevance layer F1=0.74). Relevance validated; per-subject coverage = pelaku 86.7 / PSE 75.6 / konsumen 77.8 / regulator 48.9% |
 | L | **Role assignment unvalidated; one notification article over-counted 3 subjects** | Found mid-revision | Strict-role judge (notification ≠ redress) + **human-in-the-loop** override (`warrant_overrides.json`) that wins over the LLM in every view & in the pipeline (§2.7) |
 | G | **"No hallucination" claim unsupported** | Asserted | Removed; replacement text provided |
 | H | Figures don't display / reflect data | Static PNGs of synthetic data, no generator | `make_figures.py` regenerates from real graph; embedding verified |
@@ -142,7 +142,7 @@ is:
 | Estimate | Coverage | Method |
 |---|---|---|
 | Cosine retrieval (≥0.50) | **20/45 = 44.4%** | embedding shortlist only — *naive baseline* |
-| **Validated judge (P≥95)** | **39/45 = 86.7%** | recall-complete candidates + few-shot LLM judge |
+| **Validated judge (Claude)** | **41/45 = 91.1%** | recall-complete candidates + Claude judge (validated vs expert review) + 52 expert overrides |
 
 The cosine figure is a **retrieval artifact, not a legal vacuum.** Validation (§3)
 showed cosine is a poor *retriever* (F1 0.28): it buries the applicable statute —
@@ -150,7 +150,7 @@ e.g. for a 2025 health-data breach UU PDP Pasal 35 (the security duty) ranked
 **154th** by cosine, so it never entered the shortlist. When the judge is given a
 **recall-complete candidate set** (cosine shortlist ∪ a whitelist of core ID
 statutes: UU PDP 35/46/65/67/68, UU ITE, PP PSTE) and screened at high confidence,
-**86.7% of incidents have an applicable provision.**
+**91.1% of incidents have an applicable provision.**
 
 > **Corrected thesis (use this):** Indonesia does **not** have a blanket
 > "vacuum of law" for cyber incidents — post-2022 UU PDP supplies a security,
@@ -169,7 +169,7 @@ Computed with NetworkX from the real graph (`analyzer.py`, `incident_analyzer.py
 | Edges (cross-juris / semantic / governs) | 8,005 (4,787 / 3,126 / 92) |
 | Network density | 0.01910 |
 | Incident coverage — cosine baseline (≥1 governs edge) | 20/45 (44.4%) *naive* |
-| **Incident coverage — validated judge (P≥95)** | **39/45 (86.7%)** |
+| **Incident coverage — validated judge (Claude)** | **41/45 (91.1%)** |
 | Isolated international provisions | 70/541 (12.9%) |
 | Connected components / largest | 141 / 771 nodes |
 
@@ -180,10 +180,10 @@ baseline; the validated incident↔regulation mapping is the few-shot judge belo
 **Table — Warrant distribution across incidents (n=45), validated judge @ P≥95**
 | Category | Count | % |
 |---|---|---|
-| ≥1 high-confidence warrant (some subject) | 39 | 86.7% |
-| No high-confidence warrant (structural hole) | 5 | 11.1% |
+| ≥1 validated warrant (some subject) | 41 | 91.1% |
+| No validated warrant (structural hole) | 4 | 8.9% |
 
-*Holes: a website defacement, a crypto-exchange hack, a lending-conduct case, a
+*Holes (4): a website defacement, a crypto-exchange hack, and two payment-rail fraud cases (BI-Fast) — a
 2025 bank breach, and a deepfake — i.e. mostly non-data-theft or AI-specific events
 where no clean statutory basis reaches high confidence.*
 
@@ -271,8 +271,8 @@ UU PDP Pasal 35 (security), 46 (notification), 67/68 (criminal).*
 > generically-worded soft-law texts. Separately, the earlier claim of a **55.6%
 > "structural-hole vacuum" was a cosine-retrieval artifact** (§2.3): embedding
 > similarity simply failed to rank the applicable Indonesian statute near the top.
-> Under a recall-complete, human-validated mapping, **86.7% of incidents have a
-> high-confidence statutory basis** — predominantly UU PDP
+> Under a recall-complete, expert-reviewed Claude-judge mapping, **91.1% of incidents
+> have a validated statutory basis** — predominantly UU PDP
 > (security/notification/criminal). The genuine deficit is therefore not the
 > *absence* of law but its **subject-asymmetry and lack of AI-specificity**
 > (§2.5–2.6): perpetrators are well covered, while operators, consumers, and
@@ -292,25 +292,27 @@ artifact is removed. Coverage at the judge's relevant flag:
 
 | Legal subject | Coverage | Uncovered |
 |---|---|---|
-| Perpetrator (criminal liability) | **100% (45/45)** | 0% |
-| **Operator / PSE** (security & compliance) | **88.9% (40/45)** | 11.1% |
-| Consumer / victim (protection & redress) | **26.7% (12/45)** | 73.3% |
-| Regulator / state (supervision) | **11.1% (5/45)** | 88.9% |
-| **Any subject** | **100% (45/45)** | 0% |
+| Perpetrator (criminal liability) | **86.7% (39/45)** | 13.3% |
+| Operator / PSE (security & compliance) | **75.6% (34/45)** | 24.4% |
+| Consumer / victim (protection & redress) | **77.8% (35/45)** | 22.2% |
+| **Regulator / state (supervision)** | **48.9% (22/45)** | **51.1%** |
+| **Any subject** | **91.1% (41/45)** | 8.9% |
 
-> ⚠️ **Validation status (be explicit in the paper):** *relevance* is human-validated
-> (κ 0.77, F1 0.67, §3); the *role/subject* assignment is **not yet human-coded**
-> (the gold's `annotator_role` is empty). These per-subject figures are therefore
-> **LLM-assigned, indicative** — see the human-in-the-loop tool below.
+> ⚠️ **Validation status (be explicit in the paper):** *relevance* is validated against
+> the expert's final review of all 52 gold pairs (single annotator; operative-warrant
+> F1 0.95, κ 0.94; two-layer scheme in `claude_judge_work/METODOLOGI_GROUND_TRUTH.md`),
+> and 52 expert overrides are applied to production. The *role/subject* assignment
+> beyond those pairs remains **LLM-assigned, indicative** — see the tool below.
 
 **Copy-paste — Results finding (role-aware):**
-> Existing law reaches every incident for *some* subject, but **starkly asymmetric**:
-> a **perpetrator criminal basis exists for 100%** (UU PDP Pasal 67/68, ITE offences)
-> and an **operator duty for 89%**, yet a **consumer-redress basis for only 27%** and
-> a **regulator-supervision basis for only 11%**. Indonesia can *punish* a cyber
-> incident and *oblige operators*, but rarely *compensates victims* or *empowers
-> oversight*. (Role assignment is LLM-proposed and expert-reviewable; relevance is
-> validated at F1 0.67 / κ 0.77.)
+> Existing law reaches **91.1% of incidents for *some* subject**, but coverage is
+> **asymmetric**: a **perpetrator criminal basis exists for 86.7%** (UU PDP Pasal
+> 67/68, ITE offences), an **operator duty for 75.6%**, and a **consumer-redress
+> basis for 77.8%**, yet a **regulator-supervision basis for only 48.9%**. Indonesia
+> can *punish* cyber incidents, *oblige operators*, and increasingly *ground victim
+> redress* — but the state's **supervisory reach lags behind** (sharpest in
+> AI-misuse). (Role assignment is LLM-proposed and expert-reviewable; relevance is
+> validated at operative-warrant F1 0.95 / κ 0.94 vs the expert's final review.)
 
 **Human-in-the-loop (`warrant_overrides.json`).** Because role is not auto-validated,
 the dashboard's "Analisis Kasus" tab lets a human reviewer open each incident, **read
@@ -461,9 +463,11 @@ drop out and the AI-specific gap (§2.6) reappears.
 > The mapping was produced by an LLM judge primed with seven held-out
 > human-adjudicated exemplars and given a recall-complete candidate set (cosine
 > shortlist plus a whitelist of core statutes), since cosine retrieval alone buried
-> applicable provisions (F1 0.28). Against the human gold the judge scored F1 0.67
-> (κ 0.77 between annotators); all coverage figures are reported at a calibrated
-> ≥95% confidence threshold.
+> applicable provisions (F1 0.28). The production judge is **Claude** (replacing
+> Gemini): against the expert's final review of the 52-pair gold (single annotator,
+> test–retest 48/52) it scores operative-warrant F1 0.95 (κ 0.94); coverage figures
+> use the validated raw verdicts plus 52 expert overrides (the legacy ≥95% threshold
+> was a Gemini-era calibration and is no longer used).
 
 **Copy-paste — Methods/Results:**
 > Two annotators independently coded a 52-pair cosine/role-stratified sample of
@@ -578,7 +582,7 @@ boilerplate/preamble/short-fragment filter that drops noise nodes entirely.
 - *(Thesis note — see §2.3):* the clean-cosine coverage of **44.4%** was later
   superseded; cosine is a weak **retriever** (it buried applicable statutes), so the
   validated incident↔regulation mapping uses the LLM judge (§2.5–2.7), giving
-  **86.7% any-subject coverage** and reframing the finding from a blanket "vacuum"
+  **91.1% any-subject coverage** and reframing the finding from a blanket "vacuum"
   to a **subject-asymmetric, AI-specific** gap.
 
 ---
