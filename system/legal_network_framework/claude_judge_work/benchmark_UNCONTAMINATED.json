@@ -1,0 +1,15 @@
+{
+ "basis": "TIDAK TERKONTAMINASI: putusan produksi Claude (blind thd label manusia) vs anotasi asli penulis (dibuat sebelum Claude di-deploy)",
+ "n": 51,
+ "tp": 8,
+ "fp": 3,
+ "fn": 2,
+ "tn": 38,
+ "precision": 0.727,
+ "recall": 0.8,
+ "f1": 0.762,
+ "agreement": 0.902,
+ "kappa": 0.7,
+ "peringatan": "Coder tunggal (penulis). Anotasi asli dibuat saat kolom putusan Gemini terlihat di lembar — kemungkinan anchoring thd Gemini; arah bias konservatif utk Claude.",
+ "JANGAN_PAKAI": "F1 0.952/kappa 0.940 dari telaah final 52 pasangan — telaah itu dibuat saat putusan Claude TERLIHAT (non-blind) dan pemisahan dua-lapis dibuat POST-HOC setelah divergensi terlihat."
+}

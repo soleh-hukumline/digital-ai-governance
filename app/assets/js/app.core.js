@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260726_4';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260726_5';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'section-intl': { icon: 'public', title: 'Regulasi Internasional', sub: 'EU AI Act · OECD AI Principles · CETS225 · Thematic Cluster' },
         'section-natl': { icon: 'account_balance', title: 'Regulasi Nasional Indonesia', sub: 'UU PDP · UU ITE · PP PSTE · POJK · SE Komdigi · Stranas AI' },
         'section-cross': { icon: 'sync_alt', title: 'Intl vs Nasional · Cross-Jurisdiction', sub: 'Analisis gap sitasi lintas yurisdiksi · Peta dua kluster terputus (sitir-menyitir)' },
-        'section-incident': { icon: 'gavel', title: 'Analisis Kasus Forensik', sub: 'Pemetaan 45 insiden ke regulasi · Hakim LLM (Claude) tervalidasi telaah pakar (warrant-operatif κ 0.94) + 52 tinjauan manusia · Gap terlebar: basis pengawasan regulator' },
+        'section-incident': { icon: 'gavel', title: 'Analisis Kasus Forensik', sub: 'Pemetaan 45 insiden ke regulasi · Hakim LLM (Claude) — benchmark vs koding independen κ 0.70 + verifikasi pakar 45/52 dikonfirmasi · Gap terlebar: basis pengawasan regulator' },
         'section-sector': { icon: 'category', title: 'Analisis Kesenjangan Regulasi Per Sektor', sub: 'Tiap kartu = SATU sektor: % insiden sektor itu yang punya dasar hukum per subjek · Hakim Claude + telaah pakar' },
         'section-gap': { icon: 'insights', title: 'Konklusi: Gap Analysis', sub: 'Konsolidasi Temuan LNA · Coverage per Klaster · Connected Components' },
         'section-database': { icon: 'database_search', title: 'Katalog Data Forensik Insiden Siber', sub: 'Registry 45 kasus riil bersumber · Searchable · Filter per kategori' },
@@ -1107,8 +1107,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await _sectorLiveRecompute(window.sectorCoverageData);
         const nrev = _revCount();
         container.innerHTML = `<div style="grid-column:1/-1;font-size:0.78rem;color:var(--text-3);background:var(--sunken);border:1px solid var(--border);border-radius:10px;padding:10px 14px;line-height:1.55;">${L(
-            '<b>Cara baca:</b> setiap kartu = SATU sektor; "Coverage" = porsi insiden <i>sektor itu</i> yang punya ≥1 dasar hukum untuk subjek tsb (judge peran-ketat: notifikasi ≠ ganti rugi). Jangkar keseluruhan 45 insiden: pelaku 86,7% · PSE 75,6% · konsumen 77,8% · regulator 48,9%. <b>Relevansi tervalidasi telaah manusia</b> (warrant-operatif κ 0.94), tapi <b>penetapan peran masih usulan LLM</b> (indikatif) sampai Anda tinjau di tab <b>Analisis Kasus</b>. Angka di sini <b>ikut tinjauan Anda secara langsung</b> (kini ' + nrev + ' warrant ditinjau); klik <b>Export Tinjauan</b> di sana lalu rebuild agar permanen. Gap nyata: <b>basis pengawasan regulator terendah</b> (paling tajam di Penyalahgunaan AI).',
-            '<b>How to read:</b> each card = ONE sector; "Coverage" = share of <i>that sector\'s</i> incidents with ≥1 legal basis for the subject (strict-role judge: notification ≠ redress). Overall anchor across all 45 incidents: perpetrator 86.7% · PSE 75.6% · consumer 77.8% · regulator 48.9%. <b>Relevance is validated against expert final review</b> (operative-warrant κ 0.94), but the <b>role assignment is still an LLM proposal</b> (indicative) until you review it in the <b>Analisis Kasus</b> tab. These figures <b>follow your review live</b> (currently ' + nrev + ' warrants reviewed); click <b>Export Tinjauan</b> there then rebuild to persist. Real gap: <b>regulator/supervision basis lowest</b> (sharpest in AI Misuse).')
+            '<b>Cara baca:</b> setiap kartu = SATU sektor; "Coverage" = porsi insiden <i>sektor itu</i> yang punya ≥1 dasar hukum untuk subjek tsb (judge peran-ketat: notifikasi ≠ ganti rugi). Jangkar keseluruhan 45 insiden: pelaku 86,7% · PSE 75,6% · konsumen 77,8% · regulator 48,9%. <b>Relevansi di-benchmark vs koding independen</b> (κ 0.70; verifikasi pakar mengonfirmasi 45/52 putusan), tapi <b>penetapan peran masih usulan LLM</b> (indikatif) sampai Anda tinjau di tab <b>Analisis Kasus</b>. Angka di sini <b>ikut tinjauan Anda secara langsung</b> (kini ' + nrev + ' warrant ditinjau); klik <b>Export Tinjauan</b> di sana lalu rebuild agar permanen. Gap nyata: <b>basis pengawasan regulator terendah</b> (paling tajam di Penyalahgunaan AI).',
+            '<b>How to read:</b> each card = ONE sector; "Coverage" = share of <i>that sector\'s</i> incidents with ≥1 legal basis for the subject (strict-role judge: notification ≠ redress). Overall anchor across all 45 incidents: perpetrator 86.7% · PSE 75.6% · consumer 77.8% · regulator 48.9%. <b>Relevance is benchmarked against independent coding</b> (κ 0.70; expert verification confirmed 45/52 verdicts), but the <b>role assignment is still an LLM proposal</b> (indicative) until you review it in the <b>Analisis Kasus</b> tab. These figures <b>follow your review live</b> (currently ' + nrev + ' warrants reviewed); click <b>Export Tinjauan</b> there then rebuild to persist. Real gap: <b>regulator/supervision basis lowest</b> (sharpest in AI Misuse).')
             }</div>`;
         container.dataset.rendered = 'true';
         const RL = data.role_label || window.sectorCoverageData.role_label || {};
@@ -2185,8 +2185,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function L_GAP(isEn, nrev) {
         return isEn
-            ? `<b>Warrant Mapping Matrix</b> — each incident × legal subject. ✓ = a validated/​reviewed legal basis binds that subject; – = none (gap). Empty cells expose the asymmetry (widest gap: the regulator/supervision column). Reflects your review live (${nrev} reviewed); validate roles in <b>Analisis Kasus</b>. Relevance validated vs expert review (κ 0.94); role is LLM-proposed until reviewed.`
-            : `<b>Warrant Mapping Matrix</b> — tiap insiden × subjek hukum. ✓ = ada dasar hukum (tervalidasi/​ditinjau) yang mengikat subjek itu; – = tidak ada (gap). Sel kosong menampakkan asimetri (gap terlebar: kolom regulator/pengawasan). Ikut tinjauan Anda secara langsung (${nrev} ditinjau); validasi peran di tab <b>Analisis Kasus</b>. Relevansi tervalidasi telaah manusia (κ 0.94); peran usulan LLM sampai ditinjau.`;
+            ? `<b>Warrant Mapping Matrix</b> — each incident × legal subject. ✓ = a validated/​reviewed legal basis binds that subject; – = none (gap). Empty cells expose the asymmetry (widest gap: the regulator/supervision column). Reflects your review live (${nrev} reviewed); validate roles in <b>Analisis Kasus</b>. Relevance benchmarked vs independent coding (κ 0.70); expert verification confirmed 45/52; role is LLM-proposed until reviewed.`
+            : `<b>Warrant Mapping Matrix</b> — tiap insiden × subjek hukum. ✓ = ada dasar hukum (tervalidasi/​ditinjau) yang mengikat subjek itu; – = tidak ada (gap). Sel kosong menampakkan asimetri (gap terlebar: kolom regulator/pengawasan). Ikut tinjauan Anda secara langsung (${nrev} ditinjau); validasi peran di tab <b>Analisis Kasus</b>. Relevansi di-benchmark vs koding independen (κ 0.70); verifikasi pakar 45/52; peran usulan LLM sampai ditinjau.`;
     }
     window.exportGapCSV = function () {
         if (!RADIAL.data || !RADIAL.cands) { showToast(window.currentLang === 'en' ? 'Open the Gap tab first.' : 'Buka tab Gap dulu.', 'warning'); return; }

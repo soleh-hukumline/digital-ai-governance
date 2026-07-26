@@ -66,3 +66,17 @@ vs 6,7% (pelaku terjangkau nyata) adalah **temuan kesenjangan de jure/de facto**
 untuk peretasan anonim, delik pidana tersedia tetapi tidak dapat dioperasikan
 tanpa atribusi. Framing ini sejalan dengan catatan telaah anotator ("nilai 1 =
 relevansi norma, bukan pembuktian/pertanggungjawaban").
+
+## 7. Koreksi status validasi (2026-07-26)
+Telaah final 52 pasangan dilakukan dengan kolom putusan dan alasan Claude TERLIHAT pada lembar,
+sesuai desain human-in-the-loop (model menilai lebih dulu, penulis memverifikasi). Karena itu:
+- Angka F1 0,952 / kappa 0,940 (lapis operatif) TIDAK boleh disebut kesepakatan antar-penilai
+  atau validasi; itu tingkat penerimaan pakar atas putusan model.
+- Statistik yang benar dari telaah = TINGKAT VERIFIKASI: 45/52 dikonfirmasi (86,5%),
+  7 dikoreksi (13,5%); 6 koreksi karena model terlalu ketat, 1 karena terlalu longgar.
+- BENCHMARK independen = putusan produksi Claude (buta thd label manusia) vs koding ASLI
+  penulis yang dibuat sebelum Claude dipakai: F1 0,762, kappa 0,700 (n=51).
+  Pada gold yang sama: Gemini F1 0,450 (kappa 0,227); cosine F1 0,312 (kappa 0,065).
+- Pemisahan dua lapis (operatif vs substantif) dibuat post-hoc setelah divergensi teramati;
+  dipakai untuk MENJELASKAN 6 koreksi, bukan untuk menghasilkan angka kesepakatan.
+Manuskrip LTHJ sudah disesuaikan ke kerangka dua tahap ini.

@@ -1,4 +1,14 @@
 {
+ "_PERINGATAN": "Angka di file ini (F1 0.952 / kappa 0.940 lapis operatif) BUKAN ukuran kesepakatan independen: telaah final dibuat saat putusan+alasan Claude TERLIHAT di lembar, dan pemisahan dua lapis dibuat setelah divergensi teramati. Pakai sebagai TINGKAT VERIFIKASI (45/52 dikonfirmasi, 7 dikoreksi), bukan validasi.",
+ "_BENCHMARK_YANG_BENAR": "benchmark_UNCONTAMINATED.json — produksi Claude (blind) vs koding asli penulis: F1 0.762, kappa 0.700 (n=51); pembanding pada gold sama: Gemini F1 0.450 kappa 0.227; cosine F1 0.312 kappa 0.065.",
+ "verifikasi": {
+  "n": 52,
+  "dikonfirmasi": 45,
+  "pct_konfirmasi": 0.865,
+  "dikoreksi": 7,
+  "koreksi_model_terlalu_ketat": 6,
+  "koreksi_model_terlalu_longgar": 1
+ },
  "gold": "telaah manusia final",
  "n": 52,
  "tp": 10,
