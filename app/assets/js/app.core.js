@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260726_5';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260726_6';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -2667,7 +2667,7 @@ Uraikan fakta insiden: pelaku, korban, mekanisme, dampak, dan konteks teknologi 
 Analisis ${regCount} regulasi yang terdeteksi LNA: apakah warrant ini secara substantif mencakup peristiwa? Identifikasi kekuatan, kelemahan, dan celah setiap pasal yang relevan.
 
 ### 4. BACKING (Dukungan Normatif Global)
-Perkuat dengan standar internasional yang relevan (OECD AI Principles, EU AI Act, CETS225). Tunjukkan bagaimana Indonesia seharusnya mengadopsi norma ini namun belum melakukannya.
+Perkuat dengan standar internasional yang relevan: OECD AI Principles (2024), EU AI Act 2024, dan Council of Europe Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law (CETS No. 225, dibuka utk penandatanganan 5 September 2024). PERINGATAN AKURASI: CETS 225 adalah konvensi kerangka tentang KECERDASAN ARTIFISIAL — JANGAN keliru menyebutnya Konvensi Budapest tentang Kejahatan Siber (itu CETS No. 185, instrumen berbeda). Sebut instrumen hanya dengan nama resminya; jika ragu tentang isi sebuah instrumen, nyatakan ketidakpastian alih-alih menebak. Tunjukkan bagaimana Indonesia seharusnya mengadopsi norma ini namun belum melakukannya.
 
 ### 5. QUALIFIER (Tingkat Kepastian)
 Gunakan data kuantitatif LNA: ${regCount} pasal terdeteksi, jelaskan tingkat kepastian klaim (pasti/kemungkinan besar/dugaan) beserta alasannya.
