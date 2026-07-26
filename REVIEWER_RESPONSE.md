@@ -311,7 +311,12 @@ artifact is removed. Coverage at the judge's relevant flag:
 > basis for 77.8%**, yet a **regulator-supervision basis for only 48.9%**. Indonesia
 > can *punish* cyber incidents, *oblige operators*, and increasingly *ground victim
 > redress* — but the state's **supervisory reach lags behind** (sharpest in
-> AI-misuse). (Role assignment is LLM-proposed and expert-reviewable; relevance is
+> AI-misuse). Crucially, these figures measure **normative availability** (a
+> provision reaches the incident's conduct *in abstracto*), not enforcement: the
+> perpetrator was identified and criminally processed in only **3 of 45 incidents
+> (6.7%)** — for anonymous breaches the criminal warrant exists but cannot be
+> operationalised without attribution, a **de-jure/de-facto gap** that is itself a
+> finding. (Role assignment is LLM-proposed and expert-reviewable; relevance is
 > validated at operative-warrant F1 0.95 / κ 0.94 vs the expert's final review.)
 
 **Human-in-the-loop (`warrant_overrides.json`).** Because role is not auto-validated,

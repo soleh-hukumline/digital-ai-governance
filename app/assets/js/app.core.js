@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260726_3';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260726_4';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -2177,7 +2177,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const leg = document.getElementById('legend-gap');
         if (leg) leg.innerHTML = `<span style="font-size:11px;color:var(--text-2);">✓ = ${isEn ? 'a legal basis binds this subject' : 'ada dasar hukum yang mengikat subjek itu'} · <span style="color:#10b981;">●</span> = ${isEn ? 'human-reviewed' : 'ditinjau manusia'} · – = ${isEn ? 'gap' : 'tidak ada'} · ${isEn ? 'hover a ✓ for the article' : 'arahkan ke ✓ untuk lihat pasalnya'}</span>`;
         const tb = document.getElementById('tbody-metrics-gap');
-        if (tb) tb.innerHTML = _ROLE_KEYS.map(role => `<tr><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-2);">${RLABEL[role]}</td><td style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);font-weight:700;color:${ROLE_META[role].c};">${Math.round(100 * tot[role] / denom)}%</td><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-3);font-size:0.8rem;">${tot[role]}/${N} ${isEn ? 'incidents with a basis for this subject' : 'insiden punya dasar hukum utk subjek ini'}</td></tr>`).join('');
+        if (tb) tb.innerHTML = _ROLE_KEYS.map(role => `<tr><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-2);">${RLABEL[role]}</td><td style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);font-weight:700;color:${ROLE_META[role].c};">${Math.round(100 * tot[role] / denom)}%</td><td style="padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text-3);font-size:0.8rem;">${tot[role]}/${N} ${isEn ? 'incidents where a norm reaches this subject <i>in abstracto</i>' : 'insiden yang perbuatannya terjangkau norma utk subjek ini (in abstracto)'}</td></tr>`).join('')
+            + `<tr><td colspan="3" style="padding:8px 12px;color:var(--text-4);font-size:0.74rem;line-height:1.5;">${isEn
+                ? '⚠️ These figures measure <b>normative availability</b> (a provision reaches the incident\'s conduct), <b>not enforcement</b>: the perpetrator was actually identified &amp; criminally processed in only <b>3/45 incidents (6.7%)</b> — most breach actors remain anonymous. The de-jure/de-facto gap is a finding, not a footnote.'
+                : '⚠️ Angka di atas mengukur <b>ketersediaan norma</b> (ada pasal yang menjangkau perbuatan pada insiden itu), <b>bukan penegakan</b>: pelaku benar-benar teridentifikasi &amp; diproses hukum hanya pada <b>3/45 insiden (6,7%)</b> — mayoritas peretas tetap anonim. Kesenjangan de jure/de facto ini adalah temuan, bukan catatan kaki.'}</td></tr>`;
         _attachMetricsExport('gap', 'Metrik_Gap_Subjek');
     }
     function L_GAP(isEn, nrev) {

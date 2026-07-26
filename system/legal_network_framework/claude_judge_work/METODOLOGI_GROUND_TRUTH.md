@@ -50,3 +50,19 @@ relevansi yang dipakai secara eksplisit.
 - 42/45 insiden dinilai Claude (1025 putusan). Batch13 (3 insiden) menunggu reset limit
   mingguan 25 Jul 2026. Gold & benchmark di atas TIDAK terpengaruh (validasi = 52 pasangan
   yang sudah lengkap).
+
+## 6. Ketersediaan norma ≠ penegakan (de jure vs de facto)
+Metrik coverage per subjek mengukur **ketersediaan norma in abstracto**: ada pasal
+yang menjangkau *perbuatan* pada insiden itu untuk subjek tsb. Ia TIDAK mengklaim
+pelaku teridentifikasi, unsur terbukti, atau perkara diproses. Pemeriksaan seluruh
+45 insiden (kata kunci ditangkap/tersangka/terdakwa/divonis/dijerat/dituntut pada
+kronologi+akibat+catatan verifikasi, lalu diverifikasi manual per kecocokan):
+pelaku **teridentifikasi & diproses hukum hanya pada 3/45 insiden (6,7%)** —
+(1) fraud BI-Fast Bank Jatim 2024: 4 terdakwa divonis TPPU PN Surabaya, otak buron;
+(2) intrusi data guru BKN 2024: dituntut pidana; (3) deepfake NCII Undip 2025:
+tersangka ditahan. (`election-candidate-deepfakes-2024` dikeluarkan — teks
+eksplisit "bukan satu kasus yang dituntut".) Kontras 86,7% (norma pelaku tersedia)
+vs 6,7% (pelaku terjangkau nyata) adalah **temuan kesenjangan de jure/de facto**:
+untuk peretasan anonim, delik pidana tersedia tetapi tidak dapat dioperasikan
+tanpa atribusi. Framing ini sejalan dengan catatan telaah anotator ("nilai 1 =
+relevansi norma, bukan pembuktian/pertanggungjawaban").
