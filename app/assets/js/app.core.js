@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260718_1';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260726_1';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -1107,8 +1107,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await _sectorLiveRecompute(window.sectorCoverageData);
         const nrev = _revCount();
         container.innerHTML = `<div style="grid-column:1/-1;font-size:0.78rem;color:var(--text-3);background:var(--sunken);border:1px solid var(--border);border-radius:10px;padding:10px 14px;line-height:1.55;">${L(
-            '<b>Cara baca:</b> "Coverage" = porsi insiden sektor yang punya ≥1 dasar hukum untuk subjek itu (judge peran-ketat: notifikasi ≠ ganti rugi). <b>Relevansi tervalidasi manusia</b> (κ 0.77), tapi <b>penetapan peran masih usulan LLM</b> (indikatif) sampai Anda tinjau di tab <b>Analisis Kasus</b>. Angka di sini <b>ikut tinjauan Anda secara langsung</b> (kini ' + nrev + ' warrant ditinjau); klik <b>Export Tinjauan</b> di sana lalu rebuild agar permanen. Gap nyata: <b>konsumen & regulator rendah</b> (paling tajam di Penyalahgunaan AI).',
-            '<b>How to read:</b> "Coverage" = share of a sector\'s incidents with ≥1 legal basis for that subject (strict-role judge: notification ≠ redress). <b>Relevance is human-validated</b> (κ 0.77), but the <b>role assignment is still an LLM proposal</b> (indicative) until you review it in the <b>Analisis Kasus</b> tab. These figures <b>follow your review live</b> (currently ' + nrev + ' warrants reviewed); click <b>Export Tinjauan</b> there then rebuild to persist. Real gap: <b>low consumer & regulator</b> (sharpest in AI Misuse).')
+            '<b>Cara baca:</b> "Coverage" = porsi insiden sektor yang punya ≥1 dasar hukum untuk subjek itu (judge peran-ketat: notifikasi ≠ ganti rugi). <b>Relevansi tervalidasi telaah manusia</b> (warrant-operatif κ 0.94), tapi <b>penetapan peran masih usulan LLM</b> (indikatif) sampai Anda tinjau di tab <b>Analisis Kasus</b>. Angka di sini <b>ikut tinjauan Anda secara langsung</b> (kini ' + nrev + ' warrant ditinjau); klik <b>Export Tinjauan</b> di sana lalu rebuild agar permanen. Gap nyata: <b>konsumen & regulator rendah</b> (paling tajam di Penyalahgunaan AI).',
+            '<b>How to read:</b> "Coverage" = share of a sector\'s incidents with ≥1 legal basis for that subject (strict-role judge: notification ≠ redress). <b>Relevance is validated against expert final review</b> (operative-warrant κ 0.94), but the <b>role assignment is still an LLM proposal</b> (indicative) until you review it in the <b>Analisis Kasus</b> tab. These figures <b>follow your review live</b> (currently ' + nrev + ' warrants reviewed); click <b>Export Tinjauan</b> there then rebuild to persist. Real gap: <b>low consumer & regulator</b> (sharpest in AI Misuse).')
             }</div>`;
         container.dataset.rendered = 'true';
         const RL = data.role_label || window.sectorCoverageData.role_label || {};
@@ -2182,8 +2182,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function L_GAP(isEn, nrev) {
         return isEn
-            ? `<b>Warrant Mapping Matrix</b> — each incident × legal subject. ✓ = a validated/​reviewed legal basis binds that subject; – = none (gap). Empty columns expose the asymmetry (consumers/regulators). Reflects your review live (${nrev} reviewed); validate roles in <b>Analisis Kasus</b>. Relevance human-validated (κ 0.77); role is LLM-proposed until reviewed.`
-            : `<b>Warrant Mapping Matrix</b> — tiap insiden × subjek hukum. ✓ = ada dasar hukum (tervalidasi/​ditinjau) yang mengikat subjek itu; – = tidak ada (gap). Kolom yang kosong menampakkan asimetri (konsumen/regulator). Ikut tinjauan Anda secara langsung (${nrev} ditinjau); validasi peran di tab <b>Analisis Kasus</b>. Relevansi tervalidasi manusia (κ 0.77); peran usulan LLM sampai ditinjau.`;
+            ? `<b>Warrant Mapping Matrix</b> — each incident × legal subject. ✓ = a validated/​reviewed legal basis binds that subject; – = none (gap). Empty columns expose the asymmetry (consumers/regulators). Reflects your review live (${nrev} reviewed); validate roles in <b>Analisis Kasus</b>. Relevance validated vs expert review (κ 0.94); role is LLM-proposed until reviewed.`
+            : `<b>Warrant Mapping Matrix</b> — tiap insiden × subjek hukum. ✓ = ada dasar hukum (tervalidasi/​ditinjau) yang mengikat subjek itu; – = tidak ada (gap). Kolom yang kosong menampakkan asimetri (konsumen/regulator). Ikut tinjauan Anda secara langsung (${nrev} ditinjau); validasi peran di tab <b>Analisis Kasus</b>. Relevansi tervalidasi telaah manusia (κ 0.94); peran usulan LLM sampai ditinjau.`;
     }
     window.exportGapCSV = function () {
         if (!RADIAL.data || !RADIAL.cands) { showToast(window.currentLang === 'en' ? 'Open the Gap tab first.' : 'Buka tab Gap dulu.', 'warning'); return; }
@@ -2686,7 +2686,7 @@ Berdasarkan temuan di atas, berikan **3-5 rekomendasi spesifik** yang berbeda da
 **DATA GROUNDS (Fakta Insiden):**
 ${incidentText}
 
-**DATA WARRANT (dasar hukum dari LLM-judge tervalidasi κ=0.77 + tinjauan manusia; "DIVALIDASI MANUSIA" = sudah ditinjau ahli. Gunakan HANYA pasal-pasal ini sebagai warrant; jangan mengarang pasal lain):**
+**DATA WARRANT (dasar hukum dari LLM-judge Claude tervalidasi telaah manusia (warrant-operatif κ=0.94) + tinjauan manusia; "DIVALIDASI MANUSIA" = sudah ditinjau ahli. Gunakan HANYA pasal-pasal ini sebagai warrant; jangan mengarang pasal lain):**
 ${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — nyatakan ini sebagai gap AI-spesifik, BUKAN vakum hukum absolut; pertimbangkan apakah statuta umum (UU ITE/UU PDP) masih berlaku secara analogis.'}
 `;
 

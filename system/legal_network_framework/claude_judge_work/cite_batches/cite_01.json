@@ -1,0 +1,322 @@
+[
+ {
+  "id": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 9 :: UNESCO Recommendation on AI Ethics",
+  "source_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 9",
+  "kind": "named",
+  "cited_ref": "UNESCO Recommendation on AI Ethics",
+  "cited_norm": "UNESCO Recommendation on AI Ethics",
+  "source_text": "Also, the ASEAN Digital Masterplan 2025 (ADM2025) developed by ASEAN Member States (“AMS”) envisions ASEAN as a leading digital community and economic bloc, powered by secure and transformative digital services, technologies, and ecosystem. In that context, the ADM2025 has identified Enabling Action (EA) 2.7 that suggests the development and adoption of a regional policy to deliver best practice guidance on AI governance and ethics. In recent years, governments and international organisations have begun issuing principles, frameworks and recommendations on AI ethics and governance. Examples include Singapore’s Model AI Governance Framework1 and OECD’s Recommendation of the Council on AI2. However, there has not yet been an intergovernmental"
+ },
+ {
+  "id": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 10 :: OECD AI Principles",
+  "source_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 10",
+  "kind": "named",
+  "cited_ref": "OECD AI Principles",
+  "cited_norm": "OECD AI Principles",
+  "source_text": "s Ethics Guidelines for Trustworthy AI were referenced4. The ASEAN Guide on AI Governance and Ethics aims to empower organisations and governments in the region to design, develop, and deploy traditional AI systems responsibly and increase users’ trust in AI. 1 Infocomm Media Development Authority, “Model Artificial Intelligence Governance Framework Second Edition” (21 January 2020) < https://www.pdpc.gov.sg/-/media/files/pdpc/pdf-files/resource-for-organisation/ai/sgmodelaigovframework2.pdf > 2 Organisation for Economic Co-operation and Development, “Recommendation of the Council on Artificial Intelligence” (22 May 2019) < https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449 > 3 United Nations Educational, Scientific and Cultur"
+ },
+ {
+  "id": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 10 :: UNESCO Recommendation on AI Ethics",
+  "source_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 10",
+  "kind": "named",
+  "cited_ref": "UNESCO Recommendation on AI Ethics",
+  "cited_norm": "UNESCO Recommendation on AI Ethics",
+  "source_text": "s Ethics Guidelines for Trustworthy AI were referenced4. The ASEAN Guide on AI Governance and Ethics aims to empower organisations and governments in the region to design, develop, and deploy traditional AI systems responsibly and increase users’ trust in AI. 1 Infocomm Media Development Authority, “Model Artificial Intelligence Governance Framework Second Edition” (21 January 2020) < https://www.pdpc.gov.sg/-/media/files/pdpc/pdf-files/resource-for-organisation/ai/sgmodelaigovframework2.pdf > 2 Organisation for Economic Co-operation and Development, “Recommendation of the Council on Artificial Intelligence” (22 May 2019) < https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449 > 3 United Nations Educational, Scientific and Cultur"
+ },
+ {
+  "id": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 58 :: NIST AI Risk Management Framework",
+  "source_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 58",
+  "kind": "named",
+  "cited_ref": "NIST AI Risk Management Framework",
+  "cited_norm": "NIST AI Risk Management Framework",
+  "source_text": "To determine the level of risk and the category of human involvement required in AI-augmented decision- making, developers and deployers can evaluate AI solutions along two axes – the probability and the severity of harm to users and individuals involved in the AI system lifecycle. The definition of “harm” and the computation of probability and severity will depend on the context, varying from sector to sector. m r a H f o y t i r e v e S High severity Low probability Low severity Low probability High severity High probability Low severity High probability Probability of Harm 11 Personal Data Protection Commission Singapore, “Implementation and Self-Assessment Guide for Organisations” (January 2020) < https://www.pdpc.gov.sg/-/media/files/p"
+ },
+ {
+  "id": "EU_AI_Act_2024 - Article 9 :: GDPR (EU 2016/679)",
+  "source_label": "EU_AI_Act_2024 - Article 9",
+  "kind": "named",
+  "cited_ref": "GDPR (EU 2016/679)",
+  "cited_norm": "GDPR (EU 2016/679)",
+  "source_text": "(1) of Regulation (EU) 2016/679, the use of remote biometric identification for purposes other than law enforcement has already been subject to prohibition decisions by national data protection authorities. In accordance with Article 6a of Protocol No 21 on the position of the United Kingdom and Ireland in respect of the area of freedom, security and justice, as annexed to the TEU and to the TFEU, Ireland is not bound by the rules laid down in"
+ },
+ {
+  "id": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 1 :: OECD AI Principles",
+  "source_label": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 1",
+  "kind": "named",
+  "cited_ref": "OECD AI Principles",
+  "cited_norm": "OECD AI Principles",
+  "source_text": "Hiroshima Process International Code of Conduct for Organizations Developing Advanced AI Systems On the basis of the International Guiding Principles for Organizations Developing Advanced AI systems, the International Code of Conduct for Organizations Developing Advanced AI Systems aims to promote safe, secure, and trustworthy AI worldwide and will provide voluntary guidance for actions by organizations developing the most advanced AI systems, including the most advanced foundation models and generative AI systems (henceforth \"advanced AI systems\"). Organizations should follow these actions in line with a risk-based approach. Organizations that may endorse this Code of Conduct may include, among others, entities from academia, civil society"
+ },
+ {
+  "id": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 1 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+  "source_label": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 1",
+  "kind": "named",
+  "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+  "cited_norm": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
+  "source_text": "Hiroshima Process International Code of Conduct for Organizations Developing Advanced AI Systems On the basis of the International Guiding Principles for Organizations Developing Advanced AI systems, the International Code of Conduct for Organizations Developing Advanced AI Systems aims to promote safe, secure, and trustworthy AI worldwide and will provide voluntary guidance for actions by organizations developing the most advanced AI systems, including the most advanced foundation models and generative AI systems (henceforth \"advanced AI systems\"). Organizations should follow these actions in line with a risk-based approach. Organizations that may endorse this Code of Conduct may include, among others, entities from academia, civil society"
+ },
+ {
+  "id": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 15 :: Sustainable Development Goals (2030 Agenda)",
+  "source_label": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 15",
+  "kind": "named",
+  "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+  "cited_norm": "Sustainable Development Goals (2030 Agenda)",
+  "source_text": "such as prioritizing research on upholding democratic values, respecting human rights, protecting children and vulnerable groups, safeguarding intellectual property rights and privacy, and avoiding harmful bias, mis- and disinformation, and information manipulation. Organizations also commit to invest in developing appropriate mitigation tools, and work to proactively manage the risks of advanced AI systems, including environmental and climate impacts, so that their benefits can be realized. Organizations are encouraged to share research and best practices on risk mitigation. 9 Prioritize the development of advanced AI systems to address the world’s greatest challenges, notably but not limited to the climate crisis, global health and educat"
+ },
+ {
+  "id": "ISO_IEC_42001_AI_Management_System - Bagian 4 :: GDPR (EU 2016/679)",
+  "source_label": "ISO_IEC_42001_AI_Management_System - Bagian 4",
+  "kind": "named",
+  "cited_ref": "GDPR (EU 2016/679)",
+  "cited_norm": "GDPR (EU 2016/679)",
+  "source_text": "AI systems, particularly in algorithmic decision-making processes, can lead to ethical challenges. Biased datasets, unfair outcomes and privacy violations are among the primary concerns. ISO/IEC 42001:2023 provides companies with a framework for designing and implementing AI systems in accordance with ethical principles. This framework specifically emphasizes the following aspects. • Algorithmic Transparency: Ensuring that AI models are understandable enhances the traceability of decision-making processes [1]. • Fair Decision-Making: Ensures that algorithms do not discriminate based on factors such as gender, race, or socio-economic status [2]. • Data Privacy: The protection of personal data and compliance with regulations such as GDPR are "
+ },
+ {
+  "id": "ISO_IEC_42001_AI_Management_System - Bagian 11 :: GDPR (EU 2016/679)",
+  "source_label": "ISO_IEC_42001_AI_Management_System - Bagian 11",
+  "kind": "named",
+  "cited_ref": "GDPR (EU 2016/679)",
+  "cited_norm": "GDPR (EU 2016/679)",
+  "source_text": "Data Security and Information Management: The success of AI systems largely depends on the quality and security of data. ISO/IEC 42001:2023 provides guidance for structuring data management processes. Within the scope of data privacy, data used in AI applications must be anonymized, encrypted and processed in compliance with international regulations (e.g., GDPR) [5]. Regarding information security, AI algorithms should be protected against cyberattacks and data manipulation by integrating with information security management systems (e.g., ISO/IEC 27001:2022) [6]. Transparency and accountability ensure that AI system decision-making processes are clearly documented and traceable, thereby securing user and stakeholder trust."
+ },
+ {
+  "id": "ISO_IEC_42001_AI_Management_System - Bagian 13 :: EU AI Act",
+  "source_label": "ISO_IEC_42001_AI_Management_System - Bagian 13",
+  "kind": "named",
+  "cited_ref": "EU AI Act",
+  "cited_norm": "EU AI Act",
+  "source_text": "Regulatory Compliance and Legal Framework: With increasing legal oversight and regulations on AI applications, ISO/IEC 42001:2023 facilitates companies’ compliance with these regulations. Regulatory texts such as the European Union’s Artificial Intelligence Act (AI Act) [8] mandate the ethical and fair use of AI systems. As an integrated management system, ISO/IEC 42001:2023 works in conjunction with information security standards like ISO/IEC 27001:2022 to minimize legal risks. By reducing legal risks, companies can avoid legal sanctions and protect their reputations through adherence to these standards."
+ },
+ {
+  "id": "ISO_IEC_42001_AI_Management_System - Bagian 26 :: GDPR (EU 2016/679)",
+  "source_label": "ISO_IEC_42001_AI_Management_System - Bagian 26",
+  "kind": "named",
+  "cited_ref": "GDPR (EU 2016/679)",
+  "cited_norm": "GDPR (EU 2016/679)",
+  "source_text": "Regulatory Compliance and Legal Uncertainties: ISO/IEC 42001:2023 requires AI systems to comply with local and international regulations [8, 16]. Challenges arise from rapidly evolving regulations and the need to comply with multiple jurisdictions. While AI technologies advance quickly, regulatory frameworks often lag, creating legal uncertainties for organizations. Companies operating globally must navigate diverse regulatory environments, especially concerning data privacy and algorithmic transparency. The EU’s GDPR and the recently enforced AI Act are prime examples of regulations organizations must address to ensure compliance."
+ },
+ {
+  "id": "ISO_IEC_42001_AI_Management_System - Bagian 26 :: EU AI Act",
+  "source_label": "ISO_IEC_42001_AI_Management_System - Bagian 26",
+  "kind": "named",
+  "cited_ref": "EU AI Act",
+  "cited_norm": "EU AI Act",
+  "source_text": "Regulatory Compliance and Legal Uncertainties: ISO/IEC 42001:2023 requires AI systems to comply with local and international regulations [8, 16]. Challenges arise from rapidly evolving regulations and the need to comply with multiple jurisdictions. While AI technologies advance quickly, regulatory frameworks often lag, creating legal uncertainties for organizations. Companies operating globally must navigate diverse regulatory environments, especially concerning data privacy and algorithmic transparency. The EU’s GDPR and the recently enforced AI Act are prime examples of regulations organizations must address to ensure compliance."
+ },
+ {
+  "id": "OECD_AI_Principles_2024 - Bagian 3 :: G20 AI Principles",
+  "source_label": "OECD_AI_Principles_2024 - Bagian 3",
+  "kind": "named",
+  "cited_ref": "G20 AI Principles",
+  "cited_norm": "G20 AI Principles",
+  "source_text": "The Recommendation on Artificial Intelligence (AI) (hereafter the “Recommendation”) – the first intergovernmental standard on AI – was adopted by the OECD Council meeting at Ministerial level on 22 May 2019 on the proposal of the Digital Policy Committee (DPC, formerly the Committee on Digital Economy Policy, CDEP). The Recommendation aims to foster innovation and trust in AI by promoting the responsible stewardship of trustworthy AI while ensuring respect for human rights and democratic values. In June 2019, at the Osaka Summit, G20 Leaders welcomed the G20 AI Principles, drawn from the Recommendation."
+ },
+ {
+  "id": "OECD_AI_Principles_2024 - Bagian 17 :: Council of Europe Framework Convention on AI",
+  "source_label": "OECD_AI_Principles_2024 - Bagian 17",
+  "kind": "named",
+  "cited_ref": "Council of Europe Framework Convention on AI",
+  "cited_norm": "Council of Europe Framework Convention on AI",
+  "source_text": "In addition to reporting to the Council on the implementation of the Recommendation, the DPC is also instructed to continue its work on AI, building on this Recommendation, and taking into account work in other international fora, such as UNESCO, the European Union, the Council of Europe and the initiative to build an International Panel on AI (see https://pm.gc.ca/eng/news/2018/12/06/mandate- international-panel-artificial- intelligence and https://www.gouvernement.fr/en/france-and-canada- create-new-expert-international-panel-on- artificial-intelligence). In order to support implementation of the Recommendation, the Council instructed the DPC to develop practical guidance for implementation, to provide a forum for exchanging information o"
+ },
+ {
+  "id": "OECD_AI_Principles_2024 - Bagian 20 :: Universal Declaration of Human Rights",
+  "source_label": "OECD_AI_Principles_2024 - Bagian 20",
+  "kind": "named",
+  "cited_ref": "Universal Declaration of Human Rights",
+  "cited_norm": "Universal Declaration of Human Rights",
+  "source_text": "OECD/LEGAL/0449_____________________________________________________________________________________________6 THE COUNCIL, HAVING REGARD to Article 5 b) of the Convention on the Organisation for Economic Co-operation and Development of 14 December 1960; HAVING REGARD to standards developed by the OECD in the areas of privacy, digital security, consumer protection and responsible business conduct; HAVING REGARD to the Sustainable Development Goals set out in the 2030 Agenda for Sustainable Development adopted by the United Nations General Assembly (A/RES/70/1) as well as the 1948 Universal Declaration of Human Rights; HAVING REGARD to the important work being carried out on artificial intelligence (hereafter, “AI”) in other international gov"
+ },
+ {
+  "id": "OECD_AI_Principles_2024 - Bagian 20 :: Sustainable Development Goals (2030 Agenda)",
+  "source_label": "OECD_AI_Principles_2024 - Bagian 20",
+  "kind": "named",
+  "cited_ref": "Sustainable Development Goals (2030 Agenda)",
+  "cited_norm": "Sustainable Development Goals (2030 Agenda)",
+  "source_text": "OECD/LEGAL/0449_____________________________________________________________________________________________6 THE COUNCIL, HAVING REGARD to Article 5 b) of the Convention on the Organisation for Economic Co-operation and Development of 14 December 1960; HAVING REGARD to standards developed by the OECD in the areas of privacy, digital security, consumer protection and responsible business conduct; HAVING REGARD to the Sustainable Development Goals set out in the 2030 Agenda for Sustainable Development adopted by the United Nations General Assembly (A/RES/70/1) as well as the 1948 Universal Declaration of Human Rights; HAVING REGARD to the important work being carried out on artificial intelligence (hereafter, “AI”) in other international gov"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 9 :: Pasal 2",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 9",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 2",
+  "cited_norm": "Pasal 2",
+  "source_text": "(1) Calon Peserta yang akan melakukan kegiatan dalam ruang lingkup sebagaimana dimaksud dalam Pasal 2 dan bermaksud mengikuti Sandbox harus mengajukan permohonan menjadi Peserta kepada Otoritas Jasa Keuangan. (2) Calon Peserta yang merupakan LJK sebagaimana dimaksud dalam Pasal 8 ayat (1) huruf a harus mendapatkan rekomendasi dari pengawas terkait di Otoritas Jasa Keuangan. (3) Otoritas Jasa Keuangan berwenang mewajibkan pihak yang menyelenggarakan ITSK sebagaimana dimaksud dalam Pasal 3 ayat (1) untuk mengajukan permohonan menjadi Peserta kepada Otoritas Jasa Keuangan. (4) Permohonan sebagaimana dimaksud pada ayat (1) dan ayat (3) harus disertai dengan formulir permohonan mengikuti Sandbox, Rencana Pengujian, dan dokumen pendukung. (5) Ren"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 9 :: Pasal 8",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 9",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 8 ayat (1) huruf a",
+  "cited_norm": "Pasal 8",
+  "source_text": "(1) Calon Peserta yang akan melakukan kegiatan dalam ruang lingkup sebagaimana dimaksud dalam Pasal 2 dan bermaksud mengikuti Sandbox harus mengajukan permohonan menjadi Peserta kepada Otoritas Jasa Keuangan. (2) Calon Peserta yang merupakan LJK sebagaimana dimaksud dalam Pasal 8 ayat (1) huruf a harus mendapatkan rekomendasi dari pengawas terkait di Otoritas Jasa Keuangan. (3) Otoritas Jasa Keuangan berwenang mewajibkan pihak yang menyelenggarakan ITSK sebagaimana dimaksud dalam Pasal 3 ayat (1) untuk mengajukan permohonan menjadi Peserta kepada Otoritas Jasa Keuangan. (4) Permohonan sebagaimana dimaksud pada ayat (1) dan ayat (3) harus disertai dengan formulir permohonan mengikuti Sandbox, Rencana Pengujian, dan dokumen pendukung. (5) Ren"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 9 :: Pasal 3",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 9",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 3 ayat (1)",
+  "cited_norm": "Pasal 3",
+  "source_text": "(1) Calon Peserta yang akan melakukan kegiatan dalam ruang lingkup sebagaimana dimaksud dalam Pasal 2 dan bermaksud mengikuti Sandbox harus mengajukan permohonan menjadi Peserta kepada Otoritas Jasa Keuangan. (2) Calon Peserta yang merupakan LJK sebagaimana dimaksud dalam Pasal 8 ayat (1) huruf a harus mendapatkan rekomendasi dari pengawas terkait di Otoritas Jasa Keuangan. (3) Otoritas Jasa Keuangan berwenang mewajibkan pihak yang menyelenggarakan ITSK sebagaimana dimaksud dalam Pasal 3 ayat (1) untuk mengajukan permohonan menjadi Peserta kepada Otoritas Jasa Keuangan. (4) Permohonan sebagaimana dimaksud pada ayat (1) dan ayat (3) harus disertai dengan formulir permohonan mengikuti Sandbox, Rencana Pengujian, dan dokumen pendukung. (5) Ren"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 10 :: Pasal 9",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 10",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 9 ayat (5)",
+  "cited_norm": "Pasal 9",
+  "source_text": "(1) Kriteria kelayakan inovasi untuk mengikuti Sandbox meliputi: a. inovasi yang memiliki cakupan ruang lingkup pada sektor jasa keuangan yang akan digunakan oleh Konsumen, mitra, dan/atau masyarakat di Indonesia; inovasi yang memenuhi unsur kebaruan dan/atau memiliki unsur pembeda signifikan dengan yang telah dilakukan sebelumnya di sektor keuangan; inovasi yang memberikan manfaat, meningkatkan pelayanan, dan memberikan nilai tambah kepada Konsumen, masyarakat, dan/atau ekosistem sektor keuangan; inovasi yang telah siap untuk dilakukan pengujian dan pengembangan; inovasi yang memerlukan dukungan uji coba dan pengembangan, dilakukan pengaturan dan pengawasan sebelumnya dalam ketentuan yang berlaku di sektor keuangan; dan kriteria lain yang "
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 11 :: Pasal 10",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 11",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 10 ayat (2)",
+  "cited_norm": "Pasal 10",
+  "source_text": "(1) Proses uji coba dan pengembangan inovasi dalam Sandbox dimulai sejak diberikannya persetujuan menjadi Peserta oleh Otoritas Jasa Keuangan sebagaimana dimaksud dalam Pasal 10 ayat (2). (2) Peserta sebagaimana dimaksud pada ayat (1) wajib melakukan uji coba dan pengembangan inovasi sesuai Rencana Pengujian yang disampaikan kepada Otoritas Jasa Keuangan. (3) Peserta sebagaimana dimaksud pada ayat (1) wajib memenuhi ketentuan: a. memberitahukan kepada Otoritas Jasa Keuangan setiap terdapat perubahan yang terkait dengan ITSK dan Peserta; b. membuka setiap informasi dan/atau dokumen yang berkaitan dengan pelaksanaan Sandbox kepada Otoritas Jasa Keuangan; dan c. mengikuti setiap kegiatan yang berkaitan dengan pelaksanaan Sandbox. (4) Peserta s"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 13 :: Pasal 10",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 13",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 10 ayat (2)",
+  "cited_norm": "Pasal 10",
+  "source_text": "(1) Pelaksanaan uji coba dan pengembangan inovasi dalam Sandbox dilaksanakan dalam jangka waktu paling lama 1 (satu) tahun sejak persetujuan diberikan oleh Otoritas Jasa Keuangan sebagaimana dimaksud dalam Pasal 10 ayat (2). (2) Otoritas Jasa Keuangan berwenang menetapkan jangka waktu uji coba dan pengembangan inovasi yang berbeda dari jangka waktu sebagaimana dimaksud pada ayat (1). (3) Otoritas Jasa Keuangan berwenang menghentikan proses uji coba dan pengembangan inovasi sebelum jangka waktu sebagaimana dimaksud pada ayat (1) dan ayat (2) berakhir, apabila terdapat ketidaksesuaian dengan kriteria sebagaimana dimaksud dalam Pasal 10 ayat (1). (4) Peserta wajib menyampaikan akhir pelaksanaan uji coba dan pengembangan inovasi paling lambat 2"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 13 :: Pasal 9",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 13",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 9 ayat (5) huruf h",
+  "cited_norm": "Pasal 9",
+  "source_text": "(1) Pelaksanaan uji coba dan pengembangan inovasi dalam Sandbox dilaksanakan dalam jangka waktu paling lama 1 (satu) tahun sejak persetujuan diberikan oleh Otoritas Jasa Keuangan sebagaimana dimaksud dalam Pasal 10 ayat (2). (2) Otoritas Jasa Keuangan berwenang menetapkan jangka waktu uji coba dan pengembangan inovasi yang berbeda dari jangka waktu sebagaimana dimaksud pada ayat (1). (3) Otoritas Jasa Keuangan berwenang menghentikan proses uji coba dan pengembangan inovasi sebelum jangka waktu sebagaimana dimaksud pada ayat (1) dan ayat (2) berakhir, apabila terdapat ketidaksesuaian dengan kriteria sebagaimana dimaksud dalam Pasal 10 ayat (1). (4) Peserta wajib menyampaikan akhir pelaksanaan uji coba dan pengembangan inovasi paling lambat 2"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 15 :: Pasal 14",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 15",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 14 ayat (2) huruf a",
+  "cited_norm": "Pasal 14",
+  "source_text": "(1) Otoritas Jasa Keuangan menyampaikan surat lulus kepada Peserta yang dinyatakan lulus sebagaimana dimaksud dalam Pasal 14 ayat (2) huruf a. (2) Peserta yang dinyatakan lulus sebagaimana dimaksud dalam Pasal 14 ayat (2) huruf a harus mengajukan izin usaha kepada Otoritas Jasa Keuangan dalam masa berlaku surat lulus. (3) Surat lulus sebagaimana dimaksud pada ayat (2) berlaku 6 (enam) bulan dan dapat diperpanjang berdasarkan pertimbangan Otoritas Jasa Keuangan. (4) Peserta tetap dapat melakukan kegiatan operasional bisnis terbatas sebagaimana dalam batasan Sandbox lulus sebagaimana selama masa berlaku surat dimaksud pada ayat (3). (5) Surat lulus sebagaimana dimaksud pada ayat (1) bukan merupakan izin usaha untuk melakukan operasional bisni"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 16 :: Pasal 14",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 16",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 14 ayat (2) huruf a",
+  "cited_norm": "Pasal 14",
+  "source_text": "(1) Otoritas Jasa Keuangan dapat menentukan Peserta yang lulus sebagaimana dimaksud dalam Pasal 14 ayat (2) huruf a untuk melakukan pendaftaran sebelum mengajukan izin usaha berdasarkan pertimbangan yang dilakukan oleh Otoritas Jasa Keuangan. (2) Peserta sebagaimana dimaksud pada ayat (1) wajib menyampaikan dokumen paling sedikit terkait aspek: a. kelembagaan dan tata kelola; b. model bisnis; c. d. kemitraan. teknologi informasi; dan (3) Pihak yang memiliki jenis ITSK yang sama dengan jenis ITSK Peserta sebagaimana dimaksud pada ayat (1) mempunyai hak yang sama untuk mengajukan permohonan pendaftaran kepada Otoritas Jasa Keuangan. (4) Ketentuan mengenai mekanisme pendaftaran ditetapkan oleh Otoritas Jasa Keuangan."
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 19 :: Pasal 11",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 19",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 11 ayat (2)",
+  "cited_norm": "Pasal 11",
+  "source_text": "(1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 11 ayat (2), ayat (3), ayat (5),"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 20 :: Pasal 15",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 20",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 15 ayat (2)",
+  "cited_norm": "Pasal 15",
+  "source_text": "(1) Pihak yang memiliki jenis ITSK yang sama dengan jenis ITSK Peserta sebagaimana dimaksud dalam Pasal 15 ayat (2) mempunyai hak yang sama untuk mengajukan permohonan izin usaha kepada Otoritas Jasa Keuangan. (2) Otoritas Jasa Keuangan memberikan surat izin usaha bagi Peserta sebagaimana dimaksud pada ayat (1) dan"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 22 :: Pasal 21",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 22",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 21 ayat (2)",
+  "cited_norm": "Pasal 21",
+  "source_text": "(1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 21 ayat (2) dan/atau ayat (3) dikenakan sanksi administratif berupa: a. peringatan tertulis; b. penghentian sementara, sebagian, atau seluruh kegiatan termasuk pelaksanaan kerja sama; pembatalan persetujuan; c. d. pembatalan pendaftaran; dan/atau e. pencabutan izin. (2) Sanksi administratif sebagaimana dimaksud pada ayat (1) huruf b sampai dengan huruf e dapat dikenakan dengan atau tanpa didahului pengenaan sanksi administratif berupa peringatan tertulis sebagaimana dimaksud pada ayat (1) huruf a. BAB VI PENGAWASAN, EVALUASI, DAN PEMANTAUAN Bagian Kesatu Pengawasan oleh Otoritas Jasa Keuangan"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 27 :: Pasal 26",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 27",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 26 ayat (1)",
+  "cited_norm": "Pasal 26",
+  "source_text": "(1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 26 ayat (1) dan/atau ayat (4) dikenakan sanksi administratif berupa: a. peringatan tertulis; b. penghentian sementara, sebagian, atau seluruh kegiatan termasuk pelaksanaan kerja sama; pembatalan persetujuan; c. d. pembatalan pendaftaran; dan/atau e. pencabutan izin. (2) Sanksi administratif sebagaimana dimaksud pada ayat (1) huruf b sampai dengan huruf e dapat dikenakan dengan atau tanpa didahului pengenaan sanksi administratif berupa peringatan tertulis sebagaimana dimaksud pada ayat (1) huruf a. Bagian Ketiga Prinsip Pemantauan oleh Asosiasi"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 28 :: Pasal 21",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 28",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 21",
+  "cited_norm": "Pasal 21",
+  "source_text": "(1) Asosiasi sebagaimana dimaksud dalam Pasal 21 menetapkan standar dengan menggunakan pendekatan disiplin pasar yang paling sedikit: a. memastikan kepatuhan penyampaian pelaporan Otoritas Jasa Keuangan; b. merumuskan aturan operasional, industri, perilaku pasar, dan kode berdasarkan karakteristik Penyelenggara ITSK; standar etik, c. menerima dan meneruskan laporan serta menerima keluhan; d. menyusun statistik keuangan dan memantau risiko serta penelitian tentang isu makro dan mikro keuangan; e. melaksanakan perintah Otoritas Jasa Keuangan kepada Penyelenggara ITSK untuk mendukung fungsi pengaturan, pengawasan, serta diseminasi informasi; f. menetapkan mekanisme asesmen mandiri, termasuk mekanisme pengenaan sanksi atas pelanggaran anggota t"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 30 :: Pasal 29",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 30",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 29 ayat (1)",
+  "cited_norm": "Pasal 29",
+  "source_text": "(1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 29 ayat (1), ayat (3), dan/atau ayat (4) dikenakan sanksi administratif berupa: a. peringatan tertulis; b. penghentian sementara, sebagian, atau seluruh kegiatan termasuk pelaksanaan kerja sama; pembatalan persetujuan; c. d. pembatalan pendaftaran; dan/atau e. pencabutan izin. (2) Sanksi administratif sebagaimana dimaksud pada ayat (1) huruf b sampai dengan huruf e dapat dikenakan dengan atau tanpa didahului pengenaan sanksi administratif berupa peringatan tertulis sebagaimana dimaksud pada ayat (1) huruf a. BAB VIII TATA KELOLA"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 33 :: Pasal 31",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 33",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 31",
+  "cited_norm": "Pasal 31",
+  "source_text": "(1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 31 dan/atau Pasal 32 dikenakan sanksi administratif berupa: a. peringatan tertulis; b. penghentian sementara, sebagian, atau seluruh kegiatan termasuk pelaksanaan kerja sama; pembatalan persetujuan; c. d. pembatalan pendaftaran; dan/atau e. pencabutan izin. (2) Sanksi administratif sebagaimana dimaksud pada ayat (1) huruf b sampai dengan huruf e dapat dikenakan dengan atau tanpa didahului pengenaan sanksi administratif berupa peringatan tertulis sebagaimana dimaksud pada ayat (1) huruf a. BAB IX PUSAT DATA"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 33 :: Pasal 32",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 33",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 32",
+  "cited_norm": "Pasal 32",
+  "source_text": "(1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 31 dan/atau Pasal 32 dikenakan sanksi administratif berupa: a. peringatan tertulis; b. penghentian sementara, sebagian, atau seluruh kegiatan termasuk pelaksanaan kerja sama; pembatalan persetujuan; c. d. pembatalan pendaftaran; dan/atau e. pencabutan izin. (2) Sanksi administratif sebagaimana dimaksud pada ayat (1) huruf b sampai dengan huruf e dapat dikenakan dengan atau tanpa didahului pengenaan sanksi administratif berupa peringatan tertulis sebagaimana dimaksud pada ayat (1) huruf a. BAB IX PUSAT DATA"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 39 :: Pasal 38",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 39",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 38 ayat (1)",
+  "cited_norm": "Pasal 38",
+  "source_text": "(1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 38 ayat (1), ayat (2), dan/atau ayat (4) dikenakan sanksi administratif berupa: a. peringatan tertulis; b. penghentian sementara, sebagian, atau seluruh kegiatan termasuk pelaksanaan kerja sama; pembatalan persetujuan; c. d. pembatalan pendaftaran; dan/atau e. pencabutan izin. (2) Sanksi administratif sebagaimana dimaksud pada ayat (1) huruf b sampai dengan huruf e dapat dikenakan dengan atau tanpa didahului pengenaan sanksi administratif berupa peringatan tertulis sebagaimana dimaksud pada ayat (1) huruf a. BAB XIII ASPEK KELEMBAGAAN"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 40 :: Pasal 8",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 40",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 8 ayat (3) huruf a",
+  "cited_norm": "Pasal 8",
+  "source_text": "(1) Untuk pengembangan dan penguatan penyelenggaraan ITSK, Otoritas Jasa Keuangan melakukan penataan kelembagaan penyelenggaraan ITSK. (2) Aspek kelembagaan Penyelenggara ITSK yang telah terdaftar paling sedikit mencakup: a. tata kelola sebagaimana dimaksud dalam Pasal 8 ayat (3) huruf a; dan b. kesiapan permodalan dan sumber daya untuk melakukan uji coba dan pengembangan inovasi sebagaimana dimaksud dalam Pasal 9 ayat (5) huruf f, dalam mendukung pencapaian tujuan Penyelenggara ITSK. (3) Aspek kelembagaan Penyelenggara ITSK yang telah memperoleh izin usaha paling sedikit mencakup: a. dukungan organisasi; b. c. sumber daya; tata kelola; dan d. pelaksanaan anggaran operasional, dalam mendukung pencapaian tujuan Penyelenggara ITSK. (4) Penyel"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 40 :: Pasal 9",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 40",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 9 ayat (5) huruf f",
+  "cited_norm": "Pasal 9",
+  "source_text": "(1) Untuk pengembangan dan penguatan penyelenggaraan ITSK, Otoritas Jasa Keuangan melakukan penataan kelembagaan penyelenggaraan ITSK. (2) Aspek kelembagaan Penyelenggara ITSK yang telah terdaftar paling sedikit mencakup: a. tata kelola sebagaimana dimaksud dalam Pasal 8 ayat (3) huruf a; dan b. kesiapan permodalan dan sumber daya untuk melakukan uji coba dan pengembangan inovasi sebagaimana dimaksud dalam Pasal 9 ayat (5) huruf f, dalam mendukung pencapaian tujuan Penyelenggara ITSK. (3) Aspek kelembagaan Penyelenggara ITSK yang telah memperoleh izin usaha paling sedikit mencakup: a. dukungan organisasi; b. c. sumber daya; tata kelola; dan d. pelaksanaan anggaran operasional, dalam mendukung pencapaian tujuan Penyelenggara ITSK. (4) Penyel"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 41 :: Pasal 40",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 41",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 40 ayat (4)",
+  "cited_norm": "Pasal 40",
+  "source_text": "(1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 40 ayat (4) dikenakan sanksi administratif berupa: a. peringatan tertulis; b. penghentian sementara, sebagian, atau seluruh kegiatan termasuk pelaksanaan kerja sama; pembatalan persetujuan; c. d. pembatalan pendaftaran; dan/atau e. pencabutan izin. (2) Sanksi administratif sebagaimana dimaksud pada ayat (1) huruf b sampai dengan huruf e dapat dikenakan dengan atau tanpa didahului pengenaan sanksi administratif berupa peringatan tertulis sebagaimana dimaksud pada ayat (1) huruf a. BAB XIV KERJA SAMA DALAM PENYELENGGARAAN ITSK"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 43 :: Pasal 42",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 43",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 42 ayat (2)",
+  "cited_norm": "Pasal 42",
+  "source_text": "(1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 42 ayat (2), ayat (3), dan/atau ayat (4) dikenakan sanksi administratif berupa: a. peringatan tertulis; b. penghentian sementara, sebagian, atau seluruh kegiatan termasuk pelaksanaan kerja sama; pembatalan persetujuan; c. d. pembatalan pendaftaran; dan/atau e. pencabutan izin. (2) Sanksi administratif sebagaimana dimaksud pada ayat (1) huruf b sampai dengan huruf e dapat dikenakan dengan atau tanpa didahului pengenaan sanksi administratif berupa peringatan tertulis sebagaimana dimaksud pada ayat (1) huruf a. BAB XV ASPEK KEPATUHAN LAINNYA"
+ },
+ {
+  "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 49 :: Pasal 48",
+  "source_label": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 49",
+  "kind": "pasal_internal",
+  "cited_ref": "Pasal 48 ayat (1)",
+  "cited_norm": "Pasal 48",
+  "source_text": "(1) Pelanggaran terhadap ketentuan sebagaimana dimaksud dalam Pasal 48 ayat (1) dikenakan sanksi administratif berupa: a. peringatan tertulis; b. penghentian sementara, sebagian, atau seluruh kegiatan termasuk pelaksanaan kerja sama; pembatalan persetujuan; c. d. pembatalan pendaftaran; dan/atau e. pencabutan izin. (2) Sanksi administratif sebagaimana dimaksud pada ayat (1) huruf b sampai dengan huruf e dapat dikenakan dengan atau tanpa didahului pengenaan sanksi administratif berupa peringatan tertulis sebagaimana dimaksud pada ayat (1) huruf a. BAB XIX KETENTUAN PERALIHAN"
+ }
+]

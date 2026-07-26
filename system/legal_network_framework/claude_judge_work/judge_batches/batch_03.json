@@ -1,0 +1,403 @@
+{
+ "npwp-tax-bjorka-2024": {
+  "year": 2024,
+  "type": "data_breach",
+  "kronologi": "Pada 18 September 2024 'Bjorka' menawarkan ~6 juta data NPWP (NIK, NPWP, nama, alamat, kontak, data pajak) seharga ~USD 10.000; sampel menyebut Presiden Joko Widodo, Gibran, Kaesang, dan dua menteri. DJP menyatakan log aksesnya tidak menunjukkan indikasi pembobolan dan membuka penyelidikan.",
+  "candidates": [
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+    "provision": "(l) Data Pribadi terdiri atas: a. Data Pribadi yang bersifat spesifik; dan b. Data Pribadi yang bersifat umum. (2lData. A l2l Data Pribadi yang bersifat spesifik sebagaimana dimaksud pada ayat (l) huruf a meliputi: . a. data dan informasi kesehatan; b. data biometrik; c. data genetika; d. catatan kejahatan; e. data anak; f. data ker.rangan pribadi; dan/ atau g. data lainnya sesuai dengan ketentuan peraturan perundang-undangan. (3) Data Pribadi yang bersifat umum sebagaimana dimaksud pada ayat (l) huruf b meliputi: "
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+    "provision": "Pengendali Data Pribadi wajib menolak memberikan akses perubahan terhadap Data Fribadi kepada Subjek Data Pribadi dalam hal: a. membahayakan keamanan, kesehatan fisik, atau kesehatan mental Subjek Data Pribadi dan/ atau orang lain; b. berdampak. A b. berdampak pada pengungkapan Data Pribadi milik orang lain; dan/ atau bertentangan dengan kepentingan pertahanan dan keamanan nasional. c"
+   },
+   {
+    "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_61",
+    "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 61",
+    "provision": "layanan dalam mewujudkan kontribusi kecerdasan artifisial untuk kepentingan negara. Pengertian Kepentingan Negara Kepentingan negara yang dimaksud adalah kedaulatan dalam data dan infrastruktur sebagaimana tercantum dalam UU No.17/2007 tentang RPJP dan Visi Indonesia 2045 yakni Indonesia yang Berdaulat, Maju, Adil dan Makmur dalam segala hal. Secara spesifik kedaulatan akan data dan informasi hingga tahun 2045 mencakup aspek-aspek : 1. Ketersediaan data latih 2. Sistem Penghubung data 3. Infrastruktur komputasi yan"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_42",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 42",
+    "provision": "(1) Pengendali Data Pribadi wajib mengakhiri pemrosesan Data Pribadi dalam hal: a. telah. a. telah mencapai masa retensi; b. tujuan pemrosesan Data Pribadi telah tercapai; atau c. terdapat permintaan dari Subjek Data Pribadi. (2) Pengakhiran pemrosesan Data Pribadi sebagaimana dimaksud pada ayat (1) dilakukan sesuai dengan ketentuan peraturan perundang-undangan."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_20",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 20",
+    "provision": "(1) Pengendali Data Pribadi wajib memiliki dasar pemrosesan Data Pribadi. (2) Dasar. A (2) Dasar pernmsesan Data Pribadi sebagaimana dimaksud pada ayat (1) meliputi: a. persetujuan yang sah secara eksplisit dari Subjek Data Pribadi untuk 1 (sahr) atau beberapa tujuan tertentu yang telah disampait<an oleh Pengendali Data Pribadi kepada Subjek Data Pribadi; b. pemenuhan kewajiban perjanjian dalam hal Subjek Data Pribadi merupakan salah satu pihak atau untuk memenuhi permintaan Subjek Data Pribadi pada saat akan melal"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_55",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 55",
+    "provision": "(1) Pengendali Data Pribadi dapat melakukan transfer . Data Pribadi kepada Pengendali Data Pribadi lainnya dalam wilayah hukum Negara Republik Indonesia. (2) Pengendali. (2) Pengendali Data Pribadi yang melakukan transfer Data Pribadi dan yang menerima transfer Data Pribadi wajib melakukan Pelindungan Data Pribadi sebagaimana dimaksud dalam Undang-Undang ini. Bagian Kedua Transfer Data Pribadi ke Luar Wilayah Hukum Negara Republik Indonesia"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+    "provision": "Lembaga sebagaimana dimaksud dalam Pasal 58 ayat (2) berwenang: a.. merumuskan dan menetapkan kebijakan di bidang Pelindungan Data Pribadi; b. melakukan. A b. melakukan pengawasan terhadap kepatuhan Pengendali Data Pribadi; c. menjatuhkan sanksi administratif atas pelanggaran Pelindungan Data Pribadi yang dilakukan Pengendali Data Pribadi dan/atau Prosesor Data Pribadi; d. membantu aparat penegak hukum dalam penanganan dugaan tindak pidana Data Pribadi sebagaimana dimaksud dalam Undang-Undang ini; e. bekerja sama d"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_54",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 54",
+    "provision": "(1) Pejabat atau petugas yang melaksanakan fungsi Pelindungan Data Pribadi memiliki tugas paling sedikit: a menginformasikan A a. dan memberikan saran kepada Pengendali Data Pribadi atau Frosesor Data Pribadi agar mematuhi ketentuan dalam Undang-Undang ini; b. memantau dan memastikan kepatuhan terhadap Undang-Undang ini dan kebljakan Pengendali Data Pribadi atau Prosesor Data Pribadi; c. memberikan saran mengenai penilaian dampak Pelindungan Data Pribadi dan memantau kine{a Pengendali Data Pribadi dan Prosesor Data"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+    "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
+    "provision": "Hurufa Dalam hal perumusan dan penetapan kebijakan Pelindungan Data Pribadi, lembaga melibatkan organisasi usaha sesuai dengan ketentuan peraturan perundang-undangan. Hurufb. PRESIOEN REPI.JBLIK INOONESlA Huruf b Cukup jelas. Huruf c Cukup jelas. Huruf d Cukup jelas. Huruf e Cukup jelas. Huruf f Cukup jelas. Huruf g Cukup jelas. Hurufh Cukup jelas. Huruf i Cukup jelas. Hurufj Cukup.jelas. Huruf k Cukup jelas. Huruf I Cukup jelas. Hurufm Cukup jelas. Huruf n Cukup jelas. Hurufo Cukup.jelas."
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+    "provision": "(1) Setiap Orang yang dengan sengaja mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik yang berisi pemberitahuan bohong informasi menyesatkan yang atau mengakibatkan kerugian materiel bagi konsumen dalam Transaksi Elektronik sebagaimana dimaksud dalam Pasal 28 ayat (1) dipidana dengan pidana penjara paling lama 6 (enam) tahun dan/ atau denda paling banyak Rp1.0O0.0O0.000,00 (satu miliar rupiah). (2) Setiap Orang yang dengan sengaja dan tanpa mendistribusikan hak dan/atau men"
+   },
+   {
+    "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_77",
+    "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+    "provision": "Kecerdasan Artifisial sampai ada badan yang khusus ditugasi masalah ini. 45 STRATEGI NASIONAL UNTUK KECERDASAN ARTIFISIAL 3. 2. 3. PENGESAHAN RANCANGAN UNDANG-UNDANG PERLINDUNGAN DATA PRIBADI (“RUU PDP”) Data tidak dapat dipisahkan dari Kecerdasan Artifisial sehingga pengesahan peraturan ini akan sangat berdampak pada pelaksanaan pengembangan Kecerdasan Artifisial sendiri yang mengedepankan unsur keamanan dan dapat dipertanggungjawabkan sehingga manajemen data menjadi hal yang sangat perlu diperhatikan dan dapat se"
+   },
+   {
+    "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_75",
+    "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 75",
+    "provision": "Gambar 3-2 Konsep Pengetahuan Hukum 44 STRATEGI NASIONAL UNTUK KECERDASAN ARTIFISIAL 3. 2. PROGRAM-PROGRAM INISIATIF 3. 2. 1. PENERAPAN PERMENKOMINFO NOMOR 4 TAHUN 2016 Bahwa kondisi hukum positif yang berlaku di Indonesia sudah memiliki beberapa aturan yang secara ruang lingkup sudah cukup untuk mengatur mengenai keamanan informasi, namun sampai sekarang belum terimplementasi dengan baik, sehingga peta jalan jangka pendek pertama adalah memastikan peraturan ini dapat dijalankan secara optimal. Sesuai Peraturan Pre"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+    "provision": "(1) Dalam hal terjadi kegagalan Pelindungan Data Pribadi, Pengendali Data Pribadi wajib pemberitahuan secara tertulis paling lambat 3 x 24 (tiga kali dua puluh empat) jam kepada: a. Subjek Data Pribadi; dan b. lembaga. (2) Pemberitahuan tertulis sebagaimana dimaksud pada ayat (1) minimal memuat: a. b. c. Data Pribadi yang terungkap; kapan dan bagaimana Data Pribadi terungkap; dan upaya penanganan dan pemulihan atas terungkapnya Data Pribadi oleh Pengendali Data Pribadi. (3) Dalam hal tertentu, Pengendali Data Priba"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+    "provision": "(1) Setiap Orang yang dengan sengaja dan melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan mililoeya dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 65 ayat (1) dipidana dengan pidana penjara paling lama 5 (lima) tahun dan/atau pidana denda paling banyak Rp5.000.000.000,00 (lima miliar rupiah). (2) Setiap Orang yang dengan sengaja dan melawan hukum mengunglapkan Data Pribadi yang bukan miliknya seb"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_35",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+    "provision": "Pengendali Data Pribadi wajib melindungi dan memastikan keamanan Data Pribadi yang diprosesnya, dengan melakukan: a. penyusunan dan penerapan langkah teknis operasional untuk melindungi Data Pribadi dari gangguan pemrosesan Data Pribadi yang bertentangan dengan ketentuan peraturan perundang-undangan; dan b. penentuan tingkat keamanan Data Pribadi dengan memperhatikan sifat dan risiko dari Data Pribadi yang harus dilindungi dalam pemrosesan Data Pribadi."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+    "provision": "Setiap Orang yang dengan sengaja membuat Data Pribadi palsu atau memalsukan Data Pribadi dengan maksud untuk menguntrrngkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian bagi orang lain sebagaimana dimaksud dalam Pasal 66 .tipidana dengan pidana penjara paling tama 6 (enam) tahun dan/atau pidana denda paling banyak Rp6.0OO. 000.000,00 (enam miliar rupiah)."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_36",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 36",
+    "provision": "Dalam melakukan pemrosesan Data Pribadi, Pengendali Data Pribadi wajib menjaga kerahasiaan Data Pribadi."
+   },
+   {
+    "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_14",
+    "regulation_label": "PP_PSTE_No71_2019 - Pasal 14",
+    "provision": "(1) Penyelenggara Sistem Elektronik wajib melaksanakan prinsip pelindungan Data Pribadi dalam melakukan pemrosesan Data Pribadi meliputi: a. pengumpulan Data Pribadi dilakukan secara terbatas dan spesifik, sah secara hukum, adil, dengan sepengetahuan dan persetujuan dari pemilik Data Pribadi; 2019, No. 185 b. pemrosesan Data Pribadi dilakukan sesuai dengan tujuannya; c. pemrosesan Data Pribadi dilakukan dengan menjamin hak pemilik Data Pribadi; d. pemrosesan Data Pribadi dilakukan secara akurat, lengkap, tidak meny"
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_26",
+    "regulation_label": "UU_ITE_No19_2016 - Pasal 26",
+    "provision": "(l) (21 Kecuali ditentukan lain oleh peraturan perundang- undangan, penggunaan setiap informasi melalui media elektronik yang menyangkut data pribadi seseorang harus dilakukan atas persetujuan Orang yang bersangkutan. Setiap Orang yang dilanggar haknya sebagaimana dimaksud pada ayat (1) dapat mengajukan gugatan atas kerugian yang ditimbulkan berdasarkan Undang-Undang ini. (3) Setiap. PRES IDEN REPUBLIK INDONESIA (3) Setiap Penyelenggara Sistem Elektronik wajib menghapus Informasi Elektronik dan/atau Dokumen Elektro"
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+    "provision": "Setiap Orang yang dengan sengaja dan tanpa hak mengirimkan Informasi Elektronik dan/atau Dokumen Elektronik secara langsung kepada korban yang berisi ancaman kekerasan dan/ atau menakut- nakuti sebagaimana dimaksud dalam Pasal 29 dipidana dengan pidana penjara paling lama 4 (empat) tahun dan/ atau denda paling banyak Rp750.000.000,00 (tqjuh ratus lima puluh juta rupiah). Pasal II 1 2 Pada saat Undang-Undang ini mulai berlaku, ketentuan dalam Pasal 27 ayat (1), Pasal 27A, Pasal. 28 ayat (2), Pasal 28 ayal (3), Pasal"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_66",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 66",
+    "provision": "Setiap Orang dilarang membuat Data Pribadi palsu atau memalsul<an Data Pribadi dengan maksud r.rntuk diri sendiri atau orang lain yang dapat mengakibatkan kerugian bagi orang lain. BAB XIV KETENTUAN PIDANA"
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_27",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 27",
+    "provision": "(1) Setiap Orang dengan sengaja dan tanpa hak menyiarkan, mempertunjukkan, mendistribusikan, mentransmisikan, dan/atau membuat dapat diaksesnya Informasi Elektronik dan/ atau Dokumen Elektronik yang memiliki muatan yang melanggar kesusilaan untuk diketahui umum. (21 Setiap Orang dengan sengaja dan tanpa hak mendistribusikan, mentransmisikan, dan/atau membuat dapat diaksesnya Informasi Elektronik dan/atau Dokumen Elektronik yang memiliki muatan perjudian. 9 Di antara Pasal 27 dan Pasal 28 disisipkan 2 (dua) pasal, y"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_65",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 65",
+    "provision": "(1) Setiap Orang dilarang secara melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan miliknya dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian Subjek Data Pribadi. (2) Setiap Orang dilarang secara melawan hukum mengungkapkan Data Pribadi yang bukan miliknya. (3) Setiap Orang dilarang secara melawan hukum Data Pribadi yang bukan miliknya."
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_28",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 28",
+    "provision": "Setiap Orang dengan sengaja dan/atau mentransmisikan Informasi Elektronik dan/ atau Dokumen Elektronik yang berisi pemberitahuan bohong atau informasi menyesatkan yang mengakibatkan kerugian materiel bagi konsumen dalam Transaksi Elektronik. Setiap Orang dengan sengaja dan tanpa hak mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik yang sifatnya menghasut, mengajak, atau memengaruhi orang lain sehingga menimbulkan rasa kebencian atau permusuhan terhadap individu dan/atau kel"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_57",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 57",
+    "provision": "(1) Pelanggaran terhadap ketentuan Pasal 20 ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,"
+   }
+  ]
+ },
+ "bais-tni-intelligence-leak-2024": {
+  "year": 2024,
+  "type": "data_breach",
+  "kronologi": "Sekitar 24-27 Juni 2024 'MoonzHaxor' mengklaim membobol BAIS TNI dan memuat berkas contoh, menawarkan data hingga ~USD 7.000. Tim Siber TNI menyatakan menyelidiki dan menonaktifkan sementara server BAIS; pejabat menyebut materi sebagai data lama.",
+  "candidates": [
+   {
+    "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+    "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+    "provision": "Informasi yang sebelumnya dilaksanakan oleh Kemenkominfo selanjutnya akan dilaksanakan oleh BSSN. Dalam hal ini Kementerian Komunikasi dan Informatika serta BSSN menjadi pihak-pihak yang bertanggung jawab untuk memastikan transisi dan penegakan peraturan yang maksimal agar manajemen pengamanan informasi dapat terwujud secara maksimal. 3. 2. 2. PERLINDUNGAN DATA PRIBADI DAN PERATURAN BPPT TENTANG AUDIT DAN KLIRING TEKNOLOGI Pasal 59 dan Pasal 60 Keputusan Presiden Nomor 103 Tahun 2001 tentang Kedudukan, Tugas, Fungs"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+    "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
+    "provision": "Hurufa Dalam hal perumusan dan penetapan kebijakan Pelindungan Data Pribadi, lembaga melibatkan organisasi usaha sesuai dengan ketentuan peraturan perundang-undangan. Hurufb. PRESIOEN REPI.JBLIK INOONESlA Huruf b Cukup jelas. Huruf c Cukup jelas. Huruf d Cukup jelas. Huruf e Cukup jelas. Huruf f Cukup jelas. Huruf g Cukup jelas. Hurufh Cukup jelas. Huruf i Cukup jelas. Hurufj Cukup.jelas. Huruf k Cukup jelas. Huruf I Cukup jelas. Hurufm Cukup jelas. Huruf n Cukup jelas. Hurufo Cukup.jelas."
+   },
+   {
+    "regulation_id": "EU_AI_Act_2024_Article_79",
+    "regulation_label": "EU_AI_Act_2024 - Article 79",
+    "provision": "(1) or in a substantial modification; (b) facilitating the post-market monitoring referred to in Article 72; and (c) monitoring the operation of high-risk AI systems referred to in Article 26(5). 3. For high-risk AI systems referred to in point 1 (a), of Annex III, the logging capabilities shall provide, at a minimum: (a) recording of the period of each use of the system (start date and time and end date and time of each use); (b) the reference database against which input data has been checked by the system; (c) t"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+    "provision": "(1) Dalam hal terjadi kegagalan Pelindungan Data Pribadi, Pengendali Data Pribadi wajib pemberitahuan secara tertulis paling lambat 3 x 24 (tiga kali dua puluh empat) jam kepada: a. Subjek Data Pribadi; dan b. lembaga. (2) Pemberitahuan tertulis sebagaimana dimaksud pada ayat (1) minimal memuat: a. b. c. Data Pribadi yang terungkap; kapan dan bagaimana Data Pribadi terungkap; dan upaya penanganan dan pemulihan atas terungkapnya Data Pribadi oleh Pengendali Data Pribadi. (3) Dalam hal tertentu, Pengendali Data Priba"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_60",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 60",
+    "provision": "Lembaga sebagaimana dimaksud dalam Pasal 58 ayat (2) berwenang: a.. merumuskan dan menetapkan kebijakan di bidang Pelindungan Data Pribadi; b. melakukan. A b. melakukan pengawasan terhadap kepatuhan Pengendali Data Pribadi; c. menjatuhkan sanksi administratif atas pelanggaran Pelindungan Data Pribadi yang dilakukan Pengendali Data Pribadi dan/atau Prosesor Data Pribadi; d. membantu aparat penegak hukum dalam penanganan dugaan tindak pidana Data Pribadi sebagaimana dimaksud dalam Undang-Undang ini; e. bekerja sama d"
+   },
+   {
+    "regulation_id": "ASEAN_Guide_AI_Governance_Ethics_2024_Bagian_80",
+    "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+    "provision": "collected and how it was processed will help developers and deployers understand how data accuracy and integrity is maintained over its lifecycle. It is also worthwhile noting that providing such information would also likely be material for fulfilling the consent and notice requirements under various data protection and privacy laws in ASEAN. Deployers may look at the data from its end-use and backdate it to its source or start from the data’s source and follow its journey through to its end-use. For a more comple"
+   },
+   {
+    "regulation_id": "G7_Hiroshima_Code_of_Conduct_for_AI_Bagian_5",
+    "regulation_label": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 5",
+    "provision": "processes, and decisions made during system development. These measures should be documented and supported by regularly updated technical documentation. This testing should take place in secure environments and be performed at several checkpoints throughout the AI lifecycle in particular before deployment and placement on the market to identify risks and vulnerabilities, and to inform action to address the identified AI risks to security, safety and societal and other risks, whether accidental or intentional. In 2 "
+   },
+   {
+    "regulation_id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI_Bagian_33",
+    "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 33",
+    "provision": "Seizing the opportunities of safe, secure and trustworthy artificial intelligence systems for sustainable development 11. Recalls its resolution 76/307 of 8 September 2022 and its decision 77/568 of 1 September 2023 on the modalities and the scope of the Summit of the Future and, in this regard, looks forward to the development of a global digital compact; 12. Looks forward also to the overall review by the General Assembly, in 2025, of the progress made since the World Summit on the Information Society; 13. Acknow"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_50",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 50",
+    "provision": "(1) Kewajiban Pengendali Data Pribadi sebagaimana dimaksud dalam Pasal 30, Pasal 32, Pasal 36, PasaJ42,"
+   },
+   {
+    "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_97",
+    "regulation_label": "PP_PSTE_No71_2019 - Pasal 97",
+    "provision": "(1) Masyarakat dapat mengajukan permohonan pemutusan Akses Informasi Elektronik dan/atau Dokumen Elektronik sebagaimana dimaksud dalam Pasal 96 kepada Menteri. 2019, No. 185 (2) Kementerian atau Lembaga terkait berkoordinasi dengan Menteri untuk pemutusan Akses Informasi Elektronik dan/atau Dokumen Elektronik sebagaimana dimaksud dalam Pasal 96. (3) Aparat penegak hukum dapat meminta pemutusan Akses Informasi Elektronik dan/atau Dokumen Elektronik sebagaimana dimaksud dalam Pasal 96 kepada Menteri. (4) Lembaga pera"
+   },
+   {
+    "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_56",
+    "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 56",
+    "provision": "memiliki kejelasan adanya resiko (vulnerabilities) yang dapat memberikan kerugian dan ancaman bagi manusia, khususnya masyarakat Indonesia. Oleh karena itu diperlukan kejelasan upaya mitigasi serta pengawasannya. Dengan itu, diperlukan sinergi antar instansi terkait untuk kesepahaman atas teknologi kecerdasan artifisial tersebut sehingga dapat bergerak ke arah yang sama. Efektivitas maksudnya adalah dalam pengawasan kecerdasan artifisial hendaknya dibekali proses pengawasan yang jelas, menyeluruh, namun efektif dal"
+   },
+   {
+    "regulation_id": "EU_AI_Act_2024_Article_11",
+    "regulation_label": "EU_AI_Act_2024 - Article 11",
+    "provision": "Technical documentation The technical documentation of a high-risk AI system shall be drawn up before that system is placed on the market or 1. put into service and shall be kept up-to date. The technical documentation shall be drawn up in such a way as to demonstrate that the high-risk AI system complies with the requirements set out in this Section and to provide national competent authorities and notified bodies with the necessary information in a clear and comprehensive form to assess the compliance of the AI s"
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+    "provision": "(1) Setiap Orang yang dengan sengaja mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik yang berisi pemberitahuan bohong informasi menyesatkan yang atau mengakibatkan kerugian materiel bagi konsumen dalam Transaksi Elektronik sebagaimana dimaksud dalam Pasal 28 ayat (1) dipidana dengan pidana penjara paling lama 6 (enam) tahun dan/ atau denda paling banyak Rp1.0O0.0O0.000,00 (satu miliar rupiah). (2) Setiap Orang yang dengan sengaja dan tanpa mendistribusikan hak dan/atau men"
+   },
+   {
+    "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_14",
+    "regulation_label": "PP_PSTE_No71_2019 - Pasal 14",
+    "provision": "(1) Penyelenggara Sistem Elektronik wajib melaksanakan prinsip pelindungan Data Pribadi dalam melakukan pemrosesan Data Pribadi meliputi: a. pengumpulan Data Pribadi dilakukan secara terbatas dan spesifik, sah secara hukum, adil, dengan sepengetahuan dan persetujuan dari pemilik Data Pribadi; 2019, No. 185 b. pemrosesan Data Pribadi dilakukan sesuai dengan tujuannya; c. pemrosesan Data Pribadi dilakukan dengan menjamin hak pemilik Data Pribadi; d. pemrosesan Data Pribadi dilakukan secara akurat, lengkap, tidak meny"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_35",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+    "provision": "Pengendali Data Pribadi wajib melindungi dan memastikan keamanan Data Pribadi yang diprosesnya, dengan melakukan: a. penyusunan dan penerapan langkah teknis operasional untuk melindungi Data Pribadi dari gangguan pemrosesan Data Pribadi yang bertentangan dengan ketentuan peraturan perundang-undangan; dan b. penentuan tingkat keamanan Data Pribadi dengan memperhatikan sifat dan risiko dari Data Pribadi yang harus dilindungi dalam pemrosesan Data Pribadi."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_20",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 20",
+    "provision": "(1) Pengendali Data Pribadi wajib memiliki dasar pemrosesan Data Pribadi. (2) Dasar. A (2) Dasar pernmsesan Data Pribadi sebagaimana dimaksud pada ayat (1) meliputi: a. persetujuan yang sah secara eksplisit dari Subjek Data Pribadi untuk 1 (sahr) atau beberapa tujuan tertentu yang telah disampait<an oleh Pengendali Data Pribadi kepada Subjek Data Pribadi; b. pemenuhan kewajiban perjanjian dalam hal Subjek Data Pribadi merupakan salah satu pihak atau untuk memenuhi permintaan Subjek Data Pribadi pada saat akan melal"
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_26",
+    "regulation_label": "UU_ITE_No19_2016 - Pasal 26",
+    "provision": "(l) (21 Kecuali ditentukan lain oleh peraturan perundang- undangan, penggunaan setiap informasi melalui media elektronik yang menyangkut data pribadi seseorang harus dilakukan atas persetujuan Orang yang bersangkutan. Setiap Orang yang dilanggar haknya sebagaimana dimaksud pada ayat (1) dapat mengajukan gugatan atas kerugian yang ditimbulkan berdasarkan Undang-Undang ini. (3) Setiap. PRES IDEN REPUBLIK INDONESIA (3) Setiap Penyelenggara Sistem Elektronik wajib menghapus Informasi Elektronik dan/atau Dokumen Elektro"
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+    "provision": "Setiap Orang yang dengan sengaja dan tanpa hak mengirimkan Informasi Elektronik dan/atau Dokumen Elektronik secara langsung kepada korban yang berisi ancaman kekerasan dan/ atau menakut- nakuti sebagaimana dimaksud dalam Pasal 29 dipidana dengan pidana penjara paling lama 4 (empat) tahun dan/ atau denda paling banyak Rp750.000.000,00 (tqjuh ratus lima puluh juta rupiah). Pasal II 1 2 Pada saat Undang-Undang ini mulai berlaku, ketentuan dalam Pasal 27 ayat (1), Pasal 27A, Pasal. 28 ayat (2), Pasal 28 ayal (3), Pasal"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+    "provision": "Setiap Orang yang dengan sengaja membuat Data Pribadi palsu atau memalsukan Data Pribadi dengan maksud untuk menguntrrngkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian bagi orang lain sebagaimana dimaksud dalam Pasal 66 .tipidana dengan pidana penjara paling tama 6 (enam) tahun dan/atau pidana denda paling banyak Rp6.0OO. 000.000,00 (enam miliar rupiah)."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+    "provision": "(1) Setiap Orang yang dengan sengaja dan melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan mililoeya dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 65 ayat (1) dipidana dengan pidana penjara paling lama 5 (lima) tahun dan/atau pidana denda paling banyak Rp5.000.000.000,00 (lima miliar rupiah). (2) Setiap Orang yang dengan sengaja dan melawan hukum mengunglapkan Data Pribadi yang bukan miliknya seb"
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_27",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 27",
+    "provision": "(1) Setiap Orang dengan sengaja dan tanpa hak menyiarkan, mempertunjukkan, mendistribusikan, mentransmisikan, dan/atau membuat dapat diaksesnya Informasi Elektronik dan/ atau Dokumen Elektronik yang memiliki muatan yang melanggar kesusilaan untuk diketahui umum. (21 Setiap Orang dengan sengaja dan tanpa hak mendistribusikan, mentransmisikan, dan/atau membuat dapat diaksesnya Informasi Elektronik dan/atau Dokumen Elektronik yang memiliki muatan perjudian. 9 Di antara Pasal 27 dan Pasal 28 disisipkan 2 (dua) pasal, y"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_36",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 36",
+    "provision": "Dalam melakukan pemrosesan Data Pribadi, Pengendali Data Pribadi wajib menjaga kerahasiaan Data Pribadi."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_66",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 66",
+    "provision": "Setiap Orang dilarang membuat Data Pribadi palsu atau memalsul<an Data Pribadi dengan maksud r.rntuk diri sendiri atau orang lain yang dapat mengakibatkan kerugian bagi orang lain. BAB XIV KETENTUAN PIDANA"
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_28",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 28",
+    "provision": "Setiap Orang dengan sengaja dan/atau mentransmisikan Informasi Elektronik dan/ atau Dokumen Elektronik yang berisi pemberitahuan bohong atau informasi menyesatkan yang mengakibatkan kerugian materiel bagi konsumen dalam Transaksi Elektronik. Setiap Orang dengan sengaja dan tanpa hak mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik yang sifatnya menghasut, mengajak, atau memengaruhi orang lain sehingga menimbulkan rasa kebencian atau permusuhan terhadap individu dan/atau kel"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_65",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 65",
+    "provision": "(1) Setiap Orang dilarang secara melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan miliknya dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian Subjek Data Pribadi. (2) Setiap Orang dilarang secara melawan hukum mengungkapkan Data Pribadi yang bukan miliknya. (3) Setiap Orang dilarang secara melawan hukum Data Pribadi yang bukan miliknya."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_57",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 57",
+    "provision": "(1) Pelanggaran terhadap ketentuan Pasal 20 ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,"
+   }
+  ]
+ },
+ "inafis-polri-fingerprint-leak-2024": {
+  "year": 2024,
+  "type": "data_breach",
+  "kronologi": "Pada 22 Juni 2024 'MoonzHaxor' mengunggah data dugaan pembobolan INAFIS (citra sidik jari, email, berkas aplikasi SpringBoot) seharga ~USD 1.000. Kepala BSSN berkoordinasi dengan Polri dan menyatakan data lama serta layanan INAFIS berjalan normal.",
+  "candidates": [
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Penjelasan_Pasal_60",
+    "regulation_label": "UU_PDP_No27_2022 - Penjelasan Pasal 60",
+    "provision": "Hurufa Dalam hal perumusan dan penetapan kebijakan Pelindungan Data Pribadi, lembaga melibatkan organisasi usaha sesuai dengan ketentuan peraturan perundang-undangan. Hurufb. PRESIOEN REPI.JBLIK INOONESlA Huruf b Cukup jelas. Huruf c Cukup jelas. Huruf d Cukup jelas. Huruf e Cukup jelas. Huruf f Cukup jelas. Huruf g Cukup jelas. Hurufh Cukup jelas. Huruf i Cukup jelas. Hurufj Cukup.jelas. Huruf k Cukup jelas. Huruf I Cukup jelas. Hurufm Cukup jelas. Huruf n Cukup jelas. Hurufo Cukup.jelas."
+   },
+   {
+    "regulation_id": "IDN_Stranas_AI_Indonesia_2020-2045_Full_Bagian_76",
+    "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+    "provision": "Informasi yang sebelumnya dilaksanakan oleh Kemenkominfo selanjutnya akan dilaksanakan oleh BSSN. Dalam hal ini Kementerian Komunikasi dan Informatika serta BSSN menjadi pihak-pihak yang bertanggung jawab untuk memastikan transisi dan penegakan peraturan yang maksimal agar manajemen pengamanan informasi dapat terwujud secara maksimal. 3. 2. 2. PERLINDUNGAN DATA PRIBADI DAN PERATURAN BPPT TENTANG AUDIT DAN KLIRING TEKNOLOGI Pasal 59 dan Pasal 60 Keputusan Presiden Nomor 103 Tahun 2001 tentang Kedudukan, Tugas, Fungs"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_4",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+    "provision": "(l) Data Pribadi terdiri atas: a. Data Pribadi yang bersifat spesifik; dan b. Data Pribadi yang bersifat umum. (2lData. A l2l Data Pribadi yang bersifat spesifik sebagaimana dimaksud pada ayat (l) huruf a meliputi: . a. data dan informasi kesehatan; b. data biometrik; c. data genetika; d. catatan kejahatan; e. data anak; f. data ker.rangan pribadi; dan/ atau g. data lainnya sesuai dengan ketentuan peraturan perundang-undangan. (3) Data Pribadi yang bersifat umum sebagaimana dimaksud pada ayat (l) huruf b meliputi: "
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_46",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 46",
+    "provision": "(1) Dalam hal terjadi kegagalan Pelindungan Data Pribadi, Pengendali Data Pribadi wajib pemberitahuan secara tertulis paling lambat 3 x 24 (tiga kali dua puluh empat) jam kepada: a. Subjek Data Pribadi; dan b. lembaga. (2) Pemberitahuan tertulis sebagaimana dimaksud pada ayat (1) minimal memuat: a. b. c. Data Pribadi yang terungkap; kapan dan bagaimana Data Pribadi terungkap; dan upaya penanganan dan pemulihan atas terungkapnya Data Pribadi oleh Pengendali Data Pribadi. (3) Dalam hal tertentu, Pengendali Data Priba"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_48",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 48",
+    "provision": "(1) Pengendali Data Pribadi berbentuk badan hukum yang penggabungan, pemisahan, melakukan pengambilalihan, peleburan, atau pembubaran badan hukum wajib pemberitahuan pengalihan Data Pribadi kepada Subjek Data Pribadi. (2) Pemberitahuan. PRESIDEN REPUBLIK INDONES (2) Pemberitahuan pengalihan Data Pribadi sebagaimana dimaksud pada ayat (1) dilakukan sebelum dan sesudah penggabungan, pemisahan, pengambilalihan, peleburan, atau pembubaran badan hukum. (3) Dalam hal Pengendali Data Pribadi berbentuk badan hukum melakuka"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_29",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 29",
+    "provision": "(1) Pengendali Data Pribadi wajib memastikan akurasi, kelengkapan, dan konsistensi Data Pribadi sesuai dengan ketentuan peraturan perundang-undangan. (2) Dalam. PRESIDEN REPTIBLIK INDONESlA (2) Dalam memastikan akurasi, kelengkapan, dan konsistensi Data Pribadi sebagaimana dimaksud pada ayat (l) Pengendali Data Pribadi wajib melakukan verifikasi."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_14",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 14",
+    "provision": "Pelaksanaan hak Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 6 sampai dengan Pasal 11 diajukan melalui permohonan tercatat yang disampaikan secara elektronik atau nonelektronik kepada Pengendali Data Pribadi."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_21",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 21",
+    "provision": "(1) Dalam hal pemrosesan Data Pribadi berdasarkan persetujuan sebagaimana dimaksud dalam Pasal 20 ayat (21 huruf a, Pengendali Data Pribadi wajib menyampaikan Informasi mengenai: a. legalitas dari pemrosesan Data Pribadi; b. tujuan pemrosesan Data Pribadi; c. jenis dan relevansi Data Pribadi yang akan diproses; d. jangka waktu retensi dokumen yang memuat Data Pribadi; e. rincian mengenai Informasi yang f. jangka waktu pemrosesan Data Pribadi; dan C. hak Subjek Data Pribadi. (2) Dalam. PRESIEIEN REPUBLIK INOONESIA -"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_54",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 54",
+    "provision": "(1) Pejabat atau petugas yang melaksanakan fungsi Pelindungan Data Pribadi memiliki tugas paling sedikit: a menginformasikan A a. dan memberikan saran kepada Pengendali Data Pribadi atau Frosesor Data Pribadi agar mematuhi ketentuan dalam Undang-Undang ini; b. memantau dan memastikan kepatuhan terhadap Undang-Undang ini dan kebljakan Pengendali Data Pribadi atau Prosesor Data Pribadi; c. memberikan saran mengenai penilaian dampak Pelindungan Data Pribadi dan memantau kine{a Pengendali Data Pribadi dan Prosesor Data"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_42",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 42",
+    "provision": "(1) Pengendali Data Pribadi wajib mengakhiri pemrosesan Data Pribadi dalam hal: a. telah. a. telah mencapai masa retensi; b. tujuan pemrosesan Data Pribadi telah tercapai; atau c. terdapat permintaan dari Subjek Data Pribadi. (2) Pengakhiran pemrosesan Data Pribadi sebagaimana dimaksud pada ayat (1) dilakukan sesuai dengan ketentuan peraturan perundang-undangan."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_20",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 20",
+    "provision": "(1) Pengendali Data Pribadi wajib memiliki dasar pemrosesan Data Pribadi. (2) Dasar. A (2) Dasar pernmsesan Data Pribadi sebagaimana dimaksud pada ayat (1) meliputi: a. persetujuan yang sah secara eksplisit dari Subjek Data Pribadi untuk 1 (sahr) atau beberapa tujuan tertentu yang telah disampait<an oleh Pengendali Data Pribadi kepada Subjek Data Pribadi; b. pemenuhan kewajiban perjanjian dalam hal Subjek Data Pribadi merupakan salah satu pihak atau untuk memenuhi permintaan Subjek Data Pribadi pada saat akan melal"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_33",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+    "provision": "Pengendali Data Pribadi wajib menolak memberikan akses perubahan terhadap Data Fribadi kepada Subjek Data Pribadi dalam hal: a. membahayakan keamanan, kesehatan fisik, atau kesehatan mental Subjek Data Pribadi dan/ atau orang lain; b. berdampak. A b. berdampak pada pengungkapan Data Pribadi milik orang lain; dan/ atau bertentangan dengan kepentingan pertahanan dan keamanan nasional. c"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_35",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+    "provision": "Pengendali Data Pribadi wajib melindungi dan memastikan keamanan Data Pribadi yang diprosesnya, dengan melakukan: a. penyusunan dan penerapan langkah teknis operasional untuk melindungi Data Pribadi dari gangguan pemrosesan Data Pribadi yang bertentangan dengan ketentuan peraturan perundang-undangan; dan b. penentuan tingkat keamanan Data Pribadi dengan memperhatikan sifat dan risiko dari Data Pribadi yang harus dilindungi dalam pemrosesan Data Pribadi."
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45A",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+    "provision": "(1) Setiap Orang yang dengan sengaja mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik yang berisi pemberitahuan bohong informasi menyesatkan yang atau mengakibatkan kerugian materiel bagi konsumen dalam Transaksi Elektronik sebagaimana dimaksud dalam Pasal 28 ayat (1) dipidana dengan pidana penjara paling lama 6 (enam) tahun dan/ atau denda paling banyak Rp1.0O0.0O0.000,00 (satu miliar rupiah). (2) Setiap Orang yang dengan sengaja dan tanpa mendistribusikan hak dan/atau men"
+   },
+   {
+    "regulation_id": "IDN_PP_PSTE_No71_2019_Pasal_14",
+    "regulation_label": "PP_PSTE_No71_2019 - Pasal 14",
+    "provision": "(1) Penyelenggara Sistem Elektronik wajib melaksanakan prinsip pelindungan Data Pribadi dalam melakukan pemrosesan Data Pribadi meliputi: a. pengumpulan Data Pribadi dilakukan secara terbatas dan spesifik, sah secara hukum, adil, dengan sepengetahuan dan persetujuan dari pemilik Data Pribadi; 2019, No. 185 b. pemrosesan Data Pribadi dilakukan sesuai dengan tujuannya; c. pemrosesan Data Pribadi dilakukan dengan menjamin hak pemilik Data Pribadi; d. pemrosesan Data Pribadi dilakukan secara akurat, lengkap, tidak meny"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_36",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 36",
+    "provision": "Dalam melakukan pemrosesan Data Pribadi, Pengendali Data Pribadi wajib menjaga kerahasiaan Data Pribadi."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_67",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+    "provision": "(1) Setiap Orang yang dengan sengaja dan melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan mililoeya dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 65 ayat (1) dipidana dengan pidana penjara paling lama 5 (lima) tahun dan/atau pidana denda paling banyak Rp5.000.000.000,00 (lima miliar rupiah). (2) Setiap Orang yang dengan sengaja dan melawan hukum mengunglapkan Data Pribadi yang bukan miliknya seb"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_68",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+    "provision": "Setiap Orang yang dengan sengaja membuat Data Pribadi palsu atau memalsukan Data Pribadi dengan maksud untuk menguntrrngkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian bagi orang lain sebagaimana dimaksud dalam Pasal 66 .tipidana dengan pidana penjara paling tama 6 (enam) tahun dan/atau pidana denda paling banyak Rp6.0OO. 000.000,00 (enam miliar rupiah)."
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_27",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 27",
+    "provision": "(1) Setiap Orang dengan sengaja dan tanpa hak menyiarkan, mempertunjukkan, mendistribusikan, mentransmisikan, dan/atau membuat dapat diaksesnya Informasi Elektronik dan/ atau Dokumen Elektronik yang memiliki muatan yang melanggar kesusilaan untuk diketahui umum. (21 Setiap Orang dengan sengaja dan tanpa hak mendistribusikan, mentransmisikan, dan/atau membuat dapat diaksesnya Informasi Elektronik dan/atau Dokumen Elektronik yang memiliki muatan perjudian. 9 Di antara Pasal 27 dan Pasal 28 disisipkan 2 (dua) pasal, y"
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_45B",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 45B",
+    "provision": "Setiap Orang yang dengan sengaja dan tanpa hak mengirimkan Informasi Elektronik dan/atau Dokumen Elektronik secara langsung kepada korban yang berisi ancaman kekerasan dan/ atau menakut- nakuti sebagaimana dimaksud dalam Pasal 29 dipidana dengan pidana penjara paling lama 4 (empat) tahun dan/ atau denda paling banyak Rp750.000.000,00 (tqjuh ratus lima puluh juta rupiah). Pasal II 1 2 Pada saat Undang-Undang ini mulai berlaku, ketentuan dalam Pasal 27 ayat (1), Pasal 27A, Pasal. 28 ayat (2), Pasal 28 ayal (3), Pasal"
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No19_2016_Pasal_26",
+    "regulation_label": "UU_ITE_No19_2016 - Pasal 26",
+    "provision": "(l) (21 Kecuali ditentukan lain oleh peraturan perundang- undangan, penggunaan setiap informasi melalui media elektronik yang menyangkut data pribadi seseorang harus dilakukan atas persetujuan Orang yang bersangkutan. Setiap Orang yang dilanggar haknya sebagaimana dimaksud pada ayat (1) dapat mengajukan gugatan atas kerugian yang ditimbulkan berdasarkan Undang-Undang ini. (3) Setiap. PRES IDEN REPUBLIK INDONESIA (3) Setiap Penyelenggara Sistem Elektronik wajib menghapus Informasi Elektronik dan/atau Dokumen Elektro"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_66",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 66",
+    "provision": "Setiap Orang dilarang membuat Data Pribadi palsu atau memalsul<an Data Pribadi dengan maksud r.rntuk diri sendiri atau orang lain yang dapat mengakibatkan kerugian bagi orang lain. BAB XIV KETENTUAN PIDANA"
+   },
+   {
+    "regulation_id": "IDN_UU_ITE_No1_2024_Pasal_28",
+    "regulation_label": "UU_ITE_No1_2024 - Pasal 28",
+    "provision": "Setiap Orang dengan sengaja dan/atau mentransmisikan Informasi Elektronik dan/ atau Dokumen Elektronik yang berisi pemberitahuan bohong atau informasi menyesatkan yang mengakibatkan kerugian materiel bagi konsumen dalam Transaksi Elektronik. Setiap Orang dengan sengaja dan tanpa hak mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik yang sifatnya menghasut, mengajak, atau memengaruhi orang lain sehingga menimbulkan rasa kebencian atau permusuhan terhadap individu dan/atau kel"
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_65",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 65",
+    "provision": "(1) Setiap Orang dilarang secara melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan miliknya dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian Subjek Data Pribadi. (2) Setiap Orang dilarang secara melawan hukum mengungkapkan Data Pribadi yang bukan miliknya. (3) Setiap Orang dilarang secara melawan hukum Data Pribadi yang bukan miliknya."
+   },
+   {
+    "regulation_id": "IDN_UU_PDP_No27_2022_Pasal_57",
+    "regulation_label": "UU_PDP_No27_2022 - Pasal 57",
+    "provision": "(1) Pelanggaran terhadap ketentuan Pasal 20 ayat (l), ' Pasal 21, Pasal 24, Pasal 25 ayat (2), Pasal 26ayat(31,"
+   }
+  ]
+ }
+}

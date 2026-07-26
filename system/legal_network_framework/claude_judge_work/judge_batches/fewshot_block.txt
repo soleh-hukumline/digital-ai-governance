@@ -1,0 +1,21 @@
+EX1. INSIDEN: [2020 data_breach] Data 2,9 juta pengguna Cermati dijual ~USD 2.200 di forum peretas, terungkap publik via Teguh Aprianto pada 4 November 2020, memuat nama, email, alamat, telepon, rekening bank, pekerjaan, NPWP, dan NIK. Cermati mengirim peringatan akses tidak sah ke pengguna pa
+   PASAL: [UU_PDP_No27_2022 - Pasal 35] Pengendali Data Pribadi wajib melindungi dan memastikan keamanan Data Pribadi yang diprosesnya, dengan melakukan: a. penyusunan dan penerapan langkah teknis operasional untuk melin
+   BENAR: relevant=true, roles=['pse'] — Ps35 (kewajiban keamanan data) terpicu oleh kegagalan keamanan/kebocoran.
+EX2. INSIDEN: [2023 ransomware] Pada 8 Mei 2023 layanan ATM dan cabang BSI lumpuh; LockBit mengklaim mencuri 1,5 TB data ~15 juta nasabah dan pegawai. Log negosiasi menunjukkan bank menawar ~USD 10 juta sementara LockBit menuntut USD 20 juta; setelah gagal, data dipublikasikan 15-16 Mei 2023.
+   PASAL: [UU_PDP_No27_2022 - Pasal 67] (1) Setiap Orang yang dengan sengaja dan melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan miliknya dengan maksud untuk menguntungkan diri sendiri atau orang lain 
+   BENAR: relevant=true, roles=['pelaku'] — Ps67 (pengungkapan data melawan hukum) tepat untuk pelaku publikasi data.
+EX3. INSIDEN: [2024 data_breach] Pada 22 Juni 2024 'MoonzHaxor' mengunggah data dugaan pembobolan INAFIS (citra sidik jari, email, berkas aplikasi SpringBoot) seharga ~USD 1.000. Kepala BSSN berkoordinasi dengan Polri dan menyatakan data lama serta layanan INAFIS berjalan normal.
+   PASAL: [UU_PDP_No27_2022 - Pasal 46] (1) Dalam hal terjadi kegagalan Pelindungan Data Pribadi, Pengendali Data Pribadi wajib menyampaikan pemberitahuan secara tertulis paling lambat 3 x 24 (tiga kali dua puluh empat) 
+   BENAR: relevant=true, roles=['pse'] — Ps46 (notifikasi kegagalan pelindungan 3x24 jam) terpicu oleh kebocoran.
+EX4. INSIDEN: [2022 data_breach] November 2022 dataset yang diatribusikan ke MyPertamina bocor dalam format CSV, memuat ~44 juta data dan ~6 juta email unik, plus nama, TTL, gender, alamat, telepon, dan riwayat pembelian. Have I Been Pwned mengindeks pelanggaran ini (ditambahkan Januari 2024).
+   PASAL: [UU_PDP_No27_2022 - Pasal 28] Pengendali Data Pribadi wajib melakukan pemrosesan Data Pribadi sesuai dengan tujuan pemrosesan Data Pribadi.
+   BENAR: relevant=false, roles=[] — Ps28 (pemrosesan sesuai tujuan) tidak terpicu oleh pencurian pihak ketiga.
+EX5. INSIDEN: [2021 data_breach] Pada Mei 2021 akun RaidForums 'Kotz' menjual data yang diklaim milik ~279 juta peserta BPJS Kesehatan (NIK, KTP, telepon, email, nama, alamat, gaji), dengan ~20 juta disertai foto. Kasus diselidiki BSSN, Dittipidsiber, dan Kominfo; forensik digital tidak konklu
+   PASAL: [UU_PDP_No27_2022 - Pasal 9] Subjek Data Pribadi berhak menarik kembali persetujuan pemrosesan Data Pribadi tentang dirinya yang telah diberikan kepada Pengendali Data Pribadi.
+   BENAR: relevant=false, roles=[] — Ps9 (penarikan persetujuan) tidak terpicu oleh kebocoran.
+EX6. INSIDEN: [2020 data_breach] Data ~896.169 nasabah KreditPlus dijual di RaidForums, pertama oleh 'Megadimarus' (27 Juni 2020) lalu 'ShinyHunters' (16 Juli 2020), memuat nama, NIK, email, alamat, TTL, telepon, data pekerjaan dan penjamin. Kominfo dan OJK meminta klarifikasi perusahaan.
+   PASAL: [UU_PDP_No27_2022 - Pasal 4] (1) Data Pribadi terdiri atas: a. Data Pribadi yang bersifat spesifik; dan b. Data Pribadi yang bersifat umum. (2) Data Pribadi yang bersifat spesifik sebagaimana dimaksud pada aya
+   BENAR: relevant=false, roles=[] — Ps4 (definisi) bersifat definitif, bukan operatif.
+EX7. INSIDEN: [2022 ransomware] Bank Indonesia mengonfirmasi serangan ransomware yang terjadi Desember 2021 dan dilaporkan peneliti Januari 2022. Conti menanam ransomware pada belasan sistem dan mengklaim ~13,88 GB dokumen yang mulai dibocorkan. BI dan BSSN menyatakan penyerang hanya memperole
+   PASAL: [Stranas_AI_Indonesia_2020-2045_Full - Bagian 56] …memiliki kejelasan adanya risiko (vulnerabilities) yang dapat memberikan kerugian dan ancaman bagi manusia, khususnya masyarakat Indonesia. Oleh karena itu diperlukan kejelasan up
+   BENAR: relevant=false, roles=[] — Stranas AI = strategi; insiden non-AI (ransomware).

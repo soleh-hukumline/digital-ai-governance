@@ -1,11 +1,429 @@
 {
-  "_README": "KEPUTUSAN MANUSIA per pasangan insiden<->pasal (human-in-the-loop). Kunci = '<incident_id> | <regulation_label>'. Field: relevant (true/false), roles (subset dari pelaku/pse/konsumen/regulator), note, reviewer. Keputusan manusia MENANG atas LLM dan dipakai BAIK oleh pipeline Python (role_coverage/sector_coverage/radial) MAUPUN dashboard. Diisi otomatis via tombol 'Export Tinjauan' di tab Analisis Kasus, atau diedit manual. TIDAK pernah ditimpa skrip.",
-  "_example": {
-    "kai-stormous-ransomware-2024 | UU_PDP_No27_2022 - Pasal 35": {
-      "relevant": true,
-      "roles": ["pse"],
-      "note": "Contoh; hapus baris _example ini.",
-      "reviewer": "wahid"
-    }
+ "_README": "KEPUTUSAN MANUSIA per pasangan insiden<->pasal (human-in-the-loop). Kunci = '<incident_id> | <regulation_label>'. Field: relevant (true/false), roles (subset dari pelaku/pse/konsumen/regulator), note, reviewer. Keputusan manusia MENANG atas LLM dan dipakai BAIK oleh pipeline Python (role_coverage/sector_coverage/radial) MAUPUN dashboard. Diisi otomatis via tombol 'Export Tinjauan' di tab Analisis Kasus, atau diedit manual. TIDAK pernah ditimpa skrip.",
+ "_example": {
+  "kai-stormous-ransomware-2024 | UU_PDP_No27_2022 - Pasal 35": {
+   "relevant": true,
+   "roles": [
+    "pse"
+   ],
+   "note": "Contoh; hapus baris _example ini.",
+   "reviewer": "wahid"
   }
+ },
+ "kemendikbud-leak-claim-2025 | UU_PDP_No27_2022 - Pasal 30": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Pasal 30 ayat (1) tidak relevan karena fakta insiden tidak memuat kesalahan atau ketidakakuratan data, permintaan pembaruan atau perbaikan, maupun kegagalan memenuhi permintaan tersebut dalam 3 x 24 jam. Putusan final: 0.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "wannacry-hospitals-2017 | UU_PDP_No27_2022 - Pasal 55": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Tidak ada fakta mengenai transfer data pribadi dari satu pengendali kepada pengendali lain. Ransomware yang mengenkripsi sistem tidak dengan sendirinya merupakan transfer data sebagaimana dimaksud dalam Pasal 55. Insiden juga terjadi pada 2017, sebelum UU PDP diundangkan pada 17 Oktober 2022. Putusan final: 0.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "indihome-browsing-26m-2022 | UU_ITE_No19_2016 - Pasal 45A": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Ringkasan insiden tidak memuat penyebaran berita bohong yang menyebabkan kerugian konsumen dalam suatu transaksi elektronik maupun penyebaran informasi yang menimbulkan kebencian berdasarkan SARA. Fakta yang diuji adalah dugaan akses dan penyebaran data pelanggan tanpa hak. Keraguan terhadap keaslian dataset tidak otomatis menjadikan kasus tersebut sebagai delik",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "ugm-ft-website-defacement-2022 | UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 3": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Tidak terdapat hubungan substantif antara perusakan tampilan situs UGM dan pengembangan, penerapan, atau penggunaan sistem AI. Teks yang dikutip juga bersifat konsiderans yang mengingat kembali resolusi sebelumnya, bukan ketentuan operasional yang secara khusus mengatur keamanan situs atau tindak defacement. Selain itu, Resolusi 78/265 diadopsi pada 21 Maret 202",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "malindo-lionair-30m-2019 | UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 1": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Bagian 1 hanya memuat identitas dan informasi administratif dokumen, bukan norma yang mengatur tindakan atau kewajiban tertentu. Insiden juga tidak berkaitan dengan pengembangan atau penggunaan sistem AI. Selain itu, insiden terjadi pada 2019, sedangkan Resolusi 78/265 baru diadopsi pada 21 Maret 2024. Putusan final: 0.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "inafis-polri-fingerprint-leak-2024 | UU_PDP_No27_2022 - Pasal 6O": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Penjelasan Pasal 60 tidak memberikan dasar normatif langsung untuk menilai dugaan kebocoran data INAFIS. Pasal 60 dalam batang tubuh memang memberi lembaga kewenangan menerima laporan, melakukan pemeriksaan, meminta dokumen, dan memeriksa sistem elektronik terkait dugaan pelanggaran, tetapi teks yang dipasangkan dalam baris ini hanya bagian penjelasannya. Karena",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "bri-life-data-leak-2021 | UU_PDP_No27_2022 - Pasal 67": {
+  "relevant": true,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Pasal 67 relevan secara substantif, terutama ayat (2), karena penawaran dataset dan video sampel kepada calon pembeli merupakan indikasi pengungkapan data pribadi yang bukan milik pelaku. Namun, insiden terjadi pada Juli 2021, sedangkan UU PDP mulai berlaku ketika diundangkan pada 17 Oktober 2022. Karena ketentuan pidana tidak dapat diberlakukan surut, Pasal 67 ",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "pln-customer-data-leak-2022 | Stranas_AI_Indonesia_2020-2045_Full - Bagian 35": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Pernyataan bahwa sistem keamanan jaringan dan informasi masih mudah diretas memang memiliki hubungan tematik dengan insiden kebocoran data. Namun, hubungan tematik tersebut tidak cukup untuk menjadikan bagian ini sebagai dasar normatif bagi penilaian insiden PLN. Bagian 35 tidak menetapkan subjek kewajiban, tindakan yang diwajibkan atau dilarang, prosedur penang",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "sri-mulyani-deepfake-2025 | SE_Komdigi_No9_2023_Etika_AI - Bagian 1": {
+  "relevant": false,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Tidak sepakat dengan Claude. Teks yang diuji bukan sekadar kop surat, melainkan bagian Isi Edaran yang menentukan cakupan teknologi AI, termasuk deep learning. Deepfake dalam insiden ini secara substantif berada dalam cakupan tersebut. Walaupun teks belum mengatur secara khusus larangan membuat deepfake dan SE bersifat pedoman etika, pasangan tetap relevan untuk anotasi hubungan insiden dengan ins",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "satusehat-kotim-breach-2025 | Stranas_AI_Indonesia_2020-2045_Full - Bagian 76": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Terdapat hubungan tematik karena teks menyebut keamanan informasi dan tanggung jawab Kominfo–BSSN. Namun, hubungan tematik tidak cukup untuk menghasilkan nilai 1. Bagian 76 tidak mengatur kewajiban pengamanan khusus bagi SatuSehat, larangan akses tanpa hak, pemberitahuan insiden, pemulihan kebocoran, atau perlindungan data kesehatan. Insiden juga tidak melibatka",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "kpu-dpt-jimbo-2023 | UU_PDP_No27_2022 - Pasal 5": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Insiden tidak memuat tindakan meminta data kepada subjek data, pemberitahuan mengenai dasar kepentingan hukum, atau tujuan pengumpulan data. Ketiadaan informasi kepada korban dalam kasus kebocoran tidak otomatis menjadikan Pasal 5 sebagai pasal utama yang terpicu. Ketentuan mengenai pencegahan akses tidak sah, pemberitahuan kegagalan pelindungan data, serta pero",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "pln-customer-data-leak-2022 | UU_PDP_No27_2022 - Pasal 24": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Ringkasan insiden tidak menyebut bahwa PLN memproses data tanpa persetujuan atau tidak mampu menunjukkan bukti persetujuan pelanggan. Kebocoran data tidak dengan sendirinya membuktikan pelanggaran Pasal 24. Putusan final: 0.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "mypertamina-44m-2022 | UU_ITE_No1_2024 - Pasal 45A": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Fakta insiden tidak menunjukkan adanya pemberitahuan bohong atau informasi menyesatkan yang menyebabkan kerugian materiel bagi konsumen dalam transaksi elektronik. Keraguan mengenai keaslian atau asal dataset juga tidak otomatis mengubah kebocoran data menjadi delik informasi bohong. Selain tidak relevan secara substantif, insiden terjadi pada November 2022, sed",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "malindo-lionair-30m-2019 | UU_PDP_No27_2022 - Pasal 4": {
+  "relevant": false,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Tidak sepakat dengan anotator dan Claude. Meskipun Pasal 4 bersifat klasifikatif, pasal ini tetap relevan untuk menentukan bahwa rincian paspor, alamat, dan nomor telepon yang bocor merupakan Data Pribadi, khususnya data yang dikombinasikan untuk mengidentifikasi seseorang sebagaimana Pasal 4 ayat (3) huruf f. Pasal ini tidak membuktikan adanya pelanggaran atau menetapkan kewajiban pengamanan, tet",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "pln-customer-data-leak-2022 | UU_PDP_No27_2022 - Pasal 9": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Pasal 24 tidak relevan karena ringkasan insiden tidak mempersoalkan persetujuan pelanggan atau kemampuan PLN menunjukkan bukti persetujuan. Pasal ini baru relevan apabila terdapat fakta bahwa pemrosesan dilakukan berdasarkan persetujuan, tetapi PLN tidak dapat membuktikan persetujuan tersebut. Dugaan kebocoran data lebih berkaitan dengan kewajiban keamanan dan p",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "pedulilindungi-jokowi-cert-2021 | UU_PDP_No27_2022 - Pasal 63": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Tidak terdapat fakta mengenai pendidikan, pelatihan, advokasi, sosialisasi, atau pengawasan oleh masyarakat untuk mendukung pelindungan data pribadi. Pengguna yang mengakses atau menyebarkan sertifikat vaksin tidak sedang menjalankan peran masyarakat sebagaimana Pasal 63. Pasal ini baru dapat relevan apabila ringkasan insiden membahas kegiatan masyarakat dalam m",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "cermati-data-breach-2020 | UU_PDP_No27_2022 - Pasal 35": {
+  "relevant": true,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Pasal 35 relevan karena data dalam jumlah besar yang dikelola Cermati diduga dapat diakses dan ditawarkan oleh pihak eksternal. Hal tersebut berkaitan langsung dengan kecukupan langkah teknis-operasional dan tingkat keamanan data. Namun, keberadaan kebocoran tidak otomatis membuktikan bahwa Cermati melanggar Pasal 35; pembuktian pelanggaran memerlukan pemeriksaa",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "inafis-polri-fingerprint-leak-2024 | UU_PDP_No27_2022 - Pasal 46": {
+  "relevant": true,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude bahwa Pasal 46 relevan. Dugaan terungkapnya citra sidik jari dan data lainnya kepada pihak tidak berwenang dapat memicu kewajiban pemberitahuan setelah kegagalan pelindungan dikonfirmasi. Nilai 1 menunjukkan relevansi norma, bukan kesimpulan bahwa Polri terbukti melanggar Pasal 46, sebab ringkasan tidak menjelaskan apakah pemberitahuan dilakukan dalam 3 x 24 jam.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "kemenkes-patient-records-2022 | UU_PDP_No27_2022 - Pasal 68": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Tidak ada fakta bahwa pelaku membuat identitas, rekam medis, foto, hasil laboratorium, atau data pasien palsu maupun mengubah data asli menjadi palsu. Penjualan data asli yang diperoleh secara tidak sah lebih dekat dengan Pasal 67, terutama perolehan atau pengungkapan data pribadi secara melawan hukum. Selain itu, insiden terjadi pada Januari 2022, sedangkan UU ",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "satusehat-kotim-breach-2025 | UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 77": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Frasa “trusted and secured data spaces” mempunyai hubungan tematik dengan keamanan data, tetapi inti paragraf adalah kebijakan pembagian dan interoperabilitas data untuk kepentingan penelitian, inovasi, dan AI. Kebocoran data kesehatan melalui forum dark web bukan bentuk digital commons atau pembagian data yang dimaksud. Tidak ada pula penggunaan sistem AI dalam",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "bank-jatim-bifast-fraud-2024 | UU_PDP_No27_2022 - Pasal 40": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Penggunaan rekening atas nama orang lain mungkin melibatkan penyalahgunaan identitas atau data pribadi, tetapi hal tersebut berbeda dari penarikan kembali persetujuan sebagaimana Pasal 40. Ringkasan tidak menyebut adanya permintaan penarikan persetujuan maupun kegagalan Bank Jatim menghentikan pemrosesan dalam 3 x 24 jam. Putusan final: 0.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "ojk-ai-voice-deepfake-fraud-2025 | Stranas_AI_Indonesia_2020-2045_Full - Bagian 39": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Kesamaan bahwa keduanya membahas AI tidak cukup untuk menghasilkan relevansi. Bagian 39 berfokus pada ketergantungan terhadap teknologi impor, dominasi perusahaan asing, dan kepercayaan terhadap produk teknologi nasional. Tidak terdapat pembahasan mengenai manipulasi suara atau video, penyamaran identitas, penipuan keuangan, keamanan biometrik, maupun perlindung",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "kejaksaan-agung-defacement-2025 | UU_PDP_No27_2022 - Pasal 60": {
+  "relevant": true,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Tidak sepakat dengan anotasi pertama dan sepakat dengan pass kedua serta Claude. Pasal 60 bukan norma substantif yang melarang defacement, tetapi tetap relevan sebagai dasar kewenangan lembaga PDP untuk mengawasi, menerima laporan, memeriksa sistem elektronik, dan menindaklanjuti dugaan pelanggaran apabila klaim akses mencakup Data Pribadi. Apabila fakta insiden hanya berupa perubahan tampilan sit",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "pln-customer-data-leak-2022 | UU_PDP_No27_2022 - Pasal 4": {
+  "relevant": false,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Tidak sepakat dengan anotator dan Claude. Sifat definisional tidak otomatis membuat Pasal 4 tidak relevan. Pasal ini diperlukan untuk menentukan apakah objek yang terekspos termasuk Data Pribadi. Nama secara eksplisit termasuk Data Pribadi yang bersifat umum, sedangkan alamat, ID pelanggan, nomor meteran, dan konsumsi kWh dapat dikombinasikan untuk mengidentifikasi pelanggan sebagaimana Pasal 4 ay",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "sri-mulyani-deepfake-2025 | SE_Komdigi_No9_2023_Etika_AI - Bagian 15": {
+  "relevant": false,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Tidak sepakat dengan Claude dan pass kedua. Teks yang diuji merupakan bagian substantif mengenai pelaksanaan dan tanggung jawab, bukan sekadar bagian administratif. Ketentuan mengenai pengawasan untuk mencegah penyalahgunaan AI berhubungan langsung dengan pembuatan dan penyebaran deepfake manipulatif. SE ini bersifat pedoman etika atau soft law dan tidak menetapkan delik maupun sanksi pidana, teta",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "indihome-browsing-26m-2022 | UU_PDP_No27_2022 - Pasal 4": {
+  "relevant": false,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Tidak sepakat dengan anotator dan Claude. Walaupun Pasal 4 tidak menetapkan kewajiban operatif, pasal ini mempunyai hubungan substantif langsung dengan objek insiden. NIK, email, dan nomor telepon dapat mengidentifikasi pelanggan, sedangkan riwayat browsing yang dihubungkan dengan identitas tersebut merupakan Data Pribadi yang dikombinasikan untuk mengidentifikasi seseorang sebagaimana Pasal 4 aya",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "pedulilindungi-jokowi-cert-2021 | UU_PDP_No27_2022 - Pasal 35": {
+  "relevant": true,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Pasal 35 terpicu secara substantif karena insiden menunjukkan bahwa fitur aplikasi dapat dimanfaatkan untuk mengakses dan menyebarkan sertifikat vaksin yang memuat data pribadi. Hal tersebut relevan dengan kewajiban menerapkan langkah teknis-operasional dan menentukan tingkat keamanan berdasarkan sifat serta risiko data. Nilai 1 tidak berarti pengelola PeduliLin",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "kai-stormous-ransomware-2024 | UU_PDP_No27_2022 - Pasal 35": {
+  "relevant": true,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Klaim akses VPN menggunakan kredensial pegawai serta pencurian data berhubungan langsung dengan kewajiban Pasal 35, khususnya pengamanan kredensial, autentikasi, kontrol akses, pemantauan sistem, dan mitigasi risiko. Istilah peran yang lebih tepat adalah PT KAI sebagai Pengendali Data Pribadi, bukan sekadar PSE. Namun, nilai 1 hanya menunjukkan relevansi norma. ",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "mypertamina-44m-2022 | UU_PDP_No27_2022 - Pasal 6": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Ringkasan insiden tidak memuat kesalahan atau ketidakakuratan data, permintaan koreksi dari subjek data, maupun hambatan dalam pelaksanaan hak tersebut. Fakta bahwa data bocor tidak dengan sendirinya memicu Pasal 6. Pasal ini baru relevan apabila pengguna meminta data tentang dirinya diperbarui atau diperbaiki, tetapi hak tersebut tidak diberikan. Putusan final:",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "pln-customer-data-leak-2022 | UU_PDP_No27_2022 - Pasal 28": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Kebocoran data tidak otomatis membuktikan bahwa pengendali melakukan pemrosesan yang menyimpang dari tujuan. Pasal 28 baru relevan apabila terdapat fakta bahwa PLN sendiri mengumpulkan, menggunakan, menampilkan, membagikan, atau mengungkapkan data pelanggan untuk tujuan yang tidak sesuai dengan tujuan pemrosesan semula. Pernyataan bahwa data berasal dari dashboa",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "bpjs-kesehatan-279m-2021 | UU_PDP_No27_2022 - Pasal 9": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Ringkasan insiden tidak memuat penarikan persetujuan oleh peserta BPJS Kesehatan maupun kegagalan pengendali menindaklanjuti penarikan tersebut. Kebocoran data tidak dengan sendirinya memicu Pasal 9. Pasal ini baru relevan apabila subjek data menarik persetujuan pemrosesan dan hak tersebut tidak dapat dijalankan. Insiden juga terjadi pada 2021, sebelum UU PDP di",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "npwp-tax-bjorka-2024 | UU_PDP_No27_2022 - Pasal 60": {
+  "relevant": true,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan pass kedua dan Claude. Dugaan kebocoran jutaan data NPWP secara langsung berada dalam ruang kewenangan lembaga PDP untuk menerima laporan, melakukan pengawasan, memeriksa sistem elektronik, meminta data atau dokumen, dan menelusuri dugaan pelanggaran. Pasal 60 bukan pasal yang melarang kebocoran atau langsung membuktikan kesalahan DJP, tetapi relevan sebagai dasar kewenangan kelemba",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "lazada-redmart-1-1m-2020 | UU_ITE_No1_2024 - Pasal 28": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Fakta insiden tidak memuat informasi bohong yang merugikan konsumen dalam transaksi elektronik, konten kebencian berbasis identitas, ataupun pemberitahuan bohong yang menimbulkan kerusuhan. Keraguan mengenai keaslian atau asal data yang ditawarkan juga tidak otomatis menjadikannya delik informasi bohong. Insiden terjadi pada 2020, sedangkan UU No. 1 Tahun 2024 b",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "bank-indonesia-conti-ransomware-2022 | Stranas_AI_Indonesia_2020-2045_Full - Bagian 56": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Kata “vulnerabilities”, “risiko”, dan “mitigasi” memang memiliki hubungan tematik dengan keamanan siber. Namun, konteks bagian tersebut secara khusus adalah risiko dalam penelitian, pengembangan, pengkajian, dan penerapan kecerdasan artifisial. Ringkasan insiden tidak menunjukkan bahwa ransomware dibuat, dijalankan, dideteksi, atau ditangani menggunakan sistem A",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "indodax-crypto-hack-2024 | EU_AI_Act_2024 - Article 101": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Tidak ada fakta mengenai model AI tujuan umum, penyedia GPAI, pelanggaran kewajiban GPAI, penolakan memberikan dokumen kepada Komisi Eropa, atau kegagalan menyediakan akses model untuk evaluasi. Lokasi insiden di Indonesia juga tidak menunjukkan hubungan yurisdiksi dengan pasar Uni Eropa. Selain itu, Article 101 baru mengikuti tanggal penerapan umum EU AI Act pa",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "election-candidate-deepfakes-2024 | UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 6": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Walaupun insiden dan resolusi sama-sama berkaitan dengan AI, kesamaan tema tersebut tidak cukup. Bagian yang diuji hanya mencatat pekerjaan OHCHR, laporan Sekretaris Jenderal, dan pembentukan badan terkait teknologi. Tidak terdapat larangan manipulasi konten, kewajiban pelabelan deepfake, perlindungan integritas informasi pemilu, maupun kewajiban platform. Alasa",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "jasamarga-jmto-breach-2022 | SE_Komdigi_No9_2023_Etika_AI - Bagian 9": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": " Sepakat dengan anotator dan Claude. Bagian yang diuji hanya berupa pencantuman judul peraturan dalam dasar hukum SE Etika AI. Tidak terdapat kewajiban, larangan, hak, atau rekomendasi yang dapat terpicu oleh pembobolan server JMTO. Selain itu, fakta insiden tidak menunjukkan keterlibatan sistem kecerdasan artifisial. Putusan final: 0.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "bsi-lockbit-ransomware-2023 | UU_PDP_No27_2022 - Pasal 67": {
+  "relevant": true,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Pasal 67 ayat (1) relevan karena data diduga diperoleh secara melawan hukum dengan tujuan memperoleh keuntungan melalui tebusan. Pasal 67 ayat (2) juga relevan karena terdapat ancaman dan dugaan publikasi data yang bukan milik pelaku. Istilah peran “pelaku” sudah tepat, tetapi dapat diperjelas menjadi LockBit sebagai pelaku serta nasabah dan pegawai sebagai Subj",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "kejaksaan-agung-defacement-2025 | UU_ITE_No19_2016 - Pasal 26": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Tidak sepakat dengan anotator dan Claude. Ringkasan hanya menunjukkan defacement dan klaim akses terhadap situs atau sistem. Tidak terdapat fakta bahwa pelaku menggunakan informasi elektronik yang menyangkut data pribadi seseorang, menyebarkan data pribadi, atau menimbulkan kerugian akibat penggunaan tersebut. Karena itu, unsur Pasal 26 ayat (1) belum terpicu dan hak gugat pada ayat (2) juga belum",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "pln-customer-data-leak-2022 | UU_PDP_No27_2022 - Pasal 33": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Pasal 33 bukan ketentuan mengenai keamanan sistem atau kebocoran data. Pasal ini baru relevan apabila pelanggan meminta perubahan atas data pribadinya, tetapi PLN wajib menolak karena perubahan tersebut membahayakan pihak tertentu, mengungkapkan data orang lain, atau bertentangan dengan kepentingan pertahanan dan keamanan nasional. Unsur tersebut tidak terdapat ",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "kai-stormous-ransomware-2024 | UU_PDP_No27_2022 - Pasal 33": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Pasal 33 tidak mengatur keamanan sistem, akses ilegal, ransomware, pencurian data, atau ancaman publikasi. Pasal ini baru relevan apabila pegawai atau pelanggan sebagai Subjek Data Pribadi meminta perubahan terhadap datanya dan PT KAI wajib menolak permintaan tersebut karena salah satu kondisi dalam Pasal 33. Unsur itu tidak terdapat dalam insiden. Putusan final",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "kemendikbud-leak-claim-2025 | ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Kutipan berada dalam pembahasan pengelolaan dataset untuk pelatihan, pengujian, dan pengoperasian sistem AI, khususnya dokumentasi asal-usul data, akurasi, integritas, serta pemenuhan persetujuan dan pemberitahuan. Ringkasan insiden tidak menyebut sistem AI, dataset pelatihan AI, pengembang, deployer, ataupun masalah data lineage dalam pengembangan AI. Kesamaan ",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "mypertamina-44m-2022 | UU_PDP_No27_2022 - Pasal 28": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Kebocoran dataset tidak otomatis membuktikan bahwa MyPertamina mengumpulkan, menggunakan, mengungkapkan, atau memproses data untuk tujuan yang berbeda dari tujuan semula. Pasal 28 baru relevan apabila terdapat fakta bahwa pengendali sendiri memanfaatkan atau membagikan data untuk tujuan yang tidak sesuai. Insiden ini lebih langsung berkaitan dengan kewajiban kea",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "cermati-data-breach-2020 | WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 21": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Bagian yang diuji sepenuhnya bersifat administratif dan hanya mencantumkan nama serta afiliasi penelaah eksternal. Tidak ada norma yang dapat terpicu oleh penjualan data pengguna Cermati. Insiden juga tidak melibatkan penggunaan AI dalam bidang kesehatan. Putusan final: 0.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "bsi-lockbit-ransomware-2023 | ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Kesamaan bahwa keduanya berkaitan dengan teknologi digital tidak cukup untuk menghasilkan relevansi. Kutipan hanya menjelaskan cakupan istilah AI actors dan tidak mengatur ransomware, akses tanpa hak, pencurian data, pemerasan, atau publikasi data korban. Alasan utamanya adalah tidak adanya sistem AI dan siklus hidup AI dalam fakta insiden, bukan semata-mata kar",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "kreditplus-data-leak-2020 | UU_PDP_No27_2022 - Pasal 4": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Nama, NIK, alamat, nomor telepon, serta data keuangan memang termasuk atau dapat dikategorikan sebagai Data Pribadi berdasarkan Pasal 4. Namun, pasal ini hanya menentukan klasifikasi objek data dan tidak menetapkan kewajiban keamanan, larangan akses, pemberitahuan insiden, atau pertanggungjawaban. Putusan final: 0.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "bkn-asn-leak-topiax-2024 | UU_PDP_No27_2022 - Pasal 12": {
+  "relevant": true,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan pass kedua dan Claude. Pasal 12 relevan sebagai ketentuan pemulihan bagi Subjek Data Pribadi yang haknya dilanggar. Nilai 1 tidak berarti korban otomatis memperoleh ganti rugi atau BKN telah terbukti melakukan pelanggaran. Gugatan tetap mensyaratkan pembuktian pelanggaran pemrosesan, kedudukan para pihak, dan kerugian yang ditimbulkan. Putusan final: 1.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "bpjs-kesehatan-279m-2021 | UU_PDP_No27_2022 - Pasal 67": {
+  "relevant": true,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Ayat (2) paling langsung relevan karena penawaran dataset merupakan indikasi pengungkapan data pribadi kepada calon pembeli. Ayat (1) juga relevan apabila dapat dibuktikan bahwa pelaku memperoleh atau mengumpulkan data tersebut secara melawan hukum untuk keuntungan. Karena insiden terjadi pada 2021, nilai 1 merupakan pemetaan relevansi substantif dan bukan kesim",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "cermati-data-breach-2020 | UU_PDP_No27_2022 - Pasal 33": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Ringkasan insiden tidak memuat permintaan perubahan data oleh pengguna Cermati maupun keputusan pengendali untuk menerima atau menolak permintaan tersebut. Pasal 33 tidak mengatur keamanan sistem, akses tanpa hak, atau penjualan data. Putusan final: 0.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "kemendikbud-leak-claim-2025 | Stranas_AI_Indonesia_2020-2045_Full - Bagian 77": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Bagian ini tidak menetapkan kewajiban pengamanan bagi Kemendikbudristek, larangan akses tanpa hak, kewajiban pemberitahuan insiden, atau sanksi. Teks hanya menjelaskan pentingnya pengesahan RUU PDP bagi pengembangan AI. Insiden juga tidak memuat keterlibatan sistem AI. Putusan final: 0.",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "kemendikbud-leak-claim-2025 | UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 73": {
+  "relevant": false,
+  "substantive_relevance": true,
+  "roles": [],
+  "confidence": 100,
+  "note": "Tidak sepakat dengan anotator dan Claude. Teks yang diuji merupakan rekomendasi substantif dalam Policy Area 3 tentang Data Policy, bukan sekadar preambul. Isinya secara langsung membahas keamanan data pribadi dan data sensitif serta risiko kerugian jika data diungkapkan. Klaim penjualan data identitas dari suatu kementerian memiliki hubungan langsung dengan tujuan rekomendasi tersebut. Nilai 1 me",
+  "reviewer": "peneliti (telaah final)"
+ },
+ "malindo-lionair-30m-2019 | PP_PSTE_No71_2019 - Pasal 82": {
+  "relevant": false,
+  "substantive_relevance": false,
+  "roles": [],
+  "confidence": 100,
+  "note": "Sepakat dengan anotator dan Claude. Fakta bahwa data mungkin tersimpan atau tersebar melalui sistem daring tidak menjadikan Pasal 82 relevan. Pasal tersebut secara khusus mengatur pihak yang berwenang mengelola dan mendaftarkan Nama Domain Indonesia, bukan pelindungan data pribadi, akses ilegal, atau kebocoran basis data. Putusan final: 0.",
+  "reviewer": "peneliti (telaah final)"
+ }
 }

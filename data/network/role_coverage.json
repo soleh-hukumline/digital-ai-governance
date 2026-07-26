@@ -7,45 +7,45 @@
   "raw": {
     "per_role": {
       "pelaku": {
-        "incidents_covered": 45,
-        "coverage_pct": 100.0,
-        "structural_hole_pct": 0.0,
-        "relevant_pairs": 156
-      },
-      "pse": {
-        "incidents_covered": 40,
-        "coverage_pct": 88.9,
-        "structural_hole_pct": 11.1,
-        "relevant_pairs": 172
-      },
-      "konsumen": {
-        "incidents_covered": 12,
-        "coverage_pct": 26.7,
-        "structural_hole_pct": 73.3,
-        "relevant_pairs": 13
-      },
-      "regulator": {
-        "incidents_covered": 5,
-        "coverage_pct": 11.1,
-        "structural_hole_pct": 88.9,
-        "relevant_pairs": 6
-      }
-    },
-    "any_role_coverage": 100.0
-  },
-  "calibrated": {
-    "per_role": {
-      "pelaku": {
         "incidents_covered": 39,
         "coverage_pct": 86.7,
         "structural_hole_pct": 13.3,
-        "relevant_pairs": 99
+        "relevant_pairs": 91
       },
       "pse": {
         "incidents_covered": 34,
         "coverage_pct": 75.6,
         "structural_hole_pct": 24.4,
-        "relevant_pairs": 105
+        "relevant_pairs": 143
+      },
+      "konsumen": {
+        "incidents_covered": 35,
+        "coverage_pct": 77.8,
+        "structural_hole_pct": 22.2,
+        "relevant_pairs": 36
+      },
+      "regulator": {
+        "incidents_covered": 22,
+        "coverage_pct": 48.9,
+        "structural_hole_pct": 51.1,
+        "relevant_pairs": 27
+      }
+    },
+    "any_role_coverage": 91.1
+  },
+  "calibrated": {
+    "per_role": {
+      "pelaku": {
+        "incidents_covered": 25,
+        "coverage_pct": 55.6,
+        "structural_hole_pct": 44.4,
+        "relevant_pairs": 41
+      },
+      "pse": {
+        "incidents_covered": 28,
+        "coverage_pct": 62.2,
+        "structural_hole_pct": 37.8,
+        "relevant_pairs": 47
       },
       "konsumen": {
         "incidents_covered": 0,
@@ -60,6 +60,6 @@
         "relevant_pairs": 0
       }
     },
-    "any_role_coverage": 86.7
+    "any_role_coverage": 68.9
   }
 }

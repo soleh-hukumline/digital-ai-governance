@@ -1,0 +1,289 @@
+[
+ {
+  "n": 1,
+  "incident_id": "kemendikbud-leak-claim-2025",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 30",
+  "incident": "[2025 data_breach] Awal Februari 2025 anggota BreachForums (terindeks via FalconFeeds.io) mengklaim menjual ~25 GB data yang diatribusikan ke Kemendikbudristek (nama, nomor identitas, gender, TTL, telepon, ID provinsi/kota). Kementerian belum mengeluarkan konfirmasi resmi pada saat pelaporan.",
+  "provision": "(1) Pengendali Data Pribadi wajib memperbarui dan/ atau ' memperbaiki kesalahan dan/atau ketidakakuratan Data Fribadi paling lambat 3 x 24 (tiga kali dua puluh empat) jam terhitung sejak Pengendali Data Pribadi menerima permintaan pembaruan dan/atau perbaikan Data Pribadi. (2) Pengendali Data Pribadi wajib memberitahukan hasil pembaruan dan/atau perbaikan Data Pribadi kepada Subjek Data Pribadi."
+ },
+ {
+  "n": 2,
+  "incident_id": "wannacry-hospitals-2017",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 55",
+  "incident": "[2017 ransomware] Pada pertengahan Mei 2017, saat wabah WannaCry global, RS Dharmais dan RS Harapan Kita di Jakarta terkena ransomware yang mengenkripsi berkas Windows via kerentanan SMB. Direktur Dharmais melaporkan hampir seluruh komputer terdampak; sistem rekam medis dan tagihan terkunci dengan tebusan ~USD 300 dalam Bitcoin. Operasi pulih via cadangan, dan Kominfo menyatakan rekam medis tidak bocor.",
+  "provision": "(1) Pengendali Data Pribadi dapat melakukan transfer . Data Pribadi kepada Pengendali Data Pribadi lainnya dalam wilayah hukum Negara Republik Indonesia. (2) Pengendali. (2) Pengendali Data Pribadi yang melakukan transfer Data Pribadi dan yang menerima transfer Data Pribadi wajib melakukan Pelindungan Data Pribadi sebagaimana dimaksud dalam Undang-Undang ini. Bagian Kedua Transfer Data Pribadi ke Luar Wilayah Hukum N"
+ },
+ {
+  "n": 3,
+  "incident_id": "indihome-browsing-26m-2022",
+  "regulation_label": "UU_ITE_No19_2016 - Pasal 45A",
+  "incident": "[2022 data_breach] Agustus 2022 'Bjorka' memuat dataset 26.730.798 riwayat browsing pelanggan IndiHome (Agu 2018-Nov 2019) di BreachForums, mencakup tanggal, domain, platform, peramban, URL, plus NIK, email, telepon, dan gender. Kominfo memanggil Telkom; Telkom/IndiHome tidak mengonfirmasi kebocoran.",
+  "provision": "(1) (21 Setiap Orang yang dengan sengaja dan tanpa hak menyebarkan berita bohong dan menyesatkan yang mengakibatkan kerugian konsumen dalam Transaksi Elektronik sebagaimana dimaksud dalam"
+ },
+ {
+  "n": 4,
+  "incident_id": "ugm-ft-website-defacement-2022",
+  "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 3",
+  "incident": "[2022 defacement] Pada Desember 2022 peretas beralias 'Bangsin' merusak tampilan situs 'FIND IT!' FT UGM (findit.ft.ugm.ac.id) dengan pesan 'BANGSIN WAS HERE AGAIN' dan berkas audio. Dilaporkan sebagai insiden berulang oleh pelaku yang sama; unit keamanan informasi UGM (DSSDI) menangani.",
+  "provision": "Recalling its resolutions 77/320 of 25 July 2023 on the impact of rapid technological change on the achievement of the Sustainable Development Goals and targets, 78/132 of 19 December 2023 on information and communications technologies for sustainable development, 78/160 of 19 December 2023 on science, technology and innovation for sustainable development, 78/213 of 19 December 2023 on the promotion and protection of"
+ },
+ {
+  "n": 5,
+  "incident_id": "malindo-lionair-30m-2019",
+  "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 1",
+  "incident": "[2019 data_breach] September 2019 data penumpang anak usaha Lion Air Group, Malindo Air, bocor ke forum, mengeksposur rincian paspor, alamat, dan telepon (data pembayaran dilaporkan tidak terdampak). Peneliti Kaspersky menemukan >30 juta data maskapai di forum dengan dugaan server cloud salah konfigurasi. Malindo mengonfirmasi dan memberi tahu regulator Malaysia serta menggandeng AWS/GoQuo.",
+  "provision": "United Nations General Assembly A/RES/78/265 Distr.: General 1 April 2024 Seventy-eighth session Agenda item 13 Integrated and coordinated implementation of and follow-up to the outcomes of the major United Nations conferences and summits in the economic, social and related fields Resolution adopted by the General Assembly on 21 March 2024 [without reference to a Main Committee (A/78/L.49)] 78/265. Seizing the opport"
+ },
+ {
+  "n": 6,
+  "incident_id": "inafis-polri-fingerprint-leak-2024",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+  "incident": "[2024 data_breach] Pada 22 Juni 2024 'MoonzHaxor' mengunggah data dugaan pembobolan INAFIS (citra sidik jari, email, berkas aplikasi SpringBoot) seharga ~USD 1.000. Kepala BSSN berkoordinasi dengan Polri dan menyatakan data lama serta layanan INAFIS berjalan normal.",
+  "provision": "(TEKS TIDAK ADA)"
+ },
+ {
+  "n": 7,
+  "incident_id": "bri-life-data-leak-2021",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+  "incident": "[2021 data_breach] Akhir Juli 2021 pengguna RaidForums menawarkan ~460.000 dokumen dari data >2 juta pemegang polis BRI Life seharga ~USD 7.000 disertai video sampel, dilaporkan memuat rincian rekening, salinan KTP, dan data pajak. Hudson Rock menyebut beberapa komputer pegawai BRI/BRI Life terkompromi yang dapat memfasilitasi akses awal.",
+  "provision": "(1) Setiap Orang yang dengan sengaja dan melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan mililoeya dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 65 ayat (1) dipidana dengan pidana penjara paling lama 5 (lima) tahun dan/atau pidana denda paling banyak Rp5.000.000.000,00 (lima miliar rupiah). (2) S"
+ },
+ {
+  "n": 8,
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 35",
+  "incident": "[2022 data_breach] Agustus 2022 data >17 juta pelanggan PLN ditawarkan di forum peretas (nama, alamat, ID pelanggan, nomor meteran, konsumsi kWh). PLN menyatakan data adalah salinan dashboard publik, bukan sistem transaksi langsungnya; Kominfo dan BSSN membuka investigasi.",
+  "provision": "Pelaksanaan Peraturan Satu Data Indonesia masih menghadapi sikap silo atau ego-sektoral dari masing-masing pemilik data. Sistem keamanan jaringan dan informasi data yang masih mudah diretas. Infrastruktur digital yang belum memadai di perguruan tinggi dan lembaga riset untuk melakukan riset dan eksperimentasi pengembangan kecerdasan artifisial. Dataset digital yang berserak dan data tersebut secara kuantitas dan kual"
+ },
+ {
+  "n": 9,
+  "incident_id": "sri-mulyani-deepfake-2025",
+  "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 1",
+  "incident": "[2025 ai_disinformation] Pertengahan Agustus 2025 sebuah deepfake memanipulasi rekaman asli pidato Menkeu Sri Mulyani (7 Agustus 2025 di forum ITB) sehingga ia seolah menyebut guru 'beban negara'. Biro komunikasi Kemenkeu (Deni Surjantoro) memastikan klip adalah deepfake AI dari potongan tak utuh; akun resmi Indonesia.go.id juga membantahnya.",
+  "provision": "MENTERI KOMUNIKASI DAN INFORMATIKA REPUBLIK INDONESIA Kepada Yth. 1. Pelaku Usaha Aktivitas pemrograman Berbasis Kecerdasan Artifisial pada Kode Baku Lapangan Usaha Indonesia 62ols 2. Penyelenggara Sistem Elektronik Lingkup Publik 3. Penyelenggara Sistem Elektronik Lingkup privat SURAT EDARAN MENTERI KOMUNIKASI DAN INFORMATIKA REPUBLIK INDONESIA NOMOR 9 TAHUN 2023 TENTANG ETIKA KECERDASAN ARTIFISIAL 1. Umum Perkemban"
+ },
+ {
+  "n": 10,
+  "incident_id": "satusehat-kotim-breach-2025",
+  "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+  "incident": "[2025 data_breach] Sekitar 7 Agustus 2025 pengguna baru forum dark web menawarkan basis data yang diklaim dari instance SatuSehat Kabupaten Kotawaringin Timur, memuat timestamp, nomor rekam medis, nomor BPJS, nama, gender, poliklinik, status cetak, dan barcode, dengan data dilaporkan rentang 2020-2025.",
+  "provision": "Informasi yang sebelumnya dilaksanakan oleh Kemenkominfo selanjutnya akan dilaksanakan oleh BSSN. Dalam hal ini Kementerian Komunikasi dan Informatika serta BSSN menjadi pihak-pihak yang bertanggung jawab untuk memastikan transisi dan penegakan peraturan yang maksimal agar manajemen pengamanan informasi dapat terwujud secara maksimal. 3. 2. 2. PERLINDUNGAN DATA PRIBADI DAN PERATURAN BPPT TENTANG AUDIT DAN KLIRING TEK"
+ },
+ {
+  "n": 11,
+  "incident_id": "kpu-dpt-jimbo-2023",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 5",
+  "incident": "[2023 data_breach] Sekitar 27-28 November 2023 'Jimbo' menawarkan 204.807.203 data pemilih unik dari DPT (NIK, KK, KTP, nama, TTL, status, alamat, TPS) seharga ~USD 74.000, dengan 500.000 data contoh sebagai bukti. Resecurity kemudian mengaitkan kompromi dengan malware pencuri info (info-stealer) pada endpoint KPU.",
+  "provision": "Subjek Data Pribadi berhak mendapatkan Informasi tentang kejelasan identitas, dasar kepentingan hukum, tujuan permintaan dan penggu.naan Data Pribadi, dan akuntabilitas pihak yang meminta Data Pribadi."
+ },
+ {
+  "n": 12,
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 24",
+  "incident": "[2022 data_breach] Agustus 2022 data >17 juta pelanggan PLN ditawarkan di forum peretas (nama, alamat, ID pelanggan, nomor meteran, konsumsi kWh). PLN menyatakan data adalah salinan dashboard publik, bukan sistem transaksi langsungnya; Kominfo dan BSSN membuka investigasi.",
+  "provision": "Dalam melakukan pemrosesan Data Pribadi, Pengendali Data Pribadi wajib menunjukkan bukti persetqjuan yang telah diberikan oleh Subjek Data Pribadi."
+ },
+ {
+  "n": 13,
+  "incident_id": "mypertamina-44m-2022",
+  "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+  "incident": "[2022 data_breach] November 2022 dataset yang diatribusikan ke MyPertamina bocor dalam format CSV, memuat ~44 juta data dan ~6 juta email unik, plus nama, TTL, gender, alamat, telepon, dan riwayat pembelian. Have I Been Pwned mengindeks pelanggaran ini (ditambahkan Januari 2024).",
+  "provision": "(1) Setiap Orang yang dengan sengaja mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik yang berisi pemberitahuan bohong informasi menyesatkan yang atau mengakibatkan kerugian materiel bagi konsumen dalam Transaksi Elektronik sebagaimana dimaksud dalam Pasal 28 ayat (1) dipidana dengan pidana penjara paling lama 6 (enam) tahun dan/ atau denda paling banyak Rp1.0O0.0O0.000,00 (s"
+ },
+ {
+  "n": 14,
+  "incident_id": "malindo-lionair-30m-2019",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+  "incident": "[2019 data_breach] September 2019 data penumpang anak usaha Lion Air Group, Malindo Air, bocor ke forum, mengeksposur rincian paspor, alamat, dan telepon (data pembayaran dilaporkan tidak terdampak). Peneliti Kaspersky menemukan >30 juta data maskapai di forum dengan dugaan server cloud salah konfigurasi. Malindo mengonfirmasi dan memberi tahu regulator Malaysia serta menggandeng AWS/GoQuo.",
+  "provision": "(l) Data Pribadi terdiri atas: a. Data Pribadi yang bersifat spesifik; dan b. Data Pribadi yang bersifat umum. (2lData. A l2l Data Pribadi yang bersifat spesifik sebagaimana dimaksud pada ayat (l) huruf a meliputi: . a. data dan informasi kesehatan; b. data biometrik; c. data genetika; d. catatan kejahatan; e. data anak; f. data ker.rangan pribadi; dan/ atau g. data lainnya sesuai dengan ketentuan peraturan perundang"
+ },
+ {
+  "n": 15,
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 9",
+  "incident": "[2022 data_breach] Agustus 2022 data >17 juta pelanggan PLN ditawarkan di forum peretas (nama, alamat, ID pelanggan, nomor meteran, konsumsi kWh). PLN menyatakan data adalah salinan dashboard publik, bukan sistem transaksi langsungnya; Kominfo dan BSSN membuka investigasi.",
+  "provision": "Subjek Data Pribadi berhak menarik kembali persetqjuan pemrosesan Data Pribadi tentang dirinya yang telah diberikan kepada Pengendali Data Pribadi."
+ },
+ {
+  "n": 16,
+  "incident_id": "pedulilindungi-jokowi-cert-2021",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 63",
+  "incident": "[2021 other] Awal September 2021 sertifikat vaksin Presiden Joko Widodo diakses dan beredar daring setelah pengguna mengeksploitasi fitur cek vaksinasi di aplikasi PeduliLindungi. Menkes menyatakan akses ke data pejabat telah diblokir dan keamanan diperbaiki; Kominfo berargumen data NIK/vaksinasi mungkin berasal dari sumber pemerintah lain.",
+  "provision": "(1) Masyarakat dapat berperan baik secara langsung maupun tidak langsung dalam mendukung terselenggaranya Pelindungan Data Pribadi. (2) Pelaksanaan peran sebagaimana dimaksud pada ayat (1) dapat dilakukan melalui pendidikan, pelatihan, advokasi, sssialis4si, dan/ atau pengawasan sesuai dengan ketentuan peraturan perundang- undangan. BABxII. A FRESIDEN REPUBLIK INDONESIA BAB xII PEI{YELESAI,AN SENGKETA DAN HUKUM ACARA"
+ },
+ {
+  "n": 17,
+  "incident_id": "kemenkes-patient-records-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+  "incident": "[2022 data_breach] Pada 6 Januari 2022 Kemenkes mengakui menyelidiki dugaan kebocoran ~6 juta rekam medis pasien (~720 GB) yang dijual di RaidForums, mencakup nama, rumah sakit, foto pasien, hasil rontgen, hasil lab/COVID-19, surat rujukan BPJS, dan laporan radiologi. Kemenkes berkoordinasi dengan BSSN untuk investigasi.",
+  "provision": "Setiap Orang yang dengan sengaja membuat Data Pribadi palsu atau memalsukan Data Pribadi dengan maksud untuk menguntrrngkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian bagi orang lain sebagaimana dimaksud dalam Pasal 66 .tipidana dengan pidana penjara paling tama 6 (enam) tahun dan/atau pidana denda paling banyak Rp6.0OO. 000.000,00 (enam miliar rupiah)."
+ },
+ {
+  "n": 18,
+  "incident_id": "satusehat-kotim-breach-2025",
+  "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 75",
+  "incident": "[2025 data_breach] Sekitar 7 Agustus 2025 pengguna baru forum dark web menawarkan basis data yang diklaim dari instance SatuSehat Kabupaten Kotawaringin Timur, memuat timestamp, nomor rekam medis, nomor BPJS, nama, gender, poliklinik, status cetak, dan barcode, dengan data dilaporkan rentang 2020-2025.",
+  "provision": "77. Member States, as also suggested in the report of the United Nations Secretary-General’s High-level Panel on Digital Cooperation, with the support of the United Nations and UNESCO, should adopt a digital commons approach to data where appropriate, increase interoperability of tools and datasets and interfaces of systems hosting data, and encourage private sector companies to share the data they collect with all s"
+ },
+ {
+  "n": 19,
+  "incident_id": "bank-jatim-bifast-fraud-2024",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 40",
+  "incident": "[2024 fraud] Pada 22 Juni 2024, antara ~12.22-15.38 WIB, 483 transaksi BI-Fast anomali senilai ~Rp119,96 miliar menguras dana Bank Jatim. Pelaku memakai rekening atas nama orang lain untuk menampung transfer, lalu mengonversi hasil ke kripto. Empat terdakwa divonis pencucian uang oleh PN Surabaya pada 6 Agustus 2025 (masing-masing 2 tahun); otak 'Deni' buron.",
+  "provision": "(1) Pengendali Data Pribadi wajib menghentikan pemrosesan Data Pribadi dalam hal Subjek Data Pribadi menarik kembali persetujuan pemrosesan Data Pribadi. (2) Penghentian pemrosesan Data Pribadi sebagaimana dimaksud pada ayat (1) dilakukan paling lambat 3 x 24 (tiga kali dua puluh empat) jam terhitung sejak Pengendali Data Pribadi menerima permintaan penarikan kembdi persetqiuan pemrosesan Data Pribadi."
+ },
+ {
+  "n": 20,
+  "incident_id": "ojk-ai-voice-deepfake-fraud-2025",
+  "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 39",
+  "incident": "[2025 ai_voice_fraud] OJK melaporkan dua metode penipuan AI paling umum di Indonesia adalah voice cloning (meniru suara kerabat/kolega/pejabat untuk meminta transfer mendesak) dan deepfake video, termasuk menembus pengecekan liveness biometrik/eKYC. Kerugian mencapai Rp7,8 triliun antara November 2024-November 2025, dengan 70.000+ laporan penipuan ber-AI per Agustus 2025.",
+  "provision": "Pasar digital Indonesia yang didominasi oleh teknologi import Perusahaan multi nasional (asing) bermodal besar mendominasi proyek-proyek vital Indonesia dan banyak perusahaan rintisan jatuh ke tangan mereka. Turunnya kepercayaan masyarakat terhadap produk karya anak bangsa. Penyalahgunaan teknologi yang merugikan masyarakat. Penyalahgunaan data privasi yang luput dari pengawasan. Sumber daya manusia berbakat yang leb"
+ },
+ {
+  "n": 21,
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+  "incident": "[2022 data_breach] Agustus 2022 data >17 juta pelanggan PLN ditawarkan di forum peretas (nama, alamat, ID pelanggan, nomor meteran, konsumsi kWh). PLN menyatakan data adalah salinan dashboard publik, bukan sistem transaksi langsungnya; Kominfo dan BSSN membuka investigasi.",
+  "provision": "(l) Data Pribadi terdiri atas: a. Data Pribadi yang bersifat spesifik; dan b. Data Pribadi yang bersifat umum. (2lData. A l2l Data Pribadi yang bersifat spesifik sebagaimana dimaksud pada ayat (l) huruf a meliputi: . a. data dan informasi kesehatan; b. data biometrik; c. data genetika; d. catatan kejahatan; e. data anak; f. data ker.rangan pribadi; dan/ atau g. data lainnya sesuai dengan ketentuan peraturan perundang"
+ },
+ {
+  "n": 22,
+  "incident_id": "indihome-browsing-26m-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+  "incident": "[2022 data_breach] Agustus 2022 'Bjorka' memuat dataset 26.730.798 riwayat browsing pelanggan IndiHome (Agu 2018-Nov 2019) di BreachForums, mencakup tanggal, domain, platform, peramban, URL, plus NIK, email, telepon, dan gender. Kominfo memanggil Telkom; Telkom/IndiHome tidak mengonfirmasi kebocoran.",
+  "provision": "(l) Data Pribadi terdiri atas: a. Data Pribadi yang bersifat spesifik; dan b. Data Pribadi yang bersifat umum. (2lData. A l2l Data Pribadi yang bersifat spesifik sebagaimana dimaksud pada ayat (l) huruf a meliputi: . a. data dan informasi kesehatan; b. data biometrik; c. data genetika; d. catatan kejahatan; e. data anak; f. data ker.rangan pribadi; dan/ atau g. data lainnya sesuai dengan ketentuan peraturan perundang"
+ },
+ {
+  "n": 23,
+  "incident_id": "pedulilindungi-jokowi-cert-2021",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+  "incident": "[2021 other] Awal September 2021 sertifikat vaksin Presiden Joko Widodo diakses dan beredar daring setelah pengguna mengeksploitasi fitur cek vaksinasi di aplikasi PeduliLindungi. Menkes menyatakan akses ke data pejabat telah diblokir dan keamanan diperbaiki; Kominfo berargumen data NIK/vaksinasi mungkin berasal dari sumber pemerintah lain.",
+  "provision": "Pengendali Data Pribadi wajib melindungi dan memastikan keamanan Data Pribadi yang diprosesnya, dengan melakukan: a. penyusunan dan penerapan langkah teknis operasional untuk melindungi Data Pribadi dari gangguan pemrosesan Data Pribadi yang bertentangan dengan ketentuan peraturan perundang-undangan; dan b. penentuan tingkat keamanan Data Pribadi dengan memperhatikan sifat dan risiko dari Data Pribadi yang harus dili"
+ },
+ {
+  "n": 24,
+  "incident_id": "kai-stormous-ransomware-2024",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+  "incident": "[2024 ransomware] Januari 2024 Stormous mengklaim membobol PT KAI via akses VPN memakai kredensial pegawai dan mencuri data pegawai, pelanggan, pajak, dan korporat, menuntut ~11,69 BTC (~Rp7,7 miliar) dengan ancaman publikasi 15 hari. KAI membantah bukti kebocoran data penumpang dan menyatakan menyelidiki.",
+  "provision": "Pengendali Data Pribadi wajib melindungi dan memastikan keamanan Data Pribadi yang diprosesnya, dengan melakukan: a. penyusunan dan penerapan langkah teknis operasional untuk melindungi Data Pribadi dari gangguan pemrosesan Data Pribadi yang bertentangan dengan ketentuan peraturan perundang-undangan; dan b. penentuan tingkat keamanan Data Pribadi dengan memperhatikan sifat dan risiko dari Data Pribadi yang harus dili"
+ },
+ {
+  "n": 25,
+  "incident_id": "mypertamina-44m-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 6",
+  "incident": "[2022 data_breach] November 2022 dataset yang diatribusikan ke MyPertamina bocor dalam format CSV, memuat ~44 juta data dan ~6 juta email unik, plus nama, TTL, gender, alamat, telepon, dan riwayat pembelian. Have I Been Pwned mengindeks pelanggaran ini (ditambahkan Januari 2024).",
+  "provision": "Subjek Data Pribadi berhak melengkapi, memperbarui, dan/atau memperbaiki kesalahan dan/atau ketidakakuratan Data Pribadi tentang dirinya sesuai dengan tujuan pemrosesan Data Pribadi."
+ },
+ {
+  "n": 26,
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 28",
+  "incident": "[2022 data_breach] Agustus 2022 data >17 juta pelanggan PLN ditawarkan di forum peretas (nama, alamat, ID pelanggan, nomor meteran, konsumsi kWh). PLN menyatakan data adalah salinan dashboard publik, bukan sistem transaksi langsungnya; Kominfo dan BSSN membuka investigasi.",
+  "provision": "Pengendali Data Pribadi wajib melakukan pemrosesan Data Pribadi sesuai dengan tujuan pemrosesan Data Pribadi. ."
+ },
+ {
+  "n": 27,
+  "incident_id": "lazada-redmart-1-1m-2020",
+  "regulation_label": "UU_ITE_No1_2024 - Pasal 28",
+  "incident": "[2020 data_breach] Pada 29 Oktober 2020 Lazada menemukan akses ilegal ke basis data lama layanan grosir RedMart. >1,1 juta akun dijual ~USD 1.500 di forum peretas, memuat email, hash kata sandi SHA-1, nama, telepon, alamat surat/tagihan, serta sebagian nomor kartu kredit dengan masa berlaku. Lazada menyebut data berusia >18 bulan.",
+  "provision": "Setiap Orang dengan sengaja dan/atau mentransmisikan Informasi Elektronik dan/ atau Dokumen Elektronik yang berisi pemberitahuan bohong atau informasi menyesatkan yang mengakibatkan kerugian materiel bagi konsumen dalam Transaksi Elektronik. Setiap Orang dengan sengaja dan tanpa hak mendistribusikan dan/atau mentransmisikan Informasi Elektronik dan/atau Dokumen Elektronik yang sifatnya menghasut, mengajak, atau memen"
+ },
+ {
+  "n": 28,
+  "incident_id": "indodax-crypto-hack-2024",
+  "regulation_label": "EU_AI_Act_2024 - Article 101",
+  "incident": "[2024 fraud] Pada 11 September 2024 penyerang menguras hot wallet Indodax lebih dari USD 22 juta (a.l. ~USD 14 jt ETH, USD 2,5 jt MATIC, USD 2,4 jt TRX, USD 1,4 jt BTC), diidentifikasi SlowMist dan CertiK. Indodax menangguhkan platform dengan dalih pemeliharaan; Cyvers menilai taktik menyerupai Lazarus, namun atribusi tidak dikonfirmasi.",
+  "provision": "Fines for providers of general-purpose AI models The Commission may impose on providers of general-purpose AI models fines not exceeding 3 % of their annual total 1. worldwide turnover in the preceding financial year or EUR 15 000 000, whichever is higher., when the Commission finds that the provider intentionally or negligently: (a) infringed the relevant provisions of this Regulation; (b) failed to comply with a re"
+ },
+ {
+  "n": 29,
+  "incident_id": "election-candidate-deepfakes-2024",
+  "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 6",
+  "incident": "[2024 ai_disinformation] Menjelang Pemilu 14 Februari 2024, video deepfake AI tanpa label yang menampilkan capres Prabowo dan Anies seolah fasih berbahasa Arab beredar di TikTok. Pelaporan menyebut deepfake atas ketiga tiket capres turut menyebar dengan potensi menyesatkan pemilih.",
+  "provision": "Human Rights regarding artificial intelligence, Taking note also of the report of the Secretary-General of the United Nations entitled “Road map for digital cooperation”, 9 as well as the establishment of the its Office of a implementation multi-stakeholder High-level Advisory Body on Artificial Intelligence and of its interim report issued on 21 December 2023, and looking forward to its final report, to coordinate t"
+ },
+ {
+  "n": 30,
+  "incident_id": "jasamarga-jmto-breach-2022",
+  "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 9",
+  "incident": "[2022 data_breach] Pada 25 Agustus 2022 DESORDEN mengumumkan membobol JMTO dan mengeksfiltrasi ~252 GB dari lima server. Setelah Jasa Marga menyatakan tak ada data pelanggan, DESORDEN meninjau dan memastikan data adalah informasi korporat dan karyawan. Jasa Marga mematikan server terdampak dan memigrasikan sistem.",
+  "provision": "h. Peraturan Menteri Komunikasi dan lnformatika Nomor 3 Tahun 2O2l tentang Standar Kegiatan Usaha dan Standar Produk pada Penyelenggaraan Perizinan Berusaha Berbasis Risiko Sektor Pos, Telekomunikasi, dan Sistem dan Transaksi Elektronik (Berita Negara Republik Indonesia Tahun 202 1 Nomor 265); i. Peraturan Menteri Komunikasi dan Informatika Nomor 12 Tahun 2O2l tentang Organisasi dan Tata Kerja Kementerian Komunikasi "
+ },
+ {
+  "n": 31,
+  "incident_id": "kejaksaan-agung-defacement-2025",
+  "regulation_label": "UU_ITE_No19_2016 - Pasal 26",
+  "incident": "[2025 defacement] Pada Februari 2025 situs resmi Kejaksaan Agung (kejaksaan.go.id) terkena serangan defacement, dilaporkan via media sosial sekitar 10 Februari 2025. Pelaku, melalui handel Instagram, mengklaim mengakses basis data termasuk data pegawai, tamu, e-ticketing, dan perkara.",
+  "provision": "(l) (21 Kecuali ditentukan lain oleh peraturan perundang- undangan, penggunaan setiap informasi melalui media elektronik yang menyangkut data pribadi seseorang harus dilakukan atas persetujuan Orang yang bersangkutan. Setiap Orang yang dilanggar haknya sebagaimana dimaksud pada ayat (1) dapat mengajukan gugatan atas kerugian yang ditimbulkan berdasarkan Undang-Undang ini. (3) Setiap. PRES IDEN REPUBLIK INDONESIA (3) "
+ },
+ {
+  "n": 32,
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+  "incident": "[2022 data_breach] Agustus 2022 data >17 juta pelanggan PLN ditawarkan di forum peretas (nama, alamat, ID pelanggan, nomor meteran, konsumsi kWh). PLN menyatakan data adalah salinan dashboard publik, bukan sistem transaksi langsungnya; Kominfo dan BSSN membuka investigasi.",
+  "provision": "Pengendali Data Pribadi wajib menolak memberikan akses perubahan terhadap Data Fribadi kepada Subjek Data Pribadi dalam hal: a. membahayakan keamanan, kesehatan fisik, atau kesehatan mental Subjek Data Pribadi dan/ atau orang lain; b. berdampak. A b. berdampak pada pengungkapan Data Pribadi milik orang lain; dan/ atau bertentangan dengan kepentingan pertahanan dan keamanan nasional. c"
+ },
+ {
+  "n": 33,
+  "incident_id": "kai-stormous-ransomware-2024",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+  "incident": "[2024 ransomware] Januari 2024 Stormous mengklaim membobol PT KAI via akses VPN memakai kredensial pegawai dan mencuri data pegawai, pelanggan, pajak, dan korporat, menuntut ~11,69 BTC (~Rp7,7 miliar) dengan ancaman publikasi 15 hari. KAI membantah bukti kebocoran data penumpang dan menyatakan menyelidiki.",
+  "provision": "Pengendali Data Pribadi wajib menolak memberikan akses perubahan terhadap Data Fribadi kepada Subjek Data Pribadi dalam hal: a. membahayakan keamanan, kesehatan fisik, atau kesehatan mental Subjek Data Pribadi dan/ atau orang lain; b. berdampak. A b. berdampak pada pengungkapan Data Pribadi milik orang lain; dan/ atau bertentangan dengan kepentingan pertahanan dan keamanan nasional. c"
+ },
+ {
+  "n": 34,
+  "incident_id": "kemendikbud-leak-claim-2025",
+  "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+  "incident": "[2025 data_breach] Awal Februari 2025 anggota BreachForums (terindeks via FalconFeeds.io) mengklaim menjual ~25 GB data yang diatribusikan ke Kemendikbudristek (nama, nomor identitas, gender, TTL, telepon, ID provinsi/kota). Kementerian belum mengeluarkan konfirmasi resmi pada saat pelaporan.",
+  "provision": "collected and how it was processed will help developers and deployers understand how data accuracy and integrity is maintained over its lifecycle. It is also worthwhile noting that providing such information would also likely be material for fulfilling the consent and notice requirements under various data protection and privacy laws in ASEAN. Deployers may look at the data from its end-use and backdate it to its sou"
+ },
+ {
+  "n": 35,
+  "incident_id": "cermati-data-breach-2020",
+  "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 21",
+  "incident": "[2020 data_breach] Data 2,9 juta pengguna Cermati dijual ~USD 2.200 di forum peretas, terungkap publik via Teguh Aprianto pada 4 November 2020, memuat nama, email, alamat, telepon, rekening bank, pekerjaan, NPWP, dan NIK. Cermati mengirim peringatan akses tidak sah ke pengguna pada 31 Oktober dan menggandeng BSSN serta pakar eksternal.",
+  "provision": "External reviewers Anurag Aggarwal, Council of Scientific and Industrial Research, India Paolo Alcini, European Medicines Agency, Netherlands Pamela Andanda, University of Witwatersrand, South Africa Eva Blum-Dumontet, Privacy International, United Kingdom Marcelo Corrales Compagnucci, CeBIL, Faculty of Law, University of Copenhagen, Denmark"
+ },
+ {
+  "n": 36,
+  "incident_id": "bsi-lockbit-ransomware-2023",
+  "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+  "incident": "[2023 ransomware] Pada 8 Mei 2023 layanan ATM dan cabang BSI lumpuh; LockBit mengklaim mencuri 1,5 TB data ~15 juta nasabah dan pegawai. Log negosiasi menunjukkan bank menawar ~USD 10 juta sementara LockBit menuntut USD 20 juta; setelah gagal, data dipublikasikan 15-16 Mei 2023.",
+  "provision": "8 Organisation for Economic Co-operation and Development, “Emerging Privacy Enhancing Technologies: Current Regulatory & Policy Approaches” (2023) < https://www.oecd-ilibrary.org/docserver/bf121be4- en.pdf?expires=1693746418&id=id&accname=guest&checksum=E8DFEFFD75D87E3C3DBB30DE8B6773C9 > 9 AI actors can be defined as any actor involved in at least one stage of the AI system life cycle, and can refer to both natural a"
+ },
+ {
+  "n": 37,
+  "incident_id": "bpjs-kesehatan-279m-2021",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+  "incident": "[2021 data_breach] Pada Mei 2021 akun RaidForums 'Kotz' menjual data yang diklaim milik ~279 juta peserta BPJS Kesehatan (NIK, KTP, telepon, email, nama, alamat, gaji), dengan ~20 juta disertai foto. Kasus diselidiki BSSN, Dittipidsiber, dan Kominfo; forensik digital tidak konklusif menetapkan sumber kebocoran.",
+  "provision": "(1) Setiap Orang yang dengan sengaja dan melawan hukum memperoleh atau mengumpulkan Data Pribadi yang bukan mililoeya dengan maksud untuk menguntungkan diri sendiri atau orang lain yang dapat mengakibatkan kerugian Subjek Data Pribadi sebagaimana dimaksud dalam Pasal 65 ayat (1) dipidana dengan pidana penjara paling lama 5 (lima) tahun dan/atau pidana denda paling banyak Rp5.000.000.000,00 (lima miliar rupiah). (2) S"
+ },
+ {
+  "n": 38,
+  "incident_id": "cermati-data-breach-2020",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+  "incident": "[2020 data_breach] Data 2,9 juta pengguna Cermati dijual ~USD 2.200 di forum peretas, terungkap publik via Teguh Aprianto pada 4 November 2020, memuat nama, email, alamat, telepon, rekening bank, pekerjaan, NPWP, dan NIK. Cermati mengirim peringatan akses tidak sah ke pengguna pada 31 Oktober dan menggandeng BSSN serta pakar eksternal.",
+  "provision": "Pengendali Data Pribadi wajib menolak memberikan akses perubahan terhadap Data Fribadi kepada Subjek Data Pribadi dalam hal: a. membahayakan keamanan, kesehatan fisik, atau kesehatan mental Subjek Data Pribadi dan/ atau orang lain; b. berdampak. A b. berdampak pada pengungkapan Data Pribadi milik orang lain; dan/ atau bertentangan dengan kepentingan pertahanan dan keamanan nasional. c"
+ },
+ {
+  "n": 39,
+  "incident_id": "kemendikbud-leak-claim-2025",
+  "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+  "incident": "[2025 data_breach] Awal Februari 2025 anggota BreachForums (terindeks via FalconFeeds.io) mengklaim menjual ~25 GB data yang diatribusikan ke Kemendikbudristek (nama, nomor identitas, gender, TTL, telepon, ID provinsi/kota). Kementerian belum mengeluarkan konfirmasi resmi pada saat pelaporan.",
+  "provision": "Kecerdasan Artifisial sampai ada badan yang khusus ditugasi masalah ini. 45 STRATEGI NASIONAL UNTUK KECERDASAN ARTIFISIAL 3. 2. 3. PENGESAHAN RANCANGAN UNDANG-UNDANG PERLINDUNGAN DATA PRIBADI (“RUU PDP”) Data tidak dapat dipisahkan dari Kecerdasan Artifisial sehingga pengesahan peraturan ini akan sangat berdampak pada pelaksanaan pengembangan Kecerdasan Artifisial sendiri yang mengedepankan unsur keamanan dan dapat d"
+ },
+ {
+  "n": 40,
+  "incident_id": "kemendikbud-leak-claim-2025",
+  "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 73",
+  "incident": "[2025 data_breach] Awal Februari 2025 anggota BreachForums (terindeks via FalconFeeds.io) mengklaim menjual ~25 GB data yang diatribusikan ke Kemendikbudristek (nama, nomor identitas, gender, TTL, telepon, ID provinsi/kota). Kementerian belum mengeluarkan konfirmasi resmi pada saat pelaporan.",
+  "provision": "74. Member States should establish their data policies or equivalent frameworks, or reinforce existing ones, to ensure full security for personal data and sensitive data, which, if disclosed, may cause exceptional damage, injury or hardship to individuals. Examples include data relating to offences, criminal proceedings and convictions, and related security measures; biometric, genetic and health data; and -personal "
+ },
+ {
+  "n": 41,
+  "incident_id": "malindo-lionair-30m-2019",
+  "regulation_label": "PP_PSTE_No71_2019 - Pasal 82",
+  "incident": "[2019 data_breach] September 2019 data penumpang anak usaha Lion Air Group, Malindo Air, bocor ke forum, mengeksposur rincian paspor, alamat, dan telepon (data pembayaran dilaporkan tidak terdampak). Peneliti Kaspersky menemukan >30 juta data maskapai di forum dengan dugaan server cloud salah konfigurasi. Malindo mengonfirmasi dan memberi tahu regulator Malaysia serta menggandeng AWS/GoQuo.",
+  "provision": "(1) Registrar Nama Domain sebagaimana dimaksud dalam Pasal 79 ayat (3) huruf b melaksanakan pengelolaan Nama Domain Indonesia tingkat kedua dan Nama Domain Indonesia tingkat turunan. (2) Registrar Nama Domain terdiri atas: a. Registrar Nama Domain Instansi; dan b. Registrar Nama Domain selain Instansi. (3) Registrar Nama Domain Instansi melaksanakan pendaftaran Nama Domain Indonesia tingkat kedua dan Nama Domain Indo"
+ }
+]

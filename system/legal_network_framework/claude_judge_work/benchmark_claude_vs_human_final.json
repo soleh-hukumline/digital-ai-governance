@@ -1,0 +1,50 @@
+{
+ "gold": "telaah manusia final",
+ "n": 52,
+ "tp": 10,
+ "fp": 1,
+ "fn": 6,
+ "tn": 35,
+ "precision": 0.909,
+ "recall": 0.625,
+ "f1": 0.741,
+ "agreement": 0.865,
+ "kappa": 0.654,
+ "divergensi_sistematis": {
+  "claude_miss (FN) per kategori": {
+   "soft-law (seksi substantif)": 3,
+   "Pasal 4 (definisional)": 3
+  },
+  "claude_over (FP) per kategori": {
+   "ITE Ps.26 (fakta kurang)": 1
+  }
+ },
+ "human_ubah_saat_telaah_vs_anotasi_awal": 8,
+ "interpretasi": "Presisi Claude tinggi (0.909); recall turun (0.625) karena kriteria manusia LEBIH LUAS (relevansi substantif/klasifikatif/kelembagaan) vs aturan warrant-ketat Claude. Divergensi terkonsentrasi pada Pasal 4 definisional & seksi substantif soft-law — sistematis & dapat dijelaskan, bukan error acak.",
+ "pembanding_gemini": {
+  "raw_f1": 0.667,
+  "p95_f1": 0.727
+ },
+ "catatan_data": "Label soft-law \"Bagian N\" = indeks chunk internal, TIDAK sama dgn nomor paragraf resmi (UNESCO Bagian 73 = para 74). Berlaku semua dokumen soft-law.",
+ "dua_lapis": {
+  "lapis1_relevansi_substantif": {
+   "f1": 0.741,
+   "precision": 0.909,
+   "recall": 0.625,
+   "kappa": 0.654,
+   "catatan": "kriteria luas; divergensi = pilihan skema koding"
+  },
+  "lapis2_warrant_operatif": {
+   "n": 52,
+   "tp": 10,
+   "fp": 1,
+   "fn": 0,
+   "tn": 41,
+   "precision": 0.909,
+   "recall": 1.0,
+   "f1": 0.952,
+   "kappa": 0.94,
+   "catatan": "setelah pisah lapis, Claude ~sepakat sempurna dgn manusia soal warrant operatif; 1 beda = ITE 2016 Ps.26 defacement Kejagung (fakta kurang)"
+  }
+ }
+}

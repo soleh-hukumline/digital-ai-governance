@@ -1,0 +1,340 @@
+[
+ {
+  "incident_id": "kemendikbud-leak-claim-2025",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 30",
+  "relevant": false,
+  "roles": [],
+  "confidence": 92,
+  "reason": "kewajiban koreksi atas permintaan; tak terpicu breach"
+ },
+ {
+  "incident_id": "wannacry-hospitals-2017",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 55",
+  "relevant": false,
+  "roles": [],
+  "confidence": 95,
+  "reason": "pasal transfer antar-pengendali; bukan ransomware"
+ },
+ {
+  "incident_id": "indihome-browsing-26m-2022",
+  "regulation_label": "UU_ITE_No19_2016 - Pasal 45A",
+  "relevant": false,
+  "roles": [],
+  "confidence": 95,
+  "reason": "delik berita bohong; breach bukan hoaks"
+ },
+ {
+  "incident_id": "ugm-ft-website-defacement-2022",
+  "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 3",
+  "relevant": false,
+  "roles": [],
+  "confidence": 97,
+  "reason": "recital resolusi; aspiratif non-mengikat"
+ },
+ {
+  "incident_id": "malindo-lionair-30m-2019",
+  "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 1",
+  "relevant": false,
+  "roles": [],
+  "confidence": 97,
+  "reason": "judul/preambul resolusi; bukan warrant"
+ },
+ {
+  "incident_id": "inafis-polri-fingerprint-leak-2024",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 6O",
+  "relevant": false,
+  "roles": [],
+  "confidence": 85,
+  "reason": "penjelasan ps.60 kelembagaan; bukan norma mengikat pihak"
+ },
+ {
+  "incident_id": "bri-life-data-leak-2021",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+  "relevant": true,
+  "roles": [
+   "pelaku"
+  ],
+  "confidence": 96,
+  "reason": "pidana perolehan data melawan hukum oleh penjual data"
+ },
+ {
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 35",
+  "relevant": false,
+  "roles": [],
+  "confidence": 97,
+  "reason": "narasi kebijakan Stranas; aspiratif"
+ },
+ {
+  "incident_id": "sri-mulyani-deepfake-2025",
+  "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 1",
+  "relevant": false,
+  "roles": [],
+  "confidence": 90,
+  "reason": "kop surat edaran; pedoman etis tak mengikat"
+ },
+ {
+  "incident_id": "satusehat-kotim-breach-2025",
+  "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 76",
+  "relevant": false,
+  "roles": [],
+  "confidence": 96,
+  "reason": "narasi transisi kelembagaan; aspiratif"
+ },
+ {
+  "incident_id": "kpu-dpt-jimbo-2023",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 5",
+  "relevant": false,
+  "roles": [],
+  "confidence": 85,
+  "reason": "hak informasi prosedural; tak terpicu breach eksternal"
+ },
+ {
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 24",
+  "relevant": false,
+  "roles": [],
+  "confidence": 85,
+  "reason": "kewajiban bukti persetujuan; tak terpicu insiden"
+ },
+ {
+  "incident_id": "mypertamina-44m-2022",
+  "regulation_label": "UU_ITE_No1_2024 - Pasal 45A",
+  "relevant": false,
+  "roles": [],
+  "confidence": 95,
+  "reason": "delik hoaks konsumen; breach bukan hoaks"
+ },
+ {
+  "incident_id": "malindo-lionair-30m-2019",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+  "relevant": false,
+  "roles": [],
+  "confidence": 92,
+  "reason": "pasal definisional kategori data"
+ },
+ {
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 9",
+  "relevant": false,
+  "roles": [],
+  "confidence": 90,
+  "reason": "hak tarik persetujuan; tak terpicu"
+ },
+ {
+  "incident_id": "pedulilindungi-jokowi-cert-2021",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 63",
+  "relevant": false,
+  "roles": [],
+  "confidence": 93,
+  "reason": "peran serta masyarakat; bukan kewajiban/hak operasional"
+ },
+ {
+  "incident_id": "kemenkes-patient-records-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 68",
+  "relevant": false,
+  "roles": [],
+  "confidence": 88,
+  "reason": "delik pemalsuan data; insiden = perolehan/penjualan, delik salah"
+ },
+ {
+  "incident_id": "satusehat-kotim-breach-2025",
+  "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 75",
+  "relevant": false,
+  "roles": [],
+  "confidence": 96,
+  "reason": "rekomendasi soft law UNESCO"
+ },
+ {
+  "incident_id": "bank-jatim-bifast-fraud-2024",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 40",
+  "relevant": false,
+  "roles": [],
+  "confidence": 93,
+  "reason": "kewajiban henti proses pasca tarik persetujuan; tak terpicu fraud"
+ },
+ {
+  "incident_id": "ojk-ai-voice-deepfake-fraud-2025",
+  "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 39",
+  "relevant": false,
+  "roles": [],
+  "confidence": 96,
+  "reason": "narasi Stranas; aspiratif"
+ },
+ {
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+  "relevant": false,
+  "roles": [],
+  "confidence": 92,
+  "reason": "definisional"
+ },
+ {
+  "incident_id": "indihome-browsing-26m-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 4",
+  "relevant": false,
+  "roles": [],
+  "confidence": 92,
+  "reason": "definisional"
+ },
+ {
+  "incident_id": "pedulilindungi-jokowi-cert-2021",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+  "relevant": true,
+  "roles": [
+   "pse"
+  ],
+  "confidence": 90,
+  "reason": "kewajiban keamanan pengendali; pemetaan kerangka berlaku"
+ },
+ {
+  "incident_id": "kai-stormous-ransomware-2024",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 35",
+  "relevant": true,
+  "roles": [
+   "pse"
+  ],
+  "confidence": 96,
+  "reason": "kewajiban keamanan data pengendali; KAI operator"
+ },
+ {
+  "incident_id": "mypertamina-44m-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 6",
+  "relevant": false,
+  "roles": [],
+  "confidence": 90,
+  "reason": "hak perbarui data; tak terpicu"
+ },
+ {
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 28",
+  "relevant": false,
+  "roles": [],
+  "confidence": 75,
+  "reason": "prinsip kesesuaian tujuan; tidak spesifik terpicu"
+ },
+ {
+  "incident_id": "lazada-redmart-1-1m-2020",
+  "regulation_label": "UU_ITE_No1_2024 - Pasal 28",
+  "relevant": false,
+  "roles": [],
+  "confidence": 95,
+  "reason": "delik hoaks; breach bukan hoaks"
+ },
+ {
+  "incident_id": "indodax-crypto-hack-2024",
+  "regulation_label": "EU_AI_Act_2024 - Article 101",
+  "relevant": false,
+  "roles": [],
+  "confidence": 98,
+  "reason": "denda GPAI EU; yurisdiksi & subjek salah"
+ },
+ {
+  "incident_id": "election-candidate-deepfakes-2024",
+  "regulation_label": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 6",
+  "relevant": false,
+  "roles": [],
+  "confidence": 96,
+  "reason": "preambul resolusi; soft law"
+ },
+ {
+  "incident_id": "jasamarga-jmto-breach-2022",
+  "regulation_label": "SE_Komdigi_No9_2023_Etika_AI - Bagian 9",
+  "relevant": false,
+  "roles": [],
+  "confidence": 96,
+  "reason": "daftar rujukan SE; bukan norma"
+ },
+ {
+  "incident_id": "kejaksaan-agung-defacement-2025",
+  "regulation_label": "UU_ITE_No19_2016 - Pasal 26",
+  "relevant": true,
+  "roles": [
+   "konsumen"
+  ],
+  "confidence": 70,
+  "reason": "penggunaan data tanpa persetujuan + hak gugat korban"
+ },
+ {
+  "incident_id": "pln-customer-data-leak-2022",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+  "relevant": false,
+  "roles": [],
+  "confidence": 93,
+  "reason": "kewajiban menolak akses perubahan; tak terpicu"
+ },
+ {
+  "incident_id": "kai-stormous-ransomware-2024",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+  "relevant": false,
+  "roles": [],
+  "confidence": 93,
+  "reason": "idem; tak terpicu"
+ },
+ {
+  "incident_id": "kemendikbud-leak-claim-2025",
+  "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 80",
+  "relevant": false,
+  "roles": [],
+  "confidence": 96,
+  "reason": "panduan ASEAN; soft law"
+ },
+ {
+  "incident_id": "cermati-data-breach-2020",
+  "regulation_label": "WHO_Ethics_and_Governance_of_AI_for_Health - Bagian 21",
+  "relevant": false,
+  "roles": [],
+  "confidence": 98,
+  "reason": "daftar reviewer WHO; bukan norma"
+ },
+ {
+  "incident_id": "bsi-lockbit-ransomware-2023",
+  "regulation_label": "ASEAN_Guide_AI_Governance_Ethics_2024 - Bagian 38",
+  "relevant": false,
+  "roles": [],
+  "confidence": 97,
+  "reason": "catatan kaki ASEAN; soft law"
+ },
+ {
+  "incident_id": "bpjs-kesehatan-279m-2021",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 67",
+  "relevant": true,
+  "roles": [
+   "pelaku"
+  ],
+  "confidence": 96,
+  "reason": "pidana perolehan melawan hukum oleh penjual data"
+ },
+ {
+  "incident_id": "cermati-data-breach-2020",
+  "regulation_label": "UU_PDP_No27_2022 - Pasal 33",
+  "relevant": false,
+  "roles": [],
+  "confidence": 93,
+  "reason": "kewajiban menolak akses perubahan; tak terpicu"
+ },
+ {
+  "incident_id": "kemendikbud-leak-claim-2025",
+  "regulation_label": "Stranas_AI_Indonesia_2020-2045_Full - Bagian 77",
+  "relevant": false,
+  "roles": [],
+  "confidence": 96,
+  "reason": "narasi Stranas; aspiratif"
+ },
+ {
+  "incident_id": "kemendikbud-leak-claim-2025",
+  "regulation_label": "UNESCO_Recommendation_on_AI_Ethics_2021 - Bagian 73",
+  "relevant": false,
+  "roles": [],
+  "confidence": 96,
+  "reason": "rekomendasi UNESCO; soft law"
+ },
+ {
+  "incident_id": "malindo-lionair-30m-2019",
+  "regulation_label": "PP_PSTE_No71_2019 - Pasal 82",
+  "relevant": false,
+  "roles": [],
+  "confidence": 97,
+  "reason": "pasal registrar nama domain; tidak relevan"
+ }
+]

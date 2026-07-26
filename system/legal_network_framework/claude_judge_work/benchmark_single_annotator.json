@@ -1,0 +1,23 @@
+{
+ "headline_bersih": {
+  "basis": "BERSIH — blind judging, gold=anotator tunggal, 41 pasangan",
+  "n": 41,
+  "tp": 5,
+  "fp": 0,
+  "fn": 1,
+  "tn": 35,
+  "precision": 1.0,
+  "recall": 0.833,
+  "f1": 0.909,
+  "agreement": 0.976,
+  "kappa": 0.895,
+  "pembanding_gemini_fewshot": {
+   "raw_f1": 0.667,
+   "p95_f1": 0.727
+  }
+ },
+ "perluasan_tertunda": {
+  "basis": "45 pasangan (termasuk 4 beda test-retest) — BUTUH re-judge blind pada 25 Jul utk angka bersih",
+  "catatan": "jangan pakai angka campuran blind+produksi sebagai headline"
+ }
+}
