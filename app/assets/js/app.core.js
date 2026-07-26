@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let llmConf = {};   // incident_id -> [{regulation_label, cosine, relevant, confidence, reason}]
     const graphsLoaded = new Set();
     const networkInstances = {};   // { graphId: { network, graphData } }
-    const DATA_V = '20260726_6';   // cache-buster for data/report fetches (bump on data updates)
+    const DATA_V = '20260726_9';   // cache-buster for data/report fetches (bump on data updates)
 
     // ===================================================================
     // SPA NAVIGATION — data-target based routing
@@ -1235,6 +1235,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // bukan hak) — lihat AUDIT_FIXES_TRACKER.md id=35. Peran Ps.70/33 dilengkapi saat reparasi OCR.
     const _REVIEW_RIGHTS = new Set(['5', '6', '8', '9', '10', '11', '13'].map(n => `UU_PDP_No27_2022 - Pasal ${n}`));
     const _REVIEW_SOFT = /Stranas|SE_Komdigi|OECD|UNESCO|ASEAN|UNGA|ISO|WHO|G7|Global_Digital/i;
+    // Instrumen internasional yang teks verbatimnya ada di korpus (bahan BACKING).
+    const _INTL_RE = /EU_AI_Act|OECD_AI_Principles|CETS225|UNESCO_Recommendation|ASEAN_Guide|UNGA_Res|WHO_Ethics|ISO_IEC_42001|G7_Hiroshima/i;
     // Kunci 'Penjelasan Pasal 10/60' = hasil rename label OCR '1O'/'6O' (fix_ocr_labels.py)
     const _REVIEW_DEF = new Set(['UU_PDP_No27_2022 - Penjelasan Pasal 10', 'UU_PDP_No27_2022 - Penjelasan Pasal 60', 'UU_PDP_No27_2022 - Pasal 4']);
     function _expectRoles(label) {
@@ -2626,6 +2628,35 @@ Daftar dokumen hukum (mis. klausul consent, DPIA) dan artefak teknis (mis. audit
         contextBody.dataset.incidentText = grounds;
         contextBody.dataset.regText = warr.map(({ r, e }) => `[${r.regulation_label}] (subjek terikat: ${(e.roles || []).join('/') || '—'}${e.reviewed ? '; DIVALIDASI MANUSIA' : ''}): ${PROVISION_TEXTS[r.regulation_label] || r.regulation_label}`).join('\n\n');
         contextBody.dataset.regCount = warr.length;
+        // BACKING juga di-ground. Sebelumnya bagian BACKING hanya MENYEBUT nama
+        // instrumen internasional tanpa memberi teksnya, sehingga model menyusunnya
+        // dari ingatan — sumber kekeliruan CETS 225 vs Konvensi Budapest (CETS 185).
+        // Korpus memuat teks verbatim instrumen ini, jadi disuntikkan seperti warrant.
+        // Saring segmen non-normatif: sebagian "Bagian N" dokumen soft-law berisi
+        // catatan kaki, daftar pustaka, atau daftar kontributor (temuan audit sitasi).
+        // Bahan backing wajib memuat penanda normatif, bukan sekadar menyebut instrumen.
+        const _isNorm = t => t && t.length > 120 && !/https?:\/\//.test(t.slice(0, 160)) &&
+            /\bshall\b|\bshould\b|\bmust\b|Each Party|Member States|AI actors|are encouraged|commit to|\bwajib\b|\bharus\b/i.test(t);
+        const backing = (RADIAL.cands[iid] || [])
+            .filter(r => _INTL_RE.test(r.regulation_label) && _isNorm(PROVISION_TEXTS[r.regulation_label]))
+            .sort((a, b) => (b.cosine || 0) - (a.cosine || 0))
+            .slice(0, 5)
+            .map(r => `[${nodeFull(r.regulation_label)}] (kandidat insiden ini): ${(PROVISION_TEXTS[r.regulation_label] || '').slice(0, 600)}`);
+        // Sebagian insiden tidak punya kandidat internasional sama sekali. Daripada
+        // membiarkan model mengisi dari ingatan, pakai rujukan umum TERKURASI dari
+        // korpus yang sama (pasal yang dipakai peta tematik, sudah diverifikasi
+        // terhadap teks verbatim) dan tandai jelas sifatnya sebagai rujukan umum.
+        if (!backing.length) {
+            ['Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 8',
+             'Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 9',
+             'Council_of_Europe_Framework_Convention_on_AI_CETS225 - Article 16',
+             'OECD_AI_Principles_2024 - Bagian 27',
+             'OECD_AI_Principles_2024 - Bagian 29'].forEach(lab => {
+                const t = PROVISION_TEXTS[lab];
+                if (_isNorm(t)) backing.push(`[${nodeFull(lab)}] (rujukan umum korpus, bukan kandidat khusus insiden ini): ${t.slice(0, 600)}`);
+            });
+        }
+        contextBody.dataset.backingText = backing.join('\n\n');
     }
 
     async function runAIToulmin() {
@@ -2644,6 +2675,7 @@ Daftar dokumen hukum (mis. klausul consent, DPIA) dan artefak teknis (mis. audit
         const contextBody = document.getElementById('ai-context-body');
         const incidentText = contextBody.dataset.incidentText || '';
         const regText = contextBody.dataset.regText || '';
+        const backingText = contextBody.dataset.backingText || '';
         const regCount = contextBody.dataset.regCount || '0';
         const responseBody = document.getElementById('ai-response-body');
 
@@ -2667,7 +2699,7 @@ Uraikan fakta insiden: pelaku, korban, mekanisme, dampak, dan konteks teknologi 
 Analisis ${regCount} regulasi yang terdeteksi LNA: apakah warrant ini secara substantif mencakup peristiwa? Identifikasi kekuatan, kelemahan, dan celah setiap pasal yang relevan.
 
 ### 4. BACKING (Dukungan Normatif Global)
-Perkuat dengan standar internasional yang relevan: OECD AI Principles (2024), EU AI Act 2024, dan Council of Europe Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law (CETS No. 225, dibuka utk penandatanganan 5 September 2024). PERINGATAN AKURASI: CETS 225 adalah konvensi kerangka tentang KECERDASAN ARTIFISIAL — JANGAN keliru menyebutnya Konvensi Budapest tentang Kejahatan Siber (itu CETS No. 185, instrumen berbeda). Sebut instrumen hanya dengan nama resminya; jika ragu tentang isi sebuah instrumen, nyatakan ketidakpastian alih-alih menebak. Tunjukkan bagaimana Indonesia seharusnya mengadopsi norma ini namun belum melakukannya.
+Gunakan HANYA bahan pada **DATA BACKING** di bawah — teks verbatim instrumen internasional dari korpus penelitian ini. DILARANG mengutip, meringkas, atau menilai isi instrumen yang teksnya TIDAK disediakan di sana; jangan menambah instrumen dari ingatan Anda. Bila DATA BACKING kosong, nyatakan bahwa tidak ada padanan internasional dalam korpus untuk insiden ini, dan jangan mengarang. Tunjukkan bagaimana Indonesia dapat mengadopsi norma dalam kutipan itu namun belum melakukannya.
 
 ### 5. QUALIFIER (Tingkat Kepastian)
 Gunakan data kuantitatif LNA: ${regCount} pasal terdeteksi, jelaskan tingkat kepastian klaim (pasti/kemungkinan besar/dugaan) beserta alasannya.
@@ -2679,7 +2711,7 @@ Identifikasi bantahan. Kemudian nyatakan (HINDARI klaim "vakum absolut" — beda
 - Jika warrant kuat & menyeluruh → **Instrumen Cukup, Perlu Penegakan**
 
 ### 7. REKOMENDASI KONKRET (Action Items)
-Berdasarkan temuan di atas, berikan **3-5 rekomendasi spesifik** yang berbeda dari studi terdahulu:
+Bagian ini boleh bersifat preskriptif, tetapi TETAP DILARANG menyatakan isi atau nomor sebuah instrumen hukum yang teksnya tidak disediakan di DATA WARRANT/DATA BACKING. Berdasarkan temuan di atas, berikan **3-5 rekomendasi spesifik** yang berbeda dari studi terdahulu:
 - Bentuk regulasi yang dibutuhkan (sektoral/horizontal/sandbox)
 - Lembaga yang harus bertindak (DPR/Kemkominfo/OJK/MA/BRIN)
 - Jangka waktu urgensi (segera/1-2 tahun/jangka panjang)
@@ -2691,6 +2723,9 @@ ${incidentText}
 
 **DATA WARRANT (dasar hukum dari LLM-judge Claude tervalidasi telaah manusia (warrant-operatif κ=0.94) + tinjauan manusia; "DIVALIDASI MANUSIA" = sudah ditinjau ahli. Gunakan HANYA pasal-pasal ini sebagai warrant; jangan mengarang pasal lain):**
 ${regText || 'TIDAK ADA WARRANT AI-SPESIFIK TERVALIDASI (gap AI-spesifik) — nyatakan ini sebagai gap AI-spesifik, BUKAN vakum hukum absolut; pertimbangkan apakah statuta umum (UU ITE/UU PDP) masih berlaku secara analogis.'}
+
+**DATA BACKING (teks verbatim instrumen internasional dari korpus; SATU-SATUNYA bahan yang boleh dipakai pada bagian BACKING):**
+${backingText || 'TIDAK ADA instrumen internasional dalam korpus yang menjadi kandidat untuk insiden ini. Nyatakan hal itu apa adanya pada bagian BACKING dan JANGAN mengutip instrumen dari ingatan.'}
 `;
 
         try {
