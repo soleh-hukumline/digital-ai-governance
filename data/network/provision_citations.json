@@ -1,15 +1,15 @@
 {
-  "n_records": 237,
+  "n_records": 231,
   "by_kind": {
-    "named": 62,
+    "named": 56,
     "pasal_internal": 128,
     "pasal_external": 27,
     "regulation": 20
   },
-  "n_source_provisions": 124,
-  "n_auto": 243,
+  "n_source_provisions": 119,
+  "n_auto": 236,
   "n_manual": 0,
-  "n_edited": 4,
+  "n_edited": 5,
   "records": [
     {
       "source_doc": "ASEAN_Guide_AI_Governance_Ethics_2024",
@@ -100,29 +100,6 @@
       "note": null,
       "count": 1,
       "id": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 1 :: OECD AI Principles"
-    },
-    {
-      "source_doc": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "source_prov": "Bagian 1",
-      "source_label": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 1",
-      "source_text": "Hiroshima Process International Code of Conduct for Organizations Developing Advanced AI Systems On the basis of the International Guiding Principles for Organizations Developing Advanced AI systems, the International Code of Conduct for Organizations Developing Advanced AI Systems aims to promote safe, secure, and trustworthy AI worldwide and will provide voluntary guidance for actions by organizations developing the most advanced AI systems, including the most advanced foundation models and generative AI systems (henceforth \"advanced AI systems\"). Organizations should follow these actions in line with a risk-based approach. Organizations that may endorse this Code of Conduct may include, among others, entities from academia, civil society, the private sector, and/or the public sector. This non-exhaustive list of actions is discussed and elaborated as a living document to build on the existing OECD AI Principles in response to the recent developments in advanced AI systems and is meant to help seize the benefits and address the risks and challenges",
-      "kind": "named",
-      "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "cited_norm": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "cited_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "cited_prov": null,
-      "cited_in_corpus": true,
-      "note": null,
-      "count": 1,
-      "id": "G7_Hiroshima_Code_of_Conduct_for_AI - Bagian 1 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "review": {
-        "flag": "noise_borderline",
-        "by": "gemini",
-        "confidence": 70,
-        "context_type": "incidental",
-        "reason": "The snippet mentions 'safe, secure, and trustworthy AI worldwide' as a general goal, which aligns with the UNGA resolution's title but doesn"
-      },
-      "edited": true
     },
     {
       "source_doc": "G7_Hiroshima_Code_of_Conduct_for_AI",
@@ -228,29 +205,6 @@
       "note": "≈ OECD AI Principles (G20 mengadopsi 2019)",
       "count": 1,
       "id": "OECD_AI_Principles_2024 - Bagian 3 :: G20 AI Principles"
-    },
-    {
-      "source_doc": "OECD_AI_Principles_2024",
-      "source_prov": "Bagian 17",
-      "source_label": "OECD_AI_Principles_2024 - Bagian 17",
-      "source_text": "In addition to reporting to the Council on the implementation of the Recommendation, the DPC is also instructed to continue its work on AI, building on this Recommendation, and taking into account work in other international fora, such as UNESCO, the European Union, the Council of Europe and the initiative to build an International Panel on AI (see https://pm.gc.ca/eng/news/2018/12/06/mandate- international-panel-artificial- intelligence and https://www.gouvernement.fr/en/france-and-canada- create-new-expert-international-panel-on- artificial-intelligence). In order to support implementation of the Recommendation, the Council instructed the DPC to develop practical guidance for implementation, to provide a forum for exchanging information on AI policy and activities, and to foster multi-stakeholder and interdisciplinary dialogue.",
-      "kind": "named",
-      "cited_ref": "Council of Europe Framework Convention on AI",
-      "cited_norm": "Council of Europe Framework Convention on AI",
-      "cited_doc": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
-      "cited_prov": null,
-      "cited_in_corpus": true,
-      "note": null,
-      "count": 1,
-      "id": "OECD_AI_Principles_2024 - Bagian 17 :: Council of Europe Framework Convention on AI",
-      "review": {
-        "flag": "noise_borderline",
-        "by": "gemini",
-        "confidence": 80,
-        "context_type": "incidental",
-        "reason": "The snippet mentions 'Council of Europe' as one of the 'other international fora' where work on AI is being carried out. It does not specifi"
-      },
-      "edited": true
     },
     {
       "source_doc": "OECD_AI_Principles_2024",
@@ -640,7 +594,15 @@
       "cited_in_corpus": true,
       "note": null,
       "count": 1,
-      "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 50 :: Pasal 16"
+      "id": "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 50 :: Pasal 16",
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 72,
+        "context_type": "incidental",
+        "reason": "Pasal 16 tidak muncul dalam teks sumber ketentuan peralihan ini"
+      },
+      "edited": true
     },
     {
       "source_doc": "POJK_No3_2024_Inovasi_Teknologi_Keuangan",
@@ -850,7 +812,15 @@
       "cited_in_corpus": false,
       "note": null,
       "count": 1,
-      "id": "PP_PSTE_No71_2019 - Pasal 82 :: Pasal 83"
+      "id": "PP_PSTE_No71_2019 - Pasal 82 :: Pasal 83",
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 72,
+        "context_type": "incidental",
+        "reason": "Pasal 83 tidak disebut dalam teks sumber Pasal 82"
+      },
+      "edited": true
     },
     {
       "source_doc": "PP_PSTE_No71_2019",
@@ -2290,7 +2260,15 @@
       "cited_in_corpus": false,
       "note": null,
       "count": 1,
-      "id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 32 :: Sustainable Development Goals (2030 Agenda)"
+      "id": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 32 :: Sustainable Development Goals (2030 Agenda)",
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 82,
+        "context_type": "incidental",
+        "reason": "SDGs/2030 Agenda tidak muncul dalam teks sumber ini"
+      },
+      "edited": true
     },
     {
       "source_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
@@ -2402,7 +2380,7 @@
       "cited_prov": null,
       "cited_in_corpus": true,
       "note": null,
-      "count": 2,
+      "count": 1,
       "id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 3 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)"
     },
     {
@@ -2422,36 +2400,6 @@
     },
     {
       "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "source_prov": "Bagian 5",
-      "source_label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 5",
-      "source_text": "Stressing that artificial intelligence systems should be safe, secure and trustworthy – whose life cycle includes the stages: pre-design, design, development, evaluation, and decommissioning, are such that they are human-centric, reliable, explainable, ethical, inclusive, in full respect, promotion and protection of human rights and international law – in line with the principle of artificial intelligence for good for all, with the vision of a people-centred, inclusive and development-oriented information society, bearing in mind that this resolution focuses on international cooperation on artificial intelligence capacity-building in the non-military domain and does not touch the development or use of artificial intelligence for military purposes, sale, procurement, oper ation Emphasizing that Member States should enjoy equal opportunities in the design, development, deployment, decommissioning and use of artificial intelligence, while respecting intellectual property rights and promoting innovation,",
-      "kind": "named",
-      "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "cited_norm": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "cited_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "cited_prov": null,
-      "cited_in_corpus": true,
-      "note": null,
-      "count": 1,
-      "id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 5 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)"
-    },
-    {
-      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "source_prov": "Bagian 8",
-      "source_label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 8",
-      "source_text": "important role international, regional and subregional organizations and international financial institutions, the private sector, companies, civil society, the media, academia and research institutions an d technical communities and individuals, and other relevant stakeholders could play in enhancing artificial intelligence capacity-building and promoting safe, secure and trustworthy artificial intelligence systems for sustainable development, Stressing the importance of enhancing coordination and cooperation among and within countries and increasing investment in artificial intelligence capacity -building, with specific consideration of the needs, priorities and conditions of developing countries, and encouraging developed countries and developing countries in a position to do so, as well as international organizations and all relevant stakeholders, to take active measures,",
-      "kind": "named",
-      "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "cited_norm": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "cited_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "cited_prov": null,
-      "cited_in_corpus": true,
-      "note": null,
-      "count": 1,
-      "id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 8 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)"
-    },
-    {
-      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
       "source_prov": "Bagian 9",
       "source_label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 9",
       "source_text": "Recognizing that the United Nations system has an important role to play in artificial intelligence capacity-building, and emphasizing that it is important to enhance international cooperation and multi-stakeholder collaboration on capacity- building and support developing countries’ effective, equitable and meaningful participation and representation in international processes and forums on the governance of artificial intelligence systems, 1. Resolves to bridge the artificial intelligence and other digital divides between and within countries, and to enhance international cooperation on capacity- building in developing countries, including through North-South, South-South and triangular cooperation, with full consideration of the needs, policies and priorities of developing countries, with the aim of harnessing the benefits of artificia l intelligence, minimizing the its risks, and accelerating achievement of all 17 Sustainable Development Goals; innovation and progress toward 2.",
@@ -2464,36 +2412,6 @@
       "note": null,
       "count": 1,
       "id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 9 :: Sustainable Development Goals (2030 Agenda)"
-    },
-    {
-      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "source_prov": "Bagian 12",
-      "source_label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 12",
-      "source_text": "Enhancing international cooperation on capacity-building of artificial intelligence policies and priorities, and to hold training courses, seminars and workshops, among others for sharing experiences and best practices; 6. Calls upon the international community to provide and promote a fair, open, inclusive and non-discriminatory business environment across the life cycle of safe, secure and trustworthy artificial intelligence systems; 7.",
-      "kind": "named",
-      "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "cited_norm": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "cited_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "cited_prov": null,
-      "cited_in_corpus": true,
-      "note": null,
-      "count": 1,
-      "id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 12 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)"
-    },
-    {
-      "source_doc": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "source_prov": "Bagian 13",
-      "source_label": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 13",
-      "source_text": "Encourages Member States to consider the benefits and risks when scaling up the responsible use of digital solutions, such as open -source artificial intelligence and digital public infrastructure, among other methods and business models; to promote, protect and preserve linguistic and cultural diversity, taking into account multilingualism in their training data, particularly for the large language models; to adopt proactive measures to counteract racism, discrimination and other forms of algorithmic bias; and to enable fair competition in the artificial intelligence market place, promote an innovation environment and the use of digital public goods to harness the potential of safe, secure and trustworthy artificial intelligence systems; 8.",
-      "kind": "named",
-      "cited_ref": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "cited_norm": "UNGA Res 78/265 (Safe, Secure, Trustworthy AI)",
-      "cited_doc": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "cited_prov": null,
-      "cited_in_corpus": true,
-      "note": null,
-      "count": 1,
-      "id": "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 13 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)"
     },
     {
       "source_doc": "UU_ITE_No19_2016",

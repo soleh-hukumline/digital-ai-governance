@@ -6,18 +6,18 @@
       "review": {
         "flag": "noise_borderline",
         "by": "gemini",
-        "confidence": 70,
+        "confidence": 85,
         "context_type": "incidental",
-        "reason": "The snippet mentions 'safe, secure, and trustworthy AI worldwide' as a general goal, which aligns with the UNGA resolution's title but doesn"
+        "reason": "Frasa 'safe, secure, trustworthy' kebetulan; resolusi 2024 pascatanggal dokumen 2023"
       }
     },
     "OECD_AI_Principles_2024 - Bagian 17 :: Council of Europe Framework Convention on AI": {
       "review": {
         "flag": "noise_borderline",
         "by": "gemini",
-        "confidence": 80,
+        "confidence": 82,
         "context_type": "incidental",
-        "reason": "The snippet mentions 'Council of Europe' as one of the 'other international fora' where work on AI is being carried out. It does not specifi"
+        "reason": "Council of Europe disebut sebagai forum, bukan instrumen konvensinya"
       }
     },
     "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 5 :: UNESCO Recommendation on AI Ethics": {
@@ -36,6 +36,69 @@
         "confidence": 70,
         "context_type": "incidental",
         "reason": "The phrase 'for sustainable development' is a general objective, not a direct reference to the 'Sustainable Development Goals (2030 Agenda)'"
+      }
+    },
+    "POJK_No3_2024_Inovasi_Teknologi_Keuangan - Pasal 50 :: Pasal 16": {
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 72,
+        "context_type": "incidental",
+        "reason": "Pasal 16 tidak muncul dalam teks sumber ketentuan peralihan ini"
+      }
+    },
+    "PP_PSTE_No71_2019 - Pasal 82 :: Pasal 83": {
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 72,
+        "context_type": "incidental",
+        "reason": "Pasal 83 tidak disebut dalam teks sumber Pasal 82"
+      }
+    },
+    "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI - Bagian 32 :: Sustainable Development Goals (2030 Agenda)": {
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 82,
+        "context_type": "incidental",
+        "reason": "SDGs/2030 Agenda tidak muncul dalam teks sumber ini"
+      }
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 5 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)": {
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 62,
+        "context_type": "incidental",
+        "reason": "Hanya frasa deskriptif 'safe, secure and trustworthy'; resolusi tidak dirujuk"
+      }
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 8 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)": {
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 65,
+        "context_type": "incidental",
+        "reason": "Frasa judul dipakai sebagai prosa deskriptif, bukan rujukan resolusi"
+      }
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 12 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)": {
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 80,
+        "context_type": "incidental",
+        "reason": "Frasa deskriptif 'safe, secure, trustworthy AI', bukan sitasi resolusi 78/265"
+      }
+    },
+    "UNGA_Res_78_311_Global_Digital_Compact_or_AI - Bagian 13 :: UNGA Res 78/265 (Safe, Secure, Trustworthy AI)": {
+      "review": {
+        "flag": "noise_borderline",
+        "by": "gemini",
+        "confidence": 80,
+        "context_type": "incidental",
+        "reason": "Frasa deskriptif berulang, tidak menginvokasi Res 78/265 sebagai rujukan"
       }
     }
   },

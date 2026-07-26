@@ -8,9 +8,9 @@
       "juris": "INTL"
     },
     "Council_of_Europe_Framework_Convention_on_AI_CETS225": {
-      "in": 1,
+      "in": 0,
       "out": 0,
-      "role": "sink",
+      "role": "isolated",
       "juris": "INTL"
     },
     "EU_AI_Act_2024": {
@@ -21,7 +21,7 @@
     },
     "G7_Hiroshima_Code_of_Conduct_for_AI": {
       "in": 0,
-      "out": 2,
+      "out": 1,
       "role": "source",
       "juris": "INTL"
     },
@@ -33,8 +33,8 @@
     },
     "OECD_AI_Principles_2024": {
       "in": 3,
-      "out": 1,
-      "role": "both",
+      "out": 0,
+      "role": "sink",
       "juris": "INTL"
     },
     "POJK_No3_2024_Inovasi_Teknologi_Keuangan": {
@@ -68,14 +68,14 @@
       "juris": "INTL"
     },
     "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI": {
-      "in": 6,
+      "in": 1,
       "out": 2,
       "role": "both",
       "juris": "INTL"
     },
     "UNGA_Res_78_311_Global_Digital_Compact_or_AI": {
       "in": 1,
-      "out": 5,
+      "out": 1,
       "role": "both",
       "juris": "INTL"
     },
@@ -106,12 +106,6 @@
   },
   "edges": [
     {
-      "source": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
-      "target": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "count": 5,
-      "cross_juris": false
-    },
-    {
       "source": "ASEAN_Guide_AI_Governance_Ethics_2024",
       "target": "UNESCO_Recommendation_on_AI_Ethics_2021",
       "count": 2,
@@ -132,18 +126,6 @@
     {
       "source": "G7_Hiroshima_Code_of_Conduct_for_AI",
       "target": "OECD_AI_Principles_2024",
-      "count": 1,
-      "cross_juris": false
-    },
-    {
-      "source": "G7_Hiroshima_Code_of_Conduct_for_AI",
-      "target": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "count": 1,
-      "cross_juris": false
-    },
-    {
-      "source": "OECD_AI_Principles_2024",
-      "target": "Council_of_Europe_Framework_Convention_on_AI_CETS225",
       "count": 1,
       "cross_juris": false
     },
@@ -184,6 +166,12 @@
       "cross_juris": false
     },
     {
+      "source": "UNGA_Res_78_311_Global_Digital_Compact_or_AI",
+      "target": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
+      "count": 1,
+      "cross_juris": false
+    },
+    {
       "source": "UU_ITE_No1_2024",
       "target": "UU_ITE_No19_2016",
       "count": 1,
@@ -199,10 +187,12 @@
   "summary": {
     "intl": {
       "n_docs": 10,
-      "n_edges": 10,
-      "isolated": [],
-      "top_authority": "UNGA_Res_78_265_Safe_Secure_Trustworthy_AI",
-      "top_authority_in": 6
+      "n_edges": 8,
+      "isolated": [
+        "Council_of_Europe_Framework_Convention_on_AI_CETS225"
+      ],
+      "top_authority": "OECD_AI_Principles_2024",
+      "top_authority_in": 3
     },
     "natl": {
       "n_docs": 7,
